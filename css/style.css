@@ -1,0 +1,246 @@
+/* ===================================================================
+   Design tokens
+   =================================================================== */
+:root {
+  --color-bg: #ffffff;
+  --color-bg-offwhite: #fafbfd;
+  --color-indigo: #1e3a8a;
+  --color-indigo-dark: #16285f;
+  --color-sky: #7dd3fc;
+  --color-text: #1a1a1a;
+  --color-text-muted: #5a5f6a;
+  --color-border: #e7eaf0;
+
+  --font-base: system-ui, -apple-system, "Hiragino Sans", "Hiragino Kaku Gothic ProN",
+    "Yu Gothic", sans-serif;
+
+  --space-1: 0.5rem;
+  --space-2: 1rem;
+  --space-3: 2rem;
+  --space-4: 4rem;
+  --space-5: 8rem;
+
+  --max-width: 960px;
+}
+
+/* ===================================================================
+   Reset / base
+   =================================================================== */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  margin: 0;
+  font-family: var(--font-base);
+  color: var(--color-text);
+  background: var(--color-bg);
+  line-height: 1.8;
+  -webkit-font-smoothing: antialiased;
+}
+
+h1, h2, h3, p, ul {
+  margin: 0;
+}
+
+a {
+  color: var(--color-indigo);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+a:hover,
+a:focus-visible {
+  color: var(--color-sky);
+}
+
+ul {
+  list-style: none;
+  padding: 0;
+}
+
+/* ===================================================================
+   Hero
+   =================================================================== */
+.hero {
+  position: relative;
+  min-height: 100vh;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
+  background: linear-gradient(180deg, var(--color-bg-offwhite) 0%, var(--color-bg) 100%);
+}
+
+.hero__canvas {
+  position: absolute;
+  inset: 0;
+  width: 100%;
+  height: 100%;
+  display: block;
+}
+
+.hero__content {
+  position: relative;
+  z-index: 1;
+  text-align: center;
+  padding: var(--space-3);
+  pointer-events: none;
+}
+
+.hero__name {
+  font-size: clamp(2.25rem, 6vw, 4rem);
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  color: var(--color-text);
+}
+
+.hero__name::selection {
+  background: var(--color-sky);
+}
+
+.hero__tagline {
+  margin-top: var(--space-2);
+  font-size: clamp(1rem, 2.2vw, 1.25rem);
+  color: var(--color-indigo);
+  font-weight: 500;
+}
+
+/* ===================================================================
+   Sections
+   =================================================================== */
+.section {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-5) var(--space-3);
+}
+
+.section__title {
+  font-size: clamp(1.5rem, 3vw, 2rem);
+  font-weight: 700;
+  color: var(--color-indigo);
+  margin-bottom: var(--space-3);
+  position: relative;
+  display: inline-block;
+}
+
+.section__title::after {
+  content: "";
+  position: absolute;
+  left: 0;
+  bottom: -0.4em;
+  width: 2.5rem;
+  height: 3px;
+  background: var(--color-sky);
+  border-radius: 2px;
+}
+
+.section__text {
+  max-width: 640px;
+  color: var(--color-text-muted);
+  font-size: 1.05rem;
+}
+
+/* ===================================================================
+   Project cards
+   =================================================================== */
+.cards {
+  margin-top: var(--space-3);
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-2);
+}
+
+.card {
+  padding: var(--space-3) var(--space-2);
+  border: 1px solid var(--color-border);
+  border-radius: 12px;
+  background: var(--color-bg-offwhite);
+  transition: transform 0.25s ease, box-shadow 0.25s ease, border-color 0.25s ease;
+}
+
+.card:hover {
+  transform: translateY(-4px);
+  border-color: var(--color-sky);
+  box-shadow: 0 12px 24px -12px rgba(30, 58, 138, 0.25);
+}
+
+.card__title {
+  font-size: 1.1rem;
+  font-weight: 700;
+  color: var(--color-text);
+  margin-bottom: var(--space-1);
+}
+
+.card__text {
+  color: var(--color-text-muted);
+  font-size: 0.95rem;
+}
+
+/* ===================================================================
+   Contact / Links
+   =================================================================== */
+.links {
+  margin-top: var(--space-3);
+  display: flex;
+  gap: var(--space-3);
+}
+
+.links__item {
+  font-size: 1.1rem;
+  font-weight: 600;
+  padding-bottom: 2px;
+  border-bottom: 2px solid transparent;
+}
+
+.links__item:hover,
+.links__item:focus-visible {
+  border-color: var(--color-sky);
+}
+
+/* ===================================================================
+   Footer
+   =================================================================== */
+.footer {
+  text-align: center;
+  padding: var(--space-3);
+  color: var(--color-text-muted);
+  font-size: 0.85rem;
+  border-top: 1px solid var(--color-border);
+}
+
+/* ===================================================================
+   Responsive
+   =================================================================== */
+@media (max-width: 720px) {
+  .cards {
+    grid-template-columns: 1fr;
+  }
+
+  .links {
+    gap: var(--space-2);
+  }
+
+  .section {
+    padding: var(--space-4) var(--space-2);
+  }
+}
+
+/* ===================================================================
+   Reduced motion
+   =================================================================== */
+@media (prefers-reduced-motion: reduce) {
+  html {
+    scroll-behavior: auto;
+  }
+
+  .card {
+    transition: none;
+  }
+}
