@@ -21,9 +21,25 @@ ul.plain li:last-child { margin-bottom: 0; }
 .lead { font-size: 1.125rem; }
 .note { font-size: 0.9375rem; }
 
-/* These list items are running prose, not labels — the postscript entries are
-   full paragraphs — so they take the same justification the paragraphs around
-   them do. See the note in style.css for why hyphenation comes with it. */
+/* Work pages are set justified; the index is not. A work page is long-form
+   reading, and a flush right edge holds the column steady over that distance.
+   The index is four short paragraphs, where it would earn little.
+
+   `hyphens: auto` is not decoration, it is what makes justification readable.
+   A flush right edge has to be paid for somewhere, and with no word-internal
+   breaks the browser pays entirely in word spacing — at this measure that
+   opens gaps wide enough to line up down the page and lead the eye vertically.
+   Hyphenation moves most of that slack inside the words. The dictionary comes
+   from the `lang` attribute, which every page declares. The -webkit- prefix
+   covers Safari before 17, where the unprefixed property is not recognised and
+   the reader would otherwise get justification with no hyphenation at all —
+   precisely the failure this pairing exists to prevent.
+
+   The lists are included because they are running prose, not labels: the
+   postscript entries are full paragraphs. Captions, the byline and the
+   colophon are left ragged — one to three lines, where justifying stretches a
+   line and buys nothing. */
+:lang(en) section p,
 :lang(en) ol li,
 :lang(en) ul.plain li {
   text-align: justify;

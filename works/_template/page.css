@@ -1,11 +1,32 @@
-/* Layout this work needs and the rest of the site has no reason to carry.
-   Copied along with index.html; delete it and its <link> if the work needs
-   nothing beyond the shared stylesheet.
+/* A work page's own stylesheet. Copied along with index.html.
 
    It lives here rather than inside the page's <head> because a work has twelve
    language versions maintained by hand — inline, this would become twelve
    copies of identical rules, and the twelfth would eventually stop matching the
    first. Language versions differ; the layout of a work does not.
 
-   Use logical properties (`padding-inline-start`, not `padding-left`) so the
-   Arabic version mirrors correctly. See OPERATIONS.md §9. */
+   Do not delete this file even if the work needs no layout of its own: the
+   justification below is what distinguishes a work page from the index, and a
+   work page without it would silently read differently from every other one.
+
+   Add layout the work needs — image grids, numbered sequences — below. Use
+   logical properties (`padding-inline-start`, not `padding-left`) so the Arabic
+   version mirrors correctly. See OPERATIONS.md §9. */
+
+
+/* Work pages are set justified; the index is not. A work page is long-form
+   reading, and a flush right edge holds the column steady over that distance.
+
+   `hyphens: auto` is not decoration, it is what makes justification readable.
+   Without word-internal breaks the browser pays for the flush edge entirely in
+   word spacing, which at this measure opens gaps wide enough to line up down
+   the page. The dictionary comes from the `lang` attribute. The -webkit- prefix
+   covers Safari before 17, where the reader would otherwise get justification
+   with no hyphenation — the failure this pairing exists to prevent.
+
+   Extend the selector if the work adds other blocks of running prose. */
+:lang(en) section p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
