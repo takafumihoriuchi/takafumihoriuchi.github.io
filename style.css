@@ -105,10 +105,38 @@ h2 {
 p { margin: 0 0 var(--space-para); text-wrap: pretty; }
 p:last-child { margin-bottom: 0; }
 
-/* The index is set ragged-right and the work pages justified — the rule lives
+/* The index is set ragged-right and the work pages justified — that rule lives
    in works/<slug>/page.css, since that is the file only a work page loads.
    The index is four short paragraphs and a list; a flush right edge earns
-   little there, and a ragged one keeps the front of the site lighter. */
+   little there, and a ragged one keeps the front of the site lighter.
+
+   The exception is below, and it is about what justification costs, not what
+   it gains. In a space-separated script the slack of a flush edge is paid in
+   the gaps between words, and the design philosophy is the most prominent
+   text on the site — at this measure the gaps open wide enough to line up
+   down the page. On the work pages hyphenation absorbs most of that; the
+   index has no hyphenation rule, so the cost stays visible and the paragraphs
+   are left ragged.
+
+   Japanese and Chinese do not pay it. The line can break between almost any
+   two characters, so the slack is distributed across the whole line in
+   amounts too small to see, and a flush edge is what the scripts are
+   ordinarily set with. There the flush edge is free, so the index takes it.
+
+   `:lang(zh)` and not the two script subtags: :lang() matches on hyphen
+   prefixes, so this already covers zh-Hans and zh-Hant, and would cover a
+   regional variant if one is ever added. Korean sits between the two cases —
+   it is spaced like English but breaks like Chinese — and is not here to
+   decide; add it deliberately if it arrives, rather than by widening this
+   selector.
+
+   The selector reaches the work pages too, where it only restates what
+   page.css already sets. Note that it outranks page.css if the two ever
+   disagree: the language pseudo-class makes it the more specific rule, no
+   matter which file loads second. A per-language exception on a work page has
+   to be written to beat this, the way the Indonesian one there is. */
+:lang(ja) section p,
+:lang(zh) section p { text-align: justify; }
 
 .muted { color: var(--fg-muted); }
 
