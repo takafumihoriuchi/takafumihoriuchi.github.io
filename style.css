@@ -15,6 +15,7 @@
      --bg, so it clears AA at the small size the section headings use. */
   --accent: #7c6553;
   --accent-wash: rgba(124, 101, 83, 0.07);
+  --rule: rgba(26, 26, 26, 0.13);
 
   /* The OS interface face on each platform, ending in the generic `sans-serif`.
      That last entry is what carries the multilingual strategy: when a reader
@@ -40,6 +41,7 @@
     --bg: #141413;
     --accent: #b49780;
     --accent-wash: rgba(180, 151, 128, 0.10);
+    --rule: rgba(232, 232, 229, 0.16);
   }
 
   /* Light text on a dark ground optically gains weight, so subpixel rendering
@@ -141,7 +143,6 @@ a:focus-visible {
   padding: 0.85rem;
   margin: -0.85rem;
   border-radius: 3px;
-  transition: background-color 120ms ease;
 }
 
 .work:hover { background-color: var(--accent-wash); }
@@ -181,19 +182,23 @@ nav ul {
   gap: 1.75rem;
 }
 
-/* Profile links belong to the name, so they take the header's spacing rather
-   than the section-sized gap a standalone nav needs. */
-header nav { margin-top: 1.1rem; }
+/* Profile links belong to the name, so they sit at the same remove from the
+   tagline that the tagline sits from the name — one block, three lines. */
+header nav { margin-top: 0.35rem; }
 
+/* The rule is the width of the text column, since the footer is inside the
+   same measure as every paragraph. */
 footer {
   margin-top: var(--space-section);
+  padding-top: 1.75rem;
+  border-top: 1px solid var(--rule);
   font-size: 0.8125rem;
   color: var(--fg-muted);
 }
 
 /* Where a nav already ended the page, the footer closes it rather than
    starting a new block. */
-nav + footer { margin-top: 2.75rem; }
+nav + footer { margin-top: 3rem; }
 
 footer p { margin: 0; }
 
