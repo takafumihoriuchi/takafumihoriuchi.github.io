@@ -10,6 +10,12 @@
   --fg-muted: #6b6b68;
   --bg: #fdfdfc;
 
+  /* Desaturated brown, picked to sit at the same lightness as --fg-muted so
+     that adding it changes the hue of the page and not its rhythm. 5.37:1 on
+     --bg, so it clears AA at the small size the section headings use. */
+  --accent: #7c6553;
+  --accent-wash: rgba(124, 101, 83, 0.07);
+
   /* The OS interface face on each platform, ending in the generic `sans-serif`.
      That last entry is what carries the multilingual strategy: when a reader
      translates the page, the browser resolves `sans-serif` to the OS default
@@ -32,6 +38,8 @@
     --fg: #e8e8e5;
     --fg-muted: #96968f;
     --bg: #141413;
+    --accent: #b49780;
+    --accent-wash: rgba(180, 151, 128, 0.10);
   }
 
   /* Light text on a dark ground optically gains weight, so subpixel rendering
@@ -81,7 +89,7 @@ h2 {
   font-weight: 600;
   letter-spacing: 0.14em;
   text-transform: uppercase;
-  color: var(--fg-muted);
+  color: var(--accent);
 }
 
 /* Keeps a lone word off the last line. Ignored where unsupported. */
@@ -118,9 +126,11 @@ a:focus-visible {
 /* Works listing on the index. The whole card is the link target, so the
    underline is moved onto the title alone rather than every line of text. */
 .works { margin: 0; padding: 0; list-style: none; }
-.works li { margin-bottom: 2.25rem; }
+.works li { margin-bottom: 3rem; }
 .works li:last-child { margin-bottom: 0; }
 
+/* Padded, then pulled back out by the same amount, so the hover wash extends
+   past the text without shifting the text off the page's alignment. */
 .work {
   display: grid;
   grid-template-columns: minmax(0, 11rem) 1fr;
@@ -128,7 +138,13 @@ a:focus-visible {
   align-items: start;
   color: inherit;
   text-decoration: none;
+  padding: 0.85rem;
+  margin: -0.85rem;
+  border-radius: 3px;
+  transition: background-color 120ms ease;
 }
+
+.work:hover { background-color: var(--accent-wash); }
 
 .work img { width: 100%; }
 
@@ -164,6 +180,14 @@ nav ul {
   flex-wrap: wrap;
   gap: 1.75rem;
 }
+
+footer {
+  margin-top: 2.75rem;
+  font-size: 0.8125rem;
+  color: var(--fg-muted);
+}
+
+footer p { margin: 0; }
 
 /* Media. Unused on the home page, present so that work pages can carry images
    without reworking the layout. `.bleed` widens a figure past the text column

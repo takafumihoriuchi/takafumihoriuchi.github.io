@@ -56,13 +56,14 @@
 
   <section>
     <h2>Overview</h2>
-    <p class="lead">The player types a few words. While the game is still running, an AI turns them into a brand-new Pokémon species — art, name, typing, base stats, and moves — and registers it as a first-class species. You meet it in the tall grass, catch it, nickname it, and raise it like any other.</p>
+    <p class="lead">Mid-play, in a window inside the game itself, the player types a few words. While the game is still running, an AI turns them into a brand-new Pokémon species — art, name, typing, base stats, and moves — and registers it as a first-class species. You meet it in the tall grass, catch it, nickname it, and raise it like any other.</p>
     <p>Nothing is pre-authored. The species that ends up in the save file has never existed before and exists nowhere else.</p>
+    <p>Part of what games have always offered is the making of something that is yours. What that has meant in practice is a choice from a fixed set. This project exists to test whether generative AI makes <em>yours</em> literally true — and, more to the point, whether something literally yours is something a player actually grows attached to.</p>
   </section>
 
   <section>
     <h2>Walkthrough</h2>
-    <p>An old woman in Petalburg Woods offers to dream up a Pokémon for you. Her husband stands beside her, and talking to him instead generates a species with no input from you at all — whichever of the two you speak to first locks in the mode for that playthrough.</p>
+    <p>Talking to an old woman in Petalburg Woods starts the sequence. You describe the creature you have in mind; the words are turned into a species while you carry on playing; and a few minutes later it is waiting in the tall grass — to be encountered, caught, and used from then on exactly like anything else in the game. All of it is made on the spot: the name, the typing, the base stats, the move set, both battle sprites, and the party icon.</p>
 
     <div class="shots">
       <figure>
@@ -71,7 +72,7 @@
       </figure>
       <figure>
         <img src="assets/02-easy-chat-input.webp" width="560" height="373" alt="The Easy Chat entry screen titled &quot;Picture the creature:&quot; with the words BEAUTIFUL, ATTACK and FIRE entered.">
-        <figcaption>You give her six words through Emerald's own Easy Chat system — no mod UI, no external launcher.</figcaption>
+        <figcaption>You give her six words through Emerald's own Easy Chat system.</figcaption>
       </figure>
       <figure>
         <img src="assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="The player stands in the woods beside tall grass. A dialogue box reads: The tall grass is rustling… Something is in there!">
@@ -99,7 +100,6 @@
       </figure>
     </div>
 
-    <p>Everything from the fourth frame onward — the name, the typing, the base stats, the move set, both battle sprites and the party icon — was produced minutes earlier from three words.</p>
     <p class="note muted">A full run, end to end, is recorded here: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
   </section>
 
@@ -107,7 +107,7 @@
     <h2>Why this, and not a creature generator</h2>
     <p>The interesting problem is not whether an AI can invent a Pokémon. It is whether it can invent one the game can absorb without falling apart. Left to itself, a generator produces something either unusable — a 900-point stat monster that trivialises the game — or unpleasant: a malformed sprite that stops reading as a creature at all.</p>
     <p>So the design work here is not the creature. It is the space the creature is generated inside: the stat bands, the rules of move legality, the silhouettes that survive a 64×64 sprite, the vocabulary the player is even allowed to describe with. The model explores that space. It does not get to define it.</p>
-    <p>This project is where the position on <a href="../../">the front page</a> stops being an argument and becomes something I had to build: define the goals, values, constraints, and boundaries that shape a design space, then let the generation happen inside it.</p>
+    <p>This project is where <a href="../../">my design philosophy</a> stops being an argument and gets put to the test: define the goals, values, constraints, and boundaries that shape a design space, let the generation happen inside it, and find out whether the result holds together.</p>
   </section>
 
   <section>
@@ -164,6 +164,10 @@
       <li><a href="../../">Index</a></li>
     </ul>
   </nav>
+
+  <footer>
+    <p>© 2026 Takafumi Horiuchi</p>
+  </footer>
 
 </main>
 </body>
