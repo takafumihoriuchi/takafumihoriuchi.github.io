@@ -1,0 +1,151 @@
+/* Shared by every page. Design values are custom properties so the site can be
+   retuned in one place; a page that needs more than this baseline should load
+   its own assets in its <head> rather than growing this file.
+
+   System fonts are deliberate: they render every writing system the reader's
+   OS supports, which is what makes browser translation legible. */
+
+:root {
+  --fg: #1a1a1a;
+  --fg-muted: #6b6b68;
+  --bg: #fdfdfc;
+
+  /* The OS interface face on each platform, ending in the generic `sans-serif`.
+     That last entry is what carries the multilingual strategy: when a reader
+     translates the page, the browser resolves `sans-serif` to the OS default
+     for whatever script it just produced. Naming a Japanese or Arabic face
+     here would privilege one language over the rest — the generic keeps them
+     equal. */
+  --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+          Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  --text: 1.0625rem;
+  --leading: 1.75;
+
+  --measure: 36rem;   /* text column */
+  --wide: 60rem;      /* upper bound for media that breaks out of it */
+  --space-para: 1.25rem;
+  --space-section: 4.5rem;
+}
+
+@media (prefers-color-scheme: dark) {
+  :root {
+    --fg: #e8e8e5;
+    --fg-muted: #96968f;
+    --bg: #141413;
+  }
+
+  /* Light text on a dark ground optically gains weight, so subpixel rendering
+     reads as too heavy here. This is the one place thinning it helps; in light
+     mode the browser default is left alone deliberately. */
+  body { -webkit-font-smoothing: antialiased; }
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  padding: 5rem 1.5rem 7rem;
+  background: var(--bg);
+  color: var(--fg);
+  font-family: var(--font);
+  font-size: var(--text);
+  line-height: var(--leading);
+}
+
+main {
+  max-width: var(--measure);
+  margin: 0 auto;
+}
+
+h1 {
+  margin: 0;
+  font-size: 1.5rem;
+  font-weight: 600;
+  letter-spacing: -0.01em;   /* large type needs less tracking, not more */
+  line-height: 1.3;
+  text-wrap: balance;
+}
+
+.tagline {
+  margin: 0.35rem 0 0;
+  color: var(--fg-muted);
+}
+
+section { margin-top: var(--space-section); }
+
+h2 {
+  margin: 0 0 1rem;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  text-transform: uppercase;
+  color: var(--fg-muted);
+}
+
+/* Keeps a lone word off the last line. Ignored where unsupported. */
+p { margin: 0 0 var(--space-para); text-wrap: pretty; }
+p:last-child { margin-bottom: 0; }
+
+.muted { color: var(--fg-muted); }
+
+a {
+  color: inherit;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--fg-muted);
+}
+
+a:hover { text-decoration-color: currentColor; }
+
+a:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+  border-radius: 2px;
+}
+
+/* Decorative marker for outbound links — a symbol, not prose, so it stays in
+   CSS without putting text out of reach of translation. */
+.ext::after {
+  content: "\2197";
+  margin-left: 0.15em;
+  font-size: 0.85em;
+  color: var(--fg-muted);
+}
+
+nav { margin-top: var(--space-section); }
+
+nav ul {
+  margin: 0;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.75rem;
+}
+
+/* Media. Unused on the home page, present so that work pages can carry images
+   without reworking the layout. `.bleed` widens a figure past the text column
+   while keeping it centred on the same axis. */
+
+img, video, figure > svg {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+figure { margin: var(--space-section) 0; }
+
+figcaption {
+  margin-top: 0.75rem;
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
+
+.bleed {
+  --bleed: min(92vw, var(--wide));
+  width: var(--bleed);
+  margin-left: calc(50% - var(--bleed) / 2);
+}
