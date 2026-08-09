@@ -1,0 +1,159 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>My Own Pokémon Generation — Takafumi Horiuchi</title>
+<meta name="description" content="A research prototype in which a player's few words become a brand-new Pokémon species at runtime — and the framework that constrains what the AI is allowed to invent.">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:title" content="My Own Pokémon Generation">
+<meta property="og:description" content="Constraint-bounded AI generation inside a game's own systems.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
+<style>
+  /* Page-scoped: this work needs images and a numbered sequence, which the
+     shared stylesheet has no reason to carry. */
+  ol { margin: 0; padding-left: 1.4em; }
+  ol li { margin-bottom: 0.75rem; }
+  ol li:last-child { margin-bottom: 0; }
+  ul.plain { margin: 0 0 var(--space-para); padding-left: 1.4em; }
+  ul.plain li { margin-bottom: 0.75rem; }
+  ul.plain li:last-child { margin-bottom: 0; }
+  .lead { font-size: 1.125rem; }
+  .note { font-size: 0.9375rem; }
+  .pair { display: flex; flex-wrap: wrap; gap: 1.5rem; }
+  .pair img { flex: 1 1 16rem; min-width: 0; }
+  .pair figcaption { flex-basis: 100%; }
+  .colophon {
+    margin-top: var(--space-section);
+    font-size: 0.875rem;
+    color: var(--fg-muted);
+  }
+</style>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>My Own Pokémon Generation</h1>
+    <p class="tagline">2026 · Research prototype built on pokeemerald</p>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p class="lead">The player types a few words. While the game is still running, an AI turns them into a brand-new Pokémon species — art, name, typing, base stats, and moves — and registers it as a first-class species. You meet it in the tall grass, catch it, nickname it, and raise it like any other.</p>
+    <p>Nothing is pre-authored. The species that ends up in the save file has never existed before and exists nowhere else.</p>
+  </section>
+
+  <section>
+    <h2>Why this, and not a creature generator</h2>
+    <p>The interesting problem is not whether an AI can invent a Pokémon. It is whether it can invent one the game can absorb without falling apart. Left to itself, a generator produces something either unusable — a 900-point stat monster that trivialises the game — or unpleasant: a malformed sprite that stops reading as a creature at all.</p>
+    <p>So the design work here is not the creature. It is the space the creature is generated inside: the stat bands, the rules of move legality, the silhouettes that survive a 64×64 sprite, the vocabulary the player is even allowed to describe with. The model explores that space. It does not get to define it.</p>
+    <p>This project is where the position on <a href="../../">the front page</a> stops being an argument and becomes something I had to build: define the goals, values, constraints, and boundaries that shape a design space, then let the generation happen inside it.</p>
+  </section>
+
+  <section>
+    <h2>The framework is the research</h2>
+    <p>The LLM never writes freely. It fills slots in a fixed schema, and every output is re-checked by a validator. Violations are sent back for regeneration together with the specific rule that was broken.</p>
+    <p><strong>Balance constraints</strong> keep the game playable. Base stats are held to a fixed band — 280–360, roughly starter tier — with per-stat ranges, and out-of-band specifications are rejected outright. Moves are auto-extracted from the pokeemerald source, then filtered to the species' own type or Normal, with one-hit-KO moves, self-destruct effects, and fixed or overpowered damage removed. The resulting set is checked for soundness: enough attacking moves, at least one same-type attack, at most one high-power move. Level assignments are made deterministically by the framework, not the model. Everything else is pinned — one ability per type, fixed catch rate, growth curve, gender ratio, TM compatibility — so individual variation stays confined to the schema slots and runs remain comparable.</p>
+    <p><strong>Appearance constraints</strong> keep the output from breaking down. Body plans come from a whitelist of silhouettes that survive a 64×64 sprite: quadruped, rodent, bird, lizard. Colour is chosen from a named whitelist, and the Pokédex body colour is derived mechanically. Features are limited to one to three short canned phrases, with a blocklist rejecting human features, blood, weapons, and text. The framework composes the final prompt itself and appends a fixed epilogue: one creature, full body, coherent anatomy, no extra limbs, calm expression.</p>
+    <p>It works, and it can be watched working. In one recorded run the model proposed a base stat total of 380; the validator pushed back three times — 380, 360, 340 — until the specification landed inside the band at 320.</p>
+  </section>
+
+  <section>
+    <h2>How it runs</h2>
+    <p>The game itself generates nothing. A resident Python process on the PC does the work, and the two halves talk through a file mailbox that an mGBA Lua script polls every frame.</p>
+    <ol>
+      <li><strong>Text.</strong> A local model (<code>qwen3:8b</code>) turns the words into a validated species record.</li>
+      <li><strong>Image.</strong> An image model renders a reference illustration, then three character-consistent views: the front battle sprite, the back sprite, and the party icon.</li>
+      <li><strong>Convert.</strong> The art is quantised to a shared 15-colour palette and converted into pokeemerald's sprite format.</li>
+      <li><strong>Encode.</strong> Sprites become GBA binaries — 4bpp and 1bpp tiles, <code>gbapal</code> palettes, BIOS-compatible LZ77 compression.</li>
+      <li><strong>Inject.</strong> The binaries are written into a reserved region of the ROM.</li>
+    </ol>
+    <p>Writing to the cartridge at runtime means the running instance picks up the new species without a reset, and the identical byte sequence goes to disk so the change survives a reload.</p>
+    <p>What appears is persistent and irreversible. It roams: flee or lose, and it stays in the world. Knock it out, and it is gone for good.</p>
+  </section>
+
+  <section>
+    <h2>Walkthrough</h2>
+
+    <figure class="bleed">
+      <img src="assets/01-npc-conversation.webp" width="960" height="640" alt="An elderly couple stand in Petalburg Woods. A dialogue box reads: Say… what sort of creature do you imagine it to be?">
+      <figcaption>In Petalburg Woods, an old woman offers to dream up a Pokémon for you. Her husband stands beside her; talking to him instead generates a species with no input from you at all, and whichever you speak to first locks in the mode for that playthrough.</figcaption>
+    </figure>
+
+    <figure class="bleed">
+      <img src="assets/02-easy-chat-input.webp" width="960" height="640" loading="lazy" decoding="async" alt="The Easy Chat entry screen titled &quot;Picture the creature:&quot; with the words BEAUTIFUL, ATTACK and FIRE entered.">
+      <figcaption>You give her six words through Emerald's own Easy Chat system — the interface the game already uses for mail and trainer profiles. No mod UI, no external launcher.</figcaption>
+    </figure>
+
+    <figure class="bleed">
+      <img src="assets/03-generation-ready.webp" width="960" height="640" loading="lazy" decoding="async" alt="The player stands in the woods beside tall grass. A dialogue box reads: The tall grass is rustling… Something is in there!">
+      <figcaption>Generation runs on the PC for a few minutes while you keep walking around. A cry signals that it is ready, and the encounter is armed.</figcaption>
+    </figure>
+
+    <figure class="bleed">
+      <img src="assets/04-wild-encounter.webp" width="960" height="640" loading="lazy" decoding="async" alt="A battle screen. A red lizard with a flame on its head faces the player. The text reads: Wild FLAMEREL appeared!">
+      <figcaption>FLAMEREL, a Fire-type lizard, appears in the rustling grass. Its name, typing, stats, moves, and every sprite on screen were produced minutes earlier from three words.</figcaption>
+    </figure>
+
+    <figure class="bleed">
+      <img src="assets/05-capture.webp" width="960" height="640" loading="lazy" decoding="async" alt="A Poké Ball is thrown at FLAMEREL during the battle.">
+      <figcaption>It can be caught with a Poké Ball, like any other species.</figcaption>
+    </figure>
+
+    <figure class="bleed">
+      <img src="assets/06-nickname.webp" width="960" height="640" loading="lazy" decoding="async" alt="The naming screen asking for FLAMEREL's nickname, with GGG entered.">
+      <figcaption>It can be nicknamed, like any other species.</figcaption>
+    </figure>
+
+    <figure class="bleed">
+      <img src="assets/07-party.webp" width="960" height="640" loading="lazy" decoding="async" alt="The party screen showing the generated species alongside three ordinary Pokémon, with its own party icon.">
+      <figcaption>It sits in the party, drawn with its own generated icon, like any other species.</figcaption>
+    </figure>
+
+    <figure class="bleed">
+      <img src="assets/08-status.webp" width="960" height="640" loading="lazy" decoding="async" alt="The Pokémon Info screen for FLAMEREL, showing Fire type, the Blaze ability, a naughty nature, and met at Level 7 in Petalburg Woods.">
+      <figcaption>Its summary screen works, like any other species — Fire type, the Blaze ability, a naughty nature, met at Level 7 in Petalburg Woods.</figcaption>
+    </figure>
+
+    <p class="note muted">A full run, end to end, is recorded here: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
+  </section>
+
+  <section>
+    <h2>Implementation</h2>
+    <p>The generator, the constraint framework, the GBA encoders, and the game-side patch are published in full: <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a>.</p>
+  </section>
+
+  <section>
+    <h2>Postscript — on attachment</h2>
+    <p>The prototype settles a technical question. Behind it sits the one I actually care about: does a Pokémon generated for you, existing nowhere else, come to mean more than one that shipped with the game?</p>
+    <p>From playing my own build — a sample of one, and worth reading as nothing more — two conditions seem to govern the answer.</p>
+    <ul class="plain">
+      <li><strong>Quality.</strong> Attachment seems to need the generated thing to clear a threshold. Below it, the fact that something is unique and yours does not carry the feeling on its own.</li>
+      <li><strong>How much of you went into it.</strong> Entering six words is participation, but a thin kind: what comes back feels delivered rather than made. What appears to matter is not the volume of input but its character — effort, iteration, room to revise, and some responsibility for how it turned out.</li>
+    </ul>
+    <p>A case from outside the game speaks to both. Working by hand with ChatGPT, going back and forth until I was satisfied, I designed a species of my own — Hanagitsune. I am attached to it. It cleared the quality bar, and I had made it rather than requested it.</p>
+
+    <figure class="bleed pair" style="--wide: 46rem">
+      <img src="assets/hanagitsune-front.webp" width="800" height="800" loading="lazy" decoding="async" alt="Hanagitsune, front view: a pale green fox whose tail is a cascade of flowering vines.">
+      <img src="assets/hanagitsune-back.webp" width="800" height="800" loading="lazy" decoding="async" alt="Hanagitsune, back view, showing the full length of the flowering tail.">
+      <figcaption>Hanagitsune — a guardian of the forest, with a tail in bloom. Grass and flowers spring up wherever it has run, calling new life even into barren ground. Its figure is taken as a sign of the forest growing toward its future.</figcaption>
+    </figure>
+
+    <p>Both conditions are addressable. Better models and a more carefully designed prompt framework move the first; a deeper crafting process — choosing, revising, rejecting — moves the second. That is where this goes next.</p>
+    <p>So the prototype's result is not a verdict on the question. It is the question made measurable: two variables that can now be moved deliberately and watched.</p>
+  </section>
+
+  <p class="colophon">Built on the <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> decompilation as personal research. No ROM, ROM patch, or game asset is distributed, and every sprite here is AI-generated original art. Pokémon is a trademark of Nintendo, Creatures Inc. and GAME FREAK Inc.; this project is unaffiliated with and unendorsed by them.</p>
+
+  <nav aria-label="Site">
+    <ul>
+      <li><a href="../../">Index</a></li>
+    </ul>
+  </nav>
+
+</main>
+</body>
+</html>
