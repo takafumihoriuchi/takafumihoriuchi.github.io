@@ -105,6 +105,24 @@ h2 {
 p { margin: 0 0 var(--space-para); text-wrap: pretty; }
 p:last-child { margin-bottom: 0; }
 
+/* Body text is set justified, so far in English only.
+
+   `hyphens: auto` is not decoration here, it is what makes justification
+   readable. A flush right edge has to be paid for somewhere, and without
+   word-internal breaks the browser pays in word spacing — at this measure that
+   opens gaps wide enough to line up vertically and pull the eye down the page.
+   Hyphenation spreads the cost into the words instead. The dictionary comes
+   from the `lang` attribute, which is why every page declares one.
+
+   Scoped to paragraphs inside sections: the tagline, the captions and the
+   footer are one or two lines, and justifying a block that short stretches its
+   only full line for no gain. */
+:lang(en) section p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 .muted { color: var(--fg-muted); }
 
 a {

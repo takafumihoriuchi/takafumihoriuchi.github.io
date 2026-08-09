@@ -19,6 +19,16 @@ ul.plain li:last-child { margin-bottom: 0; }
 .lead { font-size: 1.125rem; }
 .note { font-size: 0.9375rem; }
 
+/* These list items are running prose, not labels — the postscript entries are
+   full paragraphs — so they take the same justification the paragraphs around
+   them do. See the note in style.css for why hyphenation comes with it. */
+:lang(en) ol li,
+:lang(en) ul.plain li {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
 .shots, .pair {
   display: grid;
   grid-template-columns: 1fr 1fr;
