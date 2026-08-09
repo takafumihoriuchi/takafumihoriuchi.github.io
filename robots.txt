@@ -1,0 +1,13 @@
+# Everything is open. Naming individual crawlers here would add nothing —
+# `Allow: /` already covers them — while leaving a list that goes stale every
+# time one of them is renamed.
+#
+# works/_template/ and og-card.html are deliberately NOT disallowed. Both carry
+# <meta name="robots" content="noindex">, and a crawler has to be allowed to
+# fetch a page in order to read that tag. Blocking them here would keep the
+# noindex from ever being seen.
+
+User-agent: *
+Allow: /
+
+Sitemap: https://takafumihoriuchi.github.io/sitemap.xml

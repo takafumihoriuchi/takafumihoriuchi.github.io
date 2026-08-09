@@ -6,6 +6,7 @@
 <meta name="robots" content="noindex">
 <title>Work Title — Takafumi Horiuchi</title>
 <meta name="description" content="One sentence describing this work.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/works/<slug>/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../style.css">
 <!-- Absolute URLs are required here: crawlers do not resolve relative paths.
@@ -23,6 +24,38 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="What the share image shows.">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Replace <slug>, the name, the description and datePublished. Claim nothing
+     the page does not visibly say. Drop `isBasedOn` if the work is not built on
+     something else. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "AI × Cognitive Engineering × Design",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/works/<slug>/#work",
+      "name": "Work Title",
+      "url": "https://takafumihoriuchi.github.io/works/<slug>/",
+      "description": "One sentence describing this work.",
+      "image": "https://takafumihoriuchi.github.io/works/<slug>/assets/og.jpg",
+      "datePublished": "YYYY-MM",
+      "inLanguage": "en",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
+}
+</script>
 </head>
 <body>
 <main>

@@ -5,6 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>My Own Pokémon Generation — Takafumi Horiuchi</title>
 <meta name="description" content="A research prototype in which a player's few words become a brand-new Pokémon species at runtime — and the framework that constrains what the AI is allowed to invent.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../style.css">
 <!-- Absolute URLs, as on the index: crawlers do not resolve relative paths. -->
@@ -20,6 +21,40 @@
 <meta property="og:image:height" content="630">
 <meta property="og:image:alt" content="An elderly woman in Petalburg Woods asks the player: Say… what sort of creature do you imagine it to be?">
 <meta name="twitter:card" content="summary_large_image">
+<!-- The Person node is repeated here rather than only referenced, so this page
+     stands on its own when it is read in isolation — which is the normal case
+     for a work page. The shared @id is what ties the two copies together as
+     one entity; see index.html for why the node is kept this small. -->
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "AI × Cognitive Engineering × Design",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/#work",
+      "name": "My Own Pokémon Generation",
+      "url": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/",
+      "description": "A research prototype in which a player's few words become a brand-new Pokémon species at runtime — and the framework that constrains what the AI is allowed to invent.",
+      "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
+      "datePublished": "2026-07",
+      "inLanguage": "en",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" },
+      "isBasedOn": "https://github.com/pret/pokeemerald"
+    }
+  ]
+}
+</script>
 <style>
   /* Page-scoped: this work needs image grids and a numbered sequence, which
      the shared stylesheet has no reason to carry. Both grids are two columns
