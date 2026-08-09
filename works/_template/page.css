@@ -24,9 +24,22 @@
    covers Safari before 17, where the reader would otherwise get justification
    with no hyphenation — the failure this pairing exists to prevent.
 
+   Set for every language rather than a listed few: a language with no
+   dictionary simply gets no hyphenation, and CJK and Arabic are not hyphenated
+   at all, so declaring it costs them nothing.
+
    Extend the selector if the work adds other blocks of running prose. */
-:lang(en) section p {
+section p {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+
+/* Indonesian is the exception: no hyphenation dictionary, and the language
+   builds long words by affixing (menangkapnya, membesarkannya), so lines that
+   cannot break inside them pay the whole slack in word spacing. Ragged reads
+   better than a flush edge bought that way. `start`, not `left`, so the rule
+   still means the right thing in a right-to-left context. */
+:lang(id) section p {
+  text-align: start;
 }

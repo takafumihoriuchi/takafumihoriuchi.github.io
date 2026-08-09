@@ -38,13 +38,34 @@ ul.plain li:last-child { margin-bottom: 0; }
    The lists are included because they are running prose, not labels: the
    postscript entries are full paragraphs. Captions, the byline and the
    colophon are left ragged — one to three lines, where justifying stretches a
-   line and buys nothing. */
-:lang(en) section p,
-:lang(en) ol li,
-:lang(en) ul.plain li {
+   line and buys nothing.
+
+   Both are set for every language rather than a listed few. Hyphenation is
+   driven by the `lang` attribute, so a language with no dictionary simply gets
+   none, and CJK and Arabic are not hyphenated at all — declaring it costs them
+   nothing and means nothing has to be revisited if a dictionary appears. */
+section p,
+ol li,
+ul.plain li {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
+}
+
+/* Indonesian is the one language where the pairing does not hold, so it is
+   left ragged. The browser has no hyphenation dictionary for it, and the
+   language builds long words by affixing — menangkapnya, membesarkannya and
+   mendaftarkannya are ordinary words, not outliers. A line that cannot break
+   inside them pays the whole slack in word spacing, and the result was visibly
+   looser than every other language here. A ragged edge reads better than a
+   flush one bought that way. Revisit if a dictionary appears.
+
+   `start`, not `left`, so the rule would still mean the right thing if a
+   right-to-left language ever needed the same treatment. */
+:lang(id) section p,
+:lang(id) ol li,
+:lang(id) ul.plain li {
+  text-align: start;
 }
 
 .shots, .pair {
