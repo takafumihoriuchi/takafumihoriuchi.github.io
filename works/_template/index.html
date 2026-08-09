@@ -9,6 +9,10 @@
 <link rel="canonical" href="https://takafumihoriuchi.github.io/works/<slug>/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../style.css">
+<!-- Layout this work needs that the site does not. Lives beside the assets,
+     not inline, because twelve language versions would otherwise carry twelve
+     copies of it. Delete this line if the work needs no extra layout. -->
+<link rel="stylesheet" href="page.css">
 <!-- Absolute URLs are required here: crawlers do not resolve relative paths.
      Replace <slug> throughout, and put a 1200×630 assets/og.jpg in place —
      without it a shared link arrives as a blank card. -->
@@ -62,7 +66,13 @@
 
   <header>
     <h1>Work Title</h1>
-    <p class="tagline">Year · Role · One-line framing</p>
+    <p class="tagline">by <a class="byline" href="../../">Takafumi Horiuchi</a> · Month Year</p>
+    <nav aria-label="Profiles elsewhere">
+      <ul>
+        <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+        <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+      </ul>
+    </nav>
   </header>
 
   <section>
@@ -92,6 +102,10 @@
       <li><a class="ext" href="https://github.com/takafumihoriuchi">Repository</a></li>
     </ul>
   </nav>
+
+  <footer>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
 
 </main>
 </body>

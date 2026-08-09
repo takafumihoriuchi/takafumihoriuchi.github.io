@@ -1,0 +1,214 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>世界上独一无二的宝可梦 — 堀内 贵文</title>
+<meta name="description" content="一个研究原型：玩家的几个词在游戏运行过程中变成一种全新的宝可梦，以及那个限定 AI 能创造什么的框架。">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/my-own-pokemon-generation/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/my-own-pokemon-generation/page.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="世界上独一无二的宝可梦">
+<meta property="og:description" content="在游戏自身的系统之内，进行受约束限定的 AI 生成。">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/my-own-pokemon-generation/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="橙华森林里，一位老婆婆问玩家：你心里想的是什么样的生物？">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 贵文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "AI × 认知工程 × 设计",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/my-own-pokemon-generation/#work",
+      "name": "世界上独一无二的宝可梦",
+      "url": "https://takafumihoriuchi.github.io/zh-Hans/works/my-own-pokemon-generation/",
+      "description": "一个研究原型：玩家的几个词在游戏运行过程中变成一种全新的宝可梦，以及那个限定 AI 能创造什么的框架。",
+      "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
+      "datePublished": "2026-07",
+      "inLanguage": "zh-Hans",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" },
+      "isBasedOn": "https://github.com/pret/pokeemerald"
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>世界上独一无二的宝可梦</h1>
+    <p class="tagline">作者：<a class="byline" href="../../">堀内 贵文（Takafumi Horiuchi）</a>・2026年7月</p>
+    <nav aria-label="其他平台的主页">
+      <ul>
+        <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+        <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+      </ul>
+    </nav>
+  </header>
+
+  <section>
+    <h2>概览</h2>
+    <p class="lead">游戏进行到一半，在游戏自身打开的一个窗口里，玩家输入几个词。游戏仍在运行的同时，AI 把这些词变成一种全新的宝可梦——立绘、名字、属性、种族值、招式——并将其登录为正式的种族。你会在草丛里遇到它，捕捉它，给它取昵称，像养任何一只宝可梦那样把它养大。</p>
+    <p>没有任何东西是事先写好的。最终留在存档里的那个种族此前从未存在过，别处也不存在。</p>
+    <p>游戏一直以来提供的东西里，有一部分是「做出属于自己的东西」。但实际上，那意味着从一组固定的选项里挑选。这个项目的存在，是为了检验生成式 AI 能否让「属于自己」变成字面意义上的真实——更关键的是，字面意义上属于自己的东西，玩家是否真的会对它产生依恋。</p>
+  </section>
+
+  <section>
+    <h2>完整流程</h2>
+    <p>一切从在橙华森林里跟一位老婆婆搭话开始。你描述心里想到的那种生物；在你继续游玩的过程中，这些词被转化成一个种族；几分钟后它已经在草丛里等着了——可以遭遇、可以捕捉，此后就跟游戏里其他任何东西一样使用。全部都是当场生成的：名字、属性、种族值、招式组合、正反两面的战斗贴图，以及队伍图标。</p>
+
+    <div class="shots">
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="橙华森林里站着一对老夫妇。对话框写着：说说看……你心里想的是什么样的生物？">
+        <figcaption>跟老婆婆搭话，一切由此开始。</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="标题为「想象中的生物：」的简易对话输入界面，已输入 BEAUTIFUL、ATTACK、FIRE 三个词。">
+        <figcaption>通过《绿宝石》自带的简易对话系统，交给她六个词。</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="玩家站在森林里的草丛旁。对话框写着：草丛在动……里面有东西！">
+        <figcaption>生成在电脑上跑几分钟。一声叫声提示它已经准备好了。</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="战斗画面。一只头顶带火的红色蜥蜴面对玩家。文字写着：野生的 FLAMEREL 出现了！">
+        <figcaption>火属性蜥蜴 FLAMEREL，从摇动的草丛中出现。</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="战斗中，一颗精灵球被扔向 FLAMEREL。">
+        <figcaption>可以用精灵球捕捉，跟其他种族一样。</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="询问 FLAMEREL 昵称的命名界面，已输入 GGG。">
+        <figcaption>可以取昵称，跟其他种族一样。</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="队伍界面上，生成的种族带着自己的图标，与三只普通宝可梦并排。">
+        <figcaption>带着自己的图标待在队伍里，跟其他种族一样。</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="FLAMEREL 的宝可梦信息界面：火属性、猛火特性、顽皮性格、在橙华森林以 7 级相遇。">
+        <figcaption>状态界面正常工作，跟其他种族一样。</figcaption>
+      </figure>
+    </div>
+
+    <p class="note muted">完整一轮的记录在这里： <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a></p>
+  </section>
+
+  <section>
+    <h2>为什么不是一个「生物生成器」</h2>
+    <p>有意思的问题不在于 AI 能不能想出一只宝可梦，而在于它能不能想出一只游戏可以吸收、且吸收之后不会散架的宝可梦。放任不管的话，生成器给出的要么是没法用的东西——一只种族值合计 900 的怪物，让游戏失去意义——要么是让人不适的东西：一张崩坏到读不出是生物的贴图。</p>
+    <p>所以这里的设计工作不是那只生物，而是它被生成于其中的那个空间：种族值的区间、招式合法性的规则、能在 64×64 贴图里存活下来的剪影、玩家甚至被允许用来描述的词汇。模型探索这个空间，但轮不到它来定义这个空间。</p>
+    <p>这个项目正是<a href="../../">我的设计哲学</a>不再只是主张、而被拿去检验的地方：定义塑造设计空间的目标、价值、约束与边界，让生成在其中发生，然后看结果站不站得住。</p>
+  </section>
+
+  <section>
+    <h2>框架本身就是研究对象</h2>
+    <p>大语言模型从不自由书写。它只是填充一个固定 schema 中的空位，而每一次输出都会由一个校验器重新检查。违反规则的输出会连同「具体违反了哪一条」一起被退回重新生成。</p>
+    <p><strong>平衡约束</strong>让游戏保持可玩。种族值合计被限制在一个固定区间内——280 到 360，大致是御三家的水准——每项能力也各有范围，超出区间的方案会被直接驳回。招式从 pokeemerald 的源码中自动抽取，再筛选到该种族自身的属性或一般属性，并去掉一击必杀技、自爆类效果，以及固定伤害或威力过高的招式。剩下的集合还要接受合理性检查：攻击招式是否足够、是否至少有一个与自身属性一致的攻击招式、高威力招式是否不超过一个。等级的分配由框架确定性地决定，而不是由模型决定。其余一切都被固定下来——每种属性一个特性、捕获率、经验类型、性别比例、招式学习器兼容性——这样个体差异就被限制在 schema 的空位之内，各次运行之间仍然可以比较。</p>
+    <p><strong>外观约束</strong>防止输出崩坏。体型来自一份能在 64×64 贴图里存活的剪影白名单：四足、啮齿类、鸟类、蜥蜴。颜色从一份具名的白名单中选取，图鉴体色由此机械地导出。特征限定为一到三个简短的既定短语，并由一份屏蔽清单排除人类特征、血、武器与文字。最终提示词由框架自己组装，并附上一段固定的结尾：只有一只生物、全身、解剖结构合理、没有多余肢体、表情平静。</p>
+    <p>它是有效的，而且能看到它生效的过程。在一次被记录下来的运行中，模型提出的种族值合计是 380；校验器退回了三次——380、360、340——直到方案落在区间之内的 320。</p>
+  </section>
+
+  <section>
+    <h2>运行方式</h2>
+    <p>游戏本身什么也不生成。干活的是电脑上常驻的一个 Python 进程，两边通过一个文件信箱交谈，而 mGBA 里的一段 Lua 脚本每一帧都去查看它。</p>
+    <ol>
+      <li><strong>文本。</strong>本地模型（<code>qwen3:8b</code>）把词语变成一份经过校验的种族记录。</li>
+      <li><strong>图像。</strong>图像模型先画出一张参考插画，再据此生成三张角色一致的视图：正面战斗贴图、背面贴图，以及队伍图标。</li>
+      <li><strong>转换。</strong>把画量化到一份共用的 15 色调色板上，并转换成 pokeemerald 的贴图格式。</li>
+      <li><strong>编码。</strong>贴图变成 GBA 的二进制数据：4bpp 与 1bpp 的图块、<code>gbapal</code> 调色板，以及与 BIOS 兼容的 LZ77 压缩。</li>
+      <li><strong>注入。</strong>把二进制数据写入 ROM 中预留的区域。</li>
+    </ol>
+    <p>在运行时写入卡带，意味着正在运行的实例不必重启就能接收到这个新种族；同样的字节序列也会写到磁盘上，所以这个改动在重新载入之后依然存在。</p>
+    <p>出现的东西是持久且不可撤销的。它会在世界里游荡：逃跑也好、战败也好，它都留在世界里。一旦把它打倒，就永远没有了。</p>
+  </section>
+
+  <section>
+    <h2>实现</h2>
+    <p>生成器、约束框架、GBA 编码器，以及游戏侧的补丁，全部公开： <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a></p>
+  </section>
+
+  <section>
+    <h2>后记——关于依恋</h2>
+    <p>这个原型了结的是一个技术问题。在它后面的，才是我真正在意的问题：一只为你而生成、别处并不存在的宝可梦，最终会比游戏里原本就有的那些更有分量吗？</p>
+    <p>从玩自己做的这个版本来看——样本数为一，不值得读出更多——似乎有两个条件在左右这个答案。</p>
+    <ul class="plain">
+      <li><strong>你自己投入了多少。</strong>输入六个词是一种参与，但很薄：回来的东西感觉像是被交付的，而不是被做出来的。真正起作用的似乎不是输入的量，而是它的性质——花的功夫、反复、可以修改的余地，以及对最终结果承担的那一点责任。</li>
+      <li><strong>质量。</strong>依恋似乎要求生成物越过某个门槛。达不到的话，「它独一无二且属于你」这个事实本身撑不起那种感情。</li>
+    </ul>
+    <p>游戏之外有一个例子同时说明了这两点。我用手工的方式和 ChatGPT 反复来回，直到自己满意为止，设计了一个属于我自己的种族——花狐（Hanagitsune）。我对它有依恋。因为那是我做出来的，而不是我要来的；而且做出来的东西越过了质量的门槛。</p>
+
+    <figure class="pair">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="花狐正面：一只淡绿色的狐狸，尾巴是一串垂落的开花藤蔓。">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="花狐背面，可以看到开花尾巴的完整长度。">
+      <figcaption>花狐——森林的守护者，尾巴上开满了花。它跑过的地方会长出草与花，即使在贫瘠的土地上也能唤来新的生命。人们把它的身影看作森林正朝着自己的未来生长的征兆。</figcaption>
+    </figure>
+
+    <p>这两个条件都是可以着手的。更深的制作过程——选择、修改、否决——能推动第一个；更好的模型与设计得更用心的提示词框架，能推动第二个。接下来要去的就是那里。</p>
+    <p>所以这个原型的结果不是对那个问题的判决，而是把那个问题变成了可测量的东西：两个如今可以刻意去改动、并加以观察的变量。</p>
+  </section>
+
+  <p class="colophon">作为个人研究，基于 <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> 的反编译成果制作。不分发任何 ROM、ROM 补丁或游戏素材，此处所有贴图均为 AI 生成的原创作品。宝可梦是任天堂、Creatures Inc. 与 GAME FREAK Inc. 的商标；本项目与这些公司没有关联，也未获得其认可。</p>
+
+  <nav aria-label="站点">
+    <ul>
+      <li><a href="../../">首页</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/my-own-pokemon-generation/">English</a></li>
+      <li><span lang="zh-Hans" translate="no" aria-current="true">中文（简体）</span></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/my-own-pokemon-generation/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/my-own-pokemon-generation/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/my-own-pokemon-generation/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/my-own-pokemon-generation/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/my-own-pokemon-generation/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/my-own-pokemon-generation/">日本語</a></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/my-own-pokemon-generation/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/my-own-pokemon-generation/">Deutsch</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/my-own-pokemon-generation/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/my-own-pokemon-generation/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>

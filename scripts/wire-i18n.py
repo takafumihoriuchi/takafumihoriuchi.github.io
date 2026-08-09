@@ -27,7 +27,7 @@ ALT_RE = re.compile(
 )
 SWITCHER_RE = re.compile(r'[ \t]*<ul class="langs">.*?</ul>\n', re.S)
 CANONICAL_RE = re.compile(r'[ \t]*<link rel="canonical" href="[^"]*">\n')
-COPYRIGHT_RE = re.compile(r'([ \t]*)<p>© ')
+COPYRIGHT_RE = re.compile(r'([ \t]*)<p>(?:<span dir="ltr">)?© ')
 
 
 def alternates(page: str) -> str:
