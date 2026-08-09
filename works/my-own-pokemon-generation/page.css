@@ -8,7 +8,9 @@
    twelfth would eventually stop matching the first. Language versions differ;
    the layout of the work does not. */
 
-ol { margin: 0; padding-inline-start: 1.4em; }
+/* The same bottom margin a paragraph carries. Without it the list ran straight
+   into the paragraph after it, since paragraphs here have no top margin. */
+ol { margin: 0 0 var(--space-para); padding-inline-start: 1.4em; }
 ol li { margin-bottom: 0.75rem; }
 ol li:last-child { margin-bottom: 0; }
 
