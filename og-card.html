@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="robots" content="noindex">
+<title>Share card source — Takafumi Horiuchi</title>
+<!-- Source for og.png, not a page of the site. Rendered to a 1200×630 PNG with
+     headless Chrome; see OPERATIONS.md §7 for the command.
+
+     The design tokens are duplicated from style.css rather than linked, so that
+     re-rendering the card can never be affected by a later change to the shared
+     stylesheet — a share card that silently shifts after it has been cached is
+     worse than one that has to be updated deliberately. -->
+<style>
+  :root {
+    --fg: #1a1a1a;
+    --fg-muted: #6b6b68;
+    --bg: #fdfdfc;
+    --accent: #7c6553;
+    --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
+            Arial, "Noto Sans", "Liberation Sans", sans-serif;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --fg: #e8e8e5;
+      --fg-muted: #96968f;
+      --bg: #141413;
+      --accent: #b49780;
+    }
+    body { -webkit-font-smoothing: antialiased; }
+  }
+
+  * { box-sizing: border-box; }
+
+  body {
+    margin: 0;
+    width: 1200px;
+    height: 630px;
+    background: var(--bg);
+    color: var(--fg);
+    font-family: var(--font);
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    /* The domain line at the bottom adds visual mass there, so the name block
+       is lifted by roughly half its height to keep the composition centred. */
+    padding: 0 96px 56px;
+  }
+
+  h1 {
+    margin: 0;
+    font-size: 76px;
+    font-weight: 600;
+    letter-spacing: -0.02em;   /* large type needs less tracking, not more */
+    line-height: 1.1;
+  }
+
+  .tagline {
+    margin: 20px 0 0;
+    font-size: 32px;
+    line-height: 1.4;
+    color: var(--fg-muted);
+  }
+
+  /* The treatment the site gives its section headings, so the card speaks the
+     page's own visual language rather than inventing a second one. */
+  .domain {
+    position: absolute;
+    left: 96px;
+    bottom: 72px;
+    font-size: 20px;
+    font-weight: 600;
+    letter-spacing: 0.14em;
+    text-transform: uppercase;
+    color: var(--accent);
+  }
+</style>
+</head>
+<body>
+  <h1>Takafumi Horiuchi</h1>
+  <p class="tagline">AI × Cognitive Engineering × Design</p>
+  <span class="domain">takafumihoriuchi.github.io</span>
+</body>
+</html>
