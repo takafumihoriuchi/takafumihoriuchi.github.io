@@ -117,10 +117,15 @@ a:focus-visible {
 }
 
 /* Decorative marker for outbound links — a symbol, not prose, so it stays in
-   CSS without putting text out of reach of translation. */
+   CSS without putting text out of reach of translation.
+
+   `margin-inline-start`, not `margin-left`: the marker follows the text, and
+   in a right-to-left language the text ends on the left. Logical properties
+   are used throughout this file for the same reason — nothing here means
+   "left", it means "where the line begins". */
 .ext::after {
   content: "\2197";
-  margin-left: 0.15em;
+  margin-inline-start: 0.15em;
   font-size: 0.85em;
   color: var(--fg-muted);
 }
@@ -223,5 +228,31 @@ figcaption {
 .bleed {
   --bleed: min(92vw, var(--wide));
   width: var(--bleed);
-  margin-left: calc(50% - var(--bleed) / 2);
+  margin-inline-start: calc(50% - var(--bleed) / 2);
 }
+
+/* Per-script adjustments. Only where a value tuned for Latin text actively
+   misreads elsewhere — not a place to re-tune the design per language. */
+
+/* Arabic joins its letters into words, so tracking does not open the script
+   up, it pulls the joins apart. Both the negative tracking on the name and
+   the wide tracking on the section headings come off. `text-transform:
+   uppercase` is inert in Arabic and can stay where it is. */
+:lang(ar) h1,
+:lang(ar) h2 { letter-spacing: normal; }
+
+/* The language switcher sits in the footer, above the copyright line. Each
+   name is written in its own language, so each anchor carries its own `lang`
+   and is marked `translate="no"` — otherwise page translation turns 日本語
+   into "Japanese" and the reader looking for it cannot find it. The current
+   language is plain text rather than a link to itself. */
+.langs {
+  margin: 0 0 1rem;
+  padding: 0;
+  list-style: none;
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem 1.1rem;
+}
+
+.langs [aria-current] { color: var(--fg); }
