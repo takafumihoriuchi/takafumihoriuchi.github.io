@@ -12,8 +12,9 @@
 <meta property="og:description" content="Constraint-bounded AI generation inside a game's own systems.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
 <style>
-  /* Page-scoped: this work needs images and a numbered sequence, which the
-     shared stylesheet has no reason to carry. */
+  /* Page-scoped: this work needs image grids and a numbered sequence, which
+     the shared stylesheet has no reason to carry. Both grids are two columns
+     wide inside the text measure, so images line up with the paragraphs. */
   ol { margin: 0; padding-left: 1.4em; }
   ol li { margin-bottom: 0.75rem; }
   ol li:last-child { margin-bottom: 0; }
@@ -22,9 +23,22 @@
   ul.plain li:last-child { margin-bottom: 0; }
   .lead { font-size: 1.125rem; }
   .note { font-size: 0.9375rem; }
-  .pair { display: flex; flex-wrap: wrap; gap: 1.5rem; }
-  .pair img { flex: 1 1 16rem; min-width: 0; }
-  .pair figcaption { flex-basis: 100%; }
+
+  .shots, .pair {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 2rem 1rem;
+    margin: 2.5rem 0;
+  }
+  .shots figure { margin: 0; }
+  .shots img, .pair img { width: 100%; }
+  .shots figcaption, .pair figcaption { margin-top: 0.6rem; }
+  .pair figcaption { grid-column: 1 / -1; }
+
+  @media (max-width: 32rem) {
+    .shots, .pair { grid-template-columns: 1fr; }
+  }
+
   .colophon {
     margin-top: var(--space-section);
     font-size: 0.875rem;
@@ -37,13 +51,56 @@
 
   <header>
     <h1>My Own Pokémon Generation</h1>
-    <p class="tagline">2026 · Research prototype built on pokeemerald</p>
+    <p class="tagline">August 2026 · Research prototype built on pokeemerald</p>
   </header>
 
   <section>
     <h2>Overview</h2>
     <p class="lead">The player types a few words. While the game is still running, an AI turns them into a brand-new Pokémon species — art, name, typing, base stats, and moves — and registers it as a first-class species. You meet it in the tall grass, catch it, nickname it, and raise it like any other.</p>
     <p>Nothing is pre-authored. The species that ends up in the save file has never existed before and exists nowhere else.</p>
+  </section>
+
+  <section>
+    <h2>Walkthrough</h2>
+    <p>An old woman in Petalburg Woods offers to dream up a Pokémon for you. Her husband stands beside her, and talking to him instead generates a species with no input from you at all — whichever of the two you speak to first locks in the mode for that playthrough.</p>
+
+    <div class="shots">
+      <figure>
+        <img src="assets/01-npc-conversation.webp" width="560" height="373" alt="An elderly couple stand in Petalburg Woods. A dialogue box reads: Say… what sort of creature do you imagine it to be?">
+        <figcaption>Talking to the old woman starts it.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/02-easy-chat-input.webp" width="560" height="373" alt="The Easy Chat entry screen titled &quot;Picture the creature:&quot; with the words BEAUTIFUL, ATTACK and FIRE entered.">
+        <figcaption>You give her six words through Emerald's own Easy Chat system — no mod UI, no external launcher.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="The player stands in the woods beside tall grass. A dialogue box reads: The tall grass is rustling… Something is in there!">
+        <figcaption>Generation runs on the PC for a few minutes. A cry signals that it is ready.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="A battle screen. A red lizard with a flame on its head faces the player. The text reads: Wild FLAMEREL appeared!">
+        <figcaption>FLAMEREL, a Fire-type lizard, appears in the rustling grass.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="A Poké Ball is thrown at FLAMEREL during the battle.">
+        <figcaption>It can be caught with a Poké Ball, like any other species.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="The naming screen asking for FLAMEREL's nickname, with GGG entered.">
+        <figcaption>It can be nicknamed, like any other species.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="The party screen showing the generated species alongside three ordinary Pokémon, with its own party icon.">
+        <figcaption>It sits in the party with its own icon, like any other species.</figcaption>
+      </figure>
+      <figure>
+        <img src="assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="The Pokémon Info screen for FLAMEREL, showing Fire type, the Blaze ability, a naughty nature, and met at Level 7 in Petalburg Woods.">
+        <figcaption>Its summary screen works, like any other species.</figcaption>
+      </figure>
+    </div>
+
+    <p>Everything from the fourth frame onward — the name, the typing, the base stats, the move set, both battle sprites and the party icon — was produced minutes earlier from three words.</p>
+    <p class="note muted">A full run, end to end, is recorded here: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
   </section>
 
   <section>
@@ -76,52 +133,6 @@
   </section>
 
   <section>
-    <h2>Walkthrough</h2>
-
-    <figure class="bleed">
-      <img src="assets/01-npc-conversation.webp" width="960" height="640" alt="An elderly couple stand in Petalburg Woods. A dialogue box reads: Say… what sort of creature do you imagine it to be?">
-      <figcaption>In Petalburg Woods, an old woman offers to dream up a Pokémon for you. Her husband stands beside her; talking to him instead generates a species with no input from you at all, and whichever you speak to first locks in the mode for that playthrough.</figcaption>
-    </figure>
-
-    <figure class="bleed">
-      <img src="assets/02-easy-chat-input.webp" width="960" height="640" loading="lazy" decoding="async" alt="The Easy Chat entry screen titled &quot;Picture the creature:&quot; with the words BEAUTIFUL, ATTACK and FIRE entered.">
-      <figcaption>You give her six words through Emerald's own Easy Chat system — the interface the game already uses for mail and trainer profiles. No mod UI, no external launcher.</figcaption>
-    </figure>
-
-    <figure class="bleed">
-      <img src="assets/03-generation-ready.webp" width="960" height="640" loading="lazy" decoding="async" alt="The player stands in the woods beside tall grass. A dialogue box reads: The tall grass is rustling… Something is in there!">
-      <figcaption>Generation runs on the PC for a few minutes while you keep walking around. A cry signals that it is ready, and the encounter is armed.</figcaption>
-    </figure>
-
-    <figure class="bleed">
-      <img src="assets/04-wild-encounter.webp" width="960" height="640" loading="lazy" decoding="async" alt="A battle screen. A red lizard with a flame on its head faces the player. The text reads: Wild FLAMEREL appeared!">
-      <figcaption>FLAMEREL, a Fire-type lizard, appears in the rustling grass. Its name, typing, stats, moves, and every sprite on screen were produced minutes earlier from three words.</figcaption>
-    </figure>
-
-    <figure class="bleed">
-      <img src="assets/05-capture.webp" width="960" height="640" loading="lazy" decoding="async" alt="A Poké Ball is thrown at FLAMEREL during the battle.">
-      <figcaption>It can be caught with a Poké Ball, like any other species.</figcaption>
-    </figure>
-
-    <figure class="bleed">
-      <img src="assets/06-nickname.webp" width="960" height="640" loading="lazy" decoding="async" alt="The naming screen asking for FLAMEREL's nickname, with GGG entered.">
-      <figcaption>It can be nicknamed, like any other species.</figcaption>
-    </figure>
-
-    <figure class="bleed">
-      <img src="assets/07-party.webp" width="960" height="640" loading="lazy" decoding="async" alt="The party screen showing the generated species alongside three ordinary Pokémon, with its own party icon.">
-      <figcaption>It sits in the party, drawn with its own generated icon, like any other species.</figcaption>
-    </figure>
-
-    <figure class="bleed">
-      <img src="assets/08-status.webp" width="960" height="640" loading="lazy" decoding="async" alt="The Pokémon Info screen for FLAMEREL, showing Fire type, the Blaze ability, a naughty nature, and met at Level 7 in Petalburg Woods.">
-      <figcaption>Its summary screen works, like any other species — Fire type, the Blaze ability, a naughty nature, met at Level 7 in Petalburg Woods.</figcaption>
-    </figure>
-
-    <p class="note muted">A full run, end to end, is recorded here: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
-  </section>
-
-  <section>
     <h2>Implementation</h2>
     <p>The generator, the constraint framework, the GBA encoders, and the game-side patch are published in full: <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a>.</p>
   </section>
@@ -136,9 +147,9 @@
     </ul>
     <p>A case from outside the game speaks to both. Working by hand with ChatGPT, going back and forth until I was satisfied, I designed a species of my own — Hanagitsune. I am attached to it. It cleared the quality bar, and I had made it rather than requested it.</p>
 
-    <figure class="bleed pair" style="--wide: 46rem">
-      <img src="assets/hanagitsune-front.webp" width="800" height="800" loading="lazy" decoding="async" alt="Hanagitsune, front view: a pale green fox whose tail is a cascade of flowering vines.">
-      <img src="assets/hanagitsune-back.webp" width="800" height="800" loading="lazy" decoding="async" alt="Hanagitsune, back view, showing the full length of the flowering tail.">
+    <figure class="pair">
+      <img src="assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune, front view: a pale green fox whose tail is a cascade of flowering vines.">
+      <img src="assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune, back view, showing the full length of the flowering tail.">
       <figcaption>Hanagitsune — a guardian of the forest, with a tail in bloom. Grass and flowers spring up wherever it has run, calling new life even into barren ground. Its figure is taken as a sign of the forest growing toward its future.</figcaption>
     </figure>
 
