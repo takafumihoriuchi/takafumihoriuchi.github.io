@@ -19,42 +19,8 @@ import re
 import sys
 from pathlib import Path
 
-SITE = "https://takafumihoriuchi.github.io"
-
-# Display order is global reach, which is also the order the switcher uses.
-# `dir` is only set where it differs from the document default.
-# (code, directory, endonym, dir)
-LANGS = [
-    ("en",      "",        "English",          None),
-    ("zh-Hans", "zh-Hans", "中文（简体）",       None),
-    ("zh-Hant", "zh-Hant", "中文（繁體）",       None),
-    ("es",      "es",      "Español",          None),
-    ("ar",      "ar",      "العربية",           "rtl"),
-    ("pt",      "pt",      "Português",        None),
-    ("fr",      "fr",      "Français",         None),
-    ("ja",      "ja",      "日本語",             None),
-    ("ru",      "ru",      "Русский",          None),
-    ("de",      "de",      "Deutsch",          None),
-    ("id",      "id",      "Bahasa Indonesia", None),
-    ("eo",      "eo",      "Esperanto",        None),
-]
-
-# Page groups: one entry per translatable page, as a path suffix under a
-# language root. Add a line here when a work page is added.
-PAGES = [
-    "",
-    "works/my-own-pokemon-generation/",
-]
-
-DEFAULT_LANG = "en"          # occupies the site root and the x-default slot
-
-
-def page_path(root: Path, lang_dir: str, page: str) -> Path:
-    return root / lang_dir / page / "index.html"
-
-
-def page_url(lang_dir: str, page: str) -> str:
-    return f"{SITE}/" + "".join(p for p in (lang_dir and lang_dir + "/", page) if p)
+sys.path.insert(0, str(Path(__file__).resolve().parent))
+from langs import LANGS, PAGES, DEFAULT_LANG, page_url  # noqa: E402
 
 
 def attr(tag: str, name: str):
@@ -62,7 +28,8 @@ def attr(tag: str, name: str):
     return html.unescape(m.group(1)) if m else None
 
 
-def check() -> list:
+def check(langs=None) -> list:
+    langs = langs or LANGS
     root = Path(__file__).resolve().parent.parent
     problems = []
 
@@ -70,17 +37,15 @@ def check() -> list:
         problems.append(f"{where}: {msg}")
 
     for page in PAGES:
-        expected_alts = {}
-        for code, d, _, _ in LANGS:
-            expected_alts[code] = page_url(d, page)
+        expected_alts = {code: page_url(d, page) for code, d, _, _ in langs}
         expected_alts["x-default"] = page_url("", page)
 
         # Section shape is compared against the default language, which is the
         # source the translations are made from.
         reference_h2 = None
 
-        for code, d, endonym, direction in LANGS:
-            path = page_path(root, d, page)
+        for code, d, endonym, direction in langs:
+            path = root / d / page / "index.html"
             where = str(path.relative_to(root))
 
             if not path.exists():
@@ -89,7 +54,6 @@ def check() -> list:
 
             src = path.read_text(encoding="utf-8")
 
-            # <html lang> and dir
             m = re.search(r"<html\b[^>]*>", src)
             if not m:
                 bad(where, "no <html> tag")
@@ -99,7 +63,6 @@ def check() -> list:
             if attr(m.group(0), "dir") != direction:
                 bad(where, f'<html dir> is {attr(m.group(0), "dir")!r}, expected {direction!r}')
 
-            # canonical and og:url must both point at this page
             want = page_url(d, page)
             canon = next(
                 (attr(t, "href") for t in re.findall(r"<link\b[^>]*>", src)
@@ -113,7 +76,13 @@ def check() -> list:
             if og_url != want:
                 bad(where, f"og:url is {og_url!r}, expected {want!r}")
 
-            # hreflang set must be complete and identical on every version;
+            og_locale = next(
+                (attr(t, "content") for t in re.findall(r"<meta\b[^>]*>", src)
+                 if attr(t, "property") == "og:locale"), None)
+            if not og_locale:
+                bad(where, "og:locale missing")
+
+            # The alternates must be complete and identical on every version;
             # one missing link silently voids the whole cluster.
             alts = {}
             for tag in re.findall(r"<link\b[^>]*>", src):
@@ -127,14 +96,16 @@ def check() -> list:
             for k in alts.keys() - expected_alts.keys():
                 bad(where, f"hreflang {k} is not a language of this site")
 
-            # Switcher: every language present, current one not a link.
-            for c2, d2, endo2, _ in LANGS:
+            # Switcher: every language present, the current one not a link.
+            for c2, _, endo2, _ in langs:
                 if c2 == code:
                     continue
-                if f'href="{page_url(d2, page)}"' not in src and endo2 not in src:
+                if f'lang="{c2}" hreflang="{c2}"' not in src:
                     bad(where, f"language switcher has no entry for {c2}")
+            if f'lang="{code}" translate="no" aria-current' not in src:
+                bad(where, "language switcher does not mark the current language")
 
-            # Shape: same number of sections and headings as the source.
+            # Shape: same number of headings as the source language.
             h2 = len(re.findall(r"<h2\b", src))
             if code == DEFAULT_LANG:
                 reference_h2 = h2

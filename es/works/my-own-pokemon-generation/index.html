@@ -1,0 +1,207 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mi Pokémon único en el mundo — Takafumi Horiuchi</title>
+<meta name="description" content="Un prototipo de investigación en el que unas pocas palabras del jugador se convierten en una especie de Pokémon completamente nueva en tiempo de ejecución, y el marco que limita lo que la IA puede inventar.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/my-own-pokemon-generation/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="es_ES">
+<meta property="og:title" content="Mi Pokémon único en el mundo">
+<meta property="og:description" content="Generación por IA acotada por restricciones, dentro de los propios sistemas del juego.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Una anciana en el Bosque Petalia pregunta al jugador: ¿qué clase de criatura te imaginas?">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "IA × Ingeniería Cognitiva × Diseño",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/#work",
+      "name": "Mi Pokémon único en el mundo",
+      "url": "https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/",
+      "description": "Un prototipo de investigación en el que unas pocas palabras del jugador se convierten en una especie de Pokémon completamente nueva en tiempo de ejecución, y el marco que limita lo que la IA puede inventar.",
+      "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
+      "datePublished": "2026-07",
+      "inLanguage": "es",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" },
+      "isBasedOn": "https://github.com/pret/pokeemerald"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/my-own-pokemon-generation/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Mi Pokémon único en el mundo</h1>
+    <p class="tagline">por <a class="byline" href="../../">Takafumi Horiuchi</a> · julio de 2026</p>
+  </header>
+
+  <section>
+    <h2>Resumen</h2>
+    <p class="lead">A mitad de la partida, en una ventana dentro del propio juego, el jugador escribe unas pocas palabras. Con el juego aún en marcha, una IA las convierte en una especie de Pokémon completamente nueva —ilustración, nombre, tipo, estadísticas base y movimientos— y la registra como una especie de pleno derecho. La encuentras en la hierba alta, la capturas, le pones mote y la crías como a cualquier otra.</p>
+    <p>Nada está escrito de antemano. La especie que acaba en la partida guardada no había existido nunca y no existe en ningún otro sitio.</p>
+    <p>Parte de lo que los videojuegos siempre han ofrecido es hacer algo que sea tuyo. En la práctica, eso ha significado elegir dentro de un conjunto fijo. Este proyecto existe para comprobar si la IA generativa hace que <em>tuyo</em> sea literalmente cierto y, sobre todo, si algo literalmente tuyo es algo a lo que un jugador llega a tomar cariño.</p>
+  </section>
+
+  <section>
+    <h2>Recorrido</h2>
+    <p>Todo empieza al hablar con una anciana en el Bosque Petalia. Describes la criatura que tienes en mente; esas palabras se convierten en una especie mientras sigues jugando; y unos minutos después está esperando en la hierba alta, lista para ser encontrada, capturada y usada a partir de entonces exactamente igual que cualquier otra cosa del juego. Todo se fabrica en el momento: el nombre, el tipo, las estadísticas base, el conjunto de movimientos, los dos sprites de combate y el icono del equipo.</p>
+
+    <div class="shots">
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="Una pareja de ancianos en el Bosque Petalia. Un cuadro de diálogo dice: Dime… ¿qué clase de criatura te imaginas?">
+        <figcaption>Hablar con la anciana lo pone en marcha.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="La pantalla de entrada del Diálogo Fácil, titulada «Imagina la criatura:», con las palabras BEAUTIFUL, ATTACK y FIRE introducidas.">
+        <figcaption>Le das seis palabras mediante el propio sistema de Diálogo Fácil de Esmeralda.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="El jugador está en el bosque junto a la hierba alta. Un cuadro de diálogo dice: ¡La hierba alta se mueve…! ¡Hay algo ahí dentro!">
+        <figcaption>La generación tarda unos minutos en el PC. Un grito avisa de que está lista.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="Pantalla de combate. Un lagarto rojo con una llama en la cabeza se enfrenta al jugador. El texto dice: ¡Un FLAMEREL salvaje apareció!">
+        <figcaption>FLAMEREL, un lagarto de tipo fuego, aparece en la hierba que se movía.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="Se lanza una Poké Ball a FLAMEREL durante el combate.">
+        <figcaption>Se puede capturar con una Poké Ball, como cualquier otra especie.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="La pantalla que pide un mote para FLAMEREL, con GGG introducido.">
+        <figcaption>Se le puede poner mote, como a cualquier otra especie.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="La pantalla del equipo, con la especie generada junto a tres Pokémon corrientes y con su propio icono.">
+        <figcaption>Ocupa su sitio en el equipo con su propio icono, como cualquier otra especie.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="La pantalla de información de FLAMEREL: tipo fuego, habilidad Mar Llamas, naturaleza pícara, encontrado al nivel 7 en el Bosque Petalia.">
+        <figcaption>Su pantalla de resumen funciona, como la de cualquier otra especie.</figcaption>
+      </figure>
+    </div>
+
+    <p class="note muted">Aquí hay una partida completa, de principio a fin: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
+  </section>
+
+  <section>
+    <h2>Por qué esto y no un generador de criaturas</h2>
+    <p>El problema interesante no es si una IA puede inventar un Pokémon. Es si puede inventar uno que el juego sea capaz de absorber sin romperse. Abandonado a su suerte, un generador produce o bien algo inservible —un monstruo de 900 puntos de estadísticas que trivializa el juego— o bien algo desagradable: un sprite deforme que deja de leerse como criatura.</p>
+    <p>Así que el trabajo de diseño aquí no es la criatura. Es el espacio dentro del cual se genera: las bandas de estadísticas, las reglas de legalidad de los movimientos, las siluetas que sobreviven a un sprite de 64×64, el vocabulario con el que al jugador se le permite siquiera describir. El modelo explora ese espacio. No llega a definirlo.</p>
+    <p>Este proyecto es donde <a href="../../">mi filosofía de diseño</a> deja de ser un argumento y se pone a prueba: definir los objetivos, valores, restricciones y límites que dan forma a un espacio de diseño, dejar que la generación ocurra dentro de él y averiguar si el resultado se sostiene.</p>
+  </section>
+
+  <section>
+    <h2>El marco es la investigación</h2>
+    <p>El LLM nunca escribe libremente. Rellena huecos de un esquema fijo, y cada salida vuelve a ser revisada por un validador. Las infracciones se devuelven para regenerarse junto con la regla concreta que se ha incumplido.</p>
+    <p>Las <strong>restricciones de equilibrio</strong> mantienen el juego jugable. El total de estadísticas base se ciñe a una banda fija —de 280 a 360, más o menos el nivel de un inicial— con rangos por estadística, y las especificaciones fuera de banda se rechazan de plano. Los movimientos se extraen automáticamente del código de pokeemerald y luego se filtran al tipo propio de la especie o a Normal, eliminando los movimientos de KO fulminante, los efectos de autodestrucción y el daño fijo o desmedido. El conjunto resultante se comprueba por coherencia: suficientes movimientos ofensivos, al menos un ataque del mismo tipo, como mucho un movimiento de alta potencia. La asignación de niveles la hace el marco de forma determinista, no el modelo. Todo lo demás queda fijado —una habilidad por tipo, ratio de captura, curva de crecimiento, proporción de géneros, compatibilidad con MT— de modo que la variación individual se queda confinada a los huecos del esquema y las ejecuciones siguen siendo comparables.</p>
+    <p>Las <strong>restricciones de apariencia</strong> impiden que la salida se descomponga. Los planes corporales salen de una lista blanca de siluetas que sobreviven a un sprite de 64×64: cuadrúpedo, roedor, ave, lagarto. El color se elige de una lista blanca con nombres, y el color corporal de la Pokédex se deriva mecánicamente. Los rasgos se limitan a entre una y tres frases cortas prefijadas, con una lista negra que rechaza rasgos humanos, sangre, armas y texto. El marco compone él mismo la instrucción final y le añade un epílogo fijo: una sola criatura, cuerpo entero, anatomía coherente, sin extremidades de más, expresión serena.</p>
+    <p>Funciona, y se puede ver funcionando. En una ejecución registrada, el modelo propuso un total de estadísticas base de 380; el validador lo devolvió tres veces —380, 360, 340— hasta que la especificación aterrizó dentro de la banda, en 320.</p>
+  </section>
+
+  <section>
+    <h2>Cómo funciona</h2>
+    <p>El juego en sí no genera nada. El trabajo lo hace un proceso de Python residente en el PC, y las dos mitades se hablan a través de un buzón de archivos que un script de Lua en mGBA consulta en cada fotograma.</p>
+    <ol>
+      <li><strong>Texto.</strong> Un modelo local (<code>qwen3:8b</code>) convierte las palabras en un registro de especie validado.</li>
+      <li><strong>Imagen.</strong> Un modelo de imagen dibuja una ilustración de referencia y, a partir de ella, tres vistas coherentes entre sí: el sprite frontal de combate, el trasero y el icono del equipo.</li>
+      <li><strong>Conversión.</strong> El arte se cuantiza a una paleta común de 15 colores y se convierte al formato de sprites de pokeemerald.</li>
+      <li><strong>Codificación.</strong> Los sprites pasan a binarios de GBA: tiles de 4bpp y 1bpp, paletas <code>gbapal</code> y compresión LZ77 compatible con la BIOS.</li>
+      <li><strong>Inyección.</strong> Los binarios se escriben en una región reservada de la ROM.</li>
+    </ol>
+    <p>Escribir en el cartucho en tiempo de ejecución significa que la instancia en marcha recoge la especie nueva sin reiniciar, y que la misma secuencia de bytes va al disco, de modo que el cambio sobrevive a una recarga.</p>
+    <p>Lo que aparece es permanente e irreversible. Deambula: si huyes o pierdes, se queda en el mundo. Si lo debilitas, se pierde para siempre.</p>
+  </section>
+
+  <section>
+    <h2>Implementación</h2>
+    <p>El generador, el marco de restricciones, los codificadores de GBA y el parche del lado del juego están publicados por completo: <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a>.</p>
+  </section>
+
+  <section>
+    <h2>Posdata — sobre el apego</h2>
+    <p>El prototipo zanja una cuestión técnica. Detrás de ella está la que de verdad me importa: un Pokémon generado para ti, que no existe en ningún otro sitio, ¿acaba significando más que uno que venía con el juego?</p>
+    <p>De jugar a mi propia versión —una muestra de uno, y no conviene leerla como nada más— parecen desprenderse dos condiciones que gobiernan la respuesta.</p>
+    <ul class="plain">
+      <li><strong>Cuánto de ti ha entrado en ello.</strong> Escribir seis palabras es participar, pero de una forma delgada: lo que vuelve se siente entregado más que hecho. Lo que parece importar no es el volumen de la aportación, sino su carácter: esfuerzo, iteración, margen para revisar y alguna responsabilidad sobre cómo ha salido.</li>
+      <li><strong>Calidad.</strong> El apego parece necesitar que lo generado supere un umbral. Por debajo de él, que algo sea único y tuyo no sostiene el sentimiento por sí solo.</li>
+    </ul>
+    <p>Un caso de fuera del juego habla de las dos. Trabajando a mano con ChatGPT, yendo y viniendo hasta quedar satisfecho, diseñé una especie propia: Hanagitsune. Le tengo cariño. La había hecho en lugar de encargarla, y lo que salió superaba el listón de calidad.</p>
+
+    <figure class="pair">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune, de frente: un zorro verde pálido cuya cola es una cascada de enredaderas en flor.">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune, de espaldas, con toda la longitud de la cola florida a la vista.">
+      <figcaption>Hanagitsune: guardián del bosque, con la cola en flor. Allí por donde ha corrido brotan hierba y flores, y llama a la vida incluso en tierra yerma. Su figura se toma como señal de que el bosque crece hacia su futuro.</figcaption>
+    </figure>
+
+    <p>Ambas condiciones son abordables. Un proceso de creación más hondo —elegir, revisar, descartar— mueve la primera; mejores modelos y un marco de instrucciones diseñado con más cuidado mueven la segunda. Ahí es donde sigue esto.</p>
+    <p>Así que el resultado del prototipo no es un veredicto sobre la pregunta. Es la pregunta hecha medible: dos variables que ahora pueden moverse a propósito y observarse.</p>
+  </section>
+
+  <p class="colophon">Construido sobre la descompilación <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> como investigación personal. No se distribuye ninguna ROM, parche de ROM ni recurso del juego, y todos los sprites que aparecen aquí son arte original generado por IA. Pokémon es una marca registrada de Nintendo, Creatures Inc. y GAME FREAK Inc.; este proyecto no está afiliado a ellas ni cuenta con su respaldo.</p>
+
+  <nav aria-label="Sitio">
+    <ul>
+      <li><a href="../../">Inicio</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/my-own-pokemon-generation/">English</a></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../../zh-Hans/works/my-own-pokemon-generation/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/my-own-pokemon-generation/">中文（繁體）</a></li>
+      <li><span lang="es" translate="no" aria-current="true">Español</span></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/my-own-pokemon-generation/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/my-own-pokemon-generation/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/my-own-pokemon-generation/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/my-own-pokemon-generation/">日本語</a></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/my-own-pokemon-generation/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/my-own-pokemon-generation/">Deutsch</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/my-own-pokemon-generation/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/my-own-pokemon-generation/">Esperanto</a></li>
+    </ul>
+    <p>© 2026 Takafumi Horiuchi</p>
+  </footer>
+
+</main>
+</body>
+</html>

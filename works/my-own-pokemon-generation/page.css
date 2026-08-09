@@ -1,0 +1,41 @@
+/* Styles this one work needs and the rest of the site has no reason to carry:
+   image grids and a numbered sequence. Both grids are two columns wide inside
+   the text measure, so images line up with the paragraphs.
+
+   This lives beside the work's assets rather than inside each page's <head>,
+   because the work has twelve language versions and they are maintained by
+   hand. Inline, this block would be twelve copies of the same rules, and the
+   twelfth would eventually stop matching the first. Language versions differ;
+   the layout of the work does not. */
+
+ol { margin: 0; padding-inline-start: 1.4em; }
+ol li { margin-bottom: 0.75rem; }
+ol li:last-child { margin-bottom: 0; }
+
+ul.plain { margin: 0 0 var(--space-para); padding-inline-start: 1.4em; }
+ul.plain li { margin-bottom: 0.75rem; }
+ul.plain li:last-child { margin-bottom: 0; }
+
+.lead { font-size: 1.125rem; }
+.note { font-size: 0.9375rem; }
+
+.shots, .pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem 1rem;
+  margin: 2.5rem 0;
+}
+.shots figure { margin: 0; }
+.shots img, .pair img { width: 100%; }
+.shots figcaption, .pair figcaption { margin-top: 0.6rem; }
+.pair figcaption { grid-column: 1 / -1; }
+
+@media (max-width: 32rem) {
+  .shots, .pair { grid-template-columns: 1fr; }
+}
+
+.colophon {
+  margin-top: var(--space-section);
+  font-size: 0.875rem;
+  color: var(--fg-muted);
+}
