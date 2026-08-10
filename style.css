@@ -78,16 +78,21 @@ h1 {
   text-wrap: balance;
 }
 
-.tagline {
+/* The line under the heading, in both of its jobs: the theme of the site on
+   the index, the credit on a work page. Same treatment, since both are the
+   quiet line that qualifies the heading above them. */
+.tagline,
+.dateline {
   margin: 0.35rem 0 0;
   color: var(--fg-muted);
 }
 
-/* Work pages are signed under the title. The name is lifted out of the muted
-   line because it says whose work this is, which the date beside it does not;
-   the date stays metadata. The name also carries the way home from the top of
-   the page, which is what lets these pages go on without the header the site
-   has deliberately done without. Only the name is the link. */
+/* Work pages are signed under the title, and the signature runs over two
+   lines: who made it, then when. The name is lifted out of the muted line
+   because it says whose work this is, which the date does not — the date is
+   metadata and stays below on its own. The name also carries the way home from
+   the top of the page, which is what lets these pages go on without the header
+   the site has deliberately done without. Only the name is the link. */
 .byline { color: var(--fg); }
 
 section { margin-top: var(--space-section); }
@@ -227,9 +232,40 @@ nav ul {
   gap: 1.75rem;
 }
 
-/* Profile links belong to the name, so they sit at the same remove from the
-   tagline that the tagline sits from the name — one block, three lines. */
-header nav { margin-top: 0.35rem; }
+/* The name and the links to the profiles that stand behind it are one thing,
+   so they share one line. The name says who this is; the links are where a
+   reader goes to check that, which is the question that follows the name and
+   precedes everything else on the page. Below them the heading's own line says
+   what the page is about — identify, corroborate, then declare.
+
+   Wrapping is the fallback, not the layout: where the measure runs out the
+   links drop to a line of their own and the reading order is unchanged.
+
+   Baselines, not centres. The two are set at different sizes on the index, and
+   what should line up between type of two sizes is the line it sits on.
+
+   Nothing here names a side. In Arabic the row runs from the right and the
+   name still comes first, because `flex` follows the writing direction. */
+.identity {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.35rem 1.75rem;
+}
+
+/* The row's own gap does the spacing now, so the children give up their
+   margins — including the section-sized top margin every nav carries by
+   default, which the class beats without needing an override. */
+.identity > * { margin-top: 0; }
+
+/* Tighter between the two links than between them and the name, so they read
+   as a pair attached to it rather than three items in a row. */
+.identity nav ul { gap: 1.25rem; }
+
+/* A work page puts the title first and the row beneath it, at the same remove
+   the tagline keeps on the index. On the index the row opens with the title
+   itself and has nothing to clear. */
+h1 + .identity { margin-top: 0.35rem; }
 
 /* The rule is the width of the text column, since the footer is inside the
    same measure as every paragraph. */
