@@ -250,7 +250,7 @@ nav ul {
   display: flex;
   flex-wrap: wrap;
   align-items: baseline;
-  gap: 0.35rem 1.75rem;
+  gap: 0.35rem 2.5rem;
 }
 
 /* The row's own gap does the spacing now, so the children give up their
@@ -261,6 +261,30 @@ nav ul {
 /* Tighter between the two links than between them and the name, so they read
    as a pair attached to it rather than three items in a row. */
 .identity nav ul { gap: 1.25rem; }
+
+/* Sharing a line is not being equal on it. The name is the claim; LinkedIn and
+   GitHub are two places to go and check it, and they carry someone else's name
+   besides. A step down in size and out of the full text colour says which is
+   which without a separator having to — and a separator would say the opposite
+   anyway, since `A · B` is how a list of peers is written.
+
+   On the index the heading already outweighs them and this only confirms it.
+   On a work page it is the whole of the effect: the byline is set at body size,
+   so left alone the two read as equals on the line.
+
+   `--fg-muted` is 5.25:1 on the light ground and 6.19:1 on the dark, so it
+   clears AA at this size; it is the same colour the tagline and the date are
+   already set in. */
+.identity nav { font-size: 0.875rem; }
+.identity nav a { color: var(--fg-muted); }
+
+/* Hover has to move the colour here, not just the underline. Everywhere else
+   on the site an underline goes from muted to `currentColor` on hover, which
+   is a visible change because the text is at full strength — but these links
+   are muted, so `currentColor` is what the underline already was, and hover
+   would do nothing at all. Lifting the whole link to `--fg` restores the
+   response and takes the underline with it. */
+.identity nav a:hover { color: var(--fg); }
 
 /* A work page puts the title first and the row beneath it, at the same remove
    the tagline keeps on the index. On the index the row opens with the title
