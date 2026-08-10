@@ -161,6 +161,47 @@ a:focus-visible {
   border-radius: 2px;
 }
 
+/* Hit areas. The links that carry a reader between pages — the profiles, the
+   name that leads home from a work, the way back at the foot of it, the
+   language switcher — take the padded box the work cards on the index already
+   have, lit with the same wash on hover and with no transition, so the area
+   answers the cursor at once.
+
+   An underline says a word is a link. It does not say how far the click
+   reaches, and the reader who wants to know finds out by aiming and missing.
+   The box is that answer, and it is drawn only at the moment it is asked for.
+
+   The padding is pulled straight back out by an equal negative margin, so the
+   text keeps the alignment it had and only the box is new. Both are in `rem`
+   rather than `em`: these links are set at three sizes across the site, and
+   the area a finger needs is the same at all three.
+
+   Prose links inside a work are deliberately not here. They are words in a
+   justified paragraph, and a box lighting up around three of them would break
+   the line it sits in — while an underline mid-sentence is already unambiguous
+   about what is being offered. The rule that separates the two is structural
+   rather than a list: a link is chrome if it sits in a `nav`, signs the page,
+   or switches the language, and prose otherwise. */
+   `inline-block` is load-bearing, not tidiness. On an inline box the underline
+   is drawn across the whole box, padding included, so padding alone left every
+   one of these links underlined a quarter-space past its own last letter. A
+   block container draws the decoration on its line box instead, which is the
+   text and nothing else, and the padding goes back to being only a target. */
+nav a,
+.byline,
+.langs a {
+  display: inline-block;
+  padding-block: 0.2rem;
+  padding-inline: 0.4rem;
+  margin-block: -0.2rem;
+  margin-inline: -0.4rem;
+  border-radius: 3px;
+}
+
+nav a:hover,
+.byline:hover,
+.langs a:hover { background-color: var(--accent-wash); }
+
 /* Decorative marker for outbound links — a symbol, not prose, so it stays in
    CSS without putting text out of reach of translation.
 
@@ -352,7 +393,10 @@ figcaption {
   list-style: none;
   display: flex;
   flex-wrap: wrap;
-  gap: 0.4rem 1.1rem;
+  /* The row gap carries the hit areas. Vertical padding on an inline box does
+     not push the line apart, so at the old 0.4rem the boxes on the two rows
+     this list wraps to would have met along an edge. */
+  gap: 0.75rem 1.1rem;
 }
 
 .langs [aria-current] { color: var(--fg); }
