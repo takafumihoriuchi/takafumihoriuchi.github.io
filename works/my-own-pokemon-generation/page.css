@@ -76,7 +76,16 @@ ul.plain li {
 }
 .shots figure { margin: 0; }
 .shots img, .pair img { width: 100%; }
-.shots figcaption, .pair figcaption { margin-top: 0.6rem; }
+.shots figcaption { margin-top: 0.6rem; }
+
+/* A pair's caption belongs to both images, so it is a grid item spanning the
+   row rather than a figcaption inside one figure. That means the grid's row
+   gap sits between the images and their caption, where in .shots only the
+   0.6rem margin does — and 2rem there read as a caption belonging to nothing.
+   So the row gap is set to that same 0.6rem and the caption carries no margin
+   of its own; the two grids then space their captions identically. The 2rem is
+   not missed, because a pair is only ever one row of images. */
+.pair { row-gap: 0.6rem; }
 .pair figcaption { grid-column: 1 / -1; }
 
 @media (max-width: 32rem) {
