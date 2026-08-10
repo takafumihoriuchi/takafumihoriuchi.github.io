@@ -1,8 +1,9 @@
 #!/usr/bin/env python3
 """Regenerate sitemap.xml from the language table.
 
-Twenty-four URLs across twelve languages is past the point where keeping the
-file correct by hand is realistic, and a stale sitemap is worse than none:
+Every page in every language is a URL here, which is long past the point where
+keeping the file correct by hand is realistic, and a stale sitemap is worse
+than none:
 <lastmod> is the one hint the major engines still honour.
 
     python3 scripts/build-sitemap.py            # write sitemap.xml

@@ -23,6 +23,7 @@ LANGS = [
     ("ja",      "ja",      "日本語",             None),
     ("ru",      "ru",      "Русский",          None),
     ("de",      "de",      "Deutsch",          None),
+    ("it",      "it",      "Italiano",         None),
     ("id",      "id",      "Bahasa Indonesia", None),
     ("eo",      "eo",      "Esperanto",        None),
 ]
@@ -36,7 +37,7 @@ PAGES = [
 
 # Occupies the site root and the x-default slot. That is a statement about
 # which version answers when none of the languages match the reader, not about
-# rank: all twelve are alternates of one another.
+# rank: every version is an alternate of every other.
 DEFAULT_LANG = "en"
 
 

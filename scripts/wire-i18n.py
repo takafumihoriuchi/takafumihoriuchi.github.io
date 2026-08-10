@@ -3,10 +3,11 @@
 
 This is not a build step. The site in the repository is finished HTML and is
 served exactly as committed; this only edits that HTML in place, the way a
-find-and-replace would. What it removes is the one part of a twelve-language
-site that cannot be done reliably by hand: the alternates are a 12x12 matrix
-where a single missing link makes search engines discard the whole cluster, and
-the switcher is twelve entries repeated on twenty-four pages.
+find-and-replace would. What it removes is the one part of a multilingual site
+that cannot be done reliably by hand: the alternates are a square matrix over
+the languages, where a single missing link makes search engines discard the
+whole cluster, and the switcher is one entry per language repeated on every
+page of every language.
 
     python3 scripts/wire-i18n.py            # rewrite every page
     python3 scripts/wire-i18n.py --check    # report what would change, write nothing
