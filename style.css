@@ -181,20 +181,27 @@ a:focus-visible {
    the line it sits in — while an underline mid-sentence is already unambiguous
    about what is being offered. The rule that separates the two is structural
    rather than a list: a link is chrome if it sits in a `nav`, signs the page,
-   or switches the language, and prose otherwise. */
+   or switches the language, and prose otherwise.
+
    `inline-block` is load-bearing, not tidiness. On an inline box the underline
    is drawn across the whole box, padding included, so padding alone left every
    one of these links underlined a quarter-space past its own last letter. A
    block container draws the decoration on its line box instead, which is the
-   text and nothing else, and the padding goes back to being only a target. */
+   text and nothing else, and the padding goes back to being only a target.
+
+   The padding is as large as the page has room for. What sets the ceiling is
+   the language switcher, the densest of these lists: its 0.75rem row gap and
+   1.1rem column gap have to hold two of these boxes plus a hair between them,
+   which lands at 0.35rem and 0.5rem. Anything larger would need those gaps
+   opened, and that would move text that is currently where it should be. */
 nav a,
 .byline,
 .langs a {
   display: inline-block;
-  padding-block: 0.2rem;
-  padding-inline: 0.4rem;
-  margin-block: -0.2rem;
-  margin-inline: -0.4rem;
+  padding-block: 0.35rem;
+  padding-inline: 0.5rem;
+  margin-block: -0.35rem;
+  margin-inline: -0.5rem;
   border-radius: 3px;
 }
 
