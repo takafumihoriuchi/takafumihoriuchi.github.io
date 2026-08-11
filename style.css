@@ -236,12 +236,35 @@ nav a:hover,
 
 /* Works listing on the index. The whole card is the link target, so the
    underline is moved onto the title alone rather than every line of text. */
-.works { margin: 0; padding: 0; list-style: none; }
-.works li { margin-bottom: 3rem; }
+/* The heading sits the same 1rem above this list as it does above a paragraph,
+   but it does not read that way: a paragraph's first line carries half its
+   leading above the ink, and a thumbnail starts at its own top edge. Measured
+   against Design Philosophy, the heading was 29px above its paragraph's ink and
+   23px above the first card's image. Adding the half-leading back as padding —
+   not margin, which would collapse into the card's negative one — puts the
+   image where the first line of text would have started. */
+.works {
+  margin: 0;
+  padding: calc((var(--leading) - 1) * var(--text) / 2) 0 0;
+  list-style: none;
+}
+
+/* Was 3rem, which left more air between two works than between the heading and
+   the first of them — so they read as separate things rather than as one list.
+   The paragraph spacing is what a group of sibling blocks already uses on this
+   page, and it lands just inside the heading's own gap: close enough to group,
+   still distinct. */
+.works li { margin-bottom: var(--space-para); }
 .works li:last-child { margin-bottom: 0; }
 
 /* Padded, then pulled back out by the same amount, so the hover wash extends
-   past the text without shifting the text off the page's alignment. */
+   past the text without shifting the text off the page's alignment.
+
+   The vertical padding is smaller than the horizontal one because it is now
+   competing for the same space as the gap between two works. The wash reaches
+   0.5rem above and below each card, which leaves the two washes 12px apart at
+   the current spacing; at the old 0.85rem they would have come within 6px of
+   each other, and any tighter grouping would have had them touch. */
 .work {
   display: grid;
   grid-template-columns: minmax(0, 11rem) 1fr;
@@ -249,8 +272,8 @@ nav a:hover,
   align-items: start;
   color: inherit;
   text-decoration: none;
-  padding: 0.85rem;
-  margin: -0.85rem;
+  padding: 0.5rem 0.85rem;
+  margin: -0.5rem -0.85rem;
   border-radius: 3px;
 }
 
