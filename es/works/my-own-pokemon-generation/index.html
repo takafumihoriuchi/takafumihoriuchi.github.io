@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <title>Mi Pokémon único en el mundo — Takafumi Horiuchi</title>
-<meta name="description" content="Un prototipo de investigación en el que unas pocas palabras del jugador se convierten en una especie de Pokémon completamente nueva en tiempo de ejecución, y el marco que limita lo que la IA puede inventar.">
+<meta name="description" content="Un prototipo de investigación en el que unas pocas palabras del jugador se convierten en una especie de Pokémon completamente nueva mientras el juego corre, y el marco que limita lo que la IA puede inventar.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
@@ -54,7 +54,7 @@
       "@id": "https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/#work",
       "name": "Mi Pokémon único en el mundo",
       "url": "https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/",
-      "description": "Un prototipo de investigación en el que unas pocas palabras del jugador se convierten en una especie de Pokémon completamente nueva en tiempo de ejecución, y el marco que limita lo que la IA puede inventar.",
+      "description": "Un prototipo de investigación en el que unas pocas palabras del jugador se convierten en una especie de Pokémon completamente nueva mientras el juego corre, y el marco que limita lo que la IA puede inventar.",
       "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
       "datePublished": "2026-07",
       "inLanguage": "es",
@@ -100,8 +100,8 @@
         <figcaption>Hablar con la anciana lo pone en marcha.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="La pantalla de entrada del Diálogo Fácil, titulada «Imagina la criatura:», con las palabras BEAUTIFUL, ATTACK y FIRE introducidas.">
-        <figcaption>Le das seis palabras mediante el propio sistema de Diálogo Fácil de Esmeralda.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="La pantalla de entrada del diálogo simplificado, titulada «Imagina la criatura:», con las palabras BEAUTIFUL, ATTACK y FIRE introducidas.">
+        <figcaption>Le das seis palabras mediante el propio sistema de diálogo simplificado de Esmeralda.</figcaption>
       </figure>
       <figure>
         <img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="El jugador está en el bosque junto a la hierba alta. Un cuadro de diálogo dice: ¡La hierba alta se mueve…! ¡Hay algo ahí dentro!">
@@ -109,7 +109,7 @@
       </figure>
       <figure>
         <img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="Pantalla de combate. Un lagarto rojo con una llama en la cabeza se enfrenta al jugador. El texto dice: ¡Un FLAMEREL salvaje apareció!">
-        <figcaption>FLAMEREL, un lagarto de tipo fuego, aparece en la hierba que se movía.</figcaption>
+        <figcaption>FLAMEREL, un lagarto de tipo Fuego, aparece en la hierba que se movía.</figcaption>
       </figure>
       <figure>
         <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="Se lanza una Poké Ball a FLAMEREL durante el combate.">
@@ -124,18 +124,18 @@
         <figcaption>Ocupa su sitio en el equipo con su propio icono, como cualquier otra especie.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="La pantalla de información de FLAMEREL: tipo fuego, habilidad Mar Llamas, naturaleza pícara, encontrado al nivel 7 en el Bosque Petalia.">
+        <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="La pantalla de información de FLAMEREL: tipo Fuego, habilidad Mar Llamas, naturaleza Pícara, encontrado en el nivel 7 en el Bosque Petalia.">
         <figcaption>Su pantalla de resumen funciona, como la de cualquier otra especie.</figcaption>
       </figure>
     </div>
 
-    <p class="note muted">Aquí hay una partida completa, de principio a fin: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
+    <p class="note muted">Una partida completa, de principio a fin, está grabada aquí: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
   </section>
 
   <section>
     <h2>Por qué esto y no un generador de criaturas</h2>
-    <p>El problema interesante no es si una IA puede inventar un Pokémon. Es si puede inventar uno que el juego sea capaz de absorber sin romperse. Abandonado a su suerte, un generador produce o bien algo inservible —un monstruo de 900 puntos de estadísticas que trivializa el juego— o bien algo desagradable: un sprite deforme que deja de leerse como criatura.</p>
-    <p>Así que el trabajo de diseño aquí no es la criatura. Es el espacio dentro del cual se genera: las bandas de estadísticas, las reglas de legalidad de los movimientos, las siluetas que sobreviven a un sprite de 64×64, el vocabulario con el que al jugador se le permite siquiera describir. El modelo explora ese espacio. No llega a definirlo.</p>
+    <p>El problema interesante no es si una IA puede inventar un Pokémon. Es si puede inventar uno que el juego sea capaz de absorber sin romperse. Abandonado a su suerte, un generador produce o bien algo inservible —un monstruo de 900 puntos de estadísticas que le quita toda la gracia al juego— o bien algo desagradable: un sprite deforme que deja de leerse como criatura.</p>
+    <p>Así que el trabajo de diseño aquí no es la criatura. Es el espacio dentro del cual se genera: las bandas de estadísticas, las reglas de legalidad de los movimientos, las siluetas que sobreviven a un sprite de 64×64, el vocabulario mismo con el que al jugador se le permite describir. El modelo explora ese espacio. No le corresponde definirlo.</p>
     <p>Este proyecto es donde <a href="../../">mi filosofía de diseño</a> deja de ser un argumento y se pone a prueba: definir los objetivos, valores, restricciones y límites que dan forma a un espacio de diseño, dejar que la generación ocurra dentro de él y averiguar si el resultado se sostiene.</p>
   </section>
 
@@ -157,7 +157,7 @@
       <li><strong>Codificación.</strong> Los sprites pasan a binarios de GBA: tiles de 4bpp y 1bpp, paletas <code>gbapal</code> y compresión LZ77 compatible con la BIOS.</li>
       <li><strong>Inyección.</strong> Los binarios se escriben en una región reservada de la ROM.</li>
     </ol>
-    <p>Escribir en el cartucho en tiempo de ejecución significa que la instancia en marcha recoge la especie nueva sin reiniciar, y que la misma secuencia de bytes va al disco, de modo que el cambio sobrevive a una recarga.</p>
+    <p>Escribir en el cartucho mientras el juego corre significa que la instancia en marcha recoge la especie nueva sin reiniciar, y que la misma secuencia de bytes va al disco, de modo que el cambio sobrevive a una recarga.</p>
     <p>Lo que aparece es permanente e irreversible. Deambula: si huyes o pierdes, se queda en el mundo. Si lo debilitas, se pierde para siempre.</p>
   </section>
 
@@ -183,12 +183,12 @@
     </figure>
 
     <figure class="pair">
-      <img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="La pantalla de información de Hanagi2ne: tipo planta, habilidad Espesura, naturaleza audaz, encontrada al nivel 7 en el Bosque Petalia. El sprite es un zorro verde pálido con la cola en flor.">
+      <img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="La pantalla de información de Hanagi2ne: tipo Planta, habilidad Espesura, naturaleza Audaz, encontrada en el nivel 7 en el Bosque Petalia. El sprite es un zorro verde pálido con la cola en flor.">
       <img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="Pantalla de combate. Hanagi2ne, de espaldas, se enfrenta a un Poochyena salvaje. El texto dice: ¡Hanagi2ne usó Absorber!">
       <figcaption>Hanagitsune, diseñado a mano en diálogo con ChatGPT, implementado como especie dentro del propio juego.</figcaption>
     </figure>
 
-    <p>Ambas condiciones son abordables. Un proceso de creación más hondo —elegir, revisar, descartar— mueve la primera; mejores modelos y un marco de instrucciones diseñado con más cuidado mueven la segunda. Ahí es donde sigue esto.</p>
+    <p>Ambas condiciones son abordables. Un proceso de creación más hondo —elegir, revisar, descartar— mueve la primera; mejores modelos y un marco de instrucciones diseñado con más cuidado mueven la segunda. Por ahí sigue el trabajo.</p>
     <p>Así que el resultado del prototipo no es un veredicto sobre la pregunta. Es la pregunta hecha medible: dos variables que ahora pueden moverse a propósito y observarse.</p>
   </section>
 
@@ -196,7 +196,7 @@
 
   <nav aria-label="Sitio">
     <ul>
-      <li><a href="../../">Ir al portafolio de Takafumi Horiuchi</a></li>
+      <li><a href="../../">Ir al portfolio de Takafumi Horiuchi</a></li>
     </ul>
   </nav>
 

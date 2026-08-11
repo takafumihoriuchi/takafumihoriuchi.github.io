@@ -97,10 +97,10 @@
     <div class="shots">
       <figure>
         <img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="Sepasang kakek dan nenek berdiri di Hutan Petalburg. Kotak dialog berbunyi: Katakan… makhluk seperti apa yang kaubayangkan?">
-        <figcaption>Berbicara kepada nenek itu yang memulainya.</figcaption>
+        <figcaption>Berbicara kepada nenek itu memulai semuanya.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="Layar masukan sistem obrolan sederhana berjudul «Bayangkan makhluknya:» dengan kata BEAUTIFUL, ATTACK, dan FIRE yang telah dimasukkan.">
+        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="Layar masukan sistem obrolan sederhana berjudul “Bayangkan makhluknya:” dengan kata BEAUTIFUL, ATTACK, dan FIRE yang telah dimasukkan.">
         <figcaption>Kau memberinya enam kata lewat sistem obrolan sederhana bawaan Emerald.</figcaption>
       </figure>
       <figure>
@@ -121,7 +121,7 @@
       </figure>
       <figure>
         <img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar tim memperlihatkan spesies hasil penciptaan bersama tiga Pokémon biasa, dengan ikonnya sendiri.">
-        <figcaption>Ia duduk di dalam tim dengan ikonnya sendiri, seperti spesies mana pun.</figcaption>
+        <figcaption>Ia ada di dalam tim dengan ikonnya sendiri, seperti spesies mana pun.</figcaption>
       </figure>
       <figure>
         <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar informasi FLAMEREL: tipe api, kemampuan Blaze, sifat nakal, ditemui pada level 7 di Hutan Petalburg.">
@@ -135,35 +135,35 @@
   <section>
     <h2>Mengapa ini, dan bukan generator makhluk</h2>
     <p>Persoalan yang menarik bukanlah apakah AI bisa menciptakan seekor Pokémon. Persoalannya adalah apakah ia bisa menciptakan satu yang mampu diserap permainan tanpa membuatnya berantakan. Dibiarkan sendiri, sebuah generator menghasilkan sesuatu yang tak terpakai — monster dengan total statistik 900 yang membuat permainan kehilangan tantangan — atau sesuatu yang tak enak dilihat: sprite cacat yang tak lagi terbaca sebagai makhluk.</p>
-    <p>Jadi pekerjaan desain di sini bukanlah makhluknya. Melainkan ruang tempat makhluk itu dihasilkan: pita nilai statistik, aturan kelayakan jurus, siluet yang sanggup bertahan dalam sprite 64×64, kosakata yang bahkan boleh dipakai pemain untuk menggambarkan. Model menjelajahi ruang itu. Ia tidak ikut menentukannya.</p>
+    <p>Jadi pekerjaan desain di sini bukanlah makhluknya. Melainkan ruang tempat makhluk itu dihasilkan: rentang nilai statistik, aturan kelayakan jurus, siluet yang sanggup bertahan dalam sprite 64×64, kosakata yang bahkan boleh dipakai pemain untuk menggambarkan. Model menjelajahi ruang itu. Bukan ia yang berhak menentukannya.</p>
     <p>Proyek ini adalah tempat <a href="../../">filosofi desain saya</a> berhenti menjadi argumen dan mulai diuji: mendefinisikan tujuan, nilai, batasan, dan batas wilayah yang membentuk sebuah ruang desain, membiarkan penciptaan terjadi di dalamnya, lalu mencari tahu apakah hasilnya bertahan.</p>
   </section>
 
   <section>
     <h2>Kerangka itulah risetnya</h2>
     <p>LLM tidak pernah menulis bebas. Ia mengisi bagian-bagian dari skema tetap, dan setiap keluaran diperiksa ulang oleh sebuah validator. Pelanggaran dikembalikan untuk dibuat ulang bersama aturan tepat yang dilanggar.</p>
-    <p><strong>Batasan keseimbangan</strong> menjaga permainan tetap layak dimainkan. Total statistik dasar ditahan pada pita tetap — 280 sampai 360, kira-kira setara Pokémon awal — dengan rentang untuk tiap statistik, dan spesifikasi di luar pita ditolak langsung. Jurus diambil otomatis dari kode sumber pokeemerald, lalu disaring ke tipe milik spesies itu sendiri atau Normal, dengan membuang jurus sekali-pukul-tumbang, efek meledakkan diri, serta kerusakan tetap atau berlebihan. Kumpulan yang tersisa diperiksa kewajarannya: jurus serang cukup, setidaknya satu serangan bertipe sama, paling banyak satu jurus berkekuatan tinggi. Penetapan level dilakukan secara pasti oleh kerangka, bukan oleh model. Selebihnya dipatok — satu kemampuan per tipe, laju tangkap, kurva pertumbuhan, rasio jenis kelamin, kecocokan TM — sehingga keragaman antarindividu tetap terkurung di bagian-bagian skema dan tiap percobaan tetap bisa dibandingkan.</p>
+    <p><strong>Batasan keseimbangan</strong> menjaga permainan tetap layak dimainkan. Total statistik dasar ditahan pada rentang tetap — 280 sampai 360, kira-kira setara Pokémon awal — dengan rentang untuk tiap statistik, dan spesifikasi di luar rentang itu langsung ditolak. Jurus diambil otomatis dari kode sumber pokeemerald, lalu disaring ke tipe milik spesies itu sendiri atau Normal, dengan membuang jurus yang langsung menumbangkan lawan, efek meledakkan diri, serta kerusakan tetap atau berlebihan. Kumpulan yang tersisa diperiksa kewajarannya: jurus serang cukup, setidaknya satu serangan bertipe sama, paling banyak satu jurus berkekuatan tinggi. Penetapan level dilakukan secara pasti oleh kerangka, bukan oleh model. Selebihnya dipatok — satu kemampuan per tipe, peluang tangkap, kurva pertumbuhan, rasio jenis kelamin, kecocokan TM — sehingga keragaman antarindividu tetap terkurung di bagian-bagian skema dan tiap percobaan tetap bisa dibandingkan.</p>
     <p><strong>Batasan penampilan</strong> menjaga keluaran agar tidak rusak. Rancangan tubuh diambil dari daftar putih siluet yang sanggup bertahan dalam sprite 64×64: berkaki empat, hewan pengerat, burung, kadal. Warna dipilih dari daftar putih bernama, dan warna tubuh untuk Pokédex diturunkan secara mekanis. Ciri dibatasi satu sampai tiga frasa pendek yang sudah tersedia, dengan daftar larangan yang menolak ciri manusia, darah, senjata, dan tulisan. Kerangka menyusun sendiri perintah akhirnya dan menambahkan penutup tetap: satu makhluk, seluruh badan, anatomi yang masuk akal, tanpa anggota tubuh berlebih, air muka tenang.</p>
-    <p>Ini bekerja, dan bisa dilihat bekerja. Pada satu percobaan yang terekam, model mengusulkan total statistik dasar 380; validator menolaknya tiga kali — 380, 360, 340 — sampai spesifikasinya mendarat di dalam pita, pada 320.</p>
+    <p>Ini bekerja, dan bisa dilihat bekerja. Pada satu percobaan yang terekam, model mengusulkan total statistik dasar 380; validator menolaknya tiga kali — 380, 360, 340 — sampai spesifikasinya mendarat di dalam rentang itu, pada 320.</p>
   </section>
 
   <section>
     <h2>Cara kerjanya</h2>
-    <p>Permainannya sendiri tidak menghasilkan apa pun. Yang bekerja adalah proses Python yang menetap di PC, dan kedua belah pihak berbicara lewat kotak surat berupa berkas yang dijenguk skrip Lua di mGBA pada setiap bingkai.</p>
+    <p>Permainannya sendiri tidak menghasilkan apa pun. Yang bekerja adalah proses Python yang menetap di PC, dan kedua belah pihak berbicara lewat kotak surat berupa berkas yang diperiksa skrip Lua di mGBA pada setiap frame.</p>
     <ol>
       <li><strong>Teks.</strong> Model lokal (<code>qwen3:8b</code>) mengubah kata-kata menjadi catatan spesies yang sudah tervalidasi.</li>
       <li><strong>Gambar.</strong> Model gambar membuat ilustrasi rujukan, lalu tiga tampilan yang konsisten satu sama lain: sprite pertarungan depan, sprite belakang, dan ikon tim.</li>
       <li><strong>Konversi.</strong> Gambarnya dikuantisasi ke palet 15 warna bersama dan diubah ke format sprite pokeemerald.</li>
-      <li><strong>Pengodean.</strong> Sprite menjadi biner GBA: ubin 4bpp dan 1bpp, palet <code>gbapal</code>, kompresi LZ77 yang cocok dengan BIOS.</li>
+      <li><strong>Pengodean.</strong> Sprite menjadi biner GBA: tile 4bpp dan 1bpp, palet <code>gbapal</code>, kompresi LZ77 yang cocok dengan BIOS.</li>
       <li><strong>Penyisipan.</strong> Biner ditulis ke wilayah ROM yang sudah disediakan.</li>
     </ol>
-    <p>Menulis ke kaset saat permainan berjalan berarti instansi yang sedang jalan menangkap spesies baru itu tanpa perlu diulang dari awal, dan urutan bita yang sama juga masuk ke cakram, sehingga perubahannya bertahan setelah dimuat ulang.</p>
+    <p>Menulis ke kaset saat permainan berjalan berarti instance yang sedang berjalan menerima spesies baru itu tanpa perlu dimulai ulang, dan urutan byte yang sama juga ditulis ke disk, sehingga perubahannya bertahan setelah dimuat ulang.</p>
     <p>Apa yang muncul bersifat menetap dan tak bisa ditarik kembali. Ia berkeliaran: kalau kau kabur atau kalah, ia tetap ada di dunia. Kalau kau kalahkan, ia hilang untuk selamanya.</p>
   </section>
 
   <section>
     <h2>Implementasi</h2>
-    <p>Generator, kerangka batasan, pengode GBA, dan tambalan di sisi permainan diterbitkan seluruhnya: <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a>.</p>
+    <p>Generator, kerangka batasan, encoder GBA, dan patch di sisi permainan diterbitkan seluruhnya: <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a>.</p>
   </section>
 
   <section>
@@ -189,10 +189,10 @@
     </figure>
 
     <p>Kedua syarat itu bisa disentuh. Proses pembuatan yang lebih dalam — memilih, memperbaiki, menolak — menggerakkan yang pertama; model yang lebih baik dan kerangka perintah yang dirancang lebih cermat menggerakkan yang kedua. Ke sanalah ini melangkah.</p>
-    <p>Jadi hasil prototipe ini bukan vonis atas pertanyaannya. Ia adalah pertanyaan yang dibuat terukur: dua peubah yang kini bisa digerakkan dengan sengaja dan diamati.</p>
+    <p>Jadi hasil prototipe ini bukan vonis atas pertanyaannya. Ia adalah pertanyaan yang dibuat terukur: dua variabel yang kini bisa digerakkan dengan sengaja dan diamati.</p>
   </section>
 
-  <p class="colophon">Dibangun di atas dekompilasi <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> sebagai riset pribadi. Tidak ada ROM, tambalan ROM, atau aset permainan yang disebarkan, dan setiap sprite di sini adalah karya asli yang dihasilkan AI. Pokémon adalah merek dagang Nintendo, Creatures Inc., dan GAME FREAK Inc.; proyek ini tidak berafiliasi dengan mereka dan tidak mendapat dukungan mereka.</p>
+  <p class="colophon">Dibangun di atas dekompilasi <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> sebagai riset pribadi. Tidak ada ROM, patch ROM, atau aset permainan yang disebarkan, dan setiap sprite di sini adalah karya asli yang dihasilkan AI. Pokémon adalah merek dagang Nintendo, Creatures Inc., dan GAME FREAK Inc.; proyek ini tidak berafiliasi dengan mereka dan tidak mendapat dukungan mereka.</p>
 
   <nav aria-label="Situs">
     <ul>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>世界上獨一無二的寶可夢 — 堀內 貴文</title>
+<title>世界上獨一無二的寶可夢 — 堀內貴文</title>
 <meta name="description" content="一個研究原型：玩家的幾個詞在遊戲執行過程中變成一種全新的寶可夢，以及那個限定 AI 能創造什麼的框架。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
@@ -43,7 +43,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
-      "alternateName": "堀內 貴文",
+      "alternateName": "堀內貴文",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "AI × 認知工程 × 設計",
       "sameAs": [
@@ -73,7 +73,7 @@
   <header>
     <h1>世界上獨一無二的寶可夢</h1>
     <div class="identity">
-      <p class="tagline">作者：<a class="byline" href="../../">堀內 貴文（Takafumi Horiuchi）</a></p>
+      <p class="tagline">作者：<a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
       <nav aria-label="其他平台的主頁">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
@@ -113,8 +113,8 @@
         <figcaption>火屬性蜥蜴 FLAMEREL，從搖動的草叢中出現。</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="戰鬥中，一顆寶貝球被扔向 FLAMEREL。">
-        <figcaption>可以用寶貝球捕捉，跟其他種族一樣。</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="戰鬥中，一顆精靈球被扔向 FLAMEREL。">
+        <figcaption>可以用精靈球捕捉，跟其他種族一樣。</figcaption>
       </figure>
       <figure>
         <img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="詢問 FLAMEREL 暱稱的命名畫面，已輸入 GGG。">
@@ -130,27 +130,27 @@
       </figure>
     </div>
 
-    <p class="note muted">完整一輪的紀錄在這裡： <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a></p>
+    <p class="note muted">完整一輪的紀錄在這裡：<a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a></p>
   </section>
 
   <section>
-    <h2>為什麼不是一個「生物產生器」</h2>
-    <p>有意思的問題不在於 AI 能不能想出一隻寶可夢，而在於牠能不能想出一隻遊戲可以吸收、且吸收之後不會散架的寶可夢。放任不管的話，產生器給出的要麼是沒法用的東西——一隻種族值合計 900 的怪物，讓遊戲失去意義——要麼是讓人不適的東西：一張崩壞到讀不出是生物的圖像。</p>
-    <p>所以這裡的設計工作不是那隻生物，而是牠被生成於其中的那個空間：種族值的區間、招式合法性的規則、能在 64×64 圖像裡存活下來的剪影、玩家甚至被允許用來描述的詞彙。模型探索這個空間，但輪不到牠來定義這個空間。</p>
+    <h2>為什麼不是一個「生物生成器」</h2>
+    <p>有意思的問題不在於 AI 能不能想出一隻寶可夢，而在於它能不能想出一隻遊戲可以吸收、且吸收之後不會散架的寶可夢。放任不管的話，生成器給出的要麼是沒法用的東西——一隻種族值合計 900 的怪物，讓遊戲失去意義——要麼是讓人不適的東西：一張崩壞到讀不出是生物的圖像。</p>
+    <p>所以這裡的設計工作不是那隻生物，而是牠被生成於其中的那個空間：種族值的區間、招式合法性的規則、能在 64×64 圖像裡存活下來的剪影、玩家甚至被允許用來描述的詞彙。模型探索這個空間，但輪不到它來定義這個空間。</p>
     <p>這個專案正是<a href="../../">我的設計哲學</a>不再只是主張、而被拿去檢驗的地方：定義形塑設計空間的目標、價值、約束與邊界，讓生成在其中發生，然後看結果站不站得住。</p>
   </section>
 
   <section>
     <h2>框架本身就是研究對象</h2>
-    <p>大型語言模型從不自由書寫。牠只是填充一個固定 schema 中的空位，而每一次輸出都會由一個驗證器重新檢查。違反規則的輸出會連同「具體違反了哪一條」一起被退回重新生成。</p>
+    <p>大型語言模型從不自由書寫。它只是填充一個固定 schema 中的空位，而每一次輸出都會由一個驗證器重新檢查。違反規則的輸出會連同「具體違反了哪一條」一起被退回重新生成。</p>
     <p><strong>平衡約束</strong>讓遊戲保持可玩。種族值合計被限制在一個固定區間內——280 到 360，大致是御三家的水準——每項能力也各有範圍，超出區間的方案會被直接駁回。招式從 pokeemerald 的原始碼中自動抽取，再篩選到該種族自身的屬性或一般屬性，並去掉一擊必殺技、自爆類效果，以及固定傷害或威力過高的招式。剩下的集合還要接受合理性檢查：攻擊招式是否足夠、是否至少有一個與自身屬性一致的攻擊招式、高威力招式是否不超過一個。等級的分配由框架確定性地決定，而不是由模型決定。其餘一切都被固定下來——每種屬性一個特性、捕獲率、經驗類型、性別比例、招式學習器相容性——這樣個體差異就被限制在 schema 的空位之內，各次執行之間仍然可以比較。</p>
     <p><strong>外觀約束</strong>防止輸出崩壞。體型來自一份能在 64×64 圖像裡存活的剪影白名單：四足、齧齒類、鳥類、蜥蜴。顏色從一份具名的白名單中選取，圖鑑體色由此機械地導出。特徵限定為一到三個簡短的既定短語，並由一份封鎖清單排除人類特徵、血、武器與文字。最終提示詞由框架自己組裝，並附上一段固定的結尾：只有一隻生物、全身、解剖結構合理、沒有多餘肢體、表情平靜。</p>
-    <p>牠是有效的，而且能看到牠生效的過程。在一次被記錄下來的執行中，模型提出的種族值合計是 380；驗證器退回了三次——380、360、340——直到方案落在區間之內的 320。</p>
+    <p>它是有效的，而且能看到它生效的過程。在一次被記錄下來的執行中，模型提出的種族值合計是 380；驗證器退回了三次——380、360、340——直到方案落在區間之內的 320。</p>
   </section>
 
   <section>
     <h2>執行方式</h2>
-    <p>遊戲本身什麼也不生成。做事的是電腦上常駐的一個 Python 行程，兩邊透過一個檔案信箱交談，而 mGBA 裡的一段 Lua 腳本每一影格都去查看牠。</p>
+    <p>遊戲本身什麼也不生成。做事的是電腦上常駐的一個 Python 行程，兩邊透過一個檔案信箱交談，而 mGBA 裡的一段 Lua 腳本每一影格都去查看它。</p>
     <ol>
       <li><strong>文字。</strong>本機模型（<code>qwen3:8b</code>）把詞語變成一份經過驗證的種族紀錄。</li>
       <li><strong>圖像。</strong>圖像模型先畫出一張參考插畫，再據此生成三張角色一致的視圖：正面戰鬥圖像、背面圖像，以及隊伍圖示。</li>
@@ -164,15 +164,15 @@
 
   <section>
     <h2>實作</h2>
-    <p>產生器、約束框架、GBA 編碼器，以及遊戲端的修補程式，全部公開： <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a></p>
+    <p>生成器、約束框架、GBA 編碼器，以及遊戲端的修補程式，全部公開：<a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a></p>
   </section>
 
   <section>
     <h2>後記——關於依戀</h2>
-    <p>這個原型了結的是一個技術問題。在牠後面的，才是我真正在意的問題：一隻為你而生成、別處並不存在的寶可夢，最終會比遊戲裡原本就有的那些更有分量嗎？</p>
+    <p>這個原型了結的是一個技術問題。在它後面的，才是我真正在意的問題：一隻為你而生成、別處並不存在的寶可夢，最終會比遊戲裡原本就有的那些更有分量嗎？</p>
     <p>從玩自己做的這個版本來看——樣本數為一，不值得讀出更多——似乎有兩個條件在左右這個答案。</p>
     <ul class="plain">
-      <li><strong>你自己投入了多少。</strong>輸入六個詞是一種參與，但很薄：回來的東西感覺像是被交付的，而不是被做出來的。真正起作用的似乎不是輸入的量，而是牠的性質——花的功夫、反覆、可以修改的餘地，以及對最終結果承擔的那一點責任。</li>
+      <li><strong>你自己投入了多少。</strong>輸入六個詞是一種參與，但很薄：回來的東西感覺像是被交付的，而不是被做出來的。真正起作用的似乎不是輸入的量，而是它的性質——花的功夫、反覆、可以修改的餘地，以及對最終結果承擔的那一點責任。</li>
       <li><strong>品質。</strong>依戀似乎要求生成物越過某個門檻。達不到的話，「牠獨一無二且屬於你」這個事實本身撐不起那種感情。</li>
     </ul>
     <p>遊戲之外有一個例子同時說明了這兩點。我用手工的方式和 ChatGPT 反覆來回，直到自己滿意為止，設計了一個屬於我自己的種族——花狐（Hanagitsune）。我對牠有依戀。因為那是我做出來的，而不是我要來的；而且做出來的東西越過了品質的門檻。</p>
@@ -197,7 +197,7 @@
 
   <nav aria-label="網站">
     <ul>
-      <li><a href="../../">前往堀內 貴文的作品集</a></li>
+      <li><a href="../../">前往堀內貴文的作品集</a></li>
     </ul>
   </nav>
 
