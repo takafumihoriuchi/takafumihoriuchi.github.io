@@ -17,6 +17,13 @@
   --accent-wash: rgba(124, 101, 83, 0.07);
   --rule: rgba(26, 26, 26, 0.13);
 
+  /* Fills the thumbnail column of a work whose image does not exist yet. Off
+     white, carrying the accent's hue so it reads as part of the palette rather
+     than as a grey box. It has to stay distinct from --accent-wash, which is
+     what the card's ground becomes on hover — matched, the placeholder would
+     disappear under the pointer, which is exactly when it is being looked at. */
+  --placeholder: #ede8e2;
+
   /* The OS interface face on each platform, ending in the generic `sans-serif`.
      That last entry is what carries the multilingual strategy: when a reader
      translates the page, the browser resolves `sans-serif` to the OS default
@@ -42,6 +49,10 @@
     --accent: #b49780;
     --accent-wash: rgba(180, 151, 128, 0.10);
     --rule: rgba(232, 232, 229, 0.16);
+    /* The dark counterpart is not an off white — a pale block would burn a
+       hole in the page here. What carries over is the relationship: one step
+       away from the ground, and clear of the hover wash. */
+    --placeholder: #2b2a27;
   }
 
   /* Light text on a dark ground optically gains weight, so subpixel rendering
@@ -247,11 +258,16 @@ nav a:hover,
 
 .work img { width: 100%; }
 
-/* A work with no thumbnail yet. Without this the empty image column stays,
-   and the entry's text starts a column further in than every other entry —
-   which reads as a broken image rather than as a work still in preparation.
-   Remove the class from the entry once the thumbnail exists. */
-.work.no-thumb { grid-template-columns: 1fr; }
+/* Stands in the thumbnail column for a work still in preparation, so that its
+   text keeps the same alignment as every other entry instead of sliding into
+   the empty column. The ratio is the thumbnails' own 360x239: holding the space
+   the image will occupy is the whole point, and a block of a different shape
+   would make the listing reflow the day the image arrives.
+   Swap it for the <img> then, and delete nothing else. */
+.thumb-pending {
+  aspect-ratio: 360 / 239;
+  background-color: var(--placeholder);
+}
 
 .work-title {
   display: block;
@@ -272,7 +288,8 @@ nav a:hover,
 @media (max-width: 32rem) {
   .work { grid-template-columns: 1fr; gap: 0.85rem; }
   /* Stacked, the thumbnail would stretch past its own source width. */
-  .work img { max-width: 20rem; }
+  .work img,
+  .thumb-pending { max-width: 20rem; }
 }
 
 nav { margin-top: var(--space-section); }
