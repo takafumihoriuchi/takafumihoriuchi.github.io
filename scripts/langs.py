@@ -33,7 +33,7 @@ LANGS = [
 PAGES = [
     "",
     "works/my-own-pokemon-generation/",
-    "works/cognitive-fit-ui/",
+    "works/personal-fit-ui/",
 ]
 
 # Occupies the site root and the x-default slot. That is a statement about
