@@ -1,0 +1,58 @@
+/* The English source is being completed before its translations. This file is
+   already page-local so the later language versions can share it unchanged. */
+
+.lead { font-size: 1.125rem; }
+
+.section-break {
+  margin: calc(var(--space-section) / 2) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.section-break + section { margin-top: 0; }
+
+section p,
+figcaption {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+.paper-figure {
+  margin: 2.5rem 0;
+}
+
+.paper-figure img {
+  width: 100%;
+  background: #fff;
+}
+
+.paper-figure figcaption { width: 100%; }
+
+/* The diagrams are set at the size that keeps their internal labels close to
+   the surrounding body type. They remain fluid below these limits on narrow
+   screens, and centring keeps the smaller figures on the page's reading axis. */
+.figure-1 img,
+.figure-5 img {
+  max-width: 28rem;
+  margin-inline: auto;
+}
+
+.figure-3 img {
+  max-width: 30rem;
+  margin-inline: auto;
+}
+
+.citation {
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.publication-citation { margin-top: var(--space-section); }

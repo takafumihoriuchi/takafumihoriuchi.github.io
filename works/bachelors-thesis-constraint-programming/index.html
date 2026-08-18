@@ -1,0 +1,196 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Bachelor’s Thesis on Constraint Programming — Takafumi Horiuchi</title>
+<meta name="description" content="Undergraduate research on accelerating the HydLa hybrid-system simulator by dynamically removing guarded constraints that can no longer become true.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<!-- Translations will be added after the English source is finalized. Until
+     then, advertise only the two URLs that actually exist: English and its
+     x-default alias. Never point an alternate at a different page. -->
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="icon" href="../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../style.css">
+<link rel="stylesheet" href="page.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="en_US">
+<meta property="og:title" content="Bachelor’s Thesis on Constraint Programming">
+<meta property="og:description" content="Using monotonicity to remove obsolete constraints and make hybrid-system simulation faster.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="A simulated ball bouncing down a staircase, illustrating when passed constraints become irrelevant.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "AI × Cognitive Engineering × Design",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
+      "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
+      "headline": "Bachelor’s Thesis on Constraint Programming",
+      "url": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/",
+      "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
+      "description": "Undergraduate research on accelerating the HydLa hybrid-system simulator by dynamically removing guarded constraints that can no longer become true.",
+      "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
+      "datePublished": "2019-06-01",
+      "inLanguage": "en",
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Kazunori Ueda" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Japanese Society for Artificial Intelligence"
+      }
+    }
+  ]
+}
+</script>
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Bachelor’s Thesis on Constraint Programming</h1>
+    <div class="identity">
+      <p class="tagline">by <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="Profiles elsewhere">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">June 2019</p>
+  </header>
+
+  <section>
+    <h2>Overview</h2>
+    <p class="lead">As a computer-science undergraduate, my research asked a practical question: when a simulator accumulates many possible conditions, how can it stop reconsidering the ones that can no longer occur? I developed and evaluated a method for HydLa that uses the direction in which a value is changing to remove obsolete conditions from the search. In the benchmark model, it reduced the total simulation time to approximately half.</p>
+    <p>This work is an early foundation of <a href="../../">my design philosophy</a>. Constraint programming taught me that complex outcomes do not always need to be specified directly: they can emerge from a carefully defined space of rules, priorities, and boundaries. That way of thinking now informs my approach to design based on constraints in the age of AI—designing the conditions within which a generative system is free to act.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>Abstract</h2>
+    <p>HydLa is a modeling language for hybrid systems: systems in which continuous change and discrete events interact. Its constraint-based design allows such systems to be described concisely and simulated with high precision. The cost is that a large model may leave the simulator checking a great many conditional rules, even after some have become irrelevant.</p>
+    <p>This research proposed reducing those guarded constraints dynamically. By recognizing monotonic behavior—a value continuing to move in one direction—the simulator can determine that certain guards will never become true in the future and safely stop checking them. The approach was especially effective in a model containing many similarly guarded objects, where the measured runtime fell to roughly half of the original.</p>
+  </section>
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>A hybrid system combines continuous behavior with discrete events. A bouncing ball is a simple example: its position and velocity change continuously while it is in the air, but the instant it hits a surface creates a discrete event that changes its direction. Thermostats, vehicles, and robots all contain more consequential versions of the same mixture.</p>
+    <p>HydLa lets a modeler describe these systems with mathematical and logical constraints instead of spelling out a single procedural sequence. Its simulator, HyLaGI, can perform symbolic calculations without rounding error and can work with uncertain parameters. This expressive approach, however, creates a scaling problem: when a model contains many rules that activate only under particular conditions, the simulator repeatedly has to ask whether each condition could be the next one to occur.</p>
+
+    <figure class="paper-figure figure-1">
+      <img src="assets/figure-1.webp" width="950" height="600" alt="HydLa source code defining a ball moving horizontally and bouncing on one of N adjacent surface segments.">
+      <figcaption>A short HydLa model describes one ball and a surface divided into <em>N</em> guarded segments.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. Guarded Constraints in Simulations</h2>
+    <p>A guarded constraint is a rule that becomes active only when its guard condition is satisfied. In the benchmark above, every surface segment has its own rule: if the ball reaches height zero while its horizontal position lies within that segment, the bounce rule applies. Dividing the surface into more pieces therefore gives the simulator more guards to inspect.</p>
+    <p>The experiment varied the number of segments from 10 to 200. The original simulator became slower approximately with the square of that number. This matters beyond the toy example: a larger model may represent many physical objects, contact regions, or possible events in exactly this guarded form.</p>
+  </section>
+
+  <section>
+    <h2>3. Location of the Bottleneck</h2>
+    <p>Profiling showed that the slowdown was not spread evenly across the simulator. With 100 surface segments, 96% of the measured runtime was spent in <code>FindMinTime</code>, the operation that searches for the earliest possible next event. It was repeatedly evaluating the guards of every candidate constraint.</p>
+    <p>That result made the optimization target specific: reduce the number of guards that <code>FindMinTime</code> has to consider, while preserving exactly the same simulated behavior.</p>
+  </section>
+
+  <section>
+    <h2>4. Reduction of Guarded Constraints</h2>
+    <p>Imagine a ball bouncing down a staircase. Once the ball has passed a step and continues moving forward, that step can no longer affect it. A person looking at the diagram ignores the steps behind the ball immediately; the original algorithm continued checking every one of them.</p>
+
+    <figure class="paper-figure">
+      <img src="assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="A red trajectory shows a ball bouncing down black stair steps; shaded regions indicate steps already passed and no longer relevant.">
+      <figcaption>As the ball moves right, guards for the shaded steps behind it can be omitted.</figcaption>
+    </figure>
+
+    <p>The difficult part is proving that a discarded guard will never be needed later. Removing one merely because it is false now could silently produce the wrong result if it becomes true again. The proposal therefore uses monotonicity: whether a variable is guaranteed to keep increasing or keep decreasing over a time interval.</p>
+
+    <h3>4.1 Approach to Uniform Monotonicity</h3>
+    <p>The first approach applies when a variable moves in one direction for the entire simulation. In the split-surface model, the ball’s horizontal position always increases. Once it has moved beyond a segment, the condition for that segment can never be satisfied again. Model-checking techniques can establish this property before simulation, allowing obsolete guards to be removed safely as the run proceeds.</p>
+
+    <figure class="paper-figure figure-3">
+      <img src="assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="A rising red line from alpha at time zero to beta at maximum time illustrates a variable that increases throughout a simulation.">
+      <figcaption>Uniform monotonicity means the direction of change holds across the whole simulated interval.</figcaption>
+    </figure>
+
+    <h3>4.2 Approach to Alternating Monotonicity</h3>
+    <p>Many real systems do not move in one direction forever. A variable may increase, turn, and then decrease. The paper therefore outlined a second approach: begin with an assumed direction, monitor that assumption with assertions, and restart the reduction logic from the point where the direction changes. Guards removed for one monotonic interval are reset when the next interval begins.</p>
+
+    <figure class="paper-figure figure-5">
+      <img src="assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Five diagrams show an assumed increasing interval, an assertion failure, a new decreasing interval, another failure, and successive monotonic intervals being established.">
+      <figcaption>Assertion failures divide changing behavior into intervals that can each be treated as monotonic.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. Experimental Results</h2>
+    <p>I implemented the uniform-monotonicity approach and evaluated it with the split-surface model. Both the original and proposed algorithms still took longer as the number of segments grew, but the proposed version consistently did less work. Comparing the fitted curves, the leading coefficient fell from 1.1463 to 0.6083; for this benchmark, the total simulation time was approximately halved.</p>
+    <p>The result is not a claim that every HydLa model becomes twice as fast. It shows where the method helps: models with many guarded objects and a provable direction of change, where guards become permanently irrelevant during a run.</p>
+
+    <figure class="paper-figure">
+      <img src="assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="A graph of simulation time against N shows the proposed method below the original across 10 to 200 surface segments, reaching about 250 seconds rather than about 470 seconds at N equals 200.">
+      <figcaption>The proposed method (squares) takes approximately half as long as the original algorithm (circles) in the evaluated model.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. Conclusion and Future Work</h2>
+    <p>The research demonstrated that knowledge about a model—not only faster low-level computation—can make simulation more efficient. By using monotonicity to recognize which possibilities have become impossible, HyLaGI can shrink its active constraint set without changing the result.</p>
+    <p>The implemented experiment covered uniform monotonicity. The paper left two directions for later work: evaluating the assertion-based method for alternating behavior, and using invariants other than monotonicity to identify further constraints that can be removed safely.</p>
+  </section>
+
+  <p class="citation publication-citation">Takafumi Horiuchi and Kazunori Ueda. “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa.” The 33rd Annual Conference of the Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+
+  <nav aria-label="Related links">
+    <ul>
+      <li><a href="../../">Go to Takafumi's Portfolio</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><span lang="en" translate="no" aria-current="true">English</span></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../zh-Hans/works/bachelors-thesis-constraint-programming/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../zh-Hant/works/bachelors-thesis-constraint-programming/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../es/works/bachelors-thesis-constraint-programming/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../ar/works/bachelors-thesis-constraint-programming/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../pt/works/bachelors-thesis-constraint-programming/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../fr/works/bachelors-thesis-constraint-programming/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../ja/works/bachelors-thesis-constraint-programming/">日本語</a></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../ru/works/bachelors-thesis-constraint-programming/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../de/works/bachelors-thesis-constraint-programming/">Deutsch</a></li>
+      <li><a lang="it" hreflang="it" translate="no" href="../../it/works/bachelors-thesis-constraint-programming/">Italiano</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../id/works/bachelors-thesis-constraint-programming/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../eo/works/bachelors-thesis-constraint-programming/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>
