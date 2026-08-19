@@ -3,9 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="robots" content="noindex">
-<title>Master’s Thesis on Human-Robot-Interaction Design — Takafumi Horiuchi</title>
-<meta name="description" content="Master’s research on a collision-avoidance system that reads the operator’s gaze to tell objects meant to be handled from objects to be protected, at the moment of the work rather than in advance.">
+<title>人とロボットのインタラクション設計に関する修士論文 — 堀内 貴文</title>
+<meta name="description" content="操作者の視線を読み取り、触れてよい対象と守るべき対象を、事前の設定ではなく作業のその瞬間に見分ける衝突回避システムについての修士研究。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -26,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="Master’s Thesis on Human-Robot-Interaction Design">
-<meta property="og:description" content="Using where the operator is looking to decide what a robot is allowed to touch.">
+<meta property="og:title" content="人とロボットのインタラクション設計に関する修士論文">
+<meta property="og:description" content="操作者がどこを見ているかで、ロボットが何に触れてよいかを決める。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A virtual workspace of yellow voxels scanned by a robot, with the operator’s field of view drawn as a coloured cone.">
+<meta property="og:image:alt" content="ロボットがスキャンした黄色いボクセルの仮想作業空間。操作者の視野が色のついた錐体で描かれている。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -43,8 +42,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Cognitive Engineering × AI × Design",
+      "description": "認知工学 × AI × デザイン",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -54,19 +54,19 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/ja/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "Master’s Thesis on Human-Robot-Interaction Design",
+      "headline": "人とロボットのインタラクション設計に関する修士論文",
       "url": "https://takafumihoriuchi.github.io/ja/works/masters-thesis-hmi-design/",
-      "description": "Master’s research on a collision-avoidance system that reads the operator’s gaze to tell objects meant to be handled from objects to be protected, at the moment of the work rather than in advance.",
+      "description": "操作者の視線を読み取り、触れてよい対象と守るべき対象を、事前の設定ではなく作業のその瞬間に見分ける衝突回避システムについての修士研究。",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
-      "inLanguage": "en",
+      "inLanguage": "ja",
       "author": [
         { "@id": "https://takafumihoriuchi.github.io/#person" },
         { "@type": "Person", "name": "Katsuya Kanaoka" }
       ],
       "publisher": {
         "@type": "Organization",
-        "name": "The Robotics Society of Japan"
+        "name": "日本ロボット学会"
       }
     }
   ]
@@ -78,9 +78,9 @@
 <main>
 
   <header>
-    <h1>Master’s Thesis on Human-Robot-Interaction Design</h1>
+    <h1>人とロボットのインタラクション設計に関する修士論文</h1>
     <div class="identity">
-      <p class="tagline">by <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <p class="tagline">著者：<a class="byline" href="../../">堀内 貴文（Takafumi Horiuchi）</a></p>
       <nav aria-label="Profiles elsewhere">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
@@ -88,23 +88,14 @@
         </ul>
       </nav>
     </div>
-    <p class="dateline">July 2021</p>
+    <p class="dateline">2021年7月</p>
   </header>
 
-  <!-- PLACEHOLDER. The prose below is still the English source. When this
-       language is written, translate the title, description, og:*, alt text
-       and body, then delete this notice, the .translation-pending rule in
-       page.css once the last placeholder is gone, and the robots meta in
-       the head. -->
-  <p class="translation-pending">This page has not been translated yet and is
-  shown in English. <a href="../../../works/masters-thesis-hmi-design/">The English version</a> is the source
-  every translation is made from.</p>
-
   <section>
-    <h2>Overview</h2>
-    <p class="lead">Someone operating a large robot can only attend to part of the workspace at a time. This research asked what changes if the machine is told where that attention currently is. I designed a collision-avoidance system in which the operator’s gaze decides how the robot may behave: whatever falls inside the operator’s central field of view can be handled freely, while anything outside it is protected—the arm slows and stops before it arrives. Nothing has to be labelled beforehand. The distinction is drawn in the moment of the work, from where the operator happens to be looking. See the demonstration video <a class="ext" href="https://youtu.be/-DvWxzJvK3I">here (on YouTube)</a>.</p>
-    <p>The work was my master’s thesis in Design &amp; Engineering at Politecnico di Milano, carried out during a research internship at Man-Machine Synergy Effectors, Inc. in Japan, and was presented at the <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">39th Annual Conference of the Robotics Society of Japan (RSJ2021)</a>.</p>
-    <p>It is also where <a href="../../">my design philosophy</a> starts to take its present shape. What this system reads is not a command but a cognitive state—whether a thing has been noticed at all—and it turns that state into the conditions under which the machine is permitted to act. The object being designed is not the robot’s motion but the relationship: what the machine may do follows from what the person currently understands. Designing that relationship rather than each individual behaviour is the same move I make now that the party doing the acting is a generative AI rather than a robot arm.</p>
+    <h2>概要</h2>
+    <p class="lead">大きなロボットを操作する人は、作業空間の一部にしか一度に注意を向けられない。その注意がいまどこにあるかを機械に伝えたら何が変わるか——この研究はそう問うた。操作者の視線がロボットの振る舞いを決める衝突回避システムを設計した。操作者の中心視野に入っているものは自由に扱え、そこから外れたものは保護される——アームは減速し、届く前に止まる。事前に何かをラベル付けする必要はない。区別は作業のその瞬間に、操作者がたまたま見ている場所から引かれる。デモ映像は<a class="ext" href="https://youtu.be/-DvWxzJvK3I">こちら（YouTube）</a>。</p>
+    <p>ミラノ工科大学 Design &amp; Engineering の修士論文として、日本の株式会社人機一体での研究インターンシップ中に取り組み、<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">第39回日本ロボット学会学術講演会（RSJ2021）</a>で発表した。</p>
+    <p>いまの<a href="../../">私のデザイン哲学</a>が現在の形をとりはじめたのも、ここだった。このシステムが読んでいるのは命令ではなく認知の状態——そもそもそれが目に入っているかどうか——であり、その状態を、機械が動いてよい条件へと変換している。デザインの対象はロボットの動きではなく関係のほうだ。機械が何をしてよいかは、人がいま何を把握しているかから決まる。個々の振る舞いではなくその関係をデザインするというやり方は、動く側がロボットアームではなく生成AIになったいま、私がしていることと同じ動作である。</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -120,114 +111,114 @@
          image so its smaller type stays reachable. -->
     <figure class="deck-figure bleed">
       <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Title slide: Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation, Politecnico di Milano, Laurea Magistrale in Design &amp; Engineering, academic year 2020–2021."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Background: the thesis theme was decided during a research internship at Man-Machine Synergy Effectors, Inc., a company developing anthropomorphic heavy machinery operated through a master-slave system."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Autonomous robots compared with human-operated robots: the former work efficiently in designed spaces behind fences, the latter work in uncertain spaces alongside people."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistics from Europe, the United States and Japan showing that being struck by moving objects accounts for a substantial share of construction-site accidents."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Related research on collision avoidance: sensitive skin covering the manipulator, and depth sensors that build a virtual representation of the surroundings."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The current challenge: existing systems require objects to be predefined as protected or manipulable, through wearable tags, image analysis or trained classifiers."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The proposal: conventional systems use only passive sensor data, while a human-operated robot already has a person in its control loop whose gaze can serve as an active parameter."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Classification rule: objects inside the operator’s central field of view are manipulable, objects outside it are protected."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Overview of the prototype: a physical robot paired with a virtual computation space, with three technical components to follow."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Component one: the central field of view represented as a 60 by 55 degree cone, its direction approximated by the forward direction of the VR headset."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Component two: a LIDAR mounted on the robot’s head scans the surroundings into point clouds, represented as voxels each carrying its own collider."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Component three: a digital twin of the robot moves with the physical one, and proximity warnings are triggered when its arm meets voxels outside the field of view."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Proof-of-concept demonstration: a video still of the robot reaching for a ball on a pole, with the virtual voxel view inset."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Future work: detecting humans in the workspace, testing other ways of measuring gaze direction, and evaluating the system quantitatively in the field."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Conclusion summarising the research theme, the value of the method, its novelty, and how the system was verified."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="タイトルスライド。Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation、ミラノ工科大学 Design &amp; Engineering 修士課程、2020–2021年度。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="背景。論文テーマは、人型重機を開発し master-slave 方式で操作する企業、株式会社人機一体での研究インターンシップ中に決まった。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="自律ロボットと人間操作ロボットの比較。前者は柵の内側の設計された空間で効率よく働き、後者は不確実な空間で人とともに働く。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="欧州・米国・日本の統計。動いている物体との接触が、建設現場の事故のうち相当な割合を占めることを示している。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="衝突回避に関する先行研究。マニピュレータを覆う感覚皮膚と、周囲を仮想的に再現する深度センサ。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="現在の課題。既存のシステムは、装着タグ・画像解析・学習した識別器によって、対象を「保護」か「操作可能」かに事前定義することを求める。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="提案。従来のシステムは受動的なセンサ情報しか使わないが、人間操作ロボットにはもともと制御ループの中に人がいて、その視線を能動的なパラメータとして使える。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分類の規則。操作者の中心視野の内側にある対象は操作可能、外側にある対象は保護対象となる。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="プロトタイプの全体像。実機のロボットと仮想の計算空間を組み合わせ、三つの技術要素が続く。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素①。中心視野を60°×55°の錐体として表現し、その向きをVRヘッドセットの正面方向で近似する。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素②。ロボットの頭部に載せたLIDARが周囲を点群としてスキャンし、それぞれがコライダーを持つボクセルとして表現される。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素③。ロボットのデジタルツインが実機と同じく動き、そのアームが視野の外にあるボクセルに触れたとき近接警告が出る。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="概念実証のデモ。ポールの上のボールに手を伸ばすロボットの映像の静止画と、仮想空間のボクセル表示。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="今後の課題。作業空間内の人の検出、視線方向を測る他の手法の検証、そして実地での定量評価。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="結論のまとめ。研究テーマ、手法の価値、新規性、そしてシステムをどう検証したか。"></a></li>
       </ol>
-      <figcaption>Slides from my thesis defence. Scroll the strip sideways; any slide opens at full size.</figcaption>
+      <figcaption>修士論文の最終発表で使ったスライド。横にスクロールでき、各スライドは原寸で開く。</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Abstract</h2>
-    <p>Human-operated robots are valuable precisely where autonomous ones are not: in workspaces that were never designed for the task at hand, next to people and equipment that must not be struck. Existing collision-avoidance systems cope with such spaces by having every object declared in advance as either a target of manipulation or something to be protected—a setup cost that grows unmanageable for a machine meant to be carried from site to site.</p>
-    <p>This research proposed making that distinction at run-time instead, from the operator’s gaze. Objects inside the operator’s central field of view are treated as manipulable, objects outside it as protected, and people as protected under all circumstances. The method introduces an active parameter—a human one—into a control loop that had until then been built entirely from passive sensor data. A prototype was implemented on JINKI type Zero, a 1.9 m anthropomorphic heavy-machinery robot, and behaved as specified across five demonstration trials.</p>
+    <h2>要旨</h2>
+    <p>人間操作ロボットが価値を持つのは、まさに自律ロボットが力を発揮できない場所である。目の前の作業のために設計されたわけではない空間、ぶつけてはならない人や設備のとなり。既存の衝突回避システムはそうした空間に、あらゆる対象を「操作の対象」か「保護すべきもの」かとしてあらかじめ宣言させることで対応してきた。現場から現場へ運ばれる機械にとって、この初期設定の負担は現実的な水準を超える。</p>
+    <p>この研究は、その区別を事前ではなく実行時に、操作者の視線から与えることを提案した。操作者の中心視野の内側にある対象は操作可能、外側にあるものは保護対象、人はいかなる場合も保護対象として扱う。この手法は、それまで受動的なセンサ情報だけで組まれてきた制御ループに、能動的なパラメータ——人間由来のパラメータ——を持ち込む。プロトタイプは身長1.9mの人型重機ロボット JINKI type Zero に実装し、5回のデモ試行を通じて定義どおりに動作した。</p>
   </section>
 
   <section>
-    <h2>1. Introduction</h2>
-    <p>A human-operated robot combines two things that are hard to obtain together: the power and precision of a machine, and the situational judgement of a person. Fully autonomous robots do not yet supply the second. And where industrial robots work in designed cells behind fences, human-operated ones are expected to work in places arranged for something else—alongside on-site workers, among delicate equipment, in nuclear facilities and on construction sites. Guaranteeing that the robot does not damage what surrounds it is therefore part of what makes it usable at all.</p>
-    <p>The established defences against accidental contact are sensitive skin, where proximity sensors cover every critical part of the manipulator, and depth sensing, where the surroundings are reconstructed as a point cloud and distances are computed in that virtual space. Both work. Both, however, presuppose that the objects around the robot have already been sorted into ones it may touch and ones it must not: without that sorting, a machine forbidden to collide with anything cannot manipulate anything either. For a general-purpose tool that is transported between sites and set down among whatever is there, the configuration and calibration this demands is more expensive than the safety it buys.</p>
-    <p>The opening this research works through is that a human-operated robot already has a person inside its control loop. Studies of operational error point to situational awareness—an accurate grasp of what is going on around you—as the decisive factor, and situational awareness is known to correlate strongly with gaze direction. Collision avoidance had conventionally been built from passive information alone, meaning data read off sensors. Adding one active parameter, where the operator is looking, gives the system an indication of whether contact with a given object would be intended or not.</p>
+    <h2>1. はじめに</h2>
+    <p>人間操作ロボットは、同時に得ることの難しい二つのものを併せ持つ。機械の出力と精度、そして人の状況判断である。完全自律のロボットは後者をまだ提供しない。また、産業用ロボットが柵の内側の設計されたセルで働くのに対し、人間操作ロボットは別の目的のために整えられた場所——現場作業者のかたわら、繊細な設備のあいだ、原子力施設や建設現場——で働くことが期待される。周囲のものを壊さないと保証できることは、したがってこの機械が使えるかどうかの一部である。</p>
+    <p>偶発的な接触に対する確立された備えは二つある。マニピュレータの重要部位すべてを近接センサで覆う感覚皮膚と、周囲を点群として再構成し仮想空間で距離を計算する深度センシングである。どちらも機能する。しかしどちらも、ロボットの周りの対象が触れてよいものと触れてはならないものにすでに仕分けられていることを前提とする。その仕分けがなければ、何にもぶつかってはならない機械は何も操作できない。現場から現場へ運ばれ、そこにあるものの中に据えられる汎用の道具にとって、この設定と較正の手間は、それが買う安全よりも高くつく。</p>
+    <p>この研究が通り抜ける入口は、人間操作ロボットにはもともと制御ループの中に人がいる、という点にある。操作ミスの研究は、状況認識——自分の周りで何が起きているかを正確に掴んでいること——を決定的な要因として挙げており、状況認識は視線の方向と強く相関することが知られている。衝突回避はこれまで受動的な情報、すなわちセンサから読み取ったデータだけで組まれてきた。そこに能動的なパラメータをひとつ、操作者がどこを見ているかを加えると、ある対象への接触が意図されたものかどうかの手がかりがシステムに与えられる。</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Diagram seen from above: a cone marks the operator’s central field of view in front of the robot. Object A inside the cone is drawn as a white circle, objects B, C and D outside it as dark squares, and two human figures stand inside and outside the cone.">
-      <figcaption>Object A, inside the operator’s central field of view, is manipulable; objects B, C and D outside it are protected. People are protected wherever they stand.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="上から見た図。ロボットの前方に、操作者の中心視野が錐体として描かれている。錐体の内側にある対象Aは白い丸、外側にある対象B・C・Dは濃い四角で示され、二人の人物が錐体の内と外に立っている。">
+      <figcaption>操作者の中心視野の内側にある対象Aは操作可能、外側にある対象B・C・Dは保護対象となる。人はどこに立っていても保護される。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. System Behaviour</h2>
-    <p>An object the operator intends to touch is called a <em>manipulable object</em>, and may be handled without restriction. An object the operator has no such intention toward is a <em>protected object</em>, and may not be touched. Which of the two an object is at any given instant follows from its position relative to the operator’s central field of view: inside it, the object is under enough of the operator’s awareness to count as intended; outside it, it is not.</p>
-    <p>Five rules govern the behaviour that follows. The manipulator may interfere freely with objects inside the central field of view. It may not interfere with objects outside it, and gradually halts as it approaches one. Once halted, it is gradually released as the operator’s field of view shifts onto it. No restriction applies if the field of view leaves an object the manipulator is already in contact with, so that work in progress is not interrupted by a glance elsewhere. And the manipulator may not interfere with a human being, wherever that person stands. Where a robot has several manipulators, the rules apply to each separately.</p>
-    <p>What the operator gets from this is the ability to work at full speed on what they are looking at, while relying on the machine not to strike the equipment they are not. Safety of the people on site is unconditional and does not depend on the operator’s intentions at all.</p>
+    <h2>2. システムの振る舞い</h2>
+    <p>操作者が触れる意図を持っている対象を<em>操作可能な対象</em>と呼び、制限なく扱える。操作者がそうした意図を持たない対象は<em>保護対象</em>であり、触れることはできない。ある対象がその瞬間どちらであるかは、操作者の中心視野に対する位置から決まる。内側にあれば、その対象は意図されたものとみなせるだけの操作者の認識のもとにあり、外側にあればそうではない。</p>
+    <p>そこから導かれる振る舞いを、五つの規則が定める。マニピュレータは中心視野の内側にある対象とは自由に干渉してよい。外側にある対象とは干渉できず、近づくにつれて徐々に停止する。停止した状態からは、操作者の視野がそこへ移るにつれて徐々に解除される。すでに接触している対象から視野が外れた場合には制限をかけない——進行中の作業が、ほかへ目をやっただけで中断されないためである。そして人に対しては、その人がどこに立っていても干渉できない。マニピュレータが複数ある場合、規則はそれぞれに個別に適用される。</p>
+    <p>これによって操作者は、自分が見ているものに対しては全速で作業しながら、見ていない設備には機械がぶつからないと信頼できる。現場の人の安全は無条件であり、操作者の意図にはまったく依存しない。</p>
 
     <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Flow chart beginning at manipulation in free motion, branching on whether an object is nearby, whether it is human, whether the manipulator is approaching the human, and whether the object is in the field of focus, leading to precise-scale manipulation, gradual halting, or locking.">
-      <figcaption>Only one node in the decision process—“object is in field of focus”—reads the operator’s active parameter. Every other branch runs on passive sensor data.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="自由動作の状態から始まるフローチャート。対象が近くにあるか、それが人か、マニピュレータが人へ近づく方向にあるか、対象が注視領域にあるかで分岐し、精密動作、段階的な停止、あるいはロックへと至る。">
+      <figcaption>判断の過程で操作者の能動的パラメータを読むノードは「対象が注視領域にあるか」の一つだけである。他の分岐はすべて受動的なセンサ情報で動く。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>3. Expected Benefits</h2>
-    <p>Heavy machinery offers the closest existing picture of this kind of work: large forces applied in unstructured places next to people. Collision accidents are among the principal hazards on construction sites worldwide, and inattention is repeatedly named as a cause. Of the 362,600 accidents recorded on European construction sites in 2018, 19.6% involved being struck by an object in motion; an investigation of crane-related incidents attributed 19% of them to operator inattention.</p>
-    <p>Because attention and gaze direction are strongly correlated, those two proportions can be combined into a rough estimate of the ground a gaze-based system might cover—on the order of thirteen thousand accidents a year in Europe. The figure is an inference from published statistics rather than a measured result, and it is offered as an indication of scale.</p>
+    <h2>3. 期待される効果</h2>
+    <p>この種の作業に最も近い既存の光景は重機である。大きな力が、人のとなりの整備されていない場所で加えられる。衝突事故は世界中の建設現場で主要な危険のひとつであり、不注意はその原因として繰り返し挙げられてきた。2018年に欧州の建設現場で記録された362,600件の事故のうち19.6%が動いている物体との接触によるものであり、クレーン関連の事故を調べた研究はそのうち19%を操作者の不注意に帰している。</p>
+    <p>注意と視線の方向は強く相関するため、この二つの割合を掛け合わせれば、視線を用いるシステムが覆いうる範囲のおおまかな見積もりが得られる——欧州で年あたり一万三千件程度である。この数字は公表統計からの推論であって測定結果ではなく、規模感を示すものとして挙げている。</p>
   </section>
 
   <section>
-    <h2>4. System Verification</h2>
-    <p>A demonstration system was built and run as a proof of concept.</p>
+    <h2>4. システムの検証</h2>
+    <p>概念実証として、デモンストレーション用のシステムを構築し動作させた。</p>
 
-    <h3>4.1 Implementation</h3>
-    <p>The system was implemented on JINKI type Zero, a robot developed at Man-Machine Synergy Effectors, Inc. It has the upper body of a human, stands 1.9 m tall, weighs 600 kg and has thirty degrees of freedom. Operator and robot are collocated and coupled as a master-slave system: a VR headset synchronises the operator’s view and head rotation with the robot’s, which gives the sense of being united with the machine rather than driving it.</p>
-    <p>A LIDAR mounted on the robot scans the surrounding workplace as point clouds, which are represented in a virtual space as voxels, each with its own collider. A digital twin of the robot moves in that same space; when its arm overlaps voxels, the system raises a proximity warning whose effect depends on the direction of the operator’s field of view. That field is modelled as a cone of 60° × 55° (H×V)—close to the region in which people perceive symbols, colour and depth—and its direction is approximated by the forward direction of the headset. The warning is passed to the physical robot and shapes its motion according to the rules above.</p>
+    <h3>4.1 実装</h3>
+    <p>システムは、株式会社人機一体で開発されたロボット JINKI type Zero に実装した。人の上半身の形を持ち、身長1.9m、重量600kg、30自由度を備える。操作者とロボットは同じ場所にいて、master-slave 方式で結ばれる。VRヘッドセットが操作者の視界と頭部の回転をロボットのそれと同期させ、機械を運転しているというより機械と一体になっている感覚を与える。</p>
+    <p>ロボットに載せたLIDARが周囲の作業場を点群としてスキャンし、点群は仮想空間でそれぞれコライダーを持つボクセルとして表現される。同じ空間の中をロボットのデジタルツインが動き、そのアームがボクセルと重なると、システムは近接警告を出す。警告の効き方は操作者の視野の向きによって変わる。視野は60°×55°（水平×垂直）の錐体としてモデル化してある——人が記号・色・奥行きを知覚できる領域に近い値である——その向きはヘッドセットの正面方向で近似する。警告は実機へ送られ、前節の規則に従って動きを形づくる。</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="A virtual scene: yellow voxels reconstruct the surroundings, a translucent red volume labelled “operator’s central field of view” cuts through them, and the white digital twin of the robot reaches an obstacle lying outside that volume.">
-      <figcaption>The virtual space, holding the robot and the scanned point cloud. Here the robot is meeting obstacles that lie outside the operator’s central field of view.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="仮想空間の情景。黄色いボクセルが周囲を再構成し、「操作者の中心視野」と記された半透明の赤い領域がその中を貫き、白いデジタルツインのロボットが、その領域の外にある障害物に手を伸ばしている。">
+      <figcaption>ロボットとスキャンした点群を収めた仮想空間。ここではロボットが、操作者の中心視野の外にある障害物に触れている。</figcaption>
     </figure>
 
-    <h3>4.2 Demonstration Experiment</h3>
-    <p>A preliminary evaluation tested whether the implementation did what had been specified. The operator was asked to move the arm toward a pole while looking away, confirm that the system had issued a warning and halted the arm, then look at the halted arm to release the restriction, and finally take a ball from the top of the pole while keeping it in view. Five trials were run: the first three and the fifth by an experienced operator, the fourth by someone on his second time piloting the robot. Each was recorded. In all five, the system behaved as Section 2 defines. The demonstration can be watched in the <a class="ext" href="https://youtu.be/-DvWxzJvK3I">video of the system in action</a>.</p>
+    <h3>4.2 デモンストレーション実験</h3>
+    <p>実装が定義どおりに動くかを、予備評価で確かめた。操作者に求めたのは、脇を見たままアームをポールへ向けて動かし、システムが警告を出してアームを停止させたことを確認し、停止したアームに視線を向けて制限を解除し、最後にポールの上のボールを視野に入れたまま掴むことである。試行は5回で、1〜3回目と5回目は熟練した操作者が、4回目は搭乗2回目の操作者が行った。いずれも録画した。5回とも、システムは第2節の定義どおりに振る舞った。デモの様子は<a class="ext" href="https://youtu.be/-DvWxzJvK3I">動作中のシステムの映像</a>で見られる。</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="Photograph of the robot with the operator suspended in a frame above it, looking to one side. The robot hand has stopped short of a blue and yellow ball on a yellow pole, with the remaining gap marked.">
-      <figcaption>The operator’s gaze is turned away, and the arm halts at a distance from the object.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="ロボットの写真。その上方のフレームに操作者が搭乗し、脇を向いている。ロボットハンドは黄色いポールの上の青と黄のボールの手前で止まり、残った距離が示されている。">
+      <figcaption>操作者の視線が外れており、アームは対象から距離を置いて停止する。</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Photograph from a lower angle: the operator looks toward the ball, and the robot hand grips the blue and yellow ball on the yellow pole.">
-      <figcaption>With the gaze directed at the object, the same movement proceeds without restriction.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="下からの角度の写真。操作者がボールのほうを見ており、ロボットハンドが黄色いポールの上の青と黄のボールを掴んでいる。">
+      <figcaption>視線が対象に向いていれば、同じ動作が制限なく進む。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. Limitations and Future Work</h2>
-    <p>Human detection was not implemented in the prototype. What needed validating was the relation between the operator’s gaze and the manipulability of objects, and the rule protecting people is unconditional and does not depend on it. Adding that detection would make the system more robust, and would also open applications beyond safety—highlighting the people near the robot in the operator’s view, for instance, or warning before a proximity limit is reached.</p>
-    <p>Gaze was approximated by the forward direction of the headset. This was chosen for its directness, which matters in a master-slave system, but other instruments—stationary cameras, eye trackers in smart glasses—would estimate it differently and might lower the barrier to introducing such a system in industries not accustomed to wearing one. Applying the method to mobile robots raises a further problem: JINKI type Zero is fixed in place while it is under development, and a machine that moves during operation needs point-cloud processing efficient enough to keep up.</p>
-    <p>The evaluation itself remains qualitative. A quantitative field study is the right way to judge the system, and waits on the robot reaching a practical stage.</p>
+    <h2>5. 限界と今後の課題</h2>
+    <p>人の検出はプロトタイプには実装しなかった。検証が必要だったのは操作者の視線と対象の操作可能性との関係であり、人を守る規則は無条件でそれに依存しないためである。この検出を加えればシステムはより頑健になり、安全の枠を超えた応用も開ける——たとえば操作者の視界でロボットの近くにいる人を強調する、あるいは近接警告が働く前に知らせる、といったことである。</p>
+    <p>視線はヘッドセットの正面方向で近似した。master-slave 方式で重要になる直接性を買って選んだ方法だが、据え置きのカメラやスマートグラスの視線計測など、別の機器なら別の推定の仕方があり、装着に慣れていない産業へこうしたシステムを持ち込むときの心理的な障壁を下げられるかもしれない。移動するロボットへ適用する場合にはもうひとつ問題が生じる。JINKI type Zero は開発段階にあるため据え置きだが、動作中に位置を変える機械には、それに追いつけるだけの効率的な点群処理が要る。</p>
+    <p>評価そのものは定性的なままである。このシステムを正しく評価するには実地での定量調査が筋であり、それはロボットが実用段階に達するのを待つことになる。</p>
   </section>
 
   <section>
-    <h2>6. Conclusion</h2>
-    <p>The research proposed a collision-avoidance system for human-operated robotic manipulators that uses the operator’s gaze to prevent unintended contact with people and equipment. On the premise that awareness and gaze direction are strongly correlated, objects inside the operator’s central field of view were treated as manipulable and those outside it as protected. Putting a human factor into the control loop made it possible to draw that line at run-time, without any of the preparation the existing methods require.</p>
-    <p>The system was verified on a general-purpose heavy-machinery robot and behaved as defined. The same principle should carry to any setting where a person is already part of the loop through which a machine is operated.</p>
+    <h2>6. 結論</h2>
+    <p>この研究は、人と設備への意図しない接触を防ぐために操作者の視線を用いる、人間操作ロボットのマニピュレータ向け衝突回避システムを提案した。認識と視線の方向が強く相関するという前提のもと、操作者の中心視野の内側にある対象を操作可能、外側にあるものを保護対象として扱った。人間の要素を制御ループに組み込んだことで、既存の手法が求める準備を一切必要とせず、その線を実行時に引けるようになった。</p>
+    <p>システムは汎用の重機ロボット上で検証し、定義どおりに動作した。同じ原理は、機械を動かすループにもともと人が入っているあらゆる場面へ持ち込めるはずである。</p>
   </section>
 
   <section>
-    <h2>Acknowledgements</h2>
-    <p>This work was carried out during an internship at Man-Machine Synergy Effectors, Inc., in partial fulfilment of the master’s degree in Design &amp; Engineering at Politecnico di Milano. I am grateful to both organisations for making the opportunity possible.</p>
+    <h2>謝辞</h2>
+    <p>本研究は、ミラノ工科大学 Design &amp; Engineering の修士課程の一部として、株式会社人機一体でのインターンシップ期間中に行われた。この機会を実現してくださった両組織に深く感謝する。</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi and Katsuya Kanaoka. “Gaze-based Unintended Contact Prevention for Human-Operated Robots.” <span lang="ja">第39回日本ロボット学会学術講演会</span> (The 39th Annual Conference of the Robotics Society of Japan), 2021, paper 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a>.</p>
+  <p class="citation publication-citation">堀内 貴文、金岡 克弥「Gaze-based Unintended Contact Prevention for Human-Operated Robots」第39回日本ロボット学会学術講演会、2021年、2J2-07。<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">大会プログラム</a></p>
 
   <nav aria-label="Site">
     <ul>
-      <li><a href="../../">Go to Takafumi's Portfolio</a></li>
+      <li><a href="../../">Takafumi's Portfolio へ</a></li>
     </ul>
   </nav>
 
