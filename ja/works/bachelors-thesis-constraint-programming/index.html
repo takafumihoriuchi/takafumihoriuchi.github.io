@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="ja">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>制約プログラミングに関する卒業論文 — 堀内 貴文</title>
+<meta name="description" content="ハイブリッドシステムのシミュレータHydLaを、もはや成り立ちえない条件を実行中に取り除くことで高速化した、学部時代の研究。">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="ja_JP">
+<meta property="og:title" content="制約プログラミングに関する卒業論文">
+<meta property="og:description" content="単調性を手がかりに不要になった制約を取り除き、ハイブリッドシステムのシミュレーションを速くする。">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="階段を跳ねながら下っていくボールのシミュレーション。通り過ぎた制約がどこから無関係になるかを示している。">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "AI × 認知工学 × デザイン",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
+      "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
+      "headline": "制約プログラミングに関する卒業論文",
+      "url": "https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/",
+      "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
+      "description": "ハイブリッドシステムのシミュレータHydLaを、もはや成り立ちえない条件を実行中に取り除くことで高速化した、学部時代の研究。",
+      "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
+      "datePublished": "2019-06-01",
+      "inLanguage": "ja",
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Kazunori Ueda" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "人工知能学会"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>制約プログラミングに関する卒業論文</h1>
+    <div class="identity">
+      <p class="tagline">著者：<a class="byline" href="../../">堀内 貴文（Takafumi Horiuchi）</a></p>
+      <nav aria-label="ほかの場所のプロフィール">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">2019年6月</p>
+  </header>
+
+  <section>
+    <h2>概要</h2>
+    <p class="lead">情報理工学の学部生として取り組んだ研究は、実際的な問いから始まっている——シミュレータが起こりうる条件を大量に抱え込んだとき、もはや起こりえない条件を考え直すのを、どうすればやめさせられるか。値が変化していく向きを手がかりに、不要になった条件を探索から取り除く手法をHydLa向けに設計し、実装して評価した。ベンチマークとして用いたモデルでは、シミュレーション全体の所要時間がおよそ半分に減った。</p>
+    <p>この研究は、いまの<a href="../../">私のデザイン哲学</a>の最初の土台にあたる。複雑な結果は、必ずしも直接指定しなくてよい——規則と優先度と境界を注意深く定義した空間から、立ち上がってくることがある。制約プログラミングが教えてくれたのはそれだった。その考え方が、AIの時代に制約からデザインするという私の姿勢、すなわち生成システムが自由に振る舞える条件をデザインするという姿勢につながっている。</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>要旨</h2>
+    <p>HydLaは、ハイブリッドシステム——連続的な変化と離散的な事象が互いに影響し合うシステム——のためのモデリング言語である。制約に基づく設計により、そうしたシステムを簡潔に記述し、高い精度でシミュレートできる。その代償として、モデルが大きくなると、すでに無関係になった条件規則までシミュレータが延々と検査し続けることになる。</p>
+    <p>本研究は、そのガード付き制約を実行中に削減することを提案した。単調な振る舞い——値が一方向に動き続けること——を認識できれば、シミュレータは特定のガードが将来にわたって真になりえないと判定し、安全に検査をやめられる。同じ形のガードを持つ対象が多数含まれるモデルで特に効果が大きく、実測した実行時間は元の約半分まで下がった。</p>
+  </section>
+
+  <section>
+    <h2>1. はじめに</h2>
+    <p>ハイブリッドシステムは、連続的な振る舞いと離散的な事象を併せ持つ。跳ねるボールが単純な例だ。空中にあるあいだは位置と速度が連続的に変化するが、面に当たった瞬間に離散的な事象が生じ、進む向きが変わる。サーモスタット、自動車、ロボットは、いずれも同じ混ざり方を、より重大な形で内側に抱えている。</p>
+    <p>HydLaでは、こうしたシステムを一本の手続きとして書き下すのではなく、数学的・論理的な制約として記述できる。シミュレータのHyLaGIは丸め誤差のない記号計算を行え、値の定まらないパラメータも扱える。ただし、この記述力の高さは規模の問題を生む。特定の条件下でのみ有効になる規則が数多く含まれるモデルでは、シミュレータはそのそれぞれについて「次に起こるのはこれか」を繰り返し問わなければならない。</p>
+
+    <figure class="paper-figure figure-1">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="水平に動くボールと、隣り合うN個の面の区画のいずれかで跳ね返る挙動を定義したHydLaのソースコード。">
+      <figcaption>短いHydLaのモデルが、一つのボールと、<em>N</em>個のガード付き区画に分割された面を記述している。</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. シミュレーションにおけるガード付き制約</h2>
+    <p>ガード付き制約とは、ガード条件が満たされたときにだけ有効になる規則である。上のベンチマークでは、面の区画ごとに固有の規則がある——ボールの高さが0に達したとき、その水平位置がその区画の内側にあれば、跳ね返りの規則が適用される。したがって面を細かく分割すれば、シミュレータが調べるべきガードもそれだけ増える。</p>
+    <p>実験では区画数を10から200まで変化させた。元のシミュレータは、およそその数の二乗に比例して遅くなった。これは作り物の例にとどまる話ではない。規模の大きなモデルでは、多数の物体、接触の領域、起こりうる事象が、まさにこのガード付きの形で表される。</p>
+  </section>
+
+  <section>
+    <h2>3. ボトルネックの所在</h2>
+    <p>プロファイリングにより、この遅さがシミュレータ全体に均等に散らばっているのではないことがわかった。面の区画を100個にしたとき、実測した実行時間の96%が<code>FindMinTime</code>——次に起こりうる最も早い事象を探す処理——に費やされていた。そこで、候補となる制約すべてのガードが繰り返し評価されていた。</p>
+    <p>この結果は、最適化の的を具体的にした。シミュレートされる振る舞いをまったく変えないまま、<code>FindMinTime</code>が考慮しなければならないガードの数を減らすことである。</p>
+  </section>
+
+  <section>
+    <h2>4. ガード付き制約の削減</h2>
+    <p>階段を跳ねながら下っていくボールを思い描いてほしい。ボールがある段を通り過ぎ、そのまま前へ進み続けるなら、その段はもうボールに影響しえない。図を見た人間は、ボールの後ろにある段をただちに無視する。元のアルゴリズムは、その一つ一つを検査し続けていた。</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="赤い軌跡が、黒い階段の段を跳ねながら下っていくボールを示している。網掛けの領域は、すでに通り過ぎてもはや関係のない段を表す。">
+      <figcaption>ボールが右へ進むにつれ、その後ろにある網掛けの段のガードは省ける。</figcaption>
+    </figure>
+
+    <p>難しいのは、取り除いたガードが後になって必要にならないことを示す側だ。いま偽だからという理由だけで取り除けば、それが再び真になったとき、誤った結果を黙って返しかねない。そこで提案手法は単調性を使う——ある変数が、ある時間区間にわたって増加し続ける、あるいは減少し続けると保証できるかどうかである。</p>
+
+    <h3>4.1 一様な単調性への対応</h3>
+    <p>一つ目の対応は、変数がシミュレーション全体を通じて一方向に動く場合にあてはまる。面を分割したモデルでは、ボールの水平位置はつねに増加する。ある区画を越えて進んでしまえば、その区画の条件は二度と満たされない。この性質はモデル検査の技術によってシミュレーション前に確かめられるので、実行が進むにつれて不要になったガードを、安全に取り除いていける。</p>
+
+    <figure class="paper-figure figure-3">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="時刻0のαから最大時刻のβへ向かって上昇する赤い線が、シミュレーションを通して増加し続ける変数を表している。">
+      <figcaption>一様な単調性とは、変化の向きがシミュレートされる区間全体で保たれることを意味する。</figcaption>
+    </figure>
+
+    <h3>4.2 交替する単調性への対応</h3>
+    <p>現実のシステムの多くは、いつまでも一方向に動くわけではない。変数は増加し、向きを変え、そして減少しうる。そこで論文は二つ目の対応を示した。まず向きを仮定し、その仮定をアサーションで監視し、向きが変わった時点から削減の処理をやり直す。一つの単調な区間のために取り除いたガードは、次の区間が始まるときに戻される。</p>
+
+    <figure class="paper-figure figure-5">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五つの図が、増加を仮定した区間、アサーションの失敗、新たな減少の区間、二度目の失敗、そして単調な区間が次々に確定していく様子を示している。">
+      <figcaption>アサーションの失敗が、変化する振る舞いを、それぞれ単調として扱える区間へ分割する。</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. 実験結果</h2>
+    <p>一様な単調性への対応を実装し、面を分割したモデルで評価した。元のアルゴリズムも提案手法も、区画数が増えれば所要時間は伸びる。ただし提案手法のほうが、一貫して仕事量が少なかった。当てはめた曲線を比べると、最高次の係数は1.1463から0.6083へ下がり、このベンチマークではシミュレーション全体の所要時間がおよそ半分になった。</p>
+    <p>これは、あらゆるHydLaのモデルが二倍速くなるという主張ではない。示しているのは、この手法が効く場所である——ガードを持つ対象が多く、変化の向きが証明でき、実行中にガードが恒久的に無関係になっていくようなモデルだ。</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Nに対するシミュレーション時間のグラフ。面の区画数10から200の全域で提案手法が元の手法を下回り、N=200では約470秒に対して約250秒に収まっている。">
+      <figcaption>評価したモデルでは、提案手法（四角）が元のアルゴリズム（丸）のおよそ半分の時間で済んでいる。</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. 結論と今後の課題</h2>
+    <p>この研究が示したのは、低水準の計算を速くすることだけでなく、モデルについての知識がシミュレーションを効率化しうるということである。単調性を使って、どの可能性がすでに起こりえなくなったかを認識することで、HyLaGIは結果を変えずに、有効な制約の集合を小さくできる。</p>
+    <p>実装して確かめたのは、一様な単調性の側である。論文は今後の課題として二つの方向を残した。交替する振る舞いに対するアサーションに基づく手法の評価と、単調性以外の不変な性質を使って、安全に取り除ける制約をさらに見つけ出すことである。</p>
+  </section>
+
+  <p class="citation publication-citation">堀内 貴文、上田 和紀「Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa」2019年度人工知能学会全国大会（第33回）、2019年。DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
+
+  <nav aria-label="サイト">
+    <ul>
+      <li><a href="../../">Takafumi's Portfolio へ</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/bachelors-thesis-constraint-programming/">English</a></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../../zh-Hans/works/bachelors-thesis-constraint-programming/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/bachelors-thesis-constraint-programming/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/bachelors-thesis-constraint-programming/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/bachelors-thesis-constraint-programming/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/bachelors-thesis-constraint-programming/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/bachelors-thesis-constraint-programming/">Français</a></li>
+      <li><span lang="ja" translate="no" aria-current="true">日本語</span></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/bachelors-thesis-constraint-programming/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/bachelors-thesis-constraint-programming/">Deutsch</a></li>
+      <li><a lang="it" hreflang="it" translate="no" href="../../../it/works/bachelors-thesis-constraint-programming/">Italiano</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/bachelors-thesis-constraint-programming/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/bachelors-thesis-constraint-programming/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>

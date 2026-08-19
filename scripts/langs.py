@@ -34,6 +34,7 @@ PAGES = [
     "",
     "works/my-own-pokemon-generation/",
     "works/personal-fit-ui/",
+    "works/bachelors-thesis-constraint-programming/",
 ]
 
 # Occupies the site root and the x-default slot. That is a statement about

@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Skripsi tentang pemrograman berbasis batasan — Takafumi Horiuchi</title>
+<meta name="description" content="Riset sarjana tentang mempercepat simulator sistem hibrida HydLa dengan membuang, saat program berjalan, batasan berpenjaga yang sudah tidak mungkin lagi terpenuhi.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="id_ID">
+<meta property="og:title" content="Skripsi tentang pemrograman berbasis batasan">
+<meta property="og:description" content="Memakai kemonotonan untuk membuang batasan yang sudah tidak berguna dan mempercepat simulasi sistem hibrida.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Sebuah bola dalam simulasi memantul menuruni anak tangga, menggambarkan kapan batasan yang sudah dilewati berhenti berarti.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "AI × Rekayasa Kognitif × Desain",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
+      "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
+      "headline": "Skripsi tentang pemrograman berbasis batasan",
+      "url": "https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/",
+      "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
+      "description": "Riset sarjana tentang mempercepat simulator sistem hibrida HydLa dengan membuang, saat program berjalan, batasan berpenjaga yang sudah tidak mungkin lagi terpenuhi.",
+      "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
+      "datePublished": "2019-06-01",
+      "inLanguage": "id",
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Kazunori Ueda" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Japanese Society for Artificial Intelligence"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Skripsi tentang pemrograman berbasis batasan</h1>
+    <div class="identity">
+      <p class="tagline">oleh <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="Profil di tempat lain">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">Juni 2019</p>
+  </header>
+
+  <section>
+    <h2>Ikhtisar</h2>
+    <p class="lead">Sebagai mahasiswa sarjana ilmu komputer, riset saya berangkat dari pertanyaan yang praktis: ketika sebuah simulator menumpuk banyak kondisi yang mungkin terjadi, bagaimana caranya agar ia berhenti menimbang ulang kondisi yang sudah tidak mungkin terjadi? Saya mengembangkan dan mengevaluasi sebuah metode untuk HydLa yang memakai arah perubahan sebuah nilai untuk membuang kondisi usang dari pencarian. Pada model acuan, total waktu simulasi turun menjadi kira-kira setengahnya.</p>
+    <p>Karya ini adalah salah satu fondasi paling awal dari <a href="../../">filosofi desain saya</a>. Pemrograman berbasis batasan mengajarkan bahwa hasil yang rumit tidak selalu perlu ditetapkan secara langsung: ia bisa muncul dari ruang aturan, prioritas, dan batas yang didefinisikan dengan cermat. Cara berpikir itulah yang kini menopang pendekatan saya dalam merancang dari batasan di era AI — merancang kondisi tempat sebuah sistem generatif bebas bertindak.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>Abstrak</h2>
+    <p>HydLa adalah bahasa pemodelan untuk sistem hibrida: sistem tempat perubahan kontinu dan peristiwa diskret saling berinteraksi. Rancangannya yang berbasis batasan memungkinkan sistem semacam itu digambarkan secara ringkas dan disimulasikan dengan presisi tinggi. Ongkosnya, pada model yang besar simulator bisa terus memeriksa sangat banyak aturan bersyarat, bahkan setelah sebagian di antaranya tidak lagi relevan.</p>
+    <p>Riset ini mengusulkan pengurangan batasan berpenjaga tersebut secara dinamis. Dengan mengenali perilaku monoton — sebuah nilai yang terus bergerak ke satu arah — simulator dapat memastikan bahwa penjaga tertentu tidak akan pernah terpenuhi di masa depan, lalu berhenti memeriksanya dengan aman. Pendekatan ini terutama efektif pada model yang memuat banyak objek dengan penjaga serupa: waktu jalan yang terukur turun menjadi sekitar setengah dari semula.</p>
+  </section>
+
+  <section>
+    <h2>1. Pendahuluan</h2>
+    <p>Sistem hibrida memadukan perilaku kontinu dengan peristiwa diskret. Bola yang memantul adalah contoh sederhana: posisi dan kecepatannya berubah secara kontinu selama ia di udara, tetapi saat ia menyentuh permukaan tercipta peristiwa diskret yang mengubah arahnya. Termostat, kendaraan, dan robot memuat campuran yang sama dalam bentuk yang jauh lebih berkonsekuensi.</p>
+    <p>HydLa memungkinkan pemodel menggambarkan sistem seperti ini dengan batasan matematis dan logis, alih-alih menuliskan satu urutan prosedural. Simulatornya, HyLaGI, dapat melakukan perhitungan simbolik tanpa galat pembulatan dan mampu bekerja dengan parameter yang tak pasti. Namun, keleluasaan ini melahirkan masalah skala: ketika sebuah model memuat banyak aturan yang hanya aktif pada kondisi tertentu, simulator harus berulang kali bertanya apakah tiap kondisi itu yang akan terjadi berikutnya.</p>
+
+    <figure class="paper-figure figure-1">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Kode sumber HydLa yang mendefinisikan bola bergerak mendatar dan memantul pada salah satu dari N segmen permukaan yang bersebelahan.">
+      <figcaption>Model HydLa yang singkat menggambarkan satu bola dan permukaan yang dibagi menjadi <em>N</em> segmen berpenjaga.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. Batasan berpenjaga dalam simulasi</h2>
+    <p>Batasan berpenjaga adalah aturan yang baru aktif ketika kondisi penjaganya terpenuhi. Pada model acuan di atas, tiap segmen permukaan punya aturannya sendiri: jika bola mencapai ketinggian nol sementara posisi mendatarnya berada di dalam segmen itu, aturan pantulan berlaku. Karena itu, membagi permukaan menjadi lebih banyak potongan berarti memberi simulator lebih banyak penjaga untuk diperiksa.</p>
+    <p>Percobaan memvariasikan jumlah segmen dari 10 sampai 200. Simulator asli menjadi lambat kira-kira sebanding dengan kuadrat angka tersebut. Hal ini penting di luar contoh mainan: model yang lebih besar bisa jadi mewakili banyak benda fisik, area kontak, atau peristiwa yang mungkin, persis dalam bentuk berpenjaga seperti ini.</p>
+  </section>
+
+  <section>
+    <h2>3. Letak hambatannya</h2>
+    <p>Pemrofilan menunjukkan bahwa perlambatan itu tidak tersebar merata di seluruh simulator. Dengan 100 segmen permukaan, 96% waktu jalan yang terukur dihabiskan di <code>FindMinTime</code>, operasi yang mencari peristiwa berikutnya yang paling awal mungkin terjadi. Operasi itu berulang kali mengevaluasi penjaga dari setiap batasan yang menjadi kandidat.</p>
+    <p>Hasil tersebut membuat sasaran optimasi menjadi jelas: kurangi jumlah penjaga yang harus dipertimbangkan <code>FindMinTime</code>, sambil mempertahankan perilaku hasil simulasi persis sama.</p>
+  </section>
+
+  <section>
+    <h2>4. Pengurangan batasan berpenjaga</h2>
+    <p>Bayangkan sebuah bola memantul menuruni tangga. Begitu bola melewati satu anak tangga dan terus bergerak maju, anak tangga itu tidak lagi bisa memengaruhinya. Orang yang melihat diagramnya langsung mengabaikan anak tangga di belakang bola; algoritme aslinya tetap memeriksa semuanya, satu per satu.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Lintasan merah memperlihatkan bola memantul menuruni anak tangga berwarna hitam; area berarsir menandai anak tangga yang sudah dilewati dan tidak lagi relevan.">
+      <figcaption>Seiring bola bergerak ke kanan, penjaga bagi anak tangga berarsir di belakangnya bisa diabaikan.</figcaption>
+    </figure>
+
+    <p>Bagian yang sulit adalah membuktikan bahwa penjaga yang dibuang tidak akan diperlukan lagi nanti. Membuangnya hanya karena sekarang bernilai salah bisa diam-diam menghasilkan jawaban keliru bila ia kembali bernilai benar. Karena itu usulan ini bertumpu pada kemonotonan: apakah sebuah peubah dijamin terus naik, atau terus turun, sepanjang suatu selang waktu.</p>
+
+    <h3>4.1 Pendekatan untuk kemonotonan seragam</h3>
+    <p>Pendekatan pertama berlaku ketika sebuah peubah bergerak ke satu arah sepanjang seluruh simulasi. Pada model permukaan terbagi, posisi mendatar bola selalu naik. Begitu bola melewati sebuah segmen, kondisi segmen itu tidak akan pernah terpenuhi lagi. Teknik pemeriksaan model dapat menetapkan sifat ini sebelum simulasi dijalankan, sehingga penjaga yang usang bisa dibuang dengan aman seiring berjalannya eksekusi.</p>
+
+    <figure class="paper-figure figure-3">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Garis merah menanjak dari alfa pada waktu nol menuju beta pada waktu maksimum, menggambarkan peubah yang naik sepanjang simulasi.">
+      <figcaption>Kemonotonan seragam berarti arah perubahan bertahan pada seluruh selang yang disimulasikan.</figcaption>
+    </figure>
+
+    <h3>4.2 Pendekatan untuk kemonotonan bergantian</h3>
+    <p>Banyak sistem nyata tidak bergerak ke satu arah selamanya. Sebuah peubah bisa naik, berbalik, lalu turun. Karena itu makalah tersebut menggariskan pendekatan kedua: mulai dengan arah yang diandaikan, awasi andaian itu dengan asersi, lalu jalankan ulang logika pengurangan dari titik tempat arahnya berubah. Penjaga yang dibuang untuk satu selang monoton dikembalikan ketika selang berikutnya dimulai.</p>
+
+    <figure class="paper-figure figure-5">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Lima diagram memperlihatkan selang yang diandaikan naik, sebuah asersi yang gagal, selang menurun yang baru, kegagalan berikutnya, dan selang-selang monoton yang ditetapkan satu demi satu.">
+      <figcaption>Kegagalan asersi membagi perilaku yang berubah-ubah menjadi selang-selang yang masing-masing bisa diperlakukan sebagai monoton.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. Hasil percobaan</h2>
+    <p>Saya menerapkan pendekatan kemonotonan seragam dan mengevaluasinya dengan model permukaan terbagi. Baik algoritme asli maupun yang diusulkan tetap makin lama seiring bertambahnya jumlah segmen, tetapi versi usulan secara konsisten mengerjakan lebih sedikit. Membandingkan kurva yang dicocokkan, koefisien pangkat tertingginya turun dari 1,1463 ke 0,6083; untuk kasus acuan ini total waktu simulasi kira-kira terpangkas separuh.</p>
+    <p>Hasil ini bukan klaim bahwa setiap model HydLa menjadi dua kali lebih cepat. Ia menunjukkan di mana metode ini menolong: pada model dengan banyak objek berpenjaga dan arah perubahan yang dapat dibuktikan, tempat penjaga menjadi tidak relevan secara permanen selama eksekusi.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik waktu simulasi terhadap N memperlihatkan metode usulan berada di bawah metode asli pada seluruh rentang 10 sampai 200 segmen permukaan, mencapai sekitar 250 detik alih-alih sekitar 470 detik saat N sama dengan 200.">
+      <figcaption>Pada model yang dievaluasi, metode usulan (kotak) memakan waktu kira-kira separuh dari algoritme asli (lingkaran).</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. Simpulan dan pekerjaan lanjutan</h2>
+    <p>Riset ini memperlihatkan bahwa pengetahuan tentang sebuah model — bukan hanya perhitungan tingkat rendah yang lebih cepat — dapat membuat simulasi lebih efisien. Dengan memakai kemonotonan untuk mengenali kemungkinan mana yang sudah menjadi mustahil, HyLaGI dapat mengecilkan himpunan batasan aktifnya tanpa mengubah hasil.</p>
+    <p>Percobaan yang dikerjakan mencakup kemonotonan seragam. Makalah itu meninggalkan dua arah untuk kemudian: mengevaluasi metode berbasis asersi untuk perilaku bergantian, dan memakai invarian selain kemonotonan guna menemukan lebih banyak batasan yang dapat dibuang dengan aman.</p>
+  </section>
+
+  <p class="citation publication-citation">Takafumi Horiuchi dan Kazunori Ueda. “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa”. Konferensi Tahunan ke-33 Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+
+  <nav aria-label="Situs">
+    <ul>
+      <li><a href="../../">Ke portofolio Takafumi Horiuchi</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/bachelors-thesis-constraint-programming/">English</a></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../../zh-Hans/works/bachelors-thesis-constraint-programming/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/bachelors-thesis-constraint-programming/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/bachelors-thesis-constraint-programming/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/bachelors-thesis-constraint-programming/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/bachelors-thesis-constraint-programming/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/bachelors-thesis-constraint-programming/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/bachelors-thesis-constraint-programming/">日本語</a></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/bachelors-thesis-constraint-programming/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/bachelors-thesis-constraint-programming/">Deutsch</a></li>
+      <li><a lang="it" hreflang="it" translate="no" href="../../../it/works/bachelors-thesis-constraint-programming/">Italiano</a></li>
+      <li><span lang="id" translate="no" aria-current="true">Bahasa Indonesia</span></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/bachelors-thesis-constraint-programming/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>

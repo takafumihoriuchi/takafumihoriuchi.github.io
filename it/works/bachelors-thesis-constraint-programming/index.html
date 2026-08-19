@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="it">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Tesi di laurea triennale sulla programmazione a vincoli — Takafumi Horiuchi</title>
+<meta name="description" content="Ricerca di laurea triennale su come rendere più veloce il simulatore di sistemi ibridi HydLa rimuovendo durante l'esecuzione i vincoli con guardia che non possono più diventare veri.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="it_IT">
+<meta property="og:title" content="Tesi di laurea triennale sulla programmazione a vincoli">
+<meta property="og:description" content="Usare la monotonia per rimuovere i vincoli ormai inutili e rendere più veloce la simulazione dei sistemi ibridi.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Una pallina simulata scende rimbalzando una scala, gradino dopo gradino: illustra quando i vincoli già superati smettono di contare.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "IA × Ingegneria Cognitiva × Design",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
+      "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
+      "headline": "Tesi di laurea triennale sulla programmazione a vincoli",
+      "url": "https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/",
+      "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
+      "description": "Ricerca di laurea triennale su come rendere più veloce il simulatore di sistemi ibridi HydLa rimuovendo durante l'esecuzione i vincoli con guardia che non possono più diventare veri.",
+      "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
+      "datePublished": "2019-06-01",
+      "inLanguage": "it",
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Kazunori Ueda" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Japanese Society for Artificial Intelligence"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Tesi di laurea triennale sulla programmazione a vincoli</h1>
+    <div class="identity">
+      <p class="tagline">di <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="Profili su altri siti">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">giugno 2019</p>
+  </header>
+
+  <section>
+    <h2>Panoramica</h2>
+    <p class="lead">Da studente di informatica alla triennale, la mia ricerca è partita da una domanda pratica: quando un simulatore accumula molte condizioni possibili, come si fa a fargli smettere di riconsiderare quelle che non possono più verificarsi? Ho sviluppato e valutato per HydLa un metodo che sfrutta la direzione in cui un valore sta cambiando per togliere dalla ricerca le condizioni ormai inutili. Nel modello di riferimento il tempo totale di simulazione si è ridotto a circa la metà.</p>
+    <p>Questo lavoro è una delle prime fondamenta della <a href="../../">mia filosofia progettuale</a>. La programmazione a vincoli mi ha insegnato che i risultati complessi non vanno sempre specificati direttamente: possono emergere da uno spazio di regole, priorità e confini definito con cura. È quel modo di pensare a reggere oggi il mio modo di progettare a partire dai vincoli nell'era dell'IA: progettare le condizioni entro cui un sistema generativo è libero di agire.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>Abstract</h2>
+    <p>HydLa è un linguaggio di modellazione per sistemi ibridi: sistemi in cui il cambiamento continuo e gli eventi discreti interagiscono. La sua impostazione basata sui vincoli permette di descrivere questi sistemi in modo conciso e di simularli con grande precisione. Il prezzo è che, in un modello grande, il simulatore può continuare a controllare un numero enorme di regole condizionali anche quando alcune hanno smesso di avere senso.</p>
+    <p>Questa ricerca ha proposto di ridurre dinamicamente quei vincoli con guardia. Riconoscendo un comportamento monotono — un valore che continua a muoversi in una sola direzione — il simulatore può stabilire che certe guardie non diventeranno mai vere in futuro e smettere di controllarle senza rischi. L'approccio si è rivelato particolarmente efficace in un modello con molti oggetti sorvegliati allo stesso modo, dove il tempo di esecuzione misurato è sceso a circa la metà di quello originale.</p>
+  </section>
+
+  <section>
+    <h2>1. Introduzione</h2>
+    <p>Un sistema ibrido unisce comportamento continuo ed eventi discreti. Una pallina che rimbalza è un esempio semplice: posizione e velocità cambiano con continuità finché è in aria, ma l'istante in cui tocca una superficie crea un evento discreto che ne cambia la direzione. Termostati, veicoli e robot contengono versioni ben più gravide di conseguenze della stessa miscela.</p>
+    <p>HydLa consente di descrivere questi sistemi con vincoli matematici e logici, invece di scrivere un'unica sequenza procedurale. Il suo simulatore, HyLaGI, esegue calcoli simbolici senza errori di arrotondamento e sa lavorare con parametri incerti. Questa espressività crea però un problema di scala: quando un modello contiene molte regole che si attivano solo in condizioni particolari, il simulatore deve chiedersi in continuazione se ciascuna condizione possa essere la prossima a verificarsi.</p>
+
+    <figure class="paper-figure figure-1">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Codice sorgente HydLa che definisce una pallina in moto orizzontale e il suo rimbalzo su uno degli N segmenti adiacenti della superficie.">
+      <figcaption>Un breve modello HydLa descrive una pallina e una superficie divisa in <em>N</em> segmenti con guardia.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. Vincoli con guardia nella simulazione</h2>
+    <p>Un vincolo con guardia è una regola che si attiva solo quando la sua condizione di guardia è soddisfatta. Nel modello di riferimento qui sopra ogni segmento della superficie ha la propria regola: se la pallina arriva a quota zero mentre la sua posizione orizzontale cade dentro quel segmento, si applica la regola del rimbalzo. Dividere la superficie in più parti dà quindi al simulatore più guardie da ispezionare.</p>
+    <p>L'esperimento ha fatto variare il numero di segmenti da 10 a 200. Il simulatore originale rallentava all'incirca come il quadrato di quel numero. La cosa conta al di là dell'esempio giocattolo: un modello più grande può rappresentare molti oggetti fisici, regioni di contatto o eventi possibili esattamente in questa forma sorvegliata.</p>
+  </section>
+
+  <section>
+    <h2>3. Dove sta il collo di bottiglia</h2>
+    <p>La profilazione ha mostrato che il rallentamento non era distribuito in modo uniforme nel simulatore. Con 100 segmenti di superficie, il 96% del tempo di esecuzione misurato veniva speso in <code>FindMinTime</code>, l'operazione che cerca il primo evento possibile successivo. Rivalutava di continuo le guardie di tutti i vincoli candidati.</p>
+    <p>Quel risultato ha reso specifico l'obiettivo dell'ottimizzazione: ridurre il numero di guardie che <code>FindMinTime</code> deve considerare, preservando esattamente lo stesso comportamento simulato.</p>
+  </section>
+
+  <section>
+    <h2>4. Riduzione dei vincoli con guardia</h2>
+    <p>Si immagini una pallina che scende rimbalzando una scala. Una volta che la pallina ha superato un gradino e prosegue in avanti, quel gradino non può più influenzarla. Chi guarda il disegno scarta subito i gradini rimasti indietro; l'algoritmo originale continuava a controllarli tutti, uno per uno.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Una traiettoria rossa mostra una pallina che scende rimbalzando su gradini neri; le zone ombreggiate indicano i gradini già superati e ormai irrilevanti.">
+      <figcaption>Man mano che la pallina avanza verso destra, le guardie dei gradini ombreggiati alle sue spalle possono essere omesse.</figcaption>
+    </figure>
+
+    <p>La parte difficile è dimostrare che una guardia scartata non servirà più in seguito. Rimuoverla solo perché adesso è falsa potrebbe produrre in silenzio un risultato sbagliato qualora tornasse vera. La proposta si appoggia perciò alla monotonia: alla garanzia che una variabile continui a crescere, o continui a decrescere, lungo un intervallo di tempo.</p>
+
+    <h3>4.1 Approccio alla monotonia uniforme</h3>
+    <p>Il primo approccio vale quando una variabile si muove in una sola direzione per l'intera simulazione. Nel modello a superficie divisa la posizione orizzontale della pallina cresce sempre. Una volta superato un segmento, la condizione di quel segmento non può più essere soddisfatta. Le tecniche di model checking permettono di stabilire questa proprietà prima della simulazione, così le guardie ormai inutili possono essere rimosse senza rischi mentre l'esecuzione procede.</p>
+
+    <figure class="paper-figure figure-3">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Una linea rossa crescente, da alfa all'istante zero fino a beta all'istante massimo, illustra una variabile che cresce per tutta la simulazione.">
+      <figcaption>Monotonia uniforme significa che la direzione del cambiamento regge per l'intero intervallo simulato.</figcaption>
+    </figure>
+
+    <h3>4.2 Approccio alla monotonia alternata</h3>
+    <p>Molti sistemi reali non si muovono per sempre in una sola direzione. Una variabile può crescere, invertirsi e poi decrescere. L'articolo ha quindi delineato un secondo approccio: partire da una direzione ipotizzata, sorvegliare quell'ipotesi con delle asserzioni e far ripartire la logica di riduzione dal punto in cui la direzione cambia. Le guardie rimosse per un intervallo monotono vengono ripristinate quando comincia il successivo.</p>
+
+    <figure class="paper-figure figure-5">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Cinque diagrammi mostrano un intervallo ipotizzato crescente, il fallimento di un'asserzione, un nuovo intervallo decrescente, un altro fallimento e intervalli monotoni stabiliti uno dopo l'altro.">
+      <figcaption>I fallimenti delle asserzioni dividono un comportamento che cambia in intervalli trattabili ciascuno come monotono.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. Risultati sperimentali</h2>
+    <p>Ho implementato l'approccio della monotonia uniforme e l'ho valutato con il modello a superficie divisa. Sia l'algoritmo originale sia quello proposto impiegavano comunque più tempo al crescere del numero di segmenti, ma la versione proposta faceva sistematicamente meno lavoro. Confrontando le curve interpolate, il coefficiente di grado massimo è sceso da 1,1463 a 0,6083; per questo caso di riferimento il tempo totale di simulazione si è all'incirca dimezzato.</p>
+    <p>Il risultato non sostiene che ogni modello HydLa diventi due volte più veloce. Mostra dove il metodo aiuta: nei modelli con molti oggetti sorvegliati e una direzione di cambiamento dimostrabile, dove le guardie diventano definitivamente irrilevanti durante l'esecuzione.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Un grafico del tempo di simulazione rispetto a N mostra il metodo proposto sotto quello originale su tutto l'intervallo da 10 a 200 segmenti di superficie, arrivando a circa 250 secondi invece di circa 470 quando N è uguale a 200.">
+      <figcaption>Nel modello valutato il metodo proposto (quadrati) impiega all'incirca la metà del tempo dell'algoritmo originale (cerchi).</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. Conclusioni e lavoro futuro</h2>
+    <p>La ricerca ha mostrato che a rendere più efficiente una simulazione può essere la conoscenza del modello, non soltanto un calcolo di basso livello più veloce. Usando la monotonia per riconoscere quali possibilità sono ormai impossibili, HyLaGI può restringere l'insieme dei vincoli attivi senza cambiare il risultato.</p>
+    <p>L'esperimento realizzato copriva la monotonia uniforme. L'articolo ha lasciato due direzioni per il seguito: valutare il metodo basato sulle asserzioni per il comportamento alternato e usare invarianti diversi dalla monotonia per individuare altri vincoli rimovibili senza rischi.</p>
+  </section>
+
+  <p class="citation publication-citation">Takafumi Horiuchi e Kazunori Ueda, «Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa», 33ª conferenza annuale della Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+
+  <nav aria-label="Sito">
+    <ul>
+      <li><a href="../../">Vai al portfolio di Takafumi Horiuchi</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/bachelors-thesis-constraint-programming/">English</a></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../../zh-Hans/works/bachelors-thesis-constraint-programming/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/bachelors-thesis-constraint-programming/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/bachelors-thesis-constraint-programming/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/bachelors-thesis-constraint-programming/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/bachelors-thesis-constraint-programming/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/bachelors-thesis-constraint-programming/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/bachelors-thesis-constraint-programming/">日本語</a></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/bachelors-thesis-constraint-programming/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/bachelors-thesis-constraint-programming/">Deutsch</a></li>
+      <li><span lang="it" translate="no" aria-current="true">Italiano</span></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/bachelors-thesis-constraint-programming/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/bachelors-thesis-constraint-programming/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>

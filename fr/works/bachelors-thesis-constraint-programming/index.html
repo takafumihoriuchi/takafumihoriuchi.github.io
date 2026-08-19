@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Mémoire de licence sur la programmation par contraintes — Takafumi Horiuchi</title>
+<meta name="description" content="Recherche de premier cycle sur l'accélération du simulateur de systèmes hybrides HydLa, en retirant en cours d'exécution les contraintes gardées qui ne peuvent plus devenir vraies.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:title" content="Mémoire de licence sur la programmation par contraintes">
+<meta property="og:description" content="Se servir de la monotonie pour retirer les contraintes devenues inutiles et accélérer la simulation des systèmes hybrides.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="Une balle simulée descend un escalier en rebondissant de marche en marche, ce qui illustre le moment où les contraintes déjà franchies cessent de compter.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "IA × Ingénierie cognitive × Design",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
+      "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
+      "headline": "Mémoire de licence sur la programmation par contraintes",
+      "url": "https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/",
+      "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
+      "description": "Recherche de premier cycle sur l'accélération du simulateur de systèmes hybrides HydLa, en retirant en cours d'exécution les contraintes gardées qui ne peuvent plus devenir vraies.",
+      "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
+      "datePublished": "2019-06-01",
+      "inLanguage": "fr",
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Kazunori Ueda" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Japanese Society for Artificial Intelligence"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>Mémoire de licence sur la programmation par contraintes</h1>
+    <div class="identity">
+      <p class="tagline">par <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="Profils ailleurs">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">juin 2019</p>
+  </header>
+
+  <section>
+    <h2>Aperçu</h2>
+    <p class="lead">Étudiant de premier cycle en informatique, j'ai mené une recherche partie d'une question pratique : lorsqu'un simulateur accumule un grand nombre de conditions possibles, comment l'amener à cesser de réexaminer celles qui ne peuvent plus se produire ? J'ai conçu, implémenté et évalué pour HydLa une méthode qui s'appuie sur la direction dans laquelle une valeur évolue afin de retirer de la recherche les conditions devenues inutiles. Sur le modèle de référence, la durée totale de simulation est tombée à environ la moitié.</p>
+    <p>Ce travail est l'une des premières fondations de <a href="../../">ma philosophie de design</a>. La programmation par contraintes m'a appris que les résultats complexes n'ont pas toujours besoin d'être spécifiés directement : ils peuvent émerger d'un espace de règles, de priorités et de limites défini avec soin. Cette manière de penser soutient aujourd'hui ma façon de concevoir à partir de contraintes à l'ère de l'IA — concevoir les conditions à l'intérieur desquelles un système génératif est libre d'agir.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>Résumé</h2>
+    <p>HydLa est un langage de modélisation pour les systèmes hybrides : les systèmes où changement continu et événements discrets interagissent. Sa conception fondée sur les contraintes permet de décrire ces systèmes de façon concise et de les simuler avec une grande précision. En contrepartie, dans un grand modèle, le simulateur peut continuer à vérifier un très grand nombre de règles conditionnelles, alors même que certaines n'ont plus lieu d'être.</p>
+    <p>Cette recherche a proposé de réduire dynamiquement ces contraintes gardées. En reconnaissant un comportement monotone — une valeur qui continue d'évoluer dans un seul sens —, le simulateur peut établir que certaines gardes ne deviendront jamais vraies par la suite et cesser sans risque de les vérifier. L'approche s'est révélée particulièrement efficace sur un modèle comportant de nombreux objets gardés de la même manière, où le temps d'exécution mesuré est descendu à environ la moitié de l'original.</p>
+  </section>
+
+  <section>
+    <h2>1. Introduction</h2>
+    <p>Un système hybride associe un comportement continu à des événements discrets. Une balle qui rebondit en est un exemple simple : sa position et sa vitesse changent continûment tant qu'elle est en l'air, mais l'instant où elle touche une surface crée un événement discret qui change sa direction. Thermostats, véhicules et robots contiennent tous des versions plus lourdes de conséquences du même mélange.</p>
+    <p>HydLa permet de décrire ces systèmes par des contraintes mathématiques et logiques plutôt que d'écrire une unique séquence procédurale. Son simulateur, HyLaGI, effectue des calculs symboliques sans erreur d'arrondi et sait travailler avec des paramètres incertains. Cette expressivité crée toutefois un problème d'échelle : lorsqu'un modèle contient beaucoup de règles qui ne s'activent que sous certaines conditions, le simulateur doit sans cesse se demander si chacune de ces conditions pourrait être la prochaine à se réaliser.</p>
+
+    <figure class="paper-figure figure-1">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Code source HydLa définissant une balle qui se déplace horizontalement et rebondit sur l'un des N segments adjacents de la surface.">
+      <figcaption>Un court modèle HydLa décrit une balle et une surface divisée en <em>N</em> segments gardés.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. Les contraintes gardées dans la simulation</h2>
+    <p>Une contrainte gardée est une règle qui ne devient active que lorsque sa condition de garde est satisfaite. Dans le modèle de référence ci-dessus, chaque segment de la surface a sa propre règle : si la balle atteint la hauteur zéro alors que sa position horizontale se trouve dans ce segment, la règle du rebond s'applique. Découper la surface en davantage de morceaux donne donc au simulateur davantage de gardes à inspecter.</p>
+    <p>L'expérience a fait varier le nombre de segments de 10 à 200. Le simulateur d'origine ralentissait à peu près comme le carré de ce nombre. La portée dépasse l'exemple jouet : un modèle plus grand peut représenter de nombreux objets physiques, zones de contact ou événements possibles exactement sous cette forme gardée.</p>
+  </section>
+
+  <section>
+    <h2>3. Localisation du goulet d'étranglement</h2>
+    <p>Le profilage a montré que le ralentissement n'était pas réparti uniformément dans le simulateur. Avec 100 segments de surface, 96 % du temps d'exécution mesuré passait dans <code>FindMinTime</code>, l'opération qui recherche le prochain événement possible le plus proche. Elle réévaluait sans cesse les gardes de toutes les contraintes candidates.</p>
+    <p>Ce résultat a rendu la cible de l'optimisation précise : réduire le nombre de gardes que <code>FindMinTime</code> doit examiner, tout en préservant exactement le même comportement simulé.</p>
+  </section>
+
+  <section>
+    <h2>4. Réduction des contraintes gardées</h2>
+    <p>Imaginez une balle qui descend un escalier en rebondissant. Dès que la balle a dépassé une marche et continue d'avancer, cette marche ne peut plus l'affecter. Celui qui regarde le schéma écarte immédiatement les marches situées derrière la balle ; l'algorithme d'origine continuait de les vérifier une à une.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Une trajectoire rouge montre une balle qui descend en rebondissant des marches noires ; les zones grisées indiquent les marches déjà franchies et devenues sans importance.">
+      <figcaption>À mesure que la balle avance vers la droite, les gardes des marches grisées derrière elle peuvent être omises.</figcaption>
+    </figure>
+
+    <p>Le point difficile est de prouver qu'une garde écartée ne sera plus nécessaire par la suite. La retirer au seul motif qu'elle est fausse à présent pourrait produire silencieusement un résultat erroné si elle redevenait vraie. La proposition s'appuie donc sur la monotonie : peut-on garantir qu'une variable continuera de croître, ou continuera de décroître, sur un intervalle de temps ?</p>
+
+    <h3>4.1 Approche de la monotonie uniforme</h3>
+    <p>La première approche s'applique lorsqu'une variable évolue dans un seul sens pendant toute la simulation. Dans le modèle à surface découpée, la position horizontale de la balle croît toujours. Une fois un segment dépassé, la condition de ce segment ne peut plus jamais être satisfaite. Les techniques de vérification de modèles permettent d'établir cette propriété avant la simulation, si bien que les gardes devenues inutiles peuvent être retirées sans risque au fil de l'exécution.</p>
+
+    <figure class="paper-figure figure-3">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Une ligne rouge montante, d'alpha à l'instant zéro jusqu'à bêta à l'instant maximal, illustre une variable qui croît pendant toute la simulation.">
+      <figcaption>La monotonie uniforme signifie que le sens de la variation tient sur tout l'intervalle simulé.</figcaption>
+    </figure>
+
+    <h3>4.2 Approche de la monotonie alternée</h3>
+    <p>Beaucoup de systèmes réels n'évoluent pas indéfiniment dans un seul sens. Une variable peut croître, se retourner, puis décroître. L'article a donc esquissé une seconde approche : partir d'un sens supposé, surveiller cette hypothèse par des assertions, et reprendre la logique de réduction à partir du point où le sens change. Les gardes retirées pour un intervalle monotone sont rétablies au début du suivant.</p>
+
+    <figure class="paper-figure figure-5">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Cinq schémas montrent un intervalle supposé croissant, l'échec d'une assertion, un nouvel intervalle décroissant, un autre échec, puis des intervalles monotones établis les uns après les autres.">
+      <figcaption>Les échecs d'assertion découpent un comportement changeant en intervalles que l'on peut traiter chacun comme monotone.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. Résultats expérimentaux</h2>
+    <p>J'ai implémenté l'approche de la monotonie uniforme et l'ai évaluée sur le modèle à surface découpée. L'algorithme d'origine comme celui proposé mettaient toujours plus de temps à mesure que le nombre de segments augmentait, mais la version proposée effectuait systématiquement moins de travail. En comparant les courbes ajustées, le coefficient dominant est passé de 1,1463 à 0,6083 ; pour ce cas de référence, la durée totale de simulation a été à peu près divisée par deux.</p>
+    <p>Ce résultat n'affirme pas que tout modèle HydLa devient deux fois plus rapide. Il montre où la méthode aide : sur les modèles comportant beaucoup d'objets gardés et un sens de variation démontrable, où les gardes deviennent définitivement sans objet en cours d'exécution.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Un graphique du temps de simulation en fonction de N montre la méthode proposée sous l'originale de 10 à 200 segments de surface, atteignant environ 250 secondes au lieu d'environ 470 pour N égal à 200.">
+      <figcaption>Sur le modèle évalué, la méthode proposée (carrés) prend environ deux fois moins de temps que l'algorithme d'origine (cercles).</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. Conclusion et perspectives</h2>
+    <p>La recherche a montré que la connaissance du modèle — et pas seulement un calcul de bas niveau plus rapide — peut rendre une simulation plus efficace. En se servant de la monotonie pour reconnaître quelles possibilités sont devenues impossibles, HyLaGI peut réduire son ensemble de contraintes actives sans changer le résultat.</p>
+    <p>L'expérience implémentée portait sur la monotonie uniforme. L'article a laissé deux directions pour la suite : évaluer la méthode par assertions dans le cas d'un comportement alterné, et utiliser d'autres invariants que la monotonie pour repérer d'autres contraintes que l'on peut retirer sans risque.</p>
+  </section>
+
+  <p class="citation publication-citation">Takafumi Horiuchi et Kazunori Ueda, « Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa », 33e conférence annuelle de la Japanese Society for Artificial Intelligence, 2019. DOI : <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+
+  <nav aria-label="Site">
+    <ul>
+      <li><a href="../../">Aller au portfolio de Takafumi Horiuchi</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/bachelors-thesis-constraint-programming/">English</a></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../../zh-Hans/works/bachelors-thesis-constraint-programming/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/bachelors-thesis-constraint-programming/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/bachelors-thesis-constraint-programming/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/bachelors-thesis-constraint-programming/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/bachelors-thesis-constraint-programming/">Português</a></li>
+      <li><span lang="fr" translate="no" aria-current="true">Français</span></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/bachelors-thesis-constraint-programming/">日本語</a></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/bachelors-thesis-constraint-programming/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/bachelors-thesis-constraint-programming/">Deutsch</a></li>
+      <li><a lang="it" hreflang="it" translate="no" href="../../../it/works/bachelors-thesis-constraint-programming/">Italiano</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/bachelors-thesis-constraint-programming/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/bachelors-thesis-constraint-programming/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>

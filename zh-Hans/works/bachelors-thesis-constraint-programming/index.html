@@ -1,0 +1,206 @@
+<!DOCTYPE html>
+<html lang="zh-Hans">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>关于约束编程的学士论文 — 堀内贵文</title>
+<meta name="description" content="一项本科研究：通过在运行过程中移除已不可能再成立的守卫约束，让混成系统仿真器 HydLa 跑得更快。">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="zh_CN">
+<meta property="og:title" content="关于约束编程的学士论文">
+<meta property="og:description" content="借助单调性移除已经失效的约束，让混成系统的仿真更快。">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="仿真中的小球沿楼梯逐级弹跳，说明已经越过的约束从何时起变得无关。">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内贵文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "AI × 认知工程 × 设计",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
+      "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
+      "headline": "关于约束编程的学士论文",
+      "url": "https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/",
+      "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
+      "description": "一项本科研究：通过在运行过程中移除已不可能再成立的守卫约束，让混成系统仿真器 HydLa 跑得更快。",
+      "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
+      "datePublished": "2019-06-01",
+      "inLanguage": "zh-Hans",
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Kazunori Ueda" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "The Japanese Society for Artificial Intelligence"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>关于约束编程的学士论文</h1>
+    <div class="identity">
+      <p class="tagline">作者：<a class="byline" href="../../">堀内贵文（Takafumi Horiuchi）</a></p>
+      <nav aria-label="其他平台的主页">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">2019年6月</p>
+  </header>
+
+  <section>
+    <h2>概述</h2>
+    <p class="lead">作为信息科学专业的本科生，我的研究从一个很实际的问题出发：当仿真器积累了大量可能的条件时，怎样才能让它不再去反复考虑那些已经不可能发生的条件？我为 HydLa 设计并实现了一种方法，利用变量正在变化的方向，把已经失效的条件从搜索中移除，并对它做了评估。在作为基准的模型上，仿真的总耗时减少到大约一半。</p>
+    <p>这项研究是<a href="../../">我的设计哲学</a>最早的地基。约束编程让我明白，复杂的结果并不总需要被直接指定：它们可以从一个经过仔细定义的规则、优先级与边界所构成的空间里生长出来。这种思考方式如今支撑着我在 AI 时代从约束出发做设计的方式——去设计一个生成系统可以自由行动的条件。</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>摘要</h2>
+    <p>HydLa 是一种面向混成系统的建模语言，所谓混成系统，是连续变化与离散事件相互作用的系统。基于约束的设计让这类系统可以被简洁地描述，并以很高的精度加以仿真。代价是：模型一旦变大，仿真器就会一直检查数量庞大的条件规则，即使其中一些早已无关。</p>
+    <p>本研究提出在运行过程中动态削减这些守卫约束。只要能识别出单调的行为——某个值持续朝一个方向变化——仿真器就可以断定某些守卫条件在将来永远不会成立，从而安全地停止检查它们。在含有大量同类守卫对象的模型中，这一方法尤其有效：实测运行时间降到了原来的大约一半。</p>
+  </section>
+
+  <section>
+    <h2>1. 引言</h2>
+    <p>混成系统同时包含连续的行为与离散的事件。弹跳的小球就是一个简单的例子：它在空中时，位置与速度连续变化，而撞到平面的那一瞬间构成一个离散事件，改变了它的方向。恒温器、汽车与机器人，内部都藏着同一种混合，只是后果更为重大。</p>
+    <p>HydLa 让建模者用数学与逻辑的约束来描述这类系统，而不必写出一条唯一的过程序列。它的仿真器 HyLaGI 可以进行没有舍入误差的符号计算，也能处理取值不确定的参数。然而这种表达力带来了规模上的问题：当一个模型含有许多只在特定条件下才生效的规则时，仿真器必须一遍又一遍地追问，每个条件是否就是下一个将要发生的那个。</p>
+
+    <figure class="paper-figure figure-1">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="HydLa 源代码，定义了一个水平移动的小球，以及它在 N 个相邻平面区段之一上的弹跳。">
+      <figcaption>一段简短的 HydLa 模型描述了一个小球，以及被分成 <em>N</em> 个守卫区段的平面。</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. 仿真中的守卫约束</h2>
+    <p>守卫约束是只在其守卫条件被满足时才生效的规则。在上面的基准模型里，每个平面区段都有自己的规则：如果小球的高度降到零，而它的水平位置正落在该区段之内，弹跳规则就适用。因此，把平面切得越细，仿真器要检查的守卫条件也就越多。</p>
+    <p>实验把区段数从 10 变化到 200。原有的仿真器变慢的速度，大致与这个数目的平方成正比。这件事的意义不止于一个玩具例子：更大的模型很可能正是以这种带守卫的形式，表示大量物体、接触区域或可能发生的事件。</p>
+  </section>
+
+  <section>
+    <h2>3. 瓶颈所在</h2>
+    <p>性能剖析显示，这种变慢并没有均匀地分布在仿真器各处。当平面被分成 100 个区段时，实测运行时间的 96% 都花在 <code>FindMinTime</code> 上——那是寻找下一个最早可能事件的操作。它在反复求值每一个候选约束的守卫条件。</p>
+    <p>这个结果让优化的目标变得具体：在完全不改变被仿真行为的前提下，减少 <code>FindMinTime</code> 必须考虑的守卫条件数量。</p>
+  </section>
+
+  <section>
+    <h2>4. 守卫约束的削减</h2>
+    <p>设想一个小球沿着楼梯逐级弹跳向下。一旦小球越过某一级台阶并继续向前，那一级就再也影响不到它了。看图的人会立刻忽略小球身后的台阶；而原有的算法仍在逐一检查它们。</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="红色轨迹显示小球沿黑色台阶逐级弹跳向下；阴影区域表示已经越过、不再相关的台阶。">
+      <figcaption>随着小球向右移动，它身后阴影台阶的守卫条件都可以省去。</figcaption>
+    </figure>
+
+    <p>困难之处在于证明被丢掉的守卫条件在之后永远不会再被用到。仅仅因为它此刻为假就把它移除，万一它重新变为真，就可能悄无声息地给出错误结果。因此提案使用单调性：判断某个变量在一段时间区间内，是否保证持续增大或持续减小。</p>
+
+    <h3>4.1 一致单调性的处理方式</h3>
+    <p>第一种处理方式适用于变量在整个仿真过程中只朝一个方向移动的情形。在分段平面的模型里，小球的水平位置始终增大。一旦它越过某个区段，该区段的条件就再也不可能被满足。这一性质可以在仿真之前用模型检验的技术加以确立，于是随着运行的推进，失效的守卫条件可以被安全地移除。</p>
+
+    <figure class="paper-figure figure-3">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="一条红线从时刻零处的 α 上升到最大时刻处的 β，表示一个在整个仿真过程中持续增大的变量。">
+      <figcaption>一致单调性意味着变化的方向在整个被仿真的区间内始终成立。</figcaption>
+    </figure>
+
+    <h3>4.2 交替单调性的处理方式</h3>
+    <p>现实中的许多系统并不会永远朝一个方向变化。一个变量可能先增大，然后转向，接着减小。因此论文勾勒了第二种处理方式：先假定一个方向，用断言监视这个假定，并从方向改变的那一点起重新开始削减的逻辑。为某个单调区间移除的守卫条件，会在下一个区间开始时被恢复。</p>
+
+    <figure class="paper-figure figure-5">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五幅图依次展示：假定为增大的区间、一次断言失败、一个新的减小区间、又一次失败，以及一连串单调区间被逐步确立。">
+      <figcaption>断言的失败把变化着的行为切分成若干区间，每个区间都可以当作单调的来处理。</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. 实验结果</h2>
+    <p>我实现了一致单调性这一路线，并用分段平面的模型加以评估。随着区段数增加，原有算法与提案算法的耗时都还是会变长，但提案版本始终做了更少的工作。比较拟合出的曲线，最高次项系数从 1.1463 降到 0.6083；对这个基准而言，仿真的总耗时大约减半。</p>
+    <p>这并不是说任何 HydLa 模型都会快上一倍。它说明的是这一方法在哪里有用：含有大量守卫对象、变化方向可被证明、并且守卫条件会在运行过程中永久失效的模型。</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="仿真时间对 N 的曲线图显示，在平面区段数从 10 到 200 的整个范围内，提案方法都低于原有方法；在 N 等于 200 时约为 250 秒，而非约 470 秒。">
+      <figcaption>在所评估的模型中，提案方法（方块）所用的时间大约是原有算法（圆点）的一半。</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. 结论与未来工作</h2>
+    <p>这项研究表明，让仿真更高效的途径不只是把低层计算做得更快，关于模型本身的知识同样可以做到。借助单调性识别出哪些可能性已经变得不可能，HyLaGI 就能在不改变结果的前提下缩小其有效约束集合。</p>
+    <p>实际实现并验证的是一致单调性这一侧。论文为后续工作留下了两个方向：评估针对交替行为的断言方法，以及利用单调性之外的不变性质，找出更多可以被安全移除的约束。</p>
+  </section>
+
+  <p class="citation publication-citation">堀内贵文、上田和纪《Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa》，2019 年度日本人工智能学会全国大会（第 33 届），2019 年。DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
+
+  <nav aria-label="站点">
+    <ul>
+      <li><a href="../../">前往堀内贵文的作品集</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/bachelors-thesis-constraint-programming/">English</a></li>
+      <li><span lang="zh-Hans" translate="no" aria-current="true">中文（简体）</span></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/bachelors-thesis-constraint-programming/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/bachelors-thesis-constraint-programming/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/bachelors-thesis-constraint-programming/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/bachelors-thesis-constraint-programming/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/bachelors-thesis-constraint-programming/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/bachelors-thesis-constraint-programming/">日本語</a></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/bachelors-thesis-constraint-programming/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/bachelors-thesis-constraint-programming/">Deutsch</a></li>
+      <li><a lang="it" hreflang="it" translate="no" href="../../../it/works/bachelors-thesis-constraint-programming/">Italiano</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/bachelors-thesis-constraint-programming/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/bachelors-thesis-constraint-programming/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>
