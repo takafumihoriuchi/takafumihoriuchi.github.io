@@ -14,6 +14,7 @@ rather than when this ran. Pages that git does not know about yet fall back to
 today.
 """
 
+import re
 import subprocess
 import sys
 from datetime import date
@@ -47,12 +48,32 @@ def last_commit_date(path: Path) -> str:
         return date.today().isoformat()
 
 
+NOINDEX_RE = re.compile(
+    r'<meta[^>]*name="robots"[^>]*content="[^"]*noindex', re.I)
+
+
+def is_noindex(path: Path) -> bool:
+    """Whether the page asks not to be indexed.
+
+    Listing such a page would contradict its own tag, which is the reason
+    works/_template/ and og-card.html are absent from PAGES. A translation
+    still waiting to be written carries the same tag but cannot be left out of
+    PAGES — check-i18n.py needs it there to compare against — so the rule is
+    read off the page itself rather than kept as a second list to maintain.
+    The page joins the sitemap on the next run after the tag comes off.
+    """
+    return bool(NOINDEX_RE.search(path.read_text(encoding="utf-8")))
+
+
 def build(root: Path) -> str:
-    body = []
+    body, skipped = [], []
     for page in PAGES:
         for _, d, _, _ in LANGS:
             path = root / d / page / "index.html"
             if not path.exists():
+                continue
+            if is_noindex(path):
+                skipped.append(str(path.relative_to(root)))
                 continue
             body.append(
                 f"  <url>\n"
@@ -60,6 +81,10 @@ def build(root: Path) -> str:
                 f"    <lastmod>{last_commit_date(path)}</lastmod>\n"
                 f"  </url>\n"
             )
+    if skipped:
+        print(f"  skipped {len(skipped)} noindex page(s):")
+        for s in skipped:
+            print("    " + s)
     return HEADER + "".join(body) + "</urlset>\n"
 
 
