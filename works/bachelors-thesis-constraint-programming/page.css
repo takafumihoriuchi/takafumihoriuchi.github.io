@@ -18,6 +18,16 @@ figcaption {
   hyphens: auto;
 }
 
+/* Indonesian is the one language where justification does not pay for itself,
+   as on the other work page: no hyphenation dictionary, and long affixed words
+   that a line cannot break inside, so the whole slack goes into word spacing.
+   `start` rather than `left`, so the rule still means the right thing if a
+   right-to-left language ever needs it. */
+:lang(id) section p,
+:lang(id) figcaption {
+  text-align: start;
+}
+
 h3 {
   margin: 2.5rem 0 0.75rem;
   font-size: 1rem;
