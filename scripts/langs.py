@@ -34,6 +34,7 @@ PAGES = [
     "",
     "works/my-own-pokemon-generation/",
     "works/personal-fit-ui/",
+    "works/masters-thesis-hmi-design/",
     "works/bachelors-thesis-constraint-programming/",
 ]
 

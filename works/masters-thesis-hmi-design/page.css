@@ -1,0 +1,132 @@
+/* Written for the English page and shared unchanged by the twelve
+   translations, which is why it is a file rather than a <style> block. */
+
+.lead { font-size: 1.125rem; }
+
+.section-break {
+  margin: calc(var(--space-section) / 2) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
+
+.section-break + section { margin-top: 0; }
+
+section p,
+figcaption {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Indonesian is the one language where justification does not pay for itself,
+   as on the other work pages: no hyphenation dictionary, and long affixed words
+   that a line cannot break inside, so the whole slack goes into word spacing.
+   `start` rather than `left`, so the rule still means the right thing if a
+   right-to-left language ever needs it. */
+:lang(id) section p,
+:lang(id) figcaption {
+  text-align: start;
+}
+
+h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 1rem;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* The presentation deck. Fifteen 4:3 slides stacked down the page would run
+   past ten thousand pixels before the reader reached the abstract, so they are
+   laid along one axis instead and the strip is scrolled sideways. Snapping
+   makes that scroll land on a slide rather than between two, which is the only
+   thing a slide viewer really has to do — and it costs no JavaScript, so the
+   page keeps the site's zero-script budget.
+
+   `overscroll-behavior-x: contain` keeps a sideways swipe inside the strip
+   instead of letting it become a back-navigation gesture. The list is
+   focusable so that the strip can also be scrolled from the keyboard; browsers
+   do this for a scrollable container only when it can take focus. */
+/* `margin-block`, not the `margin` shorthand: this rule loads after style.css,
+   and the shorthand would set the inline margins to zero — quietly cancelling
+   the negative start margin `.bleed` uses to widen the strip past the text
+   column. The figure would keep its full width and simply run off the page. */
+.deck-figure { margin-block: 2.5rem var(--space-section); }
+
+.deck {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 0 0.75rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+/* Just under full width, so the edge of the next slide shows past the current
+   one. That sliver is the only thing telling a reader the strip continues:
+   macOS hides its scrollbars until something scrolls, which would leave the
+   deck looking like a single image of the title slide. */
+.deck > li {
+  flex: 0 0 88%;
+  scroll-snap-align: start;
+}
+
+.deck a { display: block; }
+
+/* The slides are drawn on white and keep it in dark mode: a deck reproduced
+   with its ground inverted is no longer the artefact it reproduces. The hairline
+   is what separates that white from the page in light mode, where the two are
+   nearly the same value. */
+.deck img {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+/* The strip is as wide as `.bleed` allows, but its caption is prose and stays
+   on the measure the rest of the page reads at. */
+.deck-figure figcaption {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* Temporary. Marks a language version that still carries the English prose, so
+   a reader who arrives in their own language is told why they are not reading
+   it. Delete this rule together with the last placeholder notice — it has no
+   other use, and left behind it would be a rule nothing matches. */
+.translation-pending {
+  margin-top: 1.75rem;
+  padding: 0.85rem 1rem;
+  border-inline-start: 2px solid var(--rule);
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.paper-figure {
+  margin: 2.5rem 0;
+}
+
+.paper-figure img {
+  width: 100%;
+  background: #fff;
+}
+
+.paper-figure figcaption { width: 100%; }
+
+/* The two line diagrams are set at the size that keeps their internal labels
+   close to the surrounding body type; the photographs take the full column.
+   Both stay fluid below these limits on narrow screens, and centring keeps
+   them on the page's reading axis. */
+.figure-1 img,
+.figure-2 img {
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+.citation {
+  font-size: 0.9375rem;
+  color: var(--fg-muted);
+}
+
+.publication-citation { margin-top: var(--space-section); }
