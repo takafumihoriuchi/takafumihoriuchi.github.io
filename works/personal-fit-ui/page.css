@@ -47,48 +47,67 @@ section p {
 
 /* ---- この作品のための追加 ------------------------------------------------ */
 
-/* 概念図。**画像にしない** —— 2章の「画像の中に文章を焼き込まない」を満たすため、
-   箱と矢印は CSS、文字は本文と同じ HTML にする。翻訳も内蔵翻訳もそのまま効く。
-   論理プロパティで書いてあるので、アラビア語版では左右が入れ替わる。 */
-.concept {
+/* 制約型デザインの関係図。文字は画像に焼き込まず HTML として保持するため、
+   各言語へ翻訳でき、スクリーンリーダーにも通常の読み順で届く。 */
+figure.framework {
   display: grid;
-  gap: 0.9rem;
-  margin: 1.6rem 0;
+  gap: 0.75rem;
+  margin: 1.7rem 0;
 }
-.concept-row {
+.framework-branches {
   display: grid;
   grid-template-columns: 1fr 1fr;
-  gap: 0.9rem;
+  gap: 1rem;
 }
-.concept-box {
+.framework-branch {
+  display: grid;
+  grid-template-rows: 1fr auto 1fr;
+  gap: 0.6rem;
+}
+.framework-box {
   border: 1px solid var(--rule);
   border-radius: 6px;
-  padding: 0.7rem 0.9rem;
+  padding: 0.8rem 0.95rem;
   background: var(--accent-wash);
 }
-.concept-box h3 {
-  margin: 0 0 0.25rem;
+.framework-box h3 {
+  margin: 0 0 0.3rem;
   font-size: 0.95rem;
 }
-.concept-box p {
+.framework-box p {
   margin: 0;
   font-size: 0.88rem;
   text-align: start;
 }
-/* 段の間の矢印。記号だけなので ::after に置いてよい（文章ではない）。 */
-.concept-arrow {
-  text-align: center;
-  font-size: 1.1rem;
+.framework-arrow,
+.framework-merge {
+  block-size: 1rem;
+  position: relative;
+}
+.framework-arrow::after,
+.framework-merge::after {
+  content: "\2193";
+  position: absolute;
+  inset: 50% auto auto 50%;
+  transform: translate(-50%, -50%);
+  color: var(--fg-muted);
   line-height: 1;
+}
+.framework-space {
+  background: transparent;
+}
+.framework-ai {
+  border-style: dashed;
+  background: transparent;
+}
+figure.framework figcaption {
+  font-size: 0.85rem;
   color: var(--fg-muted);
 }
-.concept-arrow::after { content: "\2193"; }
-
-/* 出力の箱だけ地色を変える。ここが「AI が決めた結果」であることを示す。 */
-.concept-out { background: transparent; border-style: dashed; }
 
 @media (max-width: 34rem) {
-  .concept-row { grid-template-columns: 1fr; }
+  .framework-branches { grid-template-columns: 1fr; }
+  .framework-branch { grid-template-rows: auto auto auto; }
 }
 
 /* before / after の並置。1 行に 2 枚、狭い画面では縦に積む。
@@ -118,6 +137,20 @@ figure.compare figcaption {
 }
 @media (max-width: 34rem) {
   figure.compare { grid-template-columns: 1fr; }
+}
+
+/* h4 はペルソナの識別子。h3 の説明ラベルに従属させ、本文との間を詰める。 */
+section h4 {
+  margin: -0.45rem 0 0.75rem;
+  font-size: 0.95rem;
+  color: var(--fg-muted);
+}
+
+ul.findings {
+  padding-inline-start: 1.25rem;
+}
+ul.findings li + li {
+  margin-block-start: 0.5rem;
 }
 
 /* 題材についての注記。本文の主張ではなく、読者が前提を誤らないための断り。
