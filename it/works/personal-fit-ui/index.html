@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Scaffold for a work whose write-up has not been written yet. The title is
-     provisional; `Personal Fit UI` is the term the English version is built
-     around, and the other languages carry its sense rather than the words.
-     When the case study is written: fill the sections, add assets/og.jpg and
-     assets/thumb.webp, point og:image and the JSON-LD `image` at og.jpg, add
-     `datePublished`, drop `creativeWorkStatus`, and replace the status line. -->
-<title>Un'interfaccia adatta a ogni singolo utente — Takafumi Horiuchi</title>
-<meta name="description" content="Generare automaticamente un'interfaccia cucita sulla cognizione di una singola persona. Il caso di studio è in preparazione.">
+<!-- This work alone is written in Japanese first: /ja/ is the source of record
+     and every other language is translated from it (owner's instruction,
+     2026-08-23). The mock renders live under the English tree, one file per
+     language, and are referenced from here rather than copied. -->
+<title>Personal Fit UI - Individualizzare l’interfaccia con la progettazione per vincoli — Takafumi Horiuchi</title>
+<meta name="description" content="Generare un’interfaccia adatta alle caratteristiche cognitive, sensoriali e fisiche di una persona, entro i limiti fissati dalle evidenze scientifiche e dai vincoli di progetto. Una prova di concetto su un sistema di navigazione per auto.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/it/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -29,27 +27,18 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     that gets cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="it_IT">
-<meta property="og:title" content="Un'interfaccia adatta a ogni singolo utente">
-<meta property="og:description" content="Un'interfaccia generata sulla cognizione di una singola persona.">
+<meta property="og:title" content="Personal Fit UI - Individualizzare l’interfaccia con la progettazione per vincoli">
+<meta property="og:description" content="L’essere umano progetta il quadro che deve reggere; al suo interno l’IA concretizza l’interfaccia della singola persona. La progettazione per vincoli in pratica.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/it/works/personal-fit-ui/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi — Cognitive Engineering × AI × Design">
+<meta property="og:image:alt" content="La schermata uniforme di Personal Fit UI, con un menu di destinazione e navigazione.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,10 +57,11 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/it/works/personal-fit-ui/#work",
-      "name": "Un'interfaccia adatta a ogni singolo utente",
+      "name": "Personal Fit UI - Individualizzare l’interfaccia con la progettazione per vincoli",
       "url": "https://takafumihoriuchi.github.io/it/works/personal-fit-ui/",
-      "description": "Generare automaticamente un'interfaccia cucita sulla cognizione di una singola persona. Il caso di studio è in preparazione.",
-      "creativeWorkStatus": "In preparazione",
+      "description": "Generare un’interfaccia adatta alle caratteristiche cognitive, sensoriali e fisiche di una persona, entro i limiti fissati dalle evidenze scientifiche e dai vincoli di progetto. Una prova di concetto su un sistema di navigazione per auto.",
+      "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
+      "datePublished": "2026-08",
       "inLanguage": "it",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -83,42 +73,160 @@
 <main>
 
   <header>
-    <h1>Un'interfaccia adatta a ogni singolo utente</h1>
+    <h1>Personal Fit UI - Individualizzare l’interfaccia con la progettazione per vincoli</h1>
     <div class="identity">
       <p class="tagline">di <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Profili su altri siti">
+      <nav aria-label="Profili altrove">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline slot carries the status until there is a date to put in
-         it. A work page with no date and no explanation reads as an oversight;
-         this says which of the two it is. -->
-    <p class="dateline">In preparazione</p>
+    <p class="dateline">agosto 2026</p>
   </header>
 
-  <!-- The four headings are the shape the case study will take, kept in the
-       order OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Panoramica</h2>
-    <p class="lead">Generare automaticamente un'interfaccia cucita sulla cognizione di una singola persona. Il caso di studio è in preparazione.</p>
+    <p class="lead">Tutti usano la stessa interfaccia allo stesso modo. Questo lavoro si allontana da quella premessa della produzione di massa e chiede se sia invece possibile generare un’interfaccia adatta alle caratteristiche cognitive, sensoriali e fisiche di ciascuna persona.</p>
+    <p>L’obiettivo non era un’interfaccia il cui schermo cambia di continuo con la situazione mentre la si usa. Si tratta di un meccanismo che rileva le caratteristiche della persona nel momento in cui inizia a usare il prodotto e genera in anticipo un’interfaccia che le si adatti, rispettando i vincoli di sicurezza e di accessibilità.</p>
+    <p>In questo lavoro ho messo in pratica un’idea che chiamo progettazione per vincoli. Sulla base della letteratura e delle norme, l’essere umano progetta le direzioni da seguire e i confini da non superare. Dentro quel quadro l’IA decide i valori e le formulazioni concrete, e ciò che viene generato è verificato per accertare che non violi il quadro.</p>
+    <p>La prova di concetto ha preso come oggetto un sistema di navigazione per auto e ha generato un’interfaccia per tredici profili utente con caratteristiche diverse. Quasi nulla è cambiato a livello visivo. Il risultato è arrivato altrove: scrivendo i vincoli in una forma verificabile è emerso dove resta margine per l’individualizzazione e dove sono i vincoli a consumarlo.</p>
   </section>
 
   <section>
-    <h2>Vincoli</h2>
+    <h2>Che cosa significa consegnare a tutti la stessa interfaccia</h2>
+    <p>Oggi la maggior parte dei prodotti è progettata sul presupposto della produzione di massa: una sola interfaccia che copra quante più persone possibile. Anche quando la dimensione del testo o il numero di voci mostrate si possono cambiare, è l’utente a dover trovare lo stato che gli si adatta e a impostarlo.</p>
+    <p>Questo metodo funziona per moltissime persone. Ma adattarsi a molti e adattarsi a tutti non sono la stessa cosa. Un prodotto può soddisfare tutti gli standard di progettazione condivisi e lasciare comunque fuori chi trova quell’interfaccia difficile da usare.</p>
+    <p>La stessa struttura compare anche nella valutazione delle interfacce di bordo. La procedura di accettazione della NHTSA statunitense sugli sguardi distolti durante la guida non richiede che tutti i partecipanti soddisfino il criterio. Un compito è superato quando lo rispettano 21 partecipanti su 24: che una parte non lo rispetti è previsto in anticipo dentro la procedura stessa. Un documento presentato all’ente regolatore dai costruttori va oltre e riferisce che circa una persona su sei distoglie lo sguardo più a lungo in modo costante attraverso più compiti. Quel documento proviene dai costruttori soggetti alla norma e chiedeva un allentamento del criterio. Ciò che qui si propone non è allentare il criterio, ma aumentare, tramite l’individualizzazione, il numero di persone in grado di soddisfarlo.</p>
+    <p>Il senso di un’interfaccia individualizzata non è rendere inedito lo schermo di tutti. È portare le persone che l’interfaccia uniforme lasciava indietro nell’intervallo in cui possono usarla e manovrarla in sicurezza.</p>
+    <p>Finora il costo di progettare un’interfaccia per una sola persona non era realistico. Da quando l’IA può essere trattata come parte del processo di progettazione, quel presupposto ha iniziato a cambiare.</p>
   </section>
 
   <section>
-    <h2>Approccio</h2>
+    <h2>La navigazione per auto come oggetto</h2>
+    <p>L’oggetto di questo lavoro non è la navigazione per auto, ma l’interfaccia individualizzata. La navigazione è stata scelta come un caso su cui verificarne possibilità e limiti.</p>
+    <p>Un’interfaccia di bordo porta con sé vincoli forti: uno schermo limitato, tempi di sguardo brevissimi, la sicurezza di ogni manovra. Prima della commercializzazione viene validata come interfaccia uniforme utilizzabile dal maggior numero di persone, e la stessa interfaccia viene poi consegnata anche a chi quel progetto non si adatta.</p>
+    <p>Se l’individualizzazione regge in un ambito così strettamente vincolato, l’idea della progettazione per vincoli può essere verificata in concreto. Al contrario, è possibile che i vincoli non lascino quasi alcuna libertà all’IA. Era un oggetto che permetteva di osservare entrambe le cose.</p>
+    <p class="note"><strong>In Giappone, nel 2026, convivono modelli che accettano gli aggiornamenti over-the-air e navigatori tradizionali montati in fabbrica che non li accettano.</strong> Inoltre, anche dove i dati cartografici possono essere aggiornati, la struttura di base dell’interfaccia non viene necessariamente riprogettata di continuo dopo l’acquisto. Questa prova di concetto presuppone un sistema la cui interfaccia non viene aggiornata di frequente una volta iniziato l’uso.</p>
   </section>
 
   <section>
-    <h2>Risultato</h2>
+    <h2>Rendere l’individualizzazione qualcosa che si possa generare</h2>
+    <p>La progettazione per vincoli consiste nel fissare con chiarezza il quadro e nel lasciare che al suo interno l’IA si muova con flessibilità e con sensibilità per le sfumature. A differenza di un meccanismo parametrico che estrae valori da una tabella stabilita, qui si progetta l’ampiezza stessa delle soluzioni che l’IA può esplorare.</p>
+    <p>Le conoscenze scientifiche non arrivano sempre fino al numero. A volte indicano soltanto una direzione: ingrandire, mostrare meno. Dove il valore è determinato, lo si calcola come regola; dove si conosce solo la direzione, l’IA definisce il dettaglio entro ciò che i vincoli permettono. Non lasciare sfumare questa distinzione fa parte del meccanismo.</p>
+
+    <figure class="framework">
+      <div class="framework-branches">
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Fissare le dimensioni cognitive</h3>
+            <p>Definire gli assi come caratteristiche che incidono sulla facilità d’uso, non come diagnosi: memoria di lavoro, tolleranza agli stimoli che distraggono, caratteristiche visive e uditive, destrezza manuale.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Tabella di corrispondenza</h3>
+            <p>Collega le caratteristiche dell’utente ai parametri dell’interfaccia che devono muoversi: quale caratteristica muove che cosa, in quale direzione e su quali basi.</p>
+          </div>
+        </div>
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Evidenze e norme</h3>
+            <p>Raccogliere criteri di sicurezza, norme di accessibilità, risultati delle scienze cognitive e principi generali di progettazione delle interfacce.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Insieme dei vincoli</h3>
+            <p>Le condizioni che ogni risultato generato deve rispettare. Non restano principi: sono scritte in una forma che permette di verificare se siano soddisfatte o violate.</p>
+          </div>
+        </div>
+      </div>
+      <div class="framework-merge" aria-hidden="true"></div>
+      <div class="framework-box framework-space">
+        <h3>Spazio di progetto</h3>
+        <p>Tutto ciò che l’interfaccia può variare: dimensione del testo, bersagli tattili, numero di voci mostrate, gerarchia dell’informazione, notifiche, lessico, ordine, raggruppamento. La tabella di corrispondenza dà la direzione della regolazione; l’insieme dei vincoli elimina le soluzioni non ammesse.</p>
+      </div>
+      <div class="framework-arrow" aria-hidden="true"></div>
+      <div class="framework-box framework-ai">
+        <h3>L’IA concretizza dentro il quadro</h3>
+        <p>Nella libertà che resta decide valori, lessico, ordine e raggruppamenti. Una verifica separata conferma l’aderenza al quadro, e viene emessa soltanto l’interfaccia individualizzata che soddisfa tutte le condizioni.</p>
+      </div>
+      <figcaption>La valutazione umana non è un passaggio permanente. Solo quando una persona giudica necessario un aggiustamento, questo torna nei vincoli — nella misura in cui le evidenze lo consentono — e si genera di nuovo.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Prova di concetto: un’interfaccia per tredici profili utente</h2>
+    <p>Per la prova di concetto sono stati preparati tredici profili utente con combinazioni diverse di caratteristiche. Non riproducono alcuna distribuzione reale di utenti: sono punti di una griglia di verifica, con le caratteristiche collocate di proposito per capire quali di esse facciano cambiare l’interfaccia.</p>
+    <p>Per ciascuna si è messa a confronto l’interfaccia uniforme comune, il before, con l’interfaccia generata a partire dalle sue caratteristiche, l’after.</p>
+
+    <h3>Un caso in cui è cambiato quasi nulla</h3>
+    <h4>PS-01 — riferimento (età matura, profilo tipico)</h4>
+    <p>Questo profilo si colloca nell’intervallo tipico per tutte le caratteristiche cognitive, sensoriali e fisiche. Dopo l’individualizzazione il testo è leggermente più grande, ma il numero di voci mostrate, la disposizione e la dimensione delle aree tattili restano pressoché invariati.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Interfaccia uniforme (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-before-it.svg" width="772" height="434" alt="Schermata di scelta della destinazione: sette voci — casa, lavoro, luoghi salvati, recenti e luoghi vicini — sopra una barra fissa di pulsanti.">
+      </div>
+      <div>
+        <p class="compare-label">Interfaccia individualizzata (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-after-it.svg" width="772" height="434" loading="lazy" decoding="async" alt="Le stesse sette voci, alla stessa altezza. A parte il testo leggermente più grande, la composizione coincide con quella dell’interfaccia uniforme.">
+      </div>
+      <figcaption>Quando l’interfaccia uniforme funziona già abbastanza bene, individualizzare non produce grandi cambiamenti. Anche non cambiare nulla è un esito dell’individualizzazione.</figcaption>
+    </figure>
+
+    <h3>Un caso in cui il cambiamento si vede</h3>
+    <h4>PS-12 — età matura, scarsa destrezza manuale (profilo sensoriale e cognitivo tipico)</h4>
+    <p>Questo profilo coincide con PS-01 per età e per caratteristiche sensoriali e cognitive; soltanto la destrezza manuale è ridotta. Nell’after i bersagli tattili si ingrandiscono e le voci visibili su una schermata scendono da sette a quattro. Le restanti passano alla schermata successiva, ed è proprio questo a garantire la dimensione di ciascun bersaglio.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Interfaccia uniforme (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-before-it.svg" width="772" height="434" loading="lazy" decoding="async" alt="Schermata di scelta della destinazione con sette voci della stessa altezza.">
+      </div>
+      <div>
+        <p class="compare-label">Interfaccia individualizzata (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-after-it.svg" width="772" height="434" loading="lazy" decoding="async" alt="La stessa schermata ridotta a quattro voci, ciascuna con un’area tattile più ampia.">
+      </div>
+      <figcaption>Quantità di informazione e dimensione dei bersagli tattili ridistribuite in base alla destrezza manuale. La composizione cambia per una sola caratteristica fisica, non per l’età o per il profilo cognitivo.</figcaption>
+    </figure>
+    <p>La letteratura indica il limite inferiore che un bersaglio tattile deve rispettare e la direzione in cui ingrandirlo quando la precisione del gesto è bassa. Non stabilisce però in modo univoco quanto aggiungere per questa singola persona. È quella parte indeterminata che l’IA ha concretizzato, entro i margini dei vincoli.</p>
+  </section>
+
+  <section>
+    <h2>Che cosa ha dato la prova di concetto</h2>
+    <p>Un cambiamento chiaramente visibile è stato riscontrato solo in PS-12, una su tredici. Per la maggior parte dei profili l’interfaccia uniforme del before funzionava già abbastanza bene; il beneficio dell’individualizzazione non si è quasi manifestato, almeno in una forma riconoscibile sullo schermo.</p>
+    <p>In PS-12 l’individualizzazione si è potuta mostrare visivamente, ma un cambiamento di quella portata è alla portata delle impostazioni di visualizzazione e accessibilità già presenti nei prodotti esistenti. Offrire fin dall’inizio uno stato adatto, senza che sia l’utente a doverlo impostare, ha un suo valore. Non si può però dire che sia nata un’interfaccia nuova, proponibile soltanto da un’IA.</p>
+    <p>Non ho concluso da questo risultato che l’individualizzazione tramite IA fosse riuscita.</p>
+  </section>
+
+  <section>
+    <h2>Perché la differenza non è emersa</h2>
+    <p>La causa sta nel fatto che lo spazio di progetto che soddisfa i vincoli era stretto.</p>
+    <p>Un’interfaccia di bordo ha numerosi limiti inferiori e superiori dettati dalla sicurezza. Testo e bersagli tattili devono superare una certa dimensione, e la quantità di informazione visualizzabile su una schermata ha un tetto. Applicandoli uno dopo l’altro, all’IA restavano pochissime soluzioni tra cui scegliere.</p>
+    <p>Anche gran parte di ciò che l’IA ha concretizzato rientrava, a questa scala, in ciò che una persona può decidere una volta e fissare in una piccola tabella di corrispondenza. Questo non significa che l’IA fosse superflua: ha colmato valori concreti che la letteratura non indica. Le restavano però troppe poche opzioni da esplorare.</p>
+    <p>La riformulazione del lessico, al contrario, conservava un’ampia libertà. Solo che quelle differenze si vedono male come cambiamenti nella composizione dello schermo: l’ambito in cui la persona poteva riconoscere il valore e l’ambito che le regole non riescono a scrivere non si sovrapponevano.</p>
+  </section>
+
+  <section>
+    <h2>Il risultato è emerso nel quadro, non nell’interfaccia</h2>
+    <p>Il risultato più grande di questa prova di concetto è nato non nella fase di generazione delle interfacce, ma prima, in quella di progettazione dei vincoli. Trascrivendo norme e letteratura come condizioni verificabili da una macchina sono emerse più incoerenze nel quadro stesso.</p>
+    <ul class="findings">
+      <li>Norme diverse fissavano limiti inferiori diversi per lo stesso elemento dell’interfaccia.</li>
+      <li>La condizione «vale solo durante la marcia» non aveva un posto in cui essere scritta nella specifica.</li>
+      <li>Due assi di progetto in realtà indipendenti erano stati fusi in uno solo, così che i vincoli escludevano quasi tutte le opzioni.</li>
+      <li>All’IA non era stato comunicato con sufficiente chiarezza quale vincolo governi quale uscita, e condizioni estranee entravano nelle sue decisioni.</li>
+      <li>Giudizi che andavano lasciati all’IA erano fissati sul lato implementativo, avvicinando la progettazione per vincoli a un semplice motore di regole.</li>
+    </ul>
+    <p>In ciascuno di questi casi l’IA ha rilevato l’incoerenza e indicato il punto interessato, una persona ha deciso e il vincolo è stato corretto.</p>
+    <p>Il risultato di questo lavoro, dunque, sta meno nel fatto che un’IA abbia creato una nuova interfaccia che nel fatto che <strong>lo scambio con l’IA ha messo alla prova e aggiornato il quadro stesso da cui nascono le interfacce</strong>. Il ruolo dell’IA nella progettazione per vincoli non è solo generare il prodotto finito. È anche trovare, prima di generare qualsiasi cosa, dove le regole si scontrano e dove una possibilità progettuale è stata cancellata senza che nessuno lo volesse.</p>
+  </section>
+
+  <section>
+    <h2>Sviluppi futuri: quadro netto, spazio ampio al suo interno</h2>
+    <p>Ciò che la progettazione per vincoli si attende dall’IA non è estrarre da una tabella valori già stabiliti. È escludere con i vincoli ciò che è palesemente inadatto e poi, fra le molte possibilità che restano, proporre la soluzione con la maggiore probabilità di essere valida, oppure mostrare uno schema a cui una persona non avrebbe pensato in anticipo.</p>
+    <p>Questa volta quell’effetto non si è manifestato a sufficienza. Non perché non ci fossero conflitti, ma perché lo spazio di progetto che soddisfa i vincoli era stretto e non restava quasi alcun senso nello scegliere una soluzione migliore o una soluzione nuova.</p>
+    <p>La domanda successiva non è se l’IA sia efficace. È: <strong>a partire da quale ampiezza dello spazio di progetto nasce l’effetto che solo l’IA può produrre?</strong></p>
+    <p>Per la prossima applicazione sceglierò un oggetto in cui la sicurezza resti garantita, sopravvivano più soluzioni valide e le differenze che le regole non riescono a scrivere siano riconoscibili come valore anche dalle persone. Il quadro sarà definito con chiarezza. Ma al suo interno resterà l’ampiezza necessaria perché l’IA possa esplorare. È questa coesistenza a fare della progettazione per vincoli un metodo di design per l’epoca dell’IA e non una semplice automazione.</p>
   </section>
 
   <nav aria-label="Sito">
