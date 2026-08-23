@@ -3,14 +3,13 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Scaffold for a work whose write-up has not been written yet. The title is
-     provisional; `Personal Fit UI` is the term the English version is built
-     around, and the other languages carry its sense rather than the words.
-     When the case study is written: fill the sections, add assets/og.jpg and
-     assets/thumb.webp, point og:image and the JSON-LD `image` at og.jpg, add
-     `datePublished`, drop `creativeWorkStatus`, and replace the status line. -->
-<title>A Personal Fit UI for Each User — Takafumi Horiuchi</title>
-<meta name="description" content="Automatically generating a user interface shaped to fit one individual's cognition. The case study is in preparation.">
+<!-- This work alone is written in Japanese first: /ja/ is the source of record
+     and every other language, this one included, is translated from it (owner's
+     instruction, 2026-08-23). The mock renders live in this directory's assets
+     and are referenced by all thirteen languages, one file per language, never
+     copied into a language tree. -->
+<title>Personal Fit UI - Individualising the UI Through Constraint-Driven Design — Takafumi Horiuchi</title>
+<meta name="description" content="Generating an interface fitted to a person’s cognitive, sensory and physical characteristics, inside the bounds set by evidence and design constraints. A proof of concept on a car navigation system.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -29,27 +28,18 @@
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../style.css">
 <link rel="stylesheet" href="page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     that gets cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="A Personal Fit UI for Each User">
-<meta property="og:description" content="An interface generated to fit one person's cognition.">
+<meta property="og:title" content="Personal Fit UI - Individualising the UI Through Constraint-Driven Design">
+<meta property="og:description" content="A human designs the frame that has to hold; inside it, AI works out the interface for one person. Constraint-driven design in practice.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi — Cognitive Engineering × AI × Design">
+<meta property="og:image:alt" content="The uniform Personal Fit UI screen, showing a destination and navigation menu.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,10 +58,11 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/works/personal-fit-ui/#work",
-      "name": "A Personal Fit UI for Each User",
+      "name": "Personal Fit UI - Individualising the UI Through Constraint-Driven Design",
       "url": "https://takafumihoriuchi.github.io/works/personal-fit-ui/",
-      "description": "Automatically generating a user interface shaped to fit one individual's cognition. The case study is in preparation.",
-      "creativeWorkStatus": "In preparation",
+      "description": "Generating an interface fitted to a person’s cognitive, sensory and physical characteristics, inside the bounds set by evidence and design constraints. A proof of concept on a car navigation system.",
+      "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
+      "datePublished": "2026-08",
       "inLanguage": "en",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -83,7 +74,7 @@
 <main>
 
   <header>
-    <h1>A Personal Fit UI for Each User</h1>
+    <h1>Personal Fit UI - Individualising the UI Through Constraint-Driven Design</h1>
     <div class="identity">
       <p class="tagline">by <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profiles elsewhere">
@@ -93,32 +84,150 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline slot carries the status until there is a date to put in
-         it. A work page with no date and no explanation reads as an oversight;
-         this says which of the two it is. -->
-    <p class="dateline">In preparation</p>
+    <p class="dateline">August 2026</p>
   </header>
 
-  <!-- The four headings are the shape the case study will take, kept in the
-       order OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Overview</h2>
-    <p class="lead">Automatically generating a user interface shaped to fit one individual's cognition. The case study is in preparation.</p>
+    <p class="lead">Everyone uses the same interface in the same way. This work sets that mass-production premise aside and asks whether an interface can instead be generated to fit one person’s cognitive, sensory and physical characteristics.</p>
+    <p>What it aims at is not a screen that keeps changing with the situation while it is in use. It is a mechanism that takes in a person’s characteristics at the point they start using the product and generates an interface suited to them in advance, while holding to the constraints that safety and accessibility impose.</p>
+    <p>The work puts into practice an idea I call constraint-driven design. A human, working from the literature and from standards, defines the directions of adjustment and the boundaries to stay within. Inside that frame, AI decides the concrete values and wording, and what it generates is checked for violations.</p>
+    <p>The proof of concept took a car navigation system as its subject and generated interfaces for thirteen personas with differing characteristics. Almost nothing changed visibly. What the work did yield came out of writing the constraints down in a form that can be checked: it showed where room for individualisation remains, and where the constraints consume it.</p>
   </section>
 
   <section>
-    <h2>Constraints</h2>
+    <h2>Handing one interface to everyone</h2>
+    <p>Most products today are designed on the assumption of mass production: one interface, covering as many people as it can. Even where text size or the number of items on screen can be changed, it is the user who has to find the state that suits them and set it.</p>
+    <p>This works for a great many people. But fitting many people and fitting everyone are not the same thing. A product can satisfy every shared design standard and still leave people for whom that interface is hard to use.</p>
+    <p>The same structure is visible in how in-vehicle interfaces are assessed. The acceptance procedure NHTSA uses for eye glances while driving does not require every participant to meet the criterion. A task passes when 21 of 24 participants meet it, so a certain number of people failing is written into the procedure from the outset. A submission made to the regulator by carmakers goes further, reporting roughly one person in six who consistently looks away for longer across several tasks. That submission came from the manufacturers subject to the rule, and it argued for relaxing the criterion. What is proposed here is not a relaxed criterion but individualisation that increases how many people can meet the existing one.</p>
+    <p>The point of an individualised interface is not to make everyone’s screen novel. It is to bring the people a uniform interface was dropping into the range where they can use it, and operate it safely.</p>
+    <p>Until now, the cost of designing one interface for one person was not realistic. Now that AI can be treated as part of the design process, that premise is beginning to change.</p>
   </section>
 
   <section>
-    <h2>Approach</h2>
+    <h2>Car navigation as the subject</h2>
+    <p>The subject of this work is not car navigation but the individualised interface. Car navigation was chosen as one case in which its possibilities and its limits could be examined.</p>
+    <p>An in-vehicle interface carries hard constraints: a limited screen, very little time to look at it, and the safety of every interaction. Before shipping it is validated as a uniform interface that most people can use — and the same interface then goes to the people that design does not suit.</p>
+    <p>If individualisation holds up in a domain constrained this tightly, the idea of constraint-driven design can be tested concretely. Equally, the constraints may leave AI almost no freedom at all. The subject makes both outcomes observable.</p>
+    <p class="note"><strong>In Japan as of 2026, models that support over-the-air updates and conventional factory-fitted navigation units that do not are both on the road.</strong> And even where map data can be updated, the basic structure of the interface is not necessarily redesigned again and again after purchase. This proof of concept assumes a system whose interface is not updated often once it is in use.</p>
   </section>
 
   <section>
-    <h2>Outcome</h2>
+    <h2>Making individualisation something a system can generate</h2>
+    <p>Constraint-driven design means fixing the frame explicitly and then letting AI move inside it flexibly, with a feel for nuance. Unlike a parametric mechanism that reads values out of a settled table, what is designed is the range of solutions the AI is free to search.</p>
+    <p>The science does not always go as far as a number. Sometimes it gives only a direction: make it larger, show less. Where the value follows, it is computed as a rule; where only the direction is known, the AI settles the specifics within what the constraints allow. Keeping that distinction from blurring is itself part of the mechanism.</p>
+
+    <figure class="framework">
+      <div class="framework-branches">
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Fixing the cognitive dimensions</h3>
+            <p>Define the axes as characteristics that bear on how usable an interface is, not as diagnostic labels: working memory, tolerance for distraction, vision and hearing, manual dexterity.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Mapping table</h3>
+            <p>Tie a user’s characteristics to the interface parameters that should move. Which characteristic moves what, in which direction, and on what evidence.</p>
+          </div>
+        </div>
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Evidence and standards</h3>
+            <p>Collect safety criteria, accessibility standards, findings from cognitive science, and general principles of interface design.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>The constraint set</h3>
+            <p>The conditions every generated interface must satisfy. These are written not as abstract principles, but as testable conditions that can be checked as satisfied or violated.</p>
+          </div>
+        </div>
+      </div>
+      <div class="framework-merge" aria-hidden="true"></div>
+      <div class="framework-box framework-space">
+        <h3>Design space</h3>
+        <p>Everything the interface may vary: text size, touch targets, how many items are shown, hierarchy, notifications, wording, order, grouping. The mapping table gives the direction to adjust in; the constraint set removes the solutions that are not allowed.</p>
+      </div>
+      <div class="framework-arrow" aria-hidden="true"></div>
+      <div class="framework-box framework-ai">
+        <h3>AI works out the specifics inside the frame</h3>
+        <p>Out of the freedom that is left, it settles values, wording, order and grouping. A separate check confirms the fit to the frame, and only an individualised interface that satisfies every condition is emitted.</p>
+      </div>
+      <figcaption>Human review is not a standing step. Only when a person judges an adjustment necessary does feedback go back into the constraints — as far as the evidence permits — and the interface is generated again.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Proof of concept — an interface for each of thirteen personas</h2>
+    <p>The proof of concept used thirteen personas with different combinations of characteristics. They do not reproduce any real distribution of users; they are grid points for testing, with characteristics placed deliberately to find out which of them move the interface.</p>
+    <p>For each persona, the shared uniform interface is the before, and the interface generated from that person’s characteristics is the after.</p>
+
+    <h3>A case that barely changed</h3>
+    <h4>PS-01 — baseline (middle-aged, typical)</h4>
+    <p>This persona sits in the typical range on every cognitive, sensory and physical characteristic. After individualisation the text is slightly larger, but the number of items shown, the layout and the size of the touch areas are essentially unchanged.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Uniform interface (before)</p>
+        <img src="assets/ps-01-before.svg" width="772" height="434" alt="A destination screen listing seven items — home, work, saved places, recent and nearby facilities — above a fixed row of buttons.">
+      </div>
+      <div>
+        <p class="compare-label">Individualised interface (after)</p>
+        <img src="assets/ps-01-after.svg" width="772" height="434" loading="lazy" decoding="async" alt="The same seven items at the same height. Apart from slightly larger text, the layout matches the uniform interface.">
+      </div>
+      <figcaption>Where the uniform interface already works well enough, individualisation produces no large change. Leaving it alone is also a result of individualisation.</figcaption>
+    </figure>
+
+    <h3>A case where the change is visible</h3>
+    <h4>PS-12 — middle-aged, low manual dexterity (sensory and cognitive typical)</h4>
+    <p>This persona matches PS-01 in age, sensory characteristics and cognitive characteristics; only manual dexterity is low. In the after, the touch targets grow and the items on one screen fall from seven to four. The rest move to the following screen, which is what secures the size of each individual target.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Uniform interface (before)</p>
+        <img src="assets/ps-12-before.svg" width="772" height="434" loading="lazy" decoding="async" alt="A destination screen with seven items of equal height.">
+      </div>
+      <div>
+        <p class="compare-label">Individualised interface (after)</p>
+        <img src="assets/ps-12-after.svg" width="772" height="434" loading="lazy" decoding="async" alt="The same screen reduced to four items, each with a larger touch area.">
+      </div>
+      <figcaption>Information and touch-target size reallocated to match manual dexterity. The layout changes on a physical characteristic alone, not on age or cognition.</figcaption>
+    </figure>
+    <p>The literature gives the lower bound a touch target has to meet, and the direction in which to adjust it when operating precision is low. It does not fix how much to add for this particular person. The AI determined that open value within the range the constraints allow.</p>
+  </section>
+
+  <section>
+    <h2>What the proof of concept produced</h2>
+    <p>PS-12 was the only one of the thirteen with a clearly visible change. For most personas the uniform before already worked well enough, and the benefits of individualisation were barely visible on screen.</p>
+    <p>PS-12 does put individualisation on screen, but a change of that size is within reach of the display and accessibility settings existing products already ship. Delivering the fitting state from the outset, without the user having to set it, is worth something. It is not, however, a new interface that only AI could have proposed.</p>
+    <p>I did not conclude from this result that AI-driven individualisation had succeeded.</p>
+  </section>
+
+  <section>
+    <h2>Why the difference never appeared</h2>
+    <p>The cause was that the design space satisfying the constraints was narrow.</p>
+    <p>An in-vehicle interface carries a great many safety floors and ceilings. Text and touch targets have to be at least a certain size; there is an upper limit on how much can be on one screen. Applying these in turn left the AI with only a handful of solutions to choose between.</p>
+    <p>Most of what the AI settled was also, at this scale, within what a person could decide once and freeze into a small lookup table. That does not mean the AI was unnecessary — it filled in concrete values the literature does not give. But there were too few options left for it to search.</p>
+    <p>Wording, by contrast, kept a wide freedom. Those differences are hard to see as a change in the layout, so the area where a person could recognise the value and the area that rules cannot fully capture did not overlap.</p>
+  </section>
+
+  <section>
+    <h2>The result appeared in the frame, not in the interface</h2>
+    <p>The largest result of this proof of concept came before the interfaces were generated, in the stage where the constraints were designed. Writing standards and literature down as conditions a machine can check turned up several inconsistencies in the frame itself.</p>
+    <ul class="findings">
+      <li>Different standards set different lower bounds for the same interface element.</li>
+      <li>There was nowhere in the specification to write a condition that applies only while the vehicle is moving.</li>
+      <li>Two design axes that are independent had been merged into one, so the constraints were eliminating almost every option.</li>
+      <li>The AI had not been told clearly enough which constraint governs which output, and unrelated conditions were entering its decisions.</li>
+      <li>Judgements that should have been left to the AI were fixed on the implementation side, pushing constraint-driven design towards a plain rule engine.</li>
+    </ul>
+    <p>In each case the AI detected the inconsistency and pointed at where it was, a person judged it, and the constraint was corrected.</p>
+    <p>The result of this work, then, lies less in an AI having made a new interface than in <strong>the frame that produces interfaces having been tested and revised through the exchange with the AI</strong>. The role of AI in constraint-driven design is not only to generate a finished thing. It is also, before anything is generated, to find where rules collide and where a design possibility has been erased without anyone intending it.</p>
+  </section>
+
+  <section>
+    <h2>Future work — a clear frame, with room inside it</h2>
+    <p>What constraint-driven design asks of AI is not to pull settled values out of a table. It is to exclude the plainly unsuitable through the constraints and then, out of the many possibilities that remain, to offer the solution most likely to be sound — or a pattern a person would not have thought of beforehand.</p>
+    <p>That effect did not really appear this time. Not because nothing collided, but because the design space satisfying the constraints was narrow, leaving almost no meaning in choosing a better solution or a new one.</p>
+    <p>The question to ask next is not whether AI is effective. It is <strong>how wide a design space has to be before the effect only AI can produce appears.</strong></p>
+    <p>The next round will take a subject where safety still holds, several sound solutions survive, and the differences that rules cannot capture are ones a person can recognise as valuable. The frame is defined clearly; inside it, room is left for the AI to search. Holding both is what makes constraint-driven design a design method for the age of AI rather than mere automation.</p>
   </section>
 
   <nav aria-label="Site">

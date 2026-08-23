@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Scaffold for a work whose write-up has not been written yet. The title is
-     provisional; `Personal Fit UI` is the term the English version is built
-     around, and the other languages carry its sense rather than the words.
-     When the case study is written: fill the sections, add assets/og.jpg and
-     assets/thumb.webp, point og:image and the JSON-LD `image` at og.jpg, add
-     `datePublished`, drop `creativeWorkStatus`, and replace the status line. -->
-<title>為每一位使用者量身打造的介面 — 堀內貴文</title>
-<meta name="description" content="自動生成貼合某一位使用者認知特點的介面。案例記錄正在籌備中。">
+<!-- This work alone is written in Japanese first: /ja/ is the source of record
+     and every other language is translated from it (owner's instruction,
+     2026-08-23). The mock renders live under the English tree, one file per
+     language, and are referenced from here rather than copied. -->
+<title>Personal Fit UI - 以約束型設計實現介面的個別最佳化 — 堀內貴文</title>
+<meta name="description" content="在科學依據與設計約束的範圍之內，生成貼合個人認知、感官與身體特質的介面。以車用導航為題材，驗證約束型設計能帶來多大程度的個別最佳化。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -29,27 +27,18 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     that gets cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="為每一位使用者量身打造的介面">
-<meta property="og:description" content="為一個人的認知量身生成的介面。">
+<meta property="og:title" content="Personal Fit UI - 以約束型設計實現介面的個別最佳化">
+<meta property="og:description" content="由人設計必須守住的框架，AI 在框架之內為每一個人具體化介面。這是約束型設計的一次實踐。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi — Cognitive Engineering × AI × Design">
+<meta property="og:image:alt" content="Personal Fit UI 的統一介面，顯示著目的地與導航的選單。">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -69,10 +58,11 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/#work",
-      "name": "為每一位使用者量身打造的介面",
+      "name": "Personal Fit UI - 以約束型設計實現介面的個別最佳化",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/",
-      "description": "自動生成貼合某一位使用者認知特點的介面。案例記錄正在籌備中。",
-      "creativeWorkStatus": "籌備中",
+      "description": "在科學依據與設計約束的範圍之內，生成貼合個人認知、感官與身體特質的介面。以車用導航為題材，驗證約束型設計能帶來多大程度的個別最佳化。",
+      "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
+      "datePublished": "2026-08",
       "inLanguage": "zh-Hant",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -84,42 +74,160 @@
 <main>
 
   <header>
-    <h1>為每一位使用者量身打造的介面</h1>
+    <h1>Personal Fit UI - 以約束型設計實現介面的個別最佳化</h1>
     <div class="identity">
       <p class="tagline">作者：<a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
-      <nav aria-label="其他平台的主頁">
+      <nav aria-label="其他平台上的主頁">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline slot carries the status until there is a date to put in
-         it. A work page with no date and no explanation reads as an oversight;
-         this says which of the two it is. -->
-    <p class="dateline">籌備中</p>
+    <p class="dateline">2026年8月</p>
   </header>
 
-  <!-- The four headings are the shape the case study will take, kept in the
-       order OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>概覽</h2>
-    <p class="lead">自動生成貼合某一位使用者認知特點的介面。案例記錄正在籌備中。</p>
+    <h2>概述</h2>
+    <p class="lead">所有人都以同樣的方式使用同一套介面。本作品離開這項大量生產的前提，探討能否依照每個人的認知、感官與身體特質來生成介面。</p>
+    <p>所追求的並不是在使用過程中隨情境不斷變化的介面，而是這樣一種機制：在開始使用的階段掌握此人的特質，並在遵守安全與無障礙相關約束的前提下，預先生成適合他的介面。</p>
+    <p>在這次探討中，我實踐了自己稱為「約束型設計」的想法。人依據文獻與標準，設計出應當遵循的方向與邊界；AI 在這個框架之內決定具體的數值與用詞，並驗證生成結果是否違反框架。</p>
+    <p>PoC 以車用導航為題材，為特質各異的十三個人物誌生成了介面。結果是，外觀上幾乎沒有出現明顯變化。另一方面，把約束改寫成可驗證形式的過程，反而讓人看清了個別最佳化的餘地留在哪裡、又在哪裡被約束吃掉。</p>
   </section>
 
   <section>
-    <h2>約束</h2>
+    <h2>把同一套介面交給所有人，意味著什麼</h2>
+    <p>如今大多數產品都以大量生產為前提來設計：用一套介面涵蓋盡可能多的人。即使產品可以更改字級或顯示項目的數量，使用者仍得自己找出適合自己的狀態並加以設定。</p>
+    <p>這種做法對許多人是奏效的。但「適合許多人」與「適合所有人」並不相同。即使產品滿足了共同的設計基準，仍會留下用起來吃力的人。</p>
+    <p>這個結構同樣出現在車用介面的評估之中。美國 NHTSA 關於行車中視線偏離的驗收程序，並不要求所有受試者都達到基準。合格判定以 24 名受試者中有 21 名達標為條件，也就是把一定比例的人達不到基準這件事，事先寫進了制度裡。此外，汽車製造商提交給主管機關的資料還指出，在多項作業中持續長時間移開視線的人，大約每六人就有一位。要說明的是，這份資料出自受規範的製造商之手，其訴求是放寬基準。本作品所追求的不是放寬基準，而是透過個別化，讓能夠達標的人變多。</p>
+    <p>個別最佳化介面的意義，並不在於讓所有人的畫面都變得新奇，而在於把統一介面過去漏掉的人，帶進能夠使用、能夠安全操作的範圍。</p>
+    <p>在此之前，為一個人單獨設計一套介面的成本並不現實。隨著 AI 得以納入設計流程的一部分，這項前提正開始改變。</p>
   </section>
 
   <section>
-    <h2>方法</h2>
+    <h2>作為題材的車用導航</h2>
+    <p>本作品的主題不是車用導航，而是個別最佳化的介面。之所以選擇車用導航，是把它當成檢驗其可能性與界限的一個例子。</p>
+    <p>車用介面帶著強烈的約束：有限的畫面、極短的注視時間、操作的安全性。出廠前，它會以多數人都能使用的統一介面接受驗證；而同一套介面，也會交到那些並不適合這項設計的人手上。</p>
+    <p>如果在約束如此嚴苛的領域裡，個別最佳化仍能成立，就能具體檢驗約束型設計這個想法。反過來說，也可能因為約束太強，幾乎不留給 AI 任何自由度。這是一個能同時觀察到兩種結果的題材。</p>
+    <p class="note"><strong>在日本，截至 2026 年，支援 OTA 更新的車款與不支援更新的傳統原廠導航仍然並存。</strong>此外，即使圖資可以更新，介面的基本結構也未必會在購買之後持續被重新設計。本 PoC 設想的是一種在開始使用之後、介面不會頻繁更新的系統。</p>
   </section>
 
   <section>
-    <h2>結果</h2>
+    <h2>把個別最佳化變成可以生成的機制</h2>
+    <p>所謂約束型設計，是先把框架明確定下來，再讓 AI 在框架之內掌握細微差異、靈活地行動。它不同於從既定表格取值的參數化機制——被設計的，是 AI 能夠探索的解的範圍本身。</p>
+    <p>科學知識並不總能給到具體的數值，有時只指出「放大」「減少資訊」這類方向。數值已經確定的部分，作為規則來計算；只知道方向的部分，則由 AI 在約束允許的範圍內決定具體取值。不讓這項區分變得含混，本身也是機制的一部分。</p>
+
+    <figure class="framework">
+      <div class="framework-branches">
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>確定認知面向</h3>
+            <p>不以診斷名稱，而以與介面易用性相關的特質作為軸來定義：工作記憶、對干擾刺激的耐受、視覺與聽覺特質、手指的靈巧度等。</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>對應表</h3>
+            <p>把使用者的特質與應當調整的介面參數連結起來，並連同依據一併寫明：哪一項特質使什麼、朝哪個方向變化。</p>
+          </div>
+        </div>
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>科學知識與標準</h3>
+            <p>蒐集安全基準、無障礙標準、認知科學的研究成果，以及通用的介面設計原則。</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>約束條件群</h3>
+            <p>生成結果必須遵守的條件。不停留在理念層面，而寫成能夠驗證「滿足了還是違反了」的形式。</p>
+          </div>
+        </div>
+      </div>
+      <div class="framework-merge" aria-hidden="true"></div>
+      <div class="framework-box framework-space">
+        <h3>設計空間</h3>
+        <p>介面可能採取的各種選擇：字級、觸控目標、顯示項目數、資訊層級、通知、用詞、順序、分組等。對應表給出調整的方向，約束條件群則剔除不被允許的解。</p>
+      </div>
+      <div class="framework-arrow" aria-hidden="true"></div>
+      <div class="framework-box framework-ai">
+        <h3>AI 在框架之內加以具體化</h3>
+        <p>在剩下的自由度中決定數值、用詞、順序與分組，再透過另一道檢查確認是否符合框架，只輸出滿足全部條件的個別最佳化介面。</p>
+      </div>
+      <figcaption>人的評估並非常設環節。只有當人判斷需要調整時，才在不違背科學依據的範圍內把意見回饋給約束，並重新生成。</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>PoC：為十三個人物誌生成介面</h2>
+    <p>PoC 準備了十三個特質組合各不相同的人物誌。它們並非對真實使用者分布的重現，而是為了確認哪些特質會讓介面產生變化，刻意配置特質而成的驗證用格點。</p>
+    <p>對每個人物誌，都把共通的統一介面當作 before，把輸入其特質後生成的介面當作 after，加以對照。</p>
+
+    <h3>幾乎沒有變化的例子</h3>
+    <h4>PS-01 —— 基準（壯年、典型）</h4>
+    <p>這個人物誌在認知、感官與身體特質上都落在典型範圍。個別最佳化之後，文字略微變大，但顯示的項目數、排列方式以及觸控區域的大小幾乎沒有改變。</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">統一介面（before）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-before-zh-Hant.svg" width="772" height="434" alt="目的地設定畫面。回家、前往公司、收藏地點、最近前往、附近設施共七個項目，下方還有一排固定按鈕。">
+      </div>
+      <div>
+        <p class="compare-label">個別最佳化介面（after）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-after-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="同樣的七個項目以同樣的高度排列。除了文字略大之外，構成與統一介面幾乎一致。">
+      </div>
+      <figcaption>當統一介面本身已經夠好用時，即使進行個別最佳化，也不會產生大的變化。不作更動，同樣是個別最佳化的一種結果。</figcaption>
+    </figure>
+
+    <h3>出現可見變化的例子</h3>
+    <h4>PS-12 —— 壯年、手指靈巧度較低（感官與認知為典型）</h4>
+    <p>這個人物誌在年齡、感官特質與認知特質上都與 PS-01 相同，只有手指的靈巧度較低。在 after 中，觸控目標變大，一個畫面顯示的項目從七項減為四項。其餘項目被移到下一個畫面，藉此為每一個操作對象確保足夠的尺寸。</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">統一介面（before）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-before-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="目的地設定畫面。七個項目以同樣的高度排列。">
+      </div>
+      <div>
+        <p class="compare-label">個別最佳化介面（after）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-after-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="同一個畫面減為四個項目，每一個的觸控區域都變得更大。">
+      </div>
+      <figcaption>這是依照手指靈巧度，重新分配資訊量與觸控目標大小的例子。畫面構成的變化僅僅來自身體特質，而非年齡或認知特質。</figcaption>
+    </figure>
+    <p>文獻指出了觸控目標應滿足的下限，也指出了操作精度較低時應當放大的方向，卻沒有唯一地規定「對這個人要加大多少」。正是這個未確定的部分，由 AI 在約束範圍內加以具體化。</p>
+  </section>
+
+  <section>
+    <h2>PoC 的結果</h2>
+    <p>十三個人物誌中，能夠確認出明顯視覺變化的只有 PS-12。對多數人物誌而言，before 的統一介面本來就夠好用；個別最佳化帶來的好處，至少在從畫面外觀上可以辨認的層面，幾乎沒有顯現出來。</p>
+    <p>PS-12 雖然把個別化直觀地呈現了出來，但這種程度的更動，用現有產品的顯示設定或無障礙設定也做得到。不必由使用者自己設定，一開始就提供合適的狀態，這本身是有意義的；但還不能說，它創造出了非 AI 不可能提出的新介面。</p>
+    <p>因此，我沒有把這個結果判定為「由 AI 進行的個別最佳化取得了成功」。</p>
+  </section>
+
+  <section>
+    <h2>為什麼沒有產生差異</h2>
+    <p>原因在於，滿足約束的設計空間太窄。</p>
+    <p>車用介面存在大量出於安全考量的下限與上限：文字與觸控目標需要達到一定大小，一個畫面可顯示的資訊量也有上限。把這些逐一施加之後，留給 AI 可選的解就所剩無幾。</p>
+    <p>AI 具體化的項目，在這樣的規模下大多也屬於人只要決定一次、就能固定成一張小對照表的範圍。這並不表示「AI 是多餘的」——它承擔了填補文獻未給出的具體數值的角色；只是留給它去探索的選項實在太少。</p>
+    <p>另一方面，用詞的改寫仍留有很大的自由度。但這類差異很難被看成畫面構成上的變化：人能夠認知其價值的領域，與規則寫不盡的領域，並沒有重疊。</p>
+  </section>
+
+  <section>
+    <h2>成果出現在框架的設計上，而不是介面上</h2>
+    <p>這次 PoC 中最大的成果，並非誕生於生成介面的階段，而是在此之前設計約束的階段。在把標準與文獻改寫成機器可驗證的條件的過程中，框架本身暴露出了若干處不一致。</p>
+    <ul class="findings">
+      <li>對同一個介面元素，不同標準給出了各自不同的下限。</li>
+      <li>「僅在行駛中適用」這項條件，在規格裡沒有可以寫下的位置。</li>
+      <li>兩條原本各自獨立的設計軸被合併成一條，導致大多數選項都被約束排除掉了。</li>
+      <li>沒有向 AI 充分說明哪條約束支配哪項輸出，以致無關的條件被用於判斷。</li>
+      <li>本該留給 AI 的判斷被固定在實作一側，使約束型設計更接近一個單純的規則引擎。</li>
+    </ul>
+    <p>對於每一處，都是由 AI 發現不一致並指出相應位置，再由人做出判斷，進而修正約束。</p>
+    <p>也就是說，這次的成果與其說是「AI 做出了新的介面」，不如說在於<strong>透過與 AI 的往復，生成介面的框架本身得到了檢驗與更新</strong>。在約束型設計中，AI 的角色不只是生成成品，還包括在生成之前，找出規則之間的衝突，以及那些在無意間被抹去的設計可能性。</p>
+  </section>
+
+  <section>
+    <h2>未來工作 —— 框架要清晰，框架之內要寬</h2>
+    <p>在約束型設計中，對 AI 的期待並不是從表格裡取出既定的數值，而是先用約束排除明顯不適當的生成結果，再從剩下的眾多可能性中，提出在機率上更為妥當的解；或者，提示出人事先不會想到的模式。</p>
+    <p>這一次，這樣的效果沒有充分顯現。原因不是沒有發生衝突，而是滿足約束的設計空間太窄，以致選擇「更合適的解」或「新的解」幾乎失去了意義。</p>
+    <p>接下來該問的，不是 AI 是否有效，而是：<strong>設計空間要寬到什麼程度，才會產生只有 AI 才帶得來的效果？</strong></p>
+    <p>在下一次實踐中，我會選擇這樣的題材：既能維持安全性，又能留下多個妥當的解，而且那些用規則寫不盡的差異，人也能夠辨識為價值。框架要明確地定下來，但要在其中留出足以讓 AI 探索的寬度。兩者兼顧，才能讓約束型設計不只是自動化，而成為 AI 時代的一種設計方法。</p>
   </section>
 
   <nav aria-label="網站">

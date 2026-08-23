@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Scaffold for a work whose write-up has not been written yet. The title is
-     provisional; `Personal Fit UI` is the term the English version is built
-     around, and the other languages carry its sense rather than the words.
-     When the case study is written: fill the sections, add assets/og.jpg and
-     assets/thumb.webp, point og:image and the JSON-LD `image` at og.jpg, add
-     `datePublished`, drop `creativeWorkStatus`, and replace the status line. -->
-<title>Antarmuka yang pas untuk tiap pengguna — Takafumi Horiuchi</title>
-<meta name="description" content="Membangkitkan antarmuka secara otomatis, dijahit untuk kognisi satu orang tertentu. Studi kasusnya sedang disiapkan.">
+<!-- This work alone is written in Japanese first: /ja/ is the source of record
+     and every other language is translated from it (owner's instruction,
+     2026-08-23). The mock renders live under the English tree, one file per
+     language, and are referenced from here rather than copied. -->
+<title>Personal Fit UI - Mengindividualkan antarmuka lewat desain berbasis batasan — Takafumi Horiuchi</title>
+<meta name="description" content="Membangkitkan antarmuka yang pas dengan karakteristik kognitif, indrawi, dan fisik seseorang, di dalam batas yang ditetapkan bukti ilmiah dan batasan perancangan. Sebuah bukti konsep pada sistem navigasi mobil.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -29,27 +27,18 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     that gets cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="id_ID">
-<meta property="og:title" content="Antarmuka yang pas untuk tiap pengguna">
-<meta property="og:description" content="Antarmuka yang dibangkitkan untuk kognisi satu orang.">
+<meta property="og:title" content="Personal Fit UI - Mengindividualkan antarmuka lewat desain berbasis batasan">
+<meta property="og:description" content="Manusia merancang kerangka yang harus dipatuhi; di dalamnya AI mewujudkan antarmuka bagi tiap orang. Desain berbasis batasan dalam praktik.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/personal-fit-ui/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi — Cognitive Engineering × AI × Design">
+<meta property="og:image:alt" content="Layar seragam Personal Fit UI yang menampilkan menu tujuan dan navigasi.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,10 +57,11 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/id/works/personal-fit-ui/#work",
-      "name": "Antarmuka yang pas untuk tiap pengguna",
+      "name": "Personal Fit UI - Mengindividualkan antarmuka lewat desain berbasis batasan",
       "url": "https://takafumihoriuchi.github.io/id/works/personal-fit-ui/",
-      "description": "Membangkitkan antarmuka secara otomatis, dijahit untuk kognisi satu orang tertentu. Studi kasusnya sedang disiapkan.",
-      "creativeWorkStatus": "Sedang disiapkan",
+      "description": "Membangkitkan antarmuka yang pas dengan karakteristik kognitif, indrawi, dan fisik seseorang, di dalam batas yang ditetapkan bukti ilmiah dan batasan perancangan. Sebuah bukti konsep pada sistem navigasi mobil.",
+      "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
+      "datePublished": "2026-08",
       "inLanguage": "id",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -83,7 +73,7 @@
 <main>
 
   <header>
-    <h1>Antarmuka yang pas untuk tiap pengguna</h1>
+    <h1>Personal Fit UI - Mengindividualkan antarmuka lewat desain berbasis batasan</h1>
     <div class="identity">
       <p class="tagline">oleh <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profil di tempat lain">
@@ -93,32 +83,150 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline slot carries the status until there is a date to put in
-         it. A work page with no date and no explanation reads as an oversight;
-         this says which of the two it is. -->
-    <p class="dateline">Sedang disiapkan</p>
+    <p class="dateline">Agustus 2026</p>
   </header>
 
-  <!-- The four headings are the shape the case study will take, kept in the
-       order OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>Ringkasan</h2>
-    <p class="lead">Membangkitkan antarmuka secara otomatis, dijahit untuk kognisi satu orang tertentu. Studi kasusnya sedang disiapkan.</p>
+    <h2>Ikhtisar</h2>
+    <p class="lead">Semua orang memakai satu antarmuka yang sama dengan cara yang sama. Karya ini meninggalkan premis produksi massal itu dan menelaah apakah antarmuka justru dapat dibangkitkan agar pas dengan karakteristik kognitif, indrawi, dan fisik tiap orang.</p>
+    <p>Yang dituju bukan antarmuka yang layarnya terus berubah mengikuti situasi selama dipakai, melainkan sebuah mekanisme yang menangkap karakteristik seseorang pada saat ia mulai memakai produk, lalu membangkitkan lebih dahulu antarmuka yang cocok baginya, sambil mematuhi batasan keselamatan dan aksesibilitas.</p>
+    <p>Dalam penelaahan ini saya mempraktikkan gagasan yang saya sebut desain berbasis batasan. Berbekal literatur dan standar, manusia merancang arah yang boleh ditempuh dan garis batas yang tidak boleh dilewati. Di dalam kerangka itu AI menetapkan nilai dan pilihan kata yang konkret, lalu hasilnya diperiksa apakah melanggar kerangka atau tidak.</p>
+    <p>Bukti konsep ini mengambil sistem navigasi mobil sebagai bahan dan membangkitkan antarmuka untuk tiga belas persona dengan karakteristik yang berbeda-beda. Hasilnya, hampir tidak ada perubahan tampilan yang mencolok. Sebaliknya, proses menuliskan batasan dalam bentuk yang dapat diperiksa justru memperlihatkan di mana ruang untuk individualisasi masih tersisa dan di mana ia habis dimakan batasan.</p>
   </section>
 
   <section>
-    <h2>Batasan</h2>
+    <h2>Apa artinya menyerahkan satu antarmuka kepada semua orang</h2>
+    <p>Sebagian besar produk saat ini dirancang dengan asumsi produksi massal: satu antarmuka untuk menjangkau sebanyak mungkin orang. Bahkan pada produk yang ukuran hurufnya atau jumlah butir tampilannya bisa diubah, penggunalah yang harus menemukan sendiri keadaan yang cocok dan mengaturnya.</p>
+    <p>Cara ini berhasil untuk banyak orang. Tetapi cocok untuk banyak orang tidak sama dengan cocok untuk semua orang. Produk yang memenuhi seluruh standar perancangan bersama pun tetap menyisakan orang yang kesulitan memakai antarmukanya.</p>
+    <p>Struktur yang sama tampak pula dalam penilaian antarmuka kendaraan. Prosedur penerimaan NHTSA Amerika Serikat mengenai pengalihan pandangan saat berkendara tidak menuntut semua peserta memenuhi kriteria. Sebuah tugas dinyatakan lulus bila 21 dari 24 peserta memenuhinya, jadi kenyataan bahwa sebagian orang tidak memenuhinya sudah diperhitungkan sejak awal di dalam prosedur itu. Sebuah dokumen yang diserahkan pabrikan mobil kepada regulator melangkah lebih jauh: sekitar satu dari enam orang secara konsisten mengalihkan pandangan lebih lama pada beberapa tugas sekaligus. Dokumen itu berasal dari pabrikan yang justru menjadi objek pengaturan dan mengusulkan pelonggaran kriteria. Yang diusulkan di sini bukan melonggarkan kriteria, melainkan menambah jumlah orang yang mampu memenuhinya melalui individualisasi.</p>
+    <p>Arti penting antarmuka yang diindividualkan bukanlah membuat layar semua orang menjadi serba baru, melainkan membawa orang yang selama ini tercecer oleh antarmuka seragam ke dalam jangkauan tempat mereka dapat memakainya dan mengoperasikannya dengan aman.</p>
+    <p>Selama ini biaya merancang satu antarmuka untuk satu orang tidak realistis. Sejak AI dapat diperlakukan sebagai bagian dari proses perancangan, premis itu mulai berubah.</p>
   </section>
 
   <section>
-    <h2>Pendekatan</h2>
+    <h2>Navigasi mobil sebagai bahan</h2>
+    <p>Pokok karya ini bukan navigasi mobil, melainkan antarmuka yang diindividualkan. Navigasi mobil dipilih sebagai satu contoh untuk menguji kemungkinan sekaligus batasnya.</p>
+    <p>Antarmuka kendaraan memikul batasan yang keras: layar yang terbatas, waktu pandang yang sangat singkat, dan keselamatan setiap pengoperasian. Sebelum dilepas ke pasar ia divalidasi sebagai antarmuka seragam yang bisa dipakai kebanyakan orang, dan antarmuka yang sama itu pula yang diserahkan kepada orang-orang yang tidak cocok dengan rancangan tersebut.</p>
+    <p>Jika individualisasi tetap berdiri di ranah yang batasannya seketat itu, gagasan desain berbasis batasan dapat diuji secara konkret. Sebaliknya, ada kemungkinan batasan tersebut nyaris tidak menyisakan kebebasan bagi AI. Bahan ini memungkinkan keduanya diamati.</p>
+    <p class="note"><strong>Di Jepang, pada 2026, mobil yang mendukung pembaruan lewat udara dan perangkat navigasi bawaan pabrik model lama yang tidak mendukung pembaruan sama-sama beredar.</strong> Selain itu, meski data peta dapat diperbarui, struktur dasar antarmukanya belum tentu dirancang ulang terus-menerus setelah pembelian. Bukti konsep ini mengandaikan sistem yang antarmukanya tidak sering diperbarui setelah mulai dipakai.</p>
   </section>
 
   <section>
-    <h2>Hasil</h2>
+    <h2>Menjadikan individualisasi sesuatu yang dapat dibangkitkan</h2>
+    <p>Desain berbasis batasan berarti menetapkan kerangkanya dengan jelas, lalu membiarkan AI bergerak luwes di dalamnya sambil menangkap nuansa. Berbeda dengan mekanisme parametrik yang mengambil nilai dari tabel yang sudah ditetapkan, yang dirancang di sini adalah rentang solusi yang boleh ditelusuri AI itu sendiri.</p>
+    <p>Pengetahuan ilmiah tidak selalu sampai pada angka yang konkret. Kadang ia hanya menunjukkan arah: perbesar, kurangi yang ditampilkan. Bagian yang nilainya sudah pasti dihitung sebagai aturan; bagian yang hanya diketahui arahnya diserahkan kepada AI untuk ditetapkan secara konkret dalam batas yang diizinkan. Menjaga agar pembedaan itu tidak kabur juga merupakan bagian dari mekanismenya.</p>
+
+    <figure class="framework">
+      <div class="framework-branches">
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Menetapkan dimensi kognitif</h3>
+            <p>Sumbu didefinisikan bukan sebagai nama diagnosis, melainkan sebagai karakteristik yang berkaitan dengan kemudahan pemakaian: memori kerja, ketahanan terhadap gangguan, karakteristik penglihatan dan pendengaran, serta kecekatan jari.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Tabel pemetaan</h3>
+            <p>Menghubungkan karakteristik pengguna dengan parameter antarmuka yang harus digeser: karakteristik mana menggeser apa, ke arah mana, dan atas dasar apa.</p>
+          </div>
+        </div>
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Bukti ilmiah dan standar</h3>
+            <p>Mengumpulkan kriteria keselamatan, standar aksesibilitas, temuan ilmu kognitif, dan prinsip umum perancangan antarmuka.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Himpunan batasan</h3>
+            <p>Syarat yang wajib dipatuhi setiap hasil bangkitan. Tidak berhenti sebagai gagasan, melainkan ditulis dalam bentuk yang memungkinkan diperiksa: terpenuhi atau dilanggar.</p>
+          </div>
+        </div>
+      </div>
+      <div class="framework-merge" aria-hidden="true"></div>
+      <div class="framework-box framework-space">
+        <h3>Ruang rancangan</h3>
+        <p>Segala pilihan yang mungkin diambil antarmuka: ukuran huruf, sasaran sentuh, jumlah butir yang ditampilkan, hierarki informasi, pemberitahuan, pilihan kata, urutan, pengelompokan. Tabel pemetaan memberi arah penyetelan, himpunan batasan menyingkirkan solusi yang tidak diizinkan.</p>
+      </div>
+      <div class="framework-arrow" aria-hidden="true"></div>
+      <div class="framework-box framework-ai">
+        <h3>AI mewujudkan yang konkret di dalam kerangka</h3>
+        <p>Dari kebebasan yang tersisa, ia menetapkan nilai, pilihan kata, urutan, dan pengelompokan. Pemeriksaan terpisah memastikan kecocokannya dengan kerangka, dan hanya antarmuka terindividualkan yang memenuhi semua syarat yang dikeluarkan.</p>
+      </div>
+      <figcaption>Penilaian manusia bukan tahap yang berjalan terus-menerus. Hanya ketika manusia menilai suatu penyesuaian diperlukan, umpan baliknya dikembalikan ke batasan — sejauh tidak bertentangan dengan bukti ilmiah — lalu antarmuka dibangkitkan ulang.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Bukti konsep: membangkitkan antarmuka untuk tiga belas persona</h2>
+    <p>Bukti konsep ini menyiapkan tiga belas persona dengan kombinasi karakteristik yang berbeda-beda. Persona itu bukan tiruan sebaran pengguna yang nyata, melainkan titik-titik kisi untuk pengujian, dengan karakteristik yang sengaja ditempatkan agar terlihat karakteristik mana yang mengubah antarmuka.</p>
+    <p>Untuk tiap persona, antarmuka seragam yang sama dijadikan before, dan antarmuka yang dibangkitkan dari karakteristiknya dijadikan after.</p>
+
+    <h3>Contoh yang hampir tidak berubah</h3>
+    <h4>PS-01 — acuan (usia paruh baya, khas)</h4>
+    <p>Persona ini berada pada rentang khas untuk seluruh karakteristik kognitif, indrawi, dan fisiknya. Setelah individualisasi, hurufnya sedikit membesar, tetapi jumlah butir yang ditampilkan, tata letaknya, dan ukuran area sentuhnya nyaris tidak berubah.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Antarmuka seragam (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-before-id.svg" width="772" height="434" alt="Layar pengaturan tujuan. Tujuh butir — rumah, kantor, tempat tersimpan, terakhir dikunjungi, dan fasilitas terdekat — di atas deretan tombol tetap.">
+      </div>
+      <div>
+        <p class="compare-label">Antarmuka terindividualkan (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-after-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Tujuh butir yang sama dengan tinggi yang sama. Selain hurufnya yang sedikit lebih besar, susunannya nyaris sama dengan antarmuka seragam.">
+      </div>
+      <figcaption>Bila antarmuka seragam sudah cukup berfungsi, individualisasi tidak menimbulkan perubahan besar. Tidak mengubah apa pun juga merupakan hasil individualisasi.</figcaption>
+    </figure>
+
+    <h3>Contoh yang perubahannya terlihat</h3>
+    <h4>PS-12 — paruh baya, kecekatan jari rendah (indrawi dan kognitif khas)</h4>
+    <p>Persona ini sama dengan PS-01 dalam usia serta karakteristik indrawi dan kognitif; hanya kecekatan jarinya yang rendah. Pada after, sasaran sentuh membesar dan butir yang tampil dalam satu layar turun dari tujuh menjadi empat. Sisanya dipindahkan ke layar berikutnya, dan justru itulah yang mengamankan ukuran tiap sasaran.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Antarmuka seragam (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-before-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Layar pengaturan tujuan dengan tujuh butir yang sama tingginya.">
+      </div>
+      <div>
+        <p class="compare-label">Antarmuka terindividualkan (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-after-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Layar yang sama menyusut menjadi empat butir, masing-masing dengan area sentuh yang lebih besar.">
+      </div>
+      <figcaption>Contoh pembagian ulang jumlah informasi dan ukuran sasaran sentuh menurut kecekatan jari. Susunan layar berubah semata-mata karena karakteristik fisik, bukan karena usia atau karakteristik kognitif.</figcaption>
+    </figure>
+    <p>Literatur menunjukkan batas bawah yang harus dipenuhi sasaran sentuh dan arah pembesarannya ketika ketelitian pengoperasian rendah, tetapi tidak menetapkan secara tunggal berapa banyak tambahannya untuk orang tertentu ini. Bagian yang belum pasti itulah yang diwujudkan AI dalam rentang yang diizinkan batasan.</p>
+  </section>
+
+  <section>
+    <h2>Hasil bukti konsep</h2>
+    <p>Perubahan yang jelas terlihat hanya terpastikan pada PS-12, satu dari tiga belas. Pada sebagian besar persona, antarmuka seragam di before sudah cukup berfungsi; manfaat individualisasi nyaris tidak muncul, setidaknya dalam bentuk yang dapat dikenali dari tampilan layar.</p>
+    <p>Pada PS-12 individualisasi memang dapat ditunjukkan secara kasatmata, tetapi perubahan sebesar itu masih dapat dicapai lewat pengaturan tampilan atau aksesibilitas pada produk yang sudah ada. Menyediakan keadaan yang pas sejak awal, tanpa pengguna harus mengaturnya sendiri, tetap bermakna. Namun belum bisa dikatakan bahwa lahir antarmuka baru yang hanya bisa diusulkan AI.</p>
+    <p>Saya tidak menyimpulkan hasil ini sebagai keberhasilan individualisasi oleh AI.</p>
+  </section>
+
+  <section>
+    <h2>Mengapa perbedaan itu tidak muncul</h2>
+    <p>Sebabnya adalah ruang rancangan yang memenuhi batasan itu sempit.</p>
+    <p>Antarmuka kendaraan memiliki banyak sekali batas bawah dan batas atas demi keselamatan. Huruf dan sasaran sentuh memerlukan ukuran minimum tertentu, dan jumlah informasi yang bisa ditampilkan dalam satu layar memiliki batas atas. Ketika semuanya diterapkan satu per satu, solusi yang bisa dipilih AI tinggal sedikit sekali.</p>
+    <p>Sebagian besar butir yang diwujudkan AI pun, pada skala kali ini, masih termasuk hal yang cukup diputuskan manusia sekali lalu dipatok sebagai tabel padanan kecil. Ini bukan berarti AI tidak diperlukan — ia mengisi nilai konkret yang tidak disebutkan literatur. Hanya saja pilihan yang tersisa terlalu sedikit untuk ditelusuri.</p>
+    <p>Sebaliknya, pada penggantian pilihan kata masih tersisa kebebasan yang luas. Namun perbedaan itu sukar terlihat sebagai perubahan susunan layar: ranah yang nilainya dapat dikenali manusia dan ranah yang tidak habis ditulis sebagai aturan ternyata tidak bertumpang tindih.</p>
+  </section>
+
+  <section>
+    <h2>Hasilnya muncul pada rancangan kerangka, bukan pada antarmuka</h2>
+    <p>Hasil terbesar bukti konsep ini lahir bukan pada tahap membangkitkan antarmuka, melainkan sebelumnya, pada tahap merancang batasan. Dalam proses menuliskan standar dan literatur sebagai syarat yang dapat diperiksa mesin, ditemukan beberapa ketidakselarasan pada kerangkanya sendiri.</p>
+    <ul class="findings">
+      <li>Standar yang berbeda memberi batas bawah yang berbeda untuk elemen antarmuka yang sama.</li>
+      <li>Syarat “hanya berlaku saat kendaraan berjalan” tidak punya tempat untuk dituliskan di dalam spesifikasi.</li>
+      <li>Dua sumbu perancangan yang sebenarnya saling bebas digabungkan menjadi satu, sehingga hampir semua pilihan tersingkir oleh batasan.</li>
+      <li>AI tidak diberi tahu dengan cukup jelas batasan mana yang mengatur keluaran mana, sehingga syarat yang tidak berkaitan ikut dipakai dalam penilaian.</li>
+      <li>Penilaian yang seharusnya disisakan untuk AI justru dipatok di sisi implementasi, sehingga desain berbasis batasan mendekat menjadi sekadar mesin aturan.</li>
+    </ul>
+    <p>Untuk tiap temuan itu, AI mendeteksi ketidakselarasannya dan menunjuk bagian yang bersangkutan, manusia memutuskan, lalu batasannya diperbaiki.</p>
+    <p>Dengan kata lain, hasil kali ini terletak bukan pada AI membuat antarmuka baru, melainkan pada <strong>kerangka yang melahirkan antarmuka itu sendiri yang teruji dan diperbarui lewat bolak-balik dengan AI</strong>. Peran AI dalam desain berbasis batasan bukan hanya membangkitkan produk jadi, melainkan juga menemukan, sebelum apa pun dibangkitkan, di mana aturan saling bertabrakan dan kemungkinan rancangan mana yang terhapus tanpa disengaja.</p>
+  </section>
+
+  <section>
+    <h2>Pekerjaan lanjutan — kerangka yang tegas, ruang yang lapang di dalamnya</h2>
+    <p>Yang diharapkan dari AI dalam desain berbasis batasan bukanlah mengambil nilai yang sudah ditetapkan dari sebuah tabel. Melainkan menyingkirkan lebih dulu hasil yang jelas tidak pantas lewat batasan, lalu dari sekian banyak kemungkinan yang tersisa mengajukan solusi yang secara peluang paling masuk akal, atau menunjukkan pola yang tidak terpikirkan manusia sebelumnya.</p>
+    <p>Kali ini efek tersebut belum cukup muncul. Bukan karena tidak ada benturan, melainkan karena ruang rancangan yang memenuhi batasan itu sempit, sehingga memilih solusi yang lebih cocok atau solusi yang baru hampir kehilangan maknanya.</p>
+    <p>Pertanyaan berikutnya bukanlah apakah AI berguna, melainkan: <strong>seluas apa ruang rancangan yang diperlukan agar efek khas AI itu muncul?</strong></p>
+    <p>Pada praktik berikutnya saya akan memilih bahan yang keselamatannya tetap terjaga, tetapi menyisakan beberapa solusi yang sama-sama masuk akal, dan perbedaannya yang tak habis ditulis sebagai aturan pun dapat dikenali manusia sebagai nilai. Kerangkanya ditetapkan dengan tegas, tetapi di dalamnya disisakan keluasan yang cukup untuk ditelusuri AI. Memenuhi keduanya sekaligus itulah yang menjadikan desain berbasis batasan bukan sekadar otomatisasi, melainkan sebuah metode desain untuk zaman AI.</p>
   </section>
 
   <nav aria-label="Situs">

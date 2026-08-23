@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Scaffold for a work whose write-up has not been written yet. The title is
-     provisional; `Personal Fit UI` is the term the English version is built
-     around, and the other languages carry its sense rather than the words.
-     When the case study is written: fill the sections, add assets/og.jpg and
-     assets/thumb.webp, point og:image and the JSON-LD `image` at og.jpg, add
-     `datePublished`, drop `creativeWorkStatus`, and replace the status line. -->
-<title>Uma interface ajustada a cada usuário — Takafumi Horiuchi</title>
-<meta name="description" content="Gerar automaticamente uma interface feita sob medida para a cognição de uma pessoa específica. O estudo de caso está em preparação.">
+<!-- This work alone is written in Japanese first: /ja/ is the source of record
+     and every other language is translated from it (owner's instruction,
+     2026-08-23). The mock renders live under the English tree, one file per
+     language, and are referenced from here rather than copied. -->
+<title>Personal Fit UI - Individualizar a interface por meio do design por restrições — Takafumi Horiuchi</title>
+<meta name="description" content="Gerar uma interface ajustada às características cognitivas, sensoriais e físicas de uma pessoa, dentro dos limites fixados pela evidência científica e pelas restrições de projeto. Uma prova de conceito em um sistema de navegação automotiva.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/pt/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -29,27 +27,18 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     that gets cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Uma interface ajustada a cada usuário">
-<meta property="og:description" content="Uma interface gerada sob medida para a cognição de uma pessoa.">
+<meta property="og:title" content="Personal Fit UI - Individualizar a interface por meio do design por restrições">
+<meta property="og:description" content="A pessoa projeta o quadro que precisa se sustentar; dentro dele, a IA concretiza a interface de cada um. O design por restrições na prática.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/pt/works/personal-fit-ui/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi — Cognitive Engineering × AI × Design">
+<meta property="og:image:alt" content="A tela uniforme da Personal Fit UI, com um menu de destino e navegação.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,10 +57,11 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/pt/works/personal-fit-ui/#work",
-      "name": "Uma interface ajustada a cada usuário",
+      "name": "Personal Fit UI - Individualizar a interface por meio do design por restrições",
       "url": "https://takafumihoriuchi.github.io/pt/works/personal-fit-ui/",
-      "description": "Gerar automaticamente uma interface feita sob medida para a cognição de uma pessoa específica. O estudo de caso está em preparação.",
-      "creativeWorkStatus": "Em preparação",
+      "description": "Gerar uma interface ajustada às características cognitivas, sensoriais e físicas de uma pessoa, dentro dos limites fixados pela evidência científica e pelas restrições de projeto. Uma prova de conceito em um sistema de navegação automotiva.",
+      "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
+      "datePublished": "2026-08",
       "inLanguage": "pt",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -83,42 +73,160 @@
 <main>
 
   <header>
-    <h1>Uma interface ajustada a cada usuário</h1>
+    <h1>Personal Fit UI - Individualizar a interface por meio do design por restrições</h1>
     <div class="identity">
       <p class="tagline">por <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Perfis em outros sites">
+      <nav aria-label="Perfis em outros lugares">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline slot carries the status until there is a date to put in
-         it. A work page with no date and no explanation reads as an oversight;
-         this says which of the two it is. -->
-    <p class="dateline">Em preparação</p>
+    <p class="dateline">agosto de 2026</p>
   </header>
 
-  <!-- The four headings are the shape the case study will take, kept in the
-       order OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>Resumo</h2>
-    <p class="lead">Gerar automaticamente uma interface feita sob medida para a cognição de uma pessoa específica. O estudo de caso está em preparação.</p>
+    <h2>Visão geral</h2>
+    <p class="lead">Todo mundo usa a mesma interface do mesmo jeito. Este trabalho se afasta dessa premissa da produção em massa e pergunta se é possível, em vez disso, gerar uma interface ajustada às características cognitivas, sensoriais e físicas de cada pessoa.</p>
+    <p>O objetivo não era uma interface cuja tela muda o tempo todo conforme a situação durante o uso. Trata-se de um mecanismo que capta as características da pessoa no momento em que ela começa a usar o produto e gera de antemão uma interface que lhe sirva, respeitando as restrições de segurança e de acessibilidade.</p>
+    <p>Neste trabalho coloquei em prática uma ideia que chamo de design por restrições. A partir da literatura e das normas, a pessoa projeta as direções a seguir e os limites a não ultrapassar. Dentro desse quadro, a IA decide os valores e as formulações concretas, e o que foi gerado é verificado para conferir se não viola o quadro.</p>
+    <p>A prova de conceito tomou como tema um sistema de navegação automotiva e gerou uma interface para treze personas com características diferentes. Quase nada mudou visualmente. O ganho veio de outro lugar: ao escrever as restrições em uma forma verificável, ficou claro onde resta margem para a individualização e onde são as restrições que a consomem.</p>
   </section>
 
   <section>
-    <h2>Restrições</h2>
+    <h2>O que significa entregar a mesma interface a todos</h2>
+    <p>Hoje a maior parte dos produtos é projetada sob a premissa da produção em massa: uma única interface que cubra o maior número possível de pessoas. Mesmo quando é possível mudar o tamanho do texto ou a quantidade de itens exibidos, cabe ao próprio usuário encontrar o estado que lhe serve e configurá-lo.</p>
+    <p>Esse método funciona para muita gente. Mas servir a muitos e servir a todos não são a mesma coisa. Um produto pode atender a todos os padrões de projeto comuns e ainda assim deixar de fora pessoas para quem aquela interface é difícil de usar.</p>
+    <p>A mesma estrutura aparece na avaliação das interfaces embarcadas. O procedimento de aceitação da NHTSA norte-americana sobre o desvio do olhar durante a condução não exige que todos os participantes atendam ao critério. Uma tarefa é aprovada quando 21 de 24 participantes o cumprem: que uma parte não o cumpra já está previsto dentro do próprio procedimento. Um documento apresentado ao órgão regulador pelas montadoras vai além e relata que cerca de uma em cada seis pessoas desvia o olhar por mais tempo de forma consistente ao longo de várias tarefas. Esse documento veio das montadoras sujeitas à norma e pedia o afrouxamento do critério. O que se propõe aqui não é afrouxar o critério, mas aumentar, pela individualização, o número de pessoas capazes de cumpri-lo.</p>
+    <p>O sentido de uma interface individualizada não é tornar a tela de todos inédita. É trazer as pessoas que a interface uniforme deixava para trás ao campo em que conseguem usá-la e operá-la com segurança.</p>
+    <p>Até agora, o custo de projetar uma interface para uma única pessoa não era realista. Desde que a IA pode ser tratada como parte do processo de projeto, essa premissa começou a mudar.</p>
   </section>
 
   <section>
-    <h2>Abordagem</h2>
+    <h2>A navegação automotiva como tema</h2>
+    <p>O tema deste trabalho não é a navegação automotiva, e sim a interface individualizada. A navegação foi escolhida como um caso em que examinar suas possibilidades e seus limites.</p>
+    <p>Uma interface embarcada carrega restrições fortes: uma tela limitada, um tempo de olhar muito curto e a segurança de cada operação. Antes do lançamento, ela é validada como interface uniforme que a maioria consegue usar — e essa mesma interface chega depois às pessoas a quem esse projeto não serve.</p>
+    <p>Se a individualização se sustentar em um domínio tão restrito, a ideia do design por restrições pode ser verificada concretamente. Por outro lado, é possível que as restrições quase não deixem liberdade para a IA. Era um tema que permitia observar as duas coisas.</p>
+    <p class="note"><strong>No Japão, em 2026, convivem modelos compatíveis com atualizações pelo ar e centrais de navegação convencionais instaladas de fábrica que não aceitam atualização.</strong> E mesmo quando os dados de mapa podem ser atualizados, a estrutura básica da interface não é necessariamente reprojetada de forma contínua depois da compra. Esta prova de conceito pressupõe um sistema cuja interface não é atualizada com frequência depois de iniciado o uso.</p>
   </section>
 
   <section>
-    <h2>Resultado</h2>
+    <h2>Transformar a individualização em algo que se possa gerar</h2>
+    <p>Design por restrições significa fixar o quadro com clareza e deixar que, dentro dele, a IA se mova com flexibilidade e com sensibilidade às nuances. Diferentemente de um mecanismo paramétrico que retira valores de uma tabela estabelecida, aqui se projeta a própria amplitude de soluções que a IA pode explorar.</p>
+    <p>O conhecimento científico nem sempre chega até o número. Às vezes indica apenas uma direção: aumentar, mostrar menos. Onde o valor está determinado, ele é calculado como regra; onde só se conhece a direção, a IA define o concreto dentro do que as restrições permitem. Não deixar essa distinção se diluir também faz parte do mecanismo.</p>
+
+    <figure class="framework">
+      <div class="framework-branches">
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Fixar as dimensões cognitivas</h3>
+            <p>Definir os eixos como características ligadas à facilidade de uso, e não como diagnósticos: memória de trabalho, tolerância a estímulos que distraem, características visuais e auditivas, destreza manual.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Tabela de correspondência</h3>
+            <p>Liga as características do usuário aos parâmetros da interface que devem se mover: qual característica move o quê, em que direção e com que fundamento.</p>
+          </div>
+        </div>
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Evidências e normas</h3>
+            <p>Reunir critérios de segurança, normas de acessibilidade, achados das ciências cognitivas e princípios gerais de projeto de interfaces.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Conjunto de restrições</h3>
+            <p>As condições que todo resultado gerado precisa respeitar. Não ficam no plano dos princípios: são escritas de modo que se possa verificar se foram cumpridas ou violadas.</p>
+          </div>
+        </div>
+      </div>
+      <div class="framework-merge" aria-hidden="true"></div>
+      <div class="framework-box framework-space">
+        <h3>Espaço de projeto</h3>
+        <p>Tudo o que a interface pode variar: tamanho do texto, alvos de toque, número de itens exibidos, hierarquia da informação, avisos, vocabulário, ordem, agrupamento. A tabela de correspondência dá a direção do ajuste; o conjunto de restrições remove as soluções que não são permitidas.</p>
+      </div>
+      <div class="framework-arrow" aria-hidden="true"></div>
+      <div class="framework-box framework-ai">
+        <h3>A IA concretiza dentro do quadro</h3>
+        <p>Na liberdade que resta, define valores, vocabulário, ordem e agrupamentos. Uma verificação separada confirma a aderência ao quadro, e só é emitida a interface individualizada que satisfaz todas as condições.</p>
+      </div>
+      <figcaption>A avaliação humana não é uma etapa permanente. Só quando uma pessoa julga necessário um ajuste é que ele volta para as restrições — na medida em que a evidência permitir — e se gera de novo.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Prova de conceito: uma interface para treze personas</h2>
+    <p>A prova de conceito preparou treze personas com combinações diferentes de características. Elas não reproduzem nenhuma distribuição real de usuários: são pontos de uma grade de verificação, com as características posicionadas de propósito para descobrir quais delas fazem a interface mudar.</p>
+    <p>Para cada persona comparou-se a interface uniforme comum, o before, com a interface gerada a partir de suas características, o after.</p>
+
+    <h3>Um caso que quase não mudou</h3>
+    <h4>PS-01 — referência (meia-idade, perfil típico)</h4>
+    <p>Esta persona está na faixa típica em todas as características cognitivas, sensoriais e físicas. Depois da individualização o texto ficou um pouco maior, mas a quantidade de itens exibidos, a disposição e o tamanho das áreas de toque permaneceram praticamente iguais.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Interface uniforme (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-before-pt.svg" width="772" height="434" alt="Tela de escolha de destino: sete itens — casa, trabalho, locais salvos, recentes e locais próximos — acima de uma barra fixa de botões.">
+      </div>
+      <div>
+        <p class="compare-label">Interface individualizada (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-after-pt.svg" width="772" height="434" loading="lazy" decoding="async" alt="Os mesmos sete itens, na mesma altura. Fora o texto ligeiramente maior, a composição é quase idêntica à da interface uniforme.">
+      </div>
+      <figcaption>Quando a interface uniforme já funciona bem o bastante, individualizar não produz grandes mudanças. Não mudar nada também é um resultado da individualização.</figcaption>
+    </figure>
+
+    <h3>Um caso em que a mudança aparece</h3>
+    <h4>PS-12 — meia-idade, pouca destreza manual (perfil sensorial e cognitivo típico)</h4>
+    <p>Esta persona coincide com a PS-01 em idade e em características sensoriais e cognitivas; apenas a destreza manual é baixa. No after os alvos de toque ficam maiores e os itens exibidos em uma tela caem de sete para quatro. Os demais passam para a tela seguinte, e é justamente isso que garante o tamanho de cada alvo.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Interface uniforme (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-before-pt.svg" width="772" height="434" loading="lazy" decoding="async" alt="Tela de escolha de destino com sete itens da mesma altura.">
+      </div>
+      <div>
+        <p class="compare-label">Interface individualizada (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-after-pt.svg" width="772" height="434" loading="lazy" decoding="async" alt="A mesma tela reduzida a quatro itens, cada um com uma área de toque maior.">
+      </div>
+      <figcaption>Quantidade de informação e tamanho dos alvos de toque redistribuídos conforme a destreza manual. A composição muda por causa de uma característica física apenas, e não da idade ou do perfil cognitivo.</figcaption>
+    </figure>
+    <p>A literatura indica o limite inferior que um alvo de toque precisa atender e a direção em que aumentá-lo quando a precisão do gesto é baixa. O que ela não fixa de forma unívoca é quanto acrescentar para esta pessoa específica. Foi essa parte indeterminada que a IA concretizou, dentro da faixa permitida pelas restrições.</p>
+  </section>
+
+  <section>
+    <h2>O que a prova de conceito produziu</h2>
+    <p>Uma mudança claramente visível só foi constatada na PS-12, uma entre treze. Na maioria das personas, a interface uniforme do before já funcionava bem o bastante; o benefício da individualização quase não apareceu, ao menos de uma forma reconhecível na tela.</p>
+    <p>Na PS-12 foi possível mostrar a individualização visualmente, mas uma mudança dessa magnitude está ao alcance dos ajustes de exibição e de acessibilidade que os produtos atuais já oferecem. Entregar desde o início um estado que sirva, sem que o usuário precise configurá-lo, tem valor. Ainda assim, não se pode dizer que tenha nascido uma interface nova que só uma IA poderia propor.</p>
+    <p>Não conclui desse resultado que a individualização por IA tivesse dado certo.</p>
+  </section>
+
+  <section>
+    <h2>Por que a diferença não apareceu</h2>
+    <p>A causa está no fato de o espaço de projeto que satisfaz as restrições ser estreito.</p>
+    <p>Uma interface embarcada tem inúmeros pisos e tetos ditados pela segurança. Texto e alvos de toque precisam de um tamanho mínimo, e há um teto para a quantidade de informação que cabe em uma tela. Aplicando-os um após o outro, restavam à IA pouquíssimas soluções a escolher.</p>
+    <p>Boa parte do que a IA concretizou também estava, nesta escala, dentro do que uma pessoa pode decidir uma vez e fixar em uma pequena tabela de correspondência. Isso não significa que a IA fosse dispensável: ela preencheu valores concretos que a literatura não indica. Mas sobraram opções de menos para ela explorar.</p>
+    <p>Já na reformulação do vocabulário restava ampla liberdade. Só que essas diferenças são difíceis de ver como mudança na composição da tela: o campo em que a pessoa conseguia reconhecer o valor e o campo que as regras não conseguem escrever não se sobrepunham.</p>
+  </section>
+
+  <section>
+    <h2>O resultado apareceu no quadro, não na interface</h2>
+    <p>O maior resultado desta prova de conceito surgiu não na etapa de gerar interfaces, mas antes dela, na de projetar as restrições. Ao escrever normas e literatura como condições que uma máquina possa verificar, apareceram várias incoerências no próprio quadro.</p>
+    <ul class="findings">
+      <li>Normas diferentes davam limites inferiores diferentes para o mesmo elemento da interface.</li>
+      <li>A condição “vale apenas com o veículo em movimento” não tinha onde ser escrita na especificação.</li>
+      <li>Dois eixos de projeto que na verdade são independentes tinham sido fundidos em um só, de modo que as restrições eliminavam quase todas as opções.</li>
+      <li>Não se havia dito à IA com clareza suficiente qual restrição governa qual saída, e condições sem relação entravam nas decisões.</li>
+      <li>Julgamentos que deveriam ficar com a IA estavam fixados do lado da implementação, aproximando o design por restrições de um simples motor de regras.</li>
+    </ul>
+    <p>Em cada um desses casos a IA detectou a incoerência e apontou o trecho em questão, uma pessoa decidiu e a restrição foi corrigida.</p>
+    <p>Ou seja, o ganho deste trabalho está menos em uma IA ter criado uma interface nova do que em <strong>o vaivém com a IA ter posto à prova e atualizado o próprio quadro do qual nascem as interfaces</strong>. O papel da IA no design por restrições não é apenas gerar o produto acabado. É também encontrar, antes de gerar qualquer coisa, onde as regras colidem e que possibilidades de projeto foram apagadas sem que ninguém pretendesse.</p>
+  </section>
+
+  <section>
+    <h2>Trabalhos futuros: quadro nítido, espaço largo por dentro</h2>
+    <p>O que o design por restrições espera da IA não é retirar de uma tabela valores já definidos. É excluir pelas restrições o que é claramente inadequado e, entre as muitas possibilidades restantes, apresentar a solução com maior probabilidade de ser adequada — ou mostrar um padrão que a pessoa não teria imaginado de antemão.</p>
+    <p>Desta vez esse efeito não se manifestou o suficiente. Não por falta de colisões, mas porque o espaço de projeto que satisfaz as restrições era estreito e quase não restava sentido em escolher uma solução melhor ou uma solução nova.</p>
+    <p>A pergunta seguinte não é se a IA é eficaz. É: <strong>a partir de que largura de espaço de projeto surge o efeito que só a IA produz?</strong></p>
+    <p>Na próxima prática vou escolher um tema em que a segurança se mantenha, várias soluções válidas sobrevivam e as diferenças que as regras não conseguem escrever sejam reconhecíveis como valor também pelas pessoas. O quadro será definido com clareza. Mas dentro dele ficará largura suficiente para a IA explorar. É essa combinação que faz do design por restrições um método de design para a era da IA, e não mera automação.</p>
   </section>
 
   <nav aria-label="Site">

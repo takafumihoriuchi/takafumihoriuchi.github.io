@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Scaffold for a work whose write-up has not been written yet. The title is
-     provisional; `Personal Fit UI` is the term the English version is built
-     around, and the other languages carry its sense rather than the words.
-     When the case study is written: fill the sections, add assets/og.jpg and
-     assets/thumb.webp, point og:image and the JSON-LD `image` at og.jpg, add
-     `datePublished`, drop `creativeWorkStatus`, and replace the status line. -->
-<title>Interfaco adaptita al ĉiu unuopa uzanto — Takafumi Horiuchi</title>
-<meta name="description" content="Aŭtomate generi uzantinterfacon tajlitan al la kogno de unu difinita homo. La studo pri la projekto estas en preparo.">
+<!-- This work alone is written in Japanese first: /ja/ is the source of record
+     and every other language is translated from it (owner's instruction,
+     2026-08-23). The mock renders live under the English tree, one file per
+     language, and are referenced from here rather than copied. -->
+<title>Personal Fit UI - individuigo de la interfaco per dezajno laŭ limigoj — Takafumi Horiuchi</title>
+<meta name="description" content="Generi interfacon, kiu kongruas kun la kognaj, sensaj kaj korpaj trajtoj de unu homo, ene de la limoj starigitaj de sciencaj konoj kaj dezajnaj limigoj. Provo de koncepto farita sur aŭtomobila navigilo.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -29,27 +27,18 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     that gets cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="eo">
-<meta property="og:title" content="Interfaco adaptita al ĉiu unuopa uzanto">
-<meta property="og:description" content="Interfaco generita laŭ la kogno de unu homo.">
+<meta property="og:title" content="Personal Fit UI - individuigo de la interfaco per dezajno laŭ limigoj">
+<meta property="og:description" content="La homo dezajnas la kadron, kiu devas teni; ene de ĝi la artefarita inteligenteco konkretigas la interfacon de ĉiu unuopulo. Dezajno laŭ limigoj en la praktiko.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi — Cognitive Engineering × AI × Design">
+<meta property="og:image:alt" content="La unueca ekrano de Personal Fit UI, kun menuo de celo kaj navigado.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -68,10 +57,11 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/#work",
-      "name": "Interfaco adaptita al ĉiu unuopa uzanto",
+      "name": "Personal Fit UI - individuigo de la interfaco per dezajno laŭ limigoj",
       "url": "https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/",
-      "description": "Aŭtomate generi uzantinterfacon tajlitan al la kogno de unu difinita homo. La studo pri la projekto estas en preparo.",
-      "creativeWorkStatus": "En preparo",
+      "description": "Generi interfacon, kiu kongruas kun la kognaj, sensaj kaj korpaj trajtoj de unu homo, ene de la limoj starigitaj de sciencaj konoj kaj dezajnaj limigoj. Provo de koncepto farita sur aŭtomobila navigilo.",
+      "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
+      "datePublished": "2026-08",
       "inLanguage": "eo",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -83,7 +73,7 @@
 <main>
 
   <header>
-    <h1>Interfaco adaptita al ĉiu unuopa uzanto</h1>
+    <h1>Personal Fit UI - individuigo de la interfaco per dezajno laŭ limigoj</h1>
     <div class="identity">
       <p class="tagline">de <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profiloj aliloke">
@@ -93,32 +83,150 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline slot carries the status until there is a date to put in
-         it. A work page with no date and no explanation reads as an oversight;
-         this says which of the two it is. -->
-    <p class="dateline">En preparo</p>
+    <p class="dateline">aŭgusto 2026</p>
   </header>
 
-  <!-- The four headings are the shape the case study will take, kept in the
-       order OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Superrigardo</h2>
-    <p class="lead">Aŭtomate generi uzantinterfacon tajlitan al la kogno de unu difinita homo. La studo pri la projekto estas en preparo.</p>
+    <p class="lead">Ĉiuj uzas la saman interfacon en la sama maniero. Ĉi tiu verko forlasas tiun premison de amasproduktado kaj demandas, ĉu eblas anstataŭe generi interfacon, kiu kongruas kun la kognaj, sensaj kaj korpaj trajtoj de ĉiu unuopa homo.</p>
+    <p>La celo ne estis interfaco, kies ekrano senĉese ŝanĝiĝas laŭ la situacio dum la uzado. Temas pri mekanismo, kiu kaptas la trajtojn de la homo je la komenco de la uzado kaj anticipe generas al li konvenan interfacon, respektante la limigojn pri sekureco kaj alirebleco.</p>
+    <p>En ĉi tiu esploro mi praktikis ideon, kiun mi nomas dezajno laŭ limigoj. Surbaze de literaturo kaj normoj, la homo dezajnas la direktojn sekvindajn kaj la limojn ne transpaŝeblajn. Ene de tiu kadro la artefarita inteligenteco decidas la konkretajn valorojn kaj vortumojn, kaj la generitaĵo estas kontrolata, ĉu ĝi ne malobeas la kadron.</p>
+    <p>La provo de koncepto prenis aŭtomobilan navigilon kiel temon kaj generis interfacon por dek tri person-modeloj kun malsamaj trajtoj. Rezulte, granda ŝanĝo en la aspekto preskaŭ ne aperis. Aliflanke, la procezo de surpaperigo de la limigoj en kontrolebla formo montris, kie restas spaco por individuigo kaj kie la limigoj ĝin formanĝas.</p>
   </section>
 
   <section>
-    <h2>Limigoj</h2>
+    <h2>Kion signifas doni al ĉiuj la saman interfacon</h2>
+    <p>Plej multaj produktoj hodiaŭ estas dezajnitaj sub la premiso de amasproduktado: unu interfaco, kiu kovru kiel eble plej multajn homojn. Eĉ kiam la litergrandeco aŭ la nombro de montrataj eroj estas ŝanĝeblaj, la uzanto mem devas trovi la al si konvenan staton kaj agordi ĝin.</p>
+    <p>Tiu maniero funkcias por multaj homoj. Sed „konveni al multaj“ kaj „konveni al ĉiuj“ ne estas la samo. Eĉ produkto, kiu plenumas ĉiujn komunajn dezajnajn normojn, lasas homojn, al kiuj tiu interfaco restas malfacile uzebla.</p>
+    <p>La sama strukturo aperas ankaŭ en la takso de enaŭtaj interfacoj. La akcepta proceduro de la usona NHTSA pri forturno de la rigardo dum stirado ne postulas, ke ĉiuj partoprenantoj plenumu la kriterion. Tasko estas konsiderata sukcesa, kiam 21 el 24 partoprenantoj ĝin plenumas: ke iu parto ne plenumas ĝin, estas anticipe enskribita en la proceduron mem. Krome, dokumento prezentita al la reguliganto de aŭtofabrikantoj raportas, ke ĉirkaŭ unu homo el ses konstante forturnas la rigardon pli longe tra pluraj taskoj. Tiu dokumento devenas de la fabrikantoj mem, kiujn la reguligo koncernas, kaj petis malstreĉon de la kriterio. Kion ĉi tiu verko celas, ne estas malstreĉi la kriterion, sed pliigi per individuigo la nombron de homoj kapablaj ĝin plenumi.</p>
+    <p>La senco de individuigita interfaco ne estas fari la ekranon de ĉiuj nova kaj neordinara. Ĝi estas enkonduki la homojn, kiujn la unueca interfaco ĝis nun perdis, en la amplekson, kie ili povas ĝin uzi kaj sekure manipuli.</p>
+    <p>Ĝis nun la kosto dezajni unu interfacon por unu homo ne estis realisma. De kiam la artefarita inteligenteco uzeblas kiel parto de la dezajna procezo, tiu premiso komencas ŝanĝiĝi.</p>
   </section>
 
   <section>
-    <h2>Aliro</h2>
+    <h2>Aŭtomobila navigilo kiel temo</h2>
+    <p>La temo de ĉi tiu verko ne estas la aŭtomobila navigilo, sed la individuigita interfaco. La navigilo estis elektita kiel unu ekzemplo, sur kiu kontroli ĝiajn eblojn kaj ĝiajn limojn.</p>
+    <p>Enaŭta interfaco portas fortajn limigojn: malvasta ekrano, tre mallonga rigarda tempo, sekureco de ĉiu manipulo. Antaŭ la ekspedo ĝi estas validigita kiel unueca interfaco uzebla de plej multaj homoj — kaj la sama interfaco poste transdoniĝas ankaŭ al tiuj, al kiuj tiu dezajno ne konvenas.</p>
+    <p>Se individuigo tenas en kampo tiel strikte limigita, la ideon de dezajno laŭ limigoj eblas kontroli konkrete. Inverse, eblas ankaŭ, ke la limigoj lasas al la artefarita inteligenteco preskaŭ neniom da libereco. Tio estis temo, ĉe kiu ambaŭ observeblas.</p>
+    <p class="note"><strong>En Japanio, en 2026, kunekzistas modeloj kapablaj je ĝisdatigo tra la aero kaj tradiciaj fabrike instalitaj navigiloj, kiuj ĝisdatigon ne akceptas.</strong> Krome, eĉ kie la mapaj datumoj ĝisdatigeblas, la baza strukturo de la interfaco ne nepre estas re-dezajnata denove kaj denove post la aĉeto. Ĉi tiu provo de koncepto supozas sistemon, kies interfaco ne estas ofte ĝisdatigata post la komenco de la uzado.</p>
   </section>
 
   <section>
-    <h2>Rezulto</h2>
+    <h2>Fari individuigon io, kion oni povas generi</h2>
+    <p>Dezajno laŭ limigoj signifas klare fiksi la kadron kaj poste lasi la artefaritan inteligentecon movi sin ene de ĝi flekseble kaj kun sento por nuancoj. Malsame ol parametra mekanismo, kiu ĉerpas valorojn el fiksita tabelo, ĉi tie oni dezajnas la amplekson mem de la solvoj, kiujn la artefarita inteligenteco rajtas esplori.</p>
+    <p>Sciencaj konoj ne ĉiam atingas konkretan nombron. Foje ili indikas nur direkton: pligrandigi, montri malpli. Kie la valoro estas difinita, ĝi estas kalkulata kiel regulo; kie konata estas nur la direkto, la artefarita inteligenteco decidas la konkretaĵon ene de tio, kion la limigoj permesas. Ne lasi tiun distingon malklariĝi estas mem parto de la mekanismo.</p>
+
+    <figure class="framework">
+      <div class="framework-branches">
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Fiksi la kognajn dimensiojn</h3>
+            <p>La aksoj estas difinitaj ne kiel diagnozaj nomoj, sed kiel trajtoj rilataj al la facileco de uzado: labormemoro, eltenemo kontraŭ distraj stimuloj, vidaj kaj aŭdaj trajtoj, fingra lerteco.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Kongrua tabelo</h3>
+            <p>Ligas la trajtojn de la uzanto al la interfacaj parametroj movendaj: kiu trajto movas kion kaj en kiun direkton, kune kun la pravigo.</p>
+          </div>
+        </div>
+        <div class="framework-branch">
+          <div class="framework-box">
+            <h3>Sciencaj konoj kaj normoj</h3>
+            <p>Kolektiĝas sekurecaj kriterioj, normoj pri alirebleco, rezultoj de la kogna scienco kaj ĝeneralaj principoj de interfaca dezajno.</p>
+          </div>
+          <div class="framework-arrow" aria-hidden="true"></div>
+          <div class="framework-box">
+            <h3>Aro da limigoj</h3>
+            <p>La kondiĉoj, kiujn ĉiu generitaĵo nepre respektu. Ne restante idealoj, ili estas skribitaj en formo, ĉe kiu kontroleblas: plenumita aŭ malobeita.</p>
+          </div>
+        </div>
+      </div>
+      <div class="framework-merge" aria-hidden="true"></div>
+      <div class="framework-box framework-space">
+        <h3>Dezajna spaco</h3>
+        <p>Ĉio, kion la interfaco povas varii: litergrandeco, tuŝceloj, nombro de montrataj eroj, informa hierarkio, sciigoj, vortprovizo, ordo, grupigo. La kongrua tabelo donas la direkton de la agordo; la aro da limigoj forigas la nepermesatajn solvojn.</p>
+      </div>
+      <div class="framework-arrow" aria-hidden="true"></div>
+      <div class="framework-box framework-ai">
+        <h3>La artefarita inteligenteco konkretigas ene de la kadro</h3>
+        <p>El la restanta libereco ĝi decidas valorojn, vortprovizon, ordon kaj grupigon. Aparta kontrolo konfirmas la kongruon kun la kadro, kaj eliras nur individuigita interfaco, kiu plenumas ĉiujn kondiĉojn.</p>
+      </div>
+      <figcaption>Homa taksado ne estas konstanta paŝo. Nur kiam homo juĝas alĝustigon necesa, ĝi retrofluas en la limigojn — tiom, kiom la sciencaj konoj permesas — kaj oni regeneras.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>Provo de koncepto: interfaco por dek tri person-modeloj</h2>
+    <p>Por la provo de koncepto estis pretigitaj dek tri person-modeloj kun malsamaj kombinoj de trajtoj. Ili ne reproduktas realan distribuon de uzantoj: ili estas kradpunktoj por kontrolo, kies trajtoj estas intence lokitaj por konstati, kiu el ili ŝanĝas la interfacon.</p>
+    <p>Por ĉiu person-modelo la komuna unueca interfaco estas la before, kaj la interfaco generita el ĝiaj trajtoj estas la after.</p>
+
+    <h3>Ekzemplo, ĉe kiu preskaŭ nenio ŝanĝiĝis</h3>
+    <h4>PS-01 — referenco (matura aĝo, tipa)</h4>
+    <p>Tiu ĉi person-modelo troviĝas en la tipa amplekso ĉe ĉiuj kognaj, sensaj kaj korpaj trajtoj. Post la individuigo la literoj iĝis iomete pli grandaj, sed la nombro de montrataj eroj, la aranĝo kaj la grandeco de la tuŝzonoj restis preskaŭ senŝanĝaj.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Unueca interfaco (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-before-eo.svg" width="772" height="434" alt="Ekrano por elekti celon: sep eroj — hejmo, laborejo, konservitaj lokoj, lastaj celoj kaj proksimaj instalaĵoj — super fiksita vico da butonoj.">
+      </div>
+      <div>
+        <p class="compare-label">Individuigita interfaco (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-after-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La samaj sep eroj en la sama alto. Krom iom pli grandaj literoj, la konsisto preskaŭ egalas al la unueca interfaco.">
+      </div>
+      <figcaption>Kie la unueca interfaco jam funkcias sufiĉe bone, individuigo ne kaŭzas grandan ŝanĝon. Ankaŭ nenion ŝanĝi estas rezulto de individuigo.</figcaption>
+    </figure>
+
+    <h3>Ekzemplo, ĉe kiu la ŝanĝo videblas</h3>
+    <h4>PS-12 — matura aĝo, malalta fingra lerteco (sensaj kaj kognaj trajtoj tipaj)</h4>
+    <p>Tiu ĉi person-modelo kongruas kun PS-01 laŭ aĝo kaj laŭ sensaj kaj kognaj trajtoj; nur la fingra lerteco estas malalta. En la after la tuŝceloj pligrandiĝis kaj la eroj montrataj sur unu ekrano malpliiĝis de sep al kvar. La ceteraj transiris al la sekva ekrano, kaj ĝuste tio certigas al ĉiu unuopa celo ĝian grandecon.</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">Unueca interfaco (before)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-before-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="Ekrano por elekti celon kun sep eroj de la sama alto.">
+      </div>
+      <div>
+        <p class="compare-label">Individuigita interfaco (after)</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-after-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La sama ekrano reduktita al kvar eroj, ĉiu kun pli granda tuŝzono.">
+      </div>
+      <figcaption>Ekzemplo de redistribuo de la informkvanto kaj de la grandeco de la tuŝceloj laŭ la fingra lerteco. La konsisto de la ekrano ŝanĝiĝas pro korpa trajto sola, ne pro aĝo aŭ kognaj trajtoj.</figcaption>
+    </figure>
+    <p>La literaturo montras la malsupran limon, kiun tuŝcelo devas plenumi, kaj la direkton pligrandigi ĝin, kiam la precizeco de la manipulado estas malalta. Sed ĝi ne difinas unusignife, kiom aldoni ĝuste por ĉi tiu homo. Tiun nedifinitan parton la artefarita inteligenteco konkretigis ene de la limigoj.</p>
+  </section>
+
+  <section>
+    <h2>Kion donis la provo de koncepto</h2>
+    <p>Klare videbla ŝanĝo konstateblis nur ĉe PS-12, unu el dek tri. Ĉe la plimulto de la person-modeloj la unueca interfaco de la before jam funkciis sufiĉe bone; la gajno el individuigo preskaŭ ne aperis, almenaŭ en formo rekonebla laŭ la aspekto de la ekrano.</p>
+    <p>Ĉe PS-12 la individuigon eblis montri videble, sed ŝanĝo de tiu grado atingeblas ankaŭ per la montraj kaj alireblecaj agordoj de ekzistantaj produktoj. Ke la konvena stato haveblas ekde la komenco, sen ke la uzanto mem devu agordi, havas sian valoron. Tamen ne eblas diri, ke naskiĝis nova interfaco, kiun povus proponi nur artefarita inteligenteco.</p>
+    <p>Mi ne konkludis el tiu rezulto, ke individuigo per artefarita inteligenteco sukcesis.</p>
+  </section>
+
+  <section>
+    <h2>Kial la diferenco ne aperis</h2>
+    <p>La kaŭzo kuŝas en tio, ke la dezajna spaco plenumanta la limigojn estis malvasta.</p>
+    <p>Enaŭta interfaco havas multajn malsuprajn kaj suprajn limojn pro sekureco. Literoj kaj tuŝceloj bezonas certan minimuman grandecon, kaj por la informkvanto sur unu ekrano validas supra limo. Aplikante ilin unu post la alia, al la artefarita inteligenteco restis nur malmultaj solvoj elekteblaj.</p>
+    <p>Ankaŭ plej multo el tio, kion la artefarita inteligenteco konkretigis, en la nuna skalo estis tio, kion homo povus decidi unufoje kaj fiksi kiel malgrandan kongruan tabelon. Tio ne signifas, ke la artefarita inteligenteco estis superflua — ĝi plenigis konkretajn valorojn, kiujn la literaturo ne donas. Sed por esplori restis al ĝi tro malmultaj elektebloj.</p>
+    <p>Aliflanke, ĉe la reformulado de la vortprovizo restis larĝa libereco. Tamen tiu diferenco malfacile videblas kiel ŝanĝo de la ekrana konsisto: la kampo, kie la homo povis rekoni la valoron, kaj la kampo, kiun reguloj ne kapablas plene skribi, ne interkovriĝis.</p>
+  </section>
+
+  <section>
+    <h2>La rezulto aperis en la kadro, ne en la interfaco</h2>
+    <p>La plej granda rezulto de ĉi tiu provo de koncepto naskiĝis ne en la etapo de generado de interfacoj, sed antaŭe, en la etapo de dezajnado de la limigoj. Dum normoj kaj literaturo estis surpaperigataj kiel maŝine kontroleblaj kondiĉoj, en la kadro mem troviĝis pluraj malkongruoj.</p>
+    <ul class="findings">
+      <li>Malsamaj normoj donis malsamajn malsuprajn limojn por la sama interfaca elemento.</li>
+      <li>La kondiĉo „validas nur dum veturado“ havis nenian lokon, kie ĝi estus skribebla en la specifo.</li>
+      <li>Du dezajnaj aksoj, esence sendependaj, estis kunfanditaj en unu, tial la limigoj forigis preskaŭ ĉiujn elekteblojn.</li>
+      <li>Al la artefarita inteligenteco ne estis sufiĉe klare komunikite, kiu limigo regas kiun eligon, do senrilataj kondiĉoj eniris la juĝon.</li>
+      <li>Juĝoj, kiuj devus resti ĉe la artefarita inteligenteco, estis fiksitaj en la realigo, kio proksimigis la dezajnon laŭ limigoj al nura regul-motoro.</li>
+    </ul>
+    <p>Pri ĉiu el ili la artefarita inteligenteco detektis la malkongruon kaj montris la koncernan lokon, homo juĝis, kaj la limigo estis korektita.</p>
+    <p>Alivorte, la rezulto de ĉi tiu verko kuŝas malpli en tio, ke artefarita inteligenteco kreis novan interfacon, ol en tio, ke <strong>per la interŝanĝo kun la artefarita inteligenteco la kadro mem, el kiu naskiĝas interfacoj, estis kontrolita kaj ĝisdatigita</strong>. La rolo de la artefarita inteligenteco en dezajno laŭ limigoj ne estas nur generi finitan produkton. Ĝi estas ankaŭ, antaŭ ol io ajn estas generita, trovi, kie reguloj interpuŝiĝas kaj kie dezajna eblo estis forviŝita sen ies intenco.</p>
+  </section>
+
+  <section>
+    <h2>Estonta laboro — klara kadro, vasta interno</h2>
+    <p>Kion oni atendas de la artefarita inteligenteco en dezajno laŭ limigoj, ne estas ĉerpi fiksitajn valorojn el tabelo. Estas per la limigoj ekskludi la evidente maltaŭgan kaj poste, el la multaj restantaj ebloj, proponi la solvon plej verŝajne trafan — aŭ montri ŝablonon, pri kiu homo antaŭe ne estus pensinta.</p>
+    <p>Ĉi-foje tiu efiko ne aperis sufiĉe. Ne pro tio, ke mankis konfliktoj, sed ĉar la dezajna spaco plenumanta la limigojn estis malvasta kaj elekti „pli taŭgan“ aŭ „novan“ solvon preskaŭ perdis sencon.</p>
+    <p>La sekva demando ne estas, ĉu artefarita inteligenteco utilas. Ĝi estas: <strong>ekde kiu vasteco de la dezajna spaco naskiĝas la efiko, kiun donas nur artefarita inteligenteco?</strong></p>
+    <p>Por la sekva praktiko mi elektos temon, ĉe kiu la sekureco restas konservita, tamen postrestas pluraj taŭgaj solvoj, kaj la diferencoj neskribeblaj per reguloj estas rekoneblaj kiel valoro ankaŭ de homoj. La kadro estas difinita klare. Sed interne restas tiom da vasteco, ke la artefarita inteligenteco povas esplori. Tiu kunekzisto faras el dezajno laŭ limigoj ne nuran aŭtomatigon, sed dezajnan metodon por la epoko de artefarita inteligenteco.</p>
   </section>
 
   <nav aria-label="Retejo">
