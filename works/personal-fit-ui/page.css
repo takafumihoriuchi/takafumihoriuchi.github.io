@@ -43,3 +43,89 @@ section p {
 :lang(id) section p {
   text-align: start;
 }
+
+
+/* ---- この作品のための追加 ------------------------------------------------ */
+
+/* 概念図。**画像にしない** —— 2章の「画像の中に文章を焼き込まない」を満たすため、
+   箱と矢印は CSS、文字は本文と同じ HTML にする。翻訳も内蔵翻訳もそのまま効く。
+   論理プロパティで書いてあるので、アラビア語版では左右が入れ替わる。 */
+.concept {
+  display: grid;
+  gap: 0.9rem;
+  margin: 1.6rem 0;
+}
+.concept-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+.concept-box {
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+  padding: 0.7rem 0.9rem;
+  background: var(--accent-wash);
+}
+.concept-box h3 {
+  margin: 0 0 0.25rem;
+  font-size: 0.95rem;
+}
+.concept-box p {
+  margin: 0;
+  font-size: 0.88rem;
+  text-align: start;
+}
+/* 段の間の矢印。記号だけなので ::after に置いてよい（文章ではない）。 */
+.concept-arrow {
+  text-align: center;
+  font-size: 1.1rem;
+  line-height: 1;
+  color: var(--fg-muted);
+}
+.concept-arrow::after { content: "\2193"; }
+
+/* 出力の箱だけ地色を変える。ここが「AI が決めた結果」であることを示す。 */
+.concept-out { background: transparent; border-style: dashed; }
+
+@media (max-width: 34rem) {
+  .concept-row { grid-template-columns: 1fr; }
+}
+
+/* before / after の並置。1 行に 2 枚、狭い画面では縦に積む。
+   figure ごとに見出しを持たせるので、どちらがどちらかは文字で分かる。 */
+figure.compare {
+  margin: 1.4rem 0;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 0.9rem;
+}
+figure.compare img {
+  width: 100%;
+  height: auto;
+  border: 1px solid var(--rule);
+  border-radius: 6px;
+}
+figure.compare figcaption {
+  grid-column: 1 / -1;
+  font-size: 0.85rem;
+  color: var(--fg-muted);
+}
+.compare-label {
+  font-size: 0.82rem;
+  color: var(--fg-muted);
+  margin: 0 0 0.3rem;
+  text-align: start;
+}
+@media (max-width: 34rem) {
+  figure.compare { grid-template-columns: 1fr; }
+}
+
+/* 題材についての注記。本文の主張ではなく、読者が前提を誤らないための断り。
+   地色ではなく罫で示す —— カードに見えると本文と同じ重みで読まれる。 */
+p.note {
+  border-inline-start: 2px solid var(--rule);
+  padding-inline-start: 0.9rem;
+  font-size: 0.92rem;
+  color: var(--fg-muted);
+  text-align: start;
+}

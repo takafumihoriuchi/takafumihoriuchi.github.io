@@ -3,14 +3,12 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<!-- Scaffold for a work whose write-up has not been written yet. The title is
-     provisional; `Personal Fit UI` is the term the English version is built
-     around, and the other languages carry its sense rather than the words.
-     When the case study is written: fill the sections, add assets/og.jpg and
-     assets/thumb.webp, point og:image and the JSON-LD `image` at og.jpg, add
-     `datePublished`, drop `creativeWorkStatus`, and replace the status line. -->
+<!-- ★このページだけ、日本語版が先に書かれた(本人指示 2026-08-23)。他言語は
+     日本語版から訳す。**画像は英語版の assets を参照する**ので、複製しない。
+     og:image は作品固有の assets/og.jpg ではなくサイト共通のカードを指したまま:
+     まだラスタ画像を作っていないため、OPERATIONS.md §7 の「仮画像を置かない」に従う。 -->
 <title>一人ひとりに合うUI — 堀内 貴文</title>
-<meta name="description" content="その人の認知特性に合わせたUIを自動で生成する。ケーススタディは準備中。">
+<meta name="description" content="一人ひとりの認知特性に合わせてUIを自動生成する試み。文献と規格から「守るべき枠」を検証できる形で書き下し、その枠の中でAIに具体を決めさせた。カーナビを題材にしたPoCの記録。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -37,7 +35,7 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="一人ひとりに合うUI">
-<meta property="og:description" content="一人の認知に合わせて生成されるUI。">
+<meta property="og:description" content="枠を検証できる形で書き、その中でAIが具体を決める。制約型デザインの実践。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
 <meta property="og:image:type" content="image/png">
@@ -47,9 +45,9 @@
 <meta name="twitter:card" content="summary_large_image">
 <!-- The Person node is repeated rather than only referenced, so this page
      stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
+     together. `datePublished` replaced `creativeWorkStatus` when the case study
+     was written. **No `image` yet**: the work has no raster card of its own, and
+     §8 does not allow the markup to claim what the page does not have. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -71,8 +69,8 @@
       "@id": "https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/#work",
       "name": "一人ひとりに合うUI",
       "url": "https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/",
-      "description": "その人の認知特性に合わせたUIを自動で生成する。ケーススタディは準備中。",
-      "creativeWorkStatus": "準備中",
+      "description": "一人ひとりの認知特性に合わせてUIを自動生成する試み。文献と規格から「守るべき枠」を検証できる形で書き下し、その枠の中でAIに具体を決めさせた。カーナビを題材にしたPoCの記録。",
+      "datePublished": "2026-08",
       "inLanguage": "ja",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -97,29 +95,130 @@
     <!-- The dateline slot carries the status until there is a date to put in
          it. A work page with no date and no explanation reads as an oversight;
          this says which of the two it is. -->
-    <p class="dateline">準備中</p>
+    <p class="dateline">2026年8月</p>
   </header>
 
-  <!-- The four headings are the shape the case study will take, kept in the
-       order OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>概要</h2>
-    <p class="lead">その人の認知特性に合わせたUIを自動で生成する。ケーススタディは準備中。</p>
+    <p class="lead">一人ひとりの認知特性に合わせて、UIを自動で生成する試み。文献と規格から「守るべき枠」を検証できる形で書き下し、その枠の中でAIに具体を決めさせ、枠に違反していないかを機械が判定する。題材としてカーナビを選び、13体のペルソナに対してUIを生成した。</p>
+    <p>結果は、当初の見込みとは違うところに出た。<strong>生成されたUIそのものより、枠を書く過程のほうに発見があった</strong>。以下はその記録である。</p>
   </section>
 
   <section>
-    <h2>制約</h2>
+    <h2>なぜ「一人ひとりに合うUI」なのか</h2>
+    <p>いまのUIは、マスプロダクションを前提に作られている。ひとつのUIを全ユーザーに使わせることが出発点にあり、<strong>できるだけ多くの人をカバーできるように</strong>設計される。設定で調整できるようにしてある製品も多いが、自分に合うように実際に設定を変えるユーザーは多くない。</p>
+    <p>ここで見るべきなのは、カバーされなかった側である。<strong>一部の人は、設計の時点で構造的に取りこぼされている</strong>。</p>
+    <p>これは推測ではない。米国NHTSAが定める運転中の視線に関する受入基準は、被験者24名のうち21名が満たすことを合格条件としている。<strong>規定そのものが、3名（12.5%）の不合格を制度として織り込んでいる</strong>。しかもこぼれるのは偶然のばらつきではない。自動車メーカーが規制当局へ提出した資料には、複数の異なる課題にまたがって同じ被験者が長く視線を外すこと、そして<strong>およそ6人に1人がそうした特性を持つと見られる</strong>ことが記されている。</p>
+    <p>つまり「多くの人に合う」設計は、<strong>合わない人が一定割合いることを承知のうえで成立している</strong>。個別最適化されたUIの意義は、便利さの上乗せではなく、この<strong>制度的に許容された不合格者を基準の内側に入れること</strong>にある。</p>
+    <p>そして、これまで現実的でなかったのは、一人ひとりに合わせて設計し直すコストが見合わなかったからである。<strong>設計の一部にAIを組み込めるようになったことで、その前提が変わりつつある</strong>。</p>
   </section>
 
   <section>
-    <h2>アプローチ</h2>
+    <h2>題材：カーナビ</h2>
+    <p>検証の題材にはカーナビを選んだ。<strong>この取り組みの主題はあくまで「一人ひとりに合うUI」であり、カーナビはそれを試すための一例である</strong>。ただし題材としては都合がよかった。</p>
+    <p>カーナビは、出荷前に画一的なUIで検証を行い、多くのユーザーに適合することを確かめたうえで市場に出る。裏を返せば、<strong>適合しなかった層は、そのまま使いにくいUIを使い続けることになる</strong>。しかも運転中は安全基準が厳しく、UIが自由に取れる形は狭い。<strong>枠が厳しい領域で個別最適化が成り立つかどうかは、それ自体が問いになる</strong>。</p>
+    <p class="note">日本では2026年現在も、多くの車両で<strong>工場出荷後にシステムアップデートが行われないカーナビ</strong>が使われている。購入時のUIが、その車を手放すまでのUIになる。</p>
   </section>
 
   <section>
-    <h2>結果</h2>
+    <h2>制約型デザインという枠組み</h2>
+    <p>私が「制約型デザイン」と呼んでいるのは、<strong>枠組みは明確に決めたうえで、その中をAIがニュアンスを捉えて柔軟に動ける</strong>ようにする設計の考え方である。パラメトリックであることとは違う。パラメトリックは値を動かす仕組みだが、制約型デザインが動かすのは<strong>解の範囲</strong>である。</p>
+    <p>要点は、<strong>科学的に「数値」まで提唱されていなくても、方向や境界が提唱されているならそれを枠として採用する</strong>ことにある。細かい具体化はAIが行う。間違いが起きないように枠を入念に設計すること自体が、この考え方の本体である。</p>
+
+    <p>システムは4つの要素で構成した。</p>
+
+    <div class="concept">
+      <div class="concept-row">
+        <div class="concept-box">
+          <h3>認知次元</h3>
+          <p>その人を表す軸。年齢、ワーキングメモリ、妨害刺激への耐性、手指の巧緻性など。<strong>診断名を経由せず、直接測れる特性として定義する</strong>。</p>
+        </div>
+        <div class="concept-box">
+          <h3>制約条件群</h3>
+          <p>守らなければならない条件。安全基準、アクセシビリティ規格、UI設計の原則。<strong>デザイン空間を外から削る</strong>。</p>
+        </div>
+      </div>
+      <p class="concept-arrow" aria-hidden="true"></p>
+      <div class="concept-row">
+        <div class="concept-box">
+          <h3>マッピング表</h3>
+          <p>認知次元をUIのパラメータへ結ぶ、文献に基づく変換。<strong>どの特性がどのパラメータを動かすかを、根拠つきで名指しする</strong>。</p>
+        </div>
+        <div class="concept-box">
+          <h3>デザイン空間</h3>
+          <p>UIが取りうるパラメータとその定義域。文字サイズ、1画面の項目数、通知の量、語彙の平易さなど。</p>
+        </div>
+      </div>
+      <p class="concept-arrow" aria-hidden="true"></p>
+      <div class="concept-box concept-out">
+        <h3>AIが枠の中で決める → 一人ひとりのUI</h3>
+        <p>制約条件群が削り、マッピング表が位置を決めたあと、<strong>残った自由度をAIが埋める</strong>。生成されたUIが枠に違反していないかは、別のAIが二値で判定する。<strong>良し悪しの評価は人間が行う</strong>。</p>
+      </div>
+    </div>
+
+    <p>この流れは<strong>①枠の設計（人間）→ ②枠内での生成（AI）→ ③枠違反の検証（AI）→ ④生成物の評価（人間）→ ⑤評価を枠へ反映</strong>というループになる。④は毎回行う工程ではなく、<strong>人間が必要と判断したときの割り込み</strong>として置いた。</p>
+  </section>
+
+
+  <section>
+    <h2>PoCでわかったこと</h2>
+    <p>13体のペルソナを作り、それぞれにUIを生成した。ペルソナは実在の分布ではなく、<strong>特性を意図的に振り分けた格子点</strong>である。生成物は毎回、枠に違反していないかを機械が判定してから提示する。</p>
+
+    <h3>ほとんど変わらなかった例</h3>
+    <p>認知特性が典型的な範囲にあるペルソナでは、画一UIと個別最適化UIの差はほとんど出なかった。文字サイズがわずかに大きくなっているが、並んでいる項目の数も高さも変わらない。</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">画一UI（before）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-before.svg" width="772" height="434" alt="目的地の設定画面。Home、Work、Saved places、Recent、Nearby fuel、Nearby store、Nearby parking の7項目が同じ高さで並び、下端に Home / Back / Volume / Navigation の固定ボタンがある。">
+      </div>
+      <div>
+        <p class="compare-label">個別最適化UI（after）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-01-after.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ7項目が同じ高さで並ぶ。文字がわずかに大きいほかは、画一UIとほぼ同じ構成。">
+      </div>
+      <figcaption>認知特性が典型的な範囲にあるペルソナ。画一UIがすでに機能しており、個別最適化の余地がほとんど無い。</figcaption>
+    </figure>
+
+    <h3>視覚的に変わった唯一の例</h3>
+    <p>手指の巧緻性が低いペルソナでは、はっきりした違いが出た。<strong>タッチ目標を大きくした結果、1画面に置ける項目数が減り、ひとつひとつの要素が大きくなっている</strong>。文献はタッチ目標に下限を与えているが、「操作精度が低い人にはどれだけ上乗せするか」の数値は与えていない。<strong>その上乗せ量をAIがその場で決めた</strong>。</p>
+    <figure class="compare">
+      <div>
+        <p class="compare-label">画一UI（before）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-before.svg" width="772" height="434" loading="lazy" decoding="async" alt="目的地の設定画面。7項目が同じ高さで並ぶ。">
+      </div>
+      <div>
+        <p class="compare-label">個別最適化UI（after）</p>
+        <img src="../../../works/personal-fit-ui/assets/ps-12-after.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ画面が4項目に減り、ひとつひとつの行が高くなっている。Home、Work、Saved places、Recent の4項目と、下端の固定ボタン。">
+      </div>
+      <figcaption>手指の巧緻性が低いペルソナ。項目数を減らすことで、ひとつひとつのタッチ目標が大きくなっている。</figcaption>
+    </figure>
+
+    <h3>評価</h3>
+    <p>目視で確かめたところ、<strong>視覚的にはっきり変わったのは、この1体だけだった</strong>。多くのペルソナにとっては、画一UI——つまり多くの人をカバーできるように設計された現行のUI——が十分に機能していた。そして変化が出た1体についても、<strong>この程度であれば既存の多くの製品が、設定の変更で実現できる</strong>。</p>
+    <p>プリセットによる個別最適化が成立することは示せた。<strong>しかし、AIでなければできないことは、ここには現れていない</strong>。</p>
+  </section>
+
+  <section>
+    <h2>なぜこの結果になったのか</h2>
+    <p>原因ははっきりしている。<strong>枠を満たす解の空間が、狭すぎた</strong>。</p>
+    <p>走行中の車載UIは、安全基準がとりわけ厳しい領域である。文字サイズは年齢から式で決まり、タッチ目標には下限があり、1画面に置ける情報の数には上限がある。これらの床と天井が順に効いた結果、<strong>AIが選べる余地はごくわずかしか残らなかった</strong>。実際に測ると、AIが決めていた項目のほとんどは、特性値から出力値への単純な対応表として書き下せてしまう。</p>
+    <p>ここは正確に言う必要がある。<strong>「AIが不要だった」のではない</strong>。その対応表の中身は、どの文献にも書かれていない。AIがしていたのは<strong>文献に無い表をその場で埋めること</strong>であり、規則に落とすなら、その表を人間が一度決めなければならない。今回わかったのは、<strong>AIが埋めた表が、人間が一度決めれば固定できる程度に小さかった</strong>ということである。</p>
+
+    <h3>枠を書く過程のほうに、発見があった</h3>
+    <p>むしろ成果が出たのは、生成の前の段階だった。<strong>枠を「検証できる形」で書き下していく過程で、枠そのものの不整合が次々と見つかった</strong>。</p>
+    <ul>
+      <li>ある安全基準に、<strong>「走行中に限る」という適用条件を書く場所が枠の側に無かった</strong>。そのため停車中の生成物にも課してしまい、どのUIも人間の評価まで到達できない状態になっていた。原典を読み直したところ、その基準は走行中の操作可否を判定するものだと明記されていた。</li>
+      <li>ふたつの規格が、<strong>同じ項目に別々の下限を与えて衝突していた</strong>。年齢によってどちらが厳しいかが入れ替わるため、どちらを採るかで結果が変わる。</li>
+      <li>ひとつのパラメータの定義域が、<strong>本来独立な2つの軸を1つに畳んでいた</strong>。その結果、4つの選択肢のうち3つが他の制約に弾かれ、実質1つしか選べなくなっていた。</li>
+      <li><strong>どの制約がどの出力を支配するかをAIに伝えていなかった</strong>ため、AIは関係のない制約を根拠に持ち出していた。伝え方を直すと、出力のばらつきが目に見えて収まった。</li>
+    </ul>
+    <p>これらはいずれも、<strong>AIが不整合を検出し、該当する規則を名指しし、人間が判断し、枠が修正された</strong>という経過をたどっている。制約型デザインにおけるAIの役割は、生成の段階だけにあるのではない。<strong>枠を設計する段階で、衝突を見つけて指摘することも含まれる</strong>。</p>
+    <p>つまりこのPoCが示したのは、<strong>「AIがUIを作った」ではなく「AIが枠の不整合を見つけ、枠が育った」</strong>ということだった。</p>
+  </section>
+
+  <section>
+    <h2>これから</h2>
+    <p>制約型デザインにおけるAIの役割は、枠を守ることを確約したうえで、<strong>統計的に最も確からしい解を出すこと</strong>、あるいは<strong>人間には思いつかないパターンを提示すること</strong>にある。今回それが現れなかったのは、衝突が起きなかったからではなく、<strong>解の空間が狭すぎて「最も確からしい」も「思いつかない」も意味を持たなかったから</strong>である。</p>
+    <p>したがって次に問うべきは「AIは有効か」ではなく、<strong>どの程度の広さのデザイン空間から、AIならではの効果が現れるのか</strong>である。次の題材は、枠が解を一意に決めてしまわない領域から選ぶ。<strong>枠は明確に、しかし枠の中は広く</strong>——それが制約型デザインの本領が出る条件だと考えている。</p>
   </section>
 
   <nav aria-label="サイト">
