@@ -7,7 +7,7 @@
      日本語版から訳す。**画像は英語版の assets を参照する**ので、複製しない。
      og:image は作品固有の assets/og.jpg ではなくサイト共通のカードを指したまま:
      まだラスタ画像を作っていないため、OPERATIONS.md §7 の「仮画像を置かない」に従う。 -->
-<title>一人ひとりに合うUI — 堀内 貴文</title>
+<title>制約型デザインに基づくUIの最適化PoC — 堀内 貴文</title>
 <meta name="description" content="一人ひとりの認知特性に合わせてUIを自動生成する試み。文献と規格から「守るべき枠」を検証できる形で書き下し、その枠の中でAIに具体を決めさせた。カーナビを題材にしたPoCの記録。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -34,7 +34,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="一人ひとりに合うUI">
+<meta property="og:title" content="制約型デザインに基づくUIの最適化PoC">
 <meta property="og:description" content="枠を検証できる形で書き、その中でAIが具体を決める。制約型デザインの実践。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
@@ -67,7 +67,7 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/#work",
-      "name": "一人ひとりに合うUI",
+      "name": "制約型デザインに基づくUIの最適化PoC",
       "url": "https://takafumihoriuchi.github.io/ja/works/personal-fit-ui/",
       "description": "一人ひとりの認知特性に合わせてUIを自動生成する試み。文献と規格から「守るべき枠」を検証できる形で書き下し、その枠の中でAIに具体を決めさせた。カーナビを題材にしたPoCの記録。",
       "datePublished": "2026-08",
@@ -82,7 +82,7 @@
 <main>
 
   <header>
-    <h1>一人ひとりに合うUI</h1>
+    <h1>制約型デザインに基づくUIの最適化PoC</h1>
     <div class="identity">
       <p class="tagline">制作：<a class="byline" href="../../">堀内 貴文（Takafumi Horiuchi）</a></p>
       <nav aria-label="ほかの場所のプロフィール">
@@ -169,13 +169,13 @@
     <figure class="compare">
       <div>
         <p class="compare-label">画一UI（before）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-before.svg" width="772" height="434" alt="目的地の設定画面。Home、Work、Saved places、Recent、Nearby fuel、Nearby store、Nearby parking の7項目が同じ高さで並び、下端に Home / Back / Volume / Navigation の固定ボタンがある。">
+        <img src="../../../works/personal-fit-ui/assets/ps-01-before-ja.svg" width="772" height="434" alt="目的地の設定画面。「自宅へ」「職場へ」「登録地一覧」「履歴から」「近くの給油所」「近くのコンビニ」「近くの駐車場」の7項目が、それぞれ図像の枠と文字ラベルを伴って同じ高さで並び、下端に「ホーム」「戻る」「音量」「ナビ」の固定ボタンがある。">
       </div>
       <div>
         <p class="compare-label">個別最適化UI（after）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-after.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ7項目が同じ高さで並ぶ。文字がわずかに大きいほかは、画一UIとほぼ同じ構成。">
+        <img src="../../../works/personal-fit-ui/assets/ps-01-after-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ7項目が同じ高さで並ぶ。文字がわずかに大きいほかは、画一UIとほぼ同じ構成。">
       </div>
-      <figcaption>認知特性が典型的な範囲にあるペルソナ。画一UIがすでに機能しており、個別最適化の余地がほとんど無い。</figcaption>
+      <figcaption>認知特性が典型的な範囲にあるペルソナ。画一UIがすでに機能しており、個別最適化の余地がほとんど無い。各項目の左にある四角は<strong>図像が入る領域</strong>であり、図案そのものではない——生成されるのは図像の識別子までで、絵は持たない。</figcaption>
     </figure>
 
     <h3>視覚的に変わった唯一の例</h3>
@@ -183,11 +183,11 @@
     <figure class="compare">
       <div>
         <p class="compare-label">画一UI（before）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-before.svg" width="772" height="434" loading="lazy" decoding="async" alt="目的地の設定画面。7項目が同じ高さで並ぶ。">
+        <img src="../../../works/personal-fit-ui/assets/ps-12-before-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="目的地の設定画面。7項目が同じ高さで並ぶ。">
       </div>
       <div>
         <p class="compare-label">個別最適化UI（after）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-after.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ画面が4項目に減り、ひとつひとつの行が高くなっている。Home、Work、Saved places、Recent の4項目と、下端の固定ボタン。">
+        <img src="../../../works/personal-fit-ui/assets/ps-12-after-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ画面が4項目に減り、ひとつひとつの行が高くなっている。「自宅へ」「職場へ」「登録地一覧」「履歴から」の4項目と、下端の固定ボタン。">
       </div>
       <figcaption>手指の巧緻性が低いペルソナ。項目数を減らすことで、ひとつひとつのタッチ目標が大きくなっている。</figcaption>
     </figure>
