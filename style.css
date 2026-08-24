@@ -141,10 +141,16 @@ p:last-child { margin-bottom: 0; }
 
    `:lang(zh)` and not the two script subtags: :lang() matches on hyphen
    prefixes, so this already covers zh-Hans and zh-Hant, and would cover a
-   regional variant if one is ever added. Korean sits between the two cases —
-   it is spaced like English but breaks like Chinese — and is not here to
-   decide; add it deliberately if it arrives, rather than by widening this
-   selector.
+   regional variant if one is ever added.
+
+   Korean arrived on 2026-08-24, and this is the deliberate decision the
+   sentence here used to defer. It is set flush. Korean sits between the two
+   cases — spaced like English, but breaking between syllables the way Chinese
+   breaks between characters, which is the whole reason `word-break: keep-all`
+   exists as an opt-out. Breaking is what the cost turns on, not spacing: a
+   line that may end almost anywhere fills to near its full measure, so the
+   slack left over for a flush edge is small enough to spread invisibly.
+   Korean running text is conventionally justified for that same reason.
 
    The selector reaches the work pages too, where it only restates what
    page.css already sets. Note that it outranks page.css if the two ever
@@ -152,6 +158,7 @@ p:last-child { margin-bottom: 0; }
    matter which file loads second. A per-language exception on a work page has
    to be written to beat this, the way the Indonesian one there is. */
 :lang(ja) section p,
+:lang(ko) section p,
 :lang(zh) section p { text-align: justify; }
 
 .muted { color: var(--fg-muted); }

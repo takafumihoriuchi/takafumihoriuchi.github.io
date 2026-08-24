@@ -6,7 +6,9 @@ existing page are rewritten from this table by wire-i18n.py, and check-i18n.py
 verifies the result.
 
 Display order is global reach, which is the order the switcher shows. Esperanto
-sits last: it is not on that list, and it is not there for reach.
+sits last: it is not on that list, and it is not there for reach. Korean is the
+one row placed by hand rather than by reach — it follows Japanese on the owner's
+instruction (2026-08-24).
 """
 
 SITE = "https://takafumihoriuchi.github.io"
@@ -21,6 +23,7 @@ LANGS = [
     ("pt",      "pt",      "Português",        None),
     ("fr",      "fr",      "Français",         None),
     ("ja",      "ja",      "日本語",             None),
+    ("ko",      "ko",      "한국어",             None),
     ("ru",      "ru",      "Русский",          None),
     ("de",      "de",      "Deutsch",          None),
     ("it",      "it",      "Italiano",         None),
