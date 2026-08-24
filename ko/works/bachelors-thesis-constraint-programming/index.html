@@ -1,0 +1,208 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>제약 프로그래밍에 관한 학사 논문 — 호리우치 다카후미</title>
+<meta name="description" content="더 이상 참이 될 수 없는 가드 제약을 실행 중에 제거해 하이브리드 시스템 시뮬레이터 HydLa를 가속한, 학부 시절의 연구.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ko" href="https://takafumihoriuchi.github.io/ko/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="제약 프로그래밍에 관한 학사 논문">
+<meta property="og:description" content="단조성을 실마리로 불필요해진 제약을 제거해 하이브리드 시스템 시뮬레이션을 빠르게 한다.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/bachelors-thesis-constraint-programming/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="계단을 튀며 내려가는 공의 시뮬레이션. 지나간 제약이 어디서부터 무관해지는지를 보여 준다.">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "호리우치 다카후미",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "인지공학 × AI × 디자인",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "ScholarlyArticle",
+      "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
+      "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
+      "headline": "제약 프로그래밍에 관한 학사 논문",
+      "url": "https://takafumihoriuchi.github.io/ko/works/bachelors-thesis-constraint-programming/",
+      "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
+      "description": "더 이상 참이 될 수 없는 가드 제약을 실행 중에 제거해 하이브리드 시스템 시뮬레이터 HydLa를 가속한, 학부 시절의 연구.",
+      "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
+      "datePublished": "2019-06-01",
+      "inLanguage": "ko",
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Kazunori Ueda" }
+      ],
+      "publisher": {
+        "@type": "Organization",
+        "name": "일본인공지능학회"
+      }
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>제약 프로그래밍에 관한 학사 논문</h1>
+    <div class="identity">
+      <p class="tagline">저자: <a class="byline" href="../../">호리우치 다카후미 (Takafumi Horiuchi)</a></p>
+      <nav aria-label="다른 곳의 프로필">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">2019년 6월</p>
+  </header>
+
+  <section>
+    <h2>개요</h2>
+    <p class="lead">정보이공학부 학부생으로서 내 연구는 실용적인 물음에서 출발했다. 시뮬레이터에 가능한 조건이 잔뜩 쌓였을 때, 더 이상 일어날 수 없는 조건을 다시 검토하지 않게 하려면 어떻게 해야 하는가? 나는 값이 변화하는 방향을 이용해 낡은 조건을 탐색에서 제거하는 방법을 HydLa용으로 개발하고 평가했다. 벤치마크 모델에서 전체 시뮬레이션 시간은 약 절반으로 줄었다.</p>
+    <p>이 연구는 <a href="../../">나의 디자인 철학</a>의 이른 토대다. 제약 프로그래밍은 복잡한 결과를 언제나 직접 지정할 필요는 없다는 것을 가르쳐 주었다. 그것은 규칙과 우선순위, 경계로 신중하게 정의된 공간에서 떠오를 수 있다. 그 사고방식은 지금 AI 시대에 제약에 기반한 디자인, 즉 생성 시스템이 자유롭게 움직일 수 있는 조건을 디자인하는 나의 접근에 그대로 이어져 있다.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>초록</h2>
+    <p>HydLa는 하이브리드 시스템, 즉 연속적인 변화와 이산적인 사건이 서로 작용하는 시스템을 위한 모델링 언어다. 제약에 기반한 설계 덕분에 그런 시스템을 간결하게 기술하고 높은 정밀도로 시뮬레이션할 수 있다. 그 대가로, 모델이 커지면 이미 무관해진 규칙까지 포함해 수많은 조건부 규칙을 시뮬레이터가 계속 검사하게 된다.</p>
+    <p>이 연구는 그러한 가드 제약을 동적으로 줄이는 방법을 제안했다. 값이 한 방향으로 계속 움직이는 단조적 거동을 인식하면, 시뮬레이터는 특정 가드가 앞으로 결코 참이 되지 않는다고 판단해 안전하게 검사를 멈출 수 있다. 이 접근은 비슷한 가드를 가진 대상이 많은 모델에서 특히 효과적이었고, 측정된 실행 시간은 원래의 약 절반으로 떨어졌다.</p>
+  </section>
+
+  <section>
+    <h2>1. 서론</h2>
+    <p>하이브리드 시스템은 연속적인 거동과 이산적인 사건을 함께 가진다. 튀는 공이 단순한 예다. 공중에 있는 동안 위치와 속도는 연속적으로 변하지만, 바닥에 닿는 순간은 방향을 바꾸는 이산적인 사건을 만든다. 온도조절기, 자동차, 로봇은 모두 같은 혼합을 더 중대한 형태로 품고 있다.</p>
+    <p>HydLa를 쓰면 하나의 절차적 순서를 일일이 적어 내려가는 대신, 수학적·논리적 제약으로 이런 시스템을 기술할 수 있다. 시뮬레이터인 HyLaGI는 반올림 오차 없이 기호 계산을 수행할 수 있고 불확실한 파라미터도 다룰 수 있다. 그러나 이 표현력 높은 접근은 규모의 문제를 낳는다. 특정 조건에서만 활성화되는 규칙이 모델에 많아지면, 시뮬레이터는 각 조건이 다음에 일어날 수 있는지를 거듭 물어야 한다.</p>
+
+    <figure class="paper-figure figure-1">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="수평으로 움직이는 공이 인접한 N개의 바닥 구간 가운데 하나에서 튀도록 정의한 HydLa 소스 코드.">
+      <figcaption>짧은 HydLa 모델이 공 하나와 <em>N</em>개의 가드 구간으로 나뉜 바닥을 기술한다.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>2. 시뮬레이션 속의 가드 제약</h2>
+    <p>가드 제약이란 가드 조건이 충족될 때만 활성화되는 규칙이다. 위의 벤치마크에서는 바닥의 각 구간이 저마다 규칙을 가진다. 공의 높이가 0에 이르는 순간 수평 위치가 그 구간 안에 있으면 튐 규칙이 적용된다. 따라서 바닥을 더 잘게 나눌수록 시뮬레이터가 살펴야 할 가드도 늘어난다.</p>
+    <p>실험에서는 구간 수를 10개에서 200개까지 바꾸었다. 원래의 시뮬레이터는 그 수의 제곱에 가깝게 느려졌다. 이는 장난감 같은 예제를 넘어서는 문제다. 규모가 큰 모델은 수많은 물리적 대상과 접촉 영역, 일어날 수 있는 사건을 바로 이 가드의 형태로 표현하게 되기 때문이다.</p>
+  </section>
+
+  <section>
+    <h2>3. 병목의 위치</h2>
+    <p>프로파일링 결과, 느려짐은 시뮬레이터 전체에 고르게 퍼져 있지 않았다. 바닥 구간이 100개일 때, 측정된 실행 시간의 96%가 다음에 일어날 수 있는 가장 이른 사건을 찾는 연산인 <code>FindMinTime</code>에 쓰이고 있었다. 이 연산은 모든 후보 제약의 가드를 반복해서 평가하고 있었다.</p>
+    <p>이 결과는 최적화의 목표를 분명하게 만들었다. 시뮬레이션되는 거동은 완전히 그대로 두면서, <code>FindMinTime</code>이 고려해야 할 가드의 수를 줄이는 것이다.</p>
+  </section>
+
+  <section>
+    <h2>4. 가드 제약의 삭감</h2>
+    <p>공이 계단을 튀며 내려가는 장면을 떠올려 보자. 공이 어떤 계단을 지나 계속 앞으로 나아가면, 그 계단은 더 이상 공에 영향을 줄 수 없다. 그림을 보는 사람은 공 뒤에 있는 계단을 곧바로 무시하지만, 원래의 알고리즘은 그 하나하나를 계속 검사하고 있었다.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="붉은 궤적이 검은 계단을 튀며 내려가는 공을 보여 주고, 음영이 진 영역은 이미 지나쳐 더 이상 관계없는 계단을 나타낸다.">
+      <figcaption>공이 오른쪽으로 움직이면, 그 뒤에 남은 음영 계단의 가드는 생략할 수 있다.</figcaption>
+    </figure>
+
+    <p>어려운 부분은 버린 가드가 나중에도 결코 필요하지 않다는 것을 증명하는 일이다. 지금 거짓이라는 이유만으로 제거하면, 그 조건이 다시 참이 될 때 조용히 잘못된 결과를 낳을 수 있다. 그래서 제안 방식은 단조성을 이용한다. 어떤 변수가 일정 시간 구간에서 계속 증가하거나 계속 감소한다고 보장되는지를 따지는 것이다.</p>
+
+    <h3>4.1 균일 단조성에 대한 접근</h3>
+    <p>첫 번째 접근은 변수가 시뮬레이션 내내 한 방향으로만 움직이는 경우에 적용된다. 바닥을 나눈 모델에서 공의 수평 위치는 언제나 증가한다. 어떤 구간을 지나쳐 버리면 그 구간의 조건은 다시는 충족될 수 없다. 모델 검사 기법을 쓰면 이 성질을 시뮬레이션 전에 확립할 수 있고, 실행이 진행되는 동안 낡은 가드를 안전하게 제거할 수 있다.</p>
+
+    <figure class="paper-figure figure-3">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="시각 0의 알파에서 최대 시각의 베타까지 올라가는 붉은 선이, 시뮬레이션 내내 증가하는 변수를 나타낸다.">
+      <figcaption>균일 단조성이란 변화의 방향이 시뮬레이션 구간 전체에 걸쳐 유지된다는 뜻이다.</figcaption>
+    </figure>
+
+    <h3>4.2 교대 단조성에 대한 접근</h3>
+    <p>현실의 많은 시스템은 한 방향으로만 영원히 움직이지 않는다. 변수는 증가하다가 돌아서서 감소할 수 있다. 그래서 논문은 두 번째 접근을 제시했다. 방향을 하나 가정하고 시작해, 그 가정을 어서션으로 감시하다가, 방향이 바뀐 지점에서 삭감 로직을 다시 시작하는 것이다. 어느 단조 구간에서 제거한 가드는 다음 구간이 시작될 때 복원된다.</p>
+
+    <figure class="paper-figure figure-5">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="다섯 개의 도해가 증가로 가정한 구간, 어서션 실패, 새로운 감소 구간, 또 한 번의 실패, 그리고 잇따라 확립되는 단조 구간들을 보여 준다.">
+      <figcaption>어서션 실패가 변화하는 거동을, 저마다 단조로 다룰 수 있는 구간들로 나눈다.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>5. 실험 결과</h2>
+    <p>나는 균일 단조성 접근을 구현하고 바닥을 나눈 모델로 평가했다. 원래의 알고리즘과 제안 알고리즘 모두 구간 수가 늘어나면 시간이 더 걸렸지만, 제안한 쪽은 일관되게 일을 덜 했다. 적합시킨 곡선을 비교하면 최고차항 계수가 1.1463에서 0.6083으로 떨어졌다. 이 벤치마크에서 전체 시뮬레이션 시간은 대략 절반이 되었다.</p>
+    <p>이 결과는 모든 HydLa 모델이 두 배 빨라진다는 주장이 아니다. 이 방법이 어디에서 도움이 되는지를 보여 줄 뿐이다. 가드가 걸린 대상이 많고 변화의 방향을 증명할 수 있으며, 실행 도중에 가드가 영구히 무관해지는 모델이다.</p>
+
+    <figure class="paper-figure">
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="N에 대한 시뮬레이션 시간 그래프. 바닥 구간 10개에서 200개까지 제안 방식이 원래 방식보다 아래에 있으며, N이 200일 때 약 470초가 아니라 약 250초에 이른다.">
+      <figcaption>평가한 모델에서 제안 방식(사각형)은 원래 알고리즘(원)의 약 절반 시간이 걸린다.</figcaption>
+    </figure>
+  </section>
+
+  <section>
+    <h2>6. 결론과 향후 과제</h2>
+    <p>이 연구는 더 빠른 저수준 계산만이 아니라 모델에 대한 지식이 시뮬레이션을 효율적으로 만들 수 있음을 보였다. 단조성을 이용해 어떤 가능성이 이미 불가능해졌는지를 인식함으로써, HyLaGI는 결과를 바꾸지 않고 활성 제약 집합을 줄일 수 있다.</p>
+    <p>구현해 실험한 것은 균일 단조성이다. 논문은 이후의 과제로 두 방향을 남겼다. 방향이 바뀌는 거동에 대한 어서션 기반 방법을 평가하는 일과, 단조성 이외의 불변식을 이용해 안전하게 제거할 수 있는 제약을 더 찾아내는 일이다.</p>
+  </section>
+
+  <p class="citation publication-citation">호리우치 다카후미, 우에다 가즈노리 「Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa」 2019년도 일본인공지능학회 전국대회(제33회), 2019년. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
+
+  <nav aria-label="사이트">
+    <ul>
+      <li><a href="../../">호리우치 다카후미의 포트폴리오로 이동</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/bachelors-thesis-constraint-programming/">English</a></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../../zh-Hans/works/bachelors-thesis-constraint-programming/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/bachelors-thesis-constraint-programming/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/bachelors-thesis-constraint-programming/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/bachelors-thesis-constraint-programming/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/bachelors-thesis-constraint-programming/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/bachelors-thesis-constraint-programming/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/bachelors-thesis-constraint-programming/">日本語</a></li>
+      <li><span lang="ko" translate="no" aria-current="true">한국어</span></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/bachelors-thesis-constraint-programming/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/bachelors-thesis-constraint-programming/">Deutsch</a></li>
+      <li><a lang="it" hreflang="it" translate="no" href="../../../it/works/bachelors-thesis-constraint-programming/">Italiano</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/bachelors-thesis-constraint-programming/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/bachelors-thesis-constraint-programming/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>

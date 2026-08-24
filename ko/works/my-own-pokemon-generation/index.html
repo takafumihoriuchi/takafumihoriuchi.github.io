@@ -1,0 +1,246 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>세상에 하나뿐인 나만의 포켓몬 — 호리우치 다카후미</title>
+<meta name="description" content="플레이 중 선택한 여섯 단어로 새로운 포켓몬 종을 생성하고, 플레이어가 만나 포획할 수 있는 형태로 게임에 등장시키는 연구 프로토타입. 제약이 게임 밸런스를 어떻게 지키는지, 생성된 캐릭터가 애착을 불러일으키려면 무엇이 필요한지를 탐구했다.">
+<link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="zh-Hant" href="https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="es" href="https://takafumihoriuchi.github.io/es/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ar" href="https://takafumihoriuchi.github.io/ar/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="pt" href="https://takafumihoriuchi.github.io/pt/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="fr" href="https://takafumihoriuchi.github.io/fr/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ja" href="https://takafumihoriuchi.github.io/ja/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ko" href="https://takafumihoriuchi.github.io/ko/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="ru" href="https://takafumihoriuchi.github.io/ru/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="de" href="https://takafumihoriuchi.github.io/de/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/my-own-pokemon-generation/">
+<link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/my-own-pokemon-generation/">
+<link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
+<link rel="stylesheet" href="../../../style.css">
+<meta property="og:type" content="article">
+<meta property="og:site_name" content="Takafumi Horiuchi">
+<meta property="og:locale" content="ko_KR">
+<meta property="og:title" content="세상에 하나뿐인 나만의 포켓몬">
+<meta property="og:description" content="AI가 무엇을 만드는지뿐 아니라 시스템이 무엇을 지켜야 하는지를 중심으로 설계한 연구 프로토타입.">
+<meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/my-own-pokemon-generation/">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta property="og:image:alt" content="페탈버그 숲의 할머니가 플레이어에게 묻는다: 그래… 어떤 생물을 떠올리고 있니?">
+<meta name="twitter:card" content="summary_large_image">
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "호리우치 다카후미",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "인지공학 × AI × 디자인",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/ko/works/my-own-pokemon-generation/#work",
+      "name": "세상에 하나뿐인 나만의 포켓몬",
+      "url": "https://takafumihoriuchi.github.io/ko/works/my-own-pokemon-generation/",
+      "description": "플레이 중 선택한 여섯 단어로 새로운 포켓몬 종을 생성하고, 플레이어가 만나 포획할 수 있는 형태로 게임에 등장시키는 연구 프로토타입. 제약이 게임 밸런스를 어떻게 지키는지, 생성된 캐릭터가 애착을 불러일으키려면 무엇이 필요한지를 탐구했다.",
+      "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
+      "datePublished": "2026-07",
+      "inLanguage": "ko",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" },
+      "isBasedOn": "https://github.com/pret/pokeemerald"
+    }
+  ]
+}
+</script>
+<link rel="stylesheet" href="../../../works/my-own-pokemon-generation/page.css">
+</head>
+<body>
+<main>
+
+  <header>
+    <h1>세상에 하나뿐인 나만의 포켓몬</h1>
+    <div class="identity">
+      <p class="tagline">제작: <a class="byline" href="../../">호리우치 다카후미 (Takafumi Horiuchi)</a></p>
+      <nav aria-label="다른 곳의 프로필">
+        <ul>
+          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
+          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
+        </ul>
+      </nav>
+    </div>
+    <p class="dateline">2026년 7월</p>
+  </header>
+
+  <section>
+    <h2>개요</h2>
+    <p class="lead">플레이 도중 선택한 여섯 단어에서 AI가 새로운 포켓몬 종을 생성한다. 몇 분 뒤 그 종은 풀숲에 나타나고, 플레이어는 만나고, 포획하고, 별명을 붙일 수 있다. 모습과 이름뿐 아니라 타입, 종족값, 기술, 게임 안에서 작동하는 데 필요한 데이터까지 만드는 연구 프로토타입이다.</p>
+    <p>프로토타입에서는 대화, 단어 입력, 백그라운드 생성, 야생 조우, 포획, 명명까지를 게임을 멈추지 않고 하나의 경험으로 연결했다. 새로운 종은 단순한 이미지가 아니라 기존 게임 시스템이 다룰 수 있는 종으로 등록된다.</p>
+    <p>중심에 둔 것은 생성 모델 자체가 아니라, 사람이 게임 밸런스와 시각적 일관성을 지키는 조건을 정하고 AI가 그 경계 안을 탐색하게 하는 프레임워크다. 프로토타입을 직접 플레이하며, 유일무이하다는 사실만으로 애착이 생기는지도 예비적으로 살펴보았다.</p>
+  </section>
+
+  <section>
+    <h2>질문 — 유일무이하면 애착이 생길까?</h2>
+    <p>게임에서는 캐릭터를 고르고, 키우고, 이름을 붙이며 ‘나만의 존재’로 만들어 가는 즐거움을 느낀다. 그러나 그 관계의 출발점은 여전히 개발자가 마련한 선택지 안에 있다. 생성형 AI로 캐릭터의 출발점부터 플레이어 고유의 존재를 만들 수 있다면, 애착은 더 강해질까?</p>
+    <p>이 질문을 살피려면 이미지 한 장을 생성하는 것만으로는 부족하다. 생성된 존재가 게임 세계에 들어오고, 조우하고, 포획되며, 이후에도 사용할 수 있어야 한다. 그래서 플레이어의 관여 정도가 다른 두 가지 경로를 만들었다. 할아버지에게 말을 걸면 입력 없이 생성되고, 할머니에게 말을 걸면 플레이어가 여섯 단어를 고른다. 먼저 말을 건 인물에 따라 그 플레이의 생성 방식이 정해진다.</p>
+    <p>이 프로토타입의 목적은 애착에 대한 결론을 내리는 것이 아니다. 생성 콘텐츠를 평범한 플레이에 통합하는 방법을 마련하고, 이후 연구에서 비교할 수 있는 조건을 찾아내는 데 있다.</p>
+  </section>
+
+  <section>
+    <h2>플레이의 흐름</h2>
+    <p>아래는 플레이어가 단어를 고르는 관여 생성 경로다. 페탈버그 숲에서 할머니에게 말을 걸고, 게임에 원래 있는 간편 대화 어휘에서 여섯 단어를 고른다. 플레이를 계속하는 동안 백그라운드에서 생성이 진행되고, 준비가 끝나면 울음소리가 들린다. 풀숲에 들어가면 새로운 종이 나타나며, 다른 야생 포켓몬과 같은 조작으로 포획할 수 있다. 이름, 타입, 종족값, 기술, 앞·뒤 배틀 스프라이트, 파티 아이콘은 실행할 때마다 생성된다. 전체 흐름은 <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">데모 영상</a>에서 확인할 수 있다.</p>
+
+    <div class="shots">
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="페탈버그 숲에 노부부가 서 있다. 대화창에 “그래… 어떤 생물을 떠올리고 있니?”라고 적혀 있다.">
+        <figcaption>할머니에게 말을 거는 것으로 시작된다.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="“떠올린 생물:”이라는 제목의 간편 대화 입력 화면. BEAUTIFUL, ATTACK, FIRE라는 단어가 입력되어 있다.">
+        <figcaption>에메랄드에 원래 있는 간편 대화 시스템으로 여섯 단어를 건넨다.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="플레이어가 풀숲 옆 숲속에 서 있다. 대화창에 “풀숲이 흔들리고 있다… 무언가가 있다!”라고 적혀 있다.">
+        <figcaption>생성은 PC에서 몇 분 동안 진행된다. 울음소리가 준비를 알린다.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="배틀 화면. 머리에 불꽃이 달린 붉은 도마뱀이 플레이어와 마주 서 있다. “Wild FLAMEREL appeared!”라고 표시되어 있다.">
+        <figcaption>흔들리는 풀숲에서 불꽃 타입 도마뱀 FLAMEREL이 나타난다.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="배틀 중에 FLAMEREL을 향해 몬스터볼이 던져지고 있다.">
+        <figcaption>다른 어떤 종과도 똑같이 몬스터볼로 잡을 수 있다.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="FLAMEREL의 별명을 묻는 이름 입력 화면. GGG가 입력되어 있다.">
+        <figcaption>다른 어떤 종과도 똑같이 별명을 붙일 수 있다.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="파티 화면. 생성된 종이 자기 파티 아이콘을 달고 평범한 포켓몬 세 마리와 나란히 있다.">
+        <figcaption>다른 어떤 종과도 똑같이 자기 아이콘을 달고 파티에 들어간다.</figcaption>
+      </figure>
+      <figure>
+        <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="FLAMEREL의 포켓몬 정보 화면. 불꽃 타입, Blaze 특성, 짓궂은 성격, 페탈버그 숲에서 레벨 7에 만난 것으로 표시되어 있다.">
+        <figcaption>다른 어떤 종과도 똑같이 요약 화면이 작동한다.</figcaption>
+      </figure>
+    </div>
+  </section>
+
+  <section>
+    <h2>설계 과제 — 자유롭게 생성하면 게임이 무너진다</h2>
+    <p>AI가 새로운 캐릭터를 생각해 내는 능력과 그 캐릭터가 게임 안에서 성립하는 능력은 별개의 문제다. 능력이 지나치게 높으면 난이도 밸런스가 무너지고, 타입과 기술이 맞지 않으면 육성하기 어렵다. 모습이 너무 복잡하면 64×64픽셀 스프라이트로 바꿨을 때 형태를 알아볼 수 없다.</p>
+    <p>반대로 모든 것을 고정하면 실행할 때마다 다른 것이 태어나는 의미가 없다. 필요한 것은 AI의 자유를 없애는 일이 아니라, 플레이로서 지켜야 할 부분과 변화를 허용할 부분을 나누는 일이었다.</p>
+    <p>그래서 디자인의 대상을 한 마리의 포켓몬에서 포켓몬이 생성될 수 있는 공간으로 옮겼다. 사람이 목적, 제약, 금지 사항, 검증 방법을 정의하고 AI는 그 틀 안에서 후보를 구체화한다. 이 프로토타입은 <a href="../../">나의 디자인 철학</a>에서 말한 제약 기반 접근을 실제로 작동하게 만든 것이다.</p>
+  </section>
+
+  <section>
+    <h2>접근 — 결과물이 아니라 생성 조건을 디자인한다</h2>
+    <p>LLM에 자유문을 쓰게 하는 대신, 이름, 타입, 종족값, 기술, 체형, 색처럼 미리 정한 항목을 채우게 한다. 모든 출력은 채택하기 전에 검증기가 검사한다. 규칙을 어기면 어떤 규칙이 위반되었는지 모델에 알려 주고, 모든 조건을 만족할 때까지 다시 생성하게 한다.</p>
+    <ol>
+      <li><strong>사람이 경계를 정한다.</strong> 게임 밸런스, 스프라이트 크기에서의 가독성, 금지 표현을 명시적이고 검사 가능한 규칙으로 만든다.</li>
+      <li><strong>AI가 후보를 구체화한다.</strong> 플레이어의 단어를 바탕으로 허용된 항목의 값을 제안한다.</li>
+      <li><strong>시스템이 규칙을 검증한다.</strong> 수치 범위, 기술 조합, 금지 표현을 자동으로 확인한다.</li>
+      <li><strong>위반만 피드백한다.</strong> 규칙을 어긴 후보는 이유와 함께 돌려보내 다시 생성한다.</li>
+    </ol>
+    <p><strong>플레이를 지키는 제약.</strong> 종족값 합계는 280~360 범위로 정하고 각 능력치에도 상한과 하한을 두었다. 기술은 게임 소스에서 추출해 해당 종의 타입 또는 노멀 타입에 맞는 것으로 제한했다. 여기에 일격필살기, 자폭기, 고정 대미지 기술, 지나치게 강한 기술을 제외하고, 공격 기술의 수와 같은 타입 기술의 유무도 검사했다. 포획률, 성장 속도 등은 고정해 생성에 따른 차이가 비교 가능한 범위 안에 머물도록 했다.</p>
+    <p><strong>외형을 지키는 제약.</strong> 체형은 작은 스프라이트에서도 윤곽을 유지하기 쉬운 후보에서 고르고, 색과 특징의 어휘도 제한했다. 인간적인 특징, 유혈, 무기, 문자는 제외한다. 마지막으로 ‘한 개체만’, ‘전신’, ‘팔다리를 더 만들지 말 것’과 같은 붕괴 방지 조건을 이미지 생성 지시에 항상 덧붙인다.</p>
+    <p>한 기록에서 모델은 처음에 종족값 합계 380을 제안했다. 프레임워크가 위반을 찾아 재생성을 요청했고, 결국 320인 사양으로 수렴했다. 중요한 점은 우연히 좋은 결과가 나왔다는 것이 아니라, 틀 밖의 결과를 채택하지 않는 과정을 설계했다는 것이다.</p>
+  </section>
+
+  <section>
+    <h2>경험을 게임 안에서 완결한다</h2>
+    <p>플레이어가 접하는 것은 게임 속 대화, 단어 선택, 풀숲에서의 조우뿐이다. 생성을 위해 별도의 화면을 열 필요가 없다. 계산량이 큰 처리는 PC의 Python 프로세스가 맡고, 게임과 파일을 통해 협력한다. mGBA의 Lua 스크립트가 둘을 연결해 기존 게임 같은 조작감을 유지하면서 외부 AI 처리를 분리했다.</p>
+    <ol>
+      <li><strong>사양을 만든다.</strong> 로컬 언어 모델이 여섯 단어를 검증된 종 데이터로 바꾼다.</li>
+      <li><strong>모습을 만든다.</strong> 이미지 모델이 참조 일러스트를 그리고, 거기서 시각적으로 일관된 앞·뒤 스프라이트와 파티 아이콘을 만든다.</li>
+      <li><strong>게임 데이터로 변환한다.</strong> 이미지를 15색으로 줄이고 GBA가 다룰 수 있는 스프라이트와 팔레트로 변환·압축한다.</li>
+      <li><strong>실행 중인 게임에 반영한다.</strong> 예약 영역에 데이터를 쓰고 게임을 재시작하지 않은 채 새 종을 등장시킨다.</li>
+    </ol>
+    <p>같은 데이터를 디스크에도 기록하므로 생성된 종은 게임을 다시 불러와도 남는다. 생성은 한 번뿐이고 되돌릴 수 없다. 플레이어가 도망치거나 조우에서 패하면 포켓몬은 세계에 남지만, 쓰러뜨리면 다시 나타나지 않는다. 이 비가역성이 ‘세상에 하나뿐’이라는 말에 체험 속 결과를 부여한다.</p>
+  </section>
+
+  <section>
+    <h2>프로토타입에서 확인한 것</h2>
+    <p>이것은 한 사람이 만든 실현 가능성 검증이며, 완성된 게임이나 사용자 실험이 아니다. 도달한 지점과 아직 검증하지 않은 범위는 다음과 같다.</p>
+    <ul class="plain">
+      <li><strong>처음부터 끝까지 확인했다.</strong> mGBA에서 게임 속 대화와 여섯 단어 입력부터 백그라운드 생성, 실행 중인 게임에의 반영, 야생 조우, 포획, 별명 입력까지 전체 흐름을 확인했다.</li>
+      <li><strong>향후 비교를 위해 구현했다.</strong> 입력 없는 수동 생성과 단어 선택을 통한 관여 생성, 두 가지 진입점을 마련했다. 대화, 조우, 포획을 비교를 위해 기록할 수 있다.</li>
+      <li><strong>기반은 있지만 처음부터 끝까지 검증하지 않은 범위가 있다.</strong> 포획 뒤 레벨 업, 기술 습득, 배틀, 박스 보관, 저장 후 계속 사용은 기존 시스템과 연결되어 있지만 장시간 플레이를 통한 검증은 하지 않았다.</li>
+      <li><strong>구현하지 않은 범위가 있다.</strong> 진화 대상을 그 자리에서 생성하는 기능과 여러 참가자를 대상으로 한 애착 비교 실험은 향후 과제로 남겼다.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>직접 플레이하며 배운 것 — 유일무이하다는 사실만으로는 애착이 생기지 않았다</h2>
+    <p>프로토타입을 직접 플레이했을 때 생성된 포켓몬에 강한 애착은 생기지 않았다. 이는 구현자 한 사람의 개인적인 소감일 뿐 일반화할 수 있는 실험 결과가 아니다. 하지만 다음 비교에서 무엇을 바꿔야 할지를 보여 주는 단서는 되었다.</p>
+    <p>애착에 영향을 줄 가능성이 큰 조건은 두 가지로 보인다.</p>
+    <ul class="plain">
+      <li><strong>결과물의 품질.</strong> 모습과 설정에서 매력을 느낄 수 있는 수준을 넘지 못하면 ‘세상에 하나뿐’이라는 희소성만으로는 애착을 지탱할 수 없다.</li>
+      <li><strong>관여의 깊이.</strong> 여섯 단어를 고르는 것만으로는 결과가 ‘내가 만든 것’보다 ‘전달받은 것’처럼 느껴졌다. 관여감을 만드는 것은 입력의 양이 아니라 다시 고르고, 비교하고, 수정하고, 결과에 책임을 지는 제작 과정의 질이라고 볼 수 있다.</li>
+    </ul>
+    <p>반면 자동 게임 파이프라인 밖에서 여러 생성형 AI와 반복해 대화하고 직접 다듬어 만든 하나기쓰네(Hanagitsune)에는 애착을 느낀다. 후보를 비교하고 세부를 고치며 만족할 때까지 계속했다. 결과물의 품질과 판단·반복을 포함한 과정이 모두 있었기 때문이라고 생각한다.</p>
+
+    <figure class="pair">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="하나기쓰네의 앞모습. 꼬리가 꽃이 핀 덩굴로 흘러내리는 옅은 초록빛 여우.">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="하나기쓰네의 뒷모습. 꽃이 핀 꼬리의 전체 길이가 보인다.">
+      <figcaption>하나기쓰네 — 꽃이 핀 꼬리를 가진 숲의 수호자. 지나간 자리마다 풀과 꽃이 돋아나, 메마른 땅에도 새로운 생명을 불러들인다. 그 모습은 숲이 미래를 향해 자라나는 징표로 여겨진다.</figcaption>
+    </figure>
+
+    <figure class="pair">
+      <img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Hanagi2ne의 포켓몬 정보 화면. 풀 타입, Overgrow 특성, 용감한 성격, 페탈버그 숲에서 레벨 7에 만난 것으로 표시되어 있다. 스프라이트는 꽃이 핀 꼬리를 가진 옅은 초록빛 여우다.">
+      <img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="배틀 화면. 뒷모습으로 보이는 Hanagi2ne가 야생 Poochyena와 마주 서 있다. “Hanagi2ne used ABSORB!”라고 표시되어 있다.">
+      <figcaption>반복적인 대화와 수작업으로 다듬어 만든 하나기쓰네를, 게임 안의 한 종으로 구현했다.</figcaption>
+    </figure>
+
+    <p>이 프로토타입은 ‘생성 콘텐츠가 애착을 낳는가?’라는 질문에 답한 것이 아니다. 모호했던 질문을 의도적으로 바꿀 수 있는 두 요소, 즉 결과물의 품질과 관여의 깊이로 나누었다. 다음 검증에서는 제작 과정에 선택, 비교, 수정을 넣고 결과물의 품질을 일정 수준으로 맞춘 뒤 여러 참가자를 비교해야 한다.</p>
+  </section>
+
+  <section>
+    <h2>구현</h2>
+    <p>생성 파이프라인, 제약·검증 프레임워크, GBA 데이터 변환, 게임 쪽 변경 사항은 <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">GitHub 저장소</a>에 공개했다.</p>
+  </section>
+
+  <p class="colophon"><a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> 디컴파일을 바탕으로 개인 연구로 제작했다. ROM, ROM 패치, 게임 내 애셋은 어느 것도 배포하지 않으며, 여기에 실린 스프라이트는 모두 AI가 생성한 오리지널이다. 포켓몬은 닌텐도, 주식회사 크리처스, 주식회사 게임프리크의 상표이며, 이 프로젝트는 이들 기업과 아무 관계가 없고 승인도 받지 않았다.</p>
+
+  <nav aria-label="사이트">
+    <ul>
+      <li><a href="../../">호리우치 다카후미의 포트폴리오로 이동</a></li>
+    </ul>
+  </nav>
+
+  <footer>
+    <ul class="langs">
+      <li><a lang="en" hreflang="en" translate="no" href="../../../works/my-own-pokemon-generation/">English</a></li>
+      <li><a lang="zh-Hans" hreflang="zh-Hans" translate="no" href="../../../zh-Hans/works/my-own-pokemon-generation/">中文（简体）</a></li>
+      <li><a lang="zh-Hant" hreflang="zh-Hant" translate="no" href="../../../zh-Hant/works/my-own-pokemon-generation/">中文（繁體）</a></li>
+      <li><a lang="es" hreflang="es" translate="no" href="../../../es/works/my-own-pokemon-generation/">Español</a></li>
+      <li><a lang="ar" hreflang="ar" translate="no" href="../../../ar/works/my-own-pokemon-generation/">العربية</a></li>
+      <li><a lang="pt" hreflang="pt" translate="no" href="../../../pt/works/my-own-pokemon-generation/">Português</a></li>
+      <li><a lang="fr" hreflang="fr" translate="no" href="../../../fr/works/my-own-pokemon-generation/">Français</a></li>
+      <li><a lang="ja" hreflang="ja" translate="no" href="../../../ja/works/my-own-pokemon-generation/">日本語</a></li>
+      <li><span lang="ko" translate="no" aria-current="true">한국어</span></li>
+      <li><a lang="ru" hreflang="ru" translate="no" href="../../../ru/works/my-own-pokemon-generation/">Русский</a></li>
+      <li><a lang="de" hreflang="de" translate="no" href="../../../de/works/my-own-pokemon-generation/">Deutsch</a></li>
+      <li><a lang="it" hreflang="it" translate="no" href="../../../it/works/my-own-pokemon-generation/">Italiano</a></li>
+      <li><a lang="id" hreflang="id" translate="no" href="../../../id/works/my-own-pokemon-generation/">Bahasa Indonesia</a></li>
+      <li><a lang="eo" hreflang="eo" translate="no" href="../../../eo/works/my-own-pokemon-generation/">Esperanto</a></li>
+    </ul>
+    <p><span dir="ltr">© 2026 Takafumi Horiuchi</span></p>
+  </footer>
+
+</main>
+</body>
+</html>
