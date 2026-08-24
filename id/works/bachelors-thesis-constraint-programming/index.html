@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Skripsi tentang pemrograman berbasis batasan — Takafumi Horiuchi</title>
-<meta name="description" content="Riset sarjana tentang mempercepat simulator sistem hibrida HydLa dengan membuang, saat program berjalan, batasan berpenjaga yang sudah tidak mungkin lagi terpenuhi.">
+<title>Tesis kelulusan tentang pemrograman berbasis constraint — Takafumi Horiuchi</title>
+<meta name="description" content="Selama simulasi, kondisi yang tidak akan pernah terpenuhi dikenali dan dikeluarkan dari pencarian. Penelitian pemrograman berbasis kendala yang mengurangi jumlah perhitungan tanpa mengubah hasil dan memperpendek waktu eksekusi model evaluasi sekitar setengahnya.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="id_ID">
-<meta property="og:title" content="Skripsi tentang pemrograman berbasis batasan">
-<meta property="og:description" content="Memakai kemonotonan untuk membuang batasan yang sudah tidak berguna dan mempercepat simulasi sistem hibrida.">
+<meta property="og:title" content="Tesis kelulusan tentang pemrograman berbasis constraint">
+<meta property="og:description" content="Aman menghapus kondisi yang tidak akan pernah terpenuhi lagi, dan mempercepat simulasi.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Sebuah bola dalam simulasi memantul menuruni anak tangga, menggambarkan kapan batasan yang sudah dilewati berhenti berarti.">
+<meta property="og:image:alt" content="Simulasi bola yang turun sambil memantul di tangga. Menunjukkan dari mana batasan yang dilewati menjadi tidak relevan.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -53,16 +53,21 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
       "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
-      "headline": "Skripsi tentang pemrograman berbasis batasan",
+      "headline": "Tesis kelulusan tentang pemrograman berbasis constraint",
       "url": "https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "Riset sarjana tentang mempercepat simulator sistem hibrida HydLa dengan membuang, saat program berjalan, batasan berpenjaga yang sudah tidak mungkin lagi terpenuhi.",
+      "description": "Selama simulasi, kondisi yang tidak akan pernah terpenuhi dikenali dan dikeluarkan dari pencarian. Penelitian pemrograman berbasis kendala yang mengurangi jumlah perhitungan tanpa mengubah hasil dan memperpendek waktu eksekusi model evaluasi sekitar setengahnya.",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "id",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Kazunori Ueda" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Kazunori Ueda"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -78,7 +83,7 @@
 <main>
 
   <header>
-    <h1>Skripsi tentang pemrograman berbasis batasan</h1>
+    <h1>Tesis kelulusan tentang pemrograman berbasis constraint</h1>
     <div class="identity">
       <p class="tagline">oleh <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profil di tempat lain">
@@ -92,88 +97,90 @@
   </header>
 
   <section>
-    <h2>Ikhtisar</h2>
-    <p class="lead">Sebagai mahasiswa sarjana ilmu komputer, riset saya berangkat dari pertanyaan yang praktis: ketika sebuah simulator menumpuk banyak kondisi yang mungkin terjadi, bagaimana caranya agar ia berhenti menimbang ulang kondisi yang sudah tidak mungkin terjadi? Saya mengembangkan dan mengevaluasi sebuah metode untuk HydLa yang memakai arah perubahan sebuah nilai untuk membuang kondisi usang dari pencarian. Pada model acuan, total waktu simulasi turun menjadi kira-kira setengahnya.</p>
-    <p>Karya ini adalah salah satu fondasi paling awal dari <a href="../../">filosofi desain saya</a>. Pemrograman berbasis batasan mengajarkan bahwa hasil yang rumit tidak selalu perlu ditetapkan secara langsung: ia bisa muncul dari ruang aturan, prioritas, dan batas yang didefinisikan dengan cermat. Cara berpikir itulah yang kini menopang pendekatan saya dalam merancang dari batasan di era AI — merancang kondisi tempat sebuah sistem generatif bebas bertindak.</p>
+    <h2>Gambaran umum</h2>
+    <p class="lead">Simulator memeriksa banyak kondisi berulang kali seiring meningkatnya kemungkinan kejadian. Jadi, jika dari kemajuan dapat diputuskan bahwa 'kondisi ini tidak akan pernah terjadi lagi', apakah pemeriksaan tersebut dapat dihentikan dengan aman? Dengan memanfaatkan arah perubahan nilai sebagai petunjuk, metode untuk mengecualikan kondisi yang tidak diperlukan dari pencarian yang sedang dijalankan dirancang dan diimplementasikan untuk bahasa pemodelan sistem hibrida, HydLa.</p>
+    <p>Dalam model evaluasi, waktu eksekusi dikurangi hingga sekitar setengah dari sebelumnya tanpa mengubah hasil simulasi. Yang penting bukanlah membuat semua perhitungan menjadi cepat secara merata. Yang dilakukan adalah menggunakan struktur masalah untuk mengurangi kemungkinan yang perlu dipertimbangkan itu sendiri.</p>
+    <p>Pemikiran pemrograman berbasis kendala yang dipelajari dalam penelitian ini menjadi dasar dari <a href="../../">Filosofi desain saya</a> saat ini. Alih-alih menentukan hasil satu per satu secara langsung, pendekatannya adalah mendefinisikan aturan, prioritas, dan batas, dan kemudian menurunkan solusi yang berlaku dari dalam batas tersebut.</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Abstrak</h2>
-    <p>HydLa adalah bahasa pemodelan untuk sistem hibrida: sistem tempat perubahan kontinu dan peristiwa diskret saling berinteraksi. Rancangannya yang berbasis batasan memungkinkan sistem semacam itu digambarkan secara ringkas dan disimulasikan dengan presisi tinggi. Ongkosnya, pada model yang besar simulator bisa terus memeriksa sangat banyak aturan bersyarat, bahkan setelah sebagian di antaranya tidak lagi relevan.</p>
-    <p>Riset ini mengusulkan pengurangan batasan berpenjaga tersebut secara dinamis. Dengan mengenali perilaku monoton — sebuah nilai yang terus bergerak ke satu arah — simulator dapat memastikan bahwa penjaga tertentu tidak akan pernah terpenuhi di masa depan, lalu berhenti memeriksanya dengan aman. Pendekatan ini terutama efektif pada model yang memuat banyak objek dengan penjaga serupa: waktu jalan yang terukur turun menjadi sekitar setengah dari semula.</p>
+    <h2>Tantangan — Semakin banyak kemungkinan, semakin lambat perhitungannya</h2>
+    <p>HydLa adalah bahasa untuk mendeskripsikan "sistem hibrid" yang merupakan kombinasi dari perubahan kontinu dan peristiwa diskret sebagai kendala matematis dan logis. Tanpa menulis urutan prosedur secara lengkap, dengan hanya menyatakan apa yang harus berlaku, perilaku yang memenuhi kondisi dapat disimulasikan.</p>
+    <p>Di sisi lain, pada model yang memiliki banyak aturan yang berlaku tergantung pada kondisi, simulator memeriksa kembali banyak kandidat secara berulang. Karena kandidat tetap ada hingga kondisi yang sudah lewat dan yang tidak akan terpenuhi di masa depan, semakin besar model, semakin banyak perhitungan yang tidak perlu menumpuk.</p>
   </section>
 
   <section>
-    <h2>1. Pendahuluan</h2>
-    <p>Sistem hibrida memadukan perilaku kontinu dengan peristiwa diskret. Bola yang memantul adalah contoh sederhana: posisi dan kecepatannya berubah secara kontinu selama ia di udara, tetapi saat ia menyentuh permukaan tercipta peristiwa diskret yang mengubah arahnya. Termostat, kendaraan, dan robot memuat campuran yang sama dalam bentuk yang jauh lebih berkonsekuensi.</p>
-    <p>HydLa memungkinkan pemodel menggambarkan sistem seperti ini dengan batasan matematis dan logis, alih-alih menuliskan satu urutan prosedural. Simulatornya, HyLaGI, dapat melakukan perhitungan simbolik tanpa galat pembulatan dan mampu bekerja dengan parameter yang tak pasti. Namun, keleluasaan ini melahirkan masalah skala: ketika sebuah model memuat banyak aturan yang hanya aktif pada kondisi tertentu, simulator harus berulang kali bertanya apakah tiap kondisi itu yang akan terjadi berikutnya.</p>
+    <h2>Tema — Sistem di mana kontinu dan diskret bercampur</h2>
+    <p>Bola yang memantul adalah contoh yang mudah dipahami dari sistem hibrida. Di udara, posisi dan kecepatan berubah secara terus-menerus, dan pada saat mengenai lantai, terjadi peristiwa diskret berupa pantulan. Termostat, mobil, dan robot juga memiliki dua jenis perubahan yang sama di dalamnya, meskipun skalanya berbeda.</p>
+    <p>Untuk evaluasi, digunakan model di mana bola yang bergerak secara horizontal memantul pada permukaan yang dibagi menjadi beberapa bagian. Pada setiap bagian permukaan terdapat aturan bersyarat 'bola akan memantul jika datang ke area ini'. Jika jumlah bagian ditambah, objek yang bisa diekspresikan juga bertambah, sementara kondisi yang harus diperiksa oleh simulator juga meningkat.</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Kode sumber HydLa yang mendefinisikan bola bergerak mendatar dan memantul pada salah satu dari N segmen permukaan yang bersebelahan.">
-      <figcaption>Model HydLa yang singkat menggambarkan satu bola dan permukaan yang dibagi menjadi <em>N</em> segmen berpenjaga.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Kode sumber HydLa yang mendefinisikan perilaku bola yang bergerak horizontal dan memantul di salah satu dari N bagian permukaan yang bersebelahan.">
+      <figcaption>Model HydLa yang singkat menggambarkan sebuah bola dan permukaan yang dibagi menjadi <em>N</em> bagian yang memiliki pengaman.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. Batasan berpenjaga dalam simulasi</h2>
-    <p>Batasan berpenjaga adalah aturan yang baru aktif ketika kondisi penjaganya terpenuhi. Pada model acuan di atas, tiap segmen permukaan punya aturannya sendiri: jika bola mencapai ketinggian nol sementara posisi mendatarnya berada di dalam segmen itu, aturan pantulan berlaku. Karena itu, membagi permukaan menjadi lebih banyak potongan berarti memberi simulator lebih banyak penjaga untuk diperiksa.</p>
-    <p>Percobaan memvariasikan jumlah segmen dari 10 sampai 200. Simulator asli menjadi lambat kira-kira sebanding dengan kuadrat angka tersebut. Hal ini penting di luar contoh mainan: model yang lebih besar bisa jadi mewakili banyak benda fisik, area kontak, atau peristiwa yang mungkin, persis dalam bentuk berpenjaga seperti ini.</p>
+    <h2>Titik leher botol——Jumlah kondisi meningkatkan kompleksitas perhitungan</h2>
+    <p>Aturan yang hanya berlaku ketika kondisi terpenuhi disebut 'kontraint bersyarat'. Dalam model evaluasi, aturan pantulan dari suatu area hanya berlaku ketika bola mencapai lantai dan posisinya secara horizontal berada di dalam area tertentu.</p>
+    <p>Ketika jumlah petak ditingkatkan dari 10 menjadi 200, simulator konvensional menjadi lambat kira-kira sebanding dengan kuadrat jumlah petak. Pada model berskala besar, masalah yang sama menjadi lebih besar karena bertambahnya objek, area kontak, dan kemungkinan kejadian.</p>
   </section>
 
   <section>
-    <h2>3. Letak hambatannya</h2>
-    <p>Pemrofilan menunjukkan bahwa perlambatan itu tidak tersebar merata di seluruh simulator. Dengan 100 segmen permukaan, 96% waktu jalan yang terukur dihabiskan di <code>FindMinTime</code>, operasi yang mencari peristiwa berikutnya yang paling awal mungkin terjadi. Operasi itu berulang kali mengevaluasi penjaga dari setiap batasan yang menjadi kandidat.</p>
-    <p>Hasil tersebut membuat sasaran optimasi menjadi jelas: kurangi jumlah penjaga yang harus dipertimbangkan <code>FindMinTime</code>, sambil mempertahankan perilaku hasil simulasi persis sama.</p>
+    <h2>Investigasi — 96% dari waktu pemrosesan berada di mana</h2>
+    <p>Ketika mengukur waktu pemrosesan, pada model dengan 100 blok, 96% dari keseluruhan digunakan untuk <code>FindMinTime</code>. Ini adalah proses untuk mencari "peristiwa terdekat berikutnya" dari kandidat yang ada. Oleh karena itu, semua kondisi pengaman dievaluasi berulang kali.</p>
+    <p>Tempat yang perlu diperbaiki sudah jelas. Alih-alih membangun kembali seluruh metode perhitungan, cukup kurangi kandidat yang diteruskan ke <code>FindMinTime</code> dengan aman. Tujuannya adalah untuk menghapus kemungkinan yang tidak perlu diperiksa tanpa mengubah hasil simulasi.</p>
   </section>
 
   <section>
-    <h2>4. Pengurangan batasan berpenjaga</h2>
-    <p>Bayangkan sebuah bola memantul menuruni tangga. Begitu bola melewati satu anak tangga dan terus bergerak maju, anak tangga itu tidak lagi bisa memengaruhinya. Orang yang melihat diagramnya langsung mengabaikan anak tangga di belakang bola; algoritme aslinya tetap memeriksa semuanya, satu per satu.</p>
+    <h2>Pendekatan — dengan aman menghapus kondisi yang tidak akan pernah terpenuhi lagi</h2>
+    <p>Bayangkan sebuah bola yang turun sambil melompat di tangga. Jika bola melewati satu anak tangga dan terus bergerak ke depan, anak tangga itu tidak akan berpengaruh pada bola lagi. Orang yang melihat gambar akan segera mengabaikan anak tangga yang ada di belakang bola. Algoritma asli terus memeriksa masing-masing anak tangga itu satu per satu.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Lintasan merah memperlihatkan bola memantul menuruni anak tangga berwarna hitam; area berarsir menandai anak tangga yang sudah dilewati dan tidak lagi relevan.">
-      <figcaption>Seiring bola bergerak ke kanan, penjaga bagi anak tangga berarsir di belakangnya bisa diabaikan.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Jejak merah menunjukkan bola yang turun sambil memantul di anak tangga hitam. Area yang diarsir menunjukkan anak tangga yang sudah dilewati dan tidak lagi relevan.">
+      <figcaption>Seiring bola bergerak ke kanan, pengaman pada tingkat yang memiliki jaring di belakangnya dapat dihilangkan.</figcaption>
     </figure>
 
-    <p>Bagian yang sulit adalah membuktikan bahwa penjaga yang dibuang tidak akan diperlukan lagi nanti. Membuangnya hanya karena sekarang bernilai salah bisa diam-diam menghasilkan jawaban keliru bila ia kembali bernilai benar. Karena itu usulan ini bertumpu pada kemonotonan: apakah sebuah peubah dijamin terus naik, atau terus turun, sepanjang suatu selang waktu.</p>
+    <p>Yang sulit adalah pihak yang menunjukkan bahwa penjaga yang dihapus tidak akan diperlukan di kemudian hari. Jika dihapus hanya karena saat ini palsu, ketika menjadi benar lagi, itu bisa secara diam-diam mengembalikan hasil yang salah. Oleh karena itu, metode yang diusulkan menggunakan monotoni — yaitu apakah dapat dijamin bahwa suatu variabel terus meningkat atau terus menurun sepanjang interval waktu tertentu.</p>
 
-    <h3>4.1 Pendekatan untuk kemonotonan seragam</h3>
-    <p>Pendekatan pertama berlaku ketika sebuah peubah bergerak ke satu arah sepanjang seluruh simulasi. Pada model permukaan terbagi, posisi mendatar bola selalu naik. Begitu bola melewati sebuah segmen, kondisi segmen itu tidak akan pernah terpenuhi lagi. Teknik pemeriksaan model dapat menetapkan sifat ini sebelum simulasi dijalankan, sehingga penjaga yang usang bisa dibuang dengan aman seiring berjalannya eksekusi.</p>
+    <h3>Jika arah perubahan tidak berubah</h3>
+    <p>Tindakan pertama berlaku ketika variabel bergerak ke satu arah sepanjang keseluruhan simulasi. Dalam model yang membagi permukaan, posisi horizontal bola selalu meningkat. Setelah melewati suatu area, kondisi di area itu tidak akan pernah terpenuhi lagi. Sifat ini dapat diperiksa sebelum simulasi dengan teknik pemeriksaan model, sehingga guard yang tidak dibutuhkan bisa dengan aman dihapus seiring berjalannya eksekusi.</p>
 
     <figure class="paper-figure figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Garis merah menanjak dari alfa pada waktu nol menuju beta pada waktu maksimum, menggambarkan peubah yang naik sepanjang simulasi.">
-      <figcaption>Kemonotonan seragam berarti arah perubahan bertahan pada seluruh selang yang disimulasikan.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Garis merah yang meningkat dari α pada waktu 0 ke β pada waktu maksimum menunjukkan variabel yang terus meningkat sepanjang simulasi.">
+      <figcaption>Kekonsistenan monoton artinya arah perubahan dipertahankan di seluruh interval yang disimulasikan.</figcaption>
     </figure>
 
-    <h3>4.2 Pendekatan untuk kemonotonan bergantian</h3>
-    <p>Banyak sistem nyata tidak bergerak ke satu arah selamanya. Sebuah peubah bisa naik, berbalik, lalu turun. Karena itu makalah tersebut menggariskan pendekatan kedua: mulai dengan arah yang diandaikan, awasi andaian itu dengan asersi, lalu jalankan ulang logika pengurangan dari titik tempat arahnya berubah. Penjaga yang dibuang untuk satu selang monoton dikembalikan ketika selang berikutnya dimulai.</p>
+    <h3>Jika arah perubahan berubah di tengah jalan</h3>
+    <p>Banyak sistem dalam kenyataan tidak bergerak satu arah selamanya. Variabel bisa bertambah, berubah arah, dan kemudian berkurang. Oleh karena itu, makalah ini menunjukkan pendekatan kedua. Pertama, arah diasumsikan, asumsi tersebut dipantau dengan assertion, dan ketika arah berubah, proses pengurangan diulang dari titik tersebut. Guard yang dihapus untuk satu interval monoton dikembalikan ketika interval berikutnya dimulai.</p>
 
     <figure class="paper-figure figure-5">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Lima diagram memperlihatkan selang yang diandaikan naik, sebuah asersi yang gagal, selang menurun yang baru, kegagalan berikutnya, dan selang-selang monoton yang ditetapkan satu demi satu.">
-      <figcaption>Kegagalan asersi membagi perilaku yang berubah-ubah menjadi selang-selang yang masing-masing bisa diperlakukan sebagai monoton.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Lima gambar menunjukkan bagaimana interval dengan asumsi peningkatan, kegagalan asersi, interval penurunan baru, kegagalan kedua, dan interval monoton ditetapkan satu per satu.">
+      <figcaption>Kegagalan asumsi membagi perilaku yang berubah menjadi interval yang dapat diperlakukan masing-masing sebagai monoton.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. Hasil percobaan</h2>
-    <p>Saya menerapkan pendekatan kemonotonan seragam dan mengevaluasinya dengan model permukaan terbagi. Baik algoritme asli maupun yang diusulkan tetap makin lama seiring bertambahnya jumlah segmen, tetapi versi usulan secara konsisten mengerjakan lebih sedikit. Membandingkan kurva yang dicocokkan, koefisien pangkat tertingginya turun dari 1,1463 ke 0,6083; untuk kasus acuan ini total waktu simulasi kira-kira terpangkas separuh.</p>
-    <p>Hasil ini bukan klaim bahwa setiap model HydLa menjadi dua kali lebih cepat. Ia menunjukkan di mana metode ini menolong: pada model dengan banyak objek berpenjaga dan arah perubahan yang dapat dibuktikan, tempat penjaga menjadi tidak relevan secara permanen selama eksekusi.</p>
+    <h2>Hasil——Waktu eksekusi model penilaian sekitar setengahnya</h2>
+    <p>Kami mengimplementasikan penanganan untuk monotoni yang seragam dan mengevaluasinya pada model yang dibagi menjadi beberapa bidang. Baik algoritme asli maupun metode yang diusulkan, waktu yang dibutuhkan meningkat seiring bertambahnya jumlah bidang. Namun demikian, metode yang diusulkan konsisten membutuhkan lebih sedikit pekerjaan. Jika dibandingkan kurva yang dipasang, koefisien tertinggi turun dari 1,1463 menjadi 0,6083, dan pada tolok ukur ini, waktu total simulasi menjadi kira-kira setengahnya.</p>
+    <p>Ini bukan klaim bahwa semua model HydLa akan menjadi dua kali lebih cepat. Yang ditunjukkan adalah tempat di mana metode ini efektif — yaitu model dengan banyak objek yang memiliki guard, arah perubahan dapat dibuktikan, dan selama eksekusi guard menjadi tidak relevan secara permanen.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik waktu simulasi terhadap N memperlihatkan metode usulan berada di bawah metode asli pada seluruh rentang 10 sampai 200 segmen permukaan, mencapai sekitar 250 detik alih-alih sekitar 470 detik saat N sama dengan 200.">
-      <figcaption>Pada model yang dievaluasi, metode usulan (kotak) memakan waktu kira-kira separuh dari algoritme asli (lingkaran).</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik waktu simulasi terhadap N. Di seluruh rentang dari 10 hingga 200 bagian permukaan, metode yang diusulkan lebih rendah dibandingkan metode asli, dan pada N=200, waktu simulasi sekitar 470 detik dapat ditekan menjadi sekitar 250 detik.">
+      <figcaption>Pada model yang dievaluasi, metode yang diusulkan (persegi) memakan waktu sekitar setengah dari algoritma asli (lingkaran).</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>6. Simpulan dan pekerjaan lanjutan</h2>
-    <p>Riset ini memperlihatkan bahwa pengetahuan tentang sebuah model — bukan hanya perhitungan tingkat rendah yang lebih cepat — dapat membuat simulasi lebih efisien. Dengan memakai kemonotonan untuk mengenali kemungkinan mana yang sudah menjadi mustahil, HyLaGI dapat mengecilkan himpunan batasan aktifnya tanpa mengubah hasil.</p>
-    <p>Percobaan yang dikerjakan mencakup kemonotonan seragam. Makalah itu meninggalkan dua arah untuk kemudian: mengevaluasi metode berbasis asersi untuk perilaku bergantian, dan memakai invarian selain kemonotonan guna menemukan lebih banyak batasan yang dapat dibuang dengan aman.</p>
+    <h2>Perspektif yang diperoleh dari penelitian ini</h2>
+    <p>Yang dilakukan dalam penelitian ini bukanlah mempercepat perhitungan individu sedikit demi sedikit. Yang dilakukan adalah menggunakan hal-hal yang diketahui tentang perilaku sistem untuk mengecilkan himpunan kemungkinan yang perlu dipertimbangkan. Konsep mempersempit ruang pencarian tanpa mengubah hasil adalah kekuatan dari pemrograman berbasis kendala.</p>
+    <p>Yang diimplementasikan dan dievaluasi adalah kasus di mana variabel terus bergerak ke satu arah. Jika arah perubahan berubah di tengah jalan, hal itu hanya sampai pada tahap perancangan, dan evaluasinya tetap menjadi tugas untuk masa depan. Ada juga ruang untuk menemukan batasan yang tidak diperlukan dengan menggunakan sifat selain monoton.</p>
+    <p>Pengalaman ini juga terkait dengan kenyataan bahwa saat ini saya mencoba merancang kondisi dan batasan yang bisa dijelajahi oleh AI, bukan langsung merancang output AI. Saat menangani hasil yang kompleks, sama pentingnya untuk mendefinisikan apa yang perlu dihitung dan apa yang tidak perlu dipikirkan.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi dan Kazunori Ueda. “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa”. Konferensi Tahunan ke-33 Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
   <nav aria-label="Situs">
     <ul>

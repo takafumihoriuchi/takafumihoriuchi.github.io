@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>關於人機互動設計的碩士論文 — 堀內貴文</title>
-<meta name="description" content="碩士研究：一套碰撞迴避系統，讀取操作者的視線，在作業當下而非事先區分可以觸碰的物體與需要保護的物體。">
+<title>關於人與機器人互動設計的碩士論文 — Takafumi Horiuchi</title>
+<meta name="description" content="將操作員所看到的範圍，轉換為機器人可以觸碰的條件。將人的認知狀態整合到安全控制中，提出並實作了一個無需事前登記對象即可防止碰撞的系統的碩士研究。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="關於人機互動設計的碩士論文">
-<meta property="og:description" content="以操作者正在看的地方，決定機器人可以觸碰什麼。">
+<meta property="og:title" content="關於人與機器人互動設計的碩士論文">
+<meta property="og:description" content="將人能看到的範圍，轉換為機器人可以觸碰的條件。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="由機器人掃描而成的黃色體素虛擬作業空間，操作者的視野以帶色的錐體畫出。">
+<meta property="og:image:alt" content="機器人掃描出的黃色體素的虛擬作業空間。操作者的視野以帶顏色的錐體呈現。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -54,15 +54,20 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "關於人機互動設計的碩士論文",
+      "headline": "關於人與機器人互動設計的碩士論文",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-thesis-hmi-design/",
-      "description": "碩士研究：一套碰撞迴避系統，讀取操作者的視線，在作業當下而非事先區分可以觸碰的物體與需要保護的物體。",
+      "description": "將操作員所看到的範圍，轉換為機器人可以觸碰的條件。將人的認知狀態整合到安全控制中，提出並實作了一個無需事前登記對象即可防止碰撞的系統的碩士研究。",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "zh-Hant",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Katsuya Kanaoka" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Katsuya Kanaoka"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -78,7 +83,7 @@
 <main>
 
   <header>
-    <h1>關於人機互動設計的碩士論文</h1>
+    <h1>關於人與機器人互動設計的碩士論文</h1>
     <div class="identity">
       <p class="tagline">作者：<a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
       <nav aria-label="Profiles elsewhere">
@@ -92,10 +97,10 @@
   </header>
 
   <section>
-    <h2>概述</h2>
-    <p class="lead">操作大型機器人的人，一次只能注意作業空間的一部分。這項研究問的是：如果把這份注意力此刻所在的位置告訴機器，會有什麼改變。我設計了一套碰撞迴避系統，由操作者的視線決定機器人可以怎樣動作：落在操作者中央視野內的物體可以自由操作，落在視野之外的則受到保護——手臂會減速，並在觸及之前停住。不需要事先為任何物體貼標籤。這條界線是在作業發生的當下、從操作者恰好望向的地方劃出來的。示範影片見<a class="ext" href="https://youtu.be/-DvWxzJvK3I">這裡（YouTube）</a>。</p>
-    <p>這項工作是我在米蘭理工大學 Design &amp; Engineering 的碩士論文，在日本人機一體股份有限公司的研究實習期間完成，並在<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">第39屆日本機器人學會學術講演會（RSJ2021）</a>上發表。</p>
-    <p>我如今的<a href="../../">設計理念</a>也是從這裡開始成形的。這套系統讀到的不是指令，而是一種認知狀態——某樣東西究竟有沒有被看見——並把這個狀態轉化為機器獲准動作的條件。被設計的對象不是機器人的動作，而是關係：機器可以做什麼，取決於人此刻理解了什麼。設計這層關係而不是逐一設計行為，與我如今面對生成式AI而非機械臂時所做的，是同一個動作。</p>
+    <h2>概要</h2>
+    <p class="lead">在人操作的大型機器人中，僅依靠周圍的感測器來區分接近工作對象的動作與向被忽略的障礙物移動的動作是困難的。因此，設計了一種碰撞迴避系統，利用操作員所觀看的範圍作為「可以接觸」的意圖線索，當靠近未被觀看的對象時，會使機械臂減速並停止。</p>
+    <p>不需要事先將對象登錄為「可操作」或「保護對象」。這種區別會根據操作人員在作業中的視線自動更新。已實裝於身高1.9米的人型重機器人上，並在五次示範試驗中確認了所定義的行為能夠成立。實際動作可以在<a class="ext" href="https://youtu.be/-DvWxzJvK3I">示範影片</a>中看到。</p>
+    <p>作為米蘭理工大學設計與工程碩士論文的一部分，這項研究是在株式会社人機一體的研究實習期間進行，並在<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">第39回日本機器人學會學術演講會（RSJ2021）</a>發表。</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -111,110 +116,109 @@
          image so its smaller type stays reachable. -->
     <figure class="deck-figure bleed">
       <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="標題頁：Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation，米蘭理工大學 Design &amp; Engineering 碩士課程，2020–2021學年。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="背景：論文主題是在人機一體股份有限公司的研究實習期間確定的，該公司開發以主從方式操作的人形重型機械。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="自主機器人與人為操作機器人的對比：前者在圍籬內經過設計的空間中高效工作，後者在不確定的空間中與人協作。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="來自歐洲、美國與日本的統計，顯示被移動中的物體撞擊佔營建工地事故的相當比例。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="碰撞迴避的相關研究：覆蓋機械臂的感測皮膚，以及建構周圍環境虛擬表示的深度感測器。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="當前的難題：既有系統要求透過配戴標籤、影像分析或訓練好的分類器，事先把物體定義為受保護或可操作。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="提案：傳統系統只使用被動的感測器資料，而人為操作的機器人本來就有人處在控制迴路中，其視線可以作為主動參數。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分類規則：位於操作者中央視野之內的物體為可操作物體，之外的為受保護物體。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="原型總覽：一台實體機器人搭配一個虛擬計算空間，隨後是三項技術組件。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="組件一：中央視野以60°×55°的錐體表示，其方向由VR頭戴顯示器的正前方近似。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="組件二：裝在機器人頭部的光達把周圍環境掃描成點雲，並表示為各自帶有碰撞體的體素。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="組件三：機器人的數位分身隨實體機器人一同運動，當其手臂觸及視野之外的體素時觸發接近警告。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="概念驗證示範：機器人伸向立柱上球體的影片截圖，並嵌入虛擬體素視圖。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="未來工作：偵測作業空間中的人、測試量測視線方向的其他方法，以及在現場對系統作定量評估。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="結論頁，總結研究主題、方法的價值、新穎之處，以及系統是如何驗證的。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="標題投影片。基於意識的碰撞預防於人類控制的機器人操作，米蘭理工大學設計與工程碩士課程，2020–2021學年度。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="背景。論文主題是在研究實習期間，在開發人型重機並以主從式操作的企業——株式会社人機一體時決定的。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="自律機器人與人操作機器人的比較。前者在圍欄內的設計空間中有效率地工作，後者在人類共同存在的不確定空間中工作。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="歐洲、美國、日本的統計。與移動物體的接觸，在建築工地事故中占相當的比例。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="關於衝突迴避的先行研究。覆蓋於操作機械手上的感覺皮膚，以及對周圍環境進行虛擬再現的深度感測器。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="當前的課題。現有的系統要求通過佩戴的標籤、圖像解析以及已學習的識別器，事先將目標定義為「保護」或「可操作」。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="提案。傳統系統只使用被動的感測器資訊，但在人工操作的機器人中，人本身就在控制迴路中，且可以將人的視線作為主動的參數使用。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分類規則。操作員中心視野內的對象是可操作的，外側的對象則是保護對象。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="原型的整體概念。結合實機的機器人與虛擬的計算空間，三個技術要素接續而來。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素①。將中心視野表現為60°×55°的錐體，並以VR頭戴顯示器的正面方向來近似其方向。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素②。安裝在機器人頭部的LIDAR掃描周圍環境，將其作為點雲表示，每個點雲以具有碰撞器的體素表示。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素③。機器的數位孿生機器人將與實機相同地運作，當其機械臂觸碰到視野外的體素時會出現接近警告。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="概念驗證的示範。手伸向桿子上球的機器人畫面靜止圖，以及虛擬空間的體素顯示。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="今後的課題。檢測工作空間內的人、驗證測量視線方向的其他方法，以及在實地的定量評估。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="結論的總結。研究主題、方法的價值、新穎性，以及系統如何被驗證。"></a></li>
       </ol>
-      <figcaption>碩士論文口試所用的簡報。可橫向捲動，每一頁都能以原始尺寸開啟。</figcaption>
+      <figcaption>碩士論文最終發表所使用的投影片。可以橫向捲動，每張投影片都以原尺寸打開。</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>摘要</h2>
-    <p>人為操作的機器人恰恰在自主機器人無能為力之處最有價值：在並非為當前作業而設計的空間裡，在不能被撞到的人與設備旁邊。既有的碰撞迴避系統應對這類空間的方式，是要求每一個物體都事先被宣告為操作目標或需要保護之物——對一台要在工地之間搬運的機器來說，這份設定成本會大到無法承受。</p>
-    <p>本研究提出把這項區分改在執行時作出，依據是操作者的視線。位於操作者中央視野之內的物體視為可操作，之外的視為受保護，而人在任何情況下都受保護。這一方法把一個主動參數——來自人的參數——引入了此前完全由被動感測器資料構成的控制迴路。原型實作在身高1.9公尺的人形重型機械機器人 JINKI type Zero 上，並在五次示範試驗中按定義運行。</p>
+    <h2>課題——為了安全的事前設定，束縛了現場</h2>
+    <p>需要人類操作機器人的地方，是那些未為自律機器人整備的場所。像建築工地或災害現場一樣，人員或設備的配置會改變，每項作業中可以接觸的對象也會不同。要使用機械的巨大力量，必須在防止意外接觸的同時，能夠接觸必要的對象。</p>
+    <p>現有的碰撞避免方法包括用近接感測器覆蓋機器人或用深度感測器將周圍環境映射到虛擬空間。然而，無論哪一種方法，都需要事先將對象分類為「可操作」或「保護對象」。如果未登錄任何物件，為了安全無法觸碰任何東西；如果全部登錄，則需要針對每個現場進行設定和校準。這種準備負擔降低了可移動使用機器人的實用性。</p>
   </section>
 
   <section>
-    <h2>1. 引言</h2>
-    <p>人為操作的機器人兼具兩樣難以同時獲得的東西：機器的力量與精度，以及人的情境判斷。完全自主的機器人尚未提供後者。而且，工業機器人在圍籬內經過設計的單元中工作，人為操作的機器人卻要在為別的用途布置的場所工作——在現場工人身旁、在精密設備之間、在核設施與營建工地。因此，能夠保證機器人不損壞周圍之物，本身就是它可用與否的一部分。</p>
-    <p>針對意外接觸，已確立的兩種防護是：以接近感測器覆蓋機械臂所有關鍵部位的感測皮膚，以及把周圍環境重建為點雲、在虛擬空間中計算距離的深度感測。兩者都有效。但兩者都預設機器人周圍的物體已經被分為可以觸碰的與不可觸碰的：沒有這道分類，一台被禁止碰撞任何東西的機器也就無法操作任何東西。對於一件在工地之間搬運、被放在現場既有環境中的通用工具而言，這道設定與校正的成本，高過它所換來的安全。</p>
-    <p>本研究切入的口子在於：人為操作的機器人本來就有人處在控制迴路之中。關於操作失誤的研究把情境意識——準確掌握周圍正在發生什麼——列為決定性因素，而情境意識已知與視線方向高度相關。碰撞迴避歷來只由被動資訊構成，也就是從感測器讀到的資料。加入一個主動參數，即操作者正在看哪裡，就給了系統一個線索：與某個物體的接觸究竟是不是有意的。</p>
+    <h2>設想——將視線變為「可以觸碰的條件」</h2>
+    <p>在人類操作機器人的控制迴路中，已經有人在判斷情況。如果能將人注意的方向傳給機器，相比事先登記對象，是否可以在作業中推測接觸的意圖呢？</p>
+    <p>因此，以操作者的中心視野作為邊界。視野內的對象，視為操作者已掌握的「可操作對象」。視野外的對象，視為可能被忽略的「保護對象」。人無論視線位置如何，始終視為保護對象。</p>
+    <p>這不是透過視線向機器人下達命令的機制。這是將操作者的認知狀態轉換為機器人可以行動的條件的機制。</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="俯視圖：機器人前方以錐體標出操作者的中央視野。錐體內的物體A畫成白色圓形，錐體外的物體B、C、D畫成深色方塊，兩個人形分別站在錐體內外。">
-      <figcaption>位於操作者中央視野內的物體A可以操作；位於視野之外的物體B、C、D受到保護。人無論站在哪裡都受到保護。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="從上方看的圖。機器人前方，操作員的中心視野被描繪成錐體。錐體內的目標A是白色圓形，外側的目標B、C、D則以深色方形表示，兩個人站在錐體的內外。">
+      <figcaption>位於操作者中心視野內側的目標A是可操作的，位於外側的目標B、C、D則是保護對象。人無論站在哪裡都會受到保護。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. 系統行為</h2>
-    <p>操作者有意觸碰的物體稱為<em>可操作物體</em>，可以不受限制地處理。操作者並無此意的物體則是<em>受保護物體</em>，不得觸碰。某個物體在某一瞬間屬於哪一類，取決於它相對於操作者中央視野的位置：在視野之內，該物體處在足以視為有意的注意之下；在視野之外，則不然。</p>
-    <p>由此導出的行為由五條規則規定。機械臂可以自由地與中央視野內的物體發生接觸。它不能與視野之外的物體發生接觸，並在接近時逐漸停止。停止之後，隨著操作者的視野移到它身上而逐漸解除限制。如果視野離開了機械臂已經接觸著的物體，則不施加限制，好讓進行中的作業不會因為看了一眼別處而中斷。而對人，無論那個人站在哪裡，機械臂都不得與之發生接觸。當機器人有多條機械臂時，規則對每一條分別適用。</p>
-    <p>操作者由此獲得的是：對正在注視的對象全速作業，同時可以信賴機器不會撞上未在注視的設備。現場人員的安全是無條件的，完全不取決於操作者的意圖。</p>
+    <h2>互動設計</h2>
+    <p>系統不會將視線位置變成簡單的開關。當接近未被注視的物體時，手臂會根據距離逐漸減速，並在接觸前停下。停止後，如果操作者將視線轉向物體，限制也會逐漸解除。這樣可以避免突然停止或突然啟動的行為，使操作者能夠預測變化。</p>
+    <p>另一方面，即使暫時將目光從已經接觸的對象移開，也不會停止正在進行的作業。因為僅僅移開視線就中斷抓持或操作，反而會變得不穩定。只有接近人類才會另作處理，無論操作員是否在看，都會加以限制。</p>
+    <p>目標不是為了安全而統一地放慢作業速度。目的是在操作者可掌握的範圍內保持機器人的能力，只保護注意力未及的範圍，從而實現安全與作業性的兼顧。</p>
 
     <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="流程圖從自由運動狀態開始，依次判斷物體是否在近處、是否為人、機械臂是否朝人接近、物體是否在注視區域內，最終導向精細操作、逐漸停止或鎖定。">
-      <figcaption>在整個判斷過程中，只有「物體是否在注視區域內」這一個節點讀取操作者的主動參數。其餘分支全部依靠被動的感測器資料。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="從自由動作的狀態開始的流程圖。根據目標是否靠近、是否為人、操控器是否位於靠近人的方向、目標是否在注視區域而分支，並導向精密動作、階段性停止或鎖定。">
+      <figcaption>在判斷的過程中，讀取操作者的主動參數的節點只有「目標是否在注視區域」這一個。其他的分支全部是依靠被動的感測器信息運作。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>3. 預期效益</h2>
-    <p>與這類作業最接近的現有圖景是重型機械：巨大的力量施加在人旁邊、未經整備的場所。碰撞事故是全世界營建工地的主要危險之一，而注意力不集中被反覆列為原因。2018年歐洲營建工地記錄的362,600起事故中，19.6%與被移動中的物體撞擊有關；一項針對起重機相關事故的調查，把其中19%歸因於操作者的疏忽。</p>
-    <p>由於注意力與視線方向高度相關，把這兩個比例結合起來，可以粗略估計以視線為基礎的系統所能涵蓋的範圍——在歐洲約為每年一萬三千起。這個數字是由公開統計推論而來，而非測量結果，僅作為量級的參考。</p>
+    <h2>預期使用場景</h2>
+    <p>針對的對象是建設現場或災害現場等，在人群附近處理巨大力量的場合。在這些場所中，完全用柵欄隔開周圍環境，或者事先登錄所有目標都是困難的。如果每次配置變動都重設安全設置，緊急性和通用性將會喪失。</p>
+    <p>基於視線的區分利用當下人的情境認知，而不是固定的環境模型。這有可能在減輕現場準備負擔的同時，抑制對被忽視目標的接近。不過，本研究確認的僅是系統按照定義運作的情況，並未對事故降低效果進行實地評估。</p>
   </section>
 
   <section>
-    <h2>4. 系統驗證</h2>
-    <p>作為概念驗證，搭建並運行了一套示範系統。</p>
+    <h2>原型和初步評估</h2>
 
-    <h3>4.1 實作</h3>
-    <p>系統實作在 JINKI type Zero 上，這是人機一體股份有限公司開發的機器人。它具有人的上半身形態，高1.9公尺，重600公斤，共30個自由度。操作者與機器人處於同一場所，以主從方式耦合：VR頭戴顯示器把操作者的視野與頭部轉動同步到機器人上，帶來與機器合為一體、而非在駕駛機器的感覺。</p>
-    <p>裝在機器人上的光達把周圍作業場所掃描成點雲，點雲在虛擬空間中表示為各自帶有碰撞體的體素。機器人的數位分身在同一空間中運動；當它的手臂與體素重疊時，系統發出接近警告，其作用方式取決於操作者視野的方向。該視野建模為60°×55°（水平×垂直）的錐體——接近於人能夠感知符號、顏色與深度的區域——其方向由頭戴顯示器的正前方近似。警告傳送到實體機器人，並按上述規則塑造它的動作。</p>
+    <h3>實裝</h3>
+    <p>系統被實裝在一個類似人類上半身形狀的機器人上，身高1.9米，重量600公斤，具有30個自由度。操作員佩戴VR頭盔，將機器人的視野和頭部方向與自己的動作同步來操作。</p>
+    <p>在機器人上的LIDAR中以點雲的形式取得工作空間，並在虛擬空間中表現為具有碰撞判斷的體素。用於與實機同步的數位孿生正在運作。操作者的中心視野以60°×55°的錐體表示，方向以頭戴顯示器的正面方向近似。當機械臂靠近視野外的體素時，會向實機發送警告，使其減速或停止。</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="虛擬場景：黃色體素重建出周圍環境，一片標註為「操作者的中央視野」的半透明紅色區域從中穿過，白色的機器人數位分身正伸向位於該區域之外的一個障礙物。">
-      <figcaption>容納機器人與掃描點雲的虛擬空間。此處機器人正觸及位於操作者中央視野之外的障礙物。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="虛擬空間的情景。黃色的方塊重新構建周圍，“操作者的中心視野”標記的半透明紅色區域貫穿其中，白色數位孿生的機器人正在伸手觸碰該區域外的障礙物。">
+      <figcaption>存放了機器人和掃描點雲的虛擬空間。在這裡，機器人接觸到位於操作者中心視野之外的障礙物。</figcaption>
     </figure>
 
-    <h3>4.2 示範實驗</h3>
-    <p>一次初步評估檢驗了實作是否符合定義。要求操作者：一邊望向別處一邊把手臂朝立柱移動，確認系統已發出警告並使手臂停止，再把視線轉向停住的手臂以解除限制，最後在保持注視的情況下取走立柱頂端的球。共進行五次試驗：第一至三次與第五次由熟練操作者完成，第四次由第二次駕駛該機器人的人完成。每次均有錄影。五次試驗中，系統都按第2節的定義運行。示範可見<a class="ext" href="https://youtu.be/-DvWxzJvK3I">系統運行中的影片</a>。</p>
+    <h3>預備評估</h3>
+    <p>在操作員將視線從目標移開的狀態下將機械臂靠近，停止後再將視線移回目標解除限制，最後抓取球，試驗了一連串操作。在五次嘗試中，四次由熟練操作員負責，一次由第二次操作的操作員負責。所有嘗試中，在視線離開時會停止，將視線移回時可以繼續操作。這不是用來測量有效性的用戶實驗，而是確認設計的行為在實物上是否成立的初步評估。</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="機器人的照片，操作者懸坐在其上方的框架中，望向一側。機械手停在黃色立柱上那顆藍黃相間的球之前，剩餘的間距被標了出來。">
-      <figcaption>操作者的視線移開，手臂在距物體一段距離處停住。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="機器人的照片。在上方的框架上有操作者乘坐著，身體轉向一旁。機器人手停在黃色桿子上藍黃相間的球前面，並顯示剩餘距離。">
+      <figcaption>操作者的視線移開，機械手臂與目標保持距離停止。</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="從較低角度拍攝的照片：操作者望向球，機械手握住了黃色立柱上那顆藍黃相間的球。">
-      <figcaption>視線朝向物體時，同樣的動作不受限制地進行。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="從下方角度的照片。操作者正看著球，機器人手抓住黃色柱子上的藍色和黃色的球。">
+      <figcaption>只要視線朝向目標，同樣的動作就能不受限制地進行。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. 侷限與未來工作</h2>
-    <p>原型沒有實作對人的偵測。需要驗證的是操作者的視線與物體可操作性之間的關係，而保護人的那條規則是無條件的，並不依賴於它。加入這項偵測會讓系統更為穩健，也會打開安全之外的應用——例如在操作者的視野中突顯機器人附近的人，或者在接近警告生效之前發出提示。</p>
-    <p>視線以頭戴顯示器的正前方近似。之所以這樣選，是看中它的直接，這在主從系統中很重要；但其他器材——固定攝影機、智慧眼鏡中的眼動儀——會以不同方式估計視線，也許能降低在不習慣配戴設備的產業裡引入這套系統的心理門檻。把這一方法用到移動機器人上還會帶來另一個問題：JINKI type Zero 在開發階段是固定不動的，而在作業中會改變位置的機器，需要足以跟上的高效點雲處理。</p>
-    <p>評估本身仍是定性的。要恰當地判斷這套系統，正途是在現場做定量研究，而這要等到機器人進入實用階段。</p>
+    <h2>極限與下一步的驗證</h2>
+    <p>原型並未實作人的檢測。我們設置了無論視線如何，人都始終受到保護的規則，但在實際環境中，需要有能夠可靠識別人的機制。此外，因為使用了頭戴設備的正前方方向作為代理值，而不是視線本身，所以僅移動眼睛時無法捕捉到。</p>
+    <p>如果使用固定式攝影機或帶有視線追蹤功能的智慧眼鏡，裝置類型和估算精度的條件會有所不同。若要應用於移動機器人，還需要能夠追蹤機器人自身位置變化的點雲處理。</p>
+    <p>評價僅限於透過五次的示範試驗進行定性的確認。要判斷安全性、作業速度及操作人員的負擔，則需要在實際作業條件下，與傳統方式進行定量比較。</p>
   </section>
 
   <section>
-    <h2>6. 結論</h2>
-    <p>本研究提出了一套面向人為操作機械臂的碰撞迴避系統，利用操作者的視線來防止與人和設備發生意外接觸。在意識與視線方向高度相關這一前提下，位於操作者中央視野之內的物體視為可操作，之外的視為受保護。把人的因素放進控制迴路，使得這條界線可以在執行時劃出，而不需要既有方法所要求的任何準備。</p>
-    <p>系統在一台通用重型機械機器人上得到驗證，並按定義運行。同樣的原理應當可以推廣到任何本來就有人處在操作迴路之中的場合。</p>
+    <h2>從這項研究中獲得的視角</h2>
+    <p>在這項研究中，我們並不是將人的視線作為輸入裝置使用，而是將其作為允許機械行動的條件。根據人目前掌握了什麼，相同對象的機器人行為會有所不同。我們設計的不是個別的動作，而是人的認知狀態與機械權限之間的關係。</p>
+    <p>這種思考方式也與現在的<a href="../../">我的設計哲學</a>有所連接。理解人的狀態，並將其轉化為系統應該遵守的限制，然後機器或 AI 在其中發揮能力。碩士研究成了這個出發點。</p>
   </section>
 
   <section>
     <h2>致謝</h2>
-    <p>本研究是在米蘭理工大學 Design &amp; Engineering 碩士學位的部分要求下，於人機一體股份有限公司實習期間完成的。謹向促成這一機會的兩家機構致以謝意。</p>
+    <p>本研究是在米蘭理工大學設計與工程碩士課程的一部分，於在株式会社人機一體的實習期間進行的。對促成這一機會的兩個組織表示深深的感謝。</p>
   </section>
 
-  <p class="citation publication-citation">堀內貴文、金岡克彌《Gaze-based Unintended Contact Prevention for Human-Operated Robots》，第39屆日本機器人學會學術講演會，2021年，編號 2J2-07。<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">大會議程</a></p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a></p>
 
   <nav aria-label="Site">
     <ul>

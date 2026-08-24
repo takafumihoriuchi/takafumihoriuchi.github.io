@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bakalaŭra tezo pri programado per limigoj — Takafumi Horiuchi</title>
-<meta name="description" content="Bakalaŭra esploro pri rapidigo de la simulilo de hibridaj sistemoj HydLa, forigante dum la rulado la gardatajn limigojn, kiuj ne plu povas iĝi veraj.">
+<title>Diplomverko pri programado kun limigoj — Takafumi Horiuchi</title>
+<meta name="description" content="Dum la simulado oni identigas kondiĉojn kiuj neniam plu okazos kaj forigas ilin de la esplorado. Ĉi tio reduktis la kalkulan kvanton sen ŝanĝi la rezulton kaj duonigis la efektivan tempon de la taksa modelo en restrikta programado-studo.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="eo">
-<meta property="og:title" content="Bakalaŭra tezo pri programado per limigoj">
-<meta property="og:description" content="Uzi monotonecon por forigi limigojn, kiuj perdis sian sencon, kaj rapidigi la simuladon de hibridaj sistemoj.">
+<meta property="og:title" content="Diplomverko pri programado kun limigoj">
+<meta property="og:description" content="Sekure forigu kondiĉojn kiuj neniam denove okazos kaj rapidigu la simulaĵon.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Simulata pilko saltas malsupren laŭ ŝtuparo, montrante, kiam jam preterpasitaj limigoj ĉesas gravi.">
+<meta property="og:image:alt" content="Simulado de pilko kiuj malsupren saltas la ŝtuparo. Ĝi montras kie la pasintaj limigoj fariĝas nerelevantaj.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -53,16 +53,21 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
       "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
-      "headline": "Bakalaŭra tezo pri programado per limigoj",
+      "headline": "Diplomverko pri programado kun limigoj",
       "url": "https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "Bakalaŭra esploro pri rapidigo de la simulilo de hibridaj sistemoj HydLa, forigante dum la rulado la gardatajn limigojn, kiuj ne plu povas iĝi veraj.",
+      "description": "Dum la simulado oni identigas kondiĉojn kiuj neniam plu okazos kaj forigas ilin de la esplorado. Ĉi tio reduktis la kalkulan kvanton sen ŝanĝi la rezulton kaj duonigis la efektivan tempon de la taksa modelo en restrikta programado-studo.",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "eo",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Kazunori Ueda" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Kazunori Ueda"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -78,7 +83,7 @@
 <main>
 
   <header>
-    <h1>Bakalaŭra tezo pri programado per limigoj</h1>
+    <h1>Diplomverko pri programado kun limigoj</h1>
     <div class="identity">
       <p class="tagline">de <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profiloj aliloke">
@@ -92,88 +97,90 @@
   </header>
 
   <section>
-    <h2>Superrigardo</h2>
-    <p class="lead">Kiel bakalaŭra studento pri komputiko, mia esploro komenciĝis per praktika demando: kiam simulilo amasigas multajn eblajn kondiĉojn, kiel oni igas ĝin ĉesi rekonsideri tiujn, kiuj jam ne povas okazi? Mi ellaboris kaj taksis por HydLa metodon, kiu uzas la direkton, en kiu valoro ŝanĝiĝas, por forigi el la serĉo la kondiĉojn perdintajn sian sencon. En la referenca modelo, la tuta simulada tempo malpliiĝis al proksimume duono.</p>
-    <p>Ĉi tiu laboro estas unu el la plej fruaj fundamentoj de <a href="../../">mia dezajna filozofio</a>. La programado per limigoj instruis al mi, ke kompleksaj rezultoj ne ĉiam devas esti rekte difinitaj: ili povas aperi el zorge difinita spaco de reguloj, prioritatoj kaj limoj. Tiu pensmaniero subtenas hodiaŭ mian manieron dezajni el limigoj en la epoko de artefarita inteligenteco — dezajni la kondiĉojn, ene de kiuj generanta sistemo rajtas libere agi.</p>
+    <h2>Resumo</h2>
+    <p class="lead">La simulilo ripetas multajn kondiĉojn laŭeble pli ofte kiam okazaĵoj povas okazi plej diversmaniere. Se eblas taksi el la progreso, ke 'ĉi tiu kondiĉo jam neniam validos', ĉu eblas sekure ĉesi tiu inspektadon? Ni desegnis kaj efektivigis metodon por la modeliga lingvo de hibrida sistemo HydLa, kiu, uzante la direkton de valoroŝanĝo kiel indikon, forigas neiniciatajn kondiĉojn el aktuala serĉado.</p>
+    <p>En la taksa modelo, la realigtempo estis mallongigita al ĉirkaŭ duono de la tradicia sen ŝanĝi la simulan rezulton. La graveco ne estas en simple rapido de ĉiuj kalkuloj, sed en la uzo de la problemo-strukturo por malpliigi la eblecojn necesajn konsideri.</p>
+    <p>La koncepto de limigita programado lernita en ĉi tiu esploro nun formas la fundamenton de <a href="../../">Mia desegnfilozofio</a>. Anstataŭ rekte specifii unuopajn rezultojn, oni difinas regulojn, prioritatojn kaj limojn, kaj derivemsolvojn el ili interne.</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Resumo</h2>
-    <p>HydLa estas modeliga lingvo por hibridaj sistemoj: sistemoj, en kiuj kontinua ŝanĝo kaj diskretaj eventoj interagas. Ĝia sur limigoj bazita konstruo permesas priskribi tiajn sistemojn koncize kaj simuli ilin kun alta precizeco. La prezo estas, ke granda modelo povas lasi la simulilon kontroli grandegan nombron da kondiĉaj reguloj eĉ post kiam kelkaj el ili jam perdis ĉian gravecon.</p>
-    <p>Ĉi tiu esploro proponis redukti tiujn gardatajn limigojn dum la rulado. Rekonante monotonan konduton — valoron, kiu daŭre moviĝas en unu direkto — la simulilo povas konstati, ke certaj gardoj neniam plu iĝos veraj estonte, kaj sekure ĉesi kontroli ilin. La aliro montriĝis precipe efika ĉe modelo kun multaj simile gardataj objektoj, kie la mezurita rultempo falis al proksimume duono de la origina.</p>
+    <h2>Defioj——ju pli da eblecoj, des pli malrapida estas la kalkulado</h2>
+    <p>HydLa estas lingvo por priskribi “hibridajn sistemojn”, kiuj kombinas kontinuan ŝanĝon kaj diskretajn eventojn, kiel matematikajn kaj logikajn limigojn. Sen neceso skribi ĉiujn procedurojn en ordo, oni povas simuli konduton kiu kontentigas kondiĉojn per deklarado kio devus okazi.</p>
+    <p>Aliflanke, en modelo kun multaj reguloj kiuj validas depende de kondiĉoj, la simuililo ripete kontrolas grandan nombron da kandidatoj. Ĉar ili restas kiel kandidatoj eĉ se la kondiĉoj jam ne validas aŭ iam en la estonteco, la pli granda la modelo, des pli multaj nebezonataj kalkuloj akumuliĝas.</p>
   </section>
 
   <section>
-    <h2>1. Enkonduko</h2>
-    <p>Hibrida sistemo kunigas kontinuan konduton kun diskretaj eventoj. Saltanta pilko estas simpla ekzemplo: ĝia pozicio kaj rapido ŝanĝiĝas kontinue dum ĝi estas en la aero, sed la momento, kiam ĝi trafas surfacon, kreas diskretan eventon, kiu ŝanĝas ĝian direkton. Termostatoj, veturiloj kaj robotoj enhavas la saman miksaĵon en pli konsekvencaj formoj.</p>
-    <p>HydLa permesas priskribi tiajn sistemojn per matematikaj kaj logikaj limigoj anstataŭ elskribi ununuran proceduran sinsekvon. Ĝia simulilo HyLaGI kapablas kalkuli simbole sen rondiga eraro kaj labori kun necertaj parametroj. Tiu esprimpovo tamen kreas problemon de skalo: kiam modelo enhavas multajn regulojn, kiuj aktiviĝas nur sub apartaj kondiĉoj, la simulilo devas ree kaj ree demandi pri ĉiu kondiĉo, ĉu ĝuste ĝi okazos sekve.</p>
+    <h2>Temo——Sistemo kie miksiĝas kontinua kaj diskreta</h2>
+    <p>La saltanta pilko estas klara ekzemplo de hibrida sistemo. En aerospaco ĝia pozicio kaj rapido ŝanĝiĝas kontinue, sed kiam ĝi frapas la plankon, okazas disreta evento de reboto. Termostato, aŭtomobilo kaj roboto ankaŭ enhavas la samajn du tipojn de ŝanĝoj interne, kvankam sur malsamaj skaloj.</p>
+    <p>Por taksado, oni uzis modelon en kiu horizontale moviĝanta pilko rebatis sur surfaco dividita en plurajn sekciojn. Ĉiu sekcio havas regulon kun kondiĉo: 'se la pilko atingas ĉi tiun gamon, ĝi rebatos'. Pliigante la nombro de sekcioj, oni povas reprezenti pli da objektoj, sed ankaŭ la simulatoro devas esplori pli da kondiĉoj.</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Fontkodo en HydLa, kiu difinas pilkon moviĝantan horizontale kaj resaltantan sur unu el N apudaj sekcioj de la surfaco.">
-      <figcaption>Mallonga modelo en HydLa priskribas unu pilkon kaj surfacon dividitan en <em>N</em> gardatajn sekciojn.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Fonto-kodo de HydLa kiu difinas la konduton de pilko moviĝanta horizontale kaj rebatiĝanta en iu ajn el la najbaraj N-flankaj segmentoj.">
+      <figcaption>La mallonga modelo de HydLa priskribas surfacon dividitan en unu pilkon kaj <em>N</em> sekciojn kun gardo.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. Gardataj limigoj en la simulado</h2>
-    <p>Gardata limigo estas regulo, kiu aktiviĝas nur kiam ĝia garda kondiĉo plenumiĝas. En la supra referenca modelo ĉiu sekcio de la surfaco havas propran regulon: se la pilko atingas alton nulo dum ĝia horizontala pozicio troviĝas ene de tiu sekcio, validas la resalta regulo. Dividi la surfacon en pli da pecoj do donas al la simulilo pli da gardoj por trarigardi.</p>
-    <p>La eksperimento variigis la nombron de sekcioj de 10 ĝis 200. La origina simulilo malrapidiĝis proksimume laŭ la kvadrato de tiu nombro. Tio gravas preter la ludila ekzemplo: pli granda modelo povas prezenti multajn fizikajn objektojn, kontaktajn regionojn aŭ eblajn eventojn ĝuste en tiu gardata formo.</p>
+    <h2>Kollo—la nombro de kondiĉoj plialtigas la komputdan laboron</h2>
+    <p>Reguloj kiuj validas nur kiam certaj kondiĉoj estas plenumitaj estas nomataj 'kun-gvardiaj restriktoj'. En la taksa modelo, la rebatiĝa regulo de specifa sekcio validas nur kiam la pilko atingas la plankon kaj ĝia horizontala pozicio troviĝas ene de tiu sekcio.</p>
+    <p>Kiam oni pliigis la nombron de sekcioj de 10 ĝis 200, la tradicia simuliilo malrapidis proksimume laŭ la kvadrato de la sekcia nombro. En grandaj modeloj, ĉar la nombro de objektoj, kontaktoareoj kaj eblaj eventoj kreskas, la sama problemo fariĝas pli granda.</p>
   </section>
 
   <section>
-    <h2>3. Kie kuŝas la mallarĝejo</h2>
-    <p>Profilado montris, ke la malrapidiĝo ne disvastiĝis egale tra la simulilo. Kun 100 surfacaj sekcioj, 96 % de la mezurita rultempo pasis en <code>FindMinTime</code>, la operacio, kiu serĉas la plej fruan eblan sekvan eventon. Ĝi ree kaj ree taksis la gardojn de ĉiu kandidata limigo.</p>
-    <p>Tiu rezulto konkretigis la celon de la optimumigo: malpliigi la nombron de gardoj, kiujn <code>FindMinTime</code> devas konsideri, konservante precize la saman simulatan konduton.</p>
+    <h2>Esploro——96% de la prilaborada tempo troviĝis kie</h2>
+    <p>Kiam oni mezuris la prilaboran tempon, en modelo kun 100 blokoj, 96% de la tuta tempo estis uzata por <code>FindMinTime</code>. Ĉi tio estas la procezo por trovi la «plej proksime okazos» inter la kandidatoj. Tial ĉiuj gardaj kondiĉoj estis taksataj plurfoje.</p>
+    <p>La lokoj por plibonigo fariĝis klaraj. Anstataŭ rekrei la tutan kalkulmetodon, simple sekure malpliigi la kandidatojn transdonotajn al <code>FindMinTime</code>. La celo estis ne ŝanĝi la simulan rezulton sed forigi nur la nebezonatajn eblecojn.</p>
   </section>
 
   <section>
-    <h2>4. Redukto de gardataj limigoj</h2>
-    <p>Imagu pilkon, kiu saltante malsupreniras ŝtuparon. Post kiam la pilko preterpasis ŝtupon kaj daŭre moviĝas antaŭen, tiu ŝtupo jam ne povas influi ĝin. Homo, kiu rigardas la desegnon, tuj forlasas la ŝtupojn malantaŭ la pilko; la origina algoritmo daŭre kontrolis ĉiun el ili.</p>
+    <h2>Alproksimiĝo—sekure forigi kondiĉojn, kiujn ne eblas plu ricevi</h2>
+    <p>Bonvolu imagi pilkon malsupren saltantan ŝtuparon. Se la pilko preterpasas unu paŝon kaj daŭre progresas antaŭen, tiu paŝo jam ne povas influi la pilkon. Homo rigardanta la diagramon tuj ignoras la paŝojn malantaŭ la pilko. La originala algoritmo daŭre kontrolis ĉiun el ili unu post alia.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Ruĝa trajektorio montras pilkon, kiu saltante malsupreniras nigrajn ŝtupojn; la ombritaj regionoj indikas ŝtupojn jam preterpasitajn kaj ne plu gravajn.">
-      <figcaption>Dum la pilko moviĝas dekstren, la gardoj de la ombritaj ŝtupoj malantaŭ ĝi forlaseblas.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Ruĝa spuro montras pilkon desupreniĝantan la nigrajn ŝtuparojn dum ĝi saltas de paŝo al paŝo. Ombrita regiono reprezentas paŝojn jam preterpasitajn kaj ne plu rilatajn.">
+      <figcaption>Kiam la pilko moviĝas dekstren, la gardo de la ombrita tavolo malantaŭ ĝi povas esti preterlasita.</figcaption>
     </figure>
 
-    <p>La malfacila parto estas pruvi, ke forĵetita gardo ne estos bezonata poste. Forigi ĝin nur ĉar ĝi nun estas malvera povus silente doni malĝustan rezulton, se ĝi denove iĝus vera. La propono do apogas sin sur monotoneco: ĉu estas garantiite, ke variablo daŭre kreskas aŭ daŭre malkreskas dum tempa intervalo.</p>
+    <p>La malfacilaĵo estas montrado ke la forigita gardilo poste ne estos bezonata. Se oni forigas ĝin nur ĉar nuntempe ĝi estas falsa, kiam ĝi denove fariĝos vera, ĝi povus silenteme doni malĝustan rezulton. Tial la proponita metodo uzas monotonecon—ĉu oni povas garantii, ke certa variablo daŭre kreskas aŭ malpliiĝas dum certa tempointerspaco.</p>
 
-    <h3>4.1 Aliro al unuforma monotoneco</h3>
-    <p>La unua aliro validas, kiam variablo moviĝas en unu direkto dum la tuta simulado. En la modelo kun dividita surfaco la horizontala pozicio de la pilko ĉiam kreskas. Post kiam ĝi transiris sekcion, la kondiĉo de tiu sekcio neniam plu povas plenumiĝi. Teknikoj de modelkontrolado povas establi tiun econ antaŭ la simulado, tiel ke la gardoj, kiuj perdis sian sencon, forigeblas sekure dum la rulado progresas.</p>
+    <h3>Kiam la direkto de ŝanĝo ne ŝanĝiĝas</h3>
+    <p>La unua aliro taŭgas kiam variablo moviĝas unuflanken tra la tuta simulaĵo. En modelo kun dividitaj surfacoj, la horizontala pozicio de la pilko ĉiam kreskas. Post kiam ĝi transpasos iun sekcion, la kondiĉoj de tiu sekcio neniam plu estos plenigitaj. Ĉi tiu trajto povas esti kontrolita antaŭ la simulaĵo per modela kontrola tekniko, do la gardoj, kiuj fariĝis nenecesaj dum la ekzekuto, povas esti sekure forigitaj.</p>
 
     <figure class="paper-figure figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Supreniranta ruĝa linio de alfa je tempo nulo ĝis beta je la maksimuma tempo ilustras variablon, kiu kreskas dum la tuta simulado.">
-      <figcaption>Unuforma monotoneco signifas, ke la direkto de la ŝanĝo tenas sin dum la tuta simulata intervalo.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="La ruĝa linio kiu supreniĝas de α je tempo 0 ĝis β ĉe la maksimuma tempo reprezentas la variablon kiu daŭre kreskas dum la simulado.">
+      <figcaption>Unuforme monotoneco signifas, ke la direkto de ŝanĝo estas konservata tra la tuta simula intervalo.</figcaption>
     </figure>
 
-    <h3>4.2 Aliro al alterna monotoneco</h3>
-    <p>Multaj realaj sistemoj ne moviĝas en unu direkto por ĉiam. Variablo povas kreski, turniĝi kaj poste malkreski. La artikolo do skizis duan aliron: komenci per supozita direkto, kontroli tiun supozon per asertoj, kaj rekomenci la reduktan logikon de la punkto, kie la direkto ŝanĝiĝas. La gardoj forigitaj por unu monotona intervalo estas restarigitaj, kiam komenciĝas la sekva.</p>
+    <h3>Kiam la direkto de ŝanĝo ŝanĝiĝas meze</h3>
+    <p>Multaj realaj sistemoj ne moviĝas ĉiam en unu direkto. Variabloj povas pliiĝi, ŝanĝi direkton kaj poste malpliiĝi. Tial la artikolo prezentis duan aliron. Unue oni supozas direkton, monitoras tiun supozon per aserto, kaj refaras la reduktan procezon ekde la momento kiam la direkto ŝanĝiĝas. Gardoj forigitaj por unu monotona segmento estas revenigitaj kiam la sekva segmento komenciĝas.</p>
 
     <figure class="paper-figure figure-5">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Kvin desegnoj montras supozitan kreskantan intervalon, malsukceson de aserto, novan malkreskantan intervalon, plian malsukceson kaj monotonajn intervalojn establatajn unu post la alia.">
-      <figcaption>Malsukcesaj asertoj dividas ŝanĝiĝantan konduton en intervalojn, el kiuj ĉiu trakteblas kiel monotona.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="La kvin figuroj montras la ordon, en kiu sekcioj kun supozita kresko, malsukcesoj de asertoj, sekcioj kun nova malkresko, dua malsukceso, kaj monotona sekcio estas unu post alia determinataj.">
+      <figcaption>La fiasko de aserto dividas la ŝanĝantajn kondutojn en intervalojn kiuj povas esti traktataj kiel monotonaj.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. Eksperimentaj rezultoj</h2>
-    <p>Mi realigis la aliron de unuforma monotoneco kaj taksis ĝin per la modelo kun dividita surfaco. Kaj la origina, kaj la proponita algoritmo plu bezonis pli da tempo, ju pli kreskis la nombro de sekcioj, sed la proponita versio konstante faris malpli da laboro. Komparante la adaptitajn kurbojn, la ĉefa koeficiento falis de 1,1463 al 0,6083; por ĉi tiu referenca kazo la tuta simulada tempo proksimume duoniĝis.</p>
-    <p>La rezulto ne asertas, ke ĉiu modelo en HydLa iĝas duoble pli rapida. Ĝi montras, kie la metodo helpas: ĉe modeloj kun multaj gardataj objektoj kaj pruvebla direkto de ŝanĝo, kie la gardoj iĝas por ĉiam sensignifaj dum la rulado.</p>
+    <h2>Rezulto——Reduci la ekzekutan tempon de la taksila modelo proksimume je duono</h2>
+    <p>Ni efektivigis respondon al uniforma monotoneco kaj taksis ĝin per modelo kun dividitaj surfacoj. Tamen, ĉu la originala algoritmo aŭ la proponita metodo, la bezonata tempo pliiĝas kiam la nombro de segmentoj kreskas. Tamen, la proponita metodo konstante postulas malpli da laboro. Komparante la kongruajn kurbojn, la plej alta koeficiento malkreskis de 1.1463 al 0.6083, kaj en ĉi tiu referenca testado la tuta simula tempo reduktiĝis preskaŭ duoble.</p>
+    <p>Ĉi tio ne estas aserto, ke ĉiuj modeloj de HydLa duobliĝos je rapideco. Ĝi montras, kie ĉi tiu metodo funkcias — en modeloj kun multaj celoj kun gardoj, kie la direkto de ŝanĝo povas esti pruvita, kaj dum la ekzekuto la gardoj fariĝas permanente neapartenantaj.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafikaĵo de la simulada tempo laŭ N montras la proponitan metodon sub la origina tra la tuta gamo de 10 ĝis 200 surfacaj sekcioj, atingante ĉirkaŭ 250 sekundojn anstataŭ ĉirkaŭ 470 ĉe N egala al 200.">
-      <figcaption>En la taksita modelo la proponita metodo (kvadratoj) bezonas proksimume duonon de la tempo de la origina algoritmo (rondoj).</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafeo de la simulada tempo rilate al N. La proponita metodo restas sub la originala metodo en la tuta intervalo de 10 ĝis 200 sekcioj, kaj ĉe N=200 ĝi atingas proksimume 250 sekundojn kontraste al ĉirkaŭ 470 sekundoj.">
+      <figcaption>En la taksita modelo, la proponita metodo (kvadrato) necesas ĉirkaŭ duonon de la tempo kompare kun la originala algoritmo (circulo).</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>6. Konkludo kaj estonta laboro</h2>
-    <p>La esploro montris, ke scio pri la modelo — ne nur pli rapida malaltnivela kalkulado — povas fari simuladon pli efika. Uzante monotonecon por rekoni, kiuj eblecoj iĝis neeblaj, HyLaGI povas malgrandigi sian aron da aktivaj limigoj sen ŝanĝi la rezulton.</p>
-    <p>La realigita eksperimento kovris la unuforman monotonecon. La artikolo lasis du direktojn por poste: taksi la aserto-bazitan metodon por alterna konduto, kaj uzi aliajn invariantojn ol la monotoneco por trovi pliajn limigojn, kiuj forigeblas sekure.</p>
+    <h2>Perspektivoj akiritaj de ĉi tiu esploro</h2>
+    <p>En ĉi tiu esploro, oni ne celis iom post iom plirapidigi individuajn kalkulojn. Oni uzis tion, kion oni scias pri la konduto de la sistemo, por malpliigi la aron de eblecoj konsiderindaj. La ideo limigi la serĉospacon sen ŝanĝi la rezulton estas la forto de restrikta programado.</p>
+    <p>La efektivigo kaj taksado estis farita por la kazo, kie variablo daŭre moviĝas en unu direkto. Se la direkto de ŝanĝo ŝanĝiĝas meze, ĝi restas nur ĝis la projektado, kaj la taksado restis kiel estonta tasko. Eblas ankaŭ uzi proprietojn krom monotoneco por trovi ankoraŭ pliajn malbezonatajn limigojn.</p>
+    <p>La fakto ke nun mi ne desegnas rekte la produktadon de AI, sed desegnas la kondiĉojn kaj limojn kiujn AI povas esplori, ankaŭ devenas de ĉi tiu sperto. Kiam oni traktas kompleksajn rezultojn, gravas difini kion oni ne bezonas konsideri, same grave kiel kion kalkuli.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi kaj Kazunori Ueda. “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa”. La 33-a Jarkonferenco de la Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
   <nav aria-label="Retejo">
     <ul>

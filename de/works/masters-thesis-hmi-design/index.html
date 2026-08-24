@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Masterarbeit über die Gestaltung der Mensch-Roboter-Interaktion — Takafumi Horiuchi</title>
-<meta name="description" content="Masterforschung zu einem Kollisionsschutz, der den Blick des Bedieners liest, um Objekte zum Anfassen von Objekten zum Schützen zu unterscheiden — im Moment der Arbeit statt im Voraus.">
+<title>Masterarbeit über Interaktionsdesign zwischen Mensch und Roboter — Takafumi Horiuchi</title>
+<meta name="description" content="Der Bereich, den der Bediener sieht, wird in Bedingungen umgewandelt, unter denen der Roboter berühren darf. In die Masterarbeit wurde ein System vorgeschlagen und implementiert, das den Wahrnehmungszustand des Menschen in die Sicherheitssteuerung einbezieht und Kollisionen ohne vorherige Objektregistrierung verhindert.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/de/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Masterarbeit über die Gestaltung der Mensch-Roboter-Interaktion">
-<meta property="og:description" content="Wohin der Bediener schaut, entscheidet darüber, was ein Roboter berühren darf.">
+<meta property="og:title" content="Masterarbeit über Interaktionsdesign zwischen Mensch und Roboter">
+<meta property="og:description" content="Den Bereich, den Menschen sehen, in Bedingungen umwandeln, die der Roboter berühren darf.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/de/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ein virtueller Arbeitsraum aus gelben Voxeln, von einem Roboter gescannt, mit dem Sichtfeld des Bedieners als farbiger Kegel.">
+<meta property="og:image:alt" content="Virtueller Arbeitsraum aus gelben Voxeln, den der Roboter gescannt hat. Das Sichtfeld des Bedieners ist durch farbige Kegel dargestellt.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -53,15 +53,20 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/de/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "Masterarbeit über die Gestaltung der Mensch-Roboter-Interaktion",
+      "headline": "Masterarbeit über Interaktionsdesign zwischen Mensch und Roboter",
       "url": "https://takafumihoriuchi.github.io/de/works/masters-thesis-hmi-design/",
-      "description": "Masterforschung zu einem Kollisionsschutz, der den Blick des Bedieners liest, um Objekte zum Anfassen von Objekten zum Schützen zu unterscheiden — im Moment der Arbeit statt im Voraus.",
+      "description": "Der Bereich, den der Bediener sieht, wird in Bedingungen umgewandelt, unter denen der Roboter berühren darf. In die Masterarbeit wurde ein System vorgeschlagen und implementiert, das den Wahrnehmungszustand des Menschen in die Sicherheitssteuerung einbezieht und Kollisionen ohne vorherige Objektregistrierung verhindert.",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "de",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Katsuya Kanaoka" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Katsuya Kanaoka"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -77,7 +82,7 @@
 <main>
 
   <header>
-    <h1>Masterarbeit über die Gestaltung der Mensch-Roboter-Interaktion</h1>
+    <h1>Masterarbeit über Interaktionsdesign zwischen Mensch und Roboter</h1>
     <div class="identity">
       <p class="tagline">von <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profiles elsewhere">
@@ -91,10 +96,10 @@
   </header>
 
   <section>
-    <h2>Überblick</h2>
-    <p class="lead">Wer einen großen Roboter bedient, kann immer nur einem Teil des Arbeitsraums Aufmerksamkeit schenken. Diese Arbeit hat gefragt, was sich ändert, wenn man der Maschine sagt, wo diese Aufmerksamkeit gerade liegt. Ich habe einen Kollisionsschutz entworfen, bei dem der Blick des Bedieners bestimmt, wie sich der Roboter verhalten darf: Was in sein zentrales Sichtfeld fällt, lässt sich frei handhaben, was außerhalb liegt, ist geschützt — der Arm wird langsamer und hält an, bevor er ankommt. Nichts muss vorab ausgezeichnet werden. Die Unterscheidung entsteht im Moment der Arbeit, von dort aus, wohin der Bediener gerade schaut. Das Demonstrationsvideo gibt es <a class="ext" href="https://youtu.be/-DvWxzJvK3I">hier (auf YouTube)</a>.</p>
-    <p>Die Arbeit war meine Masterarbeit in Design &amp; Engineering am Politecnico di Milano, entstanden während eines Forschungspraktikums bei Man-Machine Synergy Effectors, Inc. in Japan, und wurde auf der <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">39. Jahreskonferenz der Robotics Society of Japan (RSJ2021)</a> vorgestellt.</p>
-    <p>Hier nimmt auch <a href="../../">meine Designphilosophie</a> ihre heutige Form an. Was dieses System liest, ist kein Befehl, sondern ein kognitiver Zustand — ob etwas überhaupt bemerkt worden ist — und es übersetzt diesen Zustand in die Bedingungen, unter denen die Maschine handeln darf. Gestaltet wird nicht die Bewegung des Roboters, sondern die Beziehung: Was die Maschine tun darf, folgt daraus, was der Mensch gerade versteht. Diese Beziehung zu gestalten statt jedes einzelne Verhalten ist derselbe Griff, den ich heute mache, wo nicht ein Roboterarm handelt, sondern eine generative KI.</p>
+    <h2>Übersicht</h2>
+    <p class="lead">Bei großformatigen Robotern, die von Menschen gesteuert werden, ist es schwierig, allein mit den Sensoren in der Umgebung zwischen Bewegungen, die sich dem Arbeitsobjekt nähern, und Bewegungen, die sich einem übersehenen Hindernis nähern, zu unterscheiden. Daher wurde ein Kollisionsvermeidungssystem entwickelt, das den vom Bediener gesehenen Bereich als Hinweis dafür nutzt, dass dort berührt werden darf, und den Arm verlangsamt oder stoppt, wenn er sich einem nicht gesehenen Objekt nähert.</p>
+    <p>Es ist nicht notwendig, das Zielobjekt im Voraus als „manipulierbar“ oder „zu schützen“ zu registrieren. Diese Unterscheidung wird je nach Blickrichtung des Bedieners während der Arbeit aktualisiert. Wir haben dies in einem humanoiden Schwerlastroboter mit einer Größe von 1,9 m implementiert und in fünf Demo-Versuchen bestätigt, dass das definierte Verhalten funktioniert. Die tatsächliche Bewegung ist in <a class="ext" href="https://youtu.be/-DvWxzJvK3I">Demovideo</a> zu sehen.</p>
+    <p>Als Masterarbeit im Bereich Design &amp; Engineering an der Technischen Universität Mailand wurde sie während eines Forschungspraktikums bei der Firma Jinki-ittai bearbeitet und bei <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">39. Wissenschaftliche Vortragsveranstaltung der Japanischen Robotergesellschaft (RSJ2021)</a> präsentiert.</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -110,110 +115,109 @@
          image so its smaller type stays reachable. -->
     <figure class="deck-figure bleed">
       <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Titelfolie: Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation, Politecnico di Milano, Laurea Magistrale in Design &amp; Engineering, Studienjahr 2020–2021."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Hintergrund: Das Thema der Arbeit entstand während eines Forschungspraktikums bei Man-Machine Synergy Effectors, Inc., einem Unternehmen, das anthropomorphe schwere Maschinen entwickelt, die über ein Master-Slave-System bedient werden."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Autonome Roboter im Vergleich zu menschlich bedienten: Erstere arbeiten effizient in eigens gestalteten, umzäunten Räumen, letztere in unsicheren Räumen neben Menschen."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistiken aus Europa, den Vereinigten Staaten und Japan, nach denen das Getroffenwerden von bewegten Gegenständen einen erheblichen Teil der Unfälle auf Baustellen ausmacht."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Verwandte Forschung zum Kollisionsschutz: sensitive Haut, die den Manipulator überzieht, und Tiefensensoren, die eine virtuelle Abbildung der Umgebung aufbauen."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Das derzeitige Hindernis: Bestehende Systeme verlangen, dass Objekte vorab als geschützt oder handhabbar festgelegt werden — über getragene Tags, Bildanalyse oder trainierte Klassifikatoren."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Der Vorschlag: Herkömmliche Systeme nutzen nur passive Sensordaten, während ein menschlich bedienter Roboter ohnehin einen Menschen im Regelkreis hat, dessen Blick als aktiver Parameter dienen kann."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die Einteilungsregel: Objekte innerhalb des zentralen Sichtfelds des Bedieners sind handhabbar, Objekte außerhalb sind geschützt."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Überblick über den Prototyp: ein physischer Roboter, gekoppelt mit einem virtuellen Rechenraum, danach folgen drei technische Bausteine."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Baustein eins: das zentrale Sichtfeld als Kegel von 60 mal 55 Grad, dessen Richtung durch die Blickrichtung der VR-Brille angenähert wird."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Baustein zwei: Ein LIDAR am Kopf des Roboters scannt die Umgebung in Punktwolken, dargestellt als Voxel mit jeweils eigenem Collider."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Baustein drei: Ein digitaler Zwilling des Roboters bewegt sich mit dem physischen, und Näherungswarnungen werden ausgelöst, wenn sein Arm auf Voxel außerhalb des Sichtfelds trifft."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Machbarkeitsnachweis: ein Videostandbild des Roboters, der nach einem Ball auf einer Stange greift, mit eingeblendeter virtueller Voxelansicht."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Ausblick: Menschen im Arbeitsraum erkennen, andere Verfahren zur Messung der Blickrichtung erproben und das System im Feld quantitativ bewerten."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Schlussfolie mit einer Zusammenfassung von Thema, Nutzen des Verfahrens, Neuheit und Art der Verifikation."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Titelfolie. Awareness-basierte Kollisionsvermeidung für von Menschen gesteuerte Roboter-Manipulation, Masterstudiengang Design &amp; Engineering der Technischen Universität Mailand, Studienjahr 2020–2021."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Hintergrund. Das Thema der Arbeit wurde während eines Forschungspraktikums bei der Firma Jinki Ittai Co., Ltd., die humanoide Maschinen entwickelt und im Master-Slave-Verfahren betreibt, festgelegt."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Vergleich zwischen autonomen Robotern und von Menschen gesteuerten Robotern. Erstere arbeiten effizient in einem innerhalb von Zäunen gestalteten Raum, letztere arbeiten zusammen mit Menschen in unsicheren Räumen."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistiken aus Europa, den USA und Japan. Der Kontakt mit sich bewegenden Objekten macht einen erheblichen Anteil der Unfälle auf Baustellen aus."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Frühere Studien zur Kollisionsvermeidung. Sensible Haut, die den Manipulator bedeckt, und Tiefensensoren, die die Umgebung virtuell reproduzieren."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Aktuelle Aufgaben. Das bestehende System verlangt, dass das Zielobjekt durch angebrachte Tags, Bildanalyse und einen trainierten Klassifikator im Voraus als „geschützt“ oder „bedienbar“ definiert wird."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Vorschlag. Das herkömmliche System verwendet nur passive Sensordaten, aber in einem von Menschen bedienten Roboter befindet sich der Mensch ursprünglich in der Steuerungsschleife, und sein Blick kann als aktiver Parameter verwendet werden."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Klassifikationsregel. Objekte, die sich innerhalb des zentralen Sichtfeldes des Bedieners befinden, können bedient werden, Objekte, die sich außerhalb befinden, gelten als zu schützende Ziele."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Gesamtübersicht des Prototyps. Die reale Roboterhardware und der virtuelle Berechnungsraum werden kombiniert, und drei technische Elemente folgen."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Element ①. Das zentrale Sichtfeld wird als Kegel von 60° × 55° dargestellt und seine Ausrichtung wird in Richtung der Vorderseite des VR-Headsets angenähert."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Element ②. Der auf dem Kopf des Roboters montierte LIDAR scannt die Umgebung als Punktwolke, wobei jeder Punkt als Voxel mit einem Collider dargestellt wird."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Element ③. Der digitale Zwilling des Roboters bewegt sich genauso wie die reale Maschine, und wenn sein Arm einen Voxel außerhalb des Sichtbereichs berührt, erscheint eine Näherungswarnung."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Proof-of-concept-Demonstration. Standbild eines Roboters, der die Hand nach einem Ball auf einer Stange ausstreckt, und Voxel-Darstellung im virtuellen Raum."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Zukünftige Aufgaben. Erkennung von Personen im Arbeitsbereich, Überprüfung anderer Methoden zur Messung der Blickrichtung und anschließende quantitative Bewertung vor Ort."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Zusammenfassung der Schlussfolgerungen. Forschungsthema, Wert der Methodik, Neuheit und wie das System überprüft wurde."></a></li>
       </ol>
-      <figcaption>Die Folien meiner Masterarbeitsverteidigung. Den Streifen seitlich scrollen; jede Folie öffnet sich in voller Größe.</figcaption>
+      <figcaption>Folien, die ich bei der Abschlusspräsentation meiner Masterarbeit verwendet habe. Man kann horizontal scrollen, und jede Folie öffnet sich in Originalgröße.</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Kurzfassung</h2>
-    <p>Menschlich bediente Roboter sind gerade dort wertvoll, wo autonome es nicht sind: in Arbeitsräumen, die nie für die anstehende Aufgabe gestaltet wurden, neben Menschen und Geräten, die nicht getroffen werden dürfen. Bestehende Kollisionsschutzsysteme bewältigen solche Räume, indem jedes Objekt vorab entweder als Ziel der Handhabung oder als zu schützend deklariert wird — ein Einrichtungsaufwand, der für eine Maschine, die von Einsatzort zu Einsatzort getragen wird, unbeherrschbar wächst.</p>
-    <p>Diese Arbeit schlug vor, diese Unterscheidung stattdessen zur Laufzeit zu treffen, aus dem Blick des Bedieners. Objekte innerhalb seines zentralen Sichtfelds gelten als handhabbar, Objekte außerhalb als geschützt, Menschen unter allen Umständen als geschützt. Das Verfahren bringt einen aktiven Parameter — einen menschlichen — in einen Regelkreis, der bis dahin vollständig aus passiven Sensordaten bestand. Der Prototyp wurde auf JINKI type Zero umgesetzt, einem 1,9 m großen anthropomorphen Schwermaschinen-Roboter, und verhielt sich in fünf Demonstrationsdurchläufen wie festgelegt.</p>
+    <h2>Problem — Voreinstellungen für die Sicherheit binden den Einsatzort</h2>
+    <p>Der Bedarf an von Menschen gesteuerten Robotern besteht an Orten, die nicht für autonome Roboter vorbereitet sind. An Orten wie Baustellen oder Katastrophengebieten ändern sich die Positionen von Menschen und Ausrüstung, und es ändert sich auch, was bei jedem Arbeitsschritt berührt werden darf. Um die große Kraft von Maschinen zu nutzen, muss man in der Lage sein, das erforderliche Ziel zu berühren und gleichzeitig unbeabsichtigte Kontakte zu vermeiden.</p>
+    <p>Bei den bestehenden Kollisionsvermeidungen gibt es Methoden, den Roboter mit Näherungssensoren zu umgeben oder die Umgebung mit Tiefensensoren in einem virtuellen Raum nachzubilden. Allerdings muss in beiden Fällen vorher unterschieden werden, ob ein Objekt „manipulierbar“ oder „zu schützendes Ziel“ ist. Wenn nichts registriert wird, kann aus Sicherheitsgründen nichts berührt werden, und um alles zu registrieren, sind standortspezifische Einstellungen und Kalibrierungen erforderlich. Diese Vorbereitungsaufwände minderten die Praktikabilität von Robotern, die an verschiedenen Orten eingesetzt werden.</p>
   </section>
 
   <section>
-    <h2>1. Einleitung</h2>
-    <p>Ein menschlich bedienter Roboter verbindet zwei Dinge, die schwer zusammen zu haben sind: die Kraft und Präzision einer Maschine und das Situationsurteil eines Menschen. Vollständig autonome Roboter liefern das zweite noch nicht. Und während Industrieroboter in eigens gestalteten Zellen hinter Zäunen arbeiten, sollen menschlich bediente an Orten arbeiten, die für etwas anderes eingerichtet wurden — neben den Arbeitern vor Ort, zwischen empfindlichem Gerät, in kerntechnischen Anlagen und auf Baustellen. Dass der Roboter seine Umgebung nicht beschädigt, gehört daher zu dem, was ihn überhaupt brauchbar macht.</p>
-    <p>Die etablierten Vorkehrungen gegen unbeabsichtigten Kontakt sind sensitive Haut, bei der Näherungssensoren jede kritische Stelle des Manipulators bedecken, und Tiefenerfassung, bei der die Umgebung als Punktwolke rekonstruiert und Abstände in diesem virtuellen Raum berechnet werden. Beides funktioniert. Beides setzt jedoch voraus, dass die Objekte um den Roboter herum bereits sortiert sind in solche, die er berühren darf, und solche, die er nicht berühren darf: Ohne diese Sortierung kann eine Maschine, der jede Kollision verboten ist, auch nichts handhaben. Für ein Allzweckwerkzeug, das zwischen Einsatzorten transportiert und mitten in das gestellt wird, was dort steht, kosten Einrichtung und Kalibrierung mehr, als die Sicherheit wert ist, die sie erkaufen.</p>
-    <p>Der Ansatzpunkt dieser Arbeit ist, dass ein menschlich bedienter Roboter ohnehin einen Menschen in seinem Regelkreis hat. Untersuchungen zu Bedienfehlern nennen das Situationsbewusstsein — ein zutreffendes Erfassen dessen, was ringsum geschieht — als entscheidenden Faktor, und es ist bekannt, dass dieses Bewusstsein stark mit der Blickrichtung zusammenhängt. Kollisionsschutz wurde herkömmlich allein aus passiver Information aufgebaut, also aus Sensordaten. Ein einziger aktiver Parameter — wohin der Bediener schaut — gibt dem System einen Hinweis darauf, ob ein Kontakt mit einem bestimmten Objekt beabsichtigt wäre oder nicht.</p>
+    <h2>Idee – Den Blick in eine "Bedingung, unter der er berührt werden darf", verwandeln</h2>
+    <p>In der Steuerungsschleife eines von Menschen gesteuerten Roboters ist bereits eine Person, die die Situation beurteilt. Wenn man der Maschine mitteilen könnte, worauf der Mensch seine Aufmerksamkeit richtet, dachte ich, dass man die Absicht der Berührung während der Arbeit schätzen könnte, anstatt das Ziel im Voraus zu registrieren.</p>
+    <p>Daher wird das zentrale Sichtfeld des Bedieners als Grenze verwendet. Objekte innerhalb des Sichtfelds werden als ‚bedienbare Objekte‘ betrachtet, die der Bediener erfasst. Objekte außerhalb des Sichtfelds werden als ‚zu schützende Objekte‘ betrachtet, die möglicherweise übersehen werden. Menschen werden unabhängig von der Position des Blicks immer als zu schützende Objekte betrachtet.</p>
+    <p>Dies ist kein System, um dem Roboter Befehle mit Blicken zu geben. Es ist ein System, das den kognitiven Zustand des Bedieners in Bedingungen umwandelt, unter denen der Roboter sich bewegen darf.</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Schema von oben: Ein Kegel markiert das zentrale Sichtfeld des Bedieners vor dem Roboter. Objekt A innerhalb des Kegels ist als weißer Kreis gezeichnet, die Objekte B, C und D außerhalb als dunkle Quadrate, und zwei menschliche Figuren stehen innerhalb und außerhalb des Kegels.">
-      <figcaption>Objekt A im zentralen Sichtfeld des Bedieners ist handhabbar; die Objekte B, C und D außerhalb sind geschützt. Menschen sind geschützt, wo immer sie stehen.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Sicht von oben. Vor dem Roboter ist das zentrale Sichtfeld des Bedieners als Kegel dargestellt. Das Objekt A innerhalb des Kegels ist als weißer Kreis dargestellt, die Objekte B, C und D außerhalb als dunkle Quadrate, und zwei Personen stehen jeweils innerhalb und außerhalb des Kegels.">
+      <figcaption>Das Objekt A im zentralen Sichtfeld des Bedieners ist bedienbar, die Objekte B, C und D im äußeren Bereich sind zu schützen. Menschen sind unabhängig von ihrem Standort geschützt.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. Verhalten des Systems</h2>
-    <p>Ein Objekt, das der Bediener berühren will, heißt <em>handhabbares Objekt</em> und darf ohne Einschränkung bewegt werden. Ein Objekt, dem gegenüber er diese Absicht nicht hat, ist ein <em>geschütztes Objekt</em> und darf nicht berührt werden. Welches von beiden ein Objekt in einem Augenblick ist, folgt aus seiner Lage zum zentralen Sichtfeld des Bedieners: innerhalb steht es unter genug Aufmerksamkeit, um als beabsichtigt zu gelten; außerhalb nicht.</p>
-    <p>Fünf Regeln bestimmen das Verhalten, das daraus folgt. Der Manipulator darf mit Objekten im zentralen Sichtfeld frei in Berührung kommen. Mit Objekten außerhalb darf er es nicht und hält allmählich an, während er sich einem nähert. Im angehaltenen Zustand wird er allmählich freigegeben, sobald das Sichtfeld des Bedieners auf ihn übergeht. Keine Einschränkung greift, wenn das Sichtfeld ein Objekt verlässt, mit dem der Manipulator bereits in Kontakt ist, damit laufende Arbeit nicht durch einen Blick zur Seite unterbrochen wird. Und mit einem Menschen darf der Manipulator nicht in Berührung kommen, wo immer diese Person steht. Hat ein Roboter mehrere Manipulatoren, gelten die Regeln für jeden einzeln.</p>
-    <p>Was der Bediener davon hat: Er kann mit voller Geschwindigkeit an dem arbeiten, was er ansieht, und sich darauf verlassen, dass die Maschine das Gerät nicht trifft, das er nicht ansieht. Die Sicherheit der Menschen vor Ort ist bedingungslos und hängt von seinen Absichten überhaupt nicht ab.</p>
+    <h2>Interaktionsdesign</h2>
+    <p>Das System macht die Position des Blicks nicht zu einem einfachen Ein- und Ausschalter. Nähern sich die Arme einem nicht beachteten Objekt, verlangsamen sie allmählich entsprechend der Entfernung und stoppen, bevor sie das Objekt berühren. Sobald der Bediener nach dem Stopp seinen Blick auf das Objekt richtet, werden die Einschränkungen ebenfalls allmählich aufgehoben. Dadurch werden plötzliche Stopps oder plötzliche Bewegungen vermieden und der Bediener kann die Veränderungen vorhersagen.</p>
+    <p>Andererseits wird die laufende Arbeit nicht gestoppt, selbst wenn man den Blick vorübergehend von dem bereits berührten Objekt abwendet. Wenn Greifen oder Bedienen allein durch das Abwenden des Blicks unterbrochen würde, würde es im Gegenteil instabil werden. Nur die Annäherung an Menschen wird gesondert behandelt und eingeschränkt, unabhängig davon, ob der Bediener hinsieht oder nicht.</p>
+    <p>Das Ziel war nicht, die Arbeit aus Sicherheitsgründen einheitlich zu verlangsamen. Es geht darum, die Fähigkeiten des Roboters im Rahmen des Verständnisses des Bedieners aufrechtzuerhalten und nur die Bereiche zu schützen, die außerhalb seiner Aufmerksamkeit liegen, um Sicherheit und Arbeitsfähigkeit zu vereinbaren.</p>
 
     <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Flussdiagramm, das bei der Handhabung in freier Bewegung beginnt und danach verzweigt, ob ein Objekt nahe ist, ob es ein Mensch ist, ob der Manipulator sich diesem Menschen nähert und ob das Objekt im Fokusbereich liegt — mit den Ausgängen Feinhandhabung, allmähliches Anhalten oder Sperren.">
-      <figcaption>Nur ein einziger Knoten des Entscheidungswegs — „Objekt liegt im Fokusbereich“ — liest den aktiven Parameter des Bedieners. Alle anderen Zweige laufen auf passiven Sensordaten.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Ein Flussdiagramm, das im Zustand der freien Bewegung beginnt. Es verzweigt sich danach, ob das Ziel in der Nähe ist, ob es sich um einen Menschen handelt, ob der Manipulator in Richtung des Menschen geht oder ob sich das Ziel im Blickfeld befindet, und führt dann zu präzisen Bewegungen, stufenweiser Stopps oder Sperrungen.">
+      <figcaption>Der Knoten, der während des Entscheidungsprozesses die aktiven Parameter des Bedieners liest, ist nur derjenige, der überprüft, ob sich das Ziel im Blickbereich befindet. Alle anderen Verzweigungen arbeiten ausschließlich mit passiven Sensordaten.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>3. Erwarteter Nutzen</h2>
-    <p>Schwere Maschinen liefern das nächstgelegene vorhandene Bild dieser Art von Arbeit: große Kräfte, aufgebracht an unstrukturierten Orten neben Menschen. Kollisionsunfälle gehören weltweit zu den Hauptgefahren auf Baustellen, und Unaufmerksamkeit wird immer wieder als Ursache genannt. Von den 362.600 Unfällen, die 2018 auf europäischen Baustellen erfasst wurden, entfielen 19,6 % auf das Getroffenwerden von einem bewegten Gegenstand; eine Untersuchung von Kranunfällen führte 19 % davon auf Unaufmerksamkeit des Bedieners zurück.</p>
-    <p>Da Aufmerksamkeit und Blickrichtung stark zusammenhängen, lassen sich diese beiden Anteile zu einer groben Schätzung dessen verbinden, was ein blickbasiertes System abdecken könnte — in der Größenordnung von dreizehntausend Unfällen pro Jahr in Europa. Die Zahl ist eine Ableitung aus veröffentlichten Statistiken und kein gemessenes Ergebnis; sie steht hier als Größenordnung.</p>
+    <h2>Angenommene Nutzungsszenarien</h2>
+    <p>Der Zielbereich sind Szenarien wie Baustellen oder Katastrophenorte, an denen in der Nähe von Menschen große Kräfte gehandhabt werden. An solchen Orten ist es schwierig, die Umgebung vollständig mit Zäunen abzugrenzen oder jedes Objekt im Voraus zu registrieren. Ein System, das bei jeder Änderung der Anordnung die Sicherheitseinstellungen neu vornimmt, würde die Dringlichkeit und Vielseitigkeit beeinträchtigen.</p>
+    <p>Die auf Blickrichtungen basierende Unterscheidung nutzt anstelle eines festen Umgebungsmodells die Situationswahrnehmung der Person in diesem Moment. Sie könnte die Annäherung an übersehene Objekte reduzieren und gleichzeitig die Belastung durch die Vorbereitung vor Ort verringern. Allerdings wurde in dieser Studie nur bestätigt, dass das System gemäß den Vorgaben funktioniert, und die Wirkung auf die Unfallreduktion wurde nicht in der Praxis bewertet.</p>
   </section>
 
   <section>
-    <h2>4. Verifikation des Systems</h2>
-    <p>Als Machbarkeitsnachweis wurde ein Demonstrationssystem gebaut und betrieben.</p>
+    <h2>Prototyp und Vorbewertung</h2>
 
-    <h3>4.1 Umsetzung</h3>
-    <p>Umgesetzt wurde das System auf JINKI type Zero, einem bei Man-Machine Synergy Effectors, Inc. entwickelten Roboter. Er hat den Oberkörper eines Menschen, ist 1,9 m hoch, wiegt 600 kg und besitzt dreißig Freiheitsgrade. Bediener und Roboter befinden sich am selben Ort und sind als Master-Slave-System gekoppelt: Eine VR-Brille synchronisiert Sicht und Kopfdrehung des Bedieners mit denen des Roboters, was das Gefühl gibt, mit der Maschine eins zu sein, statt sie zu steuern.</p>
-    <p>Ein am Roboter montiertes LIDAR scannt den umgebenden Arbeitsplatz als Punktwolken, die im virtuellen Raum als Voxel mit je eigenem Collider dargestellt werden. Ein digitaler Zwilling des Roboters bewegt sich in demselben Raum; überlappt sein Arm mit Voxeln, gibt das System eine Näherungswarnung aus, deren Wirkung von der Richtung des Sichtfelds abhängt. Dieses Feld ist als Kegel von 60° × 55° (H×V) modelliert — nahe an dem Bereich, in dem Menschen Symbole, Farbe und Tiefe wahrnehmen — und seine Richtung wird durch die Blickrichtung der Brille angenähert. Die Warnung geht an den physischen Roboter und formt dessen Bewegung nach den obigen Regeln.</p>
+    <h3>Implementierung</h3>
+    <p>Das System wurde in einen 1,9 Meter großen, 600 kg schweren Roboter mit 30 Freiheitsgraden implementiert, der die Form des Oberkörpers eines Menschen hat. Der Bediener trägt ein VR-Headset und steuert den Roboter, indem das Sichtfeld und die Kopfbewegungen des Roboters mit den eigenen Bewegungen synchronisiert werden.</p>
+    <p>Mit dem LIDAR auf dem Roboter wurde der Arbeitsbereich als Punktwolke erfasst und im virtuellen Raum als Voxel mit Kollisionsprüfung dargestellt. Ein Digital Twin, der diesen Raum mit der realen Maschine synchronisiert, läuft. Das zentrale Sichtfeld des Bedieners wurde als Kegel von 60°×55° dargestellt und die Richtung anhand der Front des Headsets approximiert. Wenn der Arm sich Voxel außerhalb des Sichtfelds nähert, wird eine Warnung an die Maschine gesendet, die diese verlangsamt oder stoppt.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Eine virtuelle Szene: Gelbe Voxel bauen die Umgebung nach, ein durchscheinend roter Bereich mit der Beschriftung „zentrales Sichtfeld des Bedieners“ schneidet hindurch, und der weiße digitale Zwilling des Roboters greift nach einem Hindernis außerhalb dieses Bereichs.">
-      <figcaption>Der virtuelle Raum mit dem Roboter und der gescannten Punktwolke. Hier trifft der Roboter auf Hindernisse, die außerhalb des zentralen Sichtfelds des Bedieners liegen.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Szenerie eines virtuellen Raums. Gelbe Voxel rekonstruieren die Umgebung, eine halbtransparente rote Fläche, auf der "Zentrales Sichtfeld des Bedieners" steht, durchdringt sie, und ein weißer Digital-Twin-Roboter streckt seine Hand nach einem Hindernis außerhalb dieses Bereichs aus.">
+      <figcaption>Eine virtuelle Umgebung, die den Roboter und die gescannten Punktwolken enthält. Hier berührt der Roboter Hindernisse, die sich außerhalb des zentralen Sichtfeldes des Bedieners befinden.</figcaption>
     </figure>
 
-    <h3>4.2 Demonstrationsexperiment</h3>
-    <p>Eine Vorabbewertung prüfte, ob die Umsetzung tat, was festgelegt worden war. Der Bediener sollte den Arm zu einer Stange bewegen, während er zur Seite sah, bestätigen, dass das System gewarnt und den Arm angehalten hatte, dann den angehaltenen Arm ansehen, um die Sperre zu lösen, und schließlich einen Ball von der Stangenspitze nehmen, während er ihn im Blick behielt. Fünf Durchläufe wurden gefahren: die ersten drei und der fünfte von einem erfahrenen Bediener, der vierte von jemandem, der den Roboter zum zweiten Mal steuerte. Jeder wurde aufgezeichnet. In allen fünf verhielt sich das System so, wie Abschnitt 2 es festlegt. Zu sehen ist die Demonstration im <a class="ext" href="https://youtu.be/-DvWxzJvK3I">Video des Systems im Betrieb</a>.</p>
+    <h3>Vorläufige Bewertung</h3>
+    <p>Der Bediener näherte den Arm dem Objekt, während er den Blick vom Objekt abwandte, hob nach dem Stoppen die Einschränkung, indem er den Blick wieder auf das Objekt richtete, und griff schließlich den Ball – eine Abfolge von Operationen, die ausprobiert wurde. Von den fünf Versuchen wurden vier von erfahrenen Bedienern durchgeführt, einer vom Bediener bei seiner zweiten Sitzung. In allen Versuchen hielt der Arm an, wenn der Blick abgewandt war, und die Bedienung konnte fortgesetzt werden, sobald der Blick auf das Objekt gerichtet wurde. Dies ist kein Benutzerexperiment zur Messung der Wirksamkeit, sondern eine vorläufige Bewertung, um zu überprüfen, ob das entworfene Verhalten auf dem realen System funktioniert.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="Foto des Roboters, darüber der in einem Rahmen hängende Bediener, der zur Seite blickt. Die Roboterhand ist vor einem blau-gelben Ball auf einer gelben Stange stehen geblieben, der verbleibende Abstand ist eingezeichnet.">
-      <figcaption>Der Blick des Bedieners ist abgewandt, und der Arm hält in einigem Abstand zum Objekt an.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="Ein Foto eines Roboters. Auf dem oberen Rahmen befindet sich der Bediener, der zur Seite schaut. Die Roboterhand stoppt vor dem blau-gelben Ball auf dem gelben Pfosten, und die verbleibende Distanz wird angezeigt.">
+      <figcaption>Der Blick des Bedieners ist abgelenkt, und der Arm hält Abstand vom Ziel und stoppt.</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Foto aus flacherem Winkel: Der Bediener sieht zum Ball, und die Roboterhand greift den blau-gelben Ball auf der gelben Stange.">
-      <figcaption>Ist der Blick auf das Objekt gerichtet, läuft dieselbe Bewegung ohne Einschränkung durch.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Foto aus der Untersicht. Der Bediener schaut auf den Ball, und die Roboterhand greift den blau-gelben Ball auf dem gelben Pfosten.">
+      <figcaption>Wenn der Blick auf das Ziel gerichtet ist, kann dieselbe Bewegung uneingeschränkt durchgeführt werden.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. Grenzen und weitere Arbeit</h2>
-    <p>Die Erkennung von Menschen wurde im Prototyp nicht umgesetzt. Zu prüfen war das Verhältnis zwischen dem Blick des Bedieners und der Handhabbarkeit von Objekten, und die Regel zum Schutz von Menschen ist bedingungslos und hängt davon nicht ab. Diese Erkennung zu ergänzen, würde das System robuster machen und darüber hinaus Anwendungen jenseits der Sicherheit öffnen — etwa Menschen in der Nähe des Roboters im Blickfeld des Bedieners hervorzuheben oder zu warnen, bevor eine Näherungsgrenze erreicht ist.</p>
-    <p>Der Blick wurde durch die Blickrichtung der Brille angenähert. Gewählt wurde das wegen seiner Unmittelbarkeit, auf die es in einem Master-Slave-System ankommt; andere Instrumente aber — feste Kameras, Eyetracker in Datenbrillen — würden ihn anders schätzen und könnten die Hemmschwelle senken, ein solches System in Branchen einzuführen, die es nicht gewohnt sind, etwas zu tragen. Die Übertragung auf mobile Roboter wirft ein weiteres Problem auf: JINKI type Zero steht fest, solange er in Entwicklung ist, und eine Maschine, die im Betrieb ihren Standort ändert, braucht eine Punktwolkenverarbeitung, die schnell genug mitkommt.</p>
-    <p>Die Bewertung selbst bleibt qualitativ. Eine quantitative Feldstudie ist der richtige Weg, das System zu beurteilen, und wartet darauf, dass der Roboter ein praxistaugliches Stadium erreicht.</p>
+    <h2>Grenzen und die nächste Überprüfung</h2>
+    <p>Im Prototyp wurde die Erkennung von Personen nicht implementiert. Es wurde eine Regel aufgestellt, dass Personen unabhängig von der Blickrichtung immer geschützt werden, aber in einer realen Umgebung ist ein Mechanismus erforderlich, um Personen zuverlässig zu identifizieren. Außerdem wurde nicht der Blick selbst, sondern die Vorderseite des Headsets als Stellvertreterwert verwendet, sodass Bewegungen nur der Augen nicht erfasst werden.</p>
+    <p>Wenn man stationäre Kameras oder Smart Glasses mit Blickverfolgung verwendet, ändern sich die Bedingungen für die anzulegenden Geräte und die geschätzte Genauigkeit. Beim Einsatz auf mobilen Robotern wird zudem eine Punktwolkenverarbeitung erforderlich, die den Positionsänderungen des Roboters selbst folgen kann.</p>
+    <p>Die Bewertung beschränkt sich auf eine qualitative Überprüfung anhand von fünf Demo-Versuchen. Um Sicherheit, Arbeitstempo und Belastung des Bedieners zu beurteilen, ist ein quantitativer Vergleich mit der herkömmlichen Methode unter realen Arbeitsbedingungen erforderlich.</p>
   </section>
 
   <section>
-    <h2>6. Fazit</h2>
-    <p>Die Arbeit schlug für menschlich bediente Robotermanipulatoren einen Kollisionsschutz vor, der den Blick des Bedieners nutzt, um unbeabsichtigten Kontakt mit Menschen und Geräten zu verhindern. Unter der Annahme, dass Bewusstsein und Blickrichtung stark zusammenhängen, wurden Objekte im zentralen Sichtfeld als handhabbar und die außerhalb als geschützt behandelt. Einen menschlichen Faktor in den Regelkreis zu setzen, machte es möglich, diese Linie zur Laufzeit zu ziehen — ohne jede Vorbereitung, die die bestehenden Verfahren verlangen.</p>
-    <p>Verifiziert wurde das System an einem Allzweck-Schwermaschinenroboter, und es verhielt sich wie festgelegt. Dasselbe Prinzip sollte sich überall dorthin übertragen lassen, wo ein Mensch ohnehin Teil des Kreises ist, über den eine Maschine bedient wird.</p>
+    <h2>Die Perspektive, die aus dieser Forschung gewonnen wurde</h2>
+    <p>In dieser Studie wurde der menschliche Blick nicht als Eingabegerät verwendet, sondern als Bedingung für das Handeln der Maschine behandelt. Je nachdem, was eine Person gerade wahrnimmt, ändert sich das Verhalten des Roboters gegenüber demselben Objekt. Entworfen wurde nicht eine einzelne Handlung, sondern die Beziehung zwischen dem kognitiven Zustand des Menschen und der Autorität der Maschine.</p>
+    <p>Diese Denkweise führt auch zu dem heutigen <a href="../../">Meine Designphilosophie</a>. Den Zustand des Menschen zu verstehen, diesen in eine vom System einzuhaltende Einschränkung zu übersetzen und innerhalb dessen die Fähigkeiten von Maschinen und KI zur Entfaltung zu bringen. Die Masterarbeit wurde zum Ausgangspunkt dafür.</p>
   </section>
 
   <section>
     <h2>Danksagung</h2>
-    <p>Diese Arbeit entstand während eines Praktikums bei Man-Machine Synergy Effectors, Inc. als Teil der Anforderungen des Masterstudiengangs Design &amp; Engineering am Politecnico di Milano. Beiden Organisationen danke ich dafür, diese Gelegenheit möglich gemacht zu haben.</p>
+    <p>Diese Studie wurde im Rahmen des Masterstudiengangs Design &amp; Engineering an der Technischen Universität Mailand während eines Praktikums bei der Firma Jinki Ittai durchgeführt. Ich danke beiden Organisationen sehr für die Möglichkeit, dies zu realisieren.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi und Katsuya Kanaoka: „Gaze-based Unintended Contact Prevention for Human-Operated Robots“. 39. Jahreskonferenz der Robotics Society of Japan, 2021, Beitrag 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Konferenzprogramm</a>.</p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a></p>
 
   <nav aria-label="Site">
     <ul>

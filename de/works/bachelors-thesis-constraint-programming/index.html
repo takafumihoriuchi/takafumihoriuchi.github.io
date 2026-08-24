@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Bachelorarbeit über Constraint-Programmierung — Takafumi Horiuchi</title>
-<meta name="description" content="Studentische Forschung darüber, wie sich der Simulator für hybride Systeme HydLa beschleunigen lässt, indem bewachte Beschränkungen, die nicht mehr wahr werden können, zur Laufzeit entfernt werden.">
+<title>Abschlussarbeit über Constraint-Programmierung — Takafumi Horiuchi</title>
+<meta name="description" content="Während der Simulation identifiziert man Bedingungen, die niemals erfüllt werden, und schließt sie von der Suche aus. Dies reduziert die Rechenmenge, ohne die Ergebnisse zu verändern, und halbiert etwa die Ausführungszeit des Bewertungsmodells – eine Studie zur Constraint-Programmierung.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Bachelorarbeit über Constraint-Programmierung">
-<meta property="og:description" content="Mit Monotonie überflüssig gewordene Beschränkungen entfernen und die Simulation hybrider Systeme beschleunigen.">
+<meta property="og:title" content="Abschlussarbeit über Constraint-Programmierung">
+<meta property="og:description" content="Bedingungen, die niemals erfüllt werden, sicher entfernen und die Simulation beschleunigen.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ein simulierter Ball springt eine Treppe hinunter und zeigt, ab wann bereits passierte Beschränkungen keine Rolle mehr spielen.">
+<meta property="og:image:alt" content="Simulation eines Balls, der die Treppe hinunterspringt. Zeigt, ab welchem Punkt die zuvor durchlaufenen Einschränkungen irrelevant werden.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -53,16 +53,21 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
       "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
-      "headline": "Bachelorarbeit über Constraint-Programmierung",
+      "headline": "Abschlussarbeit über Constraint-Programmierung",
       "url": "https://takafumihoriuchi.github.io/de/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "Studentische Forschung darüber, wie sich der Simulator für hybride Systeme HydLa beschleunigen lässt, indem bewachte Beschränkungen, die nicht mehr wahr werden können, zur Laufzeit entfernt werden.",
+      "description": "Während der Simulation identifiziert man Bedingungen, die niemals erfüllt werden, und schließt sie von der Suche aus. Dies reduziert die Rechenmenge, ohne die Ergebnisse zu verändern, und halbiert etwa die Ausführungszeit des Bewertungsmodells – eine Studie zur Constraint-Programmierung.",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "de",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Kazunori Ueda" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Kazunori Ueda"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -78,7 +83,7 @@
 <main>
 
   <header>
-    <h1>Bachelorarbeit über Constraint-Programmierung</h1>
+    <h1>Abschlussarbeit über Constraint-Programmierung</h1>
     <div class="identity">
       <p class="tagline">von <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profile anderswo">
@@ -92,88 +97,90 @@
   </header>
 
   <section>
-    <h2>Überblick</h2>
-    <p class="lead">Als Bachelorstudent der Informatik ging ich einer praktischen Frage nach: Wenn ein Simulator viele mögliche Bedingungen ansammelt, wie bringt man ihn dazu, jene nicht mehr zu prüfen, die gar nicht mehr eintreten können? Ich entwickelte und bewertete für HydLa ein Verfahren, das die Richtung nutzt, in die sich ein Wert verändert, um überflüssig gewordene Bedingungen aus der Suche zu nehmen. Im Referenzmodell sank die gesamte Simulationszeit auf etwa die Hälfte.</p>
-    <p>Diese Arbeit ist ein frühes Fundament <a href="../../">meiner Designphilosophie</a>. Die Constraint-Programmierung hat mich gelehrt, dass komplexe Ergebnisse nicht immer direkt festgelegt werden müssen: Sie können aus einem sorgfältig definierten Raum von Regeln, Prioritäten und Grenzen hervorgehen. Dieses Denken trägt heute meine Art, im Zeitalter der KI aus Beschränkungen heraus zu gestalten — die Bedingungen zu gestalten, innerhalb derer ein generatives System frei handeln darf.</p>
+    <h2>Übersicht</h2>
+    <p class="lead">Ein Simulator untersucht wiederholt viele Bedingungen, je mehr mögliche Ereignisse es gibt. Wenn man nun anhand des Fortschritts beurteilen kann, dass eine Bedingung „nie wieder erfüllt werden wird“, könnte man diese Überprüfung dann sicher einstellen? Eine Methode, die anhand der Richtung der Werteänderung nicht mehr benötigte Bedingungen aus der laufenden Suche ausschließt, wurde für die Modellierungssprache HydLa von hybriden Systemen entworfen und implementiert.</p>
+    <p>Im Bewertungsmodell wurde die Ausführungszeit auf etwa die Hälfte der bisherigen Zeit verkürzt, ohne die Simulationsergebnisse zu verändern. Wichtig ist nicht, dass alle Berechnungen einheitlich schneller gemacht wurden. Es geht darum, mithilfe der Struktur des Problems die zu berücksichtigenden Möglichkeiten selbst zu reduzieren.</p>
+    <p>Die in dieser Studie erlernte Denkweise der Constraint-Programmierung bildet die Grundlage für das heutige <a href="../../">Meine Designphilosophie</a>. Dabei geht es nicht darum, die Ergebnisse einzeln direkt anzugeben, sondern Regeln, Prioritäten und Grenzen zu definieren und Lösungen von innen heraus abzuleiten, die diese erfüllen.</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Zusammenfassung</h2>
-    <p>HydLa ist eine Modellierungssprache für hybride Systeme: Systeme, in denen kontinuierliche Veränderung und diskrete Ereignisse zusammenwirken. Ihr auf Beschränkungen beruhender Entwurf erlaubt es, solche Systeme knapp zu beschreiben und mit hoher Genauigkeit zu simulieren. Der Preis dafür ist, dass ein großes Modell den Simulator sehr viele bedingte Regeln prüfen lässt, auch wenn manche davon längst gegenstandslos sind.</p>
-    <p>Diese Forschung schlug vor, jene bewachten Beschränkungen zur Laufzeit zu reduzieren. Erkennt der Simulator monotones Verhalten — einen Wert, der sich weiterhin in eine Richtung bewegt —, kann er feststellen, dass bestimmte Wächterbedingungen künftig nie mehr wahr werden, und ihre Prüfung gefahrlos einstellen. Besonders wirksam war der Ansatz bei einem Modell mit vielen gleichartig bewachten Objekten: Die gemessene Laufzeit fiel auf etwa die Hälfte des ursprünglichen Werts.</p>
+    <h2>Problem — Je mehr Möglichkeiten es gibt, desto langsamer wird die Berechnung</h2>
+    <p>HydLa ist eine Sprache, um "hybride Systeme", die kontinuierliche Veränderungen und diskrete Ereignisse kombinieren, als mathematische und logische Einschränkungen zu beschreiben. Ohne die Reihenfolge aller Prozeduren zu schreiben, kann man durch Deklaration dessen, was erfüllt sein sollte, Verhaltensweisen simulieren, die die Bedingungen erfüllen.</p>
+    <p>Auf der anderen Seite überprüft der Simulator bei Modellen, bei denen viele Regeln je nach Bedingungen wirksam werden, wiederholt eine große Anzahl von Kandidaten. Da Bedingungen, die bereits überschritten wurden und in der Zukunft nicht erfüllt werden, weiterhin als Kandidaten bestehen bleiben, wächst mit der Größe des Modells die unnötige Berechnung.</p>
   </section>
 
   <section>
-    <h2>1. Einleitung</h2>
-    <p>Ein hybrides System verbindet kontinuierliches Verhalten mit diskreten Ereignissen. Ein springender Ball ist ein einfaches Beispiel: Position und Geschwindigkeit ändern sich stetig, solange er in der Luft ist, doch der Augenblick, in dem er auf eine Fläche trifft, erzeugt ein diskretes Ereignis, das seine Richtung ändert. Thermostate, Fahrzeuge und Roboter enthalten dieselbe Mischung in folgenreicheren Ausprägungen.</p>
-    <p>In HydLa lassen sich solche Systeme mit mathematischen und logischen Beschränkungen beschreiben, statt eine einzige prozedurale Abfolge auszuschreiben. Der Simulator HyLaGI rechnet symbolisch und damit ohne Rundungsfehler und kann mit unbestimmten Parametern umgehen. Diese Ausdruckskraft schafft jedoch ein Größenproblem: Enthält ein Modell viele Regeln, die nur unter bestimmten Bedingungen greifen, muss der Simulator immer wieder für jede einzelne fragen, ob sie die nächste eintretende sein könnte.</p>
+    <h2>Thema – Ein System, in dem Kontinuierliches und Diskretes gemischt sind</h2>
+    <p>Ein springender Ball ist ein leicht verständliches Beispiel für ein Hybridsystem. In der Luft ändern sich seine Position und Geschwindigkeit kontinuierlich, und im Moment des Aufpralls auf den Boden tritt ein diskretes Ereignis auf, nämlich das Abprallen. Thermostate, Autos und Roboter besitzen ebenfalls, wenn auch in unterschiedlichem Umfang, diese beiden Arten von Veränderungen.</p>
+    <p>Für die Bewertung wurde ein Modell verwendet, bei dem eine horizontal bewegende Kugel auf einer in mehrere Bereiche unterteilten Fläche abprallt. Für jeden Bereich der Fläche gibt es eine bedingte Regel: "Wenn die Kugel in diesen Bereich kommt, prallt sie ab." Je mehr Bereiche hinzugefügt werden, desto mehr Objekte können dargestellt werden, aber gleichzeitig steigen auch die Bedingungen, die der Simulator prüfen muss.</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="HydLa-Quelltext, der einen waagerecht bewegten Ball definiert, der auf einem von N benachbarten Abschnitten der Fläche abprallt.">
-      <figcaption>Ein kurzes HydLa-Modell beschreibt einen Ball und eine Fläche, die in <em>N</em> bewachte Abschnitte geteilt ist.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="HydLa-Quellcode, der das Verhalten eines horizontal bewegten Balls definiert, der an einem der N benachbarten Flächenabschnitte abprallt.">
+      <figcaption>Ein kurzes HydLa-Modell beschreibt eine Fläche, die in einen Ball und <em>N</em> bewachte Abschnitte unterteilt ist.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. Bewachte Beschränkungen in der Simulation</h2>
-    <p>Eine bewachte Beschränkung ist eine Regel, die erst aktiv wird, wenn ihre Wächterbedingung erfüllt ist. Im Referenzmodell oben hat jeder Abschnitt der Fläche seine eigene Regel: Erreicht der Ball die Höhe null, während seine waagerechte Position innerhalb dieses Abschnitts liegt, greift die Abprallregel. Je feiner die Fläche geteilt wird, desto mehr Wächterbedingungen muss der Simulator also durchsehen.</p>
-    <p>Im Experiment wurde die Zahl der Abschnitte von 10 bis 200 variiert. Der ursprüngliche Simulator wurde ungefähr mit dem Quadrat dieser Zahl langsamer. Das reicht über das Spielbeispiel hinaus: Ein größeres Modell kann viele physische Objekte, Kontaktbereiche oder mögliche Ereignisse genau in dieser bewachten Form darstellen.</p>
+    <h2>Engpass – Die Anzahl der Bedingungen treibt den Rechenaufwand in die Höhe</h2>
+    <p>Regeln, die nur wirksam werden, wenn bestimmte Bedingungen erfüllt sind, nennt man 'mit Wachen versehene Einschränkungen'. Im Evaluierungsmodell gilt die Rückprallregel eines Bereichs nur, wenn der Ball den Boden erreicht und seine horizontale Position innerhalb dieses bestimmten Bereichs liegt.</p>
+    <p>Wenn die Anzahl der Bereiche von 10 auf 200 erhöht wird, wurde der herkömmliche Simulator etwa proportional zum Quadrat der Anzahl der Bereiche langsamer. Bei groß angelegten Modellen wird dasselbe Problem größer, da die Anzahl der Objekte, Kontaktbereiche und möglichen Ereignisse zunimmt.</p>
   </section>
 
   <section>
-    <h2>3. Wo der Engpass liegt</h2>
-    <p>Die Profilierung zeigte, dass sich die Verlangsamung nicht gleichmäßig über den Simulator verteilte. Bei 100 Flächenabschnitten entfielen 96 % der gemessenen Laufzeit auf <code>FindMinTime</code>, jene Operation, die das früheste mögliche nächste Ereignis sucht. Sie wertete die Wächterbedingungen sämtlicher in Frage kommender Beschränkungen immer wieder neu aus.</p>
-    <p>Damit war das Ziel der Optimierung genau benannt: die Zahl der Wächterbedingungen verringern, die <code>FindMinTime</code> betrachten muss, und dabei das simulierte Verhalten exakt gleich lassen.</p>
+    <h2>Untersuchung — Wo lagen 96 % der Bearbeitungszeit?</h2>
+    <p>Wenn die Verarbeitungszeit gemessen wird, wurde bei einem Modell mit 100 Abschnitten 96 % der Gesamtzeit für <code>FindMinTime</code> verwendet. Dies ist der Prozess, bei dem aus den Kandidaten das „früheste nächste Ereignis“ gesucht wird. Dabei wurden alle Schutzbedingungen wiederholt ausgewertet.</p>
+    <p>Die Stellen, die verbessert werden müssen, sind klar geworden. Anstatt die gesamte Berechnungsmethode neu zu erstellen, genügt es, die Kandidaten, die an <code>FindMinTime</code> übergeben werden, sicher zu reduzieren. Das Ziel war, nur die Möglichkeiten auszuschließen, die nicht untersucht werden müssen, ohne die Simulationsergebnisse zu verändern.</p>
   </section>
 
   <section>
-    <h2>4. Reduktion bewachter Beschränkungen</h2>
-    <p>Man stelle sich einen Ball vor, der eine Treppe hinunterspringt. Sobald der Ball eine Stufe passiert hat und weiter vorwärts läuft, kann diese Stufe ihn nicht mehr beeinflussen. Wer die Zeichnung ansieht, blendet die Stufen hinter dem Ball sofort aus; der ursprüngliche Algorithmus prüfte weiterhin jede einzelne davon.</p>
+    <h2>Ansatz – Bedingungen sicher entfernen, die nie wieder erfüllt werden</h2>
+    <p>Stellen Sie sich einen Ball vor, der die Treppe hinunterhüpft. Wenn der Ball eine Stufe passiert und weiter nach vorne rollt, kann diese Stufe den Ball nicht mehr beeinflussen. Menschen, die das Diagramm betrachten, ignorieren sofort die Stufen hinter dem Ball. Der ursprüngliche Algorithmus überprüfte jedoch jede einzelne weiterhin.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Eine rote Flugbahn zeigt einen Ball, der schwarze Treppenstufen hinunterspringt; schattierte Bereiche kennzeichnen bereits passierte, nicht mehr relevante Stufen.">
-      <figcaption>Während der Ball nach rechts wandert, lassen sich die Wächterbedingungen der schattierten Stufen hinter ihm weglassen.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Die rote Spur zeigt den Ball, der die Stufen der schwarzen Treppe hinunterspringt. Der schraffierte Bereich stellt die Stufen dar, die bereits passiert wurden und die keine Rolle mehr spielen.">
+      <figcaption>Wenn der Ball nach rechts geht, kann man das Gittergestell dahinter weglassen.</figcaption>
     </figure>
 
-    <p>Schwierig ist der Nachweis, dass eine verworfene Wächterbedingung später nicht doch gebraucht wird. Sie nur deshalb zu entfernen, weil sie gerade falsch ist, könnte still ein falsches Ergebnis erzeugen, sobald sie wieder wahr wird. Der Vorschlag stützt sich deshalb auf Monotonie: darauf, ob garantiert ist, dass eine Variable über ein Zeitintervall hinweg weiter wächst oder weiter fällt.</p>
+    <p>Schwierig ist die Seite, die zeigen muss, dass ein entfernter Schutz später nicht benötigt wird. Wenn man ihn nur deshalb entfernt, weil er jetzt falsch ist, könnte er, wenn er wieder wahr wird, stillschweigend falsche Ergebnisse liefern. Daher nutzt die vorgeschlagene Methode die Monotonie – ob garantiert werden kann, dass eine Variable über einen bestimmten Zeitabschnitt hinweg weiterhin steigt oder fällt.</p>
 
-    <h3>4.1 Ansatz für gleichmäßige Monotonie</h3>
-    <p>Der erste Ansatz greift, wenn sich eine Variable während der gesamten Simulation in eine Richtung bewegt. Im Modell mit geteilter Fläche wächst die waagerechte Position des Balls immer. Hat er einen Abschnitt hinter sich gelassen, kann dessen Bedingung nie wieder erfüllt werden. Verfahren der Modellprüfung können diese Eigenschaft vor der Simulation nachweisen, sodass überflüssig gewordene Wächterbedingungen im Lauf der Ausführung gefahrlos entfernt werden dürfen.</p>
+    <h3>Wenn sich die Richtung der Veränderung nicht ändert</h3>
+    <p>Die erste Maßnahme gilt, wenn eine Variable während der gesamten Simulation in eine Richtung bewegt wird. In einem Modell mit geteilter Fläche nimmt die horizontale Position des Balls stets zu. Wenn er einen Abschnitt überschreitet, werden die Bedingungen dieses Abschnitts nie wieder erfüllt. Diese Eigenschaft kann vor der Simulation mithilfe von Model-Checking-Techniken überprüft werden, sodass nicht mehr benötigte Schutzvorrichtungen im Verlauf der Ausführung sicher entfernt werden können.</p>
 
     <figure class="paper-figure figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Eine steigende rote Linie von Alpha zum Zeitpunkt null bis Beta zum größten Zeitpunkt veranschaulicht eine Variable, die während der ganzen Simulation wächst.">
-      <figcaption>Gleichmäßige Monotonie heißt, dass die Richtung der Veränderung über das gesamte simulierte Intervall hält.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Die rote Linie, die von α zur Zeit 0 bis β zur maximalen Zeit ansteigt, stellt eine Variable dar, die im Verlauf der Simulation weiter zunimmt.">
+      <figcaption>Eine gleichmäßige Monotonie bedeutet, dass die Richtung der Veränderung über das gesamte simulierte Intervall beibehalten wird.</figcaption>
     </figure>
 
-    <h3>4.2 Ansatz für wechselnde Monotonie</h3>
-    <p>Viele reale Systeme bewegen sich nicht für immer in eine Richtung. Eine Variable kann wachsen, umkehren und dann fallen. Die Arbeit skizzierte deshalb einen zweiten Ansatz: mit einer angenommenen Richtung beginnen, diese Annahme durch Zusicherungen überwachen und die Reduktionslogik ab dem Punkt neu starten, an dem die Richtung wechselt. Wächterbedingungen, die für ein monotones Intervall entfernt wurden, werden zu Beginn des nächsten wiederhergestellt.</p>
+    <h3>Wenn sich die Richtung der Veränderung unterwegs ändert</h3>
+    <p>Viele reale Systeme bewegen sich nicht ewig in eine Richtung. Variablen können zunehmen, die Richtung ändern und wieder abnehmen. In der Arbeit wurde daher die zweite Vorgehensweise gezeigt. Zuerst wird eine Richtung angenommen, diese Annahme mit Assertions überwacht, und wenn sich die Richtung ändert, wird der Abbauprozess von diesem Zeitpunkt an neu gestartet. Guard-Statements, die für ein monotones Intervall entfernt wurden, werden wieder eingesetzt, wenn das nächste Intervall beginnt.</p>
 
     <figure class="paper-figure figure-5">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Fünf Diagramme zeigen ein als wachsend angenommenes Intervall, eine fehlgeschlagene Zusicherung, ein neues fallendes Intervall, einen weiteren Fehlschlag und nacheinander festgestellte monotone Intervalle.">
-      <figcaption>Fehlgeschlagene Zusicherungen teilen wechselndes Verhalten in Intervalle, die sich jeweils als monoton behandeln lassen.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Die fünf Diagramme zeigen, wie sich nacheinander Intervalle mit angenommener Zunahme, das Scheitern von Assertions, neue Intervalle mit Abnahme, ein zweites Scheitern und schließlich ein monotones Intervall herausbilden.">
+      <figcaption>Ein Assertionsfehlschlag teilt das sich ändernde Verhalten in Abschnitte, die jeweils als monoton behandelt werden können.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. Experimentelle Ergebnisse</h2>
-    <p>Ich habe den Ansatz der gleichmäßigen Monotonie implementiert und am Modell mit geteilter Fläche bewertet. Sowohl der ursprüngliche als auch der vorgeschlagene Algorithmus brauchten mit wachsender Abschnittszahl weiterhin länger, doch die vorgeschlagene Fassung leistete durchgehend weniger Arbeit. Im Vergleich der angepassten Kurven fiel der führende Koeffizient von 1,1463 auf 0,6083; für diesen Referenzfall halbierte sich die gesamte Simulationszeit ungefähr.</p>
-    <p>Das ist keine Behauptung, jedes HydLa-Modell werde doppelt so schnell. Es zeigt, wo das Verfahren hilft: bei Modellen mit vielen bewachten Objekten und einer beweisbaren Richtung der Veränderung, in denen Wächterbedingungen während eines Laufs dauerhaft gegenstandslos werden.</p>
+    <h2>Ergebnis – die Ausführungszeit des Bewertungsmodells auf etwa die Hälfte reduziert</h2>
+    <p>Wir haben eine Umsetzung zur Bewältigung einheitlicher Monotonie entwickelt und das Modell mit unterteilten Flächen bewertet. Sowohl der ursprüngliche Algorithmus als auch die vorgeschlagene Methode benötigen mehr Zeit, je mehr Segmente es gibt. Allerdings war der Arbeitsaufwand bei der vorgeschlagenen Methode durchgehend geringer. Wenn man die angepassten Kurven vergleicht, sinkt der Koeffizient der höchsten Ordnung von 1,1463 auf 0,6083, wodurch sich in diesem Benchmark die gesamte Simulationszeit etwa halbierte.</p>
+    <p>Dies ist keine Behauptung, dass jedes HydLa-Modell doppelt so schnell wird. Es zeigt vielmehr, wo diese Methode wirksam ist – nämlich bei Modellen, die viele Guards haben, deren Richtungsänderung nachgewiesen werden kann und bei denen die Guards während der Ausführung dauerhaft irrelevant werden.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Ein Diagramm der Simulationszeit über N zeigt das vorgeschlagene Verfahren über den ganzen Bereich von 10 bis 200 Flächenabschnitten unterhalb des ursprünglichen; bei N gleich 200 erreicht es etwa 250 statt etwa 470 Sekunden.">
-      <figcaption>Im untersuchten Modell braucht das vorgeschlagene Verfahren (Quadrate) etwa halb so lange wie der ursprüngliche Algorithmus (Kreise).</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik der Simulationszeit in Bezug auf N. Über den gesamten Bereich von 10 bis 200 Flächensegmenten liegt die vorgeschlagene Methode unter der ursprünglichen Methode, und bei N=200 beträgt sie etwa 250 Sekunden im Vergleich zu etwa 470 Sekunden.">
+      <figcaption>In dem bewerteten Modell benötigt die vorgeschlagene Methode (Quadrat) etwa die Hälfte der Zeit des ursprünglichen Algorithmus (Kreis).</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>6. Fazit und weitere Arbeit</h2>
-    <p>Die Forschung zeigte, dass Wissen über ein Modell — und nicht nur schnelleres Rechnen auf niedriger Ebene — eine Simulation effizienter machen kann. Indem HyLaGI mit Hilfe der Monotonie erkennt, welche Möglichkeiten unmöglich geworden sind, kann es seine Menge aktiver Beschränkungen verkleinern, ohne das Ergebnis zu verändern.</p>
-    <p>Das umgesetzte Experiment deckte die gleichmäßige Monotonie ab. Die Arbeit ließ zwei Richtungen für später offen: das auf Zusicherungen gestützte Verfahren für wechselndes Verhalten zu bewerten und andere Invarianten als die Monotonie zu nutzen, um weitere gefahrlos entfernbare Beschränkungen zu finden.</p>
+    <h2>Die Perspektive, die aus dieser Forschung gewonnen wurde</h2>
+    <p>Was in dieser Forschung gemacht wurde, war nicht, einzelne Berechnungen ein wenig schneller zu machen. Es ging darum, das, was über das Verhalten des Systems bekannt ist, zu nutzen, um die Menge der zu betrachtenden Möglichkeiten zu verkleinern. Die Idee, den Suchraum zu verkleinern, ohne das Ergebnis zu verändern, ist die Stärke der Constraint-Programmierung.</p>
+    <p>Was implementiert und bewertet wurde, ist der Fall, dass sich eine Variable in eine Richtung weiterbewegt. Wenn sich die Richtung der Veränderung zwischendurch ändert, bleibt dies bis zum Entwurf beschränkt, und die Bewertung bleibt als zukünftige Aufgabe bestehen. Es besteht auch die Möglichkeit, weitere unnötige Einschränkungen zu finden, indem man Eigenschaften außer der Monotonie nutzt.</p>
+    <p>Dass ich als gegenwärtiges Ich versuche, nicht direkt die Ausgaben der KI zu gestalten, sondern die Bedingungen und Grenzen zu entwerfen, innerhalb derer die KI erkunden kann, hängt ebenfalls mit dieser Erfahrung zusammen. Wenn man mit komplexen Ergebnissen umgeht, ist es ebenso wichtig zu definieren, was nicht bedacht werden muss, wie zu bestimmen, was berechnet werden soll.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi und Kazunori Ueda: „Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa“. 33. Jahreskonferenz der Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
   <nav aria-label="Website">
     <ul>

@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>关于人机交互设计的硕士论文 — 堀内贵文</title>
-<meta name="description" content="硕士研究：一套碰撞回避系统，读取操作者的视线，在作业当下而非事先区分可以触碰的物体与需要保护的物体。">
+<title>关于人与机器人互动设计的硕士论文 — Takafumi Horiuchi</title>
+<meta name="description" content="将操作者所看到的范围转换为机器人可以接触的条件。提出并实现了一种将人的认知状态纳入安全控制、在无需事先目标注册的情况下防止碰撞的系统的硕士研究。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="关于人机交互设计的硕士论文">
-<meta property="og:description" content="以操作者正在看的地方，决定机器人可以触碰什么。">
+<meta property="og:title" content="关于人与机器人互动设计的硕士论文">
+<meta property="og:description" content="将人类可见的范围转换为机器人可以触碰的条件。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="由机器人扫描而成的黄色体素虚拟作业空间，操作者的视野以带色的锥体画出。">
+<meta property="og:image:alt" content="机器人扫描的黄色体素虚拟工作空间。操作者的视野被描绘为有颜色的锥体。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -54,15 +54,20 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "关于人机交互设计的硕士论文",
+      "headline": "关于人与机器人互动设计的硕士论文",
       "url": "https://takafumihoriuchi.github.io/zh-Hans/works/masters-thesis-hmi-design/",
-      "description": "硕士研究：一套碰撞回避系统，读取操作者的视线，在作业当下而非事先区分可以触碰的物体与需要保护的物体。",
+      "description": "将操作者所看到的范围转换为机器人可以接触的条件。提出并实现了一种将人的认知状态纳入安全控制、在无需事先目标注册的情况下防止碰撞的系统的硕士研究。",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "zh-Hans",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Katsuya Kanaoka" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Katsuya Kanaoka"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -78,7 +83,7 @@
 <main>
 
   <header>
-    <h1>关于人机交互设计的硕士论文</h1>
+    <h1>关于人与机器人互动设计的硕士论文</h1>
     <div class="identity">
       <p class="tagline">作者：<a class="byline" href="../../">堀内贵文（Takafumi Horiuchi）</a></p>
       <nav aria-label="Profiles elsewhere">
@@ -92,10 +97,10 @@
   </header>
 
   <section>
-    <h2>概述</h2>
-    <p class="lead">操作大型机器人的人，一次只能注意作业空间的一部分。这项研究问的是：如果把这份注意力此刻所在的位置告诉机器，会有什么改变。我设计了一套碰撞回避系统，由操作者的视线决定机器人可以怎样动作：落在操作者中央视野内的物体可以自由操作，落在视野之外的则受到保护——手臂会减速，并在触及之前停住。不需要事先为任何物体贴标签。这条界线是在作业发生的当下、从操作者恰好望向的地方划出来的。演示影片见<a class="ext" href="https://youtu.be/-DvWxzJvK3I">这里（YouTube）</a>。</p>
-    <p>这项工作是我在米兰理工大学 Design &amp; Engineering 的硕士论文，在日本人机一体股份有限公司的研究实习期间完成，并在<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">第39届日本机器人学会学术讲演会（RSJ2021）</a>上发表。</p>
-    <p>我如今的<a href="../../">设计理念</a>也是从这里开始成形的。这套系统读到的不是指令，而是一种认知状态——某样东西究竟有没有被看见——并把这个状态转化为机器获准动作的条件。被设计的对象不是机器人的动作，而是关系：机器可以做什么，取决于人此刻理解了什么。设计这层关系而不是逐一设计行为，与我如今面对生成式AI而非机械臂时所做的，是同一个动作。</p>
+    <h2>概要</h2>
+    <p class="lead">在有人操作的大型机器人中，仅依靠周围的传感器很难区分接近作业对象的动作和朝着被忽视的障碍物的动作。因此，我们设计了一种碰撞回避系统，该系统将操作者的可视范围作为“可以接触”的意图线索，当接近看不见的对象时会减速或停止机械臂。</p>
+    <p>不需要事先将对象注册为“可操作”或“保护对象”。这一区分会根据操作人员在作业中的视线进行更新。在身高1.9米的人型重型机械机器人上实现，在5次演示试验中确认了所定义的行为成立。实际动作可以在<a class="ext" href="https://youtu.be/-DvWxzJvK3I">演示视频</a>中看到。</p>
+    <p>作为米兰理工大学设计与工程专业的硕士论文，在株式会社人机一体的研究实习期间进行，并在<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">第39届日本机器人学会学术演讲会（RSJ2021）</a>进行发表。</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -111,110 +116,109 @@
          image so its smaller type stays reachable. -->
     <figure class="deck-figure bleed">
       <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="标题页：Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation，米兰理工大学 Design &amp; Engineering 硕士课程，2020–2021学年。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="背景：论文主题是在人机一体股份有限公司的研究实习期间确定的，该公司开发以主从方式操作的人形重型机械。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="自主机器人与人为操作机器人的对比：前者在围栏内经过设计的空间中高效工作，后者在不确定的空间中与人协作。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="来自欧洲、美国与日本的统计，显示被移动中的物体撞击占建筑工地事故的相当比例。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="碰撞回避的相关研究：覆盖机械臂的感测皮肤，以及构建周围环境虚拟表示的深度传感器。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="当前的难题：既有系统要求通过佩戴标签、图像分析或训练好的分类器，事先把物体定义为受保护或可操作。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="提案：传统系统只使用被动的传感器数据，而人为操作的机器人本来就有人处在控制回路中，其视线可以作为主动参数。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分类规则：位于操作者中央视野之内的物体为可操作物体，之外的为受保护物体。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="原型总览：一台实体机器人搭配一个虚拟计算空间，随后是三项技术组件。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="组件一：中央视野以60°×55°的锥体表示，其方向由VR头显的正前方近似。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="组件二：装在机器人头部的激光雷达把周围环境扫描成点云，并表示为各自带有碰撞体的体素。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="组件三：机器人的数字孪生随实体机器人一同运动，当其手臂触及视野之外的体素时触发接近警告。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="概念验证演示：机器人伸向立柱上球体的影片截图，并嵌入虚拟体素视图。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="未来工作：检测作业空间中的人、测试测量视线方向的其他方法，以及在现场对系统作定量评估。"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="结论页，总结研究主题、方法的价值、新颖之处，以及系统是如何验证的。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="标题幻灯片。基于意识的碰撞防护用于人类控制的机器人操作，米兰理工大学设计与工程硕士课程，2020–2021 学年度。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="背景。论文主题是在研究实习期间，在开发人形重机并以主从式操作的公司——株式会社人机一体——中决定的。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="自律机器人与人工操作机器人的比较。前者在栅栏内的设计空间中高效工作，后者在不确定的空间中与人共同工作。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="欧洲、美国、日本的统计。显示与移动物体的接触在建筑工地事故中占相当大的比例。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="关于冲突回避的先行研究。覆盖机械臂的感觉皮肤，以及虚拟重现周围环境的深度传感器。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="当前的问题。现有的系统要求通过佩戴的标签、图像分析和训练好的识别器，事先将对象定义为“保护”或“可操作”。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="提案。传统系统只使用被动的传感器信息，但在人工操作机器人中，人本身就在控制回路中，可以将人的目光作为主动的参数使用。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分类规则。位于操作者中心视野内的对象可以操作，位于外侧的对象则成为保护对象。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="原型的整体图。结合实际的机器人和虚拟的计算空间，三个技术要素接连出现。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素①。将中心视野表示为60°×55°的锥体，并以VR头显的前方方向作为近似。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素②。安装在机器人头部的LIDAR扫描周围环境，以点云的形式表示，每个点云被表示为具有碰撞体的体素。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="要素③。机器人的数字孪生与实际设备一样运动，当其机械臂触碰到视野之外的体素时，会发出接近警告。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="概念验证的演示。手伸向杆子上的球的机器人的画面静止图，以及虚拟空间的体素显示。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="今后的课题。在作业空间内检测人员，验证测量视线方向的其他方法，以及进行实际的定量评估。"></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="结论总结。研究主题、方法的价值、新颖性，以及系统是如何验证的。"></a></li>
       </ol>
-      <figcaption>硕士论文答辩所用的幻灯片。可横向滚动，每一页都能以原始尺寸打开。</figcaption>
+      <figcaption>在硕士论文最终答辩中使用的幻灯片。可以横向滚动，每张幻灯片都以原始大小打开。</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>摘要</h2>
-    <p>人为操作的机器人恰恰在自主机器人无能为力之处最有价值：在并非为当前作业而设计的空间里，在不能被撞到的人与设备旁边。既有的碰撞回避系统应对这类空间的方式，是要求每一个物体都事先被声明为操作目标或需要保护之物——对一台要在工地之间搬运的机器来说，这份配置成本会大到无法承受。</p>
-    <p>本研究提出把这项区分改在运行时作出，依据是操作者的视线。位于操作者中央视野之内的物体视为可操作，之外的视为受保护，而人在任何情况下都受保护。这一方法把一个主动参数——来自人的参数——引入了此前完全由被动传感器数据构成的控制回路。原型实现在身高1.9米的人形重型机械机器人 JINKI type Zero 上，并在五次演示试验中按定义运行。</p>
+    <h2>课题——为了安全的事前设置，束缚了现场</h2>
+    <p>需要人类操作机器人的地方，是那些未为自主机器人准备的场所。像建筑工地或灾区现场一样，人和设备的布局会发生变化，每项作业可以接触的对象也会不同。要使用机器的巨大力量，必须在防止意外接触的同时，能够接触到必要的对象。</p>
+    <p>现有的碰撞回避方法包括用近距离传感器覆盖机器人，或用深度传感器在虚拟空间中重现周围环境。不过，无论哪种方法，都需要事先将对象分类为“可操作”还是“保护对象”。如果没有任何登记，为了安全起见什么也无法触碰；如果要全部登记，每个现场都需要进行设置和校准。这种准备负担降低了可以移动到不同场所使用的机器人的实用性。</p>
   </section>
 
   <section>
-    <h2>1. 引言</h2>
-    <p>人为操作的机器人兼具两样难以同时获得的东西：机器的力量与精度，以及人的情境判断。完全自主的机器人尚未提供后者。而且，工业机器人在围栏内经过设计的单元中工作，人为操作的机器人却要在为别的用途布置的场所工作——在现场工人身旁、在精密设备之间、在核设施与建筑工地。因此，能够保证机器人不损坏周围之物，本身就是它可用与否的一部分。</p>
-    <p>针对意外接触，已确立的两种防护是：以接近传感器覆盖机械臂所有关键部位的感测皮肤，以及把周围环境重建为点云、在虚拟空间中计算距离的深度感测。两者都有效。但两者都预设机器人周围的物体已经被分为可以触碰的与不可触碰的：没有这道分类，一台被禁止碰撞任何东西的机器也就无法操作任何东西。对于一件在工地之间搬运、被放在现场既有环境中的通用工具而言，这道配置与校准的成本，高过它所换来的安全。</p>
-    <p>本研究切入的口子在于：人为操作的机器人本来就有人处在控制回路之中。关于操作失误的研究把情境意识——准确掌握周围正在发生什么——列为决定性因素，而情境意识已知与视线方向高度相关。碰撞回避历来只由被动信息构成，也就是从传感器读到的数据。加入一个主动参数，即操作者正在看哪里，就给了系统一个线索：与某个物体的接触究竟是不是有意的。</p>
+    <h2>着想——将视线变为“可以触碰的条件”</h2>
+    <p>在人类操作机器人的控制循环中，已经有人在判断状况。如果能够将人注意的方向传递给机器，我认为可以在作业过程中推测接触的意图，而不必事先注册对象。</p>
+    <p>因此，以操作者的中央视野为界。在视野内的对象，被视为操作者掌握的“可操作对象”。在视野外的对象，被视为可能被忽视的“保护对象”。无论人的视线位置如何，总是将其视为保护对象。</p>
+    <p>这不是通过视线向机器人发送命令的机制。而是将操作者的认知状态转换为机器人可以运动的条件的机制。</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="俯视图：机器人前方以锥体标出操作者的中央视野。锥体内的物体A画成白色圆形，锥体外的物体B、C、D画成深色方块，两个人形分别站在锥体内外。">
-      <figcaption>位于操作者中央视野内的物体A可以操作；位于视野之外的物体B、C、D受到保护。人无论站在哪里都受到保护。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="从上方看到的图。机器人的前方描绘了操作者的中心视野作为锥体。锥体内部的目标A用白色圆表示，外部的目标B、C、D用深色方块表示，两个人分别站在锥体的内外。">
+      <figcaption>位于操作者中心视野内的目标A是可操作的，位于外侧的目标B、C、D是保护对象。无论人站在哪里，都会受到保护。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. 系统行为</h2>
-    <p>操作者有意触碰的物体称为<em>可操作物体</em>，可以不受限制地处理。操作者并无此意的物体则是<em>受保护物体</em>，不得触碰。某个物体在某一瞬间属于哪一类，取决于它相对于操作者中央视野的位置：在视野之内，该物体处在足以视为有意的注意之下；在视野之外，则不然。</p>
-    <p>由此导出的行为由五条规则规定。机械臂可以自由地与中央视野内的物体发生接触。它不能与视野之外的物体发生接触，并在接近时逐渐停止。停止之后，随着操作者的视野移到它身上而逐渐解除限制。如果视野离开了机械臂已经接触着的物体，则不施加限制，好让进行中的作业不会因为看了一眼别处而中断。而对人，无论那个人站在哪里，机械臂都不得与之发生接触。当机器人有多条机械臂时，规则对每一条分别适用。</p>
-    <p>操作者由此获得的是：对正在注视的对象全速作业，同时可以信赖机器不会撞上未在注视的设备。现场人员的安全是无条件的，完全不取决于操作者的意图。</p>
+    <h2>交互设计</h2>
+    <p>系统不会将视线位置作为简单的开关处理。当接近未注视的目标时，机械臂会根据距离逐渐减速，并在接触前停止。停止后，当操作者将视线转向目标时，限制也会逐渐解除。避免了突然停止或突然移动的行为，使操作者能够预测变化。</p>
+    <p>另一方面，即使暂时移开对已经接触的对象的视线，也不会停止正在进行的作业。因为仅仅移开视线就中断抓握或操作，反而会变得不稳定。只有接近人这一情况是例外，无论操作员是否在看，都要加以限制。</p>
+    <p>目标并不是为了安全而统一减慢作业速度。而是在操作员能够掌握的范围内保持机器人的能力，仅保护操作员注意不到的范围，从而实现安全性与作业性的兼顾。</p>
 
     <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="流程图从自由运动状态开始，依次判断物体是否在近处、是否为人、机械臂是否朝人接近、物体是否在注视区域内，最终导向精细操作、逐渐停止或锁定。">
-      <figcaption>在整个判断过程中，只有“物体是否在注视区域内”这一个节点读取操作者的主动参数。其余分支全部依靠被动的传感器数据。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="从自由动作状态开始的流程图。根据对象是否在附近、是否为人、操纵器是否在靠近人的方向、对象是否在注视区域而分支，最终达到精密动作、逐步停止或锁定。">
+      <figcaption>在判断的过程中，读取操作者主动参数的节点只有“对象是否在注视区域”这一项。其他分支全部依靠被动的传感器信息运作。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>3. 预期效益</h2>
-    <p>与这类作业最接近的现有图景是重型机械：巨大的力量施加在人旁边、未经整备的场所。碰撞事故是全世界建筑工地的主要危险之一，而注意力不集中被反复列为原因。2018年欧洲建筑工地记录的362,600起事故中，19.6%与被移动中的物体撞击有关；一项针对起重机相关事故的调查，把其中19%归因于操作者的疏忽。</p>
-    <p>由于注意力与视线方向高度相关，把这两个比例结合起来，可以粗略估计基于视线的系统所能覆盖的范围——在欧洲约为每年一万三千起。这个数字是由公开统计推论而来，而非测量结果，仅作为量级的参考。</p>
+    <h2>设想的使用场景</h2>
+    <p>针对的是像建筑工地或灾害现场这样，在人附近处理巨大力量的场景。在这些地方，完全用栅栏隔开周围环境或者事先登记所有对象都是困难的。如果每次位置变化都需要重新设置安全机制，就会失去紧急性和通用性。</p>
+    <p>基于视线的区分不是使用固定的环境模型，而是利用当下人的情境认知。在减少现场准备负担的同时，可能抑制对被忽视对象的接近。不过，这项研究确认的只是系统按定义运行的情况，事故降低的效果尚未进行实地评估。</p>
   </section>
 
   <section>
-    <h2>4. 系统验证</h2>
-    <p>作为概念验证，搭建并运行了一套演示系统。</p>
+    <h2>原型和初步评估</h2>
 
-    <h3>4.1 实现</h3>
-    <p>系统实现在 JINKI type Zero 上，这是人机一体股份有限公司开发的机器人。它具有人的上半身形态，高1.9米，重600公斤，共30个自由度。操作者与机器人处于同一场所，以主从方式耦合：VR头显把操作者的视野与头部转动同步到机器人上，带来与机器合为一体、而非在驾驶机器的感觉。</p>
-    <p>装在机器人上的激光雷达把周围作业场所扫描成点云，点云在虚拟空间中表示为各自带有碰撞体的体素。机器人的数字孪生在同一空间中运动；当它的手臂与体素重叠时，系统发出接近警告，其作用方式取决于操作者视野的方向。该视野建模为60°×55°（水平×垂直）的锥体——接近于人能够感知符号、颜色与深度的区域——其方向由头显的正前方近似。警告传送到实体机器人，并按上述规则塑造它的动作。</p>
+    <h3>实现</h3>
+    <p>系统被实现于一个身高1.9米、重量600千克、具有30个自由度、形状类似人类上半身的机器人上。操作者佩戴VR头显，通过将机器人的视野和头部方向与自己的动作同步来操作它。</p>
+    <p>使用机器人上的LIDAR将工作空间作为点云获取，并在虚拟空间中以具有碰撞判定的体素表示。该空间运行着与实机同步的数字孪生。操作者的中心视野表示为60°×55°的锥体，并以头戴显示器的正前方向近似其方向。当机械臂靠近视野外的体素时，会向实机发送警告，使其减速或停止。</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="虚拟场景：黄色体素重建出周围环境，一片标注为“操作者的中央视野”的半透明红色区域从中穿过，白色的机器人数字孪生正伸向位于该区域之外的一个障碍物。">
-      <figcaption>容纳机器人与扫描点云的虚拟空间。此处机器人正触及位于操作者中央视野之外的障碍物。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="虚拟空间的场景。黄色的体素重构着周围，被标记为“操作者的中心视野”的半透明红色区域穿过其中，白色数字孪生机器人正向该区域外的障碍物伸手。">
+      <figcaption>包含了机器人和扫描点云的虚拟空间。在这里，机器人接触到操作者中心视野之外的障碍物。</figcaption>
     </figure>
 
-    <h3>4.2 演示实验</h3>
-    <p>一次初步评估检验了实现是否符合定义。要求操作者：一边望向别处一边把手臂朝立柱移动，确认系统已发出警告并使手臂停止，再把视线转向停住的手臂以解除限制，最后在保持注视的情况下取走立柱顶端的球。共进行五次试验：第一至三次与第五次由熟练操作者完成，第四次由第二次驾驶该机器人的人完成。每次均有录像。五次试验中，系统都按第2节的定义运行。演示可见<a class="ext" href="https://youtu.be/-DvWxzJvK3I">系统运行中的影片</a>。</p>
+    <h3>预备评价</h3>
+    <p>操作员在将视线从目标移开时，将机械臂靠近，停止后再将视线转回到目标以解除限制，最后抓住球的一系列操作进行了尝试。在5次尝试中，4次由熟练的操作员进行，1次由第二次操作的乘员进行。所有尝试中，当视线离开时机械臂会停止，当视线回到目标时操作可以继续。这不是为了测量有效性的用户实验，而是为了确认设计的行为在实际设备上是否可行的初步评估。</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="机器人的照片，操作者悬坐在其上方的框架中，望向一侧。机械手停在黄色立柱上那颗蓝黄相间的球之前，剩余的间距被标了出来。">
-      <figcaption>操作者的视线移开，手臂在距物体一段距离处停住。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="机器人的照片。在其上方的框架上，操作员坐在上面，侧身。机器人的手停在黄色杆子上的蓝黄球前面，剩余的距离被显示出来。">
+      <figcaption>操作者的视线移开，机械臂与目标保持一定距离后停止。</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="从较低角度拍摄的照片：操作者望向球，机械手握住了黄色立柱上那颗蓝黄相间的球。">
-      <figcaption>视线朝向物体时，同样的动作不受限制地进行。</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="从下方角度的照片。操作员正在看着球，机器人手抓住了黄色柱子上蓝色和黄色的球。">
+      <figcaption>只要视线朝向目标，相同的动作就可以不受限制地进行。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. 局限与未来工作</h2>
-    <p>原型没有实现对人的检测。需要验证的是操作者的视线与物体可操作性之间的关系，而保护人的那条规则是无条件的，并不依赖于它。加入这项检测会让系统更为稳健，也会打开安全之外的应用——例如在操作者的视野中突出显示机器人附近的人，或者在接近警告生效之前发出提示。</p>
-    <p>视线以头显的正前方近似。之所以这样选，是看中它的直接，这在主从系统中很重要；但其他器材——固定摄像机、智能眼镜中的眼动仪——会以不同方式估计视线，也许能降低在不习惯佩戴设备的行业里引入这套系统的心理门槛。把这一方法用到移动机器人上还会带来另一个问题：JINKI type Zero 在开发阶段是固定不动的，而在作业中会改变位置的机器，需要足以跟上的高效点云处理。</p>
-    <p>评估本身仍是定性的。要恰当地判断这套系统，正途是在现场做定量研究，而这要等到机器人进入实用阶段。</p>
+    <h2>极限与下一次验证</h2>
+    <p>原型中未实现人的检测。虽然制定了无论视线如何都始终保护人的规则，但在实际环境中需要有能够可靠识别人的机制。此外，由于不是使用视线本身，而是将头戴设备的正面方向作为代理值，因此只移动眼睛的情况下无法捕捉到。</p>
+    <p>如果使用固定摄像头或带视线测量的智能眼镜，佩戴设备和估计精度的条件会有所变化。在部署到移动机器人时，还需要能够跟随机器人自身位置变化的点云处理。</p>
+    <p>评价仅限于通过5次演示试验进行的定性确认。要判断安全性、作业速度和操作人员的负担，需要在实际作业条件下，与传统方法进行定量比较。</p>
   </section>
 
   <section>
-    <h2>6. 结论</h2>
-    <p>本研究提出了一套面向人为操作机械臂的碰撞回避系统，利用操作者的视线来防止与人和设备发生意外接触。在意识与视线方向高度相关这一前提下，位于操作者中央视野之内的物体视为可操作，之外的视为受保护。把人的因素放进控制回路，使得这条界线可以在运行时划出，而不需要既有方法所要求的任何准备。</p>
-    <p>系统在一台通用重型机械机器人上得到验证，并按定义运行。同样的原理应当可以推广到任何本来就有人处在操作回路之中的场合。</p>
+    <h2>从这项研究中获得的视角</h2>
+    <p>在这项研究中，我们不是将人的视线用作输入设备，而是将其作为允许机器行为的条件。根据人当前掌握的内容，对同一对象的机器人的行为会发生变化。我们设计的不是单个动作，而是人的认知状态与机器权限之间的关系。</p>
+    <p>这种思维方式也与现在的<a href="../../">我的设计哲学</a>相连。理解人的状态，并将其转化为系统应遵守的约束，然后机器或人工智能在其中发挥能力。硕士研究成为了那个出发点。</p>
   </section>
 
   <section>
     <h2>致谢</h2>
-    <p>本研究是在米兰理工大学 Design &amp; Engineering 硕士学位的部分要求下，于人机一体股份有限公司实习期间完成的。谨向促成这一机会的两家机构致以谢意。</p>
+    <p>本研究是在米兰理工大学设计与工程硕士课程的一部分，以及在株式会社人机一体实习期间进行的。对促成这一机会的两家机构表示衷心感谢。</p>
   </section>
 
-  <p class="citation publication-citation">堀内贵文、金冈克弥《Gaze-based Unintended Contact Prevention for Human-Operated Robots》，第39届日本机器人学会学术讲演会，2021年，编号 2J2-07。<a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">大会日程</a></p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a></p>
 
   <nav aria-label="Site">
     <ul>

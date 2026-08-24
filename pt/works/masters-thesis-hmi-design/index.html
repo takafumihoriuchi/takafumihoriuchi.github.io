@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Dissertação de mestrado sobre o design da interação entre pessoas e robôs — Takafumi Horiuchi</title>
-<meta name="description" content="Pesquisa de mestrado sobre um sistema de prevenção de colisões que lê o olhar do operador para distinguir os objetos que podem ser manipulados daqueles que devem ser protegidos, no momento do trabalho e não de antemão.">
+<title>Dissertação de mestrado sobre design de interação entre humanos e robôs — Takafumi Horiuchi</title>
+<meta name="description" content="Transforma o alcance que o operador vê em condições que o robô pode tocar. Pesquisa de mestrado que propôs e implementou um sistema que incorpora o estado cognitivo humano no controle de segurança e previne colisões sem registro prévio dos objetos.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/pt/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Dissertação de mestrado sobre o design da interação entre pessoas e robôs">
-<meta property="og:description" content="Usar para onde o operador está olhando para decidir o que um robô pode tocar.">
+<meta property="og:title" content="Dissertação de mestrado sobre design de interação entre humanos e robôs">
+<meta property="og:description" content="Converter o alcance que uma pessoa está observando nas condições em que o robô pode tocar.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/pt/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Um espaço de trabalho virtual de voxels amarelos escaneado por um robô, com o campo de visão do operador desenhado como um cone colorido.">
+<meta property="og:image:alt" content="Espaço de trabalho virtual de voxels amarelos escaneado pelo robô. O campo de visão do operador é representado por um cone colorido.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -53,15 +53,20 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/pt/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "Dissertação de mestrado sobre o design da interação entre pessoas e robôs",
+      "headline": "Dissertação de mestrado sobre design de interação entre humanos e robôs",
       "url": "https://takafumihoriuchi.github.io/pt/works/masters-thesis-hmi-design/",
-      "description": "Pesquisa de mestrado sobre um sistema de prevenção de colisões que lê o olhar do operador para distinguir os objetos que podem ser manipulados daqueles que devem ser protegidos, no momento do trabalho e não de antemão.",
+      "description": "Transforma o alcance que o operador vê em condições que o robô pode tocar. Pesquisa de mestrado que propôs e implementou um sistema que incorpora o estado cognitivo humano no controle de segurança e previne colisões sem registro prévio dos objetos.",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "pt",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Katsuya Kanaoka" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Katsuya Kanaoka"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -77,7 +82,7 @@
 <main>
 
   <header>
-    <h1>Dissertação de mestrado sobre o design da interação entre pessoas e robôs</h1>
+    <h1>Dissertação de mestrado sobre design de interação entre humanos e robôs</h1>
     <div class="identity">
       <p class="tagline">por <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profiles elsewhere">
@@ -91,10 +96,10 @@
   </header>
 
   <section>
-    <h2>Visão geral</h2>
-    <p class="lead">Quem opera um robô grande só consegue atender a uma parte do espaço de trabalho de cada vez. Esta pesquisa perguntou o que muda se a máquina souber onde essa atenção está a cada instante. Projetei um sistema de prevenção de colisões em que o olhar do operador decide como o robô pode se comportar: o que está dentro do seu campo de visão central pode ser manipulado livremente, enquanto o que fica fora é protegido — o braço desacelera e para antes de chegar. Nada precisa ser rotulado de antemão. A distinção é traçada no momento do trabalho, a partir de onde o operador está olhando. O vídeo da demonstração está <a class="ext" href="https://youtu.be/-DvWxzJvK3I">aqui (no YouTube)</a>.</p>
-    <p>O trabalho foi minha dissertação de mestrado em Design &amp; Engineering no Politecnico di Milano, realizado durante um estágio de pesquisa na Man-Machine Synergy Effectors, Inc. no Japão, e foi apresentado na <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">39.ª Conferência Anual da Robotics Society of Japan (RSJ2021)</a>.</p>
-    <p>É também onde a <a href="../../">minha filosofia de design</a> começa a tomar a forma que tem hoje. O que este sistema lê não é um comando, mas um estado cognitivo — se algo chegou sequer a ser notado — e converte esse estado nas condições sob as quais a máquina tem permissão para agir. O que se projeta não é o movimento do robô, e sim a relação: o que a máquina pode fazer decorre do que a pessoa compreende naquele instante. Projetar essa relação em vez de cada comportamento isolado é o mesmo gesto que faço agora que quem age é uma IA generativa, e não um braço robótico.</p>
+    <h2>Resumo</h2>
+    <p class="lead">Em robôs grandes operados por humanos, é difícil distinguir apenas com sensores ao redor os movimentos de aproximação ao objeto de trabalho dos movimentos em direção a obstáculos negligenciados. Portanto, foi projetado um sistema de prevenção de colisões que usa a área que o operador está olhando como uma pista da intenção de "permitir toque" e desacelera ou para o braço quando se aproxima de um objeto que não está sendo observado.</p>
+    <p>Não é necessário registrar antecipadamente o alvo como "operável" ou "protegido". Essa distinção é atualizada de acordo com o olhar do operador durante o trabalho. Foi implementado em um robô pesado humanóide de 1,9 m de altura e, em cinco ensaios de demonstração, foi confirmado que o comportamento definido funciona. O funcionamento real pode ser visto em <a class="ext" href="https://youtu.be/-DvWxzJvK3I">Vídeo de demonstração</a>.</p>
+    <p>Como parte da tese de mestrado em Design &amp; Engineering na Universidade Politécnica de Milão, trabalhei nisso durante um estágio de pesquisa na empresa Jinki Ittai Corporation e apresentei na <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">39ª Conferência Acadêmica da Sociedade Japonesa de Robótica (RSJ2021)</a>.</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -110,110 +115,109 @@
          image so its smaller type stays reachable. -->
     <figure class="deck-figure bleed">
       <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Slide de título: Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation, Politecnico di Milano, Laurea Magistrale in Design &amp; Engineering, ano letivo de 2020–2021."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Contexto: o tema da dissertação foi definido durante um estágio de pesquisa na Man-Machine Synergy Effectors, Inc., empresa que desenvolve maquinário pesado antropomórfico operado por um sistema mestre-escravo."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Robôs autônomos comparados a robôs operados por pessoas: os primeiros trabalham com eficiência em espaços projetados e cercados; os segundos, em espaços incertos ao lado de pessoas."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Estatísticas da Europa, dos Estados Unidos e do Japão mostrando que ser atingido por objetos em movimento responde por uma parcela considerável dos acidentes em canteiros de obras."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Pesquisas relacionadas sobre prevenção de colisões: pele sensível cobrindo o manipulador e sensores de profundidade que constroem uma representação virtual do entorno."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="O desafio atual: os sistemas existentes exigem que os objetos sejam predefinidos como protegidos ou manipuláveis, por meio de etiquetas vestíveis, análise de imagem ou classificadores treinados."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A proposta: sistemas convencionais usam apenas dados passivos de sensores, ao passo que um robô operado por uma pessoa já tem alguém em seu laço de controle, cujo olhar pode servir de parâmetro ativo."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Regra de classificação: objetos dentro do campo de visão central do operador são manipuláveis; os que estão fora são protegidos."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Visão geral do protótipo: um robô físico associado a um espaço de computação virtual, com três componentes técnicos a seguir."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Componente um: o campo de visão central representado como um cone de 60 por 55 graus, cuja direção é aproximada pela direção frontal do headset de realidade virtual."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Componente dois: um LIDAR montado na cabeça do robô escaneia o entorno em nuvens de pontos, representadas como voxels, cada um com seu próprio colisor."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Componente três: um gêmeo digital do robô se move junto com o físico, e avisos de proximidade são disparados quando seu braço encontra voxels fora do campo de visão."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Demonstração de prova de conceito: um quadro do vídeo do robô alcançando uma bola sobre um poste, com a vista virtual de voxels inserida."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Trabalhos futuros: detectar pessoas no espaço de trabalho, testar outras formas de medir a direção do olhar e avaliar o sistema quantitativamente em campo."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Conclusão resumindo o tema da pesquisa, o valor do método, sua novidade e como o sistema foi verificado."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Slide de título. Prevenção de Colisão Baseada em Consciência para Manipulação Robótica Controlada por Humanos, Mestrado em Design &amp; Engineering da Universidade Politécnica de Milão, ano letivo de 2020–2021."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Contexto. O tema da tese foi decidido durante um estágio de pesquisa na empresa Jinki-ittai Co., Ltd., que desenvolve máquinas pesadas humanoides e as opera no modo master-slave."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparação entre robôs autônomos e robôs operados por humanos. Os primeiros trabalham de forma eficiente em espaços projetados dentro de cercas, enquanto os últimos trabalham junto com pessoas em espaços incertos."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Estatísticas da Europa, dos Estados Unidos e do Japão. Indica que o contato com objetos em movimento representa uma proporção considerável dos acidentes em canteiros de obras."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Pesquisa anterior sobre prevenção de colisões. Pele sensorial que cobre o manipulador e sensor de profundidade que reproduz virtualmente o ambiente ao redor."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Desafios atuais. O sistema existente exige que o alvo seja previamente definido como 'protegido' ou 'operável' por meio de etiquetas acopladas, análise de imagens e um classificador aprendido."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Proposta. Os sistemas convencionais utilizam apenas informações de sensores passivos, mas os robôs operados por humanos já têm pessoas dentro do loop de controle, e o olhar delas pode ser usado como um parâmetro ativo."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Regras de classificação. Os objetos dentro do campo de visão central do operador podem ser manipulados, enquanto os objetos fora dele devem ser protegidos."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Visão geral do protótipo. Combinando o robô real com o espaço de cálculo virtual, três elementos tecnológicos seguem."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemento ①. Representar o campo visual central como um cone de 60° × 55° e aproximar sua direção para a frente do headset de VR."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemento ②. O LIDAR colocado na cabeça do robô escaneia o ambiente como uma nuvem de pontos, sendo cada ponto representado como um voxel com um colisor."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemento ③. O gêmeo digital do robô se move da mesma forma que o equipamento real, e quando seu braço toca um voxel fora do campo de visão, um aviso de proximidade é emitido."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Demonstração de prova de conceito. Imagem parada de um robô estendendo a mão para a bola em um mastro e exibição de voxels em um espaço virtual."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Desafios futuros. Detecção de pessoas no espaço de trabalho, verificação de outros métodos para medir a direção do olhar e avaliação quantitativa em campo."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Resumo da conclusão. Tema da pesquisa, valor do método, novidade, e como o sistema foi verificado."></a></li>
       </ol>
-      <figcaption>Slides da defesa da minha dissertação. Role a faixa para o lado; qualquer slide abre em tamanho real.</figcaption>
+      <figcaption>Slides usados na apresentação final da tese de mestrado. Podem ser rolados horizontalmente, e cada slide abre no tamanho real.</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Resumo</h2>
-    <p>Robôs operados por pessoas valem justamente onde os autônomos não valem: em espaços de trabalho que nunca foram projetados para a tarefa em questão, ao lado de pessoas e equipamentos que não podem ser atingidos. Os sistemas de prevenção de colisões existentes lidam com esses espaços exigindo que cada objeto seja declarado de antemão como alvo de manipulação ou como algo a proteger — um custo de configuração que se torna inviável para uma máquina feita para ser levada de obra em obra.</p>
-    <p>Esta pesquisa propôs fazer essa distinção em tempo de execução, a partir do olhar do operador. Objetos dentro do campo de visão central são tratados como manipuláveis, os de fora como protegidos, e pessoas como protegidas em qualquer circunstância. O método introduz um parâmetro ativo — humano — em um laço de controle até então construído inteiramente com dados passivos de sensores. O protótipo foi implementado no JINKI type Zero, um robô antropomórfico de maquinário pesado de 1,9 m, e se comportou conforme o especificado em cinco ensaios de demonstração.</p>
+    <h2>Problema — As configurações prévias para segurança restringem o local</h2>
+    <p>Os robôs operados por humanos são necessários em locais que não estão preparados para robôs autônomos. Em lugares como canteiros de obras ou locais de desastres, a disposição de pessoas e equipamentos muda, e o que pode ser tocado também muda a cada tarefa. Para usar a grande força das máquinas, é necessário poder tocar nos objetos necessários enquanto se previne contatos indesejados.</p>
+    <p>Para a prevenção de colisões existente, há métodos como cobrir o robô com sensores de proximidade ou reproduzir o ambiente circundante em um espaço virtual usando sensores de profundidade. No entanto, ambos exigem classificar previamente os objetos como "operáveis" ou "a proteger". Se nada for registrado, não será possível tocar em nada por segurança, e registrar tudo requer configuração e calibração em cada local. Esse peso de preparação reduzia a praticidade de robôs que são usados em diferentes locais.</p>
   </section>
 
   <section>
-    <h2>1. Introdução</h2>
-    <p>Um robô operado por uma pessoa combina duas coisas difíceis de obter juntas: a potência e a precisão de uma máquina e o julgamento situacional de um ser humano. Robôs plenamente autônomos ainda não fornecem o segundo. E enquanto robôs industriais trabalham em células projetadas atrás de cercas, os operados por pessoas devem trabalhar em lugares arranjados para outra finalidade — ao lado dos trabalhadores da obra, entre equipamentos delicados, em instalações nucleares e em canteiros. Garantir que o robô não danifique o que está ao redor é, portanto, parte do que o torna utilizável.</p>
-    <p>As defesas estabelecidas contra o contato acidental são a pele sensível, em que sensores de proximidade cobrem cada parte crítica do manipulador, e o sensoriamento de profundidade, em que o entorno é reconstruído como nuvem de pontos e as distâncias são calculadas nesse espaço virtual. Ambas funcionam. Ambas, porém, pressupõem que os objetos ao redor do robô já tenham sido separados entre os que ele pode tocar e os que não pode: sem essa separação, uma máquina proibida de colidir com qualquer coisa também não consegue manipular nada. Para uma ferramenta de uso geral transportada entre obras e colocada em meio ao que houver ali, a configuração e a calibração que isso exige custam mais do que a segurança que compram.</p>
-    <p>A brecha por onde esta pesquisa entra é que um robô operado por uma pessoa já tem alguém dentro do seu laço de controle. Estudos sobre erro operacional apontam a consciência situacional — uma compreensão precisa do que está acontecendo ao redor — como o fator decisivo, e sabe-se que ela se correlaciona fortemente com a direção do olhar. A prevenção de colisões vinha sendo construída convencionalmente apenas com informação passiva, isto é, dados lidos de sensores. Acrescentar um único parâmetro ativo, para onde o operador está olhando, dá ao sistema um indício de se o contato com determinado objeto seria intencional ou não.</p>
+    <h2>Ideia — transformando o olhar em uma 'condição em que se pode tocar'</h2>
+    <p>No loop de controle de um robô operado por humanos, já há uma pessoa que julga a situação. Se conseguirmos transmitir à máquina para onde a pessoa está direcionando sua atenção, pensei que, em vez de registrar o alvo antecipadamente, talvez seja possível estimar a intenção de contato durante o trabalho.</p>
+    <p>Portanto, utiliza-se o campo visual central do operador como limite. Os objetos dentro do campo visual são considerados "alvos operáveis" que o operador compreende. Os objetos fora do campo visual são considerados "alvos a proteger" que podem ter sido negligenciados. As pessoas, independentemente da posição do olhar, são sempre consideradas alvos a proteger.</p>
+    <p>Isto não é um mecanismo para enviar comandos ao robô usando o olhar. É um mecanismo que converte o estado cognitivo do operador em condições para que o robô possa se mover.</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Diagrama visto de cima: um cone marca o campo de visão central do operador à frente do robô. O objeto A, dentro do cone, é desenhado como um círculo branco; os objetos B, C e D, fora dele, como quadrados escuros, e duas figuras humanas estão uma dentro e outra fora do cone.">
-      <figcaption>O objeto A, dentro do campo de visão central do operador, é manipulável; os objetos B, C e D, fora dele, são protegidos. Pessoas são protegidas onde quer que estejam.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Figura vista de cima. À frente do robô, o campo de visão central do operador é desenhado como um cone. O objeto A, que está dentro do cone, é representado por um círculo branco, enquanto os objetos B, C e D, que estão fora, são mostrados como quadrados escuros, e duas pessoas estão posicionadas dentro e fora do cone.">
+      <figcaption>O objeto A dentro do campo de visão central do operador pode ser manipulado, enquanto os objetos B, C e D do lado de fora se tornam objetos de proteção. A pessoa é protegida esteja ela onde estiver.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. Comportamento do sistema</h2>
-    <p>Um objeto que o operador pretende tocar é chamado de <em>objeto manipulável</em> e pode ser manuseado sem restrição. Um objeto em relação ao qual não há tal intenção é um <em>objeto protegido</em> e não pode ser tocado. Qual dos dois um objeto é em determinado instante decorre de sua posição em relação ao campo de visão central do operador: dentro dele, o objeto está sob consciência suficiente para contar como intencional; fora, não está.</p>
-    <p>Cinco regras governam o comportamento daí decorrente. O manipulador pode interferir livremente com objetos dentro do campo de visão central. Não pode interferir com os que estão fora, e para gradualmente ao se aproximar de um deles. Uma vez parado, é liberado gradualmente conforme o campo de visão do operador se desloca sobre ele. Nenhuma restrição se aplica se o campo de visão deixar um objeto com o qual o manipulador já está em contato, para que um trabalho em curso não seja interrompido por um olhar para outro lado. E o manipulador não pode interferir com um ser humano, onde quer que essa pessoa esteja. Quando um robô tem vários manipuladores, as regras se aplicam a cada um separadamente.</p>
-    <p>O que o operador ganha com isso é poder trabalhar a plena velocidade naquilo que está olhando, confiando que a máquina não atingirá o equipamento que ele não está olhando. A segurança das pessoas no local é incondicional e não depende em nada das intenções do operador.</p>
+    <h2>Design de interação</h2>
+    <p>O sistema não transforma a posição do olhar em um simples interruptor de ligar e desligar. Quando se aproxima de um objeto que não está sendo observado, o braço desacelera gradualmente de acordo com a distância e para antes de entrar em contato. Após a parada, quando o operador dirige o olhar para o objeto, as restrições também são gradualmente liberadas. Isso evita comportamentos de parada ou movimento súbito, permitindo que o operador possa prever as mudanças.</p>
+    <p>Por outro lado, mesmo que se desvie temporariamente o olhar de um objeto que já está sendo tocado, o trabalho em andamento não é interrompido. Isso ocorre porque, se a apreensão ou a operação forem interrompidas apenas por desviar o olhar, isso se tornaria mais instável. A aproximação de pessoas é tratada de forma diferente, sendo limitada independentemente de o operador estar observando ou não.</p>
+    <p>O objetivo não é retardar uniformemente o trabalho por razões de segurança. Trata-se de manter a capacidade do robô dentro do alcance do que o operador compreende e proteger apenas as áreas fora de sua atenção, equilibrando assim segurança e operacionalidade.</p>
 
     <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Fluxograma que começa na manipulação em movimento livre e se ramifica conforme haja um objeto por perto, seja ele humano, o manipulador avance em direção à pessoa e o objeto esteja na zona de foco, levando à manipulação em escala precisa, à parada gradual ou ao bloqueio.">
-      <figcaption>Apenas um nó do processo de decisão — “o objeto está na zona de foco” — lê o parâmetro ativo do operador. Todos os demais ramos funcionam com dados passivos de sensores.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Um fluxograma que começa a partir de um estado de movimento livre. Ele se ramifica dependendo se o objeto está próximo, se é uma pessoa, se o manipulador está na direção de aproximação à pessoa, ou se o objeto está na área de atenção, levando a movimentos precisos, parada gradual ou travamento.">
+      <figcaption>O nó que lê os parâmetros ativos do operador no processo de julgamento é apenas aquele que verifica se o objeto está na área de atenção. Todos os outros ramos funcionam com informações sensoriais passivas.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>3. Benefícios esperados</h2>
-    <p>O maquinário pesado oferece o retrato existente mais próximo desse tipo de trabalho: grandes forças aplicadas em lugares não estruturados ao lado de pessoas. Acidentes por colisão estão entre os principais riscos em canteiros de obras no mundo todo, e a desatenção é repetidamente apontada como causa. Dos 362.600 acidentes registrados em canteiros europeus em 2018, 19,6% envolveram ser atingido por um objeto em movimento; uma investigação de incidentes com guindastes atribuiu 19% deles à desatenção do operador.</p>
-    <p>Como atenção e direção do olhar são fortemente correlacionadas, essas duas proporções podem ser combinadas em uma estimativa aproximada do terreno que um sistema baseado no olhar poderia cobrir — da ordem de treze mil acidentes por ano na Europa. O número é uma inferência a partir de estatísticas publicadas, não um resultado medido, e é oferecido como indicação de magnitude.</p>
+    <h2>Cenários de uso previstos</h2>
+    <p>O foco foi em locais como canteiros de obras e áreas de desastres, onde se lida com grandes forças perto das pessoas. Nesses lugares, é difícil cercar completamente o entorno ou registrar previamente todos os objetos. Um sistema que exige refazer as configurações de segurança sempre que a disposição muda comprometeria a urgência e a versatilidade.</p>
+    <p>A distinção baseada no olhar utiliza a percepção da situação da pessoa no momento, em vez de um modelo de ambiente fixo. Isso pode reduzir a carga de preparação no local e limitar a aproximação de alvos negligenciados. No entanto, o que foi confirmado neste estudo é apenas que o sistema funciona conforme definido, e os efeitos na redução de acidentes não foram avaliados na prática.</p>
   </section>
 
   <section>
-    <h2>4. Verificação do sistema</h2>
-    <p>Um sistema de demonstração foi construído e posto em funcionamento como prova de conceito.</p>
+    <h2>Protótipo e avaliação preliminar</h2>
 
-    <h3>4.1 Implementação</h3>
-    <p>O sistema foi implementado no JINKI type Zero, um robô desenvolvido na Man-Machine Synergy Effectors, Inc. Tem o tronco de um ser humano, mede 1,9 m, pesa 600 kg e conta com trinta graus de liberdade. Operador e robô ficam no mesmo local e são acoplados como um sistema mestre-escravo: um headset de realidade virtual sincroniza a visão e a rotação da cabeça do operador com as do robô, o que dá a sensação de formar um só corpo com a máquina em vez de conduzi-la.</p>
-    <p>Um LIDAR montado no robô escaneia o local de trabalho como nuvens de pontos, representadas em um espaço virtual como voxels, cada um com seu próprio colisor. Um gêmeo digital do robô se move nesse mesmo espaço; quando seu braço se sobrepõe a voxels, o sistema emite um aviso de proximidade cujo efeito depende da direção do campo de visão do operador. Esse campo é modelado como um cone de 60° × 55° (H×V) — próximo à região em que as pessoas percebem símbolos, cor e profundidade — e sua direção é aproximada pela direção frontal do headset. O aviso é transmitido ao robô físico e molda seu movimento segundo as regras acima.</p>
+    <h3>Implementação</h3>
+    <p>O sistema foi implementado em um robô de 1,9 m de altura, 600 kg de peso e 30 graus de liberdade, com uma forma semelhante à parte superior do corpo humano. O operador usa um headset de VR e controla o robô sincronizando sua visão e a direção da cabeça com seus próprios movimentos.</p>
+    <p>O espaço de trabalho foi adquirido como uma nuvem de pontos com LIDAR no robô, e no espaço virtual foi representado como voxels com detecção de colisão. Um gêmeo digital sincronizado com a máquina real opera nesse espaço. O campo de visão central do operador foi representado como um cone de 60° × 55°, e a direção foi aproximada pela frente do headset. Quando o braço se aproxima de voxels fora do campo de visão, um aviso é enviado para a máquina real, fazendo com que ela desacelere ou pare.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Uma cena virtual: voxels amarelos reconstroem o entorno, um volume vermelho translúcido rotulado “campo de visão central do operador” os atravessa, e o gêmeo digital branco do robô alcança um obstáculo situado fora desse volume.">
-      <figcaption>O espaço virtual, com o robô e a nuvem de pontos escaneada. Aqui o robô encontra obstáculos situados fora do campo de visão central do operador.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Cena de um espaço virtual. Voxels amarelos estão reconstruindo o entorno, e uma área vermelha semitransparente, marcada como "campo de visão central do operador", atravessa o meio, enquanto um robô gêmeo digital branco estende a mão para um obstáculo fora dessa área.">
+      <figcaption>Um espaço virtual que contém o robô e a nuvem de pontos escaneada. Aqui, o robô está tocando obstáculos que estão fora do campo de visão central do operador.</figcaption>
     </figure>
 
-    <h3>4.2 Experimento de demonstração</h3>
-    <p>Uma avaliação preliminar testou se a implementação fazia o que havia sido especificado. Pediu-se ao operador que movesse o braço em direção a um poste enquanto olhava para o lado, confirmasse que o sistema havia emitido um aviso e parado o braço, então olhasse para o braço parado para liberar a restrição e, por fim, pegasse uma bola do alto do poste mantendo-a à vista. Foram cinco ensaios: os três primeiros e o quinto com um operador experiente, o quarto com alguém em sua segunda vez pilotando o robô. Todos foram gravados. Nos cinco, o sistema se comportou como define a seção 2. A demonstração pode ser vista no <a class="ext" href="https://youtu.be/-DvWxzJvK3I">vídeo do sistema em funcionamento</a>.</p>
+    <h3>Avaliação preliminar</h3>
+    <p>Foi testada uma sequência de operações na qual o operador aproximava o braço do alvo enquanto desviava o olhar, após a parada retornava o olhar para o alvo para desbloquear a restrição e, por fim, pegava a bola. Das cinco tentativas, quatro foram realizadas por operadores experientes e uma pelo operador que estava em seu segundo uso do equipamento. Em todas as tentativas, o braço parava quando o olhar não estava no alvo e a operação podia ser continuada quando o olhar era direcionado. Esta não é uma experiência de usuário para medir a eficácia, mas uma avaliação preliminar para verificar se o comportamento projetado funciona no equipamento real.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="Fotografia do robô com o operador suspenso em uma estrutura acima dele, olhando para o lado. A mão do robô parou antes de uma bola azul e amarela sobre um poste amarelo, com a distância restante assinalada.">
-      <figcaption>O olhar do operador está desviado, e o braço para a certa distância do objeto.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="Foto de um robô. No quadro acima dele, o operador está a bordo, olhando para o lado. A mão do robô para na frente da bola azul e amarela em cima do poste amarelo, e a distância restante é indicada.">
+      <figcaption>O operador desviou o olhar, e o braço parou mantendo distância do alvo.</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Fotografia de um ângulo mais baixo: o operador olha para a bola, e a mão do robô segura a bola azul e amarela sobre o poste amarelo.">
-      <figcaption>Com o olhar dirigido ao objeto, o mesmo movimento prossegue sem restrição.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Foto de ângulo inferior. O operador está olhando para o poste, e a mão do robô está segurando a bola azul e amarela em cima do poste amarelo.">
+      <figcaption>Se o olhar estiver direcionado ao alvo, a mesma ação pode prosseguir sem restrições.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. Limitações e trabalhos futuros</h2>
-    <p>A detecção de pessoas não foi implementada no protótipo. O que precisava ser validado era a relação entre o olhar do operador e a manipulabilidade dos objetos, e a regra que protege pessoas é incondicional e não depende dela. Acrescentar essa detecção tornaria o sistema mais robusto e abriria aplicações além da segurança — destacar na visão do operador quem está perto do robô, por exemplo, ou avisar antes que um limite de proximidade seja atingido.</p>
-    <p>O olhar foi aproximado pela direção frontal do headset. Isso foi escolhido pelo caráter direto, que importa em um sistema mestre-escravo, mas outros instrumentos — câmeras fixas, rastreadores oculares em óculos inteligentes — o estimariam de outro modo e poderiam reduzir a barreira para introduzir tal sistema em setores não acostumados a usar equipamentos vestíveis. Aplicar o método a robôs móveis levanta um problema a mais: o JINKI type Zero fica fixo enquanto está em desenvolvimento, e uma máquina que muda de posição durante a operação precisa de um processamento de nuvens de pontos eficiente o bastante para acompanhá-la.</p>
-    <p>A avaliação em si permanece qualitativa. Um estudo quantitativo de campo é a forma adequada de julgar o sistema, e depende de o robô chegar a um estágio prático.</p>
+    <h2>Limite e próxima verificação</h2>
+    <p>O protótipo não implementa a detecção de pessoas. Foi estabelecida a regra de sempre proteger as pessoas independentemente da linha de visão, mas em um ambiente real será necessário um mecanismo para identificar pessoas com segurança. Além disso, em vez de usar a própria linha de visão, foi utilizado como valor substituto a direção frontal do headset, de modo que, se apenas os olhos forem movidos, não será detectado.</p>
+    <p>Se você usar câmeras fixas ou óculos inteligentes com rastreamento ocular, as condições de dispositivos vestíveis e a precisão da estimativa mudam. No caso de ser aplicado a robôs móveis, também será necessário o processamento de nuvem de pontos que possa acompanhar as mudanças de posição do próprio robô.</p>
+    <p>A avaliação se limita à verificação qualitativa por cinco tentativas de demonstração. Para julgar a segurança, a velocidade de trabalho e o esforço do operador, é necessário uma comparação quantitativa com o método convencional sob condições de trabalho reais.</p>
   </section>
 
   <section>
-    <h2>6. Conclusão</h2>
-    <p>A pesquisa propôs um sistema de prevenção de colisões para manipuladores robóticos operados por pessoas que usa o olhar do operador para evitar contato não intencional com pessoas e equipamentos. Sob a premissa de que consciência e direção do olhar são fortemente correlacionadas, objetos dentro do campo de visão central do operador foram tratados como manipuláveis e os de fora como protegidos. Colocar um fator humano no laço de controle tornou possível traçar essa linha em tempo de execução, sem nada da preparação que os métodos existentes exigem.</p>
-    <p>O sistema foi verificado em um robô de maquinário pesado de uso geral e se comportou conforme definido. O mesmo princípio deve valer para qualquer situação em que uma pessoa já faça parte do laço pelo qual uma máquina é operada.</p>
+    <h2>Perspectiva obtida a partir desta pesquisa</h2>
+    <p>Neste estudo, ao invés de usar o olhar humano como dispositivo de entrada, ele foi tratado como uma condição para permitir o comportamento da máquina. Dependendo do que a pessoa está percebendo no momento, o comportamento do robô em relação ao mesmo alvo muda. O que foi projetado não foram ações individuais, mas a relação entre o estado cognitivo humano e a autoridade da máquina.</p>
+    <p>Essa forma de pensar também se conecta ao atual <a href="../../">Minha filosofia de design</a>. Compreender o estado das pessoas, transformar isso em restrições que o sistema deve proteger e, dentro disso, permitir que máquinas e IA desempenhem suas capacidades. A pesquisa de mestrado se tornou o ponto de partida para isso.</p>
   </section>
 
   <section>
     <h2>Agradecimentos</h2>
-    <p>Este trabalho foi realizado durante um estágio na Man-Machine Synergy Effectors, Inc., como parte dos requisitos do mestrado em Design &amp; Engineering do Politecnico di Milano. Sou grato a ambas as organizações por terem tornado possível esta oportunidade.</p>
+    <p>Este estudo foi realizado durante o estágio na empresa Jinki Ittai Co., Ltd., como parte do programa de mestrado em Design &amp; Engineering do Politécnico de Milão. Agradeço profundamente a ambas as organizações por terem possibilitado esta oportunidade.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi e Katsuya Kanaoka. “Gaze-based Unintended Contact Prevention for Human-Operated Robots”. 39.ª Conferência Anual da Robotics Society of Japan, 2021, artigo 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Programa da conferência</a>.</p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a></p>
 
   <nav aria-label="Site">
     <ul>

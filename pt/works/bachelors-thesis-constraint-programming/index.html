@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Trabalho de conclusão de curso sobre programação por restrições — Takafumi Horiuchi</title>
-<meta name="description" content="Pesquisa de graduação sobre acelerar o simulador de sistemas híbridos HydLa removendo em tempo de execução as restrições com guarda que já não podem se tornar verdadeiras.">
+<title>Tese de graduação sobre programação baseada em restrições — Takafumi Horiuchi</title>
+<meta name="description" content="Durante a simulação, identificar condições que nunca mais ocorrerão e excluí-las da busca. Pesquisa de programação por restrições que reduziu a quantidade de cálculo sem mudar os resultados e reduziu o tempo de execução do modelo de avaliação pela metade.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -25,14 +25,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Trabalho de conclusão de curso sobre programação por restrições">
-<meta property="og:description" content="Usar a monotonicidade para remover restrições que perderam a validade e deixar a simulação de sistemas híbridos mais rápida.">
+<meta property="og:title" content="Tese de graduação sobre programação baseada em restrições">
+<meta property="og:description" content="Remova com segurança as condições que nunca se concretizarão, e acelere a simulação.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Uma bola simulada desce quicando degrau a degrau por uma escada, ilustrando quando as restrições já ultrapassadas deixam de importar.">
+<meta property="og:image:alt" content="Simulação de uma bola descendo os degraus pulando. Mostra a partir de onde as restrições ultrapassadas se tornam irrelevantes.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -53,16 +53,21 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
       "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
-      "headline": "Trabalho de conclusão de curso sobre programação por restrições",
+      "headline": "Tese de graduação sobre programação baseada em restrições",
       "url": "https://takafumihoriuchi.github.io/pt/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "Pesquisa de graduação sobre acelerar o simulador de sistemas híbridos HydLa removendo em tempo de execução as restrições com guarda que já não podem se tornar verdadeiras.",
+      "description": "Durante a simulação, identificar condições que nunca mais ocorrerão e excluí-las da busca. Pesquisa de programação por restrições que reduziu a quantidade de cálculo sem mudar os resultados e reduziu o tempo de execução do modelo de avaliação pela metade.",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "pt",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Kazunori Ueda" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Kazunori Ueda"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -78,7 +83,7 @@
 <main>
 
   <header>
-    <h1>Trabalho de conclusão de curso sobre programação por restrições</h1>
+    <h1>Tese de graduação sobre programação baseada em restrições</h1>
     <div class="identity">
       <p class="tagline">por <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Perfis em outros sites">
@@ -92,88 +97,90 @@
   </header>
 
   <section>
-    <h2>Visão geral</h2>
-    <p class="lead">Como estudante de graduação em ciência da computação, minha pesquisa partiu de uma pergunta prática: quando um simulador acumula muitas condições possíveis, como fazer com que ele pare de reconsiderar aquelas que já não podem ocorrer? Desenvolvi e avaliei um método para o HydLa que usa a direção em que um valor está mudando para retirar da busca as condições que perderam a validade. No modelo de referência, o tempo total de simulação caiu para cerca da metade.</p>
-    <p>Este trabalho é um dos primeiros alicerces da <a href="../../">minha filosofia de design</a>. A programação por restrições me ensinou que resultados complexos não precisam sempre ser especificados diretamente: eles podem emergir de um espaço de regras, prioridades e limites definido com cuidado. Esse modo de pensar sustenta hoje a minha maneira de projetar a partir de restrições na era da IA — projetar as condições dentro das quais um sistema generativo fica livre para agir.</p>
+    <h2>Resumo</h2>
+    <p class="lead">O simulador verifica repetidamente muitas condições à medida que os eventos possíveis aumentam. Então, se for possível julgar a partir do progresso que 'esta condição nunca mais será satisfeita', não seria seguro parar essa verificação? Com base na direção da mudança dos valores, foi projetado e implementado um método para remover condições desnecessárias da busca em execução, voltado para a linguagem de modelagem de sistemas híbridos HydLa.</p>
+    <p>No modelo de avaliação, conseguimos reduzir o tempo de execução para cerca de metade do convencional, sem alterar os resultados da simulação. O importante não é que todos os cálculos tenham se tornado uniformemente mais rápidos. O que fizemos foi reduzir o próprio número de possibilidades a serem consideradas, utilizando a estrutura do problema.</p>
+    <p>A maneira de pensar sobre programação baseada em restrições aprendida neste estudo se tornou a base do <a href="../../">Minha filosofia de design</a> atual. Em vez de especificar diretamente cada resultado, a abordagem é definir regras, prioridades e limites, e derivar soluções que se realizem dentro desses parâmetros.</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Resumo</h2>
-    <p>O HydLa é uma linguagem de modelagem para sistemas híbridos: sistemas em que mudança contínua e eventos discretos interagem. Seu projeto baseado em restrições permite descrever esses sistemas de forma concisa e simulá-los com alta precisão. O custo é que, em um modelo grande, o simulador pode ficar verificando um número enorme de regras condicionais, mesmo depois de algumas terem se tornado irrelevantes.</p>
-    <p>Esta pesquisa propôs reduzir essas restrições com guarda dinamicamente. Ao reconhecer um comportamento monotônico — um valor que continua se movendo em uma só direção —, o simulador pode determinar que certas guardas nunca se tornarão verdadeiras no futuro e parar de verificá-las com segurança. A abordagem foi especialmente eficaz em um modelo com muitos objetos guardados da mesma forma, no qual o tempo de execução medido caiu para aproximadamente metade do original.</p>
+    <h2>Questão — Quanto mais aumentam as possibilidades, mais lenta se torna a computação</h2>
+    <p>HydLa é uma linguagem para descrever "sistemas híbridos", que combinam mudanças contínuas e eventos discretos, como restrições matemáticas e lógicas. Mesmo sem escrever toda a sequência de procedimentos, é possível simular comportamentos que atendam às condições declarando o que deve ser estabelecido.</p>
+    <p>Por outro lado, em modelos onde muitas regras se tornam válidas dependendo das condições, o simulador verifica repetidamente uma grande quantidade de candidatos. Como continuam a permanecer como candidatos mesmo condições que já foram ultrapassadas e que não serão satisfeitas no futuro, quanto maior o modelo, mais cálculos desnecessários se acumulam.</p>
   </section>
 
   <section>
-    <h2>1. Introdução</h2>
-    <p>Um sistema híbrido combina comportamento contínuo com eventos discretos. Uma bola quicando é um exemplo simples: sua posição e sua velocidade mudam continuamente enquanto ela está no ar, mas o instante em que atinge uma superfície cria um evento discreto que muda sua direção. Termostatos, veículos e robôs contêm versões mais consequentes dessa mesma mistura.</p>
-    <p>O HydLa permite descrever esses sistemas com restrições matemáticas e lógicas, em vez de escrever uma única sequência procedural. Seu simulador, o HyLaGI, faz cálculo simbólico sem erro de arredondamento e trabalha com parâmetros incertos. Essa abordagem expressiva, no entanto, cria um problema de escala: quando um modelo contém muitas regras que se ativam apenas sob condições específicas, o simulador precisa perguntar repetidamente se cada condição pode ser a próxima a ocorrer.</p>
+    <h2>Tema — um sistema que mistura contínuo e discreto</h2>
+    <p>Uma bola quicando é um exemplo claro de um sistema híbrido. No ar, sua posição e velocidade mudam continuamente, e no instante em que atinge o chão, ocorre um evento discreto de ricochete. Termostatos, carros e robôs também possuem esses dois tipos de mudança internamente, mesmo que em escalas diferentes.</p>
+    <p>Para a avaliação, utilizou-se um modelo no qual uma bola movendo-se horizontalmente rebate em uma superfície dividida em vários setores. Para cada setor da superfície, existe uma regra condicional do tipo 'se a bola chegar a esta área, ela rebate'. Ao aumentar o número de setores, aumenta-se o que pode ser representado, mas também aumentam as condições que o simulador precisa verificar.</p>
 
     <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Código-fonte em HydLa definindo uma bola que se move horizontalmente e quica em um de N trechos adjacentes da superfície.">
-      <figcaption>Um modelo curto em HydLa descreve uma bola e uma superfície dividida em <em>N</em> trechos com guarda.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Código-fonte do HydLa que define o comportamento de uma bola que se move horizontalmente e ricocheteia em qualquer um dos N setores de superfícies adjacentes.">
+      <figcaption>Um modelo curto de HydLa descreve uma superfície dividida em uma bola e <em>N</em> seções com guardas.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. Restrições com guarda na simulação</h2>
-    <p>Uma restrição com guarda é uma regra que só se torna ativa quando sua condição de guarda é satisfeita. No modelo de referência acima, cada trecho da superfície tem sua própria regra: se a bola chega à altura zero enquanto sua posição horizontal está dentro daquele trecho, a regra do quique se aplica. Dividir a superfície em mais partes dá, portanto, ao simulador mais guardas para inspecionar.</p>
-    <p>O experimento variou o número de trechos de 10 a 200. O simulador original ficava mais lento aproximadamente com o quadrado desse número. Isso importa além do exemplo de brinquedo: um modelo maior pode representar muitos objetos físicos, regiões de contato ou eventos possíveis exatamente nessa forma guardada.</p>
+    <h2>Gargalo — o número de condições aumenta a complexidade computacional</h2>
+    <p>As regras que só se tornam válidas quando certas condições são atendidas são chamadas de "restrições com guarda". No modelo de avaliação, a regra de rebote de um determinado setor só se torna válida quando a bola atinge o chão e sua posição horizontal está dentro desse setor específico.</p>
+    <p>Quando o número de parcelas é aumentado de 10 para 200, o simulador convencional ficou aproximadamente mais lento proporcional ao quadrado do número de parcelas. Em modelos de grande escala, o mesmo problema se torna maior devido ao aumento de objetos, áreas de contato e eventos possíveis.</p>
   </section>
 
   <section>
-    <h2>3. Localização do gargalo</h2>
-    <p>A análise de desempenho mostrou que a lentidão não estava distribuída uniformemente pelo simulador. Com 100 trechos de superfície, 96% do tempo de execução medido foi gasto em <code>FindMinTime</code>, a operação que procura o próximo evento possível mais próximo. Ela reavaliava repetidamente as guardas de todas as restrições candidatas.</p>
-    <p>Esse resultado tornou específico o alvo da otimização: reduzir o número de guardas que o <code>FindMinTime</code> tem de considerar, preservando exatamente o mesmo comportamento simulado.</p>
+    <h2>Investigação — Onde estavam 96% do tempo de processamento</h2>
+    <p>Ao medir o tempo de processamento, no modelo com 100 seções, 96% do total foi utilizado em <code>FindMinTime</code>. Este é o processamento de procurar, entre os candidatos, o 'próximo evento mais rápido' a ocorrer. Assim, todas as condições de guarda estavam sendo avaliadas repetidamente.</p>
+    <p>Os locais que precisam ser melhorados ficaram claros. Não é necessário refazer todo o método de cálculo; basta reduzir de forma segura os candidatos a serem passados para <code>FindMinTime</code>. O objetivo foi alterar apenas as possibilidades que não precisam ser verificadas, sem mudar os resultados da simulação.</p>
   </section>
 
   <section>
-    <h2>4. Redução das restrições com guarda</h2>
-    <p>Imagine uma bola descendo uma escada aos quiques. Depois que a bola passa de um degrau e segue adiante, aquele degrau não pode mais afetá-la. Quem olha o diagrama descarta na hora os degraus que ficaram atrás; o algoritmo original continuava verificando todos eles.</p>
+    <h2>Abordagem — remover com segurança condições que nunca mais se concretizarão</h2>
+    <p>Gostaria que você imaginasse uma bola descendo uma escada quicando. Se a bola passa por um degrau e continua avançando, esse degrau não pode mais afetar a bola. Quem olha o gráfico ignora imediatamente os degraus que estão atrás da bola. O algoritmo original continuava verificando cada um deles, um por um.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Uma trajetória vermelha mostra uma bola descendo aos quiques por degraus negros; as regiões sombreadas indicam degraus já passados e sem relevância.">
-      <figcaption>À medida que a bola avança para a direita, as guardas dos degraus sombreados atrás dela podem ser omitidas.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="O rastro vermelho indica a bola descendo enquanto quica nos degraus da escada preta. A área sombreada representa os degraus que já foram ultrapassados e que não têm mais relação.">
+      <figcaption>À medida que a bola avança para a direita, é possível omitir o guarda da etapa sombreada que está atrás dela.</figcaption>
     </figure>
 
-    <p>A parte difícil é provar que uma guarda descartada não voltará a ser necessária depois. Removê-la apenas porque agora é falsa poderia produzir silenciosamente um resultado errado caso ela volte a ser verdadeira. Por isso a proposta se apoia na monotonicidade: se está garantido que uma variável continuará crescendo, ou continuará decrescendo, ao longo de um intervalo de tempo.</p>
+    <p>A parte difícil é mostrar que o guarda removido não será necessário mais tarde. Se você removê-lo apenas porque é falso agora, quando ele se tornar verdadeiro novamente, poderá silenciosamente retornar um resultado incorreto. Portanto, o método proposto usa a monotonicidade — a questão é se é possível garantir que uma variável continuará a aumentar ou a diminuir durante um determinado intervalo de tempo.</p>
 
-    <h3>4.1 Abordagem para a monotonicidade uniforme</h3>
-    <p>A primeira abordagem se aplica quando uma variável se move em uma só direção durante toda a simulação. No modelo da superfície dividida, a posição horizontal da bola sempre cresce. Depois que ela passa de um trecho, a condição daquele trecho nunca pode ser satisfeita novamente. Técnicas de verificação de modelos permitem estabelecer essa propriedade antes da simulação, de modo que as guardas obsoletas podem ser removidas com segurança conforme a execução avança.</p>
+    <h3>Quando a direção da mudança não muda</h3>
+    <p>A primeira abordagem é aplicável quando a variável se move em apenas uma direção durante toda a simulação. Em um modelo com a superfície dividida, a posição horizontal da bola sempre aumenta. Uma vez que atravessa uma seção, as condições dessa seção nunca mais são satisfeitas. Essa propriedade pode ser verificada antes da simulação usando técnicas de verificação de modelo, permitindo que os guardas que se tornam desnecessários à medida que a execução avança sejam removidos com segurança.</p>
 
     <figure class="paper-figure figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Uma linha vermelha ascendente, de alfa no instante zero até beta no instante máximo, ilustra uma variável que cresce durante toda a simulação.">
-      <figcaption>Monotonicidade uniforme significa que a direção da mudança se mantém em todo o intervalo simulado.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="A linha vermelha que sobe de α no tempo 0 até β no tempo máximo representa uma variável que continua aumentando ao longo da simulação.">
+      <figcaption>A monotonicidade uniforme significa que a direção da mudança é mantida em todo o intervalo que está sendo simulado.</figcaption>
     </figure>
 
-    <h3>4.2 Abordagem para a monotonicidade alternada</h3>
-    <p>Muitos sistemas reais não se movem em uma só direção para sempre. Uma variável pode crescer, virar e então decrescer. O artigo esboçou, por isso, uma segunda abordagem: começar com uma direção suposta, monitorar essa suposição com asserções e reiniciar a lógica de redução a partir do ponto em que a direção muda. As guardas removidas para um intervalo monotônico são restauradas quando o intervalo seguinte começa.</p>
+    <h3>Quando a direção da mudança muda no meio do caminho</h3>
+    <p>Muitos sistemas reais não se movem em uma única direção indefinidamente. As variáveis podem aumentar, mudar de direção e então diminuir. Assim, o artigo apresentou uma segunda abordagem. Primeiro, supõe-se uma direção, monitora-se essa suposição com uma asserção e, no ponto em que a direção muda, o processo de redução é reiniciado. A proteção removida para um intervalo monótono é restaurada quando o próximo intervalo começa.</p>
 
     <figure class="paper-figure figure-5">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Cinco diagramas mostram um intervalo suposto crescente, a falha de uma asserção, um novo intervalo decrescente, outra falha e o estabelecimento sucessivo de intervalos monotônicos.">
-      <figcaption>As falhas das asserções dividem um comportamento variável em intervalos que podem ser tratados, cada um, como monotônicos.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Os cinco gráficos mostram como os intervalos assumidos de aumento, a falha da asserção, o novo intervalo de diminuição, a segunda falha e o intervalo monótono vão sendo confirmados um após o outro.">
+      <figcaption>A falha de asserção divide o comportamento em mudança em intervalos que podem ser tratados como monotônicos.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. Resultados experimentais</h2>
-    <p>Implementei a abordagem da monotonicidade uniforme e a avaliei com o modelo da superfície dividida. Tanto o algoritmo original quanto o proposto continuavam levando mais tempo à medida que o número de trechos crescia, mas a versão proposta fazia consistentemente menos trabalho. Comparando as curvas ajustadas, o coeficiente principal caiu de 1,1463 para 0,6083; para este caso de referência, o tempo total de simulação caiu para cerca da metade.</p>
-    <p>O resultado não afirma que todo modelo HydLa fique duas vezes mais rápido. Ele mostra onde o método ajuda: em modelos com muitos objetos guardados e uma direção de mudança demonstrável, nos quais as guardas se tornam permanentemente irrelevantes durante a execução.</p>
+    <h2>Resultado — Tempo de execução do modelo de avaliação reduzido pela metade</h2>
+    <p>Implementou-se uma abordagem para lidar com monotonicidade uniforme e avaliou-se em modelos com superfícies divididas. Tanto o algoritmo original quanto o método proposto apresentam aumento do tempo necessário à medida que o número de seções cresce. No entanto, o método proposto teve consistentemente menos carga de trabalho. Comparando as curvas ajustadas, o coeficiente de maior ordem caiu de 1,1463 para 0,6083, e neste benchmark o tempo total de simulação foi reduzido aproximadamente pela metade.</p>
+    <p>Isto não é uma afirmação de que todos os modelos HydLa serão duas vezes mais rápidos. O que está sendo mostrado é onde esse método funciona — modelos que têm muitos alvos com guardas, nos quais a direção da mudança pode ser provada, e durante a execução os guardas se tornam permanentemente irrelevantes.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Um gráfico do tempo de simulação em função de N mostra o método proposto abaixo do original de 10 a 200 trechos de superfície, chegando a cerca de 250 segundos em vez de cerca de 470 quando N é igual a 200.">
-      <figcaption>No modelo avaliado, o método proposto (quadrados) leva aproximadamente metade do tempo do algoritmo original (círculos).</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Gráfico do tempo de simulação em relação a N. Em toda a faixa de 10 a 200 divisões de superfície, o método proposto fica abaixo do método original, e para N=200, mantém-se em cerca de 250 segundos em comparação com cerca de 470 segundos.">
+      <figcaption>No modelo avaliado, o método proposto (quadrado) levou aproximadamente metade do tempo do algoritmo original (círculo).</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>6. Conclusão e trabalhos futuros</h2>
-    <p>A pesquisa demonstrou que o conhecimento sobre um modelo — e não apenas um cálculo de baixo nível mais rápido — pode tornar a simulação mais eficiente. Usando a monotonicidade para reconhecer quais possibilidades se tornaram impossíveis, o HyLaGI consegue encolher seu conjunto de restrições ativas sem alterar o resultado.</p>
-    <p>O experimento implementado cobriu a monotonicidade uniforme. O artigo deixou duas direções para depois: avaliar o método baseado em asserções para o comportamento alternado e usar invariantes além da monotonicidade para identificar mais restrições que possam ser removidas com segurança.</p>
+    <h2>Perspectiva obtida a partir desta pesquisa</h2>
+    <p>O que foi feito neste estudo não foi acelerar um pouco cada cálculo individual. O objetivo foi usar o que se sabe sobre o comportamento do sistema para reduzir o conjunto de possibilidades a ser considerado. A ideia de restringir o espaço de busca sem alterar o resultado é a força da programação baseada em restrições.</p>
+    <p>O que foi implementado e avaliado é o caso em que a variável continua a se mover em uma direção. Quando a direção da mudança se altera no meio do caminho, a análise foi limitada ao projeto, e a avaliação permaneceu como uma questão futura. Também há espaço para usar propriedades além da monotonicidade e encontrar restrições desnecessárias adicionais.</p>
+    <p>O fato de eu atualmente tentar projetar as condições e limites que a IA pode explorar, em vez de projetar diretamente a saída da IA, também está ligado a essa experiência. Ao lidar com resultados complexos, é tão importante definir o que não precisa ser considerado quanto definir o que deve ser calculado.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi e Kazunori Ueda. “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa”. 33.ª Conferência Anual da Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a>.</p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
   <nav aria-label="Site">
     <ul>

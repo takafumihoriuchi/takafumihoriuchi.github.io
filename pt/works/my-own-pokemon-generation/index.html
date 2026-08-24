@@ -3,8 +3,8 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Meu Pokémon único no mundo — Takafumi Horiuchi</title>
-<meta name="description" content="Um protótipo de pesquisa em que poucas palavras do jogador se tornam uma espécie de Pokémon inteiramente nova enquanto o jogo roda, e a estrutura que limita o que a IA pode inventar.">
+<title>Meu próprio Pokémon no mundo — Takafumi Horiuchi</title>
+<meta name="description" content="Durante o jogo, é um protótipo de pesquisa que gera novas espécies de Pokémon a partir das palavras dos jogadores e conecta o encontro e a captura. Foram consideradas restrições para manter o equilíbrio do jogo e condições que influenciam o apego aos produtos gerados.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/pt/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
@@ -26,14 +26,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Meu Pokémon único no mundo">
-<meta property="og:description" content="Geração por IA contida por restrições, dentro dos próprios sistemas do jogo.">
+<meta property="og:title" content="Meu próprio Pokémon no mundo">
+<meta property="og:description" content="Não é sobre o que fazer a IA criar, mas sobre o que fazer a IA proteger. Protótipo de pesquisa que integra a geração de novas espécies à experiência de jogo.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/pt/works/my-own-pokemon-generation/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Uma senhora idosa no Bosque de Petalburg pergunta ao jogador: que tipo de criatura você imagina?">
+<meta property="og:image:alt" content="Na Floresta Touka, uma senhora pergunta ao jogador: &#x27;Que tipo de criatura você está imaginando?&#x27;">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -53,13 +53,15 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/pt/works/my-own-pokemon-generation/#work",
-      "name": "Meu Pokémon único no mundo",
+      "name": "Meu próprio Pokémon no mundo",
       "url": "https://takafumihoriuchi.github.io/pt/works/my-own-pokemon-generation/",
-      "description": "Um protótipo de pesquisa em que poucas palavras do jogador se tornam uma espécie de Pokémon inteiramente nova enquanto o jogo roda, e a estrutura que limita o que a IA pode inventar.",
+      "description": "Durante o jogo, é um protótipo de pesquisa que gera novas espécies de Pokémon a partir das palavras dos jogadores e conecta o encontro e a captura. Foram consideradas restrições para manter o equilíbrio do jogo e condições que influenciam o apego aos produtos gerados.",
       "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
       "datePublished": "2026-07",
       "inLanguage": "pt",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" },
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      },
       "isBasedOn": "https://github.com/pret/pokeemerald"
     }
   ]
@@ -70,7 +72,7 @@
 <main>
 
   <header>
-    <h1>Meu Pokémon único no mundo</h1>
+    <h1>Meu próprio Pokémon no mundo</h1>
     <div class="identity">
       <p class="tagline">por <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Perfis em outros sites">
@@ -85,112 +87,133 @@
 
   <section>
     <h2>Resumo</h2>
-    <p class="lead">No meio da partida, numa janela dentro do próprio jogo, o jogador escreve poucas palavras. Com o jogo ainda rodando, uma IA as transforma numa espécie de Pokémon inteiramente nova — ilustração, nome, tipo, estatísticas base e ataques — e a registra como espécie de pleno direito. Você a encontra no mato alto, captura, dá um apelido e cria como qualquer outra.</p>
-    <p>Nada está escrito de antemão. A espécie que acaba no arquivo de save nunca existiu antes e não existe em nenhum outro lugar.</p>
-    <p>Parte do que os videogames sempre ofereceram é fazer algo que seja seu. Na prática, isso significou escolher dentro de um conjunto fixo. Este projeto existe para testar se a IA generativa torna <em>seu</em> literalmente verdadeiro e, sobretudo, se algo literalmente seu é algo a que um jogador realmente se apega.</p>
+    <p class="lead">A partir de seis palavras inseridas durante o jogo, a IA gera uma nova espécie de Pokémon. Alguns minutos depois, essa nova espécie aparece na grama, e o jogador pode encontrá-la, capturá-la e dar um apelido. Foi desenvolvido um protótipo de pesquisa que monta no momento não apenas a aparência e o nome, mas também o tipo, os valores de base, os movimentos e os dados manipulados dentro do jogo.</p>
+    <p>No protótipo, a conversa, a entrada de palavras, a geração em segundo plano, os encontros na natureza, a captura e a nomeação foram conectados em uma única experiência sem interromper o jogo. As novas espécies são registradas como raças que os sistemas de jogo existentes podem manipular, e não apenas como imagens.</p>
+    <p>O foco principal desta iniciativa não foi o próprio modelo gerador. É um 'quadro de geração' no qual os humanos projetam as condições para manter o equilíbrio do jogo e a consistência visual, e a IA explora apenas dentro desse escopo. Além disso, ele próprio jogou para examinar preliminarmente se realmente se desenvolveria apego a uma criação que fosse exclusivamente sua.</p>
   </section>
 
   <section>
-    <h2>Percurso</h2>
-    <p>Tudo começa ao falar com uma senhora idosa no Bosque de Petalburg. Você descreve a criatura que tem em mente; essas palavras são transformadas numa espécie enquanto você continua jogando; e alguns minutos depois ela está esperando no mato alto — para ser encontrada, capturada e usada dali em diante exatamente como qualquer outra coisa do jogo. Tudo é feito na hora: o nome, o tipo, as estatísticas base, o conjunto de ataques, os dois sprites de combate e o ícone da equipe. Uma partida completa, do início ao fim, está registrada aqui: <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">My Own Pokémon Generation — demo02</a>.</p>
+    <h2>Pergunta — Se for único e insubstituível, surgirá apego?</h2>
+    <p>Nos jogos, existe a diversão de escolher um personagem, desenvolvê-lo e dar-lhe um nome, tornando-o "único para si mesmo". No entanto, o ponto de partida está entre as opções preparadas pelos desenvolvedores. Quando a IA generativa permite criar uma existência única para o jogador desde o próprio ponto de partida, o apego provavelmente se torna ainda mais forte.</p>
+    <p>Para verificar essa questão, não basta gerar apenas uma imagem. É necessário que a entidade gerada entre no mundo do jogo, encontre coisas, seja capturada e continue utilizável depois. Portanto, foram preparados dois pontos de entrada diferentes com níveis distintos de envolvimento do jogador. Ao falar com o avô, a geração ocorre sem entrada; ao falar com a avó, o jogador escolhe seis palavras. O método de geração desse jogo é determinado pelo lado com o qual se conversa primeiro.</p>
+    <p>O objetivo deste protótipo não é tirar conclusões sobre apego. Trata-se de criar uma base para integrar os produtos gerados à experiência normal do jogo e encontrar condições que possam ser comparadas no futuro.</p>
+  </section>
+
+  <section>
+    <h2>Fluxo do jogo</h2>
+    <p>A seguir está o fluxo de "geração de envolvimento" onde o jogador escolhe palavras. Fale com a senhora na Floresta Touka e escolha seis palavras no "conversa fácil" já existente no jogo. À medida que você continua jogando, a geração avança e, quando pronta, um som será ouvido. Ao entrar na grama, uma nova espécie aparecerá e poderá ser capturada com as mesmas operações usadas para Pokémon selvagens normais. Nome, tipo, valores de base, movimentos, sprites de batalha frontal e traseiro, e ícones de bolso são gerados a cada execução. Esta sequência de ações também pode ser verificada em <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">Vídeo de demonstração</a>.</p>
 
     <div class="shots">
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="Um casal de idosos no Bosque de Petalburg. Uma caixa de diálogo diz: Me diga… que tipo de criatura você imagina?">
-        <figcaption>Falar com a senhora põe tudo em marcha.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="Um casal idoso está de pé na floresta de Touka. No quadro de diálogo aparece: 'Que tipo de criatura você está imaginando?'">
+        <figcaption>Começa quando você fala com a avó.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="A tela de entrada do diálogo simplificado, intitulada “Imagine a criatura:”, com as palavras BEAUTIFUL, ATTACK e FIRE digitadas.">
-        <figcaption>Você dá a ela seis palavras pelo sistema de diálogo simplificado do próprio Emerald.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="Tela de entrada de conversa simples intitulada 'Criatura que imaginei:'. As palavras BEAUTIFUL, ATTACK, FIRE estão inseridas.">
+        <figcaption>Com o 'conversa fácil' que já existe no Emerald, transmita seis palavras.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="O jogador está no bosque junto ao mato alto. Uma caixa de diálogo diz: O mato alto está balançando… Tem alguma coisa ali!">
-        <figcaption>A geração leva alguns minutos no PC. Um grito avisa que está pronta.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="O jogador está de pé perto de uma moita na floresta. No janela de conversa está escrito: 'A moita está se mexendo... algo está lá!'">
+        <figcaption>A geração leva alguns minutos no PC. O som avisa que a preparação foi concluída.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de combate. Um lagarto vermelho com uma chama na cabeça enfrenta o jogador. O texto diz: Um FLAMEREL selvagem apareceu!">
-        <figcaption>FLAMEREL, um lagarto do tipo fogo, aparece no mato que balançava.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de batalha. Um lagarto vermelho com fogo na cabeça está de frente para o jogador. Está escrito: "Um FLAMEREL selvagem apareceu!"">
+        <figcaption>O lagarto do tipo fogo FLAMEREL aparece do meio da grama que balança.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="Uma Poké Ball é atirada ao FLAMEREL durante o combate.">
-        <figcaption>Pode ser capturado com uma Poké Ball, como qualquer outra espécie.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="Durante a batalha, uma Pokébola está sendo lançada em direção a FLAMEREL.">
+        <figcaption>Assim como outras espécies, pode ser capturado com uma Pokébola.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="A tela que pede um apelido para o FLAMEREL, com GGG digitado.">
-        <figcaption>Pode receber apelido, como qualquer outra espécie.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de nomeação perguntando o apelido de FLAMEREL. Está escrito GGG.">
+        <figcaption>Como as outras raças, pode-se dar um apelido.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="A tela da equipe, com a espécie gerada ao lado de três Pokémon comuns e com seu próprio ícone.">
-        <figcaption>Ocupa seu lugar na equipe com ícone próprio, como qualquer outra espécie.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de mão. A espécie gerada possui um ícone exclusivo e está alinhada com três Pokémon normais.">
+        <figcaption>Como as outras raças, possui um ícone exclusivo e fica alinhado na mão.</figcaption>
       </figure>
       <figure>
-        <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="A tela de informação do FLAMEREL: tipo fogo, habilidade Blaze, natureza traquina, encontrado no nível 7 no Bosque de Petalburg.">
-        <figcaption>Sua tela de resumo funciona, como a de qualquer outra espécie.</figcaption>
+        <img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de informações do Pokémon FLAMEREL. Tipo Fogo, habilidade Chama, personalidade Brava, e mostra que foi encontrado na Floresta Touka no nível 7.">
+        <figcaption>Assim como outras raças, a tela de status também funciona corretamente.</figcaption>
       </figure>
     </div>
   </section>
 
   <section>
-    <h2>Por que isto e não um gerador de criaturas</h2>
-    <p>O problema interessante não é se uma IA consegue inventar um Pokémon. É se consegue inventar um que o jogo seja capaz de absorver sem se desfazer. Entregue a si mesmo, um gerador produz ou algo inutilizável — um monstro de 900 pontos de estatísticas que tira toda a graça do jogo — ou algo desagradável: um sprite deformado que deixa de se ler como criatura.</p>
-    <p>Portanto o trabalho de design aqui não é a criatura. É o espaço dentro do qual ela é gerada: as faixas de estatísticas, as regras de legalidade dos ataques, as silhuetas que sobrevivem a um sprite de 64×64, o próprio vocabulário com que o jogador tem permissão de descrever. O modelo explora esse espaço. Não cabe a ele defini-lo.</p>
-    <p>Este projeto é onde <a href="../../">minha filosofia de design</a> deixa de ser um argumento e é posta à prova: definir os objetivos, valores, restrições e limites que dão forma a um espaço de design, deixar a geração acontecer lá dentro, e descobrir se o resultado se sustenta.</p>
+    <h2>Problema de design — se gerar livremente, o jogo quebra</h2>
+    <p>O fato de a IA ser capaz de criar um novo personagem e o fato de esse personagem ser viável dentro do jogo são questões separadas. Se suas habilidades forem muito altas, a dificuldade será desequilibrada, e se seu tipo e movimentos não combinarem, será difícil treiná-lo. Se a aparência for muito complexa, ao ser convertida em um sprite de 64×64 pixels, a forma se tornará ilegível.</p>
+    <p>Por outro lado, se você fixar tudo, não faz sentido que algo diferente surja a cada execução. O que é necessário não é eliminar a liberdade da IA, mas separar as partes que devem ser protegidas como um jogo das partes que podem variar.</p>
+    <p>Portanto, o alvo do design foi mudado de um único Pokémon para um espaço capaz de gerar Pokémon. O ser humano define os objetivos, restrições, proibições e métodos de verificação, e a IA concretiza os candidatos dentro desses parâmetros. Isso é uma tentativa de experimentar o design baseado em restrições, que é <a href="../../">Minha filosofia de design</a>, como um protótipo funcional.</p>
   </section>
 
   <section>
-    <h2>A estrutura é a pesquisa</h2>
-    <p>O LLM nunca escreve livremente. Preenche campos de um esquema fixo, e cada saída é verificada de novo por um validador. As violações voltam para regeneração junto com a regra exata que foi quebrada.</p>
-    <p>As <strong>restrições de equilíbrio</strong> mantêm o jogo jogável. O total de estatísticas base é mantido numa faixa fixa — de 280 a 360, aproximadamente o nível de um inicial — com intervalos por estatística, e especificações fora da faixa são rejeitadas de imediato. Os ataques são extraídos automaticamente do código do pokeemerald e depois filtrados para o tipo da própria espécie ou Normal, removendo ataques de derrube imediato, efeitos de autodestruição e dano fixo ou excessivo. O conjunto resultante é verificado quanto à solidez: ataques ofensivos suficientes, pelo menos um ataque do mesmo tipo, no máximo um ataque de alta potência. A atribuição de níveis é feita de forma determinística pela estrutura, não pelo modelo. Tudo o resto está fixado — uma habilidade por tipo, taxa de captura, curva de crescimento, proporção de gêneros, compatibilidade com MT — de modo que a variação individual fica confinada aos espaços do esquema e as execuções continuam comparáveis.</p>
-    <p>As <strong>restrições de aparência</strong> impedem que a saída se desfaça. Os planos corporais vêm de uma lista branca de silhuetas que sobrevivem a um sprite de 64×64: quadrúpede, roedor, ave, lagarto. A cor é escolhida de uma lista branca com nomes, e a cor corporal da Pokédex é derivada mecanicamente. As características limitam-se a uma a três frases curtas pré-definidas, com uma lista de bloqueio que rejeita traços humanos, sangue, armas e texto. A própria estrutura compõe a instrução final e acrescenta a ela um epílogo fixo: uma só criatura, corpo inteiro, anatomia coerente, sem membros a mais, expressão serena.</p>
-    <p>Funciona, e dá para ver funcionando. Numa execução registrada, o modelo propôs um total de estatísticas base de 380; o validador o devolveu três vezes — 380, 360, 340 — até a especificação pousar dentro da faixa, em 320.</p>
-  </section>
-
-  <section>
-    <h2>Como funciona</h2>
-    <p>O jogo em si não gera nada. O trabalho é feito por um processo Python residente no PC, e as duas metades falam através de uma caixa de correio em arquivos que um script Lua no mGBA consulta a cada quadro.</p>
+    <h2>Abordagem — projetar as condições de produção, não os produtos</h2>
+    <p>Não permita que o LLM escreva texto livre; faça com que ele preencha apenas os itens determinados, como nome, tipo, estatísticas de espécie, habilidades, tamanho e cor. Não utilize a saída diretamente, mas verifique-a com um validador. Se houver violação, devolva ao modelo quais regras foram infringidas e gere novamente até que as condições sejam atendidas.</p>
     <ol>
-      <li><strong>Texto.</strong> Um modelo local (<code>qwen3:8b</code>) transforma as palavras num registo de espécie validado.</li>
-      <li><strong>Imagem.</strong> Um modelo de imagem desenha uma ilustração de referência e, a partir dela, três vistas coerentes entre si: o sprite frontal de combate, o de costas e o ícone da equipe.</li>
-      <li><strong>Conversão.</strong> A arte é quantizada para uma paleta comum de 15 cores e convertida para o formato de sprites do pokeemerald.</li>
-      <li><strong>Codificação.</strong> Os sprites passam a binários de GBA: tiles de 4bpp e 1bpp, paletas <code>gbapal</code> e compressão LZ77 compatível com a BIOS.</li>
-      <li><strong>Injeção.</strong> Os binários são escritos numa região reservada da ROM.</li>
+      <li><strong>Os humanos determinam os limites.</strong> Transformar o equilíbrio do jogo, a forma legível na tela e as expressões a serem evitadas em regras verificáveis.</li>
+      <li><strong>A IA concretiza os candidatos.</strong> Com base nas palavras do jogador, sugira valores dos itens permitidos.</li>
+      <li><strong>A máquina verifica as regras.</strong> Julga automaticamente números, combinações de técnicas e expressões proibidas.</li>
+      <li><strong>Fornecer feedback apenas sobre violações.</strong> Candidatos que não atendem aos critérios devem ser devolvidos com os motivos e regenerados.</li>
     </ol>
-    <p>Escrever no cartucho enquanto o jogo roda significa que a instância em execução recebe a nova espécie sem reiniciar, e que a mesma sequência de bytes vai para o disco, de modo que a alteração sobrevive a um recarregamento.</p>
-    <p>O que aparece é permanente e irreversível. Anda pelo mundo: se você fugir ou perder, ele fica lá. Se você o derrubar, some para sempre.</p>
+    <p><strong>Restrições que protegem o brincar.</strong> O total de valores de base dos tipos foi definido na faixa de 280 a 360, e limites superior e inferior foram aplicados a cada habilidade. As técnicas foram extraídas da fonte do jogo e restringidas ao tipo daquela espécie ou ao tipo normal. Além disso, foram excluídas técnicas de um golpe fatal, autodestruição, dano fixo e técnicas excessivamente fortes, e também foram verificadas o número de técnicas de ataque e a presença de técnicas combinadas com o tipo. Taxas de captura, velocidade de crescimento e outros foram fixados para que as diferenças geradas pudessem ser comparáveis.</p>
+    <p><strong>Restrições para proteger a aparência.</strong> O tipo de corpo foi escolhido a partir de candidatos que mantêm facilmente o contorno mesmo em sprites pequenos, e o vocabulário de cores e características também foi limitado. Características humanas, sangue, armas e caracteres foram excluídos. Por fim, condições para prevenir falhas, como 'apenas um corpo', 'corpo inteiro' e 'não criar membros extras', devem ser sempre adicionadas às instruções de geração de imagens.</p>
+    <p>Em um registro, o modelo inicialmente propôs uma ideia com um total de valor de espécie de 380. O framework detectou violações e incentivou a regeneração, eventualmente convergindo para uma especificação de 320. O importante não é que bons resultados surjam por acaso, mas que foi projetado um processo que não adota resultados fora do padrão.</p>
+  </section>
+
+  <section>
+    <h2>Concluir a experiência dentro do jogo</h2>
+    <p>O que o jogador toca são apenas as conversas dentro do jogo, a escolha das palavras e os encontros na grama. Não há necessidade de abrir outra tela para a geração. Por outro lado, os processos de cálculo intenso são realizados por um processo Python no PC, que colabora com o jogo através de arquivos. O script Lua no mGBA faz a ponte entre os dois, separando a sensação de jogo existente do processamento da IA externa.</p>
+    <ol>
+      <li><strong>Criar especificações.</strong> O modelo de linguagem local converte seis palavras em dados de raças verificadas.</li>
+      <li><strong>Formar uma figura.</strong> O modelo de imagem desenha uma ilustração de referência e, a partir dela, gera ícones de frente, de costas e de mão de forma consistente.</li>
+      <li><strong>Converter para dados de jogo.</strong> Reduzir a imagem para 15 cores e converter/comprimir para sprites e paletas compatíveis com GBA.</li>
+      <li><strong>Refletir no jogo em execução.</strong> Grave dados na área reservada e faça novas espécies aparecerem sem reiniciar o jogo.</li>
+    </ol>
+    <p>Como os mesmos dados também são gravados no disco, a raça refletida permanece mesmo após recarregar o jogo. A geração ocorre apenas uma vez e não pode ser desfeita. Se você fugir ou perder em um encontro, eles permanecem no mundo, mas se você os derrotar, nunca mais aparecerão. Essa irreversibilidade também é um design feito para dar à experiência o significado de "apenas um por mundo".</p>
+  </section>
+
+  <section>
+    <h2>Coisas que puderam ser confirmadas com o protótipo</h2>
+    <p>Esta é uma verificação de viabilidade feita sozinho, e não um jogo completo ou um experimento com usuários. Os pontos alcançados e as áreas não verificadas estão divididos da seguinte forma.</p>
+    <ul class="plain">
+      <li><strong>O alcance em que a operação foi verificada.</strong> Verifiquei de forma contínua no mGBA desde a conversa dentro do jogo, a entrada de seis palavras, a geração de fundo, a reflexão no jogo em execução, o encontro em estado selvagem, a captura, até a entrada do apelido.</li>
+      <li><strong>Algo implementado para comparação.</strong> Preparamos duas entradas: "geração passiva" sem entrada e "geração envolvente" que escolhe palavras, permitindo registrar conversas, encontros, capturas, entre outros.</li>
+      <li><strong>Há uma base, mas a área não foi verificada de forma contínua.</strong> O aumento de nível após a captura, o aprendizado de habilidades, batalhas, armazenamento na caixa e o uso contínuo após salvar estão conectados ao sistema existente, mas não foram realizados testes através de longas sessões de jogo.</li>
+      <li><strong>Escopo não implementado.</strong> A função de gerar o destino da evolução no local e o experimento de comparação de apego por múltiplos participantes foram deixados como desafios futuros.</li>
+    </ul>
+  </section>
+
+  <section>
+    <h2>Como resultado de tentar sozinho — apenas ser único não gerou apego</h2>
+    <p>Pelo que pude jogar do protótipo sozinho, não desenvolvi um apego forte pelos Pokémon gerados. Esta é apenas a impressão pessoal do próprio implementador e não é um resultado de experimento que possa ser generalizado. No entanto, serviu como uma pista para pensar sobre o que mudar em seguida para comparar.</p>
+    <p>Existem duas condições que parecem influenciar o apego.</p>
+    <ul class="plain">
+      <li><strong>Qualidade do produto gerado.</strong> Se não superar um nível que desperte encanto na aparência e na configuração, apenas a raridade de 'ser o único no mundo' não pode sustentar o apego.</li>
+      <li><strong>Profundidade de envolvimento.</strong> Apenas escolher seis palavras fez com que eu sentisse o resultado mais como algo que foi "entregue" do que algo que eu "criei". Acredita-se que o que gera a sensação de envolvimento não é a quantidade de entradas, mas a qualidade do processo de produção, como reescolher, comparar, ajustar e assumir responsabilidade pelo resultado.</li>
+    </ul>
+    <p>O que se tornou um contraste foi "Hanagitsune", que foi criado com múltiplas IAs geradoras em combinação com trabalho manual, separado da geração automática para jogos. Tenho afeto por esse personagem, que foi cuidadosamente desenvolvido até uma forma satisfatória, comparando opções e fazendo ajustes. Acredito que isso se deve tanto à qualidade suficiente quanto ao envolvimento, incluindo tentativa e erro.</p>
+
+    <figure class="pair">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="Vista frontal da raposa flor. Uma raposa verde pálida, com cauda que parece ter trepadeiras com flores caindo.">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="Parte de trás de uma raposa-das-flores. É possível ver todo o comprimento da cauda florida.">
+      <figcaption>Raposa-flor —— guardiã da floresta com cauda que floresce. Nos rastros por onde passa, brotam flores e plantas, trazendo nova vida até mesmo para terras devastadas. Sua aparência é considerada um símbolo do crescimento da floresta rumo ao futuro.</figcaption>
+    </figure>
+
+    <figure class="pair">
+      <img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de informações do Pokémon do Hanagi2ne. Tipo grama, habilidade Verdejar, personalidade Valente, e mostra que foi encontrado no Ninho das Árvores Toshika no nível 7. O sprite é uma raposa verde-clara com uma cauda florescente.">
+      <img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de batalha. Hanagi2ne visto de costas está enfrentando um Poochyena selvagem. Está escrito 'Hanagi2ne usou Sugere!'">
+      <figcaption>Implementamos a 'Hanagitsune', projetada através de diálogos e trabalho manual, como uma raça dentro do jogo.</figcaption>
+    </figure>
+
+    <p>Este protótipo não responde à pergunta 'O conteúdo gerado cria apego?'. Transformou a questão vaga em dois elementos que podem ser intencionalmente alterados: a qualidade do produto gerado e a profundidade do envolvimento. Na próxima verificação, será necessário incorporar escolhas, comparações e revisões no processo de produção, e depois realizar comparações entre vários participantes, garantindo que a qualidade dos produtos gerados esteja em um nível uniforme.</p>
   </section>
 
   <section>
     <h2>Implementação</h2>
-    <p>O gerador, a estrutura de restrições, os codificadores de GBA e o patch do lado do jogo estão publicados na íntegra: <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">github.com/takafumihoriuchi/my-own-pokemon-generation</a>.</p>
+    <p>O pipeline de geração, o quadro de restrições e validação, a conversão de dados para GBA e as alterações do lado do jogo estão divulgados em <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">Repositório GitHub</a>.</p>
   </section>
 
-  <section>
-    <h2>Post scriptum — sobre o apego</h2>
-    <p>O protótipo resolve uma questão técnica. Atrás dela está a que realmente me importa: um Pokémon gerado para você, que não existe em nenhum outro lugar, acaba significando mais do que um que veio com o jogo?</p>
-    <p>De jogar minha própria versão — uma amostra de um, e não vale a pena ler nela mais do que isso — parecem sobressair duas condições que governam a resposta.</p>
-    <ul class="plain">
-      <li><strong>Quanto de você entrou nele.</strong> Escrever seis palavras é participar, mas de um jeito fino: o que volta parece entregue mais do que feito. O que parece contar não é o volume da contribuição, mas o seu caráter — esforço, iteração, espaço para revisar, e alguma responsabilidade pelo modo como ficou.</li>
-      <li><strong>Qualidade.</strong> O apego parece precisar que aquilo que foi gerado ultrapasse um limiar. Abaixo dele, o fato de algo ser único e seu não sustenta o sentimento sozinho.</li>
-    </ul>
-    <p>Um caso de fora do jogo toca nas duas. Trabalhando à mão com o ChatGPT, indo e voltando até ficar satisfeito, desenhei uma espécie minha — Hanagitsune. Tenho apego a ela. Eu a tinha feito em vez de encomendado, e o que saiu passou da barra da qualidade.</p>
-
-    <figure class="pair">
-      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune, de frente: uma raposa verde-pálida cuja cauda é uma cascata de trepadeiras em flor.">
-      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune, de costas, com todo o comprimento da cauda florida à vista.">
-      <figcaption>Hanagitsune — guardião da floresta, de cauda em flor. Por onde correu brotam ervas e flores, chamando vida nova mesmo em terra estéril. Sua figura é tomada como sinal de que a floresta cresce em direção ao seu futuro.</figcaption>
-    </figure>
-
-    <figure class="pair">
-      <img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="A tela de informação do Hanagi2ne: tipo planta, habilidade Overgrow, natureza corajosa, encontrado no nível 7 no Bosque de Petalburg. O sprite é uma raposa verde-pálida de cauda em flor.">
-      <img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="Tela de combate. Hanagi2ne, visto de costas, enfrenta um Poochyena selvagem. O texto diz: Hanagi2ne usou ABSORB!">
-      <figcaption>Hanagitsune, desenhado à mão em diálogo com o ChatGPT, implementado como espécie dentro do próprio jogo.</figcaption>
-    </figure>
-
-    <p>As duas condições são acessíveis. Um processo de criação mais fundo — escolher, revisar, recusar — mexe na primeira; modelos melhores e uma estrutura de instruções projetada com mais cuidado mexem na segunda. É para lá que isto segue.</p>
-    <p>Portanto o resultado do protótipo não é um veredito sobre a pergunta. É a pergunta tornada mensurável: duas variáveis que agora podem ser movidas de propósito e observadas.</p>
-  </section>
-
-  <p class="colophon">Construído sobre a descompilação <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> como pesquisa pessoal. Nenhuma ROM, patch de ROM ou recurso do jogo é distribuído, e todos os sprites aqui apresentados são arte original gerada por IA. Pokémon é uma marca registrada da Nintendo, da Creatures Inc. e da GAME FREAK Inc.; este projeto não tem qualquer ligação com essas empresas nem o aval delas.</p>
+  <p class="colophon"><a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> Baseado na descompilação, foi criado como pesquisa pessoal. Nenhum ROM, patch de ROM ou recurso do jogo foi distribuído. Todos os sprites publicados aqui são originais gerados por IA. Pokémon é uma marca registrada da Nintendo, da Creatures Inc. e da Game Freak Inc., e este projeto não tem relação com essas empresas, nem recebeu aprovação delas.</p>
 
   <nav aria-label="Site">
     <ul>
