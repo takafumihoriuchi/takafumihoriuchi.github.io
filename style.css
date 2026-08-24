@@ -383,6 +383,12 @@ nav ul {
    default, which the class beats without needing an override. */
 .identity > * { margin-top: 0; }
 
+/* The home page uses the identity row as a two-line lockup: the role belongs
+   to the name on the first line, while the two profile links sit together on
+   the line below. Work pages keep the shared inline identity treatment. */
+.home-identity { display: block; }
+.home-identity nav { margin-top: 0.35rem; }
+
 /* Tighter between the two links than between them and the name, so they read
    as a pair attached to it rather than three items in a row. */
 .identity nav ul { gap: 1.25rem; }
