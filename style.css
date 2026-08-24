@@ -319,6 +319,12 @@ nav a:hover,
   display: block;
   margin-top: 0.2rem;
   color: var(--fg-muted);
+  /* The description is supporting information, and at body size it often
+     makes the text column taller than the thumbnail. A compact size and
+     leading keep the two halves of the desktop card visually aligned while
+     leaving the title at the normal body size. */
+  font-size: 0.75rem;
+  line-height: 1.5;
 }
 
 .work:hover .work-title { text-decoration-color: currentColor; }
@@ -328,6 +334,9 @@ nav a:hover,
   /* Stacked, the thumbnail would stretch past its own source width. */
   .work img,
   .thumb-pending { max-width: 20rem; }
+  /* Once the two columns stack, matching their heights is no longer useful;
+     restore a little size for easier reading on small screens. */
+  .work-desc { font-size: 0.875rem; }
 }
 
 nav { margin-top: var(--space-section); }
