@@ -565,8 +565,16 @@ figcaption {
    size the device works again: colour, weight and tracking carry it, and none
    of them need it to be small to do so. The tracking comes down because 0.14em
    was opening a word that no longer needs it. */
-:lang(ja) { --text: 0.875rem; }
-:lang(ja).home, :lang(zh).home, :lang(ko).home { --text: 0.875rem; }
+:lang(ja), :lang(zh), :lang(ko) { --text: 0.875rem; }
+
+/* Not scoped to the index the way the Latin scale is. The index there is
+   tighter than the work pages because a long read wants a larger type than a
+   contents page does, and that holds for Latin. It does not hold here: 14px is
+   already where a Japanese line reaches the length it wants in this measure,
+   and the 17px baseline is the size that was reported as tiring to read. The
+   heading rules below are unscoped for the same reason — leaving them unscoped
+   while the body size was index-only put the heading under the body on every
+   CJK work page, which is the inversion this whole block exists to prevent. */
 
 :is(:lang(ja), :lang(zh), :lang(ko)) h2 {
   font-size: 0.875rem;
