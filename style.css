@@ -75,6 +75,10 @@ body {
   line-height: var(--leading);
 }
 
+/* The index uses the tighter presentation scale. Keep it on the index rather
+   than changing :root, which would also shrink every long-form work page. */
+body.home { --text: 1rem; }
+
 main {
   max-width: var(--measure);
   margin: 0 auto;
@@ -132,8 +136,8 @@ ascii-hero + section { margin-top: 2.25rem; }
 
 /* On the index the drawing separates the site's identity from the complete
    work list, so it receives more air than the project-specific decorations. */
-ascii-hero[data-scene="philosophy"] { margin-top: 2.75rem; }
-ascii-hero[data-scene="philosophy"] + section { margin-top: 3.25rem; }
+ascii-hero[data-scene="philosophy"] { margin-top: 5rem; }
+ascii-hero[data-scene="philosophy"] + section { margin-top: 5.5rem; }
 
 .ascii-hero__canvas {
   margin: 0;
@@ -161,8 +165,8 @@ ascii-hero:not(:defined) .ascii-hero__canvas {
 @media (max-width: 32rem) {
   ascii-hero { margin-top: 1.5rem; }
   ascii-hero + section { margin-top: 2rem; }
-  ascii-hero[data-scene="philosophy"] { margin-top: 2.25rem; }
-  ascii-hero[data-scene="philosophy"] + section { margin-top: 3rem; }
+  ascii-hero[data-scene="philosophy"] { margin-top: 3rem; }
+  ascii-hero[data-scene="philosophy"] + section { margin-top: 3.5rem; }
 }
 
 h2 {
@@ -528,15 +532,8 @@ figcaption {
 /* Per-script adjustments. Only where a value tuned for Latin text actively
    misreads elsewhere — not a place to re-tune the design per language. */
 
-/* English comes down a step. The measure does not come with it, which is a
-   choice and not an oversight: a narrower column would have held the line at
-   the 73 characters it ran to at 17px, and the shared one lets it out to
-   around 78. The site keeps one column width across all fourteen languages,
-   and that is worth more than the three characters — the width is also the
-   stage the ASCII sketch is sized from, so a measure that moved per language
-   would render the sketch at a different size on every page it appeared on.
-   Scoped to English while the other Latin pages are still on the old setting;
-   when they follow, this becomes the default and the scoping goes. */
+/* English keeps the compact 16px scale it had before the multilingual index
+   retuning. Other long-form Latin-script work stays at the 17px baseline. */
 :lang(en) { --text: 1rem; }
 
 
@@ -569,8 +566,9 @@ figcaption {
    of them need it to be small to do so. The tracking comes down because 0.14em
    was opening a word that no longer needs it. */
 :lang(ja) { --text: 0.875rem; }
+:lang(ja).home, :lang(zh).home, :lang(ko).home { --text: 0.875rem; }
 
-:lang(ja) h2 {
+:is(:lang(ja), :lang(zh), :lang(ko)) h2 {
   font-size: 0.875rem;
   letter-spacing: 0.06em;
 }
@@ -585,20 +583,20 @@ figcaption {
    is the credit line, and that one is meant to sit level with the date beneath
    it. Lifting every `.tagline` would raise the credit above the date it is
    paired with and leave the pair reading as two unrelated lines. */
-:lang(ja) .home-identity .tagline { font-size: 1rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .home-identity .tagline { font-size: 1rem; }
 
 /* A caption is subordinate to the figure it sits under, and 0.875rem says so
    against a 17px body. Against a 14px one it says nothing — the caption
    arrives at the size of the text it is meant to defer to. Down a step, to the
    floor the Japanese scale keeps for supporting text. */
-:lang(ja) figcaption { font-size: 0.8125rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) figcaption { font-size: 0.8125rem; }
 
 /* Same problem one size down: the work description is set compact to hold the
    card's two columns to a matching height, and 12px is where that lands for
    Latin. In kanji it is below the size at which a paragraph is comfortably
    read, and this one is doing the work of telling the reader what the piece
    is. The card gives up a little of its alignment for it. */
-:lang(ja) .work-desc { font-size: 0.8125rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .work-desc { font-size: 0.8125rem; }
 
 /* The language switcher sits in the footer, above the copyright line. Each
    name is written in its own language, so each anchor carries its own `lang`
