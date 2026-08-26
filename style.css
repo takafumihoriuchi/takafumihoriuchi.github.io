@@ -389,6 +389,12 @@ nav ul {
 .home-identity { display: block; }
 .home-identity nav { margin-top: 0.35rem; }
 
+/* With a tagline the index lockup is three lines rather than two, and holding
+   0.35rem all the way down would set them as three unrelated lines. The
+   tagline qualifies the name directly above it and keeps the tight step; the
+   two links are somewhere else to go, so the step out to them is wider. */
+.home-identity .tagline + nav { margin-top: 0.9rem; }
+
 /* Tighter between the two links than between them and the name, so they read
    as a pair attached to it rather than three items in a row. */
 .identity nav ul { gap: 1.25rem; }
@@ -471,6 +477,48 @@ figcaption {
    uppercase` is inert in Arabic and can stay where it is. */
 :lang(ar) h1,
 :lang(ar) h2 { letter-spacing: normal; }
+
+/* Japanese fills its em box. Latin leaves the space above the x-height mostly
+   empty, so at one nominal size the two scripts do not arrive at the same
+   apparent size: a line of kana reads a step larger than the same size of
+   Latin, and runs denser. The Latin scale stays as it is and the Japanese one
+   is set against it.
+
+   Body comes down. 17px of Japanese in a 36rem measure holds about 33
+   characters, short of the 35–45 a Japanese line wants, so over a text this
+   length the eye turns more often than it should. 14px holds 41 — inside the
+   band, and near enough its top that the line still ends where the reader
+   expects rather than running on.
+
+   The heading keeps the label it was given and gets the size it needed all
+   along. 0.75rem tracked and set in capitals is a small-caps eyebrow in Latin:
+   it is read as a label because the capitals say so, which is what lets it be
+   that small. Japanese has no capitals to change case, so `text-transform` is
+   inert and the same declaration leaves nothing but 12px kanji — not a label,
+   just small type, and the section it names loses its head. Set at the body
+   size the device works again: colour, weight and tracking carry it, and none
+   of them need it to be small to do so. The tracking comes down because 0.14em
+   was opening a word that no longer needs it. */
+:lang(ja) { --text: 0.875rem; }
+
+:lang(ja) h2 {
+  font-size: 0.875rem;
+  letter-spacing: 0.06em;
+}
+
+/* The tagline is the one line on the index that is a statement rather than
+   something to read through, and it is the claim the whole page rests on. It
+   takes its size from the body only because it is set in a `p`; letting it
+   follow the body down to 14px would shrink it for a reason that has nothing
+   to do with it. Held where the body was. */
+:lang(ja) .tagline { font-size: 1rem; }
+
+/* Same problem one size down: the work description is set compact to hold the
+   card's two columns to a matching height, and 12px is where that lands for
+   Latin. In kanji it is below the size at which a paragraph is comfortably
+   read, and this one is doing the work of telling the reader what the piece
+   is. The card gives up a little of its alignment for it. */
+:lang(ja) .work-desc { font-size: 0.8125rem; }
 
 /* The language switcher sits in the footer, above the copyright line. Each
    name is written in its own language, so each anchor carries its own `lang`
