@@ -18,7 +18,17 @@ ul.plain { margin: 0 0 var(--space-para); padding-inline-start: 1.4em; }
 ul.plain li { margin-bottom: 0.75rem; }
 ul.plain li:last-child { margin-bottom: 0; }
 
-.lead { font-size: 1.125rem; }
+/* Written in `em`, not `rem`. These sizes are relations to the text they sit
+   with — a lead a step above it, a caption a step below — and `rem` is the
+   root, which does not move when `--text` does. The English pages set a 16px
+   body where the baseline is 17px, so every one of these arrived there still
+   measured against a body it no longer had: the lead opened from one pixel
+   above the text to two, and the subheads came out level with it. In `em` they
+   follow whatever the body is, and at the 17px baseline they resolve to
+   exactly the pixel values they had before. The CJK overrides further down
+   still win where they apply; that scale is deliberately compressed rather
+   than proportional, which is the one case a ratio cannot express. */
+.lead { font-size: 1.059em; }
 
 /* Work pages are set justified; the index is not. A work page is long-form
    reading, and a flush right edge holds the column steady over that distance.
@@ -105,7 +115,7 @@ figcaption {
 
 .colophon {
   margin-top: var(--space-section);
-  font-size: 0.875rem;
+  font-size: 0.824em;
   color: var(--fg-muted);
 }
 

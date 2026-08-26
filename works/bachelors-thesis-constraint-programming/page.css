@@ -1,7 +1,17 @@
 /* The English source is being completed before its translations. This file is
    already page-local so the later language versions can share it unchanged. */
 
-.lead { font-size: 1.125rem; }
+/* Written in `em`, not `rem`. These sizes are relations to the text they sit
+   with — a lead a step above it, a caption a step below — and `rem` is the
+   root, which does not move when `--text` does. The English pages set a 16px
+   body where the baseline is 17px, so every one of these arrived there still
+   measured against a body it no longer had: the lead opened from one pixel
+   above the text to two, and the subheads came out level with it. In `em` they
+   follow whatever the body is, and at the 17px baseline they resolve to
+   exactly the pixel values they had before. The CJK overrides further down
+   still win where they apply; that scale is deliberately compressed rather
+   than proportional, which is the one case a ratio cannot express. */
+.lead { font-size: 1.059em; }
 
 .section-break {
   margin: calc(var(--space-section) / 2) 0;
@@ -30,7 +40,7 @@ figcaption {
 
 h3 {
   margin: 2.5rem 0 0.75rem;
-  font-size: 1rem;
+  font-size: 0.941em;
   line-height: 1.4;
   font-weight: 600;
 }
@@ -61,7 +71,7 @@ h3 {
 }
 
 .citation {
-  font-size: 0.9375rem;
+  font-size: 0.882em;
   color: var(--fg-muted);
 }
 
