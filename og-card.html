@@ -18,21 +18,25 @@
      same command run on another machine would ship the other one. That is the
      silent shift this file is written to avoid, so the choice is in the file.
 
-     The dark ground is the one in use. To switch, swap in the light values
-     kept below — deliberately, and re-render. */
+     The light ground is the one in use, and it is a choice about the first
+     impression rather than a default: the card is what a link to this site
+     looks like before anyone has read a word of it, and it should open
+     bright. The site itself still follows the reader's own setting; only the
+     card is fixed, because a PNG cannot follow anything.
+
+     To switch, swap in the dark values kept below — deliberately, and
+     re-render. */
   :root {
-    --fg: #e8e8e5;
-    --fg-muted: #96968f;
-    --bg: #141413;
-    --accent: #b49780;
+    --fg: #1a1a1a;
+    --fg-muted: #6b6b68;
+    --bg: #fdfdfc;
+    --accent: #7c6553;
     --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
             Arial, "Noto Sans", "Liberation Sans", sans-serif;
   }
 
-  /* Light ground, unused:
-       --fg: #1a1a1a;  --fg-muted: #6b6b68;  --bg: #fdfdfc;  --accent: #7c6553; */
-
-  body { -webkit-font-smoothing: antialiased; }
+  /* Dark ground, unused:
+       --fg: #e8e8e5;  --fg-muted: #96968f;  --bg: #141413;  --accent: #b49780; */
 
   * { box-sizing: border-box; }
 
