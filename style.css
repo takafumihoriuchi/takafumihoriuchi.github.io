@@ -565,7 +565,13 @@ figcaption {
    size the device works again: colour, weight and tracking carry it, and none
    of them need it to be small to do so. The tracking comes down because 0.14em
    was opening a word that no longer needs it. */
-:lang(ja), :lang(zh), :lang(ko) { --text: 0.875rem; }
+body:is(:lang(ja), :lang(zh), :lang(ko)) { --text: 0.875rem; }
+
+/* Carries `body` only to outrank `body.home`, which sets the Latin index to a
+   step under its work pages. Written as a bare `:lang()` list this loses that
+   contest and the CJK index climbs back to 16px while the headings below stay
+   at 14, which puts the heading under the body — the inversion this block
+   exists to prevent, moved from the work pages to the index. */
 
 /* Not scoped to the index the way the Latin scale is. The index there is
    tighter than the work pages because a long read wants a larger type than a
