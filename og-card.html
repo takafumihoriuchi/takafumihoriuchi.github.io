@@ -12,24 +12,27 @@
      stylesheet — a share card that silently shifts after it has been cached is
      worse than one that has to be updated deliberately. -->
 <style>
+  /* The card commits to one ground and states it here rather than asking
+     `prefers-color-scheme`. A PNG has no theme to follow: whichever way the
+     machine that renders it happens to be set is the way it ships, and the
+     same command run on another machine would ship the other one. That is the
+     silent shift this file is written to avoid, so the choice is in the file.
+
+     The dark ground is the one in use. To switch, swap in the light values
+     kept below — deliberately, and re-render. */
   :root {
-    --fg: #1a1a1a;
-    --fg-muted: #6b6b68;
-    --bg: #fdfdfc;
-    --accent: #7c6553;
+    --fg: #e8e8e5;
+    --fg-muted: #96968f;
+    --bg: #141413;
+    --accent: #b49780;
     --font: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue",
             Arial, "Noto Sans", "Liberation Sans", sans-serif;
   }
 
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --fg: #e8e8e5;
-      --fg-muted: #96968f;
-      --bg: #141413;
-      --accent: #b49780;
-    }
-    body { -webkit-font-smoothing: antialiased; }
-  }
+  /* Light ground, unused:
+       --fg: #1a1a1a;  --fg-muted: #6b6b68;  --bg: #fdfdfc;  --accent: #7c6553; */
+
+  body { -webkit-font-smoothing: antialiased; }
 
   * { box-sizing: border-box; }
 
@@ -50,7 +53,7 @@
 
   h1 {
     margin: 0;
-    font-size: 76px;
+    font-size: 64px;
     font-weight: 600;
     letter-spacing: -0.02em;   /* large type needs less tracking, not more */
     line-height: 1.1;
@@ -78,8 +81,8 @@
 </style>
 </head>
 <body>
-  <h1>Takafumi Horiuchi</h1>
-  <p class="tagline">Design Engineer</p>
+  <h1>Takafumi Horiuchi (Design Engineer)</h1>
+  <p class="tagline">We design what AI designs.</p>
   <span class="domain">takafumihoriuchi.github.io</span>
 </body>
 </html>
