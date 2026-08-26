@@ -506,12 +506,23 @@ figcaption {
   letter-spacing: 0.06em;
 }
 
-/* The tagline is the one line on the index that is a statement rather than
-   something to read through, and it is the claim the whole page rests on. It
-   takes its size from the body only because it is set in a `p`; letting it
-   follow the body down to 14px would shrink it for a reason that has nothing
-   to do with it. Held where the body was. */
-:lang(ja) .tagline { font-size: 1rem; }
+/* The index tagline is a statement rather than something to read through, and
+   it is the claim the whole page rests on. It takes its size from the body
+   only because it is set in a `p`; letting it follow the body down to 14px
+   would shrink it for a reason that has nothing to do with it. Held where the
+   body was.
+
+   Scoped to the index, because `.tagline` has a second job: on a work page it
+   is the credit line, and that one is meant to sit level with the date beneath
+   it. Lifting every `.tagline` would raise the credit above the date it is
+   paired with and leave the pair reading as two unrelated lines. */
+:lang(ja) .home-identity .tagline { font-size: 1rem; }
+
+/* A caption is subordinate to the figure it sits under, and 0.875rem says so
+   against a 17px body. Against a 14px one it says nothing — the caption
+   arrives at the size of the text it is meant to defer to. Down a step, to the
+   floor the Japanese scale keeps for supporting text. */
+:lang(ja) figcaption { font-size: 0.8125rem; }
 
 /* Same problem one size down: the work description is set compact to hold the
    card's two columns to a matching height, and 12px is where that lands for

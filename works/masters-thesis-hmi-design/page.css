@@ -118,3 +118,15 @@ h3 {
 }
 
 .publication-citation { margin-top: var(--space-section); }
+
+/* The Japanese page sets its body at 14px, where the Latin one sets 17px, so
+   every size derived from the Latin body arrives on the Japanese page holding
+   a relationship it was not given: what was a step below the text lands level
+   with it, and what was a step above it opens a gap. Restated against the
+   Japanese scale, which runs 15 / 14 / 13 — a narrower range than the Latin
+   one, because kanji stop being read some way above the size Latin is still
+   comfortable at, and the floor rises with them. Weight, colour and space
+   carry the differences the sizes no longer can. */
+:lang(ja) .lead { font-size: 0.9375rem; }
+:lang(ja) h3 { font-size: 0.875rem; }
+:lang(ja) .citation { font-size: 0.8125rem; }
