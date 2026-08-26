@@ -8,12 +8,20 @@ const scenesPromise = fetch(SCENES_URL)
     return response.json();
   });
 
-function padLines(lines) {
-  const columns = Math.max(...lines.map((line) => line.length));
+function padFrames(lineSets) {
+  const columns = Math.max(...lineSets.flat().map((line) => line.length));
+  const rows = Math.max(...lineSets.map((lines) => lines.length));
   return {
     columns,
-    rows: lines.length,
-    lines: lines.map((line) => line.padEnd(columns, " ")),
+    rows,
+    frames: lineSets.map((lines) => ({
+      columns,
+      rows,
+      lines: Array.from(
+        { length: rows },
+        (_, y) => (lines[y] || "").padEnd(columns, " ")
+      ),
+    })),
   };
 }
 
@@ -37,25 +45,38 @@ function pulseCharacter(character) {
   return replacements[character] || character;
 }
 
-function idleCharacter(character, x, y, elapsed) {
-  const replacements = {
-    "-": "~",
-    "_": "-",
-    "~": "_",
-    "|": ":",
-    ":": "|",
-    ".": "'",
-    "'": ".",
-    "/": "|",
-    "\\": "|",
-  };
+function idleCharacter(character, x, y, elapsed, mode = true) {
+  const subtle = mode === "subtle";
+  const replacements = subtle
+    ? {
+        "-": "~",
+        "_": "-",
+        "~": "_",
+        "|": ":",
+      }
+    : {
+        "-": "~",
+        "_": "-",
+        "~": "_",
+        "|": ":",
+        ":": "|",
+        ".": "'",
+        "'": ".",
+        "/": "|",
+        "\\": "|",
+      };
   if (!replacements[character]) return character;
 
   // Move a small, deterministic group of line glyphs on each beat. Since no
   // cell changes position, the drawing can feel hand-drawn without reflowing.
-  const beat = Math.floor(elapsed / 260);
-  const cellPhase = Math.floor(deterministicNoise(x + 17, y + 31) * 17);
-  return (beat + cellPhase) % 17 === 0 ? replacements[character] : character;
+  const phaseCount = subtle ? 53 : 17;
+  const beat = Math.floor(elapsed / (subtle ? 420 : 260));
+  const cellPhase = Math.floor(
+    deterministicNoise(x + 17, y + 31) * phaseCount
+  );
+  return (beat + cellPhase) % phaseCount === 0
+    ? replacements[character]
+    : character;
 }
 
 class AsciiHero extends HTMLElement {
@@ -64,7 +85,7 @@ class AsciiHero extends HTMLElement {
     this._scene = null;
     this._variantName = null;
     this._variant = null;
-    this._cells = [];
+    this._frames = [];
     this._emphasis = null;
     this._elapsed = 0;
     this._lastTick = null;
@@ -149,7 +170,10 @@ class AsciiHero extends HTMLElement {
     }
 
     this._variantName = name;
-    this._variant = padLines(this._scene.variants[name].lines);
+    const variant = this._scene.variants[name];
+    const prepared = padFrames([variant.lines, ...(variant.frames || [])]);
+    this._variant = prepared.frames[0];
+    this._frames = prepared.frames;
     this._prepareAnimation();
     this._fitText();
 
@@ -158,17 +182,6 @@ class AsciiHero extends HTMLElement {
   }
 
   _prepareAnimation() {
-    const { columns, rows, lines } = this._variant;
-
-    this._cells = [];
-    for (let y = 0; y < rows; y += 1) {
-      for (let x = 0; x < columns; x += 1) {
-        const character = lines[y][x];
-        if (character === " ") continue;
-        this._cells.push({ x, y, character });
-      }
-    }
-
     const emphasis = this._scene.variants[this._variantName].emphasis;
     this._emphasis = emphasis ? this._findEmphasis(emphasis) : null;
   }
@@ -246,13 +259,17 @@ class AsciiHero extends HTMLElement {
       () => Array(this._variant.columns).fill(" ")
     );
 
-    for (const cell of this._cells) {
-      grid[cell.y][cell.x] = idleCharacter(
-        cell.character,
-        cell.x,
-        cell.y,
-        elapsed
-      );
+    const frameDuration = this._scene.frameDuration || Infinity;
+    const frameIndex = Math.floor(elapsed / frameDuration) % this._frames.length;
+    const frame = this._frames[frameIndex];
+    for (let y = 0; y < frame.rows; y += 1) {
+      for (let x = 0; x < frame.columns; x += 1) {
+        const character = frame.lines[y][x];
+        if (character === " ") continue;
+        grid[y][x] = this._scene.idleWobble === false
+          ? character
+          : idleCharacter(character, x, y, elapsed, this._scene.idleWobble);
+      }
     }
 
     if (this._emphasis) {

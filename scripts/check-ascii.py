@@ -34,6 +34,12 @@ def main() -> int:
         where = f"ascii/scenes.json#{scene_id}"
         if not 1500 <= scene.get("idlePulseInterval", 0) <= 10000:
             bad(where, "idlePulseInterval must be between 1.5 and 10 seconds")
+        frame_duration = scene.get("frameDuration")
+        if frame_duration is not None and not 150 <= frame_duration <= 2000:
+            bad(where, "frameDuration must be between 150ms and 2 seconds")
+        idle_wobble = scene.get("idleWobble")
+        if idle_wobble not in (None, True, False, "subtle"):
+            bad(where, 'idleWobble must be true, false, or "subtle"')
         for name, maximum in (("wide", 100), ("compact", 64)):
             variant = scene.get("variants", {}).get(name)
             if not variant:
@@ -43,14 +49,21 @@ def main() -> int:
             if not lines:
                 bad(where, f"{name} has no lines")
                 continue
-            width = max(map(len, lines))
+            frames = variant.get("frames", [])
+            for index, frame in enumerate(frames, 1):
+                if len(frame) != len(lines):
+                    bad(where, f"{name} frame {index} must have {len(lines)} rows")
+            all_lines = lines + [line for frame in frames for line in frame]
+            width = max(map(len, all_lines))
             if width > maximum:
                 bad(where, f"{name} is {width} columns; maximum is {maximum}")
-            for row, line in enumerate(lines, 1):
-                if line.rstrip() != line:
-                    bad(where, f"{name} row {row} has trailing spaces")
-                if any(ord(character) < 32 or ord(character) > 126 for character in line):
-                    bad(where, f"{name} row {row} contains a non-ASCII character")
+            for frame_index, frame in enumerate([lines, *frames]):
+                label = "fallback" if frame_index == 0 else f"frame {frame_index}"
+                for row, line in enumerate(frame, 1):
+                    if line.rstrip() != line:
+                        bad(where, f"{name} {label} row {row} has trailing spaces")
+                    if any(ord(character) < 32 or ord(character) > 126 for character in line):
+                        bad(where, f"{name} {label} row {row} contains a non-ASCII character")
             emphasis = variant.get("emphasis")
             if emphasis and not any(emphasis["token"] in line for line in lines):
                 bad(where, f"{name} emphasis token is absent from its final frame")
