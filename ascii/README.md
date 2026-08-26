@@ -4,6 +4,20 @@ The illustration between each page header and its first section is real text.
 `ascii-hero.js` replaces the contents of a `<pre>` at 10 frames per second;
 there is no canvas, SVG, image, or video renderer.
 
+## File layout
+
+- `ascii-hero.js` is the reusable browser component. It owns responsive
+  sizing, theme switching, reduced-motion behavior, visibility pausing, and
+  frame playback.
+- `scenes.json` contains only drawings and animation settings. Adding a work
+  does not require changing the component.
+- `page-scenes.json` is the single route-to-scene manifest used by both the
+  wiring and validation scripts.
+- `scripts/wire-ascii.py` inserts the component and its text fallback into all
+  language copies.
+- `scripts/check-ascii.py` validates scene dimensions, printable characters,
+  route mappings, fallbacks, and placement across the site.
+
 ## Scenes
 
 `scenes.json` contains one scene per page concept:
@@ -32,6 +46,39 @@ A size variant may replace `lines` and `frames` with `themes.light` and
 `themes.dark`. The engine follows `prefers-color-scheme`, updates a running
 scene if the system theme changes, and requires both themes to use an equal
 grid. The committed HTML fallback uses the light theme.
+
+## Adding an animation to a new work
+
+1. Add the work route to `PAGES` in `scripts/langs.py` as part of creating the
+   translated pages.
+2. Add one scene to `scenes.json`. Give it both `wide` and `compact` variants;
+   `lines` is the complete initial and fallback drawing, while optional
+   `frames` provide the loop.
+3. Add one route-to-scene entry to `page-scenes.json`.
+4. Run `python3 scripts/wire-ascii.py` to update every language copy.
+5. Run `python3 scripts/check-ascii.py` before committing.
+
+The smallest reusable scene shape is:
+
+```json
+{
+  "new-work": {
+    "idlePulseInterval": 3600,
+    "frameDuration": 850,
+    "idleWobble": false,
+    "variants": {
+      "wide": { "lines": ["complete wide drawing"], "frames": [] },
+      "compact": { "lines": ["compact drawing"], "frames": [] }
+    }
+  }
+}
+```
+
+Use `idleWobble: "subtle"` for small in-place glyph changes, or complete
+`frames` when the composition itself must move. Theme-specific scenes put
+matching `light` and `dark` configurations under each size variant's `themes`
+object. Wide drawings may use at most 100 columns; compact drawings may use at
+most 64.
 
 ## Page wiring
 

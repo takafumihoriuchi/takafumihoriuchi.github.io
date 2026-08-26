@@ -7,10 +7,11 @@ mechanical edits that must stay identical across all language copies:
     python3 scripts/wire-ascii.py          # rewrite pages in place
     python3 scripts/wire-ascii.py --check  # report drift, write nothing
 
-It inserts the appropriate scene immediately after the page header, adds the
-home-page epilogue immediately before its footer, and adds the shared module
-to the head. The light-mode wide frame is embedded as real text, so each
-illustration remains present when JavaScript is unavailable.
+It reads the route-to-scene mapping from ascii/page-scenes.json, inserts the
+appropriate scene immediately after the page header, adds the home-page
+epilogue immediately before its footer, and adds the shared module to the
+head. The light-mode wide frame is embedded as real text, so each illustration
+remains present when JavaScript is unavailable.
 """
 
 from __future__ import annotations
@@ -24,15 +25,6 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from langs import LANGS, PAGES  # noqa: E402
 
-
-SCENE_FOR_PAGE = {
-    "": "philosophy",
-    "works/personal-fit-ui/": "personal-fit-ui",
-    "works/my-own-pokemon-generation/": "pokemon-generation",
-    "works/masters-thesis-hmi-design/": "masters-thesis",
-    "works/bachelors-thesis-constraint-programming/": "constraint-programming",
-}
-FOOTER_SCENE = "footer-rest"
 
 MODULE = '<script type="module" src="/ascii/ascii-hero.js"></script>'
 MODULE_RE = re.compile(r'\n?<script\s+type="module"\s+src="/ascii/ascii-hero\.js"></script>\n?')
@@ -65,7 +57,13 @@ def hero(scene_id: str, scenes: dict, *, placement: str | None = None) -> str:
     )
 
 
-def wire(source: str, page: str, scene_id: str, scenes: dict) -> str:
+def wire(
+    source: str,
+    page: str,
+    scene_id: str,
+    footer_scene_id: str,
+    scenes: dict,
+) -> str:
     # Keep one module tag, anchored at the end of the head.
     source = MODULE_RE.sub("\n", source)
     if "</head>" not in source:
@@ -84,7 +82,7 @@ def wire(source: str, page: str, scene_id: str, scenes: dict) -> str:
     if page == "":
         footer_markup = (
             "\n\n"
-            + hero(FOOTER_SCENE, scenes, placement="footer")
+            + hero(footer_scene_id, scenes, placement="footer")
             + "\n\n"
         )
         if FOOTER_HERO_RE.search(source):
@@ -107,17 +105,47 @@ def main() -> int:
     check_only = "--check" in sys.argv
     root = Path(__file__).resolve().parent.parent
     scenes = json.loads((root / "ascii" / "scenes.json").read_text(encoding="utf-8"))
+    manifest = json.loads(
+        (root / "ascii" / "page-scenes.json").read_text(encoding="utf-8")
+    )
+    page_scenes = manifest.get("pages", {})
+    footer_scene_id = manifest.get("homeFooter")
+
+    missing_pages = sorted(set(PAGES) - set(page_scenes))
+    extra_pages = sorted(set(page_scenes) - set(PAGES))
+    if missing_pages or extra_pages:
+        raise SystemExit(
+            "ascii/page-scenes.json and scripts/langs.py PAGES differ: "
+            f"missing={missing_pages}, extra={extra_pages}"
+        )
+    unknown_scenes = sorted(
+        {scene_id for scene_id in page_scenes.values() if scene_id not in scenes}
+    )
+    if footer_scene_id not in scenes:
+        unknown_scenes.append(str(footer_scene_id))
+    if unknown_scenes:
+        raise SystemExit(
+            "ascii/page-scenes.json references unknown scenes: "
+            + ", ".join(unknown_scenes)
+        )
+
     changed: list[str] = []
 
     for page in PAGES:
-        scene_id = SCENE_FOR_PAGE[page]
+        scene_id = page_scenes[page]
         for _, directory, _, _ in LANGS:
             path = root / directory / page / "index.html"
             if not path.exists():
                 continue
             before = path.read_text(encoding="utf-8")
             try:
-                after = wire(before, page, scene_id, scenes)
+                after = wire(
+                    before,
+                    page,
+                    scene_id,
+                    footer_scene_id,
+                    scenes,
+                )
             except ValueError as error:
                 raise SystemExit(f"{path.relative_to(root)}: {error}") from error
             if after != before:

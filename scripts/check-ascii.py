@@ -13,19 +13,14 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from langs import LANGS, PAGES  # noqa: E402
 
 
-SCENE_FOR_PAGE = {
-    "": "philosophy",
-    "works/personal-fit-ui/": "personal-fit-ui",
-    "works/my-own-pokemon-generation/": "pokemon-generation",
-    "works/masters-thesis-hmi-design/": "masters-thesis",
-    "works/bachelors-thesis-constraint-programming/": "constraint-programming",
-}
-FOOTER_SCENE = "footer-rest"
-
-
 def main() -> int:
     root = Path(__file__).resolve().parent.parent
     scenes = json.loads((root / "ascii" / "scenes.json").read_text(encoding="utf-8"))
+    manifest = json.loads(
+        (root / "ascii" / "page-scenes.json").read_text(encoding="utf-8")
+    )
+    page_scenes = manifest.get("pages", {})
+    footer_scene_id = manifest.get("homeFooter")
     problems: list[str] = []
 
     def bad(where: str, message: str) -> None:
@@ -34,6 +29,22 @@ def main() -> int:
     def light_wide_lines(scene_id: str) -> list[str]:
         variant = scenes[scene_id]["variants"]["wide"]
         return variant.get("themes", {}).get("light", variant)["lines"]
+
+    for page in sorted(set(PAGES) - set(page_scenes)):
+        bad("ascii/page-scenes.json", f"missing page route {page!r}")
+    for page in sorted(set(page_scenes) - set(PAGES)):
+        bad("ascii/page-scenes.json", f"unknown page route {page!r}")
+    for page, scene_id in page_scenes.items():
+        if scene_id not in scenes:
+            bad(
+                "ascii/page-scenes.json",
+                f"page route {page!r} references unknown scene {scene_id!r}",
+            )
+    if footer_scene_id not in scenes:
+        bad(
+            "ascii/page-scenes.json",
+            f"homeFooter references unknown scene {footer_scene_id!r}",
+        )
 
     for scene_id, scene in scenes.items():
         where = f"ascii/scenes.json#{scene_id}"
@@ -106,7 +117,9 @@ def main() -> int:
                 bad(where, f"{name} light and dark grids must have equal dimensions")
 
     for page in PAGES:
-        expected_scene = SCENE_FOR_PAGE[page]
+        expected_scene = page_scenes.get(page)
+        if expected_scene not in scenes:
+            continue
         expected_fallback = "\n".join(
             line.rstrip() for line in light_wide_lines(expected_scene)
         )
@@ -146,8 +159,8 @@ def main() -> int:
             ]
             if page == "":
                 footer_hero = footer_heroes[0]
-                if f'data-scene="{FOOTER_SCENE}"' not in footer_hero:
-                    bad(where, f"footer does not use scene {FOOTER_SCENE!r}")
+                if f'data-scene="{footer_scene_id}"' not in footer_hero:
+                    bad(where, f"footer does not use scene {footer_scene_id!r}")
                 footer_fallback_match = re.search(
                     r"<pre\b[^>]*>(.*?)</pre>", footer_hero, re.S
                 )
@@ -157,11 +170,13 @@ def main() -> int:
                     else None
                 )
                 expected_footer_fallback = "\n".join(
-                    line.rstrip() for line in light_wide_lines(FOOTER_SCENE)
+                    line.rstrip() for line in light_wide_lines(footer_scene_id)
                 )
                 if footer_fallback != expected_footer_fallback:
                     bad(where, "footer fallback differs from its light wide frame")
-                footer_hero_start = source.find('<ascii-hero data-scene="footer-rest"')
+                footer_hero_start = source.find(
+                    f'<ascii-hero data-scene="{footer_scene_id}"'
+                )
                 last_section_end = source.rfind("</section>")
                 footer_start = source.find("<footer", last_section_end)
                 if not (last_section_end < footer_hero_start < footer_start):
