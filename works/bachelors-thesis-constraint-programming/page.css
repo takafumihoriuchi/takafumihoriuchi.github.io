@@ -75,6 +75,13 @@ h3 {
    one, because kanji stop being read some way above the size Latin is still
    comfortable at, and the floor rises with them. Weight, colour and space
    carry the differences the sizes no longer can. */
-:lang(ja) .lead { font-size: 0.9375rem; }
+/* The lead keeps no size of its own in Japanese. A step above the body is
+   worth about half a pixel of visible height in Latin, where the eye reads
+   the x-height and the letterforms vary anyway; the same step is worth nearly
+   twice that in Japanese, where the glyph fills its body and every character
+   is the same width, so the line count changes with it and the whole block
+   changes texture. What arrives as a little more presence in Latin arrives
+   here as a paragraph set at the wrong size. */
+:lang(ja) .lead { font-size: inherit; }
 :lang(ja) h3 { font-size: 0.875rem; }
 :lang(ja) .citation { font-size: 0.8125rem; }
