@@ -75,6 +75,7 @@
   ]
 }
 </script>
+<script type="module" src="/ascii/ascii-hero.js"></script>
 </head>
 <body>
 <main>
@@ -82,6 +83,7 @@
   <header>
     <div class="identity home-identity" dir="ltr">
       <h1 lang="en">Takafumi Horiuchi — Design Engineer</h1>
+      <p class="tagline">We design what AI designs.</p>
       <nav aria-label="Profiles elsewhere">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
@@ -91,17 +93,22 @@
     </div>
   </header>
 
-  <section>
-    <h2>Design Philosophy</h2>
-    <p>AI can generate a wide range of content within a given set of conditions. Yet what can be produced—and how broad those possibilities can be—is determined by the design space provided to the AI. I believe that designing not only individual outputs, but the “space of possible content” that AI explores, will become central to design in the age of AI.</p>
-    <p>This space is shaped by factors such as objectives, values, priorities, constraints, prohibitions, and evaluation criteria. By defining what must be preserved, how much may change, and what kinds of variation are acceptable, designers give AI a bounded space in which to explore multiple possibilities and turn them into concrete content.</p>
-    <p>I call this approach “constraint-driven design”. Here, constraints are not intended to suppress creativity. They are a way to exclude undesirable possibilities while creating room for AI to explore safely. Rather than specifying a single answer, the designer shapes the structure of the space from which desirable answers can emerge.</p>
-    <p>The starting point is an understanding of people. Insights into cognition, perception, the body, and behaviour are translated into conditions and rules that AI can work with. Drawing on my experience across computer science, design engineering, business consulting, and cognitive and behavioural science, my work centres on using constraints to connect human understanding with AI’s generative capabilities.</p>
-    <p>As AI becomes more capable of making decisions and taking action autonomously, the designer’s role expands from refining a single answer produced by AI to shaping the structure that determines what kinds of answers can emerge. Design must address not only what AI creates, but also the space it explores and the conditions under which it creates.</p>
-  </section>
+  <ascii-hero data-scene="philosophy" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">          _______
+     o---/       \              .--------.   .--------.   .------.
+    /|\                         /                                  \
+    / \             .----------       ( )       /\       ~~~~      \                 o
+                   /                                                \               /|\
+                  |       { }           @          [ ]               |             / |
+                  |             o             ____          (  )------------------/  |
+                  |                         /    \                                  / \
+                  |       /\               (      )       ~~~
+                   \                                                    /
+                    &#x27;-----.       .----------.       .--------.--------&#x27;</pre>
+  </ascii-hero>
 
   <section>
-    <h2>Recent Works</h2>
+    <h2>Self-Initiated Work</h2>
     <!-- Keep the date inside every card title in the form “Title (Month Year)”.
          For work that is not yet complete, the month is when the work began;
          its status belongs in the description, not in place of the date. -->
@@ -120,7 +127,7 @@
           <img src="works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
           <span>
             <span class="work-title">My Own Pokémon Generation (July 2026)</span>
-            <span class="work-desc">A new Pokémon species is generated from the player&#x27;s words during play, then brought into the game as an encounter they can catch. The prototype focuses not only on what AI creates, but on the rules that preserve balance and coherence.</span>
+            <span class="work-desc">A new Pokémon species is generated from the player&#x27;s words during play, then brought into the game as an encounter they can catch. What I designed is not what the AI makes, but what it is not allowed to break.</span>
           </span>
         </a>
       </li>
@@ -128,7 +135,7 @@
   </section>
 
   <section>
-    <h2>Academic Works</h2>
+    <h2>Earlier Academic Work</h2>
     <ul class="works">
       <li>
         <a class="work" href="works/masters-thesis-hmi-design/">
@@ -149,6 +156,11 @@
         </a>
       </li>
     </ul>
+  </section>
+
+  <section>
+    <h2>How I Think About Design</h2>
+    <p>AI can generate a wide range of content within the conditions it is given. What decides what is possible in the first place, though, is the design space it was handed. Objectives, values, priorities, constraints, prohibitions, the criteria a result is judged by — these set the boundary, and AI searches inside it. What we design is that space rather than any one output; I call this approach &#x201C;constraint-driven design&#x201D;. A constraint is there to keep possibilities open rather than to close them off, and which form finally goes out into the world is still our decision — one that takes craft, and an eye for the form it should take. We design the space, and then we choose one form from inside it and commit to it. Taking on both is what I understand the designer&#x2019;s work to be now that AI can generate.</p>
   </section>
 
   <footer>

@@ -108,6 +108,63 @@ h1 {
 
 section { margin-top: var(--space-section); }
 
+/* The moving sketch between a page's identity and its prose is text, not
+   media. The custom element owns a shallow fixed stage so changing characters
+   cannot move the content below it, and the engine sizes a monospace cell from
+   the measured width rather than trusting a platform-specific font metric.
+   The final frame is present in the HTML as a no-JavaScript fallback. */
+ascii-hero {
+  display: grid;
+  place-items: center;
+  width: 100%;
+  aspect-ratio: 9 / 2;
+  margin-top: 1.75rem;
+  overflow: hidden;
+  contain: layout paint;
+  color: var(--accent);
+}
+
+ascii-hero:empty { display: none; }
+
+/* The sketch becomes the bridge into the first section, so the normal full
+   section interval would be one pause too many after it. */
+ascii-hero + section { margin-top: 2.25rem; }
+
+/* On the index the drawing separates the site's identity from the complete
+   work list, so it receives more air than the project-specific decorations. */
+ascii-hero[data-scene="philosophy"] { margin-top: 2.75rem; }
+ascii-hero[data-scene="philosophy"] + section { margin-top: 3.25rem; }
+
+.ascii-hero__canvas {
+  margin: 0;
+  max-width: none;
+  color: inherit;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas,
+               "Liberation Mono", "Courier New", monospace;
+  font-variant-ligatures: none;
+  font-weight: 500;
+  line-height: 1.08;
+  letter-spacing: 0;
+  white-space: pre;
+  direction: ltr;
+  unicode-bidi: isolate;
+  user-select: text;
+}
+
+/* Before the module upgrades the element, fit the wide final frame on both a
+   phone and the full measure. The running engine replaces this approximation
+   with a value calculated from the chosen grid's actual column count. */
+ascii-hero:not(:defined) .ascii-hero__canvas {
+  font-size: min(0.65rem, 1.6vw);
+}
+
+@media (max-width: 32rem) {
+  ascii-hero { margin-top: 1.5rem; }
+  ascii-hero + section { margin-top: 2rem; }
+  ascii-hero[data-scene="philosophy"] { margin-top: 2.25rem; }
+  ascii-hero[data-scene="philosophy"] + section { margin-top: 3rem; }
+}
+
 h2 {
   margin: 0 0 1rem;
   font-size: 0.75rem;
@@ -470,6 +527,18 @@ figcaption {
 
 /* Per-script adjustments. Only where a value tuned for Latin text actively
    misreads elsewhere — not a place to re-tune the design per language. */
+
+/* English comes down a step. The measure does not come with it, which is a
+   choice and not an oversight: a narrower column would have held the line at
+   the 73 characters it ran to at 17px, and the shared one lets it out to
+   around 78. The site keeps one column width across all fourteen languages,
+   and that is worth more than the three characters — the width is also the
+   stage the ASCII sketch is sized from, so a measure that moved per language
+   would render the sketch at a different size on every page it appeared on.
+   Scoped to English while the other Latin pages are still on the old setting;
+   when they follow, this becomes the default and the scoping goes. */
+:lang(en) { --text: 1rem; }
+
 
 /* Arabic joins its letters into words, so tracking does not open the script
    up, it pulls the joins apart. Both the negative tracking on the name and
