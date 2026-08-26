@@ -9,6 +9,7 @@ there is no canvas, SVG, image, or video renderer.
 `scenes.json` contains one scene per page concept:
 
 - `philosophy`
+- `footer-rest`
 - `personal-fit-ui`
 - `pokemon-generation`
 - `masters-thesis`
@@ -26,6 +27,11 @@ A scene may also define `frameDuration` and complete `frames` for motion that
 changes the composition rather than individual glyphs. Every frame uses the
 same row count and is padded to one shared grid, keeping the page geometry
 fixed. The base `lines` remain the no-JavaScript and reduced-motion frame.
+
+A size variant may replace `lines` and `frames` with `themes.light` and
+`themes.dark`. The engine follows `prefers-color-scheme`, updates a running
+scene if the system theme changes, and requires both themes to use an equal
+grid. The committed HTML fallback uses the light theme.
 
 ## Page wiring
 

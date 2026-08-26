@@ -139,6 +139,15 @@ ascii-hero + section { margin-top: 2.25rem; }
 ascii-hero[data-scene="philosophy"] { margin-top: 5rem; }
 ascii-hero[data-scene="philosophy"] + section { margin-top: 5.5rem; }
 
+/* The closing sketch is a compact epilogue, not a second hero. It occupies a
+   shallow full-width strip immediately before the footer rule. */
+ascii-hero[data-scene="footer-rest"] {
+  aspect-ratio: 8 / 1;
+  margin-top: 3rem;
+}
+
+ascii-hero[data-scene="footer-rest"] + footer { margin-top: 1.5rem; }
+
 .ascii-hero__canvas {
   margin: 0;
   max-width: none;
@@ -167,6 +176,11 @@ ascii-hero:not(:defined) .ascii-hero__canvas {
   ascii-hero + section { margin-top: 2rem; }
   ascii-hero[data-scene="philosophy"] { margin-top: 3rem; }
   ascii-hero[data-scene="philosophy"] + section { margin-top: 3.5rem; }
+  ascii-hero[data-scene="footer-rest"] {
+    aspect-ratio: 11 / 2;
+    margin-top: 2.5rem;
+  }
+  ascii-hero[data-scene="footer-rest"] + footer { margin-top: 1.25rem; }
 }
 
 h2 {

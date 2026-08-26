@@ -84,6 +84,8 @@ class AsciiHero extends HTMLElement {
     super();
     this._scene = null;
     this._variantName = null;
+    this._variantKey = null;
+    this._variantConfig = null;
     this._variant = null;
     this._frames = [];
     this._emphasis = null;
@@ -94,6 +96,7 @@ class AsciiHero extends HTMLElement {
     this._inView = false;
     this._started = false;
     this._motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    this._colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
   }
 
   connectedCallback() {
@@ -124,6 +127,11 @@ class AsciiHero extends HTMLElement {
       }
     };
     this._motion.addEventListener("change", this._onMotionChange);
+
+    this._onColorSchemeChange = () => {
+      if (this._scene) this._selectVariant(true);
+    };
+    this._colorScheme.addEventListener("change", this._onColorSchemeChange);
 
     this._resizeObserver = new ResizeObserver(() => this._selectVariant());
     this._resizeObserver.observe(this);
@@ -158,19 +166,25 @@ class AsciiHero extends HTMLElement {
     this._resizeObserver?.disconnect();
     this._intersectionObserver?.disconnect();
     this._motion.removeEventListener("change", this._onMotionChange);
+    this._colorScheme.removeEventListener("change", this._onColorSchemeChange);
     document.removeEventListener("visibilitychange", this._onVisibilityChange);
   }
 
   _selectVariant(force = false) {
     if (!this._scene) return;
     const name = this.clientWidth < COMPACT_BREAKPOINT ? "compact" : "wide";
-    if (!force && name === this._variantName) {
+    const baseVariant = this._scene.variants[name];
+    const themeName = this._colorScheme.matches ? "dark" : "light";
+    const variant = baseVariant.themes?.[themeName] || baseVariant;
+    const key = `${name}:${baseVariant.themes ? themeName : "default"}`;
+    if (!force && key === this._variantKey) {
       this._fitText();
       return;
     }
 
     this._variantName = name;
-    const variant = this._scene.variants[name];
+    this._variantKey = key;
+    this._variantConfig = variant;
     const prepared = padFrames([variant.lines, ...(variant.frames || [])]);
     this._variant = prepared.frames[0];
     this._frames = prepared.frames;
@@ -182,7 +196,7 @@ class AsciiHero extends HTMLElement {
   }
 
   _prepareAnimation() {
-    const emphasis = this._scene.variants[this._variantName].emphasis;
+    const emphasis = this._variantConfig.emphasis;
     this._emphasis = emphasis ? this._findEmphasis(emphasis) : null;
   }
 

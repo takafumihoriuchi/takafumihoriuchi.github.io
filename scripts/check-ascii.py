@@ -20,6 +20,7 @@ SCENE_FOR_PAGE = {
     "works/masters-thesis-hmi-design/": "masters-thesis",
     "works/bachelors-thesis-constraint-programming/": "constraint-programming",
 }
+FOOTER_SCENE = "footer-rest"
 
 
 def main() -> int:
@@ -29,6 +30,10 @@ def main() -> int:
 
     def bad(where: str, message: str) -> None:
         problems.append(f"{where}: {message}")
+
+    def light_wide_lines(scene_id: str) -> list[str]:
+        variant = scenes[scene_id]["variants"]["wide"]
+        return variant.get("themes", {}).get("light", variant)["lines"]
 
     for scene_id, scene in scenes.items():
         where = f"ascii/scenes.json#{scene_id}"
@@ -45,33 +50,65 @@ def main() -> int:
             if not variant:
                 bad(where, f"missing {name} variant")
                 continue
-            lines = variant.get("lines", [])
-            if not lines:
-                bad(where, f"{name} has no lines")
-                continue
-            frames = variant.get("frames", [])
-            for index, frame in enumerate(frames, 1):
-                if len(frame) != len(lines):
-                    bad(where, f"{name} frame {index} must have {len(lines)} rows")
-            all_lines = lines + [line for frame in frames for line in frame]
-            width = max(map(len, all_lines))
-            if width > maximum:
-                bad(where, f"{name} is {width} columns; maximum is {maximum}")
-            for frame_index, frame in enumerate([lines, *frames]):
-                label = "fallback" if frame_index == 0 else f"frame {frame_index}"
-                for row, line in enumerate(frame, 1):
-                    if line.rstrip() != line:
-                        bad(where, f"{name} {label} row {row} has trailing spaces")
-                    if any(ord(character) < 32 or ord(character) > 126 for character in line):
-                        bad(where, f"{name} {label} row {row} contains a non-ASCII character")
-            emphasis = variant.get("emphasis")
-            if emphasis and not any(emphasis["token"] in line for line in lines):
-                bad(where, f"{name} emphasis token is absent from its final frame")
+            themes = variant.get("themes")
+            if themes is not None:
+                if set(themes) != {"light", "dark"}:
+                    bad(where, f"{name} themes must contain light and dark")
+                frame_sets = [(theme, config) for theme, config in themes.items()]
+            else:
+                frame_sets = [("default", variant)]
+
+            dimensions: set[tuple[int, int]] = set()
+            for theme, config in frame_sets:
+                label_prefix = name if theme == "default" else f"{name}/{theme}"
+                lines = config.get("lines", [])
+                if not lines:
+                    bad(where, f"{label_prefix} has no lines")
+                    continue
+                frames = config.get("frames", [])
+                for index, frame in enumerate(frames, 1):
+                    if len(frame) != len(lines):
+                        bad(
+                            where,
+                            f"{label_prefix} frame {index} must have {len(lines)} rows",
+                        )
+                all_lines = lines + [line for frame in frames for line in frame]
+                width = max(map(len, all_lines))
+                dimensions.add((len(lines), width))
+                if width > maximum:
+                    bad(
+                        where,
+                        f"{label_prefix} is {width} columns; maximum is {maximum}",
+                    )
+                for frame_index, frame in enumerate([lines, *frames]):
+                    label = "fallback" if frame_index == 0 else f"frame {frame_index}"
+                    for row, line in enumerate(frame, 1):
+                        if line.rstrip() != line:
+                            bad(
+                                where,
+                                f"{label_prefix} {label} row {row} has trailing spaces",
+                            )
+                        if any(
+                            ord(character) < 32 or ord(character) > 126
+                            for character in line
+                        ):
+                            bad(
+                                where,
+                                f"{label_prefix} {label} row {row} contains a non-ASCII character",
+                            )
+                emphasis = config.get("emphasis")
+                if emphasis and not any(emphasis["token"] in line for line in lines):
+                    bad(
+                        where,
+                        f"{label_prefix} emphasis token is absent from its fallback frame",
+                    )
+            if themes is not None and len(dimensions) > 1:
+                bad(where, f"{name} light and dark grids must have equal dimensions")
 
     for page in PAGES:
         expected_scene = SCENE_FOR_PAGE[page]
         expected_fallback = "\n".join(
-            line.rstrip() for line in scenes[expected_scene]["variants"]["wide"]["lines"]
+            line.rstrip() for line in light_wide_lines(expected_scene)
         )
         for _, directory, _, _ in LANGS:
             path = root / directory / page / "index.html"
@@ -82,13 +119,18 @@ def main() -> int:
             if source.count('src="/ascii/ascii-hero.js"') != 1:
                 bad(where, "must load the ASCII module exactly once")
             heroes = re.findall(r"<ascii-hero\b.*?</ascii-hero>", source, re.S)
-            if len(heroes) != 1:
-                bad(where, f"has {len(heroes)} ASCII heroes, expected one")
+            expected_count = 2 if page == "" else 1
+            if len(heroes) != expected_count:
+                bad(where, f"has {len(heroes)} ASCII heroes, expected {expected_count}")
                 continue
-            hero = heroes[0]
-            if f'data-scene="{expected_scene}"' not in hero:
+            primary = next(
+                (item for item in heroes if 'data-placement="footer"' not in item),
+                None,
+            )
+            if primary is None or f'data-scene="{expected_scene}"' not in primary:
                 bad(where, f"does not use scene {expected_scene!r}")
-            fallback_match = re.search(r"<pre\b[^>]*>(.*?)</pre>", hero, re.S)
+                continue
+            fallback_match = re.search(r"<pre\b[^>]*>(.*?)</pre>", primary, re.S)
             fallback = html.unescape(fallback_match.group(1)) if fallback_match else None
             if fallback != expected_fallback:
                 bad(where, "fallback frame differs from the scene's wide final frame")
@@ -98,6 +140,32 @@ def main() -> int:
             first_section = source.find("<section", header_end)
             if not (header_end < hero_start < first_section):
                 bad(where, "ASCII hero is not between the header and first section")
+
+            footer_heroes = [
+                item for item in heroes if 'data-placement="footer"' in item
+            ]
+            if page == "":
+                footer_hero = footer_heroes[0]
+                if f'data-scene="{FOOTER_SCENE}"' not in footer_hero:
+                    bad(where, f"footer does not use scene {FOOTER_SCENE!r}")
+                footer_fallback_match = re.search(
+                    r"<pre\b[^>]*>(.*?)</pre>", footer_hero, re.S
+                )
+                footer_fallback = (
+                    html.unescape(footer_fallback_match.group(1))
+                    if footer_fallback_match
+                    else None
+                )
+                expected_footer_fallback = "\n".join(
+                    line.rstrip() for line in light_wide_lines(FOOTER_SCENE)
+                )
+                if footer_fallback != expected_footer_fallback:
+                    bad(where, "footer fallback differs from its light wide frame")
+                footer_hero_start = source.find('<ascii-hero data-scene="footer-rest"')
+                last_section_end = source.rfind("</section>")
+                footer_start = source.find("<footer", last_section_end)
+                if not (last_section_end < footer_hero_start < footer_start):
+                    bad(where, "footer ASCII is not between the final section and footer")
 
     if problems:
         print(f"{len(problems)} problem(s):\n")
