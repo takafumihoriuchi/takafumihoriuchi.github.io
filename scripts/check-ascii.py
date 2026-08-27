@@ -84,12 +84,22 @@ def main() -> int:
                             f"{label_prefix} frame {index} must have {len(lines)} rows",
                         )
                 all_lines = lines + [line for frame in frames for line in frame]
-                width = max(map(len, all_lines))
-                dimensions.add((len(lines), width))
-                if width > maximum:
+                measured_width = max(map(len, all_lines))
+                grid_columns = config.get(
+                    "gridColumns", variant.get("gridColumns", measured_width)
+                )
+                if not isinstance(grid_columns, int) or grid_columns < measured_width:
                     bad(
                         where,
-                        f"{label_prefix} is {width} columns; maximum is {maximum}",
+                        f"{label_prefix} gridColumns must be an integer at least "
+                        f"{measured_width}",
+                    )
+                    grid_columns = measured_width
+                dimensions.add((len(lines), grid_columns))
+                if grid_columns > maximum:
+                    bad(
+                        where,
+                        f"{label_prefix} is {grid_columns} columns; maximum is {maximum}",
                     )
                 for frame_index, frame in enumerate([lines, *frames]):
                     label = "fallback" if frame_index == 0 else f"frame {frame_index}"

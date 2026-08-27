@@ -80,6 +80,11 @@ matching `light` and `dark` configurations under each size variant's `themes`
 object. Wide drawings may use at most 100 columns; compact drawings may use at
 most 64.
 
+Set an optional `gridColumns` on a size variant when two scenes must use the
+same glyph scale even though one drawing is narrower. It must be at least as
+wide as every frame. The renderer pads the in-memory grid to that width; the
+JSON lines themselves still have no trailing spaces.
+
 ## Page wiring
 
 Run:

@@ -8,8 +8,11 @@ const scenesPromise = fetch(SCENES_URL)
     return response.json();
   });
 
-function padFrames(lineSets) {
-  const columns = Math.max(...lineSets.flat().map((line) => line.length));
+function padFrames(lineSets, minimumColumns = 0) {
+  const columns = Math.max(
+    minimumColumns,
+    ...lineSets.flat().map((line) => line.length)
+  );
   const rows = Math.max(...lineSets.map((lines) => lines.length));
   return {
     columns,
@@ -185,7 +188,11 @@ class AsciiHero extends HTMLElement {
     this._variantName = name;
     this._variantKey = key;
     this._variantConfig = variant;
-    const prepared = padFrames([variant.lines, ...(variant.frames || [])]);
+    const gridColumns = variant.gridColumns || baseVariant.gridColumns || 0;
+    const prepared = padFrames(
+      [variant.lines, ...(variant.frames || [])],
+      gridColumns
+    );
     this._variant = prepared.frames[0];
     this._frames = prepared.frames;
     this._prepareAnimation();
