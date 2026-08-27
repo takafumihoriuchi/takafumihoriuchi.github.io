@@ -1,8 +1,15 @@
+import {
+  ASCII_CELL_WIDTH_RATIO,
+  fittedAsciiFontSize,
+} from "./ascii-layout.js";
+
 const TARGET_SELECTOR = ".home-identity h1, .home-identity > .tagline";
 const FRAME_INTERVAL = 1000 / 6;
 const FORMATION_DURATION = 1250;
 const REVEAL_START = 280;
 const REVEAL_END = 1160;
+const POC_GRID_COLUMNS = { wide: 72, compact: 48 };
+const COMPACT_BREAKPOINT = 480;
 const EARLY_GLYPHS = [".", ".", ":", "'"];
 const WOBBLE_GLYPHS = [".", ":", "*", "+", "-"];
 
@@ -114,15 +121,23 @@ function referenceAsciiStyle() {
   );
   const canvas = hero?.querySelector(".ascii-hero__canvas");
   const style = canvas ? getComputedStyle(canvas) : null;
-  const fontSize = parseFloat(style?.fontSize) || 8;
-  const lineHeight = parseFloat(style?.lineHeight);
+  const sourceFontSize = parseFloat(style?.fontSize) || 8;
+  const sourceLineHeight = parseFloat(style?.lineHeight);
+  const lineHeightRatio = Number.isFinite(sourceLineHeight)
+    ? sourceLineHeight / sourceFontSize
+    : 1.08;
+  const width = hero?.clientWidth || document.querySelector("main")?.clientWidth || 0;
+  const columns = width < COMPACT_BREAKPOINT
+    ? POC_GRID_COLUMNS.compact
+    : POC_GRID_COLUMNS.wide;
+  const fontSize = width ? fittedAsciiFontSize(width, columns) : sourceFontSize;
   return {
     element: canvas,
     color: hero ? getComputedStyle(hero).color : "currentColor",
     fontFamily: style?.fontFamily || "ui-monospace, monospace",
     fontSize,
     fontWeight: style?.fontWeight || "500",
-    lineHeight: Number.isFinite(lineHeight) ? lineHeight : fontSize * 1.08,
+    lineHeight: fontSize * lineHeightRatio,
   };
 }
 
@@ -259,7 +274,7 @@ class AsciiTextReveal {
 
   prepareParticles() {
     this.asciiSize = this.referenceAscii.fontSize;
-    const cellWidth = this.asciiSize * 0.62;
+    const cellWidth = this.asciiSize * ASCII_CELL_WIDTH_RATIO;
     const cellHeight = this.referenceAscii.lineHeight;
     const particles = [];
 

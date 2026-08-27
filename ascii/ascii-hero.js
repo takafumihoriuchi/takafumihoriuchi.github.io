@@ -1,3 +1,6 @@
+import {
+  fittedAsciiFontSize,
+} from "./ascii-layout.js";
 import "./ascii-text-reveal.js";
 
 const SCENES_URL = new URL("./scenes.json", import.meta.url);
@@ -226,7 +229,10 @@ class AsciiHero extends HTMLElement {
 
   _fitText() {
     if (!this._variant || !this.clientWidth) return;
-    const fontSize = (this.clientWidth / this._variant.columns / 0.62) * 0.94;
+    const fontSize = fittedAsciiFontSize(
+      this.clientWidth,
+      this._variant.columns
+    );
     this._pre.style.fontSize = `${fontSize}px`;
   }
 

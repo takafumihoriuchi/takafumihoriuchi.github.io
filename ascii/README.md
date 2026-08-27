@@ -17,6 +17,8 @@ The two systems share a module entry point but not a rendering model.
 - `ascii-hero.js` is the reusable browser component. It owns responsive
   sizing, theme switching, reduced-motion behavior, visibility pausing, and
   frame playback.
+- `ascii-layout.js` contains the shared cell-width and grid-fit calculation
+  used by both the scene renderer and the load-reveal PoC.
 - `ascii-text-reveal.js` is the home identity PoC. It reads grapheme positions
   from the live DOM, builds a text mask for ASCII particles, and removes its
   decorative canvas after the staggered DOM reveal completes.
