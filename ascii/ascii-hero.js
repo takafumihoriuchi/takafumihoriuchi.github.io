@@ -5,6 +5,8 @@ import "./ascii-text-reveal.js";
 
 const SCENES_URL = new URL("./scenes.json", import.meta.url);
 const FRAME_INTERVAL = 1000 / 10;
+const INTRO_FRAME_INTERVAL = 1000 / 6;
+const INTRO_DURATION = 625;
 const COMPACT_BREAKPOINT = 480;
 
 const scenesPromise = fetch(SCENES_URL)
@@ -36,6 +38,24 @@ function padFrames(lineSets, minimumColumns = 0) {
 function deterministicNoise(x, y) {
   const value = Math.sin((x + 1) * 12.9898 + (y + 1) * 78.233) * 43758.5453;
   return value - Math.floor(value);
+}
+
+function introCharacter(character, x, y, elapsed) {
+  const seed = deterministicNoise(x + 41, y + 73);
+  const bornAt = seed * 390 - 25;
+  if (elapsed < bornAt) return " ";
+
+  const settleAt = 250 + deterministicNoise(x + 97, y + 13) * 315;
+  if (elapsed >= settleAt) return character;
+
+  const beat = Math.floor(elapsed / INTRO_FRAME_INTERVAL);
+  const glyphs = elapsed - bornAt < 120
+    ? [".", ".", ":", "'"]
+    : [".", ":", "*", "+", "-"];
+  const index = Math.floor(
+    deterministicNoise(x + beat * 19, y + beat * 7) * glyphs.length
+  );
+  return glyphs[index];
 }
 
 function pulseCharacter(character) {
@@ -103,6 +123,8 @@ class AsciiHero extends HTMLElement {
     this._raf = null;
     this._inView = false;
     this._started = false;
+    this._introEnabled = document.documentElement.lang === "ja";
+    this._phase = this._introEnabled ? "intro" : "idle";
     this._motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     this._colorScheme = window.matchMedia("(prefers-color-scheme: dark)");
   }
@@ -131,6 +153,7 @@ class AsciiHero extends HTMLElement {
       } else {
         this._started = false;
         this._elapsed = 0;
+        this._phase = this._introEnabled ? "intro" : "idle";
         this._maybeStart();
       }
     };
@@ -203,8 +226,10 @@ class AsciiHero extends HTMLElement {
     this._prepareAnimation();
     this._fitText();
 
-    if (this._motion.matches || !this._started) this._renderFinal();
-    else this._render(this._elapsed);
+    if (this._motion.matches) this._renderFinal();
+    else if (!this._started || this._phase === "intro") {
+      this._renderIntro(this._started ? this._elapsed : 0);
+    } else this._render(this._elapsed);
   }
 
   _prepareAnimation() {
@@ -241,8 +266,15 @@ class AsciiHero extends HTMLElement {
     this._started = true;
     this._elapsed = 0;
     this._lastTick = null;
-    this._render(0);
-    this.dataset.state = "idle";
+    if (this._introEnabled) {
+      this._phase = "intro";
+      this._renderIntro(0);
+      this.dataset.state = "forming";
+    } else {
+      this._phase = "idle";
+      this._render(0);
+      this.dataset.state = "idle";
+    }
     this._schedule();
   }
 
@@ -273,8 +305,22 @@ class AsciiHero extends HTMLElement {
     this._lastTick = time;
     this._elapsed += delta;
 
-    if (time - this._lastRender >= FRAME_INTERVAL) {
-      this._render(this._elapsed);
+    const frameInterval = this._phase === "intro"
+      ? INTRO_FRAME_INTERVAL
+      : FRAME_INTERVAL;
+    if (time - this._lastRender >= frameInterval) {
+      if (this._phase === "intro") this._renderIntro(this._elapsed);
+      else this._render(this._elapsed);
+      this._lastRender = time;
+    }
+
+    if (this._phase === "intro" && this._elapsed >= INTRO_DURATION) {
+      // Hold the canonical first frame once before idle mutations begin. The
+      // same padded grid and the same <pre> are used on both sides, so the
+      // hand-off is pixel-identical rather than a second overlay swap.
+      this._renderFinal();
+      this._phase = "idle";
+      this._elapsed = 0;
       this._lastRender = time;
       this.dataset.state = "idle";
     }
@@ -315,6 +361,21 @@ class AsciiHero extends HTMLElement {
     // Keep every cell, including trailing spaces, so the max-content <pre>
     // cannot change its width as line glyphs wobble.
     this._pre.textContent = grid.map((row) => row.join("")).join("\n");
+  }
+
+  _renderIntro(elapsed) {
+    if (!this._variant) return;
+    if (elapsed >= INTRO_DURATION) {
+      this._renderFinal();
+      return;
+    }
+
+    const lines = this._variant.lines.map((line, y) => [...line].map(
+      (character, x) => character === " "
+        ? " "
+        : introCharacter(character, x, y, elapsed)
+    ).join(""));
+    this._pre.textContent = lines.join("\n");
   }
 
   _renderFinal() {

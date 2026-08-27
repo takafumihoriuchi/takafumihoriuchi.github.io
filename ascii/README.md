@@ -4,13 +4,20 @@ The illustration between each page header and its first section is real text.
 `ascii-hero.js` replaces the contents of a `<pre>` at 10 frames per second;
 there is no canvas, SVG, image, or video renderer.
 
-The Japanese home-page identity also contains an experimental load reveal. It
-is a separate renderer in `ascii-text-reveal.js`: a temporary canvas covers
-the untouched `h1` and tagline, fixed ASCII cells switch through stepped glyph
-states while deterministically shuffled grapheme windows reveal the real DOM
-underneath. Its glyph size, weight, colour and line spacing come from the
-primary ASCII hero so the load state and the illustration read as one system.
-The two systems share a module entry point but not a rendering model.
+Japanese pages also contain a load reveal. The renderer in
+`ascii-text-reveal.js` covers nearby semantic text and images with temporary
+canvases. Fixed ASCII cells switch through stepped glyph states while
+deterministically shuffled windows reveal the real DOM underneath. Text and
+image effects begin once per element as it approaches the viewport, preventing
+long work pages from allocating every canvas at once or completing below-fold
+effects before they can be seen. Glyph size, weight, colour and line spacing
+come from the primary ASCII hero so the whole page reads as one system.
+
+On Japanese pages each `ascii-hero` uses its own canonical padded grid for the
+same sparse-to-formed introduction. Its final introduction frame is exactly
+the scene's base `lines`; only after that frame is painted does the existing
+idle loop begin in the same `<pre>`. No overlay or DOM swap occurs at this
+handoff.
 
 ## File layout
 
@@ -19,9 +26,10 @@ The two systems share a module entry point but not a rendering model.
   frame playback.
 - `ascii-layout.js` contains the shared cell-width and grid-fit calculation
   used by both the scene renderer and the load-reveal PoC.
-- `ascii-text-reveal.js` is the home identity PoC. It reads grapheme positions
-  from the live DOM, builds a text mask for ASCII particles, and removes its
-  decorative canvas after the staggered DOM reveal completes.
+- `ascii-text-reveal.js` is the Japanese page-load renderer. It reads grapheme
+  positions from the live DOM, builds text masks for ASCII particles, tiles
+  image rectangles with the shared cell grid, and removes each decorative
+  canvas after the staggered DOM reveal completes.
 - `scenes.json` contains only drawings and animation settings. Adding a work
   does not require changing the component.
 - `page-scenes.json` is the single route-to-scene manifest used by both the
@@ -44,8 +52,10 @@ The two systems share a module entry point but not a rendering model.
 
 Every scene has `wide` and `compact` final frames. The engine selects the
 compact frame below 480 CSS pixels. Frames must use printable ASCII only. The
-animation starts with the complete frame already visible and runs as a quiet
-idle loop. Line glyphs wobble in place and the emphasis pulse returns
+Outside Japanese pages, the animation starts with the complete frame already
+visible and runs as a quiet idle loop. Japanese scenes first form on their
+canonical grid, hold the exact complete frame, and then enter that same loop.
+Line glyphs wobble in place and the emphasis pulse returns
 periodically; character positions never change, so the drawing does not
 reflow. A scene can set `idleWobble` to `false` when its geometry needs to stay
 precise, or to `subtle` for a slower, lower-density movement of line glyphs.

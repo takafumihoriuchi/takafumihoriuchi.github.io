@@ -3,7 +3,15 @@ import {
   fittedAsciiFontSize,
 } from "./ascii-layout.js";
 
-const TARGET_SELECTOR = ".home-identity h1, .home-identity > .tagline";
+const TARGET_SELECTOR = [
+  "main h1", "main h2", "main h3", "main h4", "main h5", "main h6",
+  "main p", "main figcaption", "main dt", "main dd", "main li",
+  "main .work-title", "main .work-desc", "footer p", "footer li",
+].join(", ");
+const BLOCK_DESCENDANT_SELECTOR = [
+  "h1", "h2", "h3", "h4", "h5", "h6", "p", "figcaption", "dt", "dd",
+  ".work-title", ".work-desc", "img", "video", "svg",
+].join(", ");
 const FRAME_INTERVAL = 1000 / 6;
 const FORMATION_DURATION = 625;
 const REVEAL_START = 140;
@@ -13,6 +21,8 @@ const POC_GRID_COLUMNS = { wide: 72, compact: 48 };
 const COMPACT_BREAKPOINT = 480;
 const EARLY_GLYPHS = [".", ".", ":", "'"];
 const WOBBLE_GLYPHS = [".", ":", "*", "+", "-"];
+const IMAGE_GLYPHS = [".", ".", ":", "+", "#", "o"];
+const REVEAL_ROOT_MARGIN = "15% 0px";
 
 function clamp(value, minimum = 0, maximum = 1) {
   return Math.min(maximum, Math.max(minimum, value));
@@ -147,7 +157,7 @@ class AsciiTextReveal {
     this.element = element;
     this.index = index;
     this.seed = hashString(`${location.pathname}:${index}:${element.textContent}`);
-    this.elapsed = -index * ELEMENT_STAGGER;
+    this.elapsed = -Math.floor(noise(this.seed, 701) * ELEMENT_STAGGER);
     this.lastTick = null;
     this.lastRender = -Infinity;
     this.frame = null;
@@ -399,14 +409,231 @@ class AsciiTextReveal {
   }
 }
 
+class AsciiImageReveal {
+  constructor(element, index, layer) {
+    this.element = element;
+    this.layer = layer;
+    this.seed = hashString(`${location.pathname}:image:${index}:${element.currentSrc || element.src}`);
+    this.elapsed = -Math.floor(noise(this.seed, 911) * ELEMENT_STAGGER);
+    this.lastTick = null;
+    this.lastRender = -Infinity;
+    this.frame = null;
+    this.complete = false;
+    this.imageReady = element.complete && element.naturalWidth > 0;
+    this.motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    this.onMotionChange = () => {
+      if (this.motion.matches) this.finish("reduced-motion");
+    };
+  }
+
+  start() {
+    if (this.complete || this.canvas || this.motion.matches) return;
+    const bounds = this.element.getBoundingClientRect();
+    if (!bounds.width || !bounds.height) {
+      this.finish("empty");
+      return;
+    }
+
+    this.canvas = document.createElement("canvas");
+    this.canvas.className = "ascii-image-reveal__canvas";
+    this.canvas.setAttribute("aria-hidden", "true");
+    this.layer.append(this.canvas);
+    this.context = this.canvas.getContext("2d");
+    if (!this.context) {
+      this.finish("error");
+      return;
+    }
+
+    this.motion.addEventListener("change", this.onMotionChange);
+    this.onImageLoad = () => {
+      this.imageReady = true;
+    };
+    this.onImageError = () => this.finish("error");
+    if (this.element.complete && !this.element.naturalWidth) {
+      this.finish("error");
+      return;
+    }
+    if (!this.imageReady) {
+      this.element.addEventListener("load", this.onImageLoad, { once: true });
+      this.element.addEventListener("error", this.onImageError, { once: true });
+    }
+    this.element.dataset.asciiRevealState = "running";
+    this.rebuild();
+    this.render();
+    this.schedule();
+  }
+
+  rebuild() {
+    if (!this.canvas || this.complete) return;
+    const bounds = this.element.getBoundingClientRect();
+    const width = Math.max(1, bounds.width);
+    const height = Math.max(1, bounds.height);
+    const scale = Math.min(window.devicePixelRatio || 1, 1.5);
+    this.canvas.width = Math.ceil(width * scale);
+    this.canvas.height = Math.ceil(height * scale);
+    this.canvas.style.width = `${width}px`;
+    this.canvas.style.height = `${height}px`;
+    this.canvas.style.left = `${bounds.left}px`;
+    this.canvas.style.top = `${bounds.top}px`;
+    this.canvas.style.borderRadius = getComputedStyle(this.element).borderRadius;
+    this.context.setTransform(scale, 0, 0, scale, 0, 0);
+
+    this.width = width;
+    this.height = height;
+    this.scale = scale;
+    this.referenceAscii = referenceAsciiStyle();
+    this.foreground = this.referenceAscii.color;
+    this.background = findBackground(this.element);
+    this.prepareCells();
+  }
+
+  prepareCells() {
+    const cellWidth = this.referenceAscii.fontSize * ASCII_CELL_WIDTH_RATIO;
+    const cellHeight = this.referenceAscii.lineHeight;
+    const columns = Math.ceil(this.width / cellWidth);
+    const rows = Math.ceil(this.height / cellHeight);
+    this.cells = [];
+    for (let row = 0; row < rows; row += 1) {
+      for (let column = 0; column < columns; column += 1) {
+        const seed = hashString(`${this.seed}:${column}:${row}`);
+        this.cells.push({
+          x: column * cellWidth,
+          y: row * cellHeight,
+          drawX: (column + 0.18) * cellWidth,
+          drawY: (row + 0.78) * cellHeight,
+          width: cellWidth + 1,
+          height: cellHeight + 1,
+          bornAt: noise(seed, 3) * 250 - 25,
+          revealAt: REVEAL_START + noise(seed, 7) * (REVEAL_END - REVEAL_START),
+          seed,
+        });
+      }
+    }
+  }
+
+  schedule() {
+    if (this.frame || this.complete) return;
+    this.frame = requestAnimationFrame((time) => this.tick(time));
+  }
+
+  tick(time) {
+    this.frame = null;
+    if (this.complete) return;
+    if (this.lastTick === null) this.lastTick = time;
+    const delta = Math.min(time - this.lastTick, 50);
+    this.lastTick = time;
+    this.elapsed += delta;
+    // A lazy image may still be in flight when it approaches the viewport.
+    // Keep a sparse, flickering ASCII cover until pixels are ready underneath;
+    // only then begin opening cells onto the real image.
+    if (!this.imageReady) this.elapsed = Math.min(this.elapsed, REVEAL_START - 1);
+    if (time - this.lastRender >= FRAME_INTERVAL) {
+      this.render();
+      this.lastRender = time;
+    }
+    if (this.elapsed >= FORMATION_DURATION) this.finish("complete");
+    else this.schedule();
+  }
+
+  render() {
+    if (!this.context || this.complete) return;
+    const bounds = this.element.getBoundingClientRect();
+    if (Math.abs(bounds.width - this.width) > 0.5 || Math.abs(bounds.height - this.height) > 0.5) {
+      this.rebuild();
+    } else {
+      this.canvas.style.left = `${bounds.left}px`;
+      this.canvas.style.top = `${bounds.top}px`;
+    }
+
+    const elapsed = Math.max(0, this.elapsed);
+    const context = this.context;
+    context.save();
+    context.setTransform(this.scale, 0, 0, this.scale, 0, 0);
+    context.globalCompositeOperation = "source-over";
+    context.globalAlpha = 1;
+    context.fillStyle = this.background;
+    context.fillRect(0, 0, this.width, this.height);
+    context.fillStyle = this.foreground;
+    context.font = `${this.referenceAscii.fontWeight} ${this.referenceAscii.fontSize}px `
+      + this.referenceAscii.fontFamily;
+    context.textBaseline = "alphabetic";
+
+    const beat = Math.floor(elapsed / FRAME_INTERVAL);
+    for (const cell of this.cells) {
+      if (elapsed >= cell.revealAt) continue;
+      if (elapsed >= cell.bornAt) {
+        const character = IMAGE_GLYPHS[
+          Math.floor(noise(cell.seed, beat + 40) * IMAGE_GLYPHS.length)
+        ];
+        context.fillText(character, cell.drawX, cell.drawY);
+      }
+    }
+
+    context.globalCompositeOperation = "destination-out";
+    for (const cell of this.cells) {
+      if (elapsed < cell.revealAt) continue;
+      context.fillRect(cell.x, cell.y, cell.width, cell.height);
+    }
+    context.restore();
+  }
+
+  finish(state) {
+    if (this.complete) return;
+    this.complete = true;
+    if (this.frame) cancelAnimationFrame(this.frame);
+    this.frame = null;
+    this.motion.removeEventListener("change", this.onMotionChange);
+    this.element.removeEventListener("load", this.onImageLoad);
+    this.element.removeEventListener("error", this.onImageError);
+    this.canvas?.remove();
+    this.element.dataset.asciiRevealState = state;
+  }
+}
+
+function revealableTextElements() {
+  return [...document.querySelectorAll(TARGET_SELECTOR)].filter((element) => {
+    if (element.closest("ascii-hero")) return false;
+    if (!element.textContent?.trim()) return false;
+    if (element.matches("li") && element.querySelector(BLOCK_DESCENDANT_SELECTOR)) {
+      return false;
+    }
+    return true;
+  });
+}
+
+function observeOnce(elements, start) {
+  const observer = new IntersectionObserver((entries) => {
+    for (const entry of entries) {
+      if (!entry.isIntersecting) continue;
+      observer.unobserve(entry.target);
+      start(entry.target);
+    }
+  }, { rootMargin: REVEAL_ROOT_MARGIN, threshold: 0 });
+  elements.forEach((element) => observer.observe(element));
+  return observer;
+}
+
 async function initialize() {
   if (document.documentElement.lang !== "ja") return;
-  const elements = [...document.querySelectorAll(TARGET_SELECTOR)];
-  if (!elements.length) return;
+  const elements = revealableTextElements();
+  const images = [...document.querySelectorAll("main img")];
+  if (!elements.length && !images.length) return;
   try {
     await document.fonts.ready;
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-    elements.forEach((element, index) => new AsciiTextReveal(element, index).start());
+    const textReveals = new Map(elements.map(
+      (element, index) => [element, new AsciiTextReveal(element, index)]
+    ));
+    observeOnce(elements, (element) => textReveals.get(element)?.start());
+
+    const imageLayer = document.createElement("div");
+    imageLayer.className = "ascii-image-reveal";
+    imageLayer.setAttribute("aria-hidden", "true");
+    document.body.append(imageLayer);
+    const imageReveals = new Map(images.map(
+      (element, index) => [element, new AsciiImageReveal(element, index, imageLayer)]
+    ));
+    observeOnce(images, (element) => imageReveals.get(element)?.start());
   } catch (error) {
     elements.forEach((element) => {
       element.dataset.asciiRevealState = "error";
