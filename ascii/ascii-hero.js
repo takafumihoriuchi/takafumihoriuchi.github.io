@@ -4,6 +4,10 @@ import {
 import "./ascii-text-reveal.js";
 
 const SCENES_URL = new URL("./scenes.json", import.meta.url);
+// Dropped or throttled frames must not extend this load-only phase into
+// scrolling. Keep the clock local so stale dependency caches cannot break the
+// module graph when this behavior changes.
+const ASCII_LOAD_STARTED_AT = performance.now();
 const FRAME_INTERVAL = 1000 / 10;
 const INTRO_FRAME_INTERVAL = 1000 / 6;
 const INTRO_DURATION = 625;
@@ -269,12 +273,19 @@ class AsciiHero extends HTMLElement {
       || (!this._introEnabled && !this._inView)
     ) return;
     this._started = true;
-    this._elapsed = 0;
+    this._elapsed = Math.max(0, performance.now() - ASCII_LOAD_STARTED_AT);
     this._lastTick = null;
     if (this._introEnabled) {
       this._phase = "intro";
-      this._renderIntro(0);
-      this.dataset.state = "forming";
+      if (this._elapsed >= INTRO_DURATION) {
+        this._renderFinal();
+        this._phase = "idle";
+        this._elapsed = 0;
+        this.dataset.state = "idle";
+      } else {
+        this._renderIntro(this._elapsed);
+        this.dataset.state = "forming";
+      }
     } else {
       this._phase = "idle";
       this._render(0);
@@ -314,7 +325,11 @@ class AsciiHero extends HTMLElement {
     if (this._lastTick === null) this._lastTick = time;
     const delta = Math.min(time - this._lastTick, 120);
     this._lastTick = time;
-    this._elapsed += delta;
+    if (this._phase === "intro") {
+      this._elapsed = Math.max(0, time - ASCII_LOAD_STARTED_AT);
+    } else {
+      this._elapsed += delta;
+    }
 
     const frameInterval = this._phase === "intro"
       ? INTRO_FRAME_INTERVAL

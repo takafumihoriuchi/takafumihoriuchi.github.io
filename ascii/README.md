@@ -10,7 +10,8 @@ canvases. Fixed ASCII cells switch through stepped glyph states while
 deterministically shuffled windows reveal the real DOM underneath. Text and
 image effects begin together during page initialization, including elements
 below the fold. Every temporary canvas completes and is removed on that single
-load timeline, so scrolling later never starts a second reveal. Glyph size,
+absolute load timeline, so dropped frames cannot extend the effect and
+scrolling later never starts a second reveal. Glyph size,
 weight, colour and line spacing come from the primary ASCII hero so the whole
 page reads as one system.
 

@@ -3,6 +3,9 @@ import {
   fittedAsciiFontSize,
 } from "./ascii-layout.js";
 
+// All text and image instances use one page-level wall clock. A busy frame can
+// skip visual steps, but it cannot postpone completion until the user scrolls.
+const ASCII_LOAD_STARTED_AT = performance.now();
 const TARGET_SELECTOR = [
   "main h1", "main h2", "main h3", "main h4", "main h5", "main h6",
   "main p", "main figcaption", "main dt", "main dd", "main li",
@@ -156,8 +159,8 @@ class AsciiTextReveal {
     this.element = element;
     this.index = index;
     this.seed = hashString(`${location.pathname}:${index}:${element.textContent}`);
-    this.elapsed = -Math.floor(noise(this.seed, 701) * ELEMENT_STAGGER);
-    this.lastTick = null;
+    this.delay = Math.floor(noise(this.seed, 701) * ELEMENT_STAGGER);
+    this.elapsed = -this.delay;
     this.lastRender = -Infinity;
     this.frame = null;
     this.complete = false;
@@ -196,6 +199,11 @@ class AsciiTextReveal {
     this.resizeObserver.observe(this.element);
     if (this.referenceAscii.element) {
       this.resizeObserver.observe(this.referenceAscii.element);
+    }
+    this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT - this.delay;
+    if (this.elapsed >= FORMATION_DURATION) {
+      this.finish("complete");
+      return;
     }
     this.render();
     this.schedule();
@@ -323,10 +331,7 @@ class AsciiTextReveal {
   tick(time) {
     this.frame = null;
     if (this.complete) return;
-    if (this.lastTick === null) this.lastTick = time;
-    const delta = Math.min(time - this.lastTick, 50);
-    this.lastTick = time;
-    this.elapsed += delta;
+    this.elapsed = time - ASCII_LOAD_STARTED_AT - this.delay;
 
     if (time - this.lastRender >= FRAME_INTERVAL) {
       this.render();
@@ -413,8 +418,8 @@ class AsciiImageReveal {
     this.element = element;
     this.layer = layer;
     this.seed = hashString(`${location.pathname}:image:${index}:${element.currentSrc || element.src}`);
-    this.elapsed = -Math.floor(noise(this.seed, 911) * ELEMENT_STAGGER);
-    this.lastTick = null;
+    this.delay = Math.floor(noise(this.seed, 911) * ELEMENT_STAGGER);
+    this.elapsed = -this.delay;
     this.lastRender = -Infinity;
     this.frame = null;
     this.complete = false;
@@ -445,6 +450,11 @@ class AsciiImageReveal {
     this.motion.addEventListener("change", this.onMotionChange);
     this.element.dataset.asciiRevealState = "running";
     this.rebuild();
+    this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT - this.delay;
+    if (this.elapsed >= FORMATION_DURATION) {
+      this.finish("complete");
+      return;
+    }
     this.render();
     this.schedule();
   }
@@ -505,10 +515,7 @@ class AsciiImageReveal {
   tick(time) {
     this.frame = null;
     if (this.complete) return;
-    if (this.lastTick === null) this.lastTick = time;
-    const delta = Math.min(time - this.lastTick, 50);
-    this.lastTick = time;
-    this.elapsed += delta;
+    this.elapsed = time - ASCII_LOAD_STARTED_AT - this.delay;
     if (time - this.lastRender >= FRAME_INTERVAL) {
       this.render();
       this.lastRender = time;
