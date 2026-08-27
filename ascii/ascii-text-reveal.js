@@ -5,9 +5,10 @@ import {
 
 const TARGET_SELECTOR = ".home-identity h1, .home-identity > .tagline";
 const FRAME_INTERVAL = 1000 / 6;
-const FORMATION_DURATION = 1250;
-const REVEAL_START = 280;
-const REVEAL_END = 1160;
+const FORMATION_DURATION = 625;
+const REVEAL_START = 140;
+const REVEAL_END = 580;
+const ELEMENT_STAGGER = 55;
 const POC_GRID_COLUMNS = { wide: 72, compact: 48 };
 const COMPACT_BREAKPOINT = 480;
 const EARLY_GLYPHS = [".", ".", ":", "'"];
@@ -146,7 +147,7 @@ class AsciiTextReveal {
     this.element = element;
     this.index = index;
     this.seed = hashString(`${location.pathname}:${index}:${element.textContent}`);
-    this.elapsed = -index * 110;
+    this.elapsed = -index * ELEMENT_STAGGER;
     this.lastTick = null;
     this.lastRender = -Infinity;
     this.frame = null;
@@ -296,7 +297,7 @@ class AsciiTextReveal {
             targetY,
             seed: particleSeed,
             bornAt: noise(particleSeed, 3)
-              * Math.min(760, Math.max(180, glyph.revealAt - 60)) - 60,
+              * Math.min(380, Math.max(90, glyph.revealAt - 30)) - 30,
             character: this.particleCharacter(targetX, targetY, particleSeed),
           });
         }
@@ -349,14 +350,14 @@ class AsciiTextReveal {
       const age = elapsed - particle.bornAt;
       const beat = Math.floor(elapsed / FRAME_INTERVAL)
         + Math.floor(noise(particle.seed, 12) * 3);
-      if (age < 180 && noise(particle.seed, beat + 200) < 0.28) continue;
+      if (age < 90 && noise(particle.seed, beat + 200) < 0.28) continue;
 
       let character;
-      if (age < 190) {
+      if (age < 95) {
         character = EARLY_GLYPHS[
           Math.floor(noise(particle.seed, beat + 20) * EARLY_GLYPHS.length)
         ];
-      } else if (elapsed < glyph.revealAt - 120) {
+      } else if (elapsed < glyph.revealAt - 60) {
         const choices = [...WOBBLE_GLYPHS, particle.character];
         character = choices[
           Math.floor(noise(particle.seed, beat + 40) * choices.length)
