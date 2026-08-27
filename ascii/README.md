@@ -5,13 +5,14 @@ The illustration between each page header and its first section is real text.
 there is no canvas, SVG, image, or video renderer.
 
 Japanese pages also contain a load reveal. The renderer in
-`ascii-text-reveal.js` covers nearby semantic text and images with temporary
+`ascii-text-reveal.js` covers semantic text and images with temporary
 canvases. Fixed ASCII cells switch through stepped glyph states while
 deterministically shuffled windows reveal the real DOM underneath. Text and
-image effects begin once per element as it approaches the viewport, preventing
-long work pages from allocating every canvas at once or completing below-fold
-effects before they can be seen. Glyph size, weight, colour and line spacing
-come from the primary ASCII hero so the whole page reads as one system.
+image effects begin together during page initialization, including elements
+below the fold. Every temporary canvas completes and is removed on that single
+load timeline, so scrolling later never starts a second reveal. Glyph size,
+weight, colour and line spacing come from the primary ASCII hero so the whole
+page reads as one system.
 
 On Japanese pages each `ascii-hero` uses its own canonical padded grid for the
 same sparse-to-formed introduction. Its final introduction frame is exactly

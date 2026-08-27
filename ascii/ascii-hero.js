@@ -262,7 +262,12 @@ class AsciiHero extends HTMLElement {
   }
 
   _maybeStart() {
-    if (!this._scene || this._motion.matches || this._started || !this._inView) return;
+    if (
+      !this._scene
+      || this._motion.matches
+      || this._started
+      || (!this._introEnabled && !this._inView)
+    ) return;
     this._started = true;
     this._elapsed = 0;
     this._lastTick = null;
@@ -280,7 +285,9 @@ class AsciiHero extends HTMLElement {
 
   _syncPlayback() {
     if (!this._scene || this._motion.matches) return;
-    const shouldRun = this._inView && !document.hidden;
+    const shouldRun = (
+      this._phase === "intro" || this._inView
+    ) && !document.hidden;
     if (shouldRun) {
       if (!this._started) this._maybeStart();
       else this._schedule();
@@ -290,13 +297,17 @@ class AsciiHero extends HTMLElement {
   }
 
   _schedule() {
-    if (this._raf || !this._inView || document.hidden) return;
+    if (
+      this._raf
+      || document.hidden
+      || (this._phase !== "intro" && !this._inView)
+    ) return;
     this._raf = requestAnimationFrame((time) => this._tick(time));
   }
 
   _tick(time) {
     this._raf = null;
-    if (!this._inView || document.hidden) {
+    if (document.hidden || (this._phase !== "intro" && !this._inView)) {
       this._lastTick = null;
       return;
     }

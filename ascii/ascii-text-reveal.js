@@ -22,7 +22,6 @@ const COMPACT_BREAKPOINT = 480;
 const EARLY_GLYPHS = [".", ".", ":", "'"];
 const WOBBLE_GLYPHS = [".", ":", "*", "+", "-"];
 const IMAGE_GLYPHS = [".", ".", ":", "+", "#", "o"];
-const REVEAL_ROOT_MARGIN = "15% 0px";
 
 function clamp(value, minimum = 0, maximum = 1) {
   return Math.min(maximum, Math.max(minimum, value));
@@ -419,7 +418,6 @@ class AsciiImageReveal {
     this.lastRender = -Infinity;
     this.frame = null;
     this.complete = false;
-    this.imageReady = element.complete && element.naturalWidth > 0;
     this.motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     this.onMotionChange = () => {
       if (this.motion.matches) this.finish("reduced-motion");
@@ -445,18 +443,6 @@ class AsciiImageReveal {
     }
 
     this.motion.addEventListener("change", this.onMotionChange);
-    this.onImageLoad = () => {
-      this.imageReady = true;
-    };
-    this.onImageError = () => this.finish("error");
-    if (this.element.complete && !this.element.naturalWidth) {
-      this.finish("error");
-      return;
-    }
-    if (!this.imageReady) {
-      this.element.addEventListener("load", this.onImageLoad, { once: true });
-      this.element.addEventListener("error", this.onImageError, { once: true });
-    }
     this.element.dataset.asciiRevealState = "running";
     this.rebuild();
     this.render();
@@ -523,10 +509,6 @@ class AsciiImageReveal {
     const delta = Math.min(time - this.lastTick, 50);
     this.lastTick = time;
     this.elapsed += delta;
-    // A lazy image may still be in flight when it approaches the viewport.
-    // Keep a sparse, flickering ASCII cover until pixels are ready underneath;
-    // only then begin opening cells onto the real image.
-    if (!this.imageReady) this.elapsed = Math.min(this.elapsed, REVEAL_START - 1);
     if (time - this.lastRender >= FRAME_INTERVAL) {
       this.render();
       this.lastRender = time;
@@ -583,8 +565,6 @@ class AsciiImageReveal {
     if (this.frame) cancelAnimationFrame(this.frame);
     this.frame = null;
     this.motion.removeEventListener("change", this.onMotionChange);
-    this.element.removeEventListener("load", this.onImageLoad);
-    this.element.removeEventListener("error", this.onImageError);
     this.canvas?.remove();
     this.element.dataset.asciiRevealState = state;
   }
@@ -601,18 +581,6 @@ function revealableTextElements() {
   });
 }
 
-function observeOnce(elements, start) {
-  const observer = new IntersectionObserver((entries) => {
-    for (const entry of entries) {
-      if (!entry.isIntersecting) continue;
-      observer.unobserve(entry.target);
-      start(entry.target);
-    }
-  }, { rootMargin: REVEAL_ROOT_MARGIN, threshold: 0 });
-  elements.forEach((element) => observer.observe(element));
-  return observer;
-}
-
 async function initialize() {
   if (document.documentElement.lang !== "ja") return;
   const elements = revealableTextElements();
@@ -621,19 +589,17 @@ async function initialize() {
   try {
     await document.fonts.ready;
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
-    const textReveals = new Map(elements.map(
-      (element, index) => [element, new AsciiTextReveal(element, index)]
-    ));
-    observeOnce(elements, (element) => textReveals.get(element)?.start());
+    elements.forEach((element, index) => {
+      new AsciiTextReveal(element, index).start();
+    });
 
     const imageLayer = document.createElement("div");
     imageLayer.className = "ascii-image-reveal";
     imageLayer.setAttribute("aria-hidden", "true");
     document.body.append(imageLayer);
-    const imageReveals = new Map(images.map(
-      (element, index) => [element, new AsciiImageReveal(element, index, imageLayer)]
-    ));
-    observeOnce(images, (element) => imageReveals.get(element)?.start());
+    images.forEach((element, index) => {
+      new AsciiImageReveal(element, index, imageLayer).start();
+    });
   } catch (error) {
     elements.forEach((element) => {
       element.dataset.asciiRevealState = "error";
