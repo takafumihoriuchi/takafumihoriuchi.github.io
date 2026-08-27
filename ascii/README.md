@@ -4,11 +4,22 @@ The illustration between each page header and its first section is real text.
 `ascii-hero.js` replaces the contents of a `<pre>` at 10 frames per second;
 there is no canvas, SVG, image, or video renderer.
 
+The Japanese home-page identity also contains an experimental load reveal. It
+is a separate renderer in `ascii-text-reveal.js`: a temporary canvas covers
+the untouched `h1` and tagline, fixed ASCII cells switch through stepped glyph
+states while deterministically shuffled grapheme windows reveal the real DOM
+underneath. Its glyph size, weight, colour and line spacing come from the
+primary ASCII hero so the load state and the illustration read as one system.
+The two systems share a module entry point but not a rendering model.
+
 ## File layout
 
 - `ascii-hero.js` is the reusable browser component. It owns responsive
   sizing, theme switching, reduced-motion behavior, visibility pausing, and
   frame playback.
+- `ascii-text-reveal.js` is the home identity PoC. It reads grapheme positions
+  from the live DOM, builds a text mask for ASCII particles, and removes its
+  decorative canvas after the staggered DOM reveal completes.
 - `scenes.json` contains only drawings and animation settings. Adding a work
   does not require changing the component.
 - `page-scenes.json` is the single route-to-scene manifest used by both the

@@ -102,6 +102,23 @@ h1 {
   color: var(--fg-muted);
 }
 
+/* The load-reveal PoC keeps the semantic text untouched and paints a temporary
+   ASCII cover above it. As individual graphemes complete, transparent windows
+   in the canvas expose the browser-rendered text below. The canvas is removed
+   after the last character, so selection, translation and accessibility stay
+   native throughout. */
+.ascii-text-reveal { position: relative; }
+
+.ascii-text-reveal__canvas {
+  position: absolute;
+  z-index: 1;
+  inset: 0;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* Work pages are signed under the title, and the signature runs over two
    lines: who made it, then when. The name is lifted out of the muted line
    because it says whose work this is, which the date does not — the date is

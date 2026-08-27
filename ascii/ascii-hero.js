@@ -1,3 +1,5 @@
+import "./ascii-text-reveal.js";
+
 const SCENES_URL = new URL("./scenes.json", import.meta.url);
 const FRAME_INTERVAL = 1000 / 10;
 const COMPACT_BREAKPOINT = 480;
