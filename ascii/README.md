@@ -15,9 +15,9 @@ scrolling later never starts a second reveal. Glyph size,
 weight, colour and line spacing come from the primary ASCII hero so the whole
 page reads as one system.
 
-The load reveal runs at 6fps by default. Japanese uses 12fps for twice as many
-stepped intermediate states while retaining the same 625ms formation deadline,
-per-grapheme timing, and ASCII cell size.
+The load reveal runs at 12fps in every language for twice as many stepped
+intermediate states as the original 6fps treatment, while retaining the same
+625ms formation deadline, per-grapheme timing, and ASCII cell size.
 
 Each document adds `ascii-load-pending` synchronously in its head.
 The shared stylesheet turns that state into a full-viewport background cover,

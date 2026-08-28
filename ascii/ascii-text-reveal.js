@@ -1,7 +1,7 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260828-2";
+} from "./ascii-layout.js?v=20260828-3";
 
 // All text and image instances use one page-level wall clock. A busy frame can
 // skip visual steps, but it cannot postpone completion until the user scrolls.
@@ -15,7 +15,7 @@ const BLOCK_DESCENDANT_SELECTOR = [
   "h1", "h2", "h3", "h4", "h5", "h6", "p", "figcaption", "dt", "dd",
   ".work-title", ".work-desc", "img", "video", "svg",
 ].join(", ");
-const FRAME_RATE = document.documentElement.lang === "ja" ? 12 : 6;
+const FRAME_RATE = 12;
 const FRAME_INTERVAL = 1000 / FRAME_RATE;
 const FORMATION_DURATION = 625;
 const REVEAL_START = 140;
