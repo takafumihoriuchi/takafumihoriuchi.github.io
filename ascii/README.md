@@ -15,6 +15,14 @@ scrolling later never starts a second reveal. Glyph size,
 weight, colour and line spacing come from the primary ASCII hero so the whole
 page reads as one system.
 
+Each Japanese document adds `ascii-load-pending` synchronously in its head.
+The shared stylesheet turns that state into a full-viewport background cover,
+preventing the semantic DOM from flashing before the module can build its
+canvases. The renderer removes the class immediately after all covers are
+prepared; a 2.5-second inline fallback releases it if module loading fails.
+With JavaScript disabled the class is never added, so the HTML fallback remains
+visible.
+
 On Japanese pages each `ascii-hero` uses its own canonical padded grid for the
 same sparse-to-formed introduction. Its final introduction frame is exactly
 the scene's base `lines`; only after that frame is painted does the existing

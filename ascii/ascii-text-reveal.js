@@ -25,6 +25,7 @@ const COMPACT_BREAKPOINT = 480;
 const EARLY_GLYPHS = [".", ".", ":", "'"];
 const WOBBLE_GLYPHS = [".", ":", "*", "+", "-"];
 const IMAGE_GLYPHS = [".", ".", ":", "+", "#", "o"];
+const PREPAINT_CLASS = "ascii-load-pending";
 
 function clamp(value, minimum = 0, maximum = 1) {
   return Math.min(maximum, Math.max(minimum, value));
@@ -607,11 +608,16 @@ async function initialize() {
     images.forEach((element, index) => {
       new AsciiImageReveal(element, index, imageLayer).start();
     });
+    // Canvas drawing and class removal happen in one rendering opportunity:
+    // the browser's first visible page frame therefore contains ASCII covers,
+    // never the uncovered semantic DOM that was parsed underneath.
+    document.documentElement.classList.remove(PREPAINT_CLASS);
   } catch (error) {
     elements.forEach((element) => {
       element.dataset.asciiRevealState = "error";
       element.querySelector(".ascii-text-reveal__canvas")?.remove();
     });
+    document.documentElement.classList.remove(PREPAINT_CLASS);
     console.warn("ASCII text reveal could not start", error);
   }
 }

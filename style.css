@@ -65,6 +65,19 @@
 
 html { -webkit-text-size-adjust: 100%; }
 
+/* Japanese load reveals need a pre-paint guard: the module cannot install its
+   ASCII canvases until after HTML parsing, while the stylesheet can otherwise
+   expose the semantic DOM for one frame. A tiny head script adds this class
+   before first paint. The module removes it once every cover is prepared. */
+html.ascii-load-pending::after {
+  content: "";
+  position: fixed;
+  z-index: 2147483647;
+  inset: 0;
+  background: var(--bg, #fdfdfc);
+  pointer-events: none;
+}
+
 body {
   margin: 0;
   padding: 5rem 1.5rem 7rem;
