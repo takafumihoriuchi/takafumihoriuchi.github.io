@@ -127,7 +127,7 @@ class AsciiHero extends HTMLElement {
     this._raf = null;
     this._inView = false;
     this._started = false;
-    this._introEnabled = document.documentElement.lang === "ja";
+    this._introEnabled = true;
     this._phase = this._introEnabled ? "intro" : "idle";
     this._motion = window.matchMedia("(prefers-reduced-motion: reduce)");
     this._colorScheme = window.matchMedia("(prefers-color-scheme: dark)");

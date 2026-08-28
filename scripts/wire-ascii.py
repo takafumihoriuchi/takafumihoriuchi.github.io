@@ -9,9 +9,9 @@ mechanical edits that must stay identical across all language copies:
 
 It reads the route-to-scene mapping from ascii/page-scenes.json, inserts the
 appropriate scene immediately after the page header, adds the home-page
-epilogue immediately before its footer, and adds the shared module to the
-head. The light-mode wide frame is embedded as real text, so each illustration
-remains present when JavaScript is unavailable.
+epilogue immediately before its footer, and adds both the pre-paint guard and
+shared module to the head. The light-mode wide frame is embedded as real text,
+so each illustration remains present when JavaScript is unavailable.
 """
 
 from __future__ import annotations
@@ -28,6 +28,17 @@ from langs import LANGS, PAGES  # noqa: E402
 
 MODULE = '<script type="module" src="/ascii/ascii-hero.js"></script>'
 MODULE_RE = re.compile(r'\n?<script\s+type="module"\s+src="/ascii/ascii-hero\.js"></script>\n?')
+PREPAINT = (
+    '<script>document.documentElement.classList.add("ascii-load-pending");'
+    'setTimeout(()=>document.documentElement.classList.remove('
+    '"ascii-load-pending"),2500);</script>'
+)
+PREPAINT_RE = re.compile(
+    r'\n?<script>document\.documentElement\.classList\.add\('
+    r'"ascii-load-pending"\);setTimeout\(\(\)=>document\.documentElement'
+    r'\.classList\.remove\("ascii-load-pending"\),2500\);</script>\n?'
+)
+VIEWPORT_RE = re.compile(r'<meta\s+name="viewport"\s+content="[^"]+">')
 PRIMARY_HERO_RE = re.compile(
     r'\n(?:[ \t]*\n)*[ \t]*<ascii-hero\b'
     r'(?![^>]*\bdata-placement="footer").*?</ascii-hero>[ \t]*\n+',
@@ -64,6 +75,14 @@ def wire(
     footer_scene_id: str,
     scenes: dict,
 ) -> str:
+    # Add the synchronous guard immediately after the viewport declaration so
+    # it is active before a render-blocking stylesheet can permit first paint.
+    source = PREPAINT_RE.sub("\n", source)
+    viewport = VIEWPORT_RE.search(source)
+    if not viewport:
+        raise ValueError("no viewport meta anchor")
+    source = source[: viewport.end()] + "\n" + PREPAINT + source[viewport.end():]
+
     # Keep one module tag, anchored at the end of the head.
     source = MODULE_RE.sub("\n", source)
     if "</head>" not in source:

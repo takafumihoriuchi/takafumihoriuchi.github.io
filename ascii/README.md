@@ -4,7 +4,7 @@ The illustration between each page header and its first section is real text.
 `ascii-hero.js` replaces the contents of a `<pre>` at 10 frames per second;
 there is no canvas, SVG, image, or video renderer.
 
-Japanese pages also contain a load reveal. The renderer in
+Every language page also contains a load reveal. The renderer in
 `ascii-text-reveal.js` covers semantic text and images with temporary
 canvases. Fixed ASCII cells switch through stepped glyph states while
 deterministically shuffled windows reveal the real DOM underneath. Text and
@@ -15,7 +15,7 @@ scrolling later never starts a second reveal. Glyph size,
 weight, colour and line spacing come from the primary ASCII hero so the whole
 page reads as one system.
 
-Each Japanese document adds `ascii-load-pending` synchronously in its head.
+Each document adds `ascii-load-pending` synchronously in its head.
 The shared stylesheet turns that state into a full-viewport background cover,
 preventing the semantic DOM from flashing before the module can build its
 canvases. The renderer removes the class immediately after all covers are
@@ -23,7 +23,7 @@ prepared; a 2.5-second inline fallback releases it if module loading fails.
 With JavaScript disabled the class is never added, so the HTML fallback remains
 visible.
 
-On Japanese pages each `ascii-hero` uses its own canonical padded grid for the
+On every language page each `ascii-hero` uses its own canonical padded grid for the
 same sparse-to-formed introduction. Its final introduction frame is exactly
 the scene's base `lines`; only after that frame is painted does the existing
 idle loop begin in the same `<pre>`. No overlay or DOM swap occurs at this
@@ -62,9 +62,8 @@ handoff.
 
 Every scene has `wide` and `compact` final frames. The engine selects the
 compact frame below 480 CSS pixels. Frames must use printable ASCII only. The
-Outside Japanese pages, the animation starts with the complete frame already
-visible and runs as a quiet idle loop. Japanese scenes first form on their
-canonical grid, hold the exact complete frame, and then enter that same loop.
+Each scene first forms on its canonical grid, holds the exact complete frame,
+and then enters the quiet idle loop.
 Line glyphs wobble in place and the emphasis pulse returns
 periodically; character positions never change, so the drawing does not
 reflow. A scene can set `idleWobble` to `false` when its geometry needs to stay

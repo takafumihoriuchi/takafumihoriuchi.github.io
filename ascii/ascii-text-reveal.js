@@ -590,10 +590,12 @@ function revealableTextElements() {
 }
 
 async function initialize() {
-  if (document.documentElement.lang !== "ja") return;
   const elements = revealableTextElements();
   const images = [...document.querySelectorAll("main img")];
-  if (!elements.length && !images.length) return;
+  if (!elements.length && !images.length) {
+    document.documentElement.classList.remove(PREPAINT_CLASS);
+    return;
+  }
   try {
     await document.fonts.ready;
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
