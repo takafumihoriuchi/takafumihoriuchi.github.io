@@ -23,15 +23,13 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ascii_config import ASSET_VERSION, MODULE, PREPAINT  # noqa: E402
 from langs import LANGS, PAGES  # noqa: E402
 
 
-MODULE = '<script type="module" src="/ascii/ascii-hero.js"></script>'
-MODULE_RE = re.compile(r'\n?<script\s+type="module"\s+src="/ascii/ascii-hero\.js"></script>\n?')
-PREPAINT = (
-    '<script>document.documentElement.classList.add("ascii-load-pending");'
-    'setTimeout(()=>document.documentElement.classList.remove('
-    '"ascii-load-pending"),2500);</script>'
+MODULE_RE = re.compile(
+    r'\n?<script\s+type="module"\s+src="/ascii/ascii-hero\.js'
+    r'(?:\?v=[^"]+)?"></script>\n?'
 )
 PREPAINT_RE = re.compile(
     r'\n?<script>document\.documentElement\.classList\.add\('
@@ -123,6 +121,19 @@ def wire(
 def main() -> int:
     check_only = "--check" in sys.argv
     root = Path(__file__).resolve().parent.parent
+    version_token = f"?v={ASSET_VERSION}"
+    versioned_sources = {
+        "ascii/ascii-hero.js": 3,
+        "ascii/ascii-text-reveal.js": 1,
+    }
+    for relative_path, expected_count in versioned_sources.items():
+        source = (root / relative_path).read_text(encoding="utf-8")
+        actual_count = source.count(version_token)
+        if actual_count != expected_count:
+            raise SystemExit(
+                f"{relative_path}: expected {expected_count} references to "
+                f"{version_token}, found {actual_count}"
+            )
     scenes = json.loads((root / "ascii" / "scenes.json").read_text(encoding="utf-8"))
     manifest = json.loads(
         (root / "ascii" / "page-scenes.json").read_text(encoding="utf-8")

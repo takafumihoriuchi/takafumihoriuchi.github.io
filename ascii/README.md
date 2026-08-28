@@ -23,6 +23,14 @@ prepared; a 2.5-second inline fallback releases it if module loading fails.
 With JavaScript disabled the class is never added, so the HTML fallback remains
 visible.
 
+The module entry point, its imports, and `scenes.json` use one shared query
+version. Its canonical value lives in `scripts/ascii_config.py`; bump that and
+the matching query literals in `ascii-hero.js` and `ascii-text-reveal.js`
+whenever load-renderer behavior changes. The wiring check rejects import URLs
+that do not match it. Versioning the entire module graph prevents an older
+language-gated child module from being combined with newer HTML that already
+enabled the pre-paint guard.
+
 On every language page each `ascii-hero` uses its own canonical padded grid for the
 same sparse-to-formed introduction. Its final introduction frame is exactly
 the scene's base `lines`; only after that frame is painted does the existing

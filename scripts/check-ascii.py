@@ -10,6 +10,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
+from ascii_config import MODULE, PREPAINT  # noqa: E402
 from langs import LANGS, PAGES  # noqa: E402
 
 
@@ -139,8 +140,10 @@ def main() -> int:
                 continue
             where = str(path.relative_to(root))
             source = path.read_text(encoding="utf-8")
-            if source.count('src="/ascii/ascii-hero.js"') != 1:
+            if source.count(MODULE) != 1:
                 bad(where, "must load the ASCII module exactly once")
+            if source.count(PREPAINT) != 1:
+                bad(where, "must install the ASCII pre-paint guard exactly once")
             heroes = re.findall(r"<ascii-hero\b.*?</ascii-hero>", source, re.S)
             expected_count = 2 if page == "" else 1
             if len(heroes) != expected_count:
