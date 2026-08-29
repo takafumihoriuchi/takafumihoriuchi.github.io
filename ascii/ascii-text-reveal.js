@@ -1,7 +1,7 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260828-3";
+} from "./ascii-layout.js?v=20260829-1";
 
 // All text and image instances use one page-level wall clock. A busy frame can
 // skip visual steps, but it cannot postpone completion until the user scrolls.
@@ -20,6 +20,7 @@ const FRAME_INTERVAL = 1000 / FRAME_RATE;
 const FORMATION_DURATION = 625;
 const REVEAL_START = 140;
 const REVEAL_END = 580;
+const FORMATION_EASE_POWER = 1.8;
 const ELEMENT_STAGGER = 55;
 const POC_GRID_COLUMNS = { wide: 72, compact: 48 };
 const COMPACT_BREAKPOINT = 480;
@@ -30,6 +31,14 @@ const PREPAINT_CLASS = "ascii-load-pending";
 
 function clamp(value, minimum = 0, maximum = 1) {
   return Math.min(maximum, Math.max(minimum, value));
+}
+
+// Uniform deterministic ranks become later wall-clock timestamps so the
+// cumulative visible fraction follows progress^1.8: restrained at first,
+// then increasingly quick, while every item still lands by the same deadline.
+function acceleratedArrivalTime(progress, start, end) {
+  const timeProgress = Math.pow(clamp(progress), 1 / FORMATION_EASE_POWER);
+  return start + timeProgress * (end - start);
 }
 
 function hashString(value) {
@@ -62,8 +71,11 @@ function shuffledRevealTimes(glyphs, seed) {
   order.forEach((glyphIndex, rank) => {
     const evenProgress = rank / denominator;
     const jitter = (noise(seed, glyphIndex + 1000) - 0.5) / denominator;
-    glyphs[glyphIndex].revealAt = REVEAL_START
-      + clamp(evenProgress + jitter) * (REVEAL_END - REVEAL_START);
+    glyphs[glyphIndex].revealAt = acceleratedArrivalTime(
+      evenProgress + jitter,
+      REVEAL_START,
+      REVEAL_END
+    );
   });
 }
 
@@ -315,8 +327,11 @@ class AsciiTextReveal {
             targetX,
             targetY,
             seed: particleSeed,
-            bornAt: noise(particleSeed, 3)
-              * Math.min(380, Math.max(90, glyph.revealAt - 30)) - 30,
+            bornAt: acceleratedArrivalTime(
+              noise(particleSeed, 3),
+              -30,
+              Math.min(380, Math.max(90, glyph.revealAt - 30)) - 30
+            ),
             character: this.particleCharacter(targetX, targetY, particleSeed),
           });
         }
@@ -501,8 +516,12 @@ class AsciiImageReveal {
           drawY: (row + 0.78) * cellHeight,
           width: cellWidth + 1,
           height: cellHeight + 1,
-          bornAt: noise(seed, 3) * 250 - 25,
-          revealAt: REVEAL_START + noise(seed, 7) * (REVEAL_END - REVEAL_START),
+          bornAt: acceleratedArrivalTime(noise(seed, 3), -25, 225),
+          revealAt: acceleratedArrivalTime(
+            noise(seed, 7),
+            REVEAL_START,
+            REVEAL_END
+          ),
           seed,
         });
       }

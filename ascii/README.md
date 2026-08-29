@@ -17,7 +17,10 @@ page reads as one system.
 
 The load reveal runs at 12fps in every language for twice as many stepped
 intermediate states as the original 6fps treatment, while retaining the same
-625ms formation deadline, per-grapheme timing, and ASCII cell size.
+625ms formation deadline and ASCII cell size. Particle births and semantic DOM
+handoffs use a `progress^1.8` ease-in distribution: sparse early movement
+accelerates toward the unchanged 580ms reveal deadline without altering the
+deterministic order or adding spatial interpolation.
 
 Each document adds `ascii-load-pending` synchronously in its head.
 The shared stylesheet turns that state into a full-viewport background cover,

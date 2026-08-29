@@ -1,9 +1,9 @@
 import {
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260828-3";
-import "./ascii-text-reveal.js?v=20260828-3";
+} from "./ascii-layout.js?v=20260829-1";
+import "./ascii-text-reveal.js?v=20260829-1";
 
-const SCENES_URL = new URL("./scenes.json?v=20260828-3", import.meta.url);
+const SCENES_URL = new URL("./scenes.json?v=20260829-1", import.meta.url);
 // Dropped or throttled frames must not extend this load-only phase into
 // scrolling. Keep the clock local so stale dependency caches cannot break the
 // module graph when this behavior changes.
