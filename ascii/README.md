@@ -22,6 +22,14 @@ handoffs use a `progress^1.8` ease-in distribution: sparse early movement
 accelerates toward the unchanged 580ms reveal deadline without altering the
 deterministic order or adding spatial interpolation.
 
+During the last three 12fps frames before each text grapheme is uncovered, its
+ASCII cells become shape-adaptive. A font-keyed atlas rasterizes all 94
+non-space printable ASCII characters once, compares their 3-by-5 binary
+signatures with the corresponding semantic-text mask cells, and steps through
+the third-, second-, and first-closest matches. Earlier frames retain the
+sparse punctuation and line-symbol vocabulary. Image covers keep their
+symbol-only vocabulary because they do not use the semantic text mask.
+
 Each document adds `ascii-load-pending` synchronously in its head.
 The shared stylesheet turns that state into a full-viewport background cover,
 preventing the semantic DOM from flashing before the module can build its
@@ -51,7 +59,7 @@ handoff.
   frame playback.
 - `ascii-layout.js` contains the shared cell-width and grid-fit calculation
   used by both the scene renderer and the load-reveal PoC.
-- `ascii-text-reveal.js` is the Japanese page-load renderer. It reads grapheme
+- `ascii-text-reveal.js` is the shared page-load renderer. It reads grapheme
   positions from the live DOM, builds text masks for ASCII particles, tiles
   image rectangles with the shared cell grid, and removes each decorative
   canvas after the staggered DOM reveal completes.

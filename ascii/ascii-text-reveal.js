@@ -1,7 +1,7 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260829-1";
+} from "./ascii-layout.js?v=20260829-2";
 
 // All text and image instances use one page-level wall clock. A busy frame can
 // skip visual steps, but it cannot postpone completion until the user scrolls.
@@ -22,12 +22,23 @@ const REVEAL_START = 140;
 const REVEAL_END = 580;
 const FORMATION_EASE_POWER = 1.8;
 const ELEMENT_STAGGER = 55;
+const ADAPTIVE_ASCII_FRAME_COUNT = 3;
+const ADAPTIVE_ASCII_DURATION = FRAME_INTERVAL * ADAPTIVE_ASCII_FRAME_COUNT;
+const ADAPTIVE_SIGNATURE_COLUMNS = 3;
+const ADAPTIVE_SIGNATURE_ROWS = 5;
+const ADAPTIVE_SAMPLE_OFFSETS = [0.25, 0.75];
+const ADAPTIVE_ALPHA_THRESHOLD = 0.12;
 const POC_GRID_COLUMNS = { wide: 72, compact: 48 };
 const COMPACT_BREAKPOINT = 480;
 const EARLY_GLYPHS = [".", ".", ":", "'"];
 const WOBBLE_GLYPHS = [".", ":", "*", "+", "-"];
 const IMAGE_GLYPHS = [".", ".", ":", "+", "#", "o"];
+const PRINTABLE_ASCII = Array.from(
+  { length: 94 },
+  (_, index) => String.fromCharCode(index + 33)
+);
 const PREPAINT_CLASS = "ascii-load-pending";
+const adaptiveAsciiAtlasCache = new Map();
 
 function clamp(value, minimum = 0, maximum = 1) {
   return Math.min(maximum, Math.max(minimum, value));
@@ -39,6 +50,110 @@ function clamp(value, minimum = 0, maximum = 1) {
 function acceleratedArrivalTime(progress, start, end) {
   const timeProgress = Math.pow(clamp(progress), 1 / FORMATION_EASE_POWER);
   return start + timeProgress * (end - start);
+}
+
+function downsampleAlpha(pixels, width, height) {
+  const signature = new Float32Array(
+    ADAPTIVE_SIGNATURE_COLUMNS * ADAPTIVE_SIGNATURE_ROWS
+  );
+  for (let row = 0; row < ADAPTIVE_SIGNATURE_ROWS; row += 1) {
+    const firstY = Math.floor(row * height / ADAPTIVE_SIGNATURE_ROWS);
+    const lastY = Math.max(
+      firstY + 1,
+      Math.floor((row + 1) * height / ADAPTIVE_SIGNATURE_ROWS)
+    );
+    for (let column = 0; column < ADAPTIVE_SIGNATURE_COLUMNS; column += 1) {
+      const firstX = Math.floor(column * width / ADAPTIVE_SIGNATURE_COLUMNS);
+      const lastX = Math.max(
+        firstX + 1,
+        Math.floor((column + 1) * width / ADAPTIVE_SIGNATURE_COLUMNS)
+      );
+      let alpha = 0;
+      let samples = 0;
+      for (let y = firstY; y < Math.min(lastY, height); y += 1) {
+        for (let x = firstX; x < Math.min(lastX, width); x += 1) {
+          alpha += pixels[(y * width + x) * 4 + 3];
+          samples += 1;
+        }
+      }
+      signature[row * ADAPTIVE_SIGNATURE_COLUMNS + column]
+        = samples ? alpha / (samples * 255) : 0;
+    }
+  }
+  return signature;
+}
+
+function adaptiveAsciiAtlas(style) {
+  const key = [
+    style.fontWeight,
+    style.fontSize.toFixed(3),
+    style.lineHeight.toFixed(3),
+    style.fontFamily,
+  ].join("|");
+  const cached = adaptiveAsciiAtlasCache.get(key);
+  if (cached) return cached;
+
+  const scale = 2;
+  const cellWidth = style.fontSize * ASCII_CELL_WIDTH_RATIO;
+  const cellHeight = style.lineHeight;
+  const canvas = document.createElement("canvas");
+  canvas.width = Math.max(1, Math.ceil(cellWidth * scale));
+  canvas.height = Math.max(1, Math.ceil(cellHeight * scale));
+  const context = canvas.getContext("2d", { willReadFrequently: true });
+  if (!context) return [];
+  context.setTransform(scale, 0, 0, scale, 0, 0);
+  context.fillStyle = "#fff";
+  context.font = `${style.fontWeight} ${style.fontSize}px ${style.fontFamily}`;
+  context.textAlign = "center";
+  context.textBaseline = "alphabetic";
+
+  const candidates = PRINTABLE_ASCII.map((character) => {
+    context.clearRect(0, 0, cellWidth, cellHeight);
+    context.fillText(character, cellWidth / 2, cellHeight * 0.72);
+    const pixels = context.getImageData(0, 0, canvas.width, canvas.height).data;
+    return {
+      character,
+      signature: downsampleAlpha(pixels, canvas.width, canvas.height),
+    };
+  });
+  const atlas = { candidates, matches: new Map() };
+  adaptiveAsciiAtlasCache.set(key, atlas);
+  return atlas;
+}
+
+function binarySignatureKey(signature) {
+  let key = 0;
+  signature.forEach((alpha) => {
+    key = (key << 1) | (alpha >= ADAPTIVE_ALPHA_THRESHOLD ? 1 : 0);
+  });
+  return key;
+}
+
+function closestAdaptiveCharacters(targetSignature, atlas) {
+  if (!atlas.candidates?.length) return [];
+  const signatureKey = binarySignatureKey(targetSignature);
+  const cached = atlas.matches.get(signatureKey);
+  if (cached) return cached;
+
+  const closest = [];
+  atlas.candidates.forEach((candidate, candidateIndex) => {
+    let score = candidateIndex * 0.000000001;
+    for (let index = 0; index < targetSignature.length; index += 1) {
+      const targetInk = targetSignature[index] >= ADAPTIVE_ALPHA_THRESHOLD;
+      const candidateInk = candidate.signature[index] >= ADAPTIVE_ALPHA_THRESHOLD;
+      const difference = targetSignature[index] - candidate.signature[index];
+      score += (targetInk === candidateInk ? 0 : 1)
+        + difference * difference * 0.05;
+    }
+    const result = { character: candidate.character, score };
+    const insertAt = closest.findIndex((item) => score < item.score);
+    if (insertAt < 0) closest.push(result);
+    else closest.splice(insertAt, 0, result);
+    if (closest.length > ADAPTIVE_ASCII_FRAME_COUNT) closest.pop();
+  });
+  const characters = closest.map((item) => item.character);
+  atlas.matches.set(signatureKey, characters);
+  return characters;
 }
 
 function hashString(value) {
@@ -304,10 +419,38 @@ class AsciiTextReveal {
     return maximum;
   }
 
+  cellSignature(x, y, width, height) {
+    const signature = new Float32Array(
+      ADAPTIVE_SIGNATURE_COLUMNS * ADAPTIVE_SIGNATURE_ROWS
+    );
+    const left = x - width / 2;
+    const top = y - height / 2;
+    for (let row = 0; row < ADAPTIVE_SIGNATURE_ROWS; row += 1) {
+      for (let column = 0; column < ADAPTIVE_SIGNATURE_COLUMNS; column += 1) {
+        let alpha = 0;
+        let samples = 0;
+        for (const offsetY of ADAPTIVE_SAMPLE_OFFSETS) {
+          for (const offsetX of ADAPTIVE_SAMPLE_OFFSETS) {
+            const sampleX = left
+              + (column + offsetX) * width / ADAPTIVE_SIGNATURE_COLUMNS;
+            const sampleY = top
+              + (row + offsetY) * height / ADAPTIVE_SIGNATURE_ROWS;
+            alpha += this.alphaAt(sampleX, sampleY);
+            samples += 1;
+          }
+        }
+        signature[row * ADAPTIVE_SIGNATURE_COLUMNS + column]
+          = alpha / (samples * 255);
+      }
+    }
+    return signature;
+  }
+
   prepareParticles() {
     this.asciiSize = this.referenceAscii.fontSize;
     const cellWidth = this.asciiSize * ASCII_CELL_WIDTH_RATIO;
     const cellHeight = this.referenceAscii.lineHeight;
+    const adaptiveAtlas = adaptiveAsciiAtlas(this.referenceAscii);
     const particles = [];
 
     this.glyphs.forEach((glyph, glyphIndex) => {
@@ -322,6 +465,12 @@ class AsciiTextReveal {
           const targetY = (row + 0.72) * cellHeight;
           if (this.cellInk(targetX, sampleY, cellWidth, cellHeight) < 18) continue;
           const particleSeed = hashString(`${this.seed}:${glyphIndex}:${column}:${row}`);
+          const targetSignature = this.cellSignature(
+            targetX,
+            sampleY,
+            cellWidth,
+            cellHeight
+          );
           particles.push({
             glyphIndex,
             targetX,
@@ -332,7 +481,11 @@ class AsciiTextReveal {
               -30,
               Math.min(380, Math.max(90, glyph.revealAt - 30)) - 30
             ),
-            character: this.particleCharacter(targetX, targetY, particleSeed),
+            strokeCharacter: this.particleCharacter(targetX, targetY, particleSeed),
+            adaptiveCharacters: closestAdaptiveCharacters(
+              targetSignature,
+              adaptiveAtlas
+            ),
           });
         }
       }
@@ -373,6 +526,7 @@ class AsciiTextReveal {
     context.fillStyle = this.foreground;
     context.font = `${this.referenceAscii.fontWeight} ${this.asciiSize}px `
       + this.referenceAscii.fontFamily;
+    context.textAlign = "center";
     context.textBaseline = "alphabetic";
     context.direction = "ltr";
     for (const particle of this.particles) {
@@ -384,17 +538,26 @@ class AsciiTextReveal {
       if (age < 90 && noise(particle.seed, beat + 200) < 0.28) continue;
 
       let character;
-      if (age < 95) {
+      if (elapsed >= glyph.revealAt - ADAPTIVE_ASCII_DURATION) {
+        const framesUntilReveal = Math.max(
+          1,
+          Math.ceil((glyph.revealAt - elapsed) / FRAME_INTERVAL)
+        );
+        const candidateIndex = Math.min(
+          particle.adaptiveCharacters.length - 1,
+          framesUntilReveal - 1
+        );
+        character = particle.adaptiveCharacters[candidateIndex]
+          || particle.strokeCharacter;
+      } else if (age < 95) {
         character = EARLY_GLYPHS[
           Math.floor(noise(particle.seed, beat + 20) * EARLY_GLYPHS.length)
         ];
-      } else if (elapsed < glyph.revealAt - 60) {
-        const choices = [...WOBBLE_GLYPHS, particle.character];
+      } else {
+        const choices = [...WOBBLE_GLYPHS, particle.strokeCharacter];
         character = choices[
           Math.floor(noise(particle.seed, beat + 40) * choices.length)
         ];
-      } else {
-        character = particle.character;
       }
       context.globalAlpha = 1;
       context.fillText(character, particle.targetX, particle.targetY);
