@@ -24,6 +24,10 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css">
+<!-- The only script the index carries. It measures the open works panel so
+     that it ends on a card edge, and does nothing else: no text, no markup,
+     no behaviour the panel does not already have without it. -->
+<script type="module" src="../works-panel.js"></script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
@@ -107,26 +111,53 @@
 
   <section>
     <h2>過往學術研究</h2>
-    <ul class="works">
-      <li>
-        <a class="work" href="works/masters-thesis-hmi-design/">
-          <img src="../works/masters-thesis-hmi-design/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">關於人與機器人互動設計的碩士論文 （2021年7月）</span>
-            <span class="work-desc">將操作者的「是否在看」轉換為機器人可以動作的條件。提出並實現了一種將人的認知狀態納入安全控制、在無需事前目標登錄的情況下防止碰撞的機制。</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="work" href="works/bachelors-thesis-constraint-programming/">
-          <img src="../works/bachelors-thesis-constraint-programming/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">關於約束型程式設計的畢業論文 （2019年6月）</span>
-            <span class="work-desc">在模擬過程中，判斷出永遠不可能成立的條件，並將其從探索中排除。減少計算量而不改變結果，將評估模型的執行時間縮短了約一半。</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- The list opens with two entries and holds the rest behind the control
+         below it. The mechanism is the checkbox and its label: no script decides
+         what is shown, so the panel opens with JavaScript switched off, and with
+         CSS switched off every entry is simply here in order. See style.css.
+         Remove the input and the label if this list ever drops back to two. -->
+    <input class="works-toggle" type="checkbox" id="more-earlier-work">
+    <div class="works-panel">
+      <ul class="works">
+        <li>
+          <a class="work" href="works/masters-thesis-hmi-design/">
+            <img src="../works/masters-thesis-hmi-design/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">關於人與機器人互動設計的碩士論文 （2021年7月）</span>
+              <span class="work-desc">將操作者的「是否在看」轉換為機器人可以動作的條件。提出並實現了一種將人的認知狀態納入安全控制、在無需事前目標登錄的情況下防止碰撞的機制。</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/bachelors-thesis-constraint-programming/">
+            <img src="../works/bachelors-thesis-constraint-programming/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">關於約束型程式設計的畢業論文 （2019年6月）</span>
+              <span class="work-desc">在模擬過程中，判斷出永遠不可能成立的條件，並將其從探索中排除。減少計算量而不改變結果，將評估模型的執行時間縮短了約一半。</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/masters-project-smart-codesign-vr/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Smart Codesign VR (2021年2月)</span>
+              <span class="work-desc">碩士期間的專案。記錄正在籌備中。</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/masters-project-design-studio/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Design Studio (2019年–2020年)</span>
+              <span class="work-desc">碩士期間的專案。記錄正在籌備中。</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label class="works-more" for="more-earlier-work"><span class="works-more__open">顯示更多</span><span class="works-more__close">收合</span></label>
   </section>
 
   <section>

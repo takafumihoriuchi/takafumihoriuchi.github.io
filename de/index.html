@@ -24,6 +24,10 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/">
 <link rel="icon" href="../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../style.css">
+<!-- The only script the index carries. It measures the open works panel so
+     that it ends on a card edge, and does nothing else: no text, no markup,
+     no behaviour the panel does not already have without it. -->
+<script type="module" src="../works-panel.js"></script>
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="de_DE">
@@ -106,26 +110,53 @@
 
   <section>
     <h2>Frühere wissenschaftliche Arbeiten</h2>
-    <ul class="works">
-      <li>
-        <a class="work" href="works/masters-thesis-hmi-design/">
-          <img src="../works/masters-thesis-hmi-design/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">Masterarbeit über Interaktionsdesign zwischen Mensch und Roboter(Juli 2021)</span>
-            <span class="work-desc">Die Handhabenden sehen, ob „beobachtet wird“, und wandeln es in Bedingungen um, unter denen der Roboter sich bewegen darf. Ein Mechanismus wurde vorgeschlagen und implementiert, der den kognitiven Zustand des Menschen in die Sicherheitssteuerung einbezieht und Kollisionen ohne vorherige Zielregistrierung verhindert.</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="work" href="works/bachelors-thesis-constraint-programming/">
-          <img src="../works/bachelors-thesis-constraint-programming/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">Abschlussarbeit über Constraint-Programmierung(Juni 2019)</span>
-            <span class="work-desc">Während der Simulation werden Bedingungen, die nie erfüllt werden, identifiziert und aus der Suche ausgeschlossen. Dadurch wurde die Rechenmenge reduziert, ohne das Ergebnis zu verändern, und die Ausführungszeit des Bewertungsmodells halbiert.</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- The list opens with two entries and holds the rest behind the control
+         below it. The mechanism is the checkbox and its label: no script decides
+         what is shown, so the panel opens with JavaScript switched off, and with
+         CSS switched off every entry is simply here in order. See style.css.
+         Remove the input and the label if this list ever drops back to two. -->
+    <input class="works-toggle" type="checkbox" id="more-earlier-work">
+    <div class="works-panel">
+      <ul class="works">
+        <li>
+          <a class="work" href="works/masters-thesis-hmi-design/">
+            <img src="../works/masters-thesis-hmi-design/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">Masterarbeit über Interaktionsdesign zwischen Mensch und Roboter(Juli 2021)</span>
+              <span class="work-desc">Die Handhabenden sehen, ob „beobachtet wird“, und wandeln es in Bedingungen um, unter denen der Roboter sich bewegen darf. Ein Mechanismus wurde vorgeschlagen und implementiert, der den kognitiven Zustand des Menschen in die Sicherheitssteuerung einbezieht und Kollisionen ohne vorherige Zielregistrierung verhindert.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/bachelors-thesis-constraint-programming/">
+            <img src="../works/bachelors-thesis-constraint-programming/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">Abschlussarbeit über Constraint-Programmierung(Juni 2019)</span>
+              <span class="work-desc">Während der Simulation werden Bedingungen, die nie erfüllt werden, identifiziert und aus der Suche ausgeschlossen. Dadurch wurde die Rechenmenge reduziert, ohne das Ergebnis zu verändern, und die Ausführungszeit des Bewertungsmodells halbiert.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/masters-project-smart-codesign-vr/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Smart Codesign VR (Februar 2021)</span>
+              <span class="work-desc">Ein Projekt aus dem Masterstudium. Der Text ist in Vorbereitung.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/masters-project-design-studio/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Design Studio (2019–2020)</span>
+              <span class="work-desc">Ein Projekt aus dem Masterstudium. Der Text ist in Vorbereitung.</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label class="works-more" for="more-earlier-work"><span class="works-more__open">Mehr anzeigen</span><span class="works-more__close">Weniger anzeigen</span></label>
   </section>
 
   <section>

@@ -17,6 +17,12 @@
   --accent-wash: rgba(124, 101, 83, 0.07);
   --rule: rgba(26, 26, 26, 0.13);
 
+  /* The thumb of the works panel's scrollbar. Deliberately stronger than
+     --rule: that value is tuned for a hairline seen edge-on, and a 10px bar
+     drawn in it is not visible enough to be the thing telling the reader the
+     panel scrolls. Weaker than --fg-muted, which is the colour of words. */
+  --scrollbar: rgba(26, 26, 26, 0.30);
+
   /* Fills the thumbnail column of a work whose image does not exist yet. Off
      white, carrying the accent's hue so it reads as part of the palette rather
      than as a grey box. It has to stay distinct from --accent-wash, which is
@@ -49,6 +55,7 @@
     --accent: #b49780;
     --accent-wash: rgba(180, 151, 128, 0.10);
     --rule: rgba(232, 232, 229, 0.16);
+    --scrollbar: rgba(232, 232, 229, 0.28);
     /* The dark counterpart is not an off white — a pale block would burn a
        hole in the page here. What carries over is the relationship: one step
        away from the ground, and clear of the hover wash. */
@@ -467,6 +474,176 @@ nav a:hover,
      restore a little size for easier reading on small screens. */
   .work-desc { font-size: 0.875rem; }
 }
+
+/* A works list that opens with two entries and keeps the rest one control
+   away. The list of earlier work grows as older projects are written up, and a
+   section that spends most of its height on them pushes everything after it
+   off the first screen.
+
+   The mechanism is a checkbox and its label; no script decides what is shown.
+   With JavaScript off the control still opens the panel, and with CSS off
+   every entry is simply in the page in document order. The script's only job
+   is to measure — see --panel-height below.
+
+   Entries past the second are `display: none` rather than clipped, so the
+   closed panel is exactly as tall as the two cards in it and no stylesheet has
+   to know how tall a card is. That is what makes the closed state right in all
+   fourteen languages at once: the same two cards measure 266px in Japanese and
+   348px in Russian, because a description that runs to three lines in one runs
+   to five in the other. */
+.works-toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.works-panel > .works > li:nth-child(n+3) { display: none; }
+.works-toggle:checked ~ .works-panel > .works > li:nth-child(n+3) { display: list-item; }
+
+/* Closed, the second card is the last one on show, and .works gives a bottom
+   margin to every card but its own last child — which is the fourth. Left
+   alone that puts a card's worth of gap between the second card and the
+   control, and the control reads as belonging to the section rather than to
+   the list it opens. */
+.works-panel > .works > li:nth-child(2) { margin-bottom: 0; }
+.works-toggle:checked ~ .works-panel > .works > li:nth-child(2) { margin-bottom: var(--space-para); }
+
+/* A card's hover wash reaches 0.85rem past the text column to either side and
+   0.5rem above and below it (see .work), and a scroll container clips whatever
+   leaves its padding box. The panel hands that room back as padding and takes
+   it off again as margin, so the wash is drawn whole while the cards keep the
+   alignment they have in every other section and the heading keeps its
+   distance from the first of them.
+
+   The scrollbar gutter is reserved in both states. It costs the description
+   column the width of a thin scrollbar; the alternative is every description
+   rewrapping at the moment the panel opens, which is the one moment the reader
+   is watching it. */
+.works-panel {
+  padding: 0.5rem 0.85rem;
+  margin: -0.5rem -0.85rem;
+  overflow-y: hidden;
+  scrollbar-gutter: stable;
+}
+
+/* Open: three cards, and the rest by scrolling. `--panel-height` is the
+   measured bottom of the third card, written onto this element by
+   works-panel.js. No stylesheet can hold that number — it is three card
+   heights that differ per language and change again with every work added —
+   and hard-coding one would clip the third card in half the languages to make
+   it fit in the other half.
+
+   The viewport cap is a floor under both: a panel taller than the window
+   leaves nothing on screen to scroll the page with, so on a phone — where the
+   cards stack and each one is most of a screen — the window wins over the
+   card count. `dvh` second, for the browsers that have it, because a mobile
+   toolbar sliding away must not resize the panel under the reader's finger. */
+.works-toggle:checked ~ .works-panel {
+  max-height: min(var(--panel-height, 30rem), 70vh);
+  max-height: min(var(--panel-height, 30rem), 70dvh);
+  overflow-y: auto;
+}
+
+/* The scrollbar is the signifier. It is the only thing on the page that says
+   the panel holds more than it is showing, so it has to be there while the
+   panel merely sits — which is not what a macOS overlay scrollbar does, since
+   that one fades out the moment scrolling stops. Giving the -webkit- scrollbar
+   a width is what replaces the overlay with a scrollbar that stays, and what
+   makes `scrollbar-gutter` above reserve room for it: measured on this Mac,
+   the panel's gutter is 0px with the standard properties set and 10px without
+   them.
+
+   The order matters and is the reverse of what it looks like. Chromium and
+   Safari drop the -webkit- pseudo-elements entirely as soon as `scrollbar-width`
+   or `scrollbar-color` is declared, so the standard properties can only be
+   given to the engine that has no pseudo-elements to lose — Firefox, which is
+   what the query is really selecting for. */
+.works-panel::-webkit-scrollbar { width: 10px; }
+.works-panel::-webkit-scrollbar-track { background-color: var(--rule); }
+
+.works-panel::-webkit-scrollbar-thumb {
+  background-color: var(--scrollbar);
+  border-radius: 5px;
+}
+
+@supports not selector(::-webkit-scrollbar) {
+  .works-panel {
+    scrollbar-width: thin;
+    scrollbar-color: var(--scrollbar) var(--rule);
+  }
+}
+
+/* The control takes the padded box the rest of the site's chrome links have,
+   for the same reason they do: an underline says a word can be clicked and
+   says nothing about where the click lands. It is set at the description's
+   size and colour rather than the body's, because it belongs to the list it
+   opens and not to the section's prose.
+
+   `cursor: pointer` is here and not on the site's links, which are already
+   given the hand by being links. A label is not. */
+.works-more {
+  display: inline-block;
+  margin: calc(var(--space-para) - 0.35rem) -0.5rem -0.35rem;
+  padding: 0.35rem 0.5rem;
+  border-radius: 3px;
+  color: var(--fg-muted);
+  font-size: 0.875rem;
+  text-decoration: underline;
+  text-decoration-thickness: 1px;
+  text-underline-offset: 0.2em;
+  text-decoration-color: var(--fg-muted);
+  cursor: pointer;
+}
+
+.works-more:hover {
+  background-color: var(--accent-wash);
+  text-decoration-color: currentColor;
+}
+
+/* The checkbox itself is off screen but still focusable, so the ring it would
+   have drawn is drawn on the label instead — same ring as a:focus-visible. */
+.works-toggle:focus-visible ~ .works-more {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+/* One label, two words, whichever the panel is not currently showing.
+   `display: none` rather than a CSS-generated string: the words are in the
+   HTML where they can be translated, and the hidden one leaves the
+   accessibility tree with the box, so the control is announced by the single
+   name it currently has. */
+.works-more__close { display: none; }
+.works-toggle:checked ~ .works-more .works-more__open { display: none; }
+.works-toggle:checked ~ .works-more .works-more__close { display: inline; }
+
+/* Below the width where the cards stack, the panel is not a window any more.
+   One stacked card is most of a phone screen, so two of them already stand
+   taller than the cap above: measured at 375x700, the closed list is 738px and
+   the capped window would be 490px, which means opening it would make the
+   section shorter than it was and the control would read as doing nothing.
+   A window that fills the screen is also a trap — there is no page left beside
+   it to put a thumb on.
+
+   So here the control means what it plainly says, and opening shows the rest.
+   `overflow-y: visible` in both states as well, so the reserved scrollbar
+   gutter goes away with the scrolling it was reserved for and the cards keep
+   the full width of the column. */
+@media (max-width: 32rem) {
+  .works-panel,
+  .works-toggle:checked ~ .works-panel {
+    max-height: none;
+    overflow-y: visible;
+  }
+}
+
+/* Nothing to open. Written as a negation so that a browser without :has()
+   drops the rule and shows the control, rather than hiding the one thing that
+   could reveal the entries the rule above has hidden. */
+.works-panel:not(:has(> .works > li:nth-child(3))) ~ .works-more { display: none; }
 
 nav { margin-top: var(--space-section); }
 
