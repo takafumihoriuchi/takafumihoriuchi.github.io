@@ -60,13 +60,11 @@ h3 {
    and the shorthand would set the inline margins to zero — quietly cancelling
    the negative start margin `.bleed` uses to widen the strip past the text
    column. The figure would keep its full width and simply run off the page. */
-.deck-figure { margin-block: 2.5rem var(--space-section); }
-
-/* The Japanese page frames the deck with matching rules. Split the difference
-   between the original 2.5rem above and 4.5rem below, then subtract the deck's
-   0.75rem bottom padding from the figure's end margin. This keeps the visible
-   slide equally far from both rules while the overlaid scrollbar is hidden. */
-:lang(ja) .deck-figure { margin-block: 3.5rem calc(3.5rem - 0.75rem); }
+/* Split the difference between the original 2.5rem above and 4.5rem below,
+   then subtract the deck's 0.75rem bottom padding from the figure's end
+   margin. This keeps the visible slide equally far from both rules while the
+   overlaid scrollbar is hidden. */
+.deck-figure { margin-block: 3.5rem calc(3.5rem - 0.75rem); }
 
 .deck {
   display: flex;
