@@ -139,6 +139,22 @@ h1 {
   user-select: none;
 }
 
+/* An outline cover sits over the border box rather than inside it, so the
+   renderer positions it itself — one border width out and up from the corner
+   this rule would otherwise put it in. Above the text cover, which is sized to
+   the border box from the padding box's corner and so reaches a border width
+   past the far edge; the outline redraws what that paints over. */
+.ascii-outline-reveal { position: relative; }
+
+.ascii-outline-reveal__canvas {
+  position: absolute;
+  z-index: 2;
+  display: block;
+  max-width: none;
+  pointer-events: none;
+  user-select: none;
+}
+
 /* Image covers live in one fixed viewport layer, so they can tile replaced
    elements without adding wrappers that would alter grids, figures or links. */
 .ascii-image-reveal {
@@ -618,12 +634,12 @@ nav a:hover,
 
 .works-more__box {
   display: block;
-  padding: 0.4rem 1.75rem;
+  padding: 0.3rem 2.25rem;
   border: 1px solid var(--accent);
   border-radius: 3px;
   background-color: var(--bg);
   color: var(--accent);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   font-weight: normal;
   text-align: center;
 }
@@ -632,11 +648,11 @@ nav a:hover,
    directly in the label, so for them the label is the box. Delete this rule
    with the rollout — see OPERATIONS.md §10. */
 .works-more:not(:has(.works-more__box)) {
-  padding: 0.4rem 1.75rem;
+  padding: 0.3rem 2.25rem;
   border: 1px solid var(--accent);
   background-color: var(--bg);
   color: var(--accent);
-  font-size: 0.875rem;
+  font-size: 0.75rem;
   text-align: center;
 }
 
@@ -649,21 +665,27 @@ nav a:hover,
   outline-offset: 3px;
 }
 
-/* The box joins the page's own load animation: ascii-text-reveal.js covers the
-   word and forms it out of ASCII like every other line on the page. What the
-   cover cannot draw is the outline — the canvas sits inside the border, which
-   would otherwise be the one element on the page already finished while the
-   rest is still forming. So the outline is held back while the renderer has
-   the element, and drawn in behind it.
+/* The box joins the page's own load animation twice over: the text renderer
+   forms the word out of ASCII like every other line, and a second pass forms
+   the border the same way — shuffled, a piece at a time, each piece standing
+   as a `-` or a `|` for three frames before the line lands there.
 
-   The same rule runs the other way on the way out: the class goes back on for
-   the dissolve, and the outline leaves while the word comes apart inside it.
-   The :checked half holds it gone afterwards, for the moment between the last
-   frame and the box being taken out of the page. */
-.works-more__box { transition: border-color 300ms ease; }
+   So the real border is held out of the way for as long as that pass owns the
+   element, and there is deliberately no transition on it. A fade would be the
+   wrong thing twice: it is what the border was doing before, and it would run
+   again at the hand-off, dimming an edge the canvas had already finished
+   drawing. The canvas's last frame is this border, stroked along this radius,
+   so it can simply be swapped for it.
 
-.works-more__box.ascii-text-reveal,
-.works-toggle:checked ~ .works-more .works-more__box { border-color: transparent; }
+   The fade belongs to the way out and is declared there. A transition in the
+   state being entered is the one that runs, so the border still leaves gently
+   when the box is dissolving, without ever arriving that way. */
+.works-more__box.ascii-outline-reveal { border-color: transparent; }
+
+.works-toggle:checked ~ .works-more .works-more__box {
+  border-color: transparent;
+  transition: border-color 300ms ease;
+}
 
 /* Opening is one way. Nobody who has asked to see the rest of a four-entry
    list asks to see less of it again, and a reload is already the way back —

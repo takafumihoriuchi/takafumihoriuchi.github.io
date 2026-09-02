@@ -1,7 +1,7 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260902-1";
+} from "./ascii-layout.js?v=20260902-2";
 
 // All text and image instances use one page-level wall clock. A busy frame can
 // skip visual steps, but it cannot postpone completion until the user scrolls.
@@ -38,6 +38,12 @@ const PRINTABLE_ASCII = Array.from(
   { length: 94 },
   (_, index) => String.fromCharCode(index + 33)
 );
+// The one element on the page whose edge is drawn rather than written. Its
+// border cannot be formed by the text renderer — that one covers ink, and a
+// border is not ink — so it gets a pass of its own.
+const OUTLINE_SELECTOR = "main .works-more__box";
+const OUTLINE_GLYPH_LEAD = FRAME_INTERVAL * 3;
+const OUTLINE_GLYPHS = { "-": ["-", ".", "-", "~"], "|": ["|", ":", "|", "'"] };
 const PREPAINT_CLASS = "ascii-load-pending";
 const adaptiveAsciiAtlasCache = new Map();
 
@@ -790,6 +796,221 @@ class AsciiImageReveal {
   }
 }
 
+/* Forms an element's border the way the renderer above forms its text: in a
+ * shuffled order, a piece at a time, each piece standing as an ASCII glyph for
+ * three frames before the line itself lands there.
+ *
+ * It is a separate pass because the text renderer works from a mask of ink and
+ * a border is not ink — it lies outside the box that renderer covers, and its
+ * corners are arcs rather than glyphs. The two share the clock, the cell grid
+ * and the shuffle, so the edge and the word form as one thing.
+ *
+ * The last frame is the border itself, stroked along the same rounded path the
+ * stylesheet would draw, clipped to the pieces that have landed. That is what
+ * makes the hand-off invisible: when the canvas goes, what replaces it is
+ * already what was on screen.
+ */
+class AsciiOutlineReveal {
+  constructor(element, index) {
+    this.element = element;
+    this.seed = hashString(`${location.pathname}:outline:${index}`);
+    this.elapsed = 0;
+    this.lastRender = -Infinity;
+    this.frame = null;
+    this.complete = false;
+    this.motion = window.matchMedia("(prefers-reduced-motion: reduce)");
+    this.onMotionChange = () => {
+      if (this.motion.matches) this.finish("reduced-motion");
+    };
+  }
+
+  start() {
+    if (this.motion.matches) {
+      this.element.dataset.asciiOutlineState = "reduced-motion";
+      return;
+    }
+
+    // Read the edge before the class hides it: from here on the stylesheet is
+    // holding the real border at transparent, and asking it what colour the
+    // border is would return the answer to a different question.
+    const style = getComputedStyle(this.element);
+    this.border = {
+      top: parseFloat(style.borderTopWidth) || 0,
+      right: parseFloat(style.borderRightWidth) || 0,
+      bottom: parseFloat(style.borderBottomWidth) || 0,
+      left: parseFloat(style.borderLeftWidth) || 0,
+      radius: parseFloat(style.borderTopLeftRadius) || 0,
+      colour: style.borderTopColor,
+    };
+    if (!(this.border.top || this.border.right || this.border.bottom || this.border.left)) {
+      this.element.dataset.asciiOutlineState = "no-border";
+      return;
+    }
+
+    this.element.classList.add("ascii-outline-reveal");
+    this.canvas = document.createElement("canvas");
+    this.canvas.className = "ascii-outline-reveal__canvas";
+    this.canvas.setAttribute("aria-hidden", "true");
+    this.element.append(this.canvas);
+    this.context = this.canvas.getContext("2d");
+    if (!this.context) {
+      this.finish("error");
+      return;
+    }
+
+    this.rebuild();
+    if (!this.cells.length) {
+      this.finish("empty");
+      return;
+    }
+
+    this.element.dataset.asciiOutlineState = "running";
+    this.motion.addEventListener("change", this.onMotionChange);
+    this.resizeObserver = new ResizeObserver(() => this.rebuild());
+    this.resizeObserver.observe(this.element);
+    this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT;
+    if (this.elapsed >= FORMATION_DURATION) {
+      this.finish("complete");
+      return;
+    }
+    this.render();
+    this.schedule();
+  }
+
+  rebuild() {
+    if (!this.canvas || this.complete) return;
+    // The canvas covers the border box, which is one border width outside the
+    // box the stylesheet positions it in.
+    const bounds = this.element.getBoundingClientRect();
+    const width = Math.max(1, bounds.width);
+    const height = Math.max(1, bounds.height);
+    const scale = Math.min(window.devicePixelRatio || 1, 2);
+    this.canvas.width = Math.ceil(width * scale);
+    this.canvas.height = Math.ceil(height * scale);
+    this.canvas.style.width = `${width}px`;
+    this.canvas.style.height = `${height}px`;
+    this.canvas.style.left = `${-this.border.left}px`;
+    this.canvas.style.top = `${-this.border.top}px`;
+    this.context.setTransform(scale, 0, 0, scale, 0, 0);
+    this.width = width;
+    this.height = height;
+    this.scale = scale;
+    this.ascii = referenceAsciiStyle();
+    this.buildCells();
+    this.buildPath();
+    this.render();
+  }
+
+  buildCells() {
+    const cellWidth = this.ascii.fontSize * ASCII_CELL_WIDTH_RATIO;
+    const cellHeight = this.ascii.lineHeight;
+    const cells = [];
+    const add = (x, y, width, height, glyph) => cells.push({
+      x, y, width, height, glyph,
+      centreX: x + width / 2,
+      centreY: y + height / 2,
+      seed: hashString(`${this.seed}:${cells.length}`),
+    });
+
+    for (let x = 0; x < this.width; x += cellWidth) {
+      const width = Math.min(cellWidth, this.width - x);
+      if (this.border.top) add(x, 0, width, this.border.top, "-");
+      if (this.border.bottom) {
+        add(x, this.height - this.border.bottom, width, this.border.bottom, "-");
+      }
+    }
+    for (let y = 0; y < this.height; y += cellHeight) {
+      const height = Math.min(cellHeight, this.height - y);
+      if (this.border.left) add(0, y, this.border.left, height, "|");
+      if (this.border.right) {
+        add(this.width - this.border.right, y, this.border.right, height, "|");
+      }
+    }
+
+    shuffledRevealTimes(cells, this.seed);
+    this.cells = cells;
+  }
+
+  buildPath() {
+    const inset = this.border.top / 2;
+    const path = new Path2D();
+    const width = Math.max(0, this.width - this.border.top);
+    const height = Math.max(0, this.height - this.border.top);
+    const radius = Math.max(0, this.border.radius - inset);
+    if (typeof path.roundRect === "function") {
+      path.roundRect(inset, inset, width, height, radius);
+    } else {
+      path.rect(inset, inset, width, height);
+    }
+    this.path = path;
+  }
+
+  schedule() {
+    if (this.frame || this.complete) return;
+    this.frame = requestAnimationFrame((time) => this.tick(time));
+  }
+
+  tick(time) {
+    this.frame = null;
+    if (this.complete) return;
+    this.elapsed = time - ASCII_LOAD_STARTED_AT;
+    if (time - this.lastRender >= FRAME_INTERVAL) {
+      this.render();
+      this.lastRender = time;
+    }
+    if (this.elapsed >= FORMATION_DURATION) this.finish("complete");
+    else this.schedule();
+  }
+
+  render() {
+    if (!this.context || this.complete) return;
+    const elapsed = Math.max(0, this.elapsed);
+    const context = this.context;
+    context.save();
+    context.setTransform(this.scale, 0, 0, this.scale, 0, 0);
+    context.clearRect(0, 0, this.width, this.height);
+    context.strokeStyle = this.border.colour;
+    context.lineWidth = this.border.top || 1;
+    context.fillStyle = this.ascii.color;
+    context.font = `${this.ascii.fontWeight} ${this.ascii.fontSize}px `
+      + this.ascii.fontFamily;
+    context.textAlign = "center";
+    context.textBaseline = "middle";
+
+    for (const cell of this.cells) {
+      if (elapsed >= cell.revealAt) {
+        context.save();
+        context.beginPath();
+        context.rect(cell.x, cell.y, cell.width, cell.height);
+        context.clip();
+        context.stroke(this.path);
+        context.restore();
+      } else if (elapsed >= cell.revealAt - OUTLINE_GLYPH_LEAD) {
+        const choices = OUTLINE_GLYPHS[cell.glyph];
+        const beat = Math.floor(elapsed / FRAME_INTERVAL);
+        context.fillText(
+          choices[Math.floor(noise(cell.seed, beat) * choices.length)],
+          cell.centreX,
+          cell.centreY
+        );
+      }
+    }
+    context.restore();
+  }
+
+  finish(state) {
+    if (this.complete) return;
+    this.complete = true;
+    if (this.frame) cancelAnimationFrame(this.frame);
+    this.frame = null;
+    this.resizeObserver?.disconnect();
+    this.motion.removeEventListener("change", this.onMotionChange);
+    this.canvas?.remove();
+    this.element.classList.remove("ascii-outline-reveal");
+    this.element.dataset.asciiOutlineState = state;
+  }
+}
+
 /* Runs the formation backwards over one element: it starts as the page has it
  * and comes apart into the same ASCII the page was built out of. The caller is
  * responsible for the element being gone by the end — this leaves the canvas
@@ -820,6 +1041,7 @@ function revealableTextElements() {
 
 async function initialize() {
   const elements = revealableTextElements();
+  const outlines = [...document.querySelectorAll(OUTLINE_SELECTOR)];
   const images = [...document.querySelectorAll("main img")];
   if (!elements.length && !images.length) {
     document.documentElement.classList.remove(PREPAINT_CLASS);
@@ -830,6 +1052,9 @@ async function initialize() {
     await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
     elements.forEach((element, index) => {
       new AsciiTextReveal(element, index).start();
+    });
+    outlines.forEach((element, index) => {
+      new AsciiOutlineReveal(element, index).start();
     });
 
     const imageLayer = document.createElement("div");
@@ -847,6 +1072,11 @@ async function initialize() {
     elements.forEach((element) => {
       element.dataset.asciiRevealState = "error";
       element.querySelector(".ascii-text-reveal__canvas")?.remove();
+    });
+    outlines.forEach((element) => {
+      element.dataset.asciiOutlineState = "error";
+      element.classList.remove("ascii-outline-reveal");
+      element.querySelector(".ascii-outline-reveal__canvas")?.remove();
     });
     document.documentElement.classList.remove(PREPAINT_CLASS);
     console.warn("ASCII text reveal could not start", error);

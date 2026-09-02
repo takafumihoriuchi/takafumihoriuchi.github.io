@@ -1,6 +1,6 @@
 """Shared constants for ASCII page wiring and validation."""
 
-ASSET_VERSION = "20260902-1"
+ASSET_VERSION = "20260902-2"
 MODULE = (
     '<script type="module" src="/ascii/ascii-hero.js'
     f'?v={ASSET_VERSION}"></script>'

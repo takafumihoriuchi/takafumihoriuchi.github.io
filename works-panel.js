@@ -14,7 +14,7 @@
  * and 520px in German, and both numbers move again with every work added.
  */
 
-import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260902-1";
+import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260902-2";
 
 const OPEN_CARDS = 3;
 // A little longer than the 340ms the box takes to be carried off, so the last
