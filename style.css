@@ -528,6 +528,18 @@ nav a:hover,
   margin: -0.5rem -0.85rem;
   overflow-y: hidden;
   scrollbar-gutter: stable;
+  /* The opening itself. works-panel.js puts the two ends of this on the
+     element as an explicit `height` — the closed one it measured while the
+     panel was closed, the open one the stylesheet below has just decided —
+     and removes it again once the box has arrived, so from then on the rules
+     here are what hold the panel's size.
+
+     The scrollbar is deliberately not held back until the end. `overflow-y`
+     becomes `auto` the moment the panel opens, so the bar appears with the
+     first frame of the movement and its thumb lengthens as the box grows and
+     shows more of what it holds: the panel says how much is left over while
+     it is still on its way. */
+  transition: height 340ms cubic-bezier(0.22, 0.61, 0.36, 1);
 }
 
 /* Open: three cards, and the rest by scrolling. `--panel-height` is the
@@ -577,48 +589,73 @@ nav a:hover,
   }
 }
 
-/* The control takes the padded box the rest of the site's chrome links have,
-   for the same reason they do: an underline says a word can be clicked and
-   says nothing about where the click lands. It is set at the description's
-   size and colour rather than the body's, because it belongs to the list it
-   opens and not to the section's prose.
+/* The control is a filled box, centred under the list, in the same brown the
+   section headings are set in. It is the one solid shape on a page that is
+   otherwise words and hairlines, which is what makes it read as a thing to
+   press rather than a line to read — so it carries no underline, and the
+   weight stays normal. The colour comes from --accent, the heading token, so
+   the two move together if that value is ever retuned.
 
    `cursor: pointer` is here and not on the site's links, which are already
    given the hand by being links. A label is not. */
 .works-more {
-  display: inline-block;
-  margin: calc(var(--space-para) - 0.35rem) -0.5rem -0.35rem;
-  padding: 0.35rem 0.5rem;
+  display: block;
+  width: fit-content;
+  margin: var(--space-para) auto 0;
+  padding: 0.55rem 1.4rem;
   border-radius: 3px;
-  color: var(--fg-muted);
+  background-color: var(--accent);
+  color: var(--bg);
   font-size: 0.875rem;
-  text-decoration: underline;
-  text-decoration-thickness: 1px;
-  text-underline-offset: 0.2em;
-  text-decoration-color: var(--fg-muted);
+  font-weight: normal;
+  text-align: center;
   cursor: pointer;
+  overflow: hidden;
 }
 
-.works-more:hover {
-  background-color: var(--accent-wash);
-  text-decoration-color: currentColor;
-}
+/* Mixed toward the foreground rather than given a second brown to maintain:
+   in the light palette --fg is nearly black and this darkens, in the dark
+   palette it is nearly white and this lightens, which is the right direction
+   in both. The plain value above it is what a browser without color-mix
+   keeps. */
+.works-more:hover { background-color: color-mix(in srgb, var(--accent) 85%, var(--fg)); }
 
 /* The checkbox itself is off screen but still focusable, so the ring it would
-   have drawn is drawn on the label instead — same ring as a:focus-visible. */
+   have drawn is drawn on the label instead. Not currentColor as elsewhere:
+   inside this box the current colour is the page's own background, and a ring
+   in it would be drawn invisibly on the page beside the box. */
 .works-toggle:focus-visible ~ .works-more {
-  outline: 2px solid currentColor;
+  outline: 2px solid var(--fg);
   outline-offset: 3px;
 }
 
-/* One label, two words, whichever the panel is not currently showing.
-   `display: none` rather than a CSS-generated string: the words are in the
-   HTML where they can be translated, and the hidden one leaves the
-   accessibility tree with the box, so the control is announced by the single
-   name it currently has. */
-.works-more__close { display: none; }
-.works-toggle:checked ~ .works-more .works-more__open { display: none; }
-.works-toggle:checked ~ .works-more .works-more__close { display: inline; }
+/* Opening is one way. Nobody who has asked to see the rest of a four-entry
+   list asks to see less of it again, and a reload is already the way back —
+   so rather than relabel the control, the panel keeps it and takes it away.
+
+   It leaves by collapsing rather than by disappearing: the panel below grows
+   at the same time and over the same interval, and if the box simply vanished
+   the rest of the page would jump up by its height at whichever moment that
+   happened. `height` is an explicit length for the same reason the panel's is
+   — a box cannot be animated to or from `auto` — and works-panel.js measures
+   it. Without the script the value is `auto`, the transition finds nothing to
+   interpolate, and the box goes at once. */
+.works-more {
+  height: var(--more-height, auto);
+  transition:
+    height 340ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    margin-top 340ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    padding 340ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    opacity 180ms linear;
+}
+
+.works-toggle:checked ~ .works-more {
+  height: 0;
+  margin-top: 0;
+  padding-block: 0;
+  opacity: 0;
+  pointer-events: none;
+}
 
 /* Below the width where the cards stack, the panel is not a window any more.
    One stacked card is most of a phone screen, so two of them already stand
@@ -638,6 +675,14 @@ nav a:hover,
     max-height: none;
     overflow-y: visible;
   }
+}
+
+/* Reduced motion takes the movement out and leaves the outcome. The script
+   reads this too and stops driving the height at all, since with no transition
+   to run there would be no `transitionend` to clear the value it wrote. */
+@media (prefers-reduced-motion: reduce) {
+  .works-panel,
+  .works-more { transition: none; }
 }
 
 /* Nothing to open. Written as a negation so that a browser without :has()

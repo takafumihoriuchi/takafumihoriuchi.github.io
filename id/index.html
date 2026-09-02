@@ -114,8 +114,14 @@
          below it. The mechanism is the checkbox and its label: no script decides
          what is shown, so the panel opens with JavaScript switched off, and with
          CSS switched off every entry is simply here in order. See style.css.
+
+         Opening is one way — the control leaves with the movement and a reload
+         is the way back — so the label carries one word, not two. `autocomplete`
+         is what makes the reload true: without it a browser that restores form
+         state reopens the panel on the way back to the page.
+
          Remove the input and the label if this list ever drops back to two. -->
-    <input class="works-toggle" type="checkbox" id="more-earlier-work">
+    <input class="works-toggle" type="checkbox" id="more-earlier-work" autocomplete="off">
     <div class="works-panel">
       <ul class="works">
         <li>
@@ -156,7 +162,7 @@
         </li>
       </ul>
     </div>
-    <label class="works-more" for="more-earlier-work"><span class="works-more__open">Tampilkan lainnya</span><span class="works-more__close">Tampilkan lebih sedikit</span></label>
+    <label class="works-more" for="more-earlier-work">lihat lainnya</label>
   </section>
 
   <section>
