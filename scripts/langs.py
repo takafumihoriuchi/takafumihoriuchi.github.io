@@ -41,6 +41,7 @@ PAGES = [
     "works/bachelors-thesis-constraint-programming/",
     "works/masters-project-smart-codesign-vr/",
     "works/masters-project-design-studio/",
+    "works/masters-project-piano-action/",
 ]
 
 # Occupies the site root and the x-default slot. That is a statement about
