@@ -663,18 +663,6 @@ nav a:hover,
   text-align: center;
 }
 
-/* Transitional (2026-09-02): the other thirteen languages still carry the word
-   directly in the label, so for them the label is the box. Delete this rule
-   with the rollout — see OPERATIONS.md §10. */
-.works-more:not(:has(.works-more__box)) {
-  padding: 0.3rem 2.25rem;
-  border: 1px solid var(--accent);
-  background-color: var(--bg);
-  color: var(--accent);
-  font-size: 0.75rem;
-  text-align: center;
-}
-
 /* The checkbox itself is off screen but still focusable, so the ring it would
    have drawn is drawn on the label instead — same ring as a:focus-visible,
    around the hit area rather than around the drawn box, because the hit area
