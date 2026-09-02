@@ -62,6 +62,11 @@ h3 {
    column. The figure would keep its full width and simply run off the page. */
 .deck-figure { margin-block: 2.5rem var(--space-section); }
 
+/* The Japanese page frames the deck with matching rules. Split the difference
+   between the original 2.5rem above and 4.5rem below so the slides sit evenly
+   between them without changing the spacing in any other language. */
+:lang(ja) .deck-figure { margin-block: 3.5rem; }
+
 .deck {
   display: flex;
   gap: 1rem;
