@@ -632,6 +632,25 @@ nav a:hover,
 
 .works-more:hover { background-color: var(--accent-wash); }
 
+/* On hover the box stops carrying its own ground and lets the target's show
+   through, so the wash reads as one shape rather than as a ring around a
+   lighter middle.
+
+   Not a second declaration of the wash: --accent-wash is translucent, and a
+   translucent value painted over itself is the darker of the two colours, not
+   the same one. Taking the fill away is what makes the inside and the ring
+   exactly equal — and keeps them equal if that token is ever retuned. */
+.works-more:hover .works-more__box { background-color: transparent; }
+
+/* Except while a cover is over it. ascii-text-reveal.js paints the element's
+   own background into the canvas once a frame to hide the DOM underneath, and
+   a translucent value does neither of the things that needs: it does not hide
+   what is beneath it, and painted over itself once a frame it darkens toward a
+   colour that was never on the page. So for as long as the renderer holds the
+   element — forming on load, coming apart on the click — the box keeps an
+   opaque ground to be covered with. */
+.works-more:hover .works-more__box.ascii-text-reveal { background-color: var(--bg); }
+
 .works-more__box {
   display: block;
   padding: 0.3rem 2.25rem;
