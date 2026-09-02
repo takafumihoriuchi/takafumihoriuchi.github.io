@@ -623,8 +623,8 @@ nav a:hover,
 .works-more {
   display: block;
   width: fit-content;
-  margin: calc(var(--space-para) - 0.45rem) auto -0.45rem;
-  padding: 0.45rem 0.7rem;
+  margin: calc(var(--space-para) - 0.225rem) auto -0.225rem;
+  padding: 0.225rem 0.35rem;
   border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
@@ -736,9 +736,19 @@ nav a:hover,
     opacity 120ms linear 300ms;
 }
 
+/* The top margin collapses to the panel's overhang rather than to nothing. The
+   panel's border box stands 0.5rem below its margin box — that is the padding
+   it holds so the cards' hover wash is not clipped — so a control that ends
+   its travel at zero ends it 0.5rem inside the panel, over the strip where the
+   last card's wash is drawn. It is opaque and it is painted after, being
+   positioned while the renderer has it, so it puts a button-shaped hole of
+   page colour in the middle of a card the reader is pointing at.
+
+   Zero overlap rather than a paint order: two boxes that never meet cannot get
+   this wrong later, whichever of them is drawn first. */
 .works-toggle:checked ~ .works-more {
   height: 0;
-  margin: 0 auto;
+  margin: 0.5rem auto 0;
   padding-block: 0;
   opacity: 0;
   pointer-events: none;
