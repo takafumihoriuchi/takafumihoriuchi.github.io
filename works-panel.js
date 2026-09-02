@@ -14,7 +14,12 @@
  * and 520px in German, and both numbers move again with every work added.
  */
 
+import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260902-1";
+
 const OPEN_CARDS = 3;
+// A little longer than the 340ms the box takes to be carried off, so the last
+// particles go out after the movement has settled rather than with it.
+const DISSOLVE_DURATION = 420;
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 
 /* Where the third card ends, measured from the panel's own top edge so that
@@ -85,7 +90,26 @@ for (const panel of document.querySelectorAll(".works-panel")) {
     // list below the stacking width. Read it rather than working it out again.
     fit(panel, list);
     const open = panel.getBoundingClientRect().height;
-    if (still.matches || closed === null || open <= closed) return;
+    if (still.matches) return;
+
+    // The box comes apart into the ASCII the page was built out of, which is
+    // the load animation read backwards. It is measured from the drawn box
+    // rather than the label around it: the renderer's canvas sits inside the
+    // border, so the outline is left for the stylesheet to fade (it would
+    // otherwise be painted over in the first frame and vanish on the click).
+    //
+    // The label is clipping its own content so that the collapse above has
+    // something to clip. For as long as the box is coming apart it must not:
+    // the drawing keeps the size it was measured at while the label shrinks
+    // out from under it, and the last of it would otherwise be sliced off.
+    const box = label?.querySelector(".works-more__box");
+    if (box) {
+      label.style.overflow = "visible";
+      asciiDissolve(box, { duration: DISSOLVE_DURATION });
+      setTimeout(() => label.style.removeProperty("overflow"), DISSOLVE_DURATION + 80);
+    }
+
+    if (closed === null || open <= closed) return;
 
     panel.style.transition = "none";
     panel.style.height = `${closed}px`;

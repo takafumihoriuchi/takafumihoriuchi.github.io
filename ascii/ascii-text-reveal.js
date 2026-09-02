@@ -1,7 +1,7 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260829-2";
+} from "./ascii-layout.js?v=20260902-1";
 
 // All text and image instances use one page-level wall clock. A busy frame can
 // skip visual steps, but it cannot postpone completion until the user scrolls.
@@ -9,7 +9,8 @@ const ASCII_LOAD_STARTED_AT = performance.now();
 const TARGET_SELECTOR = [
   "main h1", "main h2", "main h3", "main h4", "main h5", "main h6",
   "main p", "main figcaption", "main dt", "main dd", "main li",
-  "main .work-title", "main .work-desc", "footer p", "footer li",
+  "main .work-title", "main .work-desc", "main .works-more__box",
+  "footer p", "footer li",
 ].join(", ");
 const BLOCK_DESCENDANT_SELECTOR = [
   "h1", "h2", "h3", "h4", "h5", "h6", "p", "figcaption", "dt", "dd",
@@ -284,11 +285,18 @@ function referenceAsciiStyle() {
 }
 
 class AsciiTextReveal {
-  constructor(element, index) {
+  constructor(element, index, options = {}) {
     this.element = element;
     this.index = index;
+    // Running backwards is the same formation read from the far end: elapsed
+    // is walked from FORMATION_DURATION down to zero, so every grapheme closes
+    // over in the reverse of the order it opened in and the particles thin out
+    // to the sparse punctuation they started from. Nothing in render() knows
+    // which way time is going.
+    this.reverse = Boolean(options.reverse);
+    this.duration = options.duration || FORMATION_DURATION;
     this.seed = hashString(`${location.pathname}:${index}:${element.textContent}`);
-    this.delay = Math.floor(noise(this.seed, 701) * ELEMENT_STAGGER);
+    this.delay = this.reverse ? 0 : Math.floor(noise(this.seed, 701) * ELEMENT_STAGGER);
     this.elapsed = -this.delay;
     this.lastRender = -Infinity;
     this.frame = null;
@@ -322,17 +330,28 @@ class AsciiTextReveal {
       return;
     }
 
-    this.element.dataset.asciiRevealState = "running";
+    this.element.dataset.asciiRevealState = this.reverse ? "dissolving" : "running";
     this.motion.addEventListener("change", this.onMotionChange);
-    this.resizeObserver = new ResizeObserver(() => this.rebuild());
-    this.resizeObserver.observe(this.element);
-    if (this.referenceAscii.element) {
-      this.resizeObserver.observe(this.referenceAscii.element);
+    // A box on its way out is being collapsed by the stylesheet at the same
+    // time. Re-measuring it would shrink the drawing with the layout, which is
+    // the one thing the drawing must not do — so the geometry is taken once
+    // and kept.
+    if (!this.reverse) {
+      this.resizeObserver = new ResizeObserver(() => this.rebuild());
+      this.resizeObserver.observe(this.element);
+      if (this.referenceAscii.element) {
+        this.resizeObserver.observe(this.referenceAscii.element);
+      }
     }
-    this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT - this.delay;
-    if (this.elapsed >= FORMATION_DURATION) {
-      this.finish("complete");
-      return;
+    if (this.reverse) {
+      this.startedAt = performance.now();
+      this.elapsed = FORMATION_DURATION;
+    } else {
+      this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT - this.delay;
+      if (this.elapsed >= FORMATION_DURATION) {
+        this.finish("complete");
+        return;
+      }
     }
     this.render();
     this.schedule();
@@ -501,13 +520,23 @@ class AsciiTextReveal {
   tick(time) {
     this.frame = null;
     if (this.complete) return;
-    this.elapsed = time - ASCII_LOAD_STARTED_AT - this.delay;
+    const progress = this.reverse
+      ? clamp((time - this.startedAt) / this.duration)
+      : 0;
+    this.elapsed = this.reverse
+      ? FORMATION_DURATION * (1 - progress)
+      : time - ASCII_LOAD_STARTED_AT - this.delay;
 
     if (time - this.lastRender >= FRAME_INTERVAL) {
       this.render();
       this.lastRender = time;
     }
 
+    if (this.reverse) {
+      if (progress >= 1) this.finish("dissolved");
+      else this.schedule();
+      return;
+    }
     if (this.elapsed >= FORMATION_DURATION) this.finish("complete");
     else this.schedule();
   }
@@ -759,6 +788,23 @@ class AsciiImageReveal {
     this.canvas?.remove();
     this.element.dataset.asciiRevealState = state;
   }
+}
+
+/* Runs the formation backwards over one element: it starts as the page has it
+ * and comes apart into the same ASCII the page was built out of. The caller is
+ * responsible for the element being gone by the end — this leaves the canvas
+ * behind only until the last frame, and what is underneath is the untouched
+ * DOM it was covering.
+ *
+ * Returns the instance so a caller that changes its mind can finish() it.
+ */
+export function asciiDissolve(element, options = {}) {
+  const instance = new AsciiTextReveal(element, options.index ?? 0, {
+    ...options,
+    reverse: true,
+  });
+  instance.start();
+  return instance;
 }
 
 function revealableTextElements() {

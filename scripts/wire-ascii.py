@@ -125,6 +125,9 @@ def main() -> int:
     versioned_sources = {
         "ascii/ascii-hero.js": 3,
         "ascii/ascii-text-reveal.js": 1,
+        # The index's works panel dissolves its control with the same renderer,
+        # so it is part of the same module graph and carries the same version.
+        "works-panel.js": 1,
     }
     for relative_path, expected_count in versioned_sources.items():
         source = (root / relative_path).read_text(encoding="utf-8")

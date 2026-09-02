@@ -589,45 +589,81 @@ nav a:hover,
   }
 }
 
-/* The control is a filled box, centred under the list, in the same brown the
-   section headings are set in. It is the one solid shape on a page that is
-   otherwise words and hairlines, which is what makes it read as a thing to
-   press rather than a line to read — so it carries no underline, and the
-   weight stays normal. The colour comes from --accent, the heading token, so
-   the two move together if that value is ever retuned.
+/* The control is two boxes, centred under the list. The inner one is what is
+   drawn: an outline and a word in the brown the section headings are set in,
+   over the page's own ground, so the shape reads as a thing to press without
+   putting a second solid colour on a page made of words and hairlines. It
+   takes --accent, the heading token, so the two move together if that value is
+   ever retuned.
+
+   The outer one is the target. It is the same arrangement the work cards use —
+   a padded box, pulled back by an equal negative margin so nothing moves, lit
+   with the same wash on hover — and it exists for the same reason: the drawn
+   edge of a control says where to look, not where the click lands. Here the
+   answer is a ring of it on every side.
 
    `cursor: pointer` is here and not on the site's links, which are already
    given the hand by being links. A label is not. */
 .works-more {
   display: block;
   width: fit-content;
-  margin: var(--space-para) auto 0;
-  padding: 0.55rem 1.4rem;
-  border-radius: 3px;
-  background-color: var(--accent);
-  color: var(--bg);
-  font-size: 0.875rem;
-  font-weight: normal;
-  text-align: center;
+  margin: calc(var(--space-para) - 0.45rem) auto -0.45rem;
+  padding: 0.45rem 0.7rem;
+  border-radius: 5px;
   cursor: pointer;
   overflow: hidden;
 }
 
-/* Mixed toward the foreground rather than given a second brown to maintain:
-   in the light palette --fg is nearly black and this darkens, in the dark
-   palette it is nearly white and this lightens, which is the right direction
-   in both. The plain value above it is what a browser without color-mix
-   keeps. */
-.works-more:hover { background-color: color-mix(in srgb, var(--accent) 85%, var(--fg)); }
+.works-more:hover { background-color: var(--accent-wash); }
+
+.works-more__box {
+  display: block;
+  padding: 0.4rem 1.75rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background-color: var(--bg);
+  color: var(--accent);
+  font-size: 0.875rem;
+  font-weight: normal;
+  text-align: center;
+}
+
+/* Transitional (2026-09-02): the other thirteen languages still carry the word
+   directly in the label, so for them the label is the box. Delete this rule
+   with the rollout — see OPERATIONS.md §10. */
+.works-more:not(:has(.works-more__box)) {
+  padding: 0.4rem 1.75rem;
+  border: 1px solid var(--accent);
+  background-color: var(--bg);
+  color: var(--accent);
+  font-size: 0.875rem;
+  text-align: center;
+}
 
 /* The checkbox itself is off screen but still focusable, so the ring it would
-   have drawn is drawn on the label instead. Not currentColor as elsewhere:
-   inside this box the current colour is the page's own background, and a ring
-   in it would be drawn invisibly on the page beside the box. */
+   have drawn is drawn on the label instead — same ring as a:focus-visible,
+   around the hit area rather than around the drawn box, because the hit area
+   is what the key would activate. */
 .works-toggle:focus-visible ~ .works-more {
-  outline: 2px solid var(--fg);
+  outline: 2px solid currentColor;
   outline-offset: 3px;
 }
+
+/* The box joins the page's own load animation: ascii-text-reveal.js covers the
+   word and forms it out of ASCII like every other line on the page. What the
+   cover cannot draw is the outline — the canvas sits inside the border, which
+   would otherwise be the one element on the page already finished while the
+   rest is still forming. So the outline is held back while the renderer has
+   the element, and drawn in behind it.
+
+   The same rule runs the other way on the way out: the class goes back on for
+   the dissolve, and the outline leaves while the word comes apart inside it.
+   The :checked half holds it gone afterwards, for the moment between the last
+   frame and the box being taken out of the page. */
+.works-more__box { transition: border-color 300ms ease; }
+
+.works-more__box.ascii-text-reveal,
+.works-toggle:checked ~ .works-more .works-more__box { border-color: transparent; }
 
 /* Opening is one way. Nobody who has asked to see the rest of a four-entry
    list asks to see less of it again, and a reload is already the way back —
@@ -639,19 +675,29 @@ nav a:hover,
    happened. `height` is an explicit length for the same reason the panel's is
    — a box cannot be animated to or from `auto` — and works-panel.js measures
    it. Without the script the value is `auto`, the transition finds nothing to
-   interpolate, and the box goes at once. */
+   interpolate, and the box goes at once.
+
+   The two movements do not cancel: the panel gains more than the control gives
+   up, so everything below travels downward the whole way and never doubles
+   back. The control travels with it, which is what makes the last frame read
+   as the box being carried off rather than deleted.
+
+   Opacity is held until the end on purpose. What makes the box disappear is
+   the ASCII coming apart over it (see works-panel.js); this only takes away
+   the handful of particles still standing when that finishes, and would erase
+   the whole effect if it ran from the first frame. */
 .works-more {
   height: var(--more-height, auto);
   transition:
     height 340ms cubic-bezier(0.22, 0.61, 0.36, 1),
-    margin-top 340ms cubic-bezier(0.22, 0.61, 0.36, 1),
+    margin 340ms cubic-bezier(0.22, 0.61, 0.36, 1),
     padding 340ms cubic-bezier(0.22, 0.61, 0.36, 1),
-    opacity 180ms linear;
+    opacity 120ms linear 300ms;
 }
 
 .works-toggle:checked ~ .works-more {
   height: 0;
-  margin-top: 0;
+  margin: 0 auto;
   padding-block: 0;
   opacity: 0;
   pointer-events: none;
