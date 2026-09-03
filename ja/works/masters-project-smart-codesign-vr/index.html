@@ -25,6 +25,7 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
 <link rel="stylesheet" href="../../../works/masters-project-smart-codesign-vr/page.css">
+<script src="../../../works/masters-project-smart-codesign-vr/lightbox.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
@@ -109,6 +110,7 @@
 
     <figure class="video-embed">
       <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Smart Codesign VR のデモ動画" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>デモ動画。カードを選び、入力の条件と出力の振る舞いを決め、できあがったスマートオブジェクトを仮想の公園で動かすまでの一連の流れ。</figcaption>
     </figure>
   </section>
 
@@ -164,7 +166,7 @@
     <h4>2. カード選択——掴んで、箱に入れる</h4>
     <p>次の場面で、環境・入力・出力のカードを1枚ずつ選ぶ。選び方は、カードを表すオブジェクトを掴み、対応する箱まで運んで入れるというものである。クリックで選ばせるのではなく「掴んで運ぶ」にしたのは、VRが持つ3次元空間を使うためである。三つの箱すべてに中身が入ったことを検知すると、音声の案内とともにプロトタイピングの場面へ移る。順番は問わないが、三つとも埋めなければ先へは進まない。</p>
 
-    <figure class="paper-figure">
+    <figure class="paper-figure shot-figure">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="VR空間のカード選択画面。カードの並んだボードの手前に、input、environment、outputと書かれた半透明の箱が三つ並び、手が拡声器のオブジェクトを掴んでいる。"></a>
       <figcaption>カード選択の場面。手前の三つの箱が環境・入力・出力に対応し、掴んだオブジェクトを入れると選択が確定する。この段階で扱えないカードは薄く表示されている。</figcaption>
     </figure>
@@ -174,7 +176,7 @@
     <p>たとえば入力に「天気予報」を選ぶと、晴れ・曇り・雨・雷・雪をそれぞれ表すオブジェクトが手元に現れる。そのうち一つを掴み、そこから伸びる光線を対象のオブジェクトへ当てると、条件が確定する。出力に「光る」を選んだ場合は、絵筆を掴み、色ごとに置かれた絵の具の缶に穂先を浸し、対象へこすりつけることで発光色を決める。塗った色を消したいときは、「水」の缶に浸してからこすればよい。</p>
     <p>実装のうえで大きかったのは、入力と出力の組を<strong>複数</strong>並べて定義できるようにしたことである。当初の計画では1組だけで、「晴れたら赤く光る」で終わりだった。これを複数にしたことで、「晴れたら赤、雨なら青、雪なら白に光る」というように、一つのオブジェクトが複数の状況へ違う応答を返せるようになった。定義した組は、確定する前に実際に動かして試すことができ、気に入らなければ戻って直せる。</p>
 
-    <figure class="paper-figure">
+    <figure class="paper-figure shot-figure">
       <div class="figure-pair">
         <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="プロトタイピング画面。左に入力カード「Weather」の操作説明パネル、中央に「When it is about to be sunny／rain／snow」と書かれた三つの吹き出し、右に出力の吹き出しが並び、手前に木のオブジェクトと絵の具の缶がある。"></a>
         <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="同じ画面を右から見たところ。黄色く塗られた街灯のオブジェクトの左右に、入力と出力の吹き出しが対になって並び、右端に出力カード「Light up」の操作説明パネルがある。"></a>
@@ -184,11 +186,6 @@
 
     <h4>4. 公園——できたものに触れる</h4>
     <p>オブジェクトを確定させると、仮想の公園へ移る。ここでは、自分が組み立てたスマートオブジェクトを置き、定義した入力条件を起こして、出力の振る舞いを実際に確かめる。オブジェクトが動作したところで祝福の演出が出て、体験は終わる。</p>
-
-    <figure class="paper-figure">
-      <a href="../../../works/masters-project-smart-codesign-vr/assets/virtual-park.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/virtual-park.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="VR空間の公園。低ポリゴンの木と池、奥に街並みが見え、手前から木の橋が伸びている。"></a>
-      <figcaption>仮想の公園。確定させたスマートオブジェクトをここに置き、入力条件を起こして出力の振る舞いを確かめる。</figcaption>
-    </figure>
 
     <h4>全体の流れ</h4>
     <p>以上をUMLのアクティビティ図にまとめたものが次の図である。上段が全体の流れ、下段の2枚が「天気予報」カードと「光る」カードそれぞれの操作を細かく展開したものである。カード選択のあと、指示を受けたうえで選び直しに戻れること、確定と試行のあとで再編集に戻れることが、それぞれ分岐として書かれている。</p>
@@ -276,5 +273,13 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by lightbox.js so that the two strings it
+     needs are written in this page's language, like the rest of the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="図の拡大表示" hidden>
+  <button class="lightbox__close" type="button" aria-label="拡大表示を閉じる"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>
