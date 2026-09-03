@@ -2,7 +2,7 @@
  * and runs the box open between them.
  *
  * The opening itself is still a checkbox and its label; nothing here decides
- * what is shown. What a stylesheet cannot supply is where the third card ends
+ * what is shown. What a stylesheet cannot supply is where the fourth card ends
  * and how tall the control is, because both are sums of text that runs to a
  * different number of lines in every language — and a box cannot be animated
  * to or from `auto`. So this file writes those two numbers and steps out.
@@ -10,19 +10,24 @@
  * Without it the panel still opens, still scrolls and still shows its
  * scrollbar; it arrives at once instead of travelling, and falls back to the
  * fixed height in the stylesheet. A hard-coded height was the alternative and
- * it cannot be right twice: the same three cards stand 436px tall in Japanese
- * and 520px in German, and both numbers move again with every work added.
+ * it cannot be right twice: the same four cards stand 581px tall in Japanese
+ * and 665px in German, and both numbers move again with every work added.
  */
 
 import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260902-2";
 
-const OPEN_CARDS = 3;
+/* Two cards are on show before the control is pressed — the stylesheet hides
+ * the rest — so opening to four is what doubles the list at the moment it is
+ * asked to. Three was right while there were fewer works behind the control;
+ * on a list this length it reads as one more card rather than as more.
+ */
+const OPEN_CARDS = 4;
 // A little longer than the 340ms the box takes to be carried off, so the last
 // particles go out after the movement has settled rather than with it.
 const DISSOLVE_DURATION = 420;
 const still = matchMedia("(prefers-reduced-motion: reduce)");
 
-/* Where the third card ends, measured from the panel's own top edge so that
+/* Where the fourth card ends, measured from the panel's own top edge so that
  * the half-leading the list carries above its first card is inside the figure,
  * and offset by the current scroll so that measuring an already-scrolled panel
  * is still right. The stylesheet decides what to do with it — take it, or cap
