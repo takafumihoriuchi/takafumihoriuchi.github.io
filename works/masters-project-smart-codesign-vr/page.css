@@ -46,61 +46,71 @@ h3 + h4 { margin-top: 1.5rem; }
 
 .paper-figure { margin-block: 2.5rem; }
 
+/* Every figure sits on the text measure. Nothing here bleeds past the column:
+   the diagrams reproduced from the source are dense, and widening them buys a
+   few hundred pixels while breaking the one vertical edge the page reads
+   against. What they need is not a wider column but a way out of the column,
+   which is the link below. */
+/* `max-width: max-content` is the second half of that: an image already
+   narrower than the column keeps its own size rather than being blown up past
+   it, and stays centred on the page's reading axis. */
 .paper-figure img {
   width: 100%;
+  max-width: max-content;
+  margin-inline: auto;
   background: #fff;
   border: 1px solid var(--rule);
 }
 
-.paper-figure figcaption { width: 100%; }
+.paper-figure figcaption { width: 100% }
 
-/* The captured VR screenshots are square, and a square at the full measure is
-   taller than most laptop screens — the reader scrolls past one image to get
-   back to the sentence that introduced it. Capped and centred, they stay
-   inside one screenful together with the prose around them. */
-.shot-figure img {
-  max-width: 26rem;
-  margin-inline: auto;
+/* Each image is a link to itself at full resolution. That is what makes the
+   measure enough for the wide diagrams: shrunk here, opened whole there, with
+   the browser's own zoom and pan — which beats any overlay this page could
+   draw, since an overlay is bounded by the same window. `zoom-in` is what says
+   so before the click. */
+.paper-figure > a,
+.figure-pair > a {
+  display: block;
+  cursor: zoom-in;
 }
 
-/* Figure 6 of the source is two views of the same moment, printed side by
-   side. Kept as a pair rather than split into two figures: the point is that
-   the input panel and the output panel are open at the same time, which two
-   separate figures would not say. Below the stack width they fall into one
-   column, where the pair still reads in order. */
+/* Figure 6 of the source is two views of the same moment. They stay one figure
+   under one caption — the point is that the input panel and the output panel
+   are open at once — but stacked, so each gets the full measure instead of
+   half of it. */
 .figure-pair {
   display: grid;
-  grid-template-columns: 1fr 1fr;
   gap: 1rem;
 }
 
-/* The wide diagrams — the card table, the activity diagram, the class diagram
-   — carry internal labels set far below body size. At the text measure those
-   labels stop being readable, so these run to `.bleed` width, and each image
-   is also a link to itself at full resolution. The caption is prose and stays
-   on the measure the rest of the page reads at. */
-.wide-figure figcaption {
-  max-width: var(--measure);
-  margin-inline: auto;
+/* The two UML diagrams are black line art on white, and nothing else: measured
+   across both images, no pixel has more than one level between its channels.
+   That is the condition under which `invert` is a change of ground rather than
+   a change of colour — it lands on white strokes over black, which is what the
+   diagram would have been drawn as had it been drawn for a dark page. The
+   colour figures on this page are excluded for exactly that reason.
+
+   The filter takes the border with it, so the hairline is dropped here and the
+   inverted white ground supplies the edge instead. */
+@media (prefers-color-scheme: dark) {
+  .line-art img {
+    filter: invert(1);
+    border-color: transparent;
+  }
 }
 
-/* White, not the page ground: the two UML diagrams are black line art on
-   nothing, so in dark mode the ground has to be supplied here or the strokes
-   disappear into it. */
-.wide-figure img {
+/* The demo video, embedded rather than linked. 16:9 is declared rather than
+   padded for, so the box holds its height before the frame loads and the text
+   below it does not jump. */
+.video-embed { margin-block: 2.5rem; }
+
+.video-embed iframe {
+  display: block;
   width: 100%;
-  background: #fff;
-  border: 1px solid var(--rule);
+  aspect-ratio: 16 / 9;
+  border: 0;
 }
-
-/* Direct children only. Each figure's image is wrapped in a link to itself at
-   full resolution, and that link has to be a block for the image to size to
-   the column. The child combinator keeps the rule off the links inside a
-   `figcaption`, which are prose: as blocks they take a line to themselves and
-   leave the line above them broken short. */
-.wide-figure > a,
-.paper-figure > a,
-.figure-pair > a { display: block; }
 
 /* The one paragraph that is not justified. Its only line break falls in front
    of a repository URL, which no dictionary can hyphenate, so justification

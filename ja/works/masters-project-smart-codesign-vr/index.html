@@ -80,7 +80,7 @@
   <header>
     <h1>Smart Codesign VR</h1>
     <div class="identity">
-      <p class="tagline">共同制作：<a class="byline" href="../../">堀内 貴文（Takafumi Horiuchi）</a>、Paul Cozma-Ivan、Elmira Katsajeva、Olivia Ludkiewicz</p>
+      <p class="tagline">制作：<a class="byline" href="../../">堀内 貴文（Takafumi Horiuchi）</a></p>
       <nav aria-label="ほかの場所のプロフィール">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
@@ -107,9 +107,8 @@
     <p>元になっているのは、ミラノ工科大学のi3Labが開発した「SNaP（The Smart Nature Protagonists）」というボードゲームである。SNaPでは、子どもたちがカードを組み合わせてスマートオブジェクトを考案する。ただし、そこで生まれるのは紙の上の一文にとどまっていた。このプロジェクトは、その一文をVR空間で実体化し、自分の身体で組み立てて、触れられるものにすることを目指した。</p>
     <p>ミラノ工科大学の授業「Advanced User Interfaces」（2020–21年度）の最終課題として、4人のチームで設計・実装した。想定した利用者は11〜13歳の子どもで、なかでも神経発達症（NDD）のある子どもを念頭に置いている。Oculus Quest 2向けにUnityとC#で実装し、カードの選択から公園での操作までが通して動くプロトタイプまで到達した。</p>
 
-    <figure class="paper-figure shot-figure">
-      <a href="https://www.youtube.com/watch?v=iU2oaV-T-zE"><img src="../../../works/masters-project-smart-codesign-vr/assets/virtual-park.webp" width="1200" height="1199" alt="VR空間の公園。低ポリゴンの木と池、奥に街並みが見え、手前から木の橋が伸びている。"></a>
-      <figcaption>カードを選び、条件と振る舞いを決め、できあがったスマートオブジェクトを仮想の公園で動かすまで。プロトタイプの一連の動作は<a class="ext" href="https://www.youtube.com/watch?v=iU2oaV-T-zE">デモ動画（YouTube）</a>で見られる。</figcaption>
+    <figure class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Smart Codesign VR のデモ動画" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
     </figure>
   </section>
 
@@ -127,12 +126,12 @@
     <p><strong>出力（Output）カード</strong>は、その体が何をするかを決める。光る、音を鳴らす、振動する、動く、表示する、記録する、送信する——アクチュエータにあたるものである。</p>
     <p>環境カードが要るのは、同じ入力と出力の組でも、どこに宿るかで意味がまるごと変わるからである。「動きを検知したら音を鳴らす」をゴミ箱に載せれば「ゴミを入れ損ねると音が鳴る」になり、街灯に載せれば「人が近づくと知らせる灯り」になる。入力と出力だけでは装置の仕様にしかならず、そこに環境を足してはじめて、身のまわりの出来事についての一文になる。</p>
 
-    <figure class="wide-figure bleed">
+    <figure class="paper-figure">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="環境カード「Trash can（ゴミ箱）」、入力カード「Motion（動き）」、出力カード「Make sound（音を鳴らす）」の3枚が「＆」でつながれ、矢印の先に「Missing the trash bin creates a sound.（ゴミ箱に入れ損ねると音が鳴る）」という一文が置かれている。"></a>
       <figcaption>3枚のカードの組み合わせが、一つのスマートオブジェクトの説明文になる。カードの枠の色が種類を表しており、緑が環境、水色が入力、黄色が出力である。</figcaption>
     </figure>
 
-    <figure class="wide-figure bleed">
+    <figure class="paper-figure">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="SNaPのカード49枚を並べた一覧表。上2段が緑枠の環境カード20枚、中2段と最下段左端が水色枠の入力カード21枚、最下段の残りが黄色枠の出力カード8枚。"></a>
       <figcaption>SNaPのカード全49枚。環境が20枚、入力が21枚、出力が8枚あり、この語彙の掛け合わせがゲームのデザイン空間になっている。</figcaption>
     </figure>
@@ -165,7 +164,7 @@
     <h4>2. カード選択——掴んで、箱に入れる</h4>
     <p>次の場面で、環境・入力・出力のカードを1枚ずつ選ぶ。選び方は、カードを表すオブジェクトを掴み、対応する箱まで運んで入れるというものである。クリックで選ばせるのではなく「掴んで運ぶ」にしたのは、VRが持つ3次元空間を使うためである。三つの箱すべてに中身が入ったことを検知すると、音声の案内とともにプロトタイピングの場面へ移る。順番は問わないが、三つとも埋めなければ先へは進まない。</p>
 
-    <figure class="paper-figure shot-figure">
+    <figure class="paper-figure">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="VR空間のカード選択画面。カードの並んだボードの手前に、input、environment、outputと書かれた半透明の箱が三つ並び、手が拡声器のオブジェクトを掴んでいる。"></a>
       <figcaption>カード選択の場面。手前の三つの箱が環境・入力・出力に対応し、掴んだオブジェクトを入れると選択が確定する。この段階で扱えないカードは薄く表示されている。</figcaption>
     </figure>
@@ -175,7 +174,7 @@
     <p>たとえば入力に「天気予報」を選ぶと、晴れ・曇り・雨・雷・雪をそれぞれ表すオブジェクトが手元に現れる。そのうち一つを掴み、そこから伸びる光線を対象のオブジェクトへ当てると、条件が確定する。出力に「光る」を選んだ場合は、絵筆を掴み、色ごとに置かれた絵の具の缶に穂先を浸し、対象へこすりつけることで発光色を決める。塗った色を消したいときは、「水」の缶に浸してからこすればよい。</p>
     <p>実装のうえで大きかったのは、入力と出力の組を<strong>複数</strong>並べて定義できるようにしたことである。当初の計画では1組だけで、「晴れたら赤く光る」で終わりだった。これを複数にしたことで、「晴れたら赤、雨なら青、雪なら白に光る」というように、一つのオブジェクトが複数の状況へ違う応答を返せるようになった。定義した組は、確定する前に実際に動かして試すことができ、気に入らなければ戻って直せる。</p>
 
-    <figure class="wide-figure bleed">
+    <figure class="paper-figure">
       <div class="figure-pair">
         <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="プロトタイピング画面。左に入力カード「Weather」の操作説明パネル、中央に「When it is about to be sunny／rain／snow」と書かれた三つの吹き出し、右に出力の吹き出しが並び、手前に木のオブジェクトと絵の具の缶がある。"></a>
         <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="同じ画面を右から見たところ。黄色く塗られた街灯のオブジェクトの左右に、入力と出力の吹き出しが対になって並び、右端に出力カード「Light up」の操作説明パネルがある。"></a>
@@ -186,10 +185,15 @@
     <h4>4. 公園——できたものに触れる</h4>
     <p>オブジェクトを確定させると、仮想の公園へ移る。ここでは、自分が組み立てたスマートオブジェクトを置き、定義した入力条件を起こして、出力の振る舞いを実際に確かめる。オブジェクトが動作したところで祝福の演出が出て、体験は終わる。</p>
 
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/virtual-park.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/virtual-park.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="VR空間の公園。低ポリゴンの木と池、奥に街並みが見え、手前から木の橋が伸びている。"></a>
+      <figcaption>仮想の公園。確定させたスマートオブジェクトをここに置き、入力条件を起こして出力の振る舞いを確かめる。</figcaption>
+    </figure>
+
     <h4>全体の流れ</h4>
     <p>以上をUMLのアクティビティ図にまとめたものが次の図である。上段が全体の流れ、下段の2枚が「天気予報」カードと「光る」カードそれぞれの操作を細かく展開したものである。カード選択のあと、指示を受けたうえで選び直しに戻れること、確定と試行のあとで再編集に戻れることが、それぞれ分岐として書かれている。</p>
 
-    <figure class="wide-figure bleed">
+    <figure class="paper-figure line-art">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="UMLアクティビティ図。上段の「Overall Activity」は、待機画面から3枚のカード選択、指示、入力条件と出力振る舞いの定義、確定、動作確認、公園での操作までを示す。下段左は天気予報カードの操作、下段右は光るカードの操作を展開している。"></a>
       <figcaption>利用者の行動を表したUMLアクティビティ図。カードの種類ごとに操作が違うため、共通の流れと、カードごとの詳細を分けて書いている。</figcaption>
     </figure>
@@ -206,7 +210,7 @@
     <p><code>PrototypingSceneCore</code>は、入力条件のインスタンスのリストと、出力振る舞いのインスタンスのリストを持つ。選ばれたカードが「天気予報」と「光る」であれば、前者は<code>Weather</code>のインスタンス、後者は<code>LightUp</code>のインスタンスだけで埋まる。開始時にそれぞれ1つずつ自動生成し、以降はUIの追加ボタンを押すたびに増える。毎フレーム、リスト中のすべての入力条件を評価し、対応する出力の振る舞いを呼ぶ。利用者が確定すると<code>isConfirmed</code>が真になり、組み上がった振る舞いのデータが<code>SmartObject</code>の静的プロパティへ書き込まれる。</p>
     <p><strong>インタラクションシーン</strong>は<code>InteractionSceneCore</code>だけを持ち、公園への配置、入力条件の実行と出力の観察、そして終わりの祝福の演出を受け持つ。</p>
 
-    <figure class="wide-figure bleed">
+    <figure class="paper-figure line-art">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="UMLクラス図。Title Scene、Card Selection Scene、Prototyping Scene、Interaction Sceneの四つのパッケージと、それらから参照される静的クラスSmart Objectが描かれている。Prototyping Scene内では、抽象クラスCardの下にInput CardとOutput Cardがあり、さらにWeather Card、Fire Card、Make Sound Card、Light Up Cardが継承している。"></a>
       <figcaption>システムのUMLクラス図。四つのパッケージがUnityのシーンに対応し、中央下の<code>Smart Object</code>だけがシーンをまたいでデータを保持する。図の属性とメソッドは、読みやすさのために簡略化してある。</figcaption>
     </figure>
