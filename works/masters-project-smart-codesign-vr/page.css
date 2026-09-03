@@ -1,45 +1,162 @@
-/* A work page's own stylesheet. Copied along with index.html.
+/* Shared by every language version of this work. The Japanese page is the
+   first completed edition; the remaining editions still use the scaffold.
 
-   It lives here rather than inside the page's <head> because a work has thirteen
-   language versions maintained by hand — inline, this would become thirteen
-   copies of identical rules, and the thirteenth would eventually stop matching
-   the first. Language versions differ; the layout of a work does not.
+   Logical properties throughout (`margin-inline`, not `margin-left`) so the
+   Arabic edition mirrors when it is written. See OPERATIONS.md §9. */
 
-   Do not delete this file even if the work needs no layout of its own: the
-   justification below is what distinguishes a work page from the index, and a
-   work page without it would silently read differently from every other one.
+.lead { font-size: 1.059em; }
 
-   Add layout the work needs — image grids, numbered sequences — below. Use
-   logical properties (`padding-inline-start`, not `padding-left`) so the Arabic
-   version mirrors correctly. See OPERATIONS.md §9. */
+.section-break {
+  margin: calc(var(--space-section) / 2) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
 
+.section-break + section { margin-top: 0; }
 
-/* Work pages are set justified; the index is not. A work page is long-form
-   reading, and a flush right edge holds the column steady over that distance.
-
-   `hyphens: auto` is not decoration, it is what makes justification readable.
-   Without word-internal breaks the browser pays for the flush edge entirely in
-   word spacing, which at this measure opens gaps wide enough to line up down
-   the page. The dictionary comes from the `lang` attribute. The -webkit- prefix
-   covers Safari before 17, where the reader would otherwise get justification
-   with no hyphenation — the failure this pairing exists to prevent.
-
-   Set for every language rather than a listed few: a language with no
-   dictionary simply gets no hyphenation, and CJK and Arabic are not hyphenated
-   at all, so declaring it costs them nothing.
-
-   Extend the selector if the work adds other blocks of running prose. */
-section p {
+section p,
+figcaption {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 
-/* Indonesian is the exception: no hyphenation dictionary, and the language
-   builds long words by affixing (menangkapnya, membesarkannya), so lines that
-   cannot break inside them pay the whole slack in word spacing. Ragged reads
-   better than a flush edge bought that way. `start`, not `left`, so the rule
-   still means the right thing in a right-to-left context. */
-:lang(id) section p {
+:lang(id) section p,
+:lang(id) figcaption {
   text-align: start;
+}
+
+h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 0.941em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h2 + h3 { margin-top: 1.5rem; }
+
+h4 {
+  margin: 2rem 0 0.75rem;
+  font-size: 0.882em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h3 + h4 { margin-top: 1.5rem; }
+
+.paper-figure { margin-block: 2.5rem; }
+
+.paper-figure img {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+.paper-figure figcaption { width: 100%; }
+
+/* The captured VR screenshots are square, and a square at the full measure is
+   taller than most laptop screens — the reader scrolls past one image to get
+   back to the sentence that introduced it. Capped and centred, they stay
+   inside one screenful together with the prose around them. */
+.shot-figure img {
+  max-width: 26rem;
+  margin-inline: auto;
+}
+
+/* Figure 6 of the source is two views of the same moment, printed side by
+   side. Kept as a pair rather than split into two figures: the point is that
+   the input panel and the output panel are open at the same time, which two
+   separate figures would not say. Below the stack width they fall into one
+   column, where the pair still reads in order. */
+.figure-pair {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 1rem;
+}
+
+/* The wide diagrams — the card table, the activity diagram, the class diagram
+   — carry internal labels set far below body size. At the text measure those
+   labels stop being readable, so these run to `.bleed` width, and each image
+   is also a link to itself at full resolution. The caption is prose and stays
+   on the measure the rest of the page reads at. */
+.wide-figure figcaption {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* White, not the page ground: the two UML diagrams are black line art on
+   nothing, so in dark mode the ground has to be supplied here or the strokes
+   disappear into it. */
+.wide-figure img {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+/* Direct children only. Each figure's image is wrapped in a link to itself at
+   full resolution, and that link has to be a block for the image to size to
+   the column. The child combinator keeps the rule off the links inside a
+   `figcaption`, which are prose: as blocks they take a line to themselves and
+   leave the line above them broken short. */
+.wide-figure > a,
+.paper-figure > a,
+.figure-pair > a { display: block; }
+
+/* The one paragraph that is not justified. Its only line break falls in front
+   of a repository URL, which no dictionary can hyphenate, so justification
+   would pay for the flush edge by opening the space between every character
+   before it. `start`, not `left`, so the rule still means the right thing in a
+   right-to-left context. */
+.source-link { text-align: start; }
+
+.results-table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.results-table caption {
+  margin-bottom: 0.65rem;
+  color: var(--fg-muted);
+  font-size: 0.824em;
+  text-align: start;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.65rem 0;
+  border-block-end: 1px solid var(--rule);
+  text-align: start;
+  vertical-align: top;
+}
+
+.results-table thead th {
+  border-block-start: 1px solid var(--rule);
+  font-size: 0.882em;
+  font-weight: 600;
+}
+
+.results-table tbody th {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.results-table th + td { padding-inline-start: 1.5rem; }
+
+.citation {
+  font-size: 0.882em;
+  color: var(--fg-muted);
+}
+
+.publication-citation { margin-top: var(--space-section); }
+
+:is(:lang(ja), :lang(zh), :lang(ko)) .lead { font-size: inherit; }
+:is(:lang(ja), :lang(zh), :lang(ko)) h3 { font-size: 0.875rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) h4 { font-size: 0.8125rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .citation { font-size: 0.8125rem; }
+
+@media (max-width: 32rem) {
+  .figure-pair { grid-template-columns: 1fr; }
+
+  .results-table th + td { padding-inline-start: 0.75rem; }
 }
