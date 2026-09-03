@@ -570,14 +570,25 @@ nav a:hover,
    script being gone: 40rem is four cards in the middle of the fourteen, which
    measure 36rem in Japanese and 42rem in German.
 
-   The viewport cap is a floor under both: a panel taller than the window
-   leaves nothing on screen to scroll the page with, so on a phone — where the
-   cards stack and each one is most of a screen — the window wins over the
-   card count. `dvh` second, for the browsers that have it, because a mobile
-   toolbar sliding away must not resize the panel under the reader's finger. */
+   The window is the floor under it, but only just. The cap is the window less
+   4rem rather than the 70vh it was until 2026-09-03, because 70vh of an
+   ordinary window is shorter than four cards in five of the fourteen — the
+   tallest four stand 665px in German and Russian — and the whole point of the
+   number above is that four is what opens.
+
+   Something has to be left, though, and 4rem is it. A panel exactly as tall as
+   the window cannot be landed on the window's bottom edge without pushing its
+   own first card off the top, which is what works-panel.js does the moment the
+   box is pressed; and it would leave no page beside it to scroll with. So
+   below a window of 729px the window wins over the card count, and on a phone
+   — where the cards stack and each one is most of a screen — the rule at the
+   foot of this section takes the cap away altogether.
+
+   `dvh` second, for the browsers that have it, because a mobile toolbar
+   sliding away must not resize the panel under the reader's finger. */
 .works-toggle:checked ~ .works-panel {
-  max-height: min(var(--panel-height, 40rem), 70vh);
-  max-height: min(var(--panel-height, 40rem), 70dvh);
+  max-height: min(var(--panel-height, 40rem), calc(100vh - 4rem));
+  max-height: min(var(--panel-height, 40rem), calc(100dvh - 4rem));
   overflow-y: auto;
 }
 
@@ -750,10 +761,12 @@ nav a:hover,
 /* Below the width where the cards stack, the panel is not a window any more.
    One stacked card is most of a phone screen, so two of them already stand
    taller than the cap above: measured at 375x700, the closed list is 738px and
-   the capped window would be 490px, which means opening it would make the
+   the capped window would be 636px, which means opening it would make the
    section shorter than it was and the control would read as doing nothing.
    A window that fills the screen is also a trap — there is no page left beside
-   it to put a thumb on.
+   it to put a thumb on. works-panel.js leaves the page alone here for the
+   matching reason: a panel taller than the screen has no scroll position that
+   shows the cards that were asked for.
 
    So here the control means what it plainly says, and opening shows the rest.
    `overflow-y: visible` in both states as well, so the reserved scrollbar
@@ -769,7 +782,8 @@ nav a:hover,
 
 /* Reduced motion takes the movement out and leaves the outcome. The script
    reads this too and stops driving the height at all, since with no transition
-   to run there would be no `transitionend` to clear the value it wrote. */
+   to run there would be no `transitionend` to clear the value it wrote — and
+   puts the page at its resting place in one go rather than travelling to it. */
 @media (prefers-reduced-motion: reduce) {
   .works-panel,
   .works-more { transition: none; }

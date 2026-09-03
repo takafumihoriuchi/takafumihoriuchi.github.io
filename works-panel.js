@@ -52,6 +52,44 @@ function fit(panel, list) {
   panel.style.setProperty("--panel-height", `${Math.ceil(bottom - top + below)}px`);
 }
 
+/* Carries the window down with the panel as it grows, landing with the panel's
+ * bottom edge on the bottom edge of the window.
+ *
+ * Without it the box does the reader a disservice: the panel grows downward,
+ * the fourth card opens below the fold, and pressing `show more` earns a
+ * scroll before it shows anything more. The page below the section does not
+ * move on screen while this runs — it is pushed down by exactly what the
+ * window travels — so what changes is the panel filling the space, which is
+ * what was asked for.
+ *
+ * No easing of its own. Each frame it reads how far the panel has actually
+ * grown and takes that same fraction of its own distance, so the two cannot
+ * come apart whatever curve the stylesheet is running, and a transition that
+ * never starts simply arrives at once. It lets go the moment the page is not
+ * where it left it — a wheel, a trackpad, a key: the reader's scroll wins.
+ */
+function follow(panel, closed, open, rest) {
+  const from = scrollY;
+  let mine = from;
+
+  const step = () => {
+    if (Math.abs(scrollY - mine) > 2) return;
+
+    const grown = (panel.getBoundingClientRect().height - closed) / (open - closed);
+    const at = Math.min(1, Math.max(0, grown));
+
+    scrollTo({ top: from + (rest - from) * at, behavior: "instant" });
+
+    // Read back rather than trust: near the end of the page the browser has
+    // less scroll to give than was asked for, and next frame's check must be
+    // against where the page really is.
+    mine = scrollY;
+    if (at < 1) requestAnimationFrame(step);
+  };
+
+  requestAnimationFrame(step);
+}
+
 for (const panel of document.querySelectorAll(".works-panel")) {
   const list = panel.querySelector(".works");
   const toggle = panel.parentElement.querySelector(".works-toggle");
@@ -95,7 +133,27 @@ for (const panel of document.querySelectorAll(".works-panel")) {
     // list below the stacking width. Read it rather than working it out again.
     fit(panel, list);
     const open = panel.getBoundingClientRect().height;
-    if (still.matches) return;
+
+    // Where the page has to come to rest for the last card on show to sit on
+    // the bottom edge of the window. Measured now, while the panel is at its
+    // open size and has not started moving: it grows downward, so its top is
+    // still where it was and this one reading holds for the whole movement.
+    const rest = panel.getBoundingClientRect().top + scrollY + open - innerHeight;
+
+    // Downward only — a box that says `more` should not take the reader back
+    // up the page — and only while the whole panel can be on screen at once.
+    // Above the stacking width the stylesheet keeps it inside the window, so
+    // that is the ordinary case; below it the panel is the entire list and
+    // taller than any phone, and no scroll position shows the cards that were
+    // asked for, so the page is left where the reader had it.
+    const carry = open <= innerHeight && rest > scrollY ? rest : null;
+
+    if (still.matches) {
+      // Reduced motion asks for the outcome without the travel, and that
+      // includes this: the page arrives rather than goes.
+      if (carry !== null) scrollTo({ top: carry, behavior: "instant" });
+      return;
+    }
 
     // The box comes apart into the ASCII the page was built out of, which is
     // the load animation read backwards. It is measured from the drawn box
@@ -114,13 +172,18 @@ for (const panel of document.querySelectorAll(".works-panel")) {
       setTimeout(() => label.style.removeProperty("overflow"), DISSOLVE_DURATION + 80);
     }
 
-    if (closed === null || open <= closed) return;
+    if (closed === null || open <= closed) {
+      if (carry !== null) scrollTo({ top: carry, behavior: "instant" });
+      return;
+    }
 
     panel.style.transition = "none";
     panel.style.height = `${closed}px`;
     panel.getBoundingClientRect();
     panel.style.transition = "";
     panel.style.height = `${open}px`;
+
+    if (carry !== null) follow(panel, closed, open, carry);
 
     // Hand the panel back to the stylesheet on arrival, so that a window
     // resized afterwards is governed by the rules there rather than by a
