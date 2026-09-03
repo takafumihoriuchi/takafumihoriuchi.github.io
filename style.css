@@ -576,13 +576,17 @@ nav a:hover,
    tallest four stand 665px in German and Russian — and the whole point of the
    number above is that four is what opens.
 
-   Something has to be left, though, and 4rem is it. A panel exactly as tall as
-   the window cannot be landed on the window's bottom edge without pushing its
-   own first card off the top, which is what works-panel.js does the moment the
-   box is pressed; and it would leave no page beside it to scroll with. So
-   below a window of 729px the window wins over the card count, and on a phone
-   — where the cards stack and each one is most of a screen — the rule at the
-   foot of this section takes the cap away altogether.
+   Something has to be left, though, and 4rem is what the opening needs. When
+   the box is pressed works-panel.js carries the window down to the panel and
+   stops a band short of it — the 48.17px the box itself occupied, so that it
+   stays on screen for the whole of its dissolve and the section keeps the foot
+   it had. 64px is that band with a little over, and a panel taller than this
+   cap could not be landed with the band still in the window. It is also the
+   last of the page left beside a panel that has filled the screen.
+
+   So below a window of 729px the window wins over the card count, and on a
+   phone — where the cards stack and each one is most of a screen — the rule at
+   the foot of this section takes the cap away altogether.
 
    `dvh` second, for the browsers that have it, because a mobile toolbar
    sliding away must not resize the panel under the reader's finger. */

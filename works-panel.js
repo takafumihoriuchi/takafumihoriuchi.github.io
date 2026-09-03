@@ -52,8 +52,8 @@ function fit(panel, list) {
   panel.style.setProperty("--panel-height", `${Math.ceil(bottom - top + below)}px`);
 }
 
-/* Carries the window down with the panel as it grows, landing with the panel's
- * bottom edge on the bottom edge of the window.
+/* Carries the window down with the panel as it grows, landing with the band the
+ * box occupied still lying between the panel and the bottom of the window.
  *
  * Without it the box does the reader a disservice: the panel grows downward,
  * the fourth card opens below the fold, and pressing `show more` earns a
@@ -61,6 +61,15 @@ function fit(panel, list) {
  * move on screen while this runs — it is pushed down by exactly what the
  * window travels — so what changes is the panel filling the space, which is
  * what was asked for.
+ *
+ * The band is left empty rather than closed up, and that is the point of it:
+ * the box is coming apart into ASCII in exactly that band while the travel
+ * runs, and a window landing on the panel's own edge would carry it off the
+ * bottom of the screen unwatched. Landing a band short keeps it in sight for
+ * the whole of its dissolve — and since the band is measured from the panel's
+ * bottom edge to the box's, the box cannot leave the screen on the way either:
+ * it starts on screen, because it was just pressed, and it ends a band above
+ * the window's edge, and it travels between the two.
  *
  * No easing of its own. Each frame it reads how far the panel has actually
  * grown and takes that same fraction of its own distance, so the two cannot
@@ -100,6 +109,30 @@ for (const panel of document.querySelectorAll(".works-panel")) {
   // which is the only time it is written.
   let closed = null;
 
+  // And the band the box takes below it — the box's own height plus the margin
+  // above it, less the overhang the panel holds for the cards' hover wash;
+  // 48.17px in all fourteen. Measured rather than worked out, because those
+  // three lengths are in the stylesheet and one of them is negative. It has to
+  // be read while the panel is closed: by the time the box is pressed the
+  // rules for the open state already apply and the box is flat.
+  let room = 0;
+
+  // Where the page stood when the box was pressed. A pointer on the label hands
+  // focus to the checkbox as part of the click, and a browser brings a newly
+  // focused element into view — so by the time `change` arrives the page can
+  // already have moved, to a place nobody asked for and, the checkbox being a
+  // clipped 1px square, with nothing to show for it. Measured at 904px down the
+  // Japanese page, the click alone throws it back to 488.
+  //
+  // The capture-phase click on the label is the last moment before that
+  // happens, and the whole of it — jump, change, and the correction below — is
+  // one click with no paint in the middle, so there is nothing to see. Nothing
+  // is read on the keyboard path: space on a focused checkbox dispatches its
+  // click on the checkbox and never on the label, it holds focus already so it
+  // never jumps, and a control arrived at by tabbing *should* be scrolled to.
+  let held = null;
+  if (label) label.addEventListener("click", () => { held = scrollY; }, true);
+
   const measure = () => {
     fit(panel, list);
     if (!toggle.checked) {
@@ -107,6 +140,7 @@ for (const panel of document.querySelectorAll(".works-panel")) {
       if (label) {
         label.style.removeProperty("--more-height");
         label.style.setProperty("--more-height", `${label.getBoundingClientRect().height}px`);
+        room = label.getBoundingClientRect().bottom - panel.getBoundingClientRect().bottom;
       }
     }
   };
@@ -128,25 +162,29 @@ for (const panel of document.querySelectorAll(".works-panel")) {
     // whose control is no longer on the page. `:checked` still matches.
     toggle.disabled = true;
 
+    if (held !== null && scrollY !== held) scrollTo({ top: held, behavior: "instant" });
+    held = null;
+
     // The rules for the open state already apply here, so the panel is at the
     // size the stylesheet has chosen — capped against the window, or the whole
     // list below the stacking width. Read it rather than working it out again.
     fit(panel, list);
     const open = panel.getBoundingClientRect().height;
 
-    // Where the page has to come to rest for the last card on show to sit on
-    // the bottom edge of the window. Measured now, while the panel is at its
-    // open size and has not started moving: it grows downward, so its top is
-    // still where it was and this one reading holds for the whole movement.
-    const rest = panel.getBoundingClientRect().top + scrollY + open - innerHeight;
+    // Where the page has to come to rest for the last card on show to sit a
+    // band above the bottom edge of the window. Measured now, while the panel
+    // is at its open size and has not started moving: it grows downward, so
+    // its top is still where it was and this one reading holds for the whole
+    // movement.
+    const rest = panel.getBoundingClientRect().top + scrollY + open + room - innerHeight;
 
     // Downward only — a box that says `more` should not take the reader back
-    // up the page — and only while the whole panel can be on screen at once.
-    // Above the stacking width the stylesheet keeps it inside the window, so
-    // that is the ordinary case; below it the panel is the entire list and
-    // taller than any phone, and no scroll position shows the cards that were
-    // asked for, so the page is left where the reader had it.
-    const carry = open <= innerHeight && rest > scrollY ? rest : null;
+    // up the page — and only while the panel and the band below it can be on
+    // screen together. Above the stacking width the stylesheet keeps the panel
+    // that short, so that is the ordinary case; below it the panel is the
+    // entire list and taller than any phone, no scroll position shows the
+    // cards that were asked for, and the page is left where the reader had it.
+    const carry = open + room <= innerHeight && rest > scrollY ? rest : null;
 
     if (still.matches) {
       // Reduced motion asks for the outcome without the travel, and that
