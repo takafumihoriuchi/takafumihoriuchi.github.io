@@ -1,12 +1,12 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260904-6";
+} from "./ascii-layout.js?v=20260904-7";
 import {
   asciiLoadElapsed,
   settledAsciiLoadHolds,
   startAsciiLoadClock,
-} from "./ascii-load-clock.js?v=20260904-6";
+} from "./ascii-load-clock.js?v=20260904-7";
 
 // Tell the inline guard in the document head that this module is alive, so
 // its timeout stops being the thing that decides when the page is shown. It
