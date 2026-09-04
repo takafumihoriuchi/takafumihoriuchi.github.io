@@ -24,3 +24,17 @@ __pycache__/
 # .nojekyll would serve it at a public URL, and it describes this Mac, not the
 # site. Recreate it with `python3 -m http.server` on any other machine.
 /.claude/launch.json
+
+# How the ASCII renderer works and what each scene is for. Same reason again:
+# the site does not read it, nothing served links to it, and .nojekyll would
+# put 167 lines of implementation notes at a public URL. It sits beside the
+# code it describes, on this Mac, next to OPERATIONS.md.
+#
+# scripts/ is deliberately NOT here. Those are reachable too, but they are how
+# the repository stays correct — langs.py is the single definition of the
+# language set, and check-i18n.py / check-ascii.py / build-sitemap.py are run
+# before every commit that touches a page. Tooling that enforces the site's
+# invariants belongs in the history of the site. Same for works/_template/ and
+# og-card.html, which carry <meta name="robots" content="noindex"> and are
+# left crawlable on purpose — see robots.txt for why.
+/ascii/README.md
