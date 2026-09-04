@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Design Studio — Takafumi Horiuchi</title>
-<meta name="description" content="A project from the master&#x27;s programme. The write-up is in preparation.">
+<title>Three Design Studio Projects — Takafumi Horiuchi</title>
+<meta name="description" content="Three group product-design projects from the Design &amp; Engineering master&#x27;s programme at Politecnico di Milano: a coffee machine, a PAPR for welders, and a contactless blood-donation screening device.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
@@ -32,28 +24,21 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-design-studio/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../style.css">
-<link rel="stylesheet" href="page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<link rel="stylesheet" href="../../works/figures.css">
+<link rel="stylesheet" href="../../works/masters-project-design-studio/page.css">
+<script src="../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Design Studio">
-<meta property="og:description" content="The write-up is in preparation.">
+<meta property="og:title" content="Three Design Studio Projects">
+<meta property="og:description" content="A coffee machine, a PAPR for welders, and a contactless blood-donation screening device, designed in groups across three semesters.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="A black and copper HUBBLE coffee machine in a shared workspace, with Hi Luigi on its circular display.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Cognitive Engineering × AI × Design",
+      "description": "Cognitive engineering × AI × design",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -72,12 +58,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/works/masters-project-design-studio/#work",
-      "name": "Design Studio",
+      "name": "Three Design Studio Projects",
       "url": "https://takafumihoriuchi.github.io/works/masters-project-design-studio/",
-      "description": "A project from the master&#x27;s programme. The write-up is in preparation.",
-      "creativeWorkStatus": "In preparation",
+      "description": "Three group product-design projects from the Design & Engineering master's programme at Politecnico di Milano: a coffee machine, a PAPR for welders, and a contactless blood-donation screening device.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg",
+      "datePublished": "2020-12",
+      "temporalCoverage": "2019-12/2020-12",
       "inLanguage": "en",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,9 +78,9 @@
 <main>
 
   <header>
-    <h1>Design Studio</h1>
+    <h1>Three Design Studio Projects</h1>
     <div class="identity">
-      <p class="tagline">by <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <p class="tagline">Designed by: <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profiles elsewhere">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
@@ -98,48 +88,244 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">In preparation</p>
+    <p class="dateline">2019–2020</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="coffee-brewing" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">       .----------------------------------.
+       |              .--------.          |
+       |              |  (o)   |          |
+       |              &#x27;----+---&#x27;          |
+       |                   |              |
+       &#x27;-------------------|--------------&#x27;
+                           :
+                      ( (  :  ) )
+                       ) .-----. (
+                         |~~~~~|__
+                         |     |  )
+                         &#x27;-----&#x27;-&#x27;</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Overview</h2>
-    <p class="lead">A project from the master&#x27;s programme. The write-up is in preparation.</p>
+    <p class="lead">During the Design &amp; Engineering master&#x27;s programme at Politecnico di Milano, I joined a different team each semester in the Design Studio courses. We developed each product from the problem and user profile through form, mechanism, interaction, and manufacturing. This page brings together three projects completed from winter 2019 to winter 2020.</p>
+    <ol class="project-summary">
+      <li><a href="#coffee"><strong>Coffee-machine design (winter 2019)</strong></a><span>HUBBLE adapts one shared machine to different tastes through a circular interface, movable nozzle, rotating dispensing head, internal engineering, and production drawings.</span></li>
+      <li><a href="#papr"><strong>PAPR design for welders (summer 2020)</strong></a><span>VCS-20 works with an existing welding shield, combining a hood, vest, and shoulder-mounted blower in a wearable prototype.</span></li>
+      <li><a href="#blood-screening"><strong>Blood-donation screening-device design (winter 2020)</strong></a><span>DELCON Massachusetts combines contactless temperature, heart-rate, blood-pressure, and haemoglobin screening with a self-service QR and cloud workflow.</span></li>
+    </ol>
   </section>
 
-  <section>
-    <h2>Constraints</h2>
+  <hr class="section-break">
+
+  <section id="coffee">
+    <h2>Coffee-machine design (winter 2019)</h2>
+    <h3>Problem — Sharing one machine without giving everyone the same coffee</h3>
+    <p>In shared flats, coworking spaces, and offices, one machine serves people with different cultures and preferences. Existing capsule machines offered limited cup sizes, unclear controls, and flavour tied to the capsule. Repeating a detailed setup for every drink would also make a shared appliance cumbersome. We therefore contrasted Maria, who prefers a large mild coffee, with Mert, who prefers a small strong one, and set requirements for adjustable aroma, strength, temperature, and volume; remembered users and recipes; varied cups and orientations; and straightforward refilling and cleaning.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" alt="The proposed HUBBLE coffee machine in a shared workspace, with a matte-black body, copper dispensing head, circular control, and cup."></a>
+      <figcaption>The proposed HUBBLE coffee machine in a shared workspace, with a matte-black body, copper dispensing head, circular control, and cup.</figcaption>
+    </figure>
+
+    <h3>What we designed — HUBBLE remembers the person and concentrates control in one circle</h3>
+    <p>HUBBLE uses Bluetooth to recognise a user and retrieve saved recipes. On first use, the circular knob is turned to choose aroma, strength, temperature, and other settings, then pressed to confirm. A preferred drink can be named and saved, while recommendations invite a different choice. Combining display, rotation, and push in one control avoids a crowded front panel. The nozzle moves vertically to keep an appropriate distance from anything from an espresso cup to a tall mug.</p>
+
+    <figure class="video-figure bleed">
+      <div class="video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/HzdisHwdnms?start=1" title="HUBBLE coffee-machine UI and UX interaction demo" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>Circular-interface demo showing recognition, recipe selection, adjustment of aroma, strength, and temperature, and the path to brewing.</figcaption>
+    </figure>
+
+    <h3>One structure for placement, refilling, and maintenance</h3>
+    <p>The dispensing head rotates so a cup can approach from either the long or short side of the counter. Water and bean tanks lift out from above, while the milk container and waste bin push open from the front. The enclosure also accommodates a grinder, pump, heater, brewing mechanism, and rotation motor. We developed the internal layout, 3D CAD, assembly and parts list, and manufacturing drawings for the individual components.</p>
+
+    <figure class="paper-figure drawing-figure">
+      <a href="../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" data-line-art><img src="../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" width="2400" height="1698" loading="lazy" decoding="async" alt="HUBBLE assembly drawing and bill of materials, showing the enclosure, rotating dispensing head, circular control, and numbered internal components."></a>
+      <figcaption>HUBBLE assembly drawing and bill of materials, showing the enclosure, rotating dispensing head, circular control, and numbered internal components.</figcaption>
+    </figure>
+
+    <h3>Outcome — Connecting appearance, interaction, and engineering at drawing level</h3>
+    <p>The outcome integrates scenarios and personas, product styling, circular-interface flows, moving and service parts, internal layout, 3D CAD, assembly drawings, and part drawings. It reframes a shared appliance from a machine that gives everyone the same cup into one that remembers each person&#x27;s preferences. The source material does not confirm a physical machine or extraction-performance testing, so the result is presented as a design developed through CAD and drawings.</p>
+    <p class="project-credit">Product Development Design Studio I, Coffee Machine, Group 7. Joint work by Carla Ayala, Fabio Monza, Ayse Selin Yagsan, Takafumi Horiuchi, and Marco Talpo.</p>
+
+    <h3>Final presentation</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="HUBBLE coffee-machine final presentation, 28 horizontally scrollable slides">
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-01.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-01.webp" width="1600" height="900" alt="HUBBLE coffee-machine presentation slide 1."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-02.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 2."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-03.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 3."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-04.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 4."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 5."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-06.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 6."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-07.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 7."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-08.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 8."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-09.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 9."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-10.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 10."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-11.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 11."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-12.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 12."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-13.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 13."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-14.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 14."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-15.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 15."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-16.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 16."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-17.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 17."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-18.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 18."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-19.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 19."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-20.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 20."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-21.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 21."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-22.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 22."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-23.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 23."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-24.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-24.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 24."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-25.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-25.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 25."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-26.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-26.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 26."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-27.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-27.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 27."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/coffee-slide-28.webp"><img src="../../works/masters-project-design-studio/assets/coffee-slide-28.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE coffee-machine presentation slide 28."></a></li>
+      </ol>
+      <figcaption>Slides from the final presentation.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>Approach</h2>
+  <hr class="section-break">
+
+  <section id="papr">
+    <h2>PAPR design for welders (summer 2020)</h2>
+    <h3>Problem — Protecting breathing while retaining an existing welding shield</h3>
+    <p>Welders need protection from fumes and hot sparks, yet layered equipment in confined workplaces can complicate dressing and obstruct vision and movement. The brief was therefore a light, quick-to-don powered air-purifying respirator that could be added to an existing welding shield. The persona Antonio informed requirements including fit with different shields, compactness, comfort, a replaceable long-life battery, positive pressure, at least two airflow settings, visible and audible alarms, a combined filter, and airflow above 120 L/min.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="A welder wearing VCS-20: welding shield, protective hood, vest, and a C-shaped blower unit resting across the shoulders."></a>
+      <figcaption>A welder wearing VCS-20: welding shield, protective hood, vest, and a C-shaped blower unit resting across the shoulders.</figcaption>
+    </figure>
+
+    <h3>What we designed — VCS-20 integrates the hood, vest, and shoulder unit</h3>
+    <p>VCS-20 combines a universal hood, a vest, and a C-shaped PAPR unit. Stretch panels and six sections of Gecko Tape adapt the flame-resistant cotton hood to different shields, and the shield alone can be lifted during a pause. The vest stabilises the system; a magnetic neck connector supplies air to the hood; and articulated rear and side sections distribute the blower&#x27;s weight across both shoulders instead of hanging it from the neck.</p>
+
+    <figure class="paper-figure">
+      <a href="../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Exploded VCS-20 showing the shell, combined filter, fan, joints, replaceable battery, circuit board, air sensor, controller, and alarms."></a>
+      <figcaption>Exploded VCS-20 showing the shell, combined filter, fan, joints, replaceable battery, circuit board, air sensor, controller, and alarms.</figcaption>
+    </figure>
+
+    <h3>Controls and feedback that remain usable with gloves</h3>
+    <p>A push-and-rotate controller combines power and airflow adjustment in one place. Visual and audible feedback communicates filter and battery condition and reduced airflow. The proposal also considers injection-moulded shells, laser-cut textile parts, material selection, part division, and assembly. To examine fit and dressing, the team built a full-scale wearable appearance prototype.</p>
+
+    <figure class="paper-figure">
+      <a href="../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Full-scale VCS-20 wearable prototype, with a person wearing the vest, hood, welding shield, and shoulder unit alongside separate component views."></a>
+      <figcaption>Full-scale VCS-20 wearable prototype, with a person wearing the vest, hood, welding shield, and shoulder unit alongside separate component views.</figcaption>
+    </figure>
+
+    <h3>Outcome — Testing how the system sits on the body</h3>
+    <p>The deliverables cover user requirements, the wearing system, external and internal configuration, materials and manufacturing, and a full-scale wearable prototype. They treat the PAPR not as a stand-alone blower but as one wearable product including shield and clothing. The source contains no measured results for airflow, positive pressure, noise, battery life, filtration, safety, or usability with welders; the outcome is therefore a developed prototype rather than a performance-validated product.</p>
+    <p class="project-credit">Product Development Studio 2, Group 8. Joint work by Takafumi Horiuchi, Hou Weihuan, Giulia Stevanoni, and Marco Luigi Talpo.</p>
+
+    <h3>Final presentation</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="VCS-20 PAPR final presentation, 20 horizontally scrollable slides">
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-01.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-01.webp" width="1600" height="900" alt="VCS-20 PAPR presentation slide 1."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-02.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 2."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-03.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 3."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-04.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 4."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-05.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 5."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 6."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-07.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 7."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-08.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 8."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-09.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 9."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-10.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 10."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-11.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 11."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-12.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 12."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-13.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 13."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-14.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 14."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 15."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-16.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 16."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 17."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-18.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 18."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-19.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 19."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/papr-slide-20.webp"><img src="../../works/masters-project-design-studio/assets/papr-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR presentation slide 20."></a></li>
+      </ol>
+      <figcaption>Slides from the final presentation.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>Outcome</h2>
+  <hr class="section-break">
+
+  <section id="blood-screening">
+    <h2>Blood-donation screening-device design (winter 2020)</h2>
+    <h3>Problem — Letting donors complete pre-donation measurements without contact</h3>
+    <p>Before donation, temperature, heart rate, blood pressure, and haemoglobin are checked. During COVID-19, shared equipment and close staff contact added hygiene concerns and stress. We proposed a self-service unit for donors aged 16 and over in North America, for use in donation centres, mobile venues, and buses. The main requirements were contactless and non-invasive measurement, an easy-to-clean portable form, short measurement time, paperless records, secure data sharing, and both tabletop and standing use.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="DELCON Massachusetts pre-donation screening unit, with a large display and upper machine-vision camera, thermal camera, and supporting lights."></a>
+      <figcaption>DELCON Massachusetts pre-donation screening unit, with a large display and upper machine-vision camera, thermal camera, and supporting lights.</figcaption>
+    </figure>
+
+    <h3>What we designed — Four indicators through three optical methods</h3>
+    <p>The concept combines iPPG for estimating heart rate and blood pressure from facial colour changes, thermography for surface temperature, and a camera plus machine learning for estimating haemoglobin from the nail bed. These methods were selected to avoid attaching sensors to the body or taking blood.</p>
+
+    <div class="spec-table-wrap bleed" tabindex="0" role="region" aria-label="Measurement methods and design targets stated in the source material">
+      <table class="spec-table">
+        <caption>Methods and assumed values stated in the source material; the figures are not validation results.</caption>
+        <thead><tr><th scope="col">Measurement</th><th scope="col">Method</th><th scope="col">Assumed value in the source</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Heart rate and blood pressure</th><td>Facial iPPG</td><td>Distance 0.5–1 m; 1000–4000 lx; about 60 s. Heart rate ±3 bpm; systolic ±0.4 mmHg; diastolic ±0.2 mmHg.</td></tr>
+          <tr><th scope="row">Temperature</th><td>Thermography</td><td>Distance 0.3–1 m; real-time measurement; ±0.2 °C.</td></tr>
+          <tr><th scope="row">Haemoglobin</th><td>Nail-bed image and machine learning</td><td>250–3000 lx; about 15 s; ±0.92 g/dL.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>From a QR code to shared results</h3>
+    <p>The donor scans the QR code received at preregistration, presents a nail to the upper machine-vision camera for haemoglobin estimation, then stands in front of the same camera and the thermal camera for temperature, heart rate, and blood pressure. The screen and speaker guide position and progress; results are added to the cloud record for staff review.</p>
+
+    <figure class="paper-figure">
+      <a href="../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Pre-donation flow: scan the QR code, image the nail bed, measure the face without contact, and share results with staff through the cloud."></a>
+      <figcaption>Pre-donation flow: scan the QR code, image the nail bed, measure the face without contact, and share results with staff through the cloud.</figcaption>
+    </figure>
+
+    <h3>One unit for a tabletop or a floor stand</h3>
+    <p>The same unit can sit directly on a table or attach to a dedicated stand with two pin-selected heights. Cameras and supporting lights are grouped at the top, with screen and speaker on the front, and power by battery or cable. Candidate production methods include injection-moulded PC and PET front parts, a thermoformed and machined rear, a polycarbonate screen cover, and an A500 steel stand. Internal layout, assembly, manufacturing, and stand stability were developed, including finite-element analysis.</p>
+
+    <figure class="paper-figure">
+      <a href="../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Exploded screening unit showing the front and rear shells, screen, upper cameras and lights, speaker, circuit board, and supporting parts."></a>
+      <figcaption>Exploded screening unit showing the front and rear shells, screen, upper cameras and lights, speaker, circuit board, and supporting parts.</figcaption>
+    </figure>
+
+    <h3>Outcome — Bringing contactless measurement and staff workflow into one unit</h3>
+    <p>The concept design brings together use settings and requirements, measurement methods, a QR and cloud workflow, tabletop and floor-standing enclosures, internal layout, materials and manufacturing, exploded views, and structural analysis. Rather than placing separate instruments side by side, it connects the donor&#x27;s sequence and the staff review as one service.</p>
+    <p class="project-credit">Design Studio, Group 11. Joint work by Fabio Villano, Bhuvanesh Bari, Takafumi Horiuchi, and Joeperdo El Husseini.</p>
+
+    <h3>Final presentation</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="Blood-donation screening-device final presentation, 23 horizontally scrollable slides">
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" alt="Blood-donation screening-device presentation slide 1."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-02.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 2."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-03.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 3."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-04.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 4."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-05.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 5."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-06.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 6."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-07.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 7."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-08.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 8."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-09.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 9."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-10.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 10."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-11.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 11."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-12.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 12."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-13.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 13."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 14."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-15.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 15."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-16.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 16."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 17."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-18.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 18."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-19.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 19."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-20.webp" aria-label="Slide 20, a blank page"><img src="../../works/masters-project-design-studio/assets/blood-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-21.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 21."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-22.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 22."></a></li>
+        <li><a href="../../works/masters-project-design-studio/assets/blood-slide-23.webp"><img src="../../works/masters-project-design-studio/assets/blood-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Blood-donation screening-device presentation slide 23."></a></li>
+      </ol>
+      <figcaption>Slides from the final presentation.</figcaption>
+    </figure>
   </section>
 
   <nav aria-label="Site">
-    <ul>
-      <li><a href="../../">Go to Takafumi&#x27;s Portfolio</a></li>
-    </ul>
+    <ul><li><a href="../../">To Takafumi Horiuchi&#x27;s portfolio</a></li></ul>
   </nav>
 
   <footer>
@@ -163,5 +349,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden>
+  <button class="lightbox__close" type="button" aria-label="Close enlarged figure"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

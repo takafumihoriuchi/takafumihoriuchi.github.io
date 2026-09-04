@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Design Studio — Takafumi Horiuchi</title>
-<meta name="description" content="Um projeto do mestrado. O texto está em preparação.">
+<title>Três projetos de Design Studio — Takafumi Horiuchi</title>
+<meta name="description" content="Três projetos de design de produto em grupo do mestrado em Design &amp; Engineering do Politécnico de Milão: uma máquina de café, um PAPR para soldadores e um dispositivo de triagem sem contacto para doação de sangue.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/pt/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
@@ -32,28 +24,21 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-design-studio/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-design-studio/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
-<meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Design Studio">
-<meta property="og:description" content="O texto está em preparação.">
+<meta property="og:locale" content="pt_PT">
+<meta property="og:title" content="Três projetos de Design Studio">
+<meta property="og:description" content="Uma máquina de café, um PAPR para soldadores e um dispositivo de triagem sem contacto, concebidos em grupo ao longo de três semestres.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/pt/works/masters-project-design-studio/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Máquina de café HUBBLE preta e cobre num espaço partilhado, com «Hi Luigi» no ecrã circular.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Engenharia Cognitiva × IA × Design",
+      "description": "Engenharia cognitiva × IA × design",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -72,12 +58,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/pt/works/masters-project-design-studio/#work",
-      "name": "Design Studio",
+      "name": "Três projetos de Design Studio",
       "url": "https://takafumihoriuchi.github.io/pt/works/masters-project-design-studio/",
-      "description": "Um projeto do mestrado. O texto está em preparação.",
-      "creativeWorkStatus": "Em preparação",
+      "description": "Três projetos de design de produto em grupo do mestrado em Design & Engineering do Politécnico de Milão: uma máquina de café, um PAPR para soldadores e um dispositivo de triagem sem contacto para doação de sangue.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg",
+      "datePublished": "2020-12",
+      "temporalCoverage": "2019-12/2020-12",
       "inLanguage": "pt",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,58 +78,254 @@
 <main>
 
   <header>
-    <h1>Design Studio</h1>
+    <h1>Três projetos de Design Studio</h1>
     <div class="identity">
-      <p class="tagline">por <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Perfis em outros sites">
+      <p class="tagline">Design: <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="Perfis noutros sites">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">Em preparação</p>
+    <p class="dateline">2019–2020</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="coffee-brewing" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">       .----------------------------------.
+       |              .--------.          |
+       |              |  (o)   |          |
+       |              &#x27;----+---&#x27;          |
+       |                   |              |
+       &#x27;-------------------|--------------&#x27;
+                           :
+                      ( (  :  ) )
+                       ) .-----. (
+                         |~~~~~|__
+                         |     |  )
+                         &#x27;-----&#x27;-&#x27;</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>Resumo</h2>
-    <p class="lead">Um projeto do mestrado. O texto está em preparação.</p>
+    <h2>Visão geral</h2>
+    <p class="lead">Durante o mestrado em Design &amp; Engineering no Politécnico de Milão, participei em cada semestre numa equipa diferente das disciplinas de Design Studio. Desenvolvemos cada produto desde o problema e o perfil do utilizador até à forma, ao mecanismo, à interação e ao fabrico. Esta página reúne três projetos realizados entre o inverno de 2019 e o inverno de 2020.</p>
+    <ol class="project-summary">
+      <li><a href="#coffee"><strong>Design de uma máquina de café (inverno de 2019)</strong></a><span>A HUBBLE adapta uma máquina partilhada a gostos diferentes através de uma interface circular, bico móvel, cabeça giratória, engenharia interna e desenhos de produção.</span></li>
+      <li><a href="#papr"><strong>Design de um PAPR para soldadores (verão de 2020)</strong></a><span>O VCS-20 combina-se com uma máscara de soldadura existente e integra capuz, colete e unidade de ventilação apoiada nos ombros num protótipo vestível.</span></li>
+      <li><a href="#blood-screening"><strong>Design de um dispositivo de triagem para doação de sangue (inverno de 2020)</strong></a><span>O DELCON Massachusetts junta a triagem sem contacto de temperatura, frequência cardíaca, pressão arterial e hemoglobina a um fluxo de autosserviço com QR e nuvem.</span></li>
+    </ol>
   </section>
 
-  <section>
-    <h2>Restrições</h2>
+  <hr class="section-break">
+
+  <section id="coffee">
+    <h2>Design de uma máquina de café (inverno de 2019)</h2>
+    <h3>Problema — Partilhar uma máquina sem servir o mesmo café a toda a gente</h3>
+    <p>Em apartamentos partilhados, espaços de coworking e escritórios, uma máquina serve pessoas com culturas e preferências diferentes. As máquinas de cápsulas existentes ofereciam poucos tamanhos de chávena, controlos pouco claros e sabor dependente da cápsula; repetir uma configuração detalhada para cada bebida tornaria também o aparelho partilhado incómodo. Por isso contrastámos Maria, que prefere um café grande e suave, com Mert, que prefere um pequeno e forte, e definimos requisitos para aroma, intensidade, temperatura e volume ajustáveis; memória de utilizadores e receitas; diferentes chávenas e orientações; e enchimento e limpeza simples.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" alt="Proposta da máquina HUBBLE num espaço partilhado, com corpo preto mate, cabeça de extração em cobre, controlo circular e chávena."></a>
+      <figcaption>Proposta da máquina HUBBLE num espaço partilhado, com corpo preto mate, cabeça de extração em cobre, controlo circular e chávena.</figcaption>
+    </figure>
+
+    <h3>O que concebemos — A HUBBLE reconhece a pessoa e concentra o controlo num círculo</h3>
+    <p>A HUBBLE usa Bluetooth para reconhecer o utilizador e recuperar receitas guardadas. Na primeira utilização, roda-se o comando circular para escolher aroma, intensidade, temperatura e outros parâmetros e carrega-se para confirmar. A bebida preferida pode receber um nome e ser guardada, enquanto as recomendações permitem experimentar outra opção. Reunir ecrã, rotação e pressão num único controlo evita encher a frente de botões. O bico desloca-se na vertical para manter a distância adequada, de uma chávena de espresso a uma caneca alta.</p>
+
+    <figure class="video-figure bleed">
+      <div class="video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/HzdisHwdnms?start=1" title="Demonstração da interação UI e UX da máquina de café HUBBLE" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>Demonstração da interface circular: reconhecimento, escolha da receita, ajuste de aroma, intensidade e temperatura e percurso até à preparação.</figcaption>
+    </figure>
+
+    <h3>Uma estrutura para colocação, enchimento e manutenção</h3>
+    <p>A cabeça de extração roda para que a chávena se aproxime pelo lado comprido ou curto da bancada. Os depósitos de água e grão retiram-se por cima; o recipiente de leite e o depósito de resíduos abrem por pressão à frente. A caixa aloja ainda moinho, bomba, aquecedor, mecanismo de preparação e motor de rotação. Desenvolvemos a disposição interna, CAD 3D, desenho de conjunto, lista de peças e desenhos de fabrico dos componentes.</p>
+
+    <figure class="paper-figure drawing-figure">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" data-line-art><img src="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" width="2400" height="1698" loading="lazy" decoding="async" alt="Desenho de conjunto e lista de materiais da HUBBLE, mostrando a caixa, cabeça giratória, controlo circular e componentes internos numerados."></a>
+      <figcaption>Desenho de conjunto e lista de materiais da HUBBLE, mostrando a caixa, cabeça giratória, controlo circular e componentes internos numerados.</figcaption>
+    </figure>
+
+    <h3>Resultado — Ligar aparência, interação e engenharia ao nível do desenho</h3>
+    <p>O resultado integra cenários e personas, estilo do produto, fluxos da interface circular, peças móveis e de manutenção, disposição interna, CAD 3D, desenhos de conjunto e de peças. Reformula o aparelho partilhado: deixa de ser uma máquina que dá a mesma chávena a todos e passa a lembrar as preferências de cada pessoa. A documentação não confirma uma máquina física nem ensaios de extração; por isso o resultado é apresentado como um design desenvolvido por CAD e desenhos.</p>
+    <p class="project-credit">Product Development Design Studio I, «Coffee Machine», Grupo 7. Trabalho conjunto de Carla Ayala, Fabio Monza, Ayse Selin Yagsan, Takafumi Horiuchi e Marco Talpo.</p>
+
+    <h3>Apresentação final</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="Apresentação final da máquina HUBBLE, 28 diapositivos com deslocamento horizontal">
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp" width="1600" height="900" alt="Diapositivo da apresentação da máquina HUBBLE 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 20."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 23."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 24."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 25."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 26."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 27."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação da máquina HUBBLE 28."></a></li>
+      </ol>
+      <figcaption>Diapositivos da apresentação final.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>Abordagem</h2>
+  <hr class="section-break">
+
+  <section id="papr">
+    <h2>Design de um PAPR para soldadores (verão de 2020)</h2>
+    <h3>Problema — Proteger a respiração mantendo a máscara de soldadura existente</h3>
+    <p>Os soldadores precisam de proteção contra fumos e faíscas quentes, mas sobrepor equipamento em espaços reduzidos complica a colocação e limita visão e movimento. O desafio foi criar um respirador purificador de ar motorizado, leve e rápido de vestir, que pudesse ser acrescentado a uma máscara existente. A persona Antonio orientou requisitos de adaptação a várias máscaras, compacidade, conforto, bateria substituível e duradoura, pressão positiva, pelo menos dois caudais, alarmes visuais e sonoros, filtro combinado e fluxo superior a 120 L/min.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Soldador com VCS-20: máscara de soldadura, capuz protetor, colete e unidade de ventilação em C apoiada nos ombros."></a>
+      <figcaption>Soldador com VCS-20: máscara de soldadura, capuz protetor, colete e unidade de ventilação em C apoiada nos ombros.</figcaption>
+    </figure>
+
+    <h3>O que concebemos — O VCS-20 integra capuz, colete e unidade de ombros</h3>
+    <p>O VCS-20 combina um capuz universal, um colete e uma unidade PAPR em C. Painéis elásticos e seis secções de Gecko Tape adaptam o capuz de algodão ignífugo a diferentes máscaras; numa pausa pode levantar-se apenas a máscara. O colete estabiliza o sistema, um conector magnético no pescoço leva ar ao capuz e as articulações traseiras e laterais distribuem o peso pelos dois ombros, em vez de o suspender no pescoço.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Vista explodida do VCS-20 com caixa, filtro combinado, ventoinha, articulações, bateria substituível, placa, sensor de ar, controlo e alarmes."></a>
+      <figcaption>Vista explodida do VCS-20 com caixa, filtro combinado, ventoinha, articulações, bateria substituível, placa, sensor de ar, controlo e alarmes.</figcaption>
+    </figure>
+
+    <h3>Controlo e retorno utilizáveis com luvas</h3>
+    <p>Um comando de premir e rodar reúne a alimentação e o ajuste do caudal. Informação visual e sonora comunica o estado do filtro e da bateria e uma redução do fluxo. A proposta considera caixas por injeção, têxteis cortados a laser, materiais, divisão de peças e montagem. Para estudar o ajuste e a colocação, a equipa construiu um protótipo vestível à escala real.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Protótipo vestível VCS-20 à escala real, com uma pessoa equipada com colete, capuz, máscara e unidade de ombros, junto de vistas dos componentes."></a>
+      <figcaption>Protótipo vestível VCS-20 à escala real, com uma pessoa equipada com colete, capuz, máscara e unidade de ombros, junto de vistas dos componentes.</figcaption>
+    </figure>
+
+    <h3>Resultado — Verificar com um protótipo como o sistema assenta no corpo</h3>
+    <p>Os resultados abrangem requisitos do utilizador, sistema de vestir, configuração exterior e interior, materiais e fabrico e um protótipo vestível à escala real. O PAPR é tratado como um produto vestível único que inclui máscara e roupa, não como uma ventoinha isolada. A documentação não contém medições de fluxo, pressão positiva, ruído, autonomia, filtragem, segurança ou usabilidade com soldadores; o resultado é, portanto, um protótipo desenvolvido e não um produto com desempenho validado.</p>
+    <p class="project-credit">Product Development Studio 2, Grupo 8. Trabalho conjunto de Takafumi Horiuchi, Hou Weihuan, Giulia Stevanoni e Marco Luigi Talpo.</p>
+
+    <h3>Apresentação final</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="Apresentação final do PAPR VCS-20, 20 diapositivos com deslocamento horizontal">
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-01.webp" width="1600" height="900" alt="Diapositivo da apresentação do PAPR VCS-20 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do PAPR VCS-20 20."></a></li>
+      </ol>
+      <figcaption>Diapositivos da apresentação final.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>Resultado</h2>
+  <hr class="section-break">
+
+  <section id="blood-screening">
+    <h2>Design de um dispositivo de triagem para doação de sangue (inverno de 2020)</h2>
+    <h3>Problema — Permitir que os dadores concluam as medições prévias sem contacto</h3>
+    <p>Antes da doação verificam-se temperatura, frequência cardíaca, pressão arterial e hemoglobina. Durante a COVID-19, equipamento partilhado e proximidade do pessoal acrescentaram preocupações de higiene e stress. Propusemos uma unidade de autosserviço para dadores com 16 anos ou mais na América do Norte, para centros, locais móveis e autocarros. Os requisitos principais foram medição sem contacto e não invasiva, forma portátil e fácil de limpar, medição breve, registo sem papel, partilha segura de dados e utilização sobre mesa ou de pé.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Unidade DELCON Massachusetts para triagem pré-doação, com grande ecrã e câmara de visão artificial, câmara térmica e iluminação auxiliar na parte superior."></a>
+      <figcaption>Unidade DELCON Massachusetts para triagem pré-doação, com grande ecrã e câmara de visão artificial, câmara térmica e iluminação auxiliar na parte superior.</figcaption>
+    </figure>
+
+    <h3>O que concebemos — Quatro indicadores através de três métodos óticos</h3>
+    <p>O conceito combina iPPG para estimar frequência cardíaca e pressão arterial a partir de alterações de cor no rosto, termografia para temperatura superficial e uma câmara com aprendizagem automática para estimar hemoglobina no leito ungueal. Os métodos foram escolhidos para evitar sensores no corpo ou recolha de sangue.</p>
+
+    <div class="spec-table-wrap bleed" tabindex="0" role="region" aria-label="Métodos de medição e objetivos de design indicados na documentação">
+      <table class="spec-table">
+        <caption>Métodos e valores assumidos indicados na documentação; os números não são resultados de validação.</caption>
+        <thead><tr><th scope="col">Medição</th><th scope="col">Método</th><th scope="col">Valor assumido na documentação</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Frequência cardíaca e pressão arterial</th><td>iPPG facial</td><td>Distância 0,5–1 m; 1000–4000 lx; cerca de 60 s. Frequência cardíaca ±3 bpm; sistólica ±0,4 mmHg; diastólica ±0,2 mmHg.</td></tr>
+          <tr><th scope="row">Temperatura</th><td>Termografia</td><td>Distância 0,3–1 m; medição em tempo real; ±0,2 °C.</td></tr>
+          <tr><th scope="row">Hemoglobina</th><td>Imagem do leito ungueal e aprendizagem automática</td><td>250–3000 lx; cerca de 15 s; ±0,92 g/dL.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Do código QR aos resultados partilhados</h3>
+    <p>O dador lê o QR recebido no pré-registo, apresenta uma unha à câmara superior para estimar a hemoglobina e depois posiciona-se diante dessa câmara e da câmara térmica para medir temperatura, frequência cardíaca e pressão arterial. O ecrã e o altifalante orientam postura e progresso; os resultados são adicionados ao registo na nuvem para revisão pelo pessoal.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Fluxo pré-doação: ler o QR, captar o leito ungueal, medir o rosto sem contacto e partilhar resultados com o pessoal através da nuvem."></a>
+      <figcaption>Fluxo pré-doação: ler o QR, captar o leito ungueal, medir o rosto sem contacto e partilhar resultados com o pessoal através da nuvem.</figcaption>
+    </figure>
+
+    <h3>Uma unidade para mesa ou suporte de chão</h3>
+    <p>A mesma unidade pode ficar sobre uma mesa ou num suporte próprio com duas alturas selecionadas por pino. Câmaras e iluminação agrupam-se no topo; ecrã e altifalante ficam à frente; e a alimentação pode ser por bateria ou cabo. Propuseram-se frente em PC e PET injetados, traseira termoformada e maquinada, proteção do ecrã em policarbonato e suporte em aço A500. Desenvolveram-se ainda disposição interna, montagem, fabrico e estabilidade do suporte, incluindo análise por elementos finitos.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Vista explodida da unidade de triagem com caixas frontal e traseira, ecrã, câmaras e luzes superiores, altifalante, placa e suportes internos."></a>
+      <figcaption>Vista explodida da unidade de triagem com caixas frontal e traseira, ecrã, câmaras e luzes superiores, altifalante, placa e suportes internos.</figcaption>
+    </figure>
+
+    <h3>Resultado — Reunir medição sem contacto e fluxo do pessoal numa unidade</h3>
+    <p>O design conceptual reúne contextos e requisitos, métodos de medição, fluxo com QR e nuvem, caixas de mesa e de chão, disposição interna, materiais e fabrico, vistas explodidas e análise estrutural. Em vez de alinhar instrumentos separados, liga a sequência do dador e a revisão pelo pessoal como um único serviço.</p>
+    <p class="project-credit">Design Studio, Grupo 11. Trabalho conjunto de Fabio Villano, Bhuvanesh Bari, Takafumi Horiuchi e Joeperdo El Husseini.</p>
+
+    <h3>Apresentação final</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="Apresentação final do dispositivo de triagem, 23 diapositivos com deslocamento horizontal">
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" alt="Diapositivo da apresentação do dispositivo de triagem 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" aria-label="Diapositivo 20, página em branco"><img src="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Diapositivo da apresentação do dispositivo de triagem 23."></a></li>
+      </ol>
+      <figcaption>Diapositivos da apresentação final.</figcaption>
+    </figure>
   </section>
 
   <nav aria-label="Site">
-    <ul>
-      <li><a href="../../">Ir para o portfólio de Takafumi Horiuchi</a></li>
-    </ul>
+    <ul><li><a href="../../">Ir para o portefólio de Takafumi Horiuchi</a></li></ul>
   </nav>
 
   <footer>
@@ -163,5 +349,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Figura ampliada" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fechar a figura ampliada"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Design Studio — 호리우치 다카후미</title>
-<meta name="description" content="석사 과정의 프로젝트. 글은 준비 중.">
+<title>세 가지 Design Studio 프로젝트 — Takafumi Horiuchi</title>
+<meta name="description" content="밀라노 공과대학교 Design &amp; Engineering 석사과정에서 진행한 세 가지 그룹 제품 디자인 프로젝트: 커피 머신, 용접공용 PAPR, 비접촉 헌혈 사전검사 기기.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
@@ -32,28 +24,21 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-design-studio/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-design-studio/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="Design Studio">
-<meta property="og:description" content="글은 준비 중.">
+<meta property="og:title" content="세 가지 Design Studio 프로젝트">
+<meta property="og:description" content="세 학기에 걸쳐 팀으로 설계한 커피 머신, 용접공용 PAPR, 비접촉 헌혈 사전검사 기기.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/masters-project-design-studio/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="공유 업무 공간에 놓인 검정색과 구리색 HUBBLE 커피 머신. 원형 화면에 ‘Hi Luigi’가 표시되어 있다.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +47,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "인지공학 × AI × 디자인",
       "sameAs": [
@@ -72,12 +58,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ko/works/masters-project-design-studio/#work",
-      "name": "Design Studio",
+      "name": "세 가지 Design Studio 프로젝트",
       "url": "https://takafumihoriuchi.github.io/ko/works/masters-project-design-studio/",
-      "description": "석사 과정의 프로젝트. 글은 준비 중.",
-      "creativeWorkStatus": "준비 중",
+      "description": "밀라노 공과대학교 Design & Engineering 석사과정에서 진행한 세 가지 그룹 제품 디자인 프로젝트: 커피 머신, 용접공용 PAPR, 비접촉 헌혈 사전검사 기기.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg",
+      "datePublished": "2020-12",
+      "temporalCoverage": "2019-12/2020-12",
       "inLanguage": "ko",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,58 +78,254 @@
 <main>
 
   <header>
-    <h1>Design Studio</h1>
+    <h1>세 가지 Design Studio 프로젝트</h1>
     <div class="identity">
-      <p class="tagline">제작: <a class="byline" href="../../">호리우치 다카후미 (Takafumi Horiuchi)</a></p>
-      <nav aria-label="다른 곳의 프로필">
+      <p class="tagline">디자인: <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="다른 사이트의 프로필">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">준비 중</p>
+    <p class="dateline">2019년–2020년</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="coffee-brewing" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">       .----------------------------------.
+       |              .--------.          |
+       |              |  (o)   |          |
+       |              &#x27;----+---&#x27;          |
+       |                   |              |
+       &#x27;-------------------|--------------&#x27;
+                           :
+                      ( (  :  ) )
+                       ) .-----. (
+                         |~~~~~|__
+                         |     |  )
+                         &#x27;-----&#x27;-&#x27;</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>개요</h2>
-    <p class="lead">석사 과정의 프로젝트. 글은 준비 중.</p>
+    <p class="lead">밀라노 공과대학교 Design &amp; Engineering 석사과정의 Design Studio 수업에서 학기마다 다른 팀과 함께 작업했다. 각 제품을 문제와 사용자상에서 시작해 형태, 기구, 인터랙션, 제조까지 발전시켰다. 이 페이지는 2019년 겨울부터 2020년 겨울까지 완성한 세 프로젝트를 모은 것이다.</p>
+    <ol class="project-summary">
+      <li><a href="#coffee"><strong>커피 머신 디자인(2019년 겨울)</strong></a><span>HUBBLE은 원형 인터페이스, 가동 노즐, 회전 추출 헤드, 내부 설계와 제작 도면으로 한 대의 공유 머신을 서로 다른 취향에 맞춘다.</span></li>
+      <li><a href="#papr"><strong>용접공을 위한 PAPR 디자인(2020년 여름)</strong></a><span>VCS-20은 기존 용접면과 결합하며 후드, 조끼, 어깨 위 송풍 장치를 하나의 착용 프로토타입으로 통합한다.</span></li>
+      <li><a href="#blood-screening"><strong>헌혈 사전검사 기기 디자인(2020년 겨울)</strong></a><span>DELCON Massachusetts는 체온, 심박수, 혈압, 헤모글로빈의 비접촉 측정과 QR·클라우드 기반 셀프서비스 흐름을 결합한다.</span></li>
+    </ol>
   </section>
 
-  <section>
-    <h2>제약</h2>
+  <hr class="section-break">
+
+  <section id="coffee">
+    <h2>커피 머신 디자인(2019년 겨울)</h2>
+    <h3>문제 — 한 대를 공유하면서도 사람마다 다른 커피를 제공하기</h3>
+    <p>셰어하우스, 코워킹 공간, 사무실에서는 문화와 취향이 다른 사람들이 한 대의 머신을 사용한다. 기존 캡슐 머신은 컵 크기가 제한되고 조작 단서가 불명확하며 맛이 캡슐에 좌우되었다. 매번 세부 설정을 되풀이하는 것도 공유 기기에 부담이다. 그래서 큰 잔의 부드러운 커피를 좋아하는 Maria와 작고 진한 커피를 좋아하는 Mert를 대비시키고, 향·농도·온도·양 조절, 사용자와 레시피 기억, 다양한 컵과 설치 방향, 간단한 보충과 청소를 요구사항으로 정했다.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" alt="공유 공간에 놓인 HUBBLE 제안안. 무광 검정 본체, 구리색 추출 헤드, 원형 조작부와 컵이 보인다."></a>
+      <figcaption>공유 공간에 놓인 HUBBLE 제안안. 무광 검정 본체, 구리색 추출 헤드, 원형 조작부와 컵이 보인다.</figcaption>
+    </figure>
+
+    <h3>디자인한 것 — 사람을 기억하고 하나의 원에 조작을 모은 HUBBLE</h3>
+    <p>HUBBLE은 Bluetooth로 사용자를 인식하고 저장된 레시피를 불러온다. 처음에는 원형 노브를 돌려 향, 농도, 온도 등의 값을 고르고 눌러 확정한다. 선호 음료에 이름을 붙여 저장할 수 있고 추천을 통해 다른 맛도 시도할 수 있다. 화면·회전·누르기를 한 조작부에 모아 전면의 버튼을 줄였다. 노즐은 위아래로 움직여 에스프레소 잔부터 긴 머그까지 추출구와 알맞은 거리를 유지한다.</p>
+
+    <figure class="video-figure bleed">
+      <div class="video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/HzdisHwdnms?start=1" title="HUBBLE 커피 머신 UI·UX 인터랙션 데모" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>사용자 인식, 레시피 선택, 향·농도·온도 조절부터 추출까지를 보여주는 원형 인터페이스 데모.</figcaption>
+    </figure>
+
+    <h3>배치, 보충, 유지관리를 하나의 구조로 해결하기</h3>
+    <p>추출 헤드는 회전하여 카운터의 긴 쪽이나 짧은 쪽 어디에서도 컵을 놓을 수 있다. 물통과 원두통은 위에서 꺼내고 우유통과 찌꺼기통은 앞에서 눌러 연다. 내부에는 그라인더, 펌프, 히터, 추출 기구와 회전 모터를 배치했다. 내부 레이아웃, 3D CAD, 조립도, 부품표와 개별 부품 제작 도면까지 개발했다.</p>
+
+    <figure class="paper-figure drawing-figure">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" data-line-art><img src="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" width="2400" height="1698" loading="lazy" decoding="async" alt="HUBBLE 조립도와 부품표. 외장, 회전 추출 헤드, 원형 조작부와 번호가 매겨진 내부 부품을 보여준다."></a>
+      <figcaption>HUBBLE 조립도와 부품표. 외장, 회전 추출 헤드, 원형 조작부와 번호가 매겨진 내부 부품을 보여준다.</figcaption>
+    </figure>
+
+    <h3>성과 — 외관, 인터랙션, 엔지니어링을 도면 수준에서 연결하기</h3>
+    <p>성과물은 사용 장면과 페르소나, 제품 스타일링, 원형 UI 흐름, 가동·정비 부품, 내부 레이아웃, 3D CAD, 조립도와 부품도를 통합한다. 공유 기기를 ‘모두에게 같은 한 잔을 주는 머신’이 아니라 ‘각자의 취향을 기억하는 머신’으로 다시 정의했다. 자료에서는 실제 머신 제작이나 추출 성능 시험을 확인할 수 없어, 결과는 CAD와 도면으로 구체화한 디자인으로 제시한다.</p>
+    <p class="project-credit">Product Development Design Studio I ‘Coffee Machine’, Group 7. Carla Ayala, Fabio Monza, Ayse Selin Yagsan, Takafumi Horiuchi, Marco Talpo의 공동 작업.</p>
+
+    <h3>최종 프레젠테이션</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="HUBBLE 커피 머신 최종 프레젠테이션, 가로 스크롤 가능한 슬라이드 28장">
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp" width="1600" height="900" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 20."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 23."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 24."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 25."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 26."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 27."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE 커피 머신 프레젠테이션 슬라이드 28."></a></li>
+      </ol>
+      <figcaption>최종 프레젠테이션 슬라이드.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>접근</h2>
+  <hr class="section-break">
+
+  <section id="papr">
+    <h2>용접공을 위한 PAPR 디자인(2020년 여름)</h2>
+    <h3>문제 — 기존 용접면을 유지하면서 호흡을 보호하기</h3>
+    <p>용접공은 흄과 뜨거운 불꽃으로부터 보호받아야 하지만 좁은 작업 공간에서 보호구를 겹쳐 착용하면 절차가 복잡해지고 시야와 움직임을 방해한다. 따라서 기존 용접면에 추가할 수 있고 가볍고 빠르게 착용하는 전동식 공기정화 호흡보호구가 과제였다. 페르소나 Antonio를 바탕으로 여러 용접면과의 적합성, 소형화, 편안함, 교체 가능한 장시간 배터리, 양압, 두 단계 이상의 풍량, 시각·청각 경보, 복합 필터, 120 L/min 이상의 유량을 요구사항으로 삼았다.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20을 착용한 용접공. 용접면, 보호 후드, 조끼와 양 어깨에 놓이는 C자형 송풍 장치가 보인다."></a>
+      <figcaption>VCS-20을 착용한 용접공. 용접면, 보호 후드, 조끼와 양 어깨에 놓이는 C자형 송풍 장치가 보인다.</figcaption>
+    </figure>
+
+    <h3>디자인한 것 — 후드, 조끼, 어깨 장치를 통합한 VCS-20</h3>
+    <p>VCS-20은 범용 후드, 조끼, C자형 PAPR 장치로 구성된다. 난연 면 후드에 신축 패널과 여섯 구역의 Gecko Tape를 더해 서로 다른 용접면에 맞췄고, 휴식할 때는 시스템 전체를 벗지 않고 면만 들어 올릴 수 있다. 조끼가 장치를 고정하고 목 주변의 자석 커넥터가 후드로 공기를 보내며, 뒤와 옆의 가동 관절이 무게를 목에 걸지 않고 양 어깨로 분산한다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 분해도. 외장, 복합 필터, 팬, 관절, 교체식 배터리, 기판, 공기 센서, 조작부와 경보 장치를 보여준다."></a>
+      <figcaption>VCS-20 분해도. 외장, 복합 필터, 팬, 관절, 교체식 배터리, 기판, 공기 센서, 조작부와 경보 장치를 보여준다.</figcaption>
+    </figure>
+
+    <h3>장갑을 낀 채 다루는 조작과 피드백</h3>
+    <p>누르기와 돌리기를 결합한 컨트롤러 하나로 전원과 풍량을 조절한다. 필터와 배터리 상태, 풍량 저하는 빛과 소리로 알린다. 사출 성형 외장, 레이저 커팅 섬유 부품, 재료 선택, 부품 분할과 조립도 검토했다. 착용감과 절차를 확인하기 위해 팀은 실제 크기의 착용 가능한 외관 프로토타입을 제작했다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="실물 크기 VCS-20 착용 프로토타입. 인물이 조끼, 후드, 용접면과 어깨 장치를 착용하고 옆에 개별 부품이 놓여 있다."></a>
+      <figcaption>실물 크기 VCS-20 착용 프로토타입. 인물이 조끼, 후드, 용접면과 어깨 장치를 착용하고 옆에 개별 부품이 놓여 있다.</figcaption>
+    </figure>
+
+    <h3>성과 — 프로토타입으로 몸에 맞는 방식을 확인하기</h3>
+    <p>성과물은 사용자 요구, 착용 시스템, 외관과 내부 구성, 재료와 제조 방법, 실물 크기 착용 프로토타입을 포함한다. PAPR을 독립 송풍기가 아니라 용접면과 의복을 포함한 하나의 웨어러블 제품으로 다뤘다. 자료에는 풍량, 양압, 소음, 배터리 시간, 여과 성능, 안전성이나 용접공 사용성의 측정 결과가 없으므로, 결과는 성능 검증을 마친 제품이 아니라 구체화된 프로토타입이다.</p>
+    <p class="project-credit">Product Development Studio 2, Group 8. Takafumi Horiuchi, Hou Weihuan, Giulia Stevanoni, Marco Luigi Talpo의 공동 작업.</p>
+
+    <h3>최종 프레젠테이션</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="VCS-20 PAPR 최종 프레젠테이션, 가로 스크롤 가능한 슬라이드 20장">
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-01.webp" width="1600" height="900" alt="VCS-20 PAPR 프레젠테이션 슬라이드 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR 프레젠테이션 슬라이드 20."></a></li>
+      </ol>
+      <figcaption>최종 프레젠테이션 슬라이드.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>결과</h2>
+  <hr class="section-break">
+
+  <section id="blood-screening">
+    <h2>헌혈 사전검사 기기 디자인(2020년 겨울)</h2>
+    <h3>문제 — 헌혈자가 접촉 없이 사전 측정을 직접 마치게 하기</h3>
+    <p>헌혈 전에는 체온, 심박수, 혈압, 헤모글로빈을 확인한다. COVID-19 시기에는 공동 측정 장비와 직원과의 가까운 접촉이 위생 우려와 스트레스를 더했다. 북미의 16세 이상 헌혈자가 센터, 이동 장소, 헌혈 버스에서 사용하는 셀프서비스 기기를 제안했다. 주요 요구사항은 비접촉·비침습 측정, 청소하기 쉽고 이동 가능한 형태, 짧은 측정 시간, 종이 없는 기록, 안전한 데이터 공유, 탁상과 입식 사용이었다.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="DELCON Massachusetts 헌혈 사전검사 기기. 큰 화면 위에 머신 비전 카메라, 열화상 카메라와 보조 조명이 배치되어 있다."></a>
+      <figcaption>DELCON Massachusetts 헌혈 사전검사 기기. 큰 화면 위에 머신 비전 카메라, 열화상 카메라와 보조 조명이 배치되어 있다.</figcaption>
+    </figure>
+
+    <h3>디자인한 것 — 세 가지 광학 방식으로 네 가지 지표 측정하기</h3>
+    <p>얼굴 색 변화에서 심박수와 혈압을 추정하는 iPPG, 표면 온도를 읽는 열화상, 손톱바닥 영상과 머신러닝으로 헤모글로빈을 추정하는 방식을 결합했다. 몸에 센서를 부착하거나 채혈하지 않기 위해 선택한 방법이다.</p>
+
+    <div class="spec-table-wrap bleed" tabindex="0" role="region" aria-label="자료에 제시된 측정 방식과 디자인 목표">
+      <table class="spec-table">
+        <caption>자료에 제시된 측정 방식과 가정값이며, 수치는 검증 결과가 아니다.</caption>
+        <thead><tr><th scope="col">측정 항목</th><th scope="col">방식</th><th scope="col">자료의 가정값</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">심박수·혈압</th><td>얼굴 iPPG</td><td>거리 0.5–1 m, 조도 1000–4000 lx, 약 60초. 심박수 ±3 bpm, 수축기 ±0.4 mmHg, 이완기 ±0.2 mmHg.</td></tr>
+          <tr><th scope="row">체온</th><td>열화상</td><td>거리 0.3–1 m, 실시간 측정, ±0.2 °C.</td></tr>
+          <tr><th scope="row">헤모글로빈</th><td>손톱바닥 영상과 머신러닝</td><td>250–3000 lx, 약 15초, ±0.92 g/dL.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>QR 코드에서 결과 공유까지</h3>
+    <p>헌혈자는 사전 등록에서 받은 QR 코드를 스캔하고 위쪽 머신 비전 카메라에 손톱을 보여 헤모글로빈을 추정한다. 이어 같은 카메라와 열화상 카메라 앞에 서서 체온, 심박수, 혈압을 측정한다. 화면과 스피커가 자세와 진행을 안내하고 결과는 직원이 확인할 클라우드 기록에 추가된다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 전 흐름: QR 코드 스캔, 손톱바닥 촬영, 얼굴 비접촉 측정, 클라우드를 통한 직원과의 결과 공유."></a>
+      <figcaption>헌혈 전 흐름: QR 코드 스캔, 손톱바닥 촬영, 얼굴 비접촉 측정, 클라우드를 통한 직원과의 결과 공유.</figcaption>
+    </figure>
+
+    <h3>탁상과 바닥 스탠드에 함께 쓰는 한 대의 기기</h3>
+    <p>같은 기기를 탁자에 바로 놓거나 핀으로 두 높이를 고르는 전용 스탠드에 장착한다. 카메라와 보조 조명은 위쪽, 화면과 스피커는 앞쪽에 모으고 전원은 배터리와 케이블을 모두 고려했다. PC·PET 사출 전면, 열성형·절삭 후면, 폴리카보네이트 화면 커버, A500 강철 스탠드를 후보로 삼았다. 내부 배치, 조립, 제조와 스탠드 안정성을 유한요소해석까지 검토했다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="사전검사 기기 분해도. 앞뒤 외장, 화면, 위쪽 카메라와 조명, 스피커, 기판과 지지 부품을 보여준다."></a>
+      <figcaption>사전검사 기기 분해도. 앞뒤 외장, 화면, 위쪽 카메라와 조명, 스피커, 기판과 지지 부품을 보여준다.</figcaption>
+    </figure>
+
+    <h3>성과 — 비접촉 측정과 직원 업무를 한 기기에 통합하기</h3>
+    <p>콘셉트 디자인은 사용 환경과 요구사항, 측정 방식, QR·클라우드 흐름, 탁상·입식 외장, 내부 배치, 재료와 제조, 분해도와 구조해석을 통합한다. 개별 측정기를 나란히 놓는 대신 헌혈자의 연속 행동과 직원의 확인을 하나의 서비스로 연결했다.</p>
+    <p class="project-credit">Design Studio, Group 11. Fabio Villano, Bhuvanesh Bari, Takafumi Horiuchi, Joeperdo El Husseini의 공동 작업.</p>
+
+    <h3>최종 프레젠테이션</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="헌혈 사전검사 기기 최종 프레젠테이션, 가로 스크롤 가능한 슬라이드 23장">
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" aria-label="슬라이드 20, 빈 페이지"><img src="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="헌혈 사전검사 기기 프레젠테이션 슬라이드 23."></a></li>
+      </ol>
+      <figcaption>최종 프레젠테이션 슬라이드.</figcaption>
+    </figure>
   </section>
 
   <nav aria-label="사이트">
-    <ul>
-      <li><a href="../../">호리우치 다카후미의 포트폴리오로 이동</a></li>
-    </ul>
+    <ul><li><a href="../../">Takafumi Horiuchi의 포트폴리오로</a></li></ul>
   </nav>
 
   <footer>
@@ -163,5 +349,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="확대된 그림" hidden>
+  <button class="lightbox__close" type="button" aria-label="확대된 그림 닫기"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

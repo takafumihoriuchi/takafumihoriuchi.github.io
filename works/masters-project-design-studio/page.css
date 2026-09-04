@@ -1,6 +1,4 @@
-/* Shared by every language version of this work. The Japanese page is the
-   first completed edition; the remaining language editions stay as scaffolds
-   until their translations are reviewed. */
+/* Shared by every language version of this work. */
 
 .lead { font-size: 1.059em; }
 
@@ -14,47 +12,9 @@
 
 section[id] { scroll-margin-top: 2rem; }
 
-/* This Japanese-only scene stays local to the completed page, so publishing it
-   does not rewrite the untranslated editions. Four equal-sized text frames
-   cycle in the same grid cell; the last frame remains still for readers who
-   request reduced motion. */
+/* This scene uses twelve rows so the cup and its steam need a taller stage
+   than the site's ordinary seven-row heroes. */
 ascii-hero[data-scene="coffee-brewing"] { aspect-ratio: 2.5 / 1; }
-
-ascii-hero.coffee-brewing-ascii .coffee-brewing__frame {
-  grid-area: 1 / 1;
-  opacity: 0;
-  font-size: min(0.9rem, 2.2vw);
-  animation: coffee-brewing-frames 2.24s steps(1, end) infinite;
-}
-
-ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:nth-child(2) {
-  animation-delay: 0.56s;
-}
-
-ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:nth-child(3) {
-  animation-delay: 1.12s;
-}
-
-ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:nth-child(4) {
-  animation-delay: 1.68s;
-}
-
-@keyframes coffee-brewing-frames {
-  0%, 24.99% { opacity: 1; }
-  25%, 100% { opacity: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  ascii-hero.coffee-brewing-ascii .coffee-brewing__frame {
-    display: none;
-    animation: none;
-  }
-
-  ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:last-child {
-    display: block;
-    opacity: 1;
-  }
-}
 
 section p,
 figcaption {

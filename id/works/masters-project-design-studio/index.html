@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Design Studio — Takafumi Horiuchi</title>
-<meta name="description" content="Proyek dari program magister. Tulisannya sedang disiapkan.">
+<title>Tiga Proyek Design Studio — Takafumi Horiuchi</title>
+<meta name="description" content="Tiga proyek kelompok desain produk dari program magister Design &amp; Engineering di Politecnico di Milano: mesin kopi, PAPR untuk juru las, dan perangkat skrining donor darah tanpa sentuhan.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
@@ -32,28 +24,21 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-design-studio/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-design-studio/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="id_ID">
-<meta property="og:title" content="Design Studio">
-<meta property="og:description" content="Tulisannya sedang disiapkan.">
+<meta property="og:title" content="Tiga Proyek Design Studio">
+<meta property="og:description" content="Mesin kopi, PAPR untuk juru las, dan perangkat skrining tanpa sentuhan yang dirancang berkelompok selama tiga semester.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/masters-project-design-studio/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Mesin kopi HUBBLE berwarna hitam dan tembaga di ruang kerja bersama, dengan tulisan Hi Luigi pada layar bundar.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Rekayasa Kognitif × AI × Desain",
+      "description": "Rekayasa kognitif × AI × desain",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -72,12 +58,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/id/works/masters-project-design-studio/#work",
-      "name": "Design Studio",
+      "name": "Tiga Proyek Design Studio",
       "url": "https://takafumihoriuchi.github.io/id/works/masters-project-design-studio/",
-      "description": "Proyek dari program magister. Tulisannya sedang disiapkan.",
-      "creativeWorkStatus": "Sedang disiapkan",
+      "description": "Tiga proyek kelompok desain produk dari program magister Design & Engineering di Politecnico di Milano: mesin kopi, PAPR untuk juru las, dan perangkat skrining donor darah tanpa sentuhan.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg",
+      "datePublished": "2020-12",
+      "temporalCoverage": "2019-12/2020-12",
       "inLanguage": "id",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,58 +78,254 @@
 <main>
 
   <header>
-    <h1>Design Studio</h1>
+    <h1>Tiga Proyek Design Studio</h1>
     <div class="identity">
-      <p class="tagline">oleh <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Profil di tempat lain">
+      <p class="tagline">Desain oleh: <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="Profil di situs lain">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">Sedang disiapkan</p>
+    <p class="dateline">2019–2020</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="coffee-brewing" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">       .----------------------------------.
+       |              .--------.          |
+       |              |  (o)   |          |
+       |              &#x27;----+---&#x27;          |
+       |                   |              |
+       &#x27;-------------------|--------------&#x27;
+                           :
+                      ( (  :  ) )
+                       ) .-----. (
+                         |~~~~~|__
+                         |     |  )
+                         &#x27;-----&#x27;-&#x27;</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Ringkasan</h2>
-    <p class="lead">Proyek dari program magister. Tulisannya sedang disiapkan.</p>
+    <p class="lead">Selama program magister Design &amp; Engineering di Politecnico di Milano, saya bergabung dengan tim yang berbeda pada setiap semester Design Studio. Setiap produk dikembangkan dari masalah dan profil pengguna hingga bentuk, mekanisme, interaksi, dan manufaktur. Halaman ini merangkum tiga proyek yang dikerjakan dari musim dingin 2019 hingga musim dingin 2020.</p>
+    <ol class="project-summary">
+      <li><a href="#coffee"><strong>Desain mesin kopi (musim dingin 2019)</strong></a><span>HUBBLE menyesuaikan satu mesin bersama untuk selera berbeda melalui antarmuka bundar, nosel bergerak, kepala penyeduh berputar, rekayasa internal, dan gambar produksi.</span></li>
+      <li><a href="#papr"><strong>Desain PAPR untuk juru las (musim panas 2020)</strong></a><span>VCS-20 dipadukan dengan pelindung las yang sudah ada dan menyatukan tudung, rompi, serta unit peniup di bahu dalam prototipe yang dapat dikenakan.</span></li>
+      <li><a href="#blood-screening"><strong>Desain perangkat skrining donor darah (musim dingin 2020)</strong></a><span>DELCON Massachusetts menggabungkan skrining suhu, denyut jantung, tekanan darah, dan hemoglobin tanpa sentuhan dengan alur mandiri berbasis QR dan cloud.</span></li>
+    </ol>
   </section>
 
-  <section>
-    <h2>Batasan</h2>
+  <hr class="section-break">
+
+  <section id="coffee">
+    <h2>Desain mesin kopi (musim dingin 2019)</h2>
+    <h3>Masalah — Berbagi satu mesin tanpa memberikan kopi yang sama kepada semua orang</h3>
+    <p>Di hunian bersama, ruang coworking, dan kantor, satu mesin digunakan orang dengan budaya dan selera berbeda. Mesin kapsul yang ada membatasi ukuran cangkir, memiliki petunjuk kendali yang kurang jelas, dan rasanya bergantung pada kapsul; mengulang pengaturan rinci untuk setiap minuman juga merepotkan pada perangkat bersama. Karena itu kami membandingkan Maria, yang menyukai kopi besar dan ringan, dengan Mert, yang memilih kopi kecil dan kuat, lalu menetapkan kebutuhan akan aroma, kekuatan, suhu, dan volume yang dapat diatur; ingatan pengguna dan resep; beragam cangkir dan orientasi; serta pengisian dan pembersihan yang mudah.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" alt="Usulan mesin HUBBLE di ruang bersama, dengan badan hitam matte, kepala penyeduh warna tembaga, kontrol bundar, dan cangkir."></a>
+      <figcaption>Usulan mesin HUBBLE di ruang bersama, dengan badan hitam matte, kepala penyeduh warna tembaga, kontrol bundar, dan cangkir.</figcaption>
+    </figure>
+
+    <h3>Yang kami rancang — HUBBLE mengingat pengguna dan memusatkan kendali dalam satu lingkaran</h3>
+    <p>HUBBLE memakai Bluetooth untuk mengenali pengguna dan memanggil resep tersimpan. Saat pertama digunakan, kenop bundar diputar untuk memilih aroma, kekuatan, suhu, dan parameter lain, lalu ditekan untuk mengonfirmasi. Minuman favorit dapat diberi nama dan disimpan, sementara rekomendasi menawarkan pilihan lain. Menggabungkan layar, putaran, dan tekanan dalam satu kontrol mencegah panel depan dipenuhi tombol. Nosel bergerak vertikal untuk menjaga jarak yang tepat dari cangkir espresso hingga mug tinggi.</p>
+
+    <figure class="video-figure bleed">
+      <div class="video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/HzdisHwdnms?start=1" title="Demo interaksi UI dan UX mesin kopi HUBBLE" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>Demo antarmuka bundar yang menunjukkan pengenalan pengguna, pemilihan resep, pengaturan aroma, kekuatan, dan suhu, hingga proses penyeduhan.</figcaption>
+    </figure>
+
+    <h3>Satu struktur untuk penempatan, pengisian, dan perawatan</h3>
+    <p>Kepala penyeduh berputar agar cangkir dapat diletakkan dari sisi panjang atau pendek meja. Tangki air dan biji kopi diangkat dari atas, sedangkan wadah susu dan ampas dibuka dengan tekanan dari depan. Di dalam bodi terdapat penggiling, pompa, pemanas, mekanisme penyeduh, dan motor putar. Kami mengembangkan tata letak internal, CAD 3D, gambar rakitan, daftar komponen, dan gambar produksi setiap bagian.</p>
+
+    <figure class="paper-figure drawing-figure">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" data-line-art><img src="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" width="2400" height="1698" loading="lazy" decoding="async" alt="Gambar rakitan dan daftar komponen HUBBLE yang menunjukkan bodi, kepala penyeduh berputar, kontrol bundar, dan komponen internal bernomor."></a>
+      <figcaption>Gambar rakitan dan daftar komponen HUBBLE yang menunjukkan bodi, kepala penyeduh berputar, kontrol bundar, dan komponen internal bernomor.</figcaption>
+    </figure>
+
+    <h3>Hasil — Menghubungkan tampilan, interaksi, dan rekayasa hingga tingkat gambar</h3>
+    <p>Hasilnya menggabungkan skenario dan persona, gaya produk, alur antarmuka bundar, bagian bergerak dan perawatan, tata letak internal, CAD 3D, serta gambar rakitan dan komponen. Perangkat bersama dirumuskan ulang, bukan sebagai mesin yang memberi cangkir sama kepada semua orang, melainkan mesin yang mengingat selera tiap pengguna. Materi sumber tidak memastikan adanya mesin fisik atau pengujian ekstraksi, sehingga hasil disajikan sebagai desain yang diwujudkan melalui CAD dan gambar.</p>
+    <p class="project-credit">Product Development Design Studio I ‘Coffee Machine’, Group 7. Karya bersama Carla Ayala, Fabio Monza, Ayse Selin Yagsan, Takafumi Horiuchi, dan Marco Talpo.</p>
+
+    <h3>Presentasi akhir</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="Presentasi akhir mesin HUBBLE, 28 slide yang dapat digulir horizontal">
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp" width="1600" height="900" alt="Slide presentasi mesin HUBBLE 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 20."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 23."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 24."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 25."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 26."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 27."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi mesin HUBBLE 28."></a></li>
+      </ol>
+      <figcaption>Slide presentasi akhir.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>Pendekatan</h2>
+  <hr class="section-break">
+
+  <section id="papr">
+    <h2>Desain PAPR untuk juru las (musim panas 2020)</h2>
+    <h3>Masalah — Melindungi pernapasan sambil mempertahankan pelindung las yang ada</h3>
+    <p>Juru las memerlukan perlindungan dari asap dan percikan panas, tetapi lapisan perlengkapan di ruang sempit menyulitkan pemakaian dan membatasi pandangan serta gerak. Tantangannya adalah respirator pemurni udara bertenaga yang ringan, cepat dipakai, dan dapat ditambahkan ke pelindung las yang ada. Persona Antonio membentuk kebutuhan akan kompatibilitas dengan berbagai pelindung, bentuk ringkas, kenyamanan, baterai tahan lama yang dapat diganti, tekanan positif, sedikitnya dua tingkat aliran, alarm visual dan suara, filter gabungan, dan aliran di atas 120 L/min.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Juru las memakai VCS-20: pelindung las, tudung pelindung, rompi, dan unit peniup berbentuk C yang bertumpu di bahu."></a>
+      <figcaption>Juru las memakai VCS-20: pelindung las, tudung pelindung, rompi, dan unit peniup berbentuk C yang bertumpu di bahu.</figcaption>
+    </figure>
+
+    <h3>Yang kami rancang — VCS-20 menyatukan tudung, rompi, dan unit bahu</h3>
+    <p>VCS-20 menggabungkan tudung universal, rompi, dan unit PAPR berbentuk C. Panel elastis dan enam bagian Gecko Tape menyesuaikan tudung katun tahan api ke pelindung yang berbeda; saat jeda, hanya pelindung yang perlu diangkat. Rompi menstabilkan sistem, konektor magnetik di leher menyalurkan udara ke tudung, dan sendi belakang serta samping membagi beban ke kedua bahu alih-alih menggantungnya di leher.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Gambar uraian VCS-20 dengan bodi, filter gabungan, kipas, sendi, baterai yang dapat diganti, papan sirkuit, sensor udara, kontrol, dan alarm."></a>
+      <figcaption>Gambar uraian VCS-20 dengan bodi, filter gabungan, kipas, sendi, baterai yang dapat diganti, papan sirkuit, sensor udara, kontrol, dan alarm.</figcaption>
+    </figure>
+
+    <h3>Kontrol dan umpan balik yang tetap dapat dipakai dengan sarung tangan</h3>
+    <p>Kontrol tekan-putar menyatukan daya dan pengaturan aliran. Sinyal visual dan suara menyampaikan kondisi filter dan baterai serta penurunan aliran. Usulan ini juga mempertimbangkan bodi cetak injeksi, tekstil potong laser, pemilihan material, pembagian bagian, dan perakitan. Untuk memeriksa kesesuaian dan urutan pemakaian, tim membuat prototipe tampilan yang dapat dikenakan dalam ukuran penuh.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Prototipe VCS-20 ukuran penuh yang dapat dikenakan, dengan seseorang memakai rompi, tudung, pelindung las, dan unit bahu di samping tampilan komponen terpisah."></a>
+      <figcaption>Prototipe VCS-20 ukuran penuh yang dapat dikenakan, dengan seseorang memakai rompi, tudung, pelindung las, dan unit bahu di samping tampilan komponen terpisah.</figcaption>
+    </figure>
+
+    <h3>Hasil — Memeriksa bagaimana sistem bertumpu pada tubuh melalui prototipe</h3>
+    <p>Hasil proyek mencakup kebutuhan pengguna, sistem pemakaian, konfigurasi luar dan dalam, material dan manufaktur, serta prototipe ukuran penuh. PAPR diperlakukan sebagai satu produk yang mencakup pelindung dan pakaian, bukan peniup yang berdiri sendiri. Sumber tidak memuat hasil terukur untuk aliran, tekanan positif, kebisingan, daya tahan baterai, filtrasi, keselamatan, atau kegunaan bersama juru las; hasilnya adalah prototipe yang dikembangkan, bukan produk dengan kinerja tervalidasi.</p>
+    <p class="project-credit">Product Development Studio 2, Group 8. Karya bersama Takafumi Horiuchi, Hou Weihuan, Giulia Stevanoni, dan Marco Luigi Talpo.</p>
+
+    <h3>Presentasi akhir</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="Presentasi akhir PAPR VCS-20, 20 slide yang dapat digulir horizontal">
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-01.webp" width="1600" height="900" alt="Slide presentasi PAPR VCS-20 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi PAPR VCS-20 20."></a></li>
+      </ol>
+      <figcaption>Slide presentasi akhir.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>Hasil</h2>
+  <hr class="section-break">
+
+  <section id="blood-screening">
+    <h2>Desain perangkat skrining donor darah (musim dingin 2020)</h2>
+    <h3>Masalah — Memungkinkan donor menyelesaikan pengukuran awal tanpa sentuhan</h3>
+    <p>Sebelum mendonor, suhu, denyut jantung, tekanan darah, dan hemoglobin diperiksa. Selama COVID-19, peralatan bersama dan kedekatan dengan petugas menambah kekhawatiran kebersihan dan stres. Kami mengusulkan unit mandiri untuk donor berusia 16 tahun ke atas di Amerika Utara, untuk pusat donor, lokasi bergerak, dan bus. Kebutuhan utamanya adalah pengukuran tanpa sentuhan dan noninvasif, bentuk portabel yang mudah dibersihkan, waktu singkat, catatan tanpa kertas, berbagi data yang aman, serta penggunaan di meja maupun berdiri.</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Unit skrining pra-donor DELCON Massachusetts dengan layar besar serta kamera machine vision, kamera termal, dan lampu bantu di bagian atas."></a>
+      <figcaption>Unit skrining pra-donor DELCON Massachusetts dengan layar besar serta kamera machine vision, kamera termal, dan lampu bantu di bagian atas.</figcaption>
+    </figure>
+
+    <h3>Yang kami rancang — Empat indikator melalui tiga metode optik</h3>
+    <p>Konsep ini menggabungkan iPPG untuk memperkirakan denyut jantung dan tekanan darah dari perubahan warna wajah, termografi untuk suhu permukaan, serta kamera dan machine learning untuk memperkirakan hemoglobin dari dasar kuku. Metode tersebut dipilih agar tidak perlu memasang sensor pada tubuh atau mengambil darah.</p>
+
+    <div class="spec-table-wrap bleed" tabindex="0" role="region" aria-label="Metode pengukuran dan sasaran desain yang tercantum dalam sumber">
+      <table class="spec-table">
+        <caption>Metode dan nilai asumsi dalam sumber; angka-angka ini bukan hasil validasi.</caption>
+        <thead><tr><th scope="col">Pengukuran</th><th scope="col">Metode</th><th scope="col">Nilai asumsi dalam sumber</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">Denyut jantung dan tekanan darah</th><td>iPPG wajah</td><td>Jarak 0,5–1 m; 1000–4000 lx; sekitar 60 detik. Denyut ±3 bpm; sistolik ±0,4 mmHg; diastolik ±0,2 mmHg.</td></tr>
+          <tr><th scope="row">Suhu</th><td>Termografi</td><td>Jarak 0,3–1 m; pengukuran waktu nyata; ±0,2 °C.</td></tr>
+          <tr><th scope="row">Hemoglobin</th><td>Citra dasar kuku dan machine learning</td><td>250–3000 lx; sekitar 15 detik; ±0,92 g/dL.</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>Dari kode QR hingga hasil dibagikan</h3>
+    <p>Donor memindai QR dari prapendaftaran, menunjukkan kuku ke kamera atas untuk memperkirakan hemoglobin, lalu berdiri di depan kamera yang sama dan kamera termal untuk mengukur suhu, denyut, dan tekanan darah. Layar dan pengeras suara memandu posisi dan kemajuan; hasil ditambahkan ke catatan cloud untuk diperiksa petugas.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Alur pra-donor: memindai QR, mengambil citra dasar kuku, mengukur wajah tanpa sentuhan, dan berbagi hasil dengan petugas melalui cloud."></a>
+      <figcaption>Alur pra-donor: memindai QR, mengambil citra dasar kuku, mengukur wajah tanpa sentuhan, dan berbagi hasil dengan petugas melalui cloud.</figcaption>
+    </figure>
+
+    <h3>Satu unit untuk meja atau penyangga lantai</h3>
+    <p>Unit yang sama dapat diletakkan di meja atau dipasang pada penyangga khusus dengan dua tinggi yang dipilih memakai pin. Kamera dan lampu bantu dikelompokkan di atas, layar dan pengeras suara di depan, dengan daya dari baterai atau kabel. Metode yang diusulkan meliputi bagian depan PC dan PET cetak injeksi, belakang termoform dan pemesinan, penutup layar polikarbonat, serta penyangga baja A500. Tata letak internal, perakitan, manufaktur, dan kestabilan penyangga dikembangkan hingga analisis elemen hingga.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Gambar uraian unit skrining yang menunjukkan bodi depan dan belakang, layar, kamera dan lampu atas, pengeras suara, papan sirkuit, dan bagian penyangga."></a>
+      <figcaption>Gambar uraian unit skrining yang menunjukkan bodi depan dan belakang, layar, kamera dan lampu atas, pengeras suara, papan sirkuit, dan bagian penyangga.</figcaption>
+    </figure>
+
+    <h3>Hasil — Menyatukan pengukuran tanpa sentuhan dan alur kerja petugas dalam satu unit</h3>
+    <p>Desain konsep menyatukan konteks dan kebutuhan, metode pengukuran, alur QR dan cloud, bodi meja dan berdiri, tata letak internal, material dan manufaktur, gambar uraian, serta analisis struktur. Alih-alih menjejerkan alat terpisah, desain ini menghubungkan rangkaian tindakan donor dan pemeriksaan petugas sebagai satu layanan.</p>
+    <p class="project-credit">Design Studio, Group 11. Karya bersama Fabio Villano, Bhuvanesh Bari, Takafumi Horiuchi, dan Joeperdo El Husseini.</p>
+
+    <h3>Presentasi akhir</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="Presentasi akhir perangkat skrining, 23 slide yang dapat digulir horizontal">
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" alt="Slide presentasi perangkat skrining 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" aria-label="Slide 20, halaman kosong"><img src="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="Slide presentasi perangkat skrining 23."></a></li>
+      </ol>
+      <figcaption>Slide presentasi akhir.</figcaption>
+    </figure>
   </section>
 
   <nav aria-label="Situs">
-    <ul>
-      <li><a href="../../">Ke portofolio Takafumi Horiuchi</a></li>
-    </ul>
+    <ul><li><a href="../../">Ke portofolio Takafumi Horiuchi</a></li></ul>
   </nav>
 
   <footer>
@@ -163,5 +349,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Gambar diperbesar" hidden>
+  <button class="lightbox__close" type="button" aria-label="Tutup gambar yang diperbesar"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

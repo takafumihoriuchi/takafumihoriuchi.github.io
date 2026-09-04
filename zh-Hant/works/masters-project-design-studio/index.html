@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Design Studio — 堀內貴文</title>
-<meta name="description" content="碩士期間的專案。記錄正在籌備中。">
+<title>三個Design Studio專案 — Takafumi Horiuchi</title>
+<meta name="description" content="米蘭理工大學Design &amp; Engineering碩士課程中的三個小組產品設計專案：咖啡機、焊工用PAPR，以及非接觸式捐血篩檢裝置。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-design-studio/">
@@ -32,28 +24,21 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-design-studio/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-design-studio/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="Design Studio">
-<meta property="og:description" content="記錄正在籌備中。">
+<meta property="og:title" content="三個Design Studio專案">
+<meta property="og:description" content="在三個學期中以小組形式完成的咖啡機、焊工用PAPR和非接觸式捐血篩檢裝置設計。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-design-studio/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="共享辦公空間中的黑色與銅色HUBBLE咖啡機，圓形螢幕顯示「Hi Luigi」。">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +47,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "認知工程 × AI × 設計",
       "sameAs": [
@@ -72,12 +58,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-design-studio/#work",
-      "name": "Design Studio",
+      "name": "三個Design Studio專案",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-design-studio/",
-      "description": "碩士期間的專案。記錄正在籌備中。",
-      "creativeWorkStatus": "籌備中",
+      "description": "米蘭理工大學Design & Engineering碩士課程中的三個小組產品設計專案：咖啡機、焊工用PAPR，以及非接觸式捐血篩檢裝置。",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-design-studio/assets/og.jpg",
+      "datePublished": "2020-12",
+      "temporalCoverage": "2019-12/2020-12",
       "inLanguage": "zh-Hant",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,58 +78,254 @@
 <main>
 
   <header>
-    <h1>Design Studio</h1>
+    <h1>三個Design Studio專案</h1>
     <div class="identity">
-      <p class="tagline">作者：<a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
-      <nav aria-label="其他平台的主頁">
+      <p class="tagline">設計： <a class="byline" href="../../">Takafumi Horiuchi</a></p>
+      <nav aria-label="其他平台上的個人資料">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">籌備中</p>
+    <p class="dateline">2019年—2020年</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="coffee-brewing" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">       .----------------------------------.
+       |              .--------.          |
+       |              |  (o)   |          |
+       |              &#x27;----+---&#x27;          |
+       |                   |              |
+       &#x27;-------------------|--------------&#x27;
+                           :
+                      ( (  :  ) )
+                       ) .-----. (
+                         |~~~~~|__
+                         |     |  )
+                         &#x27;-----&#x27;-&#x27;</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>概覽</h2>
-    <p class="lead">碩士期間的專案。記錄正在籌備中。</p>
+    <h2>概述</h2>
+    <p class="lead">在米蘭理工大學Design &amp; Engineering碩士課程就讀期間，我在每學期的Design Studio中加入不同團隊。每個專案都從問題與使用者輪廓出發，推進到造型、機構、互動與製造。本頁彙整2019年冬季至2020年冬季完成的三個專案。</p>
+    <ol class="project-summary">
+      <li><a href="#coffee"><strong>咖啡機設計（2019年冬季）</strong></a><span>HUBBLE讓一台共享咖啡機適應不同口味，並完成圓形介面、可動噴嘴、旋轉出液頭、內部機構與生產圖面的設計。</span></li>
+      <li><a href="#papr"><strong>焊工用PAPR設計（2020年夏季）</strong></a><span>VCS-20可與既有焊接面罩組合，將頭罩、背心與肩載送風單元整合成可穿戴原型。</span></li>
+      <li><a href="#blood-screening"><strong>捐血篩檢裝置設計（2020年冬季）</strong></a><span>DELCON Massachusetts把非接觸式體溫、心率、血壓與血紅素篩檢，和QR碼及雲端自助流程結合。</span></li>
+    </ol>
   </section>
 
-  <section>
-    <h2>約束</h2>
+  <hr class="section-break">
+
+  <section id="coffee">
+    <h2>咖啡機設計（2019年冬季）</h2>
+    <h3>問題 — 共享一台機器，同時為每個人沖煮不同的咖啡</h3>
+    <p>在合租住宅、共享工作空間與辦公室裡，一台機器要服務文化與偏好各不相同的人。現有膠囊咖啡機的杯型選擇有限、操作提示不清楚，風味也受膠囊限制；若每杯都重新進行細部設定，共享設備又會變得繁瑣。因此，我們設定偏愛大杯清淡咖啡的Maria與偏愛小杯濃咖啡的Mert兩種對照使用者，提出可調香氣、濃度、溫度與容量，記憶使用者與配方，適配不同杯型與擺放方向，以及容易補充與清潔等要求。</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" alt="共享空間中的HUBBLE咖啡機提案，採用霧黑機身、銅色出液頭、圓形控制器，並放置咖啡杯。"></a>
+      <figcaption>共享空間中的HUBBLE咖啡機提案，採用霧黑機身、銅色出液頭、圓形控制器，並放置咖啡杯。</figcaption>
+    </figure>
+
+    <h3>設計內容 — 記住使用者，並把操作集中在一個圓形介面中的HUBBLE</h3>
+    <p>HUBBLE透過Bluetooth辨識使用者並叫出已儲存的配方。首次使用時，轉動圓形旋鈕選擇香氣、濃度、溫度等參數，再按下確認；喜愛的飲品可以命名儲存，也可從推薦中嘗試其他口味。螢幕、旋轉與按壓集中在同一控制器上，避免共享設備正面布滿按鈕。噴嘴可上下移動，使出液口與義式小杯或高杯保持適當距離。</p>
+
+    <figure class="video-figure bleed">
+      <div class="video-embed">
+        <iframe src="https://www.youtube-nocookie.com/embed/HzdisHwdnms?start=1" title="HUBBLE咖啡機UI與UX互動示範" loading="lazy" allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture; web-share" referrerpolicy="strict-origin-when-cross-origin" allowfullscreen></iframe>
+      </div>
+      <figcaption>圓形介面的互動示範，呈現使用者辨識、配方選擇、香氣、濃度與溫度調整，以及進入沖煮的流程。</figcaption>
+    </figure>
+
+    <h3>以一個結構處理擺放、補充與維護</h3>
+    <p>出液頭可以旋轉，讓杯子從檯面的長邊或短邊接近。水箱與豆槽從上方取出，奶盒與廢渣盒則從正面按壓開啟。機殼內部還容納磨豆機、水泵、加熱器、沖煮機構與旋轉馬達。我們完成內部配置、3D CAD、組立圖、零件表，以及各零件的製造圖。</p>
+
+    <figure class="paper-figure drawing-figure">
+      <a href="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" data-line-art><img src="../../../works/masters-project-design-studio/assets/coffee-assembly-drawing.webp" width="2400" height="1698" loading="lazy" decoding="async" alt="HUBBLE組立圖與零件表，呈現機殼、旋轉出液頭、圓形控制器及帶編號的內部零件。"></a>
+      <figcaption>HUBBLE組立圖與零件表，呈現機殼、旋轉出液頭、圓形控制器及帶編號的內部零件。</figcaption>
+    </figure>
+
+    <h3>成果 — 在圖面層級連接外觀、互動與工程</h3>
+    <p>最終成果整合使用情境與人物誌、產品造型、圓形介面流程、可動與維護零件、內部配置、3D CAD、組立圖與零件圖。它把共享設備從「為所有人提供同一杯咖啡的機器」重新定義為「記住每個人偏好的機器」。原始資料無法確認實體整機或萃取性能測試，因此成果以透過CAD與圖面具體化的設計呈現。</p>
+    <p class="project-credit">Product Development Design Studio I「Coffee Machine」，第7組。Carla Ayala、Fabio Monza、Ayse Selin Yagsan、Takafumi Horiuchi與Marco Talpo共同完成。</p>
+
+    <h3>最終簡報</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="HUBBLE咖啡機最終簡報，共28張可橫向捲動的投影片">
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-01.webp" width="1600" height="900" alt="HUBBLE咖啡機簡報投影片 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 20."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 23."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-24.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 24."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-25.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 25."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-26.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 26."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-27.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 27."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp"><img src="../../../works/masters-project-design-studio/assets/coffee-slide-28.webp" width="1600" height="900" loading="lazy" decoding="async" alt="HUBBLE咖啡機簡報投影片 28."></a></li>
+      </ol>
+      <figcaption>最終簡報的投影片。</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>方法</h2>
+  <hr class="section-break">
+
+  <section id="papr">
+    <h2>焊工用PAPR設計（2020年夏季）</h2>
+    <h3>問題 — 保留既有焊接面罩，同時保護呼吸</h3>
+    <p>焊工需要防護煙塵與高溫火花，但在狹小作業空間疊加多件防護裝備，會讓穿戴更複雜並妨礙視野與動作。因此課題是設計一種輕量、可快速穿脫，且能加裝到既有焊接面罩的電動送風過濾式呼吸器。以焊工Antonio為人物誌，要求包含相容不同面罩、緊湊舒適、可更換長續航電池、正壓、至少兩段風量、視覺與聲音警報、複合濾材，以及超過120 L/min的風量。</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="焊工穿戴VCS-20的效果圖：焊接面罩、防護頭罩、背心，以及橫跨雙肩的C形送風單元。"></a>
+      <figcaption>焊工穿戴VCS-20的效果圖：焊接面罩、防護頭罩、背心，以及橫跨雙肩的C形送風單元。</figcaption>
+    </figure>
+
+    <h3>設計內容 — VCS-20整合頭罩、背心與肩載單元</h3>
+    <p>VCS-20由通用頭罩、背心與C形PAPR單元組成。阻燃棉頭罩結合彈性布料與六段Gecko Tape，以適配不同焊接面罩；休息時可只掀起面罩，不必脫下整套系統。背心穩定裝置，頸部磁吸接頭向頭罩供氣，後部與側部的活動關節則把送風單元重量分散到雙肩，而不是懸掛在頸部。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20分解圖，呈現外殼、複合濾材、風扇、關節、可更換電池、電路板、空氣感測器、控制器與警報零件。"></a>
+      <figcaption>VCS-20分解圖，呈現外殼、複合濾材、風扇、關節、可更換電池、電路板、空氣感測器、控制器與警報零件。</figcaption>
+    </figure>
+
+    <h3>戴著手套也能操作的控制與回饋</h3>
+    <p>按壓與旋轉結合的控制器把電源和風量調整集中在一處。濾材、電池狀態與風量下降透過視覺及聲音回饋傳達。提案也考慮射出成形外殼、雷射切割織物、材料選擇、零件分割與組裝。團隊製作全尺寸可穿戴外觀原型，用來檢查貼合與穿戴流程。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20全尺寸可穿戴原型：人物穿著背心、頭罩、焊接面罩與肩載單元，旁邊展示獨立零件。"></a>
+      <figcaption>VCS-20全尺寸可穿戴原型：人物穿著背心、頭罩、焊接面罩與肩載單元，旁邊展示獨立零件。</figcaption>
+    </figure>
+
+    <h3>成果 — 透過原型檢查系統在身體上的貼合</h3>
+    <p>成果包括使用者需求、穿戴系統、外觀與內部結構、材料與製造方式，以及全尺寸可穿戴原型。PAPR不再只是獨立送風機，而是和面罩及服裝共同構成一個可穿戴產品。原始資料沒有風量、正壓、噪音、電池續航、過濾、安全性或焊工可用性測試的量測結果，因此成果是深入發展的原型，而非性能已驗證的成品。</p>
+    <p class="project-credit">Product Development Studio 2，第8組。Takafumi Horiuchi、Hou Weihuan、Giulia Stevanoni與Marco Luigi Talpo共同完成。</p>
+
+    <h3>最終簡報</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="VCS-20 PAPR最終簡報，共20張可橫向捲動的投影片">
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-01.webp" width="1600" height="900" alt="VCS-20 PAPR簡報投影片 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/papr-slide-20.webp"><img src="../../../works/masters-project-design-studio/assets/papr-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt="VCS-20 PAPR簡報投影片 20."></a></li>
+      </ol>
+      <figcaption>最終簡報的投影片。</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>結果</h2>
+  <hr class="section-break">
+
+  <section id="blood-screening">
+    <h2>捐血篩檢裝置設計（2020年冬季）</h2>
+    <h3>問題 — 讓捐血者在無接觸的情況下獨立完成捐血前量測</h3>
+    <p>捐血前需要檢查體溫、心率、血壓與血紅素。COVID-19期間，共用設備和與工作人員近距離接觸增加了衛生疑慮與心理壓力。我們為北美16歲以上捐血者提出自助終端，可用於捐血中心、流動場地及捐血車。主要要求是非接觸、非侵入式量測，容易清潔且便攜的造型，較短量測時間，無紙化紀錄，安全的資料共享，以及桌面與站立兩種使用方式。</p>
+
+    <figure class="paper-figure project-render">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" loading="lazy" decoding="async" alt="DELCON Massachusetts捐血前篩檢終端，配有大型螢幕，以及位於上部的機器視覺相機、熱影像相機與輔助照明。"></a>
+      <figcaption>DELCON Massachusetts捐血前篩檢終端，配有大型螢幕，以及位於上部的機器視覺相機、熱影像相機與輔助照明。</figcaption>
+    </figure>
+
+    <h3>設計內容 — 用三種光學方式量測四項指標</h3>
+    <p>概念結合三種方法：利用臉部色彩變化估算心率與血壓的iPPG、量測臉部表面溫度的熱影像，以及透過甲床影像和機器學習估算血紅素。這些方法旨在避免把感測器裝到身體上或採血。</p>
+
+    <div class="spec-table-wrap bleed" tabindex="0" role="region" aria-label="原始資料所述的量測方式與設計目標">
+      <table class="spec-table">
+        <caption>原始資料所述的量測方式與假定值；這些數值不是驗證結果。</caption>
+        <thead><tr><th scope="col">量測項目</th><th scope="col">方式</th><th scope="col">資料中的假定值</th></tr></thead>
+        <tbody>
+          <tr><th scope="row">心率與血壓</th><td>臉部iPPG</td><td>距離0.5–1 m；照度1000–4000 lx；約60秒。心率±3 bpm；收縮壓±0.4 mmHg；舒張壓±0.2 mmHg。</td></tr>
+          <tr><th scope="row">體溫</th><td>熱影像</td><td>距離0.3–1 m；即時量測；±0.2 °C。</td></tr>
+          <tr><th scope="row">血紅素</th><td>甲床影像與機器學習</td><td>250–3000 lx；約15秒；±0.92 g/dL。</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+    <h3>從QR碼到共享量測結果</h3>
+    <p>捐血者掃描預先登記時收到的QR碼，把指甲朝向上部機器視覺相機以估算血紅素，接著站在同一相機與熱影像相機前量測體溫、心率與血壓。螢幕與揚聲器提示姿勢和進度，結果加入雲端紀錄供工作人員確認。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血前流程：掃描QR碼、拍攝甲床、無接觸量測臉部，並透過雲端與工作人員共享結果。"></a>
+      <figcaption>捐血前流程：掃描QR碼、拍攝甲床、無接觸量測臉部，並透過雲端與工作人員共享結果。</figcaption>
+    </figure>
+
+    <h3>同一終端既可放在桌面，也可裝在落地支架上</h3>
+    <p>同一終端可直接放在桌上，也可裝到專用支架，並以插銷選擇兩段高度。相機與輔助照明集中在上部，螢幕和揚聲器位於正面，電源可使用電池或電纜。候選工法包括PC與PET前殼射出成形、後殼熱成形與切削、聚碳酸酯螢幕罩，以及A500鋼支架。設計也推進了內部配置、組裝、製造與支架穩定性，並進行有限元素分析。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="篩檢終端分解圖，呈現前後外殼、螢幕、上部相機與照明、揚聲器、電路板及支撐零件。"></a>
+      <figcaption>篩檢終端分解圖，呈現前後外殼、螢幕、上部相機與照明、揚聲器、電路板及支撐零件。</figcaption>
+    </figure>
+
+    <h3>成果 — 把非接觸量測與工作人員流程集中到一台終端</h3>
+    <p>概念設計整合使用情境與需求、量測方式、QR碼與雲端流程、桌面與落地外殼、內部配置、材料與製造、分解圖和結構分析。它不是把多個儀器並排放置，而是把捐血者的連續操作與工作人員確認連接成一項服務。</p>
+    <p class="project-credit">Design Studio，第11組。Fabio Villano、Bhuvanesh Bari、Takafumi Horiuchi與Joeperdo El Husseini共同完成。</p>
+
+    <h3>最終簡報</h3>
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" aria-label="捐血篩檢裝置最終簡報，共23張可橫向捲動的投影片">
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-01.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-01.webp" width="1600" height="900" alt="捐血篩檢裝置簡報投影片 1."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-02.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-02.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 2."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-03.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-03.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 3."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-04.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-04.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 4."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-05.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-05.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 5."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-06.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-06.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 6."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-07.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-07.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 7."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-08.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-08.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 8."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-09.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-09.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 9."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-10.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-10.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 10."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-11.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-11.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 11."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-12.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-12.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 12."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-13.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-13.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 13."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-14.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-14.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 14."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-15.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-15.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 15."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-16.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-16.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 16."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-17.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-17.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 17."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-18.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-18.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 18."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-19.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-19.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 19."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" aria-label="第20張投影片，空白頁"><img src="../../../works/masters-project-design-studio/assets/blood-slide-20.webp" width="1600" height="900" loading="lazy" decoding="async" alt=""></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-21.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-21.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 21."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-22.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-22.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 22."></a></li>
+        <li><a href="../../../works/masters-project-design-studio/assets/blood-slide-23.webp"><img src="../../../works/masters-project-design-studio/assets/blood-slide-23.webp" width="1600" height="900" loading="lazy" decoding="async" alt="捐血篩檢裝置簡報投影片 23."></a></li>
+      </ol>
+      <figcaption>最終簡報的投影片。</figcaption>
+    </figure>
   </section>
 
   <nav aria-label="網站">
-    <ul>
-      <li><a href="../../">前往堀內貴文的作品集</a></li>
-    </ul>
+    <ul><li><a href="../../">返回Takafumi Horiuchi作品集</a></li></ul>
   </nav>
 
   <footer>
@@ -163,5 +349,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="放大的圖像" hidden>
+  <button class="lightbox__close" type="button" aria-label="關閉放大的圖像"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>
