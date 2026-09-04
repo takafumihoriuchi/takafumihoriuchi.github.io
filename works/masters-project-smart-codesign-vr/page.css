@@ -1,45 +1,252 @@
-/* A work page's own stylesheet. Copied along with index.html.
+/* Shared by every language version of this work. The Japanese page is the
+   first completed edition; the remaining editions still use the scaffold.
 
-   It lives here rather than inside the page's <head> because a work has thirteen
-   language versions maintained by hand — inline, this would become thirteen
-   copies of identical rules, and the thirteenth would eventually stop matching
-   the first. Language versions differ; the layout of a work does not.
+   Logical properties throughout (`margin-inline`, not `margin-left`) so the
+   Arabic edition mirrors when it is written. See OPERATIONS.md §9. */
 
-   Do not delete this file even if the work needs no layout of its own: the
-   justification below is what distinguishes a work page from the index, and a
-   work page without it would silently read differently from every other one.
+.lead { font-size: 1.059em; }
 
-   Add layout the work needs — image grids, numbered sequences — below. Use
-   logical properties (`padding-inline-start`, not `padding-left`) so the Arabic
-   version mirrors correctly. See OPERATIONS.md §9. */
+.section-break {
+  margin: calc(var(--space-section) / 2) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
 
+.section-break + section { margin-top: 0; }
 
-/* Work pages are set justified; the index is not. A work page is long-form
-   reading, and a flush right edge holds the column steady over that distance.
-
-   `hyphens: auto` is not decoration, it is what makes justification readable.
-   Without word-internal breaks the browser pays for the flush edge entirely in
-   word spacing, which at this measure opens gaps wide enough to line up down
-   the page. The dictionary comes from the `lang` attribute. The -webkit- prefix
-   covers Safari before 17, where the reader would otherwise get justification
-   with no hyphenation — the failure this pairing exists to prevent.
-
-   Set for every language rather than a listed few: a language with no
-   dictionary simply gets no hyphenation, and CJK and Arabic are not hyphenated
-   at all, so declaring it costs them nothing.
-
-   Extend the selector if the work adds other blocks of running prose. */
-section p {
+section p,
+figcaption {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 
-/* Indonesian is the exception: no hyphenation dictionary, and the language
-   builds long words by affixing (menangkapnya, membesarkannya), so lines that
-   cannot break inside them pay the whole slack in word spacing. Ragged reads
-   better than a flush edge bought that way. `start`, not `left`, so the rule
-   still means the right thing in a right-to-left context. */
-:lang(id) section p {
+:lang(id) section p,
+:lang(id) figcaption {
   text-align: start;
+}
+
+h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 0.941em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h2 + h3 { margin-top: 1.5rem; }
+
+h4 {
+  margin: 2rem 0 0.75rem;
+  font-size: 0.882em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h3 + h4 { margin-top: 1.5rem; }
+
+.paper-figure { margin-block: 2.5rem; }
+
+/* Every figure sits on the text measure. Nothing here bleeds past the column:
+   the diagrams reproduced from the source are dense, and widening them buys a
+   few hundred pixels while breaking the one vertical edge the page reads
+   against. What they need is not a wider column but a way out of the column,
+   which is the link below. */
+/* `max-width: max-content` is the second half of that: an image already
+   narrower than the column keeps its own size rather than being blown up past
+   it, and stays centred on the page's reading axis. */
+.paper-figure img {
+  width: 100%;
+  max-width: max-content;
+  margin-inline: auto;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+.paper-figure figcaption { width: 100% }
+
+/* Each image is a link to itself at full resolution. That is what makes the
+   measure enough for the wide diagrams: shrunk here, opened whole there, with
+   the browser's own zoom and pan — which beats any overlay this page could
+   draw, since an overlay is bounded by the same window. `zoom-in` is what says
+   so before the click. */
+.paper-figure > a,
+.figure-pair > a {
+  display: block;
+  cursor: zoom-in;
+}
+
+/* Screenshots of the headset view. At the full measure a square runs taller
+   than the paragraphs around it and takes over the page, so these are held
+   under it — the size they were before the figures were brought in from the
+   bleed. Everything they have to show survives the reduction; the enlargement
+   is a click away. */
+.shot-figure img { max-width: 26rem; }
+
+/* Figure 6 of the source is two views of the same moment. They stay one figure
+   under one caption — the point is that the input panel and the output panel
+   are open at once — but stacked, so each gets the full measure instead of
+   half of it. */
+.figure-pair {
+  display: grid;
+  gap: 1rem;
+}
+
+/* The two UML diagrams are black line art on white, and nothing else: measured
+   across both images, no pixel has more than one level between its channels.
+   That is the condition under which `invert` is a change of ground rather than
+   a change of colour — it lands on white strokes over black, which is what the
+   diagram would have been drawn as had it been drawn for a dark page. The
+   colour figures on this page are excluded for exactly that reason.
+
+   The filter takes the border with it, so the hairline is dropped here and the
+   inverted white ground supplies the edge instead. */
+@media (prefers-color-scheme: dark) {
+  .line-art img {
+    filter: invert(1);
+    border-color: transparent;
+  }
+}
+
+/* The demo video, embedded rather than linked. 16:9 is declared rather than
+   padded for, so the box holds its height before the frame loads and the text
+   below it does not jump. */
+.video-embed { margin-block: 2.5rem; }
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* The one paragraph that is not justified. Its only line break falls in front
+   of a repository URL, which no dictionary can hyphenate, so justification
+   would pay for the flush edge by opening the space between every character
+   before it. `start`, not `left`, so the rule still means the right thing in a
+   right-to-left context. */
+.source-link { text-align: start; }
+
+/* Enlargement, in the page. The figure links still point at the
+   full-resolution file and still work with the script gone; lightbox.js
+   intercepts the click so the reader is not navigated away from the article
+   and left to find the back button. `[hidden]` has to be restated because the
+   `display: flex` below would otherwise beat the browser's own rule for it. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1.5rem;
+  background: rgb(0 0 0 / 0.82);
+  cursor: zoom-out;
+}
+
+.lightbox[hidden] { display: none; }
+
+/* `zoom-out` is on the backdrop, which is what a click closes; the picture
+   itself is not a target, so it says so. */
+.lightbox__image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  background: #fff;
+  cursor: default;
+}
+
+/* The same inversion the diagram gets in the page. Enlarging a figure must not
+   change what it looks like. */
+@media (prefers-color-scheme: dark) {
+  .lightbox.is-line-art .lightbox__image { filter: invert(1); }
+}
+
+/* A symbol, drawn in CSS — the only kind of content OPERATIONS.md §2 allows
+   there. The button's name is an `aria-label` in the document, written in the
+   page's own language.
+
+   It carries its own dark disc rather than relying on the backdrop behind it.
+   The overlay's padding is 1.5rem and the button starts above that, so a tall
+   picture reaches under its lower half — and most of the pictures here are
+   white. Without the disc the cross would disappear into exactly the figures
+   that most need enlarging. 2.75rem square keeps it a real touch target. */
+.lightbox__close {
+  position: absolute;
+  inset-block-start: 0.25rem;
+  inset-inline-end: 0.5rem;
+  width: 2.75rem;
+  height: 2.75rem;
+  padding: 0;
+  border: 0;
+  border-radius: 50%;
+  background: rgb(0 0 0 / 0.6);
+  color: #fff;
+  font-family: inherit;
+  font-size: 1.75rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.lightbox__close::before { content: "\00D7"; }
+
+.lightbox__close:focus-visible { outline: 2px solid currentColor; }
+
+/* The page behind does not scroll while the overlay is up. The gutter the
+   script measures replaces the scrollbar's own width, so nothing shifts
+   sideways on the way in or out. */
+.lightbox-open {
+  overflow: hidden;
+  padding-inline-end: var(--lightbox-gutter, 0);
+}
+
+.results-table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+}
+
+.results-table caption {
+  margin-bottom: 0.65rem;
+  color: var(--fg-muted);
+  font-size: 0.824em;
+  text-align: start;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.65rem 0;
+  border-block-end: 1px solid var(--rule);
+  text-align: start;
+  vertical-align: top;
+}
+
+.results-table thead th {
+  border-block-start: 1px solid var(--rule);
+  font-size: 0.882em;
+  font-weight: 600;
+}
+
+.results-table tbody th {
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.results-table th + td { padding-inline-start: 1.5rem; }
+
+.citation {
+  font-size: 0.882em;
+  color: var(--fg-muted);
+}
+
+.publication-citation { margin-top: var(--space-section); }
+
+:is(:lang(ja), :lang(zh), :lang(ko)) .lead { font-size: inherit; }
+:is(:lang(ja), :lang(zh), :lang(ko)) h3 { font-size: 0.875rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) h4 { font-size: 0.8125rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .citation { font-size: 0.8125rem; }
+
+@media (max-width: 32rem) {
+  .figure-pair { grid-template-columns: 1fr; }
+
+  .results-table th + td { padding-inline-start: 0.75rem; }
 }
