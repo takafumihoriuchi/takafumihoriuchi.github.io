@@ -35,7 +35,9 @@
     /* A line-art figure is inverted where it sits in a dark page. Enlarged, it
        has to be the same drawing — an enlargement that changes the picture is
        showing you a different one. */
-    box.classList.toggle("is-line-art", Boolean(link.closest(".line-art")));
+    const figure = link.closest(".line-art");
+    box.classList.toggle("is-line-art", Boolean(figure));
+    box.classList.toggle("keeps-colour", Boolean(figure && figure.classList.contains("keeps-colour")));
     box.hidden = false;
 
     /* Where the scrollbar takes room from the layout rather than floating over
@@ -59,7 +61,7 @@
     box.hidden = true;
     image.removeAttribute("src");
     image.alt = "";
-    box.classList.remove("is-line-art");
+    box.classList.remove("is-line-art", "keeps-colour");
     root.classList.remove("lightbox-open");
     root.style.removeProperty("--lightbox-gutter");
     if (supportsInert && main) main.inert = false;

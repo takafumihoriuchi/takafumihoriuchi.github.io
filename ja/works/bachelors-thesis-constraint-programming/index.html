@@ -150,7 +150,7 @@ o-|\
     <h2>アプローチ——二度と成立しない条件を安全に外す</h2>
     <p>階段を跳ねながら下っていくボールを思い描いてほしい。ボールがある段を通り過ぎ、そのまま前へ進み続けるなら、その段はもうボールに影響しえない。図を見た人間は、ボールの後ろにある段をただちに無視する。元のアルゴリズムは、その一つ一つを検査し続けていた。</p>
 
-    <figure class="paper-figure">
+    <figure class="paper-figure line-art keeps-colour">
       <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="赤い軌跡が、黒い階段の段を跳ねながら下っていくボールを示している。網掛けの領域は、すでに通り過ぎてもはや関係のない段を表す。"></a>
       <figcaption>ボールが右へ進むにつれ、その後ろにある網掛けの段のガードは省ける。</figcaption>
     </figure>
@@ -160,7 +160,7 @@ o-|\
     <h3>変化の向きが変わらない場合</h3>
     <p>一つ目の対応は、変数がシミュレーション全体を通じて一方向に動く場合にあてはまる。面を分割したモデルでは、ボールの水平位置はつねに増加する。ある区画を越えて進んでしまえば、その区画の条件は二度と満たされない。この性質はモデル検査の技術によってシミュレーション前に確かめられるので、実行が進むにつれて不要になったガードを、安全に取り除いていける。</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="時刻0のαから最大時刻のβへ向かって上昇する赤い線が、シミュレーションを通して増加し続ける変数を表している。">
       <figcaption>一様な単調性とは、変化の向きがシミュレートされる区間全体で保たれることを意味する。</figcaption>
     </figure>
@@ -168,7 +168,7 @@ o-|\
     <h3>変化の向きが途中で変わる場合</h3>
     <p>現実のシステムの多くは、いつまでも一方向に動くわけではない。変数は増加し、向きを変え、そして減少しうる。そこで論文は二つ目の対応を示した。まず向きを仮定し、その仮定をアサーションで監視し、向きが変わった時点から削減の処理をやり直す。一つの単調な区間のために取り除いたガードは、次の区間が始まるときに戻される。</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五つの図が、増加を仮定した区間、アサーションの失敗、新たな減少の区間、二度目の失敗、そして単調な区間が次々に確定していく様子を示している。">
       <figcaption>アサーションの失敗が、変化する振る舞いを、それぞれ単調として扱える区間へ分割する。</figcaption>
     </figure>

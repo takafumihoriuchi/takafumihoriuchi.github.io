@@ -68,11 +68,16 @@ h3 + h4 { margin-top: 1.5rem; }
 
 /* Figure 6 of the source is two views of the same moment. They stay one figure
    under one caption — the point is that the input panel and the output panel
-   are open at once — but stacked, so each gets the full measure instead of
-   half of it. */
+   are open at once — and side by side, because that is what "at once" looks
+   like. They were stacked at full measure while the only way to read the small
+   type in them was to read it here; now that a click opens either one whole,
+   the pair no longer has to carry that job at rest (owner's instruction,
+   2026-09-04). */
 .figure-pair {
   display: grid;
+  grid-template-columns: 1fr 1fr;
   gap: 1rem;
+  align-items: start;
 }
 
 /* The two figures marked `line-art` are the UML diagrams, and they qualify by

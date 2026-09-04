@@ -70,10 +70,17 @@ a:has(> img) {
  * around it and lit from a different world. Inverted, it reads as though it
  * were drawn for the page it is on.
  *
- * Only for drawings that are actually grey: `invert()` turns colours into
- * their opposites, so a figure with a red curve comes back cyan. The test is
- * measured, not eyeballed — see OPERATIONS.md §3. Photographs are never line
- * art, whatever their palette.
+ * A drawing that is grey all through inverts and nothing else has to be said.
+ * A drawing whose black lines carry one accent colour — the red trajectories
+ * in the constraint-programming figures — must not have that colour inverted
+ * as well, or the argument the colour is making changes: red becomes cyan.
+ * `keeps-colour` adds a 180° hue rotation, which takes the hue back where it
+ * came from while leaving the ground flipped. The accent lands a little paler
+ * than it began, which on a black ground it can afford (owner's instruction,
+ * 2026-09-04: the accent is not to invert, and may be adjusted for legibility).
+ *
+ * Photographs are never line art, whatever their palette. Whether a drawing is
+ * grey all through is measured, not eyeballed — see OPERATIONS.md §3.
  *
  * The border goes with it. A `filter` takes the whole element, frame
  * included, so a drawn border would invert into a white line around a black
@@ -82,6 +89,11 @@ a:has(> img) {
   .line-art img,
   .lightbox.is-line-art .lightbox__image {
     filter: invert(1);
+  }
+
+  .line-art.keeps-colour img,
+  .lightbox.is-line-art.keeps-colour .lightbox__image {
+    filter: invert(1) hue-rotate(180deg);
   }
 
   .line-art img { border-color: transparent; }
@@ -135,19 +147,28 @@ a:has(> img) {
  * says a way out exists.
  *
  * Drawn in CSS rather than set as a "×" character. A glyph is centred on its
- * own typographic body, which is not the middle of a circle, and its weight
- * is whatever the font gives it — the two things this mark has to control.
- * Two 1px rules crossed at the box's centre are exactly centred vertically
- * and horizontally, at exactly the weight of the ring around them. It also
+ * own typographic body, which is not the middle of a circle, and its weight is
+ * whatever the font gives it — the two things this mark has to control. It also
  * keeps the button free of text, which OPERATIONS.md §2 requires: the name a
  * screen reader speaks is the `aria-label` in the document, written there in
- * the page's own language. */
+ * the page's own language.
+ *
+ * The button box is the ring. What is pressed is larger than that: the ring is
+ * a thin line, and a target you have to hit a line to press is a target that
+ * gets missed. `::before` is a disc reaching past the ring on every side, and
+ * because it belongs to the button, a press anywhere on it presses the button.
+ * On hover it fills with a faint white, so the thing that lights up and the
+ * thing that answers are the same shape — the same arrangement the index uses
+ * for its "view more" control, where the ring and its hit area are also two
+ * different sizes. */
 .lightbox__close {
   position: absolute;
-  inset-block-start: 1rem;
-  inset-inline-end: 1rem;
-  width: 2.75rem;      /* a real touch target, not the size of the drawing */
-  height: 2.75rem;
+  z-index: 0;          /* so the disc below can sit behind the ring, not behind
+                          the overlay's own ground */
+  inset-block-start: 1.25rem;
+  inset-inline-end: 1.25rem;
+  width: 2.25rem;
+  height: 2.25rem;
   padding: 0;
   border: 1px solid #fff;
   border-radius: 50%;
@@ -155,21 +176,45 @@ a:has(> img) {
   cursor: pointer;
 }
 
-.lightbox__close::before,
+/* The hit area and the hover wash, one box. `-0.4rem` on each side puts it
+   about a third of the ring's radius outside the drawn edge: enough that the
+   wash reads as a halo around the mark rather than as a second ring, and
+   enough that the target stays comfortably above the size a fingertip needs
+   even though the mark itself came down. */
+.lightbox__close::before {
+  content: "";
+  position: absolute;
+  z-index: -1;
+  inset: -0.4rem;
+  border-radius: 50%;
+  background: transparent;
+  transition: background-color 120ms ease;
+}
+
+.lightbox__close:hover::before,
+.lightbox__close:focus-visible::before {
+  background: rgb(255 255 255 / 0.14);
+}
+
+/* The cross: one box holding a horizontal rule and a vertical rule through its
+   centre, turned 45°. Two lines that cross at the centre of a square are
+   exactly centred in it top, bottom and both sides, and turning the square
+   turns both together — so the mark cannot drift the way two separately
+   positioned bars can, and both arms keep the ring's own 1px weight. */
 .lightbox__close::after {
   content: "";
   position: absolute;
   inset-block-start: 50%;
   inset-inline-start: 50%;
-  width: 44%;
-  height: 1px;
-  background: #fff;
+  width: 0.85rem;
+  height: 0.85rem;
+  transform: translate(-50%, -50%) rotate(45deg);
+  background:
+    linear-gradient(#fff, #fff) center / 100% 1px no-repeat,
+    linear-gradient(#fff, #fff) center / 1px 100% no-repeat;
 }
 
-.lightbox__close::before { transform: translate(-50%, -50%) rotate(45deg); }
-.lightbox__close::after  { transform: translate(-50%, -50%) rotate(-45deg); }
-
-.lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+.lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
 
 /* The page behind does not scroll while the overlay is up. The gutter the
    script measures replaces the scrollbar's own width, so a layout that gives
