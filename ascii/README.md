@@ -82,6 +82,8 @@ handoff.
 - `pokemon-generation`
 - `masters-thesis`
 - `constraint-programming`
+- `piano-action`
+- `in-preparation`
 
 Every scene has `wide` and `compact` final frames. The engine selects the
 compact frame below 480 CSS pixels. Frames must use printable ASCII only. The

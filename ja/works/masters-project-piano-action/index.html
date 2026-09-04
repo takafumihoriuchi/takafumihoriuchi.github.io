@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Motion Analysis of the Piano Action — 堀内 貴文</title>
-<meta name="description" content="修士課程のプロジェクト。記事は準備中。">
+<title>ピアノ・アクションの運動解析 — 堀内 貴文</title>
+<meta name="description" content="グランドピアノのアクション機構をSolidWorksで3Dモデル化。鍵盤入力からハンマー速度と弦反力への伝達を、理論計算とモーション解析で比較した修士課程のプロジェクト。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -32,28 +24,19 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-piano-action/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
-<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css?v=20260904-2">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="Motion Analysis of the Piano Action">
-<meta property="og:description" content="記事は準備中。">
+<meta property="og:title" content="ピアノ・アクションの運動解析">
+<meta property="og:description" content="鍵盤の入力は、複雑なリンク機構を通ってどのようにハンマーの速度と弦の反力へ変わるのか。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/masters-project-piano-action/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="分解表示された木製のピアノ・アクションのSolidWorks 3Dモデル。">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +45,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "認知工学 × AI × デザイン",
       "sameAs": [
@@ -73,22 +57,25 @@
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ja/works/masters-project-piano-action/#work",
       "name": "Motion Analysis of the Piano Action",
+      "headline": "ピアノ・アクションの運動解析",
       "url": "https://takafumihoriuchi.github.io/ja/works/masters-project-piano-action/",
-      "description": "修士課程のプロジェクト。記事は準備中。",
-      "creativeWorkStatus": "準備中",
+      "description": "グランドピアノのアクション機構をSolidWorksで3Dモデル化し、鍵盤入力からハンマー速度と弦反力への伝達を理論計算とモーション解析で比較した修士課程のプロジェクト。",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
+      "datePublished": "2020-01",
       "inLanguage": "ja",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
   ]
 }
 </script>
+<script defer src="../../../works/masters-project-piano-action/lightbox.js?v=20260904-2"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260902-2"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Motion Analysis of the Piano Action</h1>
+    <h1>ピアノ・アクションの運動解析</h1>
     <div class="identity">
       <p class="tagline">制作：<a class="byline" href="../../">堀内 貴文（Takafumi Horiuchi）</a></p>
       <nav aria-label="ほかの場所のプロフィール">
@@ -98,47 +85,134 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">準備中</p>
+    <p class="dateline">2020年1月</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">       v                                  =============*==================
+ .--------------------.                                ^
+ |        KEY      ___|____o                         (O)
+ &#x27;----------o-----&#x27;         \                            \
+            ^                o--------o-------------------o
+                              \______/        ACTION</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>概要</h2>
-    <p class="lead">修士課程のプロジェクト。記事は準備中。</p>
+    <p class="lead">グランドピアノの内部では、鍵盤を押す動きが複数のリンク機構を介して伝わり、ハンマーを跳ね上げて弦を打つ。この、鍵盤が押された時にフェルトのハンマーを動かして弦を打てるようにしているテコのシステムを「ピアノ・アクション」と呼ぶ。このプロジェクトでは、複雑なピアノ・アクションをSolidWorks上に3Dモデルとして再構成し、鍵盤への入力がハンマーの速度と弦の反力へどのように変換されるかをモーション解析した。</p>
+    <p>断面資料をもとに部品を一からモデリングし、組み上げた機構について二つの関係を調べた。一つは鍵盤とハンマーの線速度、もう一つは鍵盤に加える力と弦側の反力である。シミュレーションの値を、部品の寸法と支点位置から導いた理論値と照合し、モデルの中で運動と力がどのように伝達されるかを確かめた。</p>
+
+    <hr class="section-break">
+
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" role="group" aria-label="Motion Analysis of the Piano Actionの全17ページ。横にスクロールできます">
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="タイトルスライド。「Motion Analysis of the Piano Action」。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="グランドピアノ内部の写真。鍵盤の奥に並ぶアクション機構を紹介している。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤を押すとアクションの各部が連動する様子を示す3Dモデル。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="ピアノ・アクションの断面模型。鍵盤を押すとハンマーが上がり弦を打つことを示す。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="断面資料の輪郭をトレースし、SolidWorksで部品を一からモデリングした工程。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="SolidWorks上で完成したピアノ・アクションの3Dアセンブリ。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="モデルの部品名と自由度の計算。拘束後の自由度が7であることを示す。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="二つの解析テーマ。鍵盤とハンマーの線速度、および鍵盤入力と弦反力の関係。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="解析1の観測点。鍵盤端の下向き速度とハンマーの上向き速度。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="ピアノ機構を三つの回転要素へ簡略化した図。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="三つの回転要素の半径比から、鍵盤速度とハンマー速度の関係式を導く図。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤端へ1秒から2秒まで下向きに5ニュートンを加える解析条件。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤とハンマーの線速度グラフ。ピーク速度はそれぞれ毎秒1027ミリメートルと4284ミリメートル。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="半径の実測値から求めたハンマー速度4614ミリメートル毎秒と、解析値4284ミリメートル毎秒の比較。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="解析2の条件。鍵盤へ下向きに15ニュートンを加え、弦側の反力を観測する。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="弦反力の最大値31ニュートンと、てこの原理による理論値31.1ニュートンの比較。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="ピアノ・アクションの力学モデルに関する参考文献一覧。"></a></li>
+      </ol>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>ピアノ・アクションを、解析できる3Dモデルへ</h2>
+    <h3>一打鍵を、打弦へ変える機構</h3>
+    <p>ピアノ・アクションは、鍵盤の下向きの動きをハンマーの上向きの運動へ変える機構である。鍵盤を押すと、キャプスタン、ウィペン、ジャック、レペティションレバーなどが連動し、ハンマーが持ち上がって弦を打つ。演奏者から見える動作は一つの打鍵だが、その内側では複数の部品が異なる支点のまわりを回転し、互いに接触しながら動きを受け渡している。</p>
+    <p>モデルには、鍵盤、ハンマー、ジャック、ウィペン、レペティションレバー、キャプスタン、ダンパー、ダンパーレバー、ワイヤーと、それらを支えるフレームを含めた。運動を理解するには、完成形を眺めるだけでなく、どの部品がどこを支点に動き、次の部品のどこへ触れるかを定義する必要がある。</p>
+
+    <figure class="paper-figure model-figure">
+      <a href="../../../works/masters-project-piano-action/assets/model.webp"><img src="../../../works/masters-project-piano-action/assets/model.webp" width="904" height="600" loading="lazy" decoding="async" alt="ピアノ・アクションを分解表示したSolidWorksの3Dモデル。長い鍵盤の上にウィペンやジャック、ハンマー、ダンパーなどの部品が配置されている。"></a>
+      <figcaption>SolidWorks上で構築したピアノ・アクションの3Dモデル。部品間の関係が見えるように分解表示している。</figcaption>
+    </figure>
+    <h3>断面図から3Dモデルをつくる</h3>
+    <p>既製のCADデータを使うのではなく、ピアノ・アクションの断面資料を下絵にして各部品の輪郭をトレースし、一点ずつ3Dモデルを作成した。次に部品をアセンブリとして組み、実際の機構に対応する固定関係と回転関係を設定した。この工程によって、形を見るためのモデルを、力を加えて動かせる解析モデルへ変えた。</p>
+
+    <h3>拘束条件を、自由度として確認する</h3>
+    <p>固定したフレームを除く可動部品は9点で、拘束がなければ合計54自由度を持つ。キャプスタンとワイヤーを別の部品へ固定すると12自由度が減り、残る7部品を回転ジョイントで拘束すると、さらに35自由度が減る。したがって、このCADアセンブリの自由度は次のように7となる。</p>
+    <p class="formula" role="math" aria-label="54引く12引く35は7">54 − 12 − 35 = 7</p>
+    <p>SolidWorksの拘束診断でも、推定自由度と実自由度はいずれも7、冗長拘束は0と表示された。これは実物のピアノ・アクション全般の自由度を断定する値ではなく、このプロジェクトで設定した部品構成と拘束条件が意図どおり組まれていることの確認である。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="各部品に名称を付けたピアノ・アクションのモデルと、自由度54から固定拘束12、回転拘束35を引いて7とする計算。"></a>
+      <figcaption>部品名と拘束条件。SolidWorks上の診断でも、モデルの自由度は7、冗長拘束は0となった。</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>制約</h2>
+    <h2>二つの解析——鍵盤入力がどう変換されるか</h2>
+    <p>モデルの挙動は、二つの解析に分けて調べた。解析1は「鍵盤の動く速さが、ハンマーの速さへどう変換されるか」、解析2は「鍵盤へ加えた力が、弦側の反力としてどう現れるか」である。入力と出力を一組ずつ切り出すことで、複雑なリンク機構の挙動を、幾何学的な速度比と、てこの力のつり合いから説明できる形にした。</p>
+    <p>比較の基準には、機構を単純な回転要素へ置き換えた理論計算を用いた。理論値とシミュレーション値が近ければ、少なくともモデル内部の運動が、設定した寸法と拘束から期待される関係に沿っていると判断できる。</p>
+    <h3>解析1——鍵盤の速度は、ハンマーでどれだけ増幅されるか</h3>
+    <p>速度の解析では、ピアノ・アクションを、三つの回転要素が接触しながら動きを伝える機構へ簡略化した。同じ剛体上では角速度が共通であり、支点からの距離を<em>r</em>、その点の線速度を<em>v</em>とすると、<em>v</em> = <em>ωr</em>となる。接触点で速度が損失なく次の要素へ伝わると仮定すれば、各段の入力半径と出力半径の比を掛け合わせて、ハンマー速度を求められる。</p>
+    <p class="formula formula-long" role="math" aria-label="ハンマー速度は、r1プライム、r2プライム、r3プライムの積を、r1、r2、r3の積で割り、鍵盤速度を掛けた値">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="ピアノ・アクションを三つの回転要素へ分け、各支点から入力点と出力点までの半径を示した図。"></a>
+      <figcaption>機構を三段の回転要素として捉え、各段の半径比から鍵盤とハンマーの速度比を求める。</figcaption>
+    </figure>
+
+    <h4>入力条件と観測結果</h4>
+    <p>SolidWorks Motion Analysisで鍵盤端へ下向きに5 Nを加え、鍵盤端とハンマーの線速度を観測した。力を加え始めた直後のピーク速度は、鍵盤が1,027 mm/s、ハンマーが4,284 mm/sだった。シミュレーション上では、ハンマーが鍵盤の約4.17倍の速さで動いたことになる。</p>
+
+    <table class="results-table">
+      <caption>解析1のピーク速度</caption>
+      <thead>
+        <tr><th scope="col">観測・計算対象</th><th scope="col">速度</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">鍵盤（シミュレーション）</th><td>1,027 mm/s</td></tr>
+        <tr><th scope="row">ハンマー（理論計算）</th><td>4,614 mm/s</td></tr>
+        <tr><th scope="row">ハンマー（シミュレーション）</th><td>4,284 mm/s</td></tr>
+      </tbody>
+    </table>
+
+    <h4>理論値との比較</h4>
+    <p>モデルから測った半径は、<em>r</em><sub>1</sub> = 200 mm、<em>r</em><sub>1</sub>′ = 88 mm、<em>r</em><sub>2</sub> = 53 mm、<em>r</em><sub>2</sub>′ = 78 mm、<em>r</em><sub>3</sub> = 16 mm、<em>r</em><sub>3</sub>′ = 111 mmである。これらを式へ代入すると、理想化した速度比は約4.49倍となり、鍵盤速度1,027 mm/sに対するハンマー速度は4,614 mm/sと予測される。</p>
+    <p>シミュレーション値4,284 mm/sは、理論値より約7%低かった。資料では、この差を、理論計算が無視した摩擦や変形などのエネルギー損失をSolidWorks側が扱うためと説明している。完全な一致ではないが、速度が増幅される大きさは両者で近く、モデルが想定した運動伝達を再現していると評価した。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤とハンマーの速度を時間に対して示す二つのグラフ。入力開始直後のピークが1027ミリメートル毎秒と4284ミリメートル毎秒として示されている。"></a>
+      <figcaption>鍵盤とハンマーの線速度。どちらも入力開始直後に最大となり、ハンマー側で速度が増幅されている。</figcaption>
+    </figure>
+    <h3>解析2——鍵盤の力は、弦側でどのように現れるか</h3>
+    <p>二つ目の解析では、鍵盤表面へ下向きに15 Nを加え、打弦時に弦側へ現れる反力を観測した。シミュレーションで得られた最大反力は31 Nだった。この値は、鍵盤側とハンマー側の腕の長さを使った、てこのつり合いから説明できる。</p>
+    <p class="formula formula-long" role="math" aria-label="弦反力は、15掛ける195を94で割って、31.1ニュートン">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>入力点から支点までの距離を195 mm、弦側の作用点までを94 mmとして計算すると、理論値は31.1 Nになる。シミュレーションの最大値31 Nとの差は0.1 Nであり、この解析でも、設定した寸法から期待される力の伝達とほぼ一致した。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤側195ミリメートル、弦側94ミリメートルの腕の長さと、最大31ニュートンを示す弦反力のグラフ。"></a>
+      <figcaption>てこの計算による31.1 Nと、シミュレーションで観測した最大反力31 Nを比較した。</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>アプローチ</h2>
-  </section>
-
-  <section>
-    <h2>結果</h2>
+    <h2>結果と限界</h2>
+    <h3>一致したこと、まだ確かめていないこと</h3>
+    <p>二つの解析で確認したのは、構築したCADモデルの出力が、同じモデルの寸法から導いた単純な力学計算と近いことである。速度の解析では鍵盤の約4.17倍のハンマー速度、力の解析では15 Nの入力に対して約31 Nの弦反力が得られた。複数の部品が連動する挙動を、支点と接触点の関係へ分解して説明できた。</p>
+    <p>一方、この資料には、摩擦係数、材料特性、接触条件、解析の時間刻みなど、物理精度を評価するための設定が記録されていない。また、実物のピアノで速度や打弦力を測った比較実験も示されていない。したがって、この資料から読み取れる範囲では、結果は実機の忠実な再現を実証するものではなく、3Dモデルと理論モデルの内部整合性を確かめたものとして捉えるのが適切である。</p>
+    <h3>まとめ</h3>
+    <p>断面図から構築した3Dモデルを動かすことで、ピアノ・アクションが鍵盤のゆっくりした動きをハンマーの速い運動へ変え、入力した力を弦へ伝える過程を定量的に捉えた。さらに、シミュレーション結果を簡略化した理論式と照合し、複雑なモデルを結果だけで終わらせず、その挙動を部品の寸法と支点の配置から説明した。</p>
+    <p>このプロジェクトで扱ったのは、完成した形状の再現だけではない。断面資料から構造を読み取り、動きに必要な関係をCAD上の拘束へ置き換え、解析する問いに合わせて単純な力学モデルへ分解するまでを、一つのモデリングの過程として行った。</p>
   </section>
 
   <nav aria-label="サイト">
     <ul>
-      <li><a href="../../">Takafumi&#x27;s Portfolio へ</a></li>
+      <li><a href="../../">Takafumi's Portfolio へ</a></li>
     </ul>
   </nav>
 
@@ -163,5 +237,12 @@
   </footer>
 
 </main>
+
+<dialog class="image-lightbox" aria-label="画像の拡大表示">
+  <div class="image-lightbox__panel">
+    <img class="image-lightbox__image" alt="">
+    <button class="image-lightbox__close" type="button" autofocus>閉じる</button>
+  </div>
+</dialog>
 </body>
 </html>

@@ -1,45 +1,219 @@
-/* A work page's own stylesheet. Copied along with index.html.
+/* Shared by every language version of this work. The Japanese page is the
+   first completed edition; the remaining editions still use the scaffold. */
 
-   It lives here rather than inside the page's <head> because a work has thirteen
-   language versions maintained by hand — inline, this would become thirteen
-   copies of identical rules, and the thirteenth would eventually stop matching
-   the first. Language versions differ; the layout of a work does not.
+.lead { font-size: 1.059em; }
 
-   Do not delete this file even if the work needs no layout of its own: the
-   justification below is what distinguishes a work page from the index, and a
-   work page without it would silently read differently from every other one.
+.section-break {
+  margin: calc(var(--space-section) / 2) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
 
-   Add layout the work needs — image grids, numbered sequences — below. Use
-   logical properties (`padding-inline-start`, not `padding-left`) so the Arabic
-   version mirrors correctly. See OPERATIONS.md §9. */
+.section-break + section { margin-top: 0; }
 
-
-/* Work pages are set justified; the index is not. A work page is long-form
-   reading, and a flush right edge holds the column steady over that distance.
-
-   `hyphens: auto` is not decoration, it is what makes justification readable.
-   Without word-internal breaks the browser pays for the flush edge entirely in
-   word spacing, which at this measure opens gaps wide enough to line up down
-   the page. The dictionary comes from the `lang` attribute. The -webkit- prefix
-   covers Safari before 17, where the reader would otherwise get justification
-   with no hyphenation — the failure this pairing exists to prevent.
-
-   Set for every language rather than a listed few: a language with no
-   dictionary simply gets no hyphenation, and CJK and Arabic are not hyphenated
-   at all, so declaring it costs them nothing.
-
-   Extend the selector if the work adds other blocks of running prose. */
-section p {
+section p,
+figcaption {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 
-/* Indonesian is the exception: no hyphenation dictionary, and the language
-   builds long words by affixing (menangkapnya, membesarkannya), so lines that
-   cannot break inside them pay the whole slack in word spacing. Ragged reads
-   better than a flush edge bought that way. `start`, not `left`, so the rule
-   still means the right thing in a right-to-left context. */
-:lang(id) section p {
+:lang(id) section p,
+:lang(id) figcaption {
   text-align: start;
+}
+
+h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 0.941em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h2 + h3 { margin-top: 1.5rem; }
+
+h4 {
+  margin: 2rem 0 0.75rem;
+  font-size: 0.882em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+/* The source is a 17-page, 4:3 presentation. A horizontal strip keeps the
+   complete artefact near the overview without making readers traverse all 17
+   pages before reaching the explanation. */
+.deck-figure { margin-block: 3.5rem calc(3.5rem - 0.75rem); }
+
+.deck {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 0 0.75rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+.deck > li {
+  flex: 0 0 88%;
+  scroll-snap-align: start;
+}
+
+.deck a { display: block; }
+
+.deck a,
+.paper-figure a { cursor: zoom-in; }
+
+.deck img {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+.paper-figure { margin-block: 2.5rem; }
+
+.paper-figure img {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+.paper-figure figcaption { width: 100%; }
+
+.model-figure img { border: 0; }
+
+html.lightbox-open { overflow: hidden; }
+
+.image-lightbox {
+  --lightbox-space: clamp(1rem, 3vw, 2rem);
+  box-sizing: border-box;
+  width: 100vw;
+  height: 100vh;
+  height: 100dvh;
+  max-width: none;
+  max-height: none;
+  margin: 0;
+  padding: var(--lightbox-space);
+  border: 0;
+  overflow: hidden;
+  background: rgb(0 0 0 / 0.84);
+  color: #fff;
+}
+
+.image-lightbox[open] {
+  display: grid;
+  place-items: center;
+}
+
+.image-lightbox::backdrop { background: transparent; }
+
+.image-lightbox__panel {
+  position: relative;
+  display: grid;
+  place-items: center;
+  max-width: 100%;
+  max-height: 100%;
+}
+
+.image-lightbox__image {
+  display: block;
+  width: auto;
+  max-width: calc(100vw - var(--lightbox-space) - var(--lightbox-space));
+  max-height: calc(100vh - var(--lightbox-space) - var(--lightbox-space));
+  max-height: calc(100dvh - var(--lightbox-space) - var(--lightbox-space));
+  object-fit: contain;
+  background: #fff;
+  box-shadow: 0 1rem 3rem rgb(0 0 0 / 0.35);
+}
+
+.image-lightbox__close {
+  position: absolute;
+  inset-block-start: 0.5rem;
+  inset-inline-end: 0.5rem;
+  padding: 0.45rem 0.65rem;
+  border: 1px solid rgb(255 255 255 / 0.72);
+  background: rgb(0 0 0 / 0.72);
+  color: #fff;
+  font: inherit;
+  font-size: 0.8125rem;
+  line-height: 1;
+  cursor: pointer;
+}
+
+.image-lightbox__close:focus-visible {
+  outline: 2px solid #fff;
+  outline-offset: 2px;
+}
+
+/* Equations remain selectable HTML instead of being baked into an image. */
+.formula {
+  margin-block: 1.75rem;
+  font-family: ui-monospace, SFMono-Regular, Menlo, Monaco, Consolas, monospace;
+  font-size: 1.059em;
+  text-align: center;
+  font-variant-numeric: tabular-nums;
+}
+
+.formula-long {
+  padding: 1rem;
+  overflow-x: auto;
+  border-block: 1px solid var(--rule);
+  white-space: nowrap;
+}
+
+.results-table {
+  width: 100%;
+  margin: 2rem 0;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.results-table caption {
+  margin-bottom: 0.65rem;
+  color: var(--fg-muted);
+  font-size: 0.824em;
+  text-align: start;
+}
+
+.results-table th,
+.results-table td {
+  padding: 0.65rem 0;
+  border-block-end: 1px solid var(--rule);
+  text-align: start;
+  vertical-align: top;
+}
+
+.results-table thead th {
+  border-block-start: 1px solid var(--rule);
+  font-size: 0.882em;
+  font-weight: 600;
+}
+
+.results-table tbody th { font-weight: 400; }
+
+.results-table th + th,
+.results-table th + td {
+  padding-inline-start: 1.5rem;
+  text-align: end;
+  white-space: nowrap;
+}
+
+.citation {
+  font-size: 0.882em;
+  color: var(--fg-muted);
+}
+
+.publication-citation { margin-top: var(--space-section); }
+
+:is(:lang(ja), :lang(zh), :lang(ko)) .lead { font-size: inherit; }
+:is(:lang(ja), :lang(zh), :lang(ko)) h3 { font-size: 0.875rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) h4 { font-size: 0.8125rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .citation { font-size: 0.8125rem; }
+
+@media (max-width: 32rem) {
+  .formula-long { font-size: 1em; }
+
+  .results-table th + th,
+  .results-table th + td { padding-inline-start: 0.75rem; }
 }
