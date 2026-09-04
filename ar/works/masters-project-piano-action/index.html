@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Motion Analysis of the Piano Action — تاكافومي هوريوتشي</title>
-<meta name="description" content="مشروع من مرحلة الماجستير. النص قيد الإعداد.">
+<title>تحليل حركة آلية العزف في البيانو — تاكافومي هوريوتشي</title>
+<meta name="description" content="آلية العزف في بيانو كبير أُعيد بناؤها نموذجًا ثلاثي الأبعاد في SolidWorks. مشروع من برنامج الماجستير يقارن، بالحساب النظري وبتحليل الحركة، كيف يتحول الضغط على المفتاح إلى سرعة للمطرقة وقوة رد فعل عند الوتر.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ar/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-piano-action/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
-<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<link rel="stylesheet" href="../../../works/figures.css">
+<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css?v=20260904-6">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ar_AR">
-<meta property="og:title" content="Motion Analysis of the Piano Action">
-<meta property="og:description" content="النص قيد الإعداد.">
+<meta property="og:title" content="تحليل حركة آلية العزف في البيانو">
+<meta property="og:description" content="كيف يتحول الضغط على المفتاح، بعد مروره في نظام الروافع المعقّد، إلى سرعة للمطرقة وقوة رد فعل عند الوتر؟">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ar/works/masters-project-piano-action/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="نموذج ثلاثي الأبعاد في SolidWorks لآلية عزف خشبية في البيانو، معروض مفكّكًا.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +46,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "تاكافومي هوريوتشي",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "الهندسة المعرفية × الذكاء الاصطناعي × التصميم",
       "sameAs": [
@@ -72,37 +57,35 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ar/works/masters-project-piano-action/#work",
-      "name": "Motion Analysis of the Piano Action",
+      "name": "تحليل حركة آلية العزف في البيانو",
       "url": "https://takafumihoriuchi.github.io/ar/works/masters-project-piano-action/",
-      "description": "مشروع من مرحلة الماجستير. النص قيد الإعداد.",
-      "creativeWorkStatus": "قيد الإعداد",
+      "description": "آلية العزف في بيانو كبير أُعيد بناؤها نموذجًا ثلاثي الأبعاد في SolidWorks، مع مقارنة انتقال الحركة من الضغط على المفتاح إلى سرعة المطرقة وقوة رد الفعل عند الوتر بين الحساب النظري وتحليل الحركة. مشروع من برنامج الماجستير.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
+      "datePublished": "2020-01",
       "inLanguage": "ar",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Motion Analysis of the Piano Action</h1>
+    <h1>تحليل حركة آلية العزف في البيانو</h1>
     <div class="identity">
       <p class="tagline">بقلم <a class="byline" href="../../">تاكافومي هوريوتشي (Takafumi Horiuchi)</a></p>
-      <nav aria-label="ملفات شخصية في أماكن أخرى">
+      <nav aria-label="حسابات في أماكن أخرى">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">قيد الإعداد</p>
+    <p class="dateline">يناير 2020</p>
   </header>
 
   <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
@@ -121,26 +104,159 @@
                                                /__\</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>نظرة عامة</h2>
-    <p class="lead">مشروع من مرحلة الماجستير. النص قيد الإعداد.</p>
+    <p class="lead">داخل البيانو الكبير تسري حركة المفتاح المضغوط عبر سلسلة من الوصلات حتى تندفع المطرقة إلى أعلى وتتحول تلك الحركة إلى اهتزاز وتر. ويسمى نظام الروافع هذا — الذي يتيح لمفتاح مضغوط أن يحرّك مطرقة فتضرب وترًا — آلية العزف في البيانو. أعاد هذا المشروع بناء تلك الآلية نموذجًا ثلاثي الأبعاد في SolidWorks*، واستعان بتحليل الحركة ليرى كيف يتحول الضغط على المفتاح إلى سرعة للمطرقة وإلى قوة رد فعل عند الوتر.</p>
+    <p>قبل التحليل نُمذجت آلية المفتاح ثلاثيًّا من الصفر اعتمادًا على صور مرجعية، ثم أُجري على ذلك النموذج تحليلان للحركة: أحدهما عن العلاقة بين سرعة المفتاح الهابط وسرعة المطرقة الصاعدة، والآخر عن العلاقة بين القوة المسلّطة على المفتاح والقوة الواصلة إلى الوتر. وقُوبلت قيم المحاكاة بقيم نظرية مستنبطة من الأبعاد ومواضع نقاط الارتكاز، للتحقق من كيفية انتقال الحركة والقوة داخل النموذج.</p>
+    <p class="citation">* SolidWorks: نظام تصميم ثلاثي الأبعاد بمساعدة الحاسوب. يتيح في مرحلة التصميم إجراء تحليل إنشائي لفحص متانة القطعة وتحليل حركي للتحقق من طريقة حركتها.</p>
+
+    <hr class="section-break">
+
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" role="group" aria-label="صفحات Motion Analysis of the Piano Action السبع عشرة كاملة. يمكن التمرير أفقيًّا">
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="شريحة العنوان: «Motion Analysis of the Piano Action»."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="صورة لداخل بيانو كبير تعرّف بصف آليات العزف خلف المفاتيح."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="نموذج ثلاثي الأبعاد يبيّن كيف تتحرك أجزاء الآلية معًا عند ضغط مفتاح."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="نموذج مقطعي لآلية العزف يبيّن أن ضغط المفتاح يرفع المطرقة حتى تضرب الوتر."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="خطوات تتبّع حدود مرجع مقطعي ونمذجة كل قطعة من الصفر في SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="تجميعة ثلاثية الأبعاد مكتملة لآلية العزف في SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="أسماء قطع النموذج وحساب درجات الحرية، الذي يعطي 7 بعد تطبيق القيود."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="موضوعا التحليل: السرعتان الخطيتان للمفتاح والمطرقة، والعلاقة بين الضغط على المفتاح وقوة رد الفعل عند الوتر."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="نقطتا الرصد في التحليل الأول: السرعة الهابطة عند طرف المفتاح والسرعة الصاعدة للمطرقة."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="رسم يبسّط آلية البيانو إلى ثلاثة عناصر دوّارة."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="رسم يستنبط العلاقة بين سرعة المفتاح وسرعة المطرقة من نسبة أنصاف أقطار العناصر الدوّارة الثلاثة."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="شروط التحليل: 5 نيوتن مسلّطة إلى أسفل عند طرف المفتاح من الثانية الأولى إلى الثانية الثانية."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="رسمان بيانيان للسرعتين الخطيتين للمفتاح والمطرقة. تبلغ السرعتان القصويان 1,027 و4,284 مليمترًا في الثانية."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="مقارنة بين سرعة المطرقة البالغة 4,614 مليمترًا في الثانية المستخرجة من أنصاف الأقطار المقيسة والقيمة التحليلية البالغة 4,284 مليمترًا في الثانية."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="شروط التحليل الثاني: 15 نيوتن مسلّطة إلى أسفل على المفتاح، مع رصد قوة رد الفعل في جهة الوتر."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="مقارنة بين أقصى قوة رد فعل عند الوتر وقدرها 31 نيوتن والقيمة النظرية 31٫1 نيوتن المستخرجة من مبدأ الرافعة."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="قائمة بالمراجع المتعلقة بالنماذج الميكانيكية لآلية العزف في البيانو."></a></li>
+      </ol>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>من آلية العزف إلى نموذج قابل للتحليل</h2>
+    <h3>الآلية التي تحوّل ضغطة واحدة إلى ضربة على وتر</h3>
+    <p>آلية العزف في البيانو هي الآلية التي تحوّل حركة المفتاح إلى أسفل إلى حركة المطرقة إلى أعلى. فعند ضغط المفتاح تتحرك معًا قطعة الرفع والذراع الوسيط ولسان الدفع وذراع التكرار، فترتفع المطرقة حتى تضرب الوتر. ما يراه العازف ضغطة واحدة، أما في الداخل فتدور عدة قطع حول نقاط ارتكاز مختلفة وتتناقل الحركة فيما بينها بالتلامس.</p>
+    <p>شمل النموذج ثلاثي الأبعاد المفتاح والمطرقة ولسان الدفع والذراع الوسيط وذراع التكرار وقطعة الرفع والخامد وذراع الخامد والسلك، إلى جانب الإطار الحامل لها. ولم يكن فهم الحركة ممكنًا بالنظر إلى الشكل النهائي وحده، بل تطلّب تحديد أي قطعة تدور حول أي نقطة ارتكاز، وعند أي موضع تلامس القطعة التالية.</p>
+
+    <h3>بناء نموذج ثلاثي الأبعاد من رسم مقطعي</h3>
+    <p>بدلًا من استخدام بيانات تصميم جاهزة، تُتبّع حد كل قطعة فوق مرجع مقطعي لآلية العزف ونُمذجت ثلاثيًّا واحدة تلو الأخرى. ثم جُمعت القطع في تجميعة، مع ضبط علاقات التثبيت والدوران المقابلة للآلية الحقيقية بينها. وبهذه الخطوة تحوّل نموذج مخصص للنظر إلى الشكل إلى نموذج تحليلي يمكن تسليط قوة عليه وتحريكه.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="في واجهة SolidWorks، يُستخدم رسم مقطعي لآلية عزف في البيانو أساسًا نصف شفاف، ويُبنى النموذج ثلاثي الأبعاد فوق حدوده. ويظهر على اليسار شريط مهام Windows وشجرة القطع."></a>
+      <figcaption>وُضع المرجع المقطعي في الخلف أساسًا نصف شفاف، وبُني النموذج ثلاثي الأبعاد في SolidWorks باتّباع حدوده.</figcaption>
+    </figure>
+
+    <figure class="paper-figure model-figure">
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="واجهة SolidWorks تعمل على Windows. على اليسار شريط مهام Windows وشجرة القطع، وفي الوسط النموذج ثلاثي الأبعاد لآلية العزف في البيانو."></a>
+      <figcaption>النموذج ثلاثي الأبعاد لآلية العزف كما بُني فعليًّا في SolidWorks.</figcaption>
+    </figure>
+
+    <h3>التحقق من القيود بوصفها درجات حرية</h3>
+    <p>باستثناء الإطار الثابت، تبلغ القطع المتحركة تسعًا، ما يعطي دون قيود 54 درجة حرية إجمالًا. وتثبيت قطعة الرفع والسلك على قطع أخرى يزيل 12 درجة، وتقييد القطع السبع الباقية بمفاصل دوران يزيل 35 درجة أخرى. وعليه تبلغ درجات حرية هذه التجميعة 7، على النحو الآتي.</p>
+    <p class="formula" role="math" aria-label="54 ناقص 12 ناقص 35 يساوي 7">54 − 12 − 35 = 7</p>
+    <p>وأظهر تشخيص القيود في SolidWorks الشيء نفسه: درجات الحرية المقدّرة والفعلية 7 في الحالتين، والقيود الزائدة صفر. وليس هذا رقمًا يحسم درجات حرية آليات عزف البيانو عمومًا، بل يؤكد أن تركيبة القطع وشروط التقييد المحددة في هذا المشروع مجمّعة كما أُريد لها.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="نموذج آلية العزف مع تسمية كل قطعة، والحساب الذي يطرح 12 قيد تثبيت و35 قيد دوران من 54 درجة حرية فيعطي 7."></a>
+      <figcaption>أسماء القطع وشروط التقييد. وقد أعطى تشخيص SolidWorks نفسه النموذج 7 درجات حرية وصفر قيود زائدة.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>القيود</h2>
+    <h2>تحليلان — كيف يتحول الضغط على المفتاح</h2>
+    <p>دُرس سلوك النموذج في تحليلين منفصلين. يسأل التحليل الأول كيف تتحول سرعة حركة المفتاح إلى سرعة للمطرقة؛ ويسأل التحليل الثاني كيف تظهر القوة المسلّطة على المفتاح في صورة قوة رد فعل في جهة الوتر. وباقتطاع زوج واحد من الدخل والخرج في كل مرة، يصبح سلوك نظام روافع معقّد قابلًا للتفسير بنسبة هندسية للسرعات وباتزان القوى على رافعة.</p>
+    <p>أما أساس المقارنة فحساب نظري يُستبدل فيه بالآلية عناصر دوّارة بسيطة. فإذا تقاربت القيمة النظرية وقيمة المحاكاة أمكن الحكم بأن الحركة داخل النموذج، على الأقل، تتبع العلاقة المتوقعة من الأبعاد وشروط التقييد المحددة.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="رسمان يبيّنان أن التحليل الأول يقابل بين السرعتين الخطيتين للمفتاح والمطرقة، وأن التحليل الثاني يقابل بين القوة المسلّطة على المفتاح وقوة رد الفعل عند الوتر."></a>
+      <figcaption>مدخلات التحليلين ومخرجاتهما. يقارن التحليل الأول السرعتين الخطيتين للمفتاح والمطرقة، ويقارن التحليل الثاني القوة المسلّطة على المفتاح بقوة رد الفعل عند الوتر.</figcaption>
+    </figure>
+
+    <h3>التحليل الأول — كم تتضاعف سرعة المفتاح عند المطرقة</h3>
+    <p>في تحليل السرعات بُسّطت آلية العزف المعقّدة إلى ثلاثة أجسام صلبة تتناقل الحركة بالتلامس: المفتاح، والآلية الوسيطة التي مركزها الذراع الوسيط، والمطرقة. وبقراءة الحركة على أنها تنتقل تباعًا من ① إلى ③ في الشكل، يمكن حساب آلية مؤلفة من قطع كثيرة بوصفها ثلاث مراحل دوران.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="رسم يميّز بالألوان آلية العزف بوصفها ثلاثة أجسام صلبة: ① المفتاح، و② الآلية الوسيطة التي مركزها الذراع الوسيط، و③ المطرقة."></a>
+      <figcaption>لأغراض التحليل بُسّطت الآلية إلى ثلاثة أجسام صلبة: ① المفتاح، و② الآلية الوسيطة، و③ المطرقة.</figcaption>
+    </figure>
+
+    <p>السرعة الزاوية مشتركة على الجسم الصلب الواحد، فإذا رُمز بـ<em>r</em> إلى المسافة من نقطة الارتكاز وبـ<em>v</em> إلى السرعة الخطية عند تلك النقطة كان <em>v</em> = <em>ωr</em>. وبافتراض انتقال السرعة عند نقطة التلامس إلى الجسم التالي دون فقد، تُستخرج سرعة المطرقة بضرب نسب نصف قطر الدخل إلى نصف قطر الخرج في كل مرحلة بعضها في بعض.</p>
+    <p class="formula formula-long" role="math" aria-label="سرعة المطرقة تساوي حاصل ضرب r1 شرطة في r2 شرطة في r3 شرطة، مقسومًا على حاصل ضرب r1 في r2 في r3، مضروبًا في سرعة المفتاح">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="رسم يعلّم، للأجسام الصلبة الثلاثة، المسافات من كل نقطة ارتكاز إلى نقطتي الدخل والخرج بالرموز r1 وr1 شرطة وr2 وr2 شرطة وr3 وr3 شرطة."></a>
+      <figcaption>تُعامل المسافات من نقطة ارتكاز كل جسم صلب إلى نقطتي دخله وخرجه بوصفها أنصاف أقطار، وتُضرب نسبها عبر المراحل الثلاث للحصول على نسبة السرعات.</figcaption>
+    </figure>
+
+    <h4>شروط الدخل ونتائج الرصد</h4>
+    <p>في SolidWorks Motion Analysis سُلّطت 5 نيوتن إلى أسفل عند طرف المفتاح، ورُصدت السرعتان الخطيتان لطرف المفتاح وللمطرقة. وبُعيد بدء تسليط القوة بلغت السرعتان القصويان 1,027 مم/ث عند المفتاح و4,284 مم/ث عند المطرقة. أي أن المطرقة تحركت في المحاكاة بنحو 4٫17 ضعف سرعة المفتاح.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="رسمان بيانيان لسرعة المفتاح والمطرقة بدلالة الزمن، مع تعليم القمتين بُعيد بدء الدخل عند 1,027 و4,284 مليمترًا في الثانية."></a>
+      <figcaption>السرعتان الخطيتان للمفتاح والمطرقة. تبلغ كلتاهما ذروتها بُعيد بدء الدخل، وتتضاعف السرعة في جهة المطرقة.</figcaption>
+    </figure>
+
+    <table class="results-table">
+      <caption>السرعتان القصويان في التحليل الأول</caption>
+      <thead>
+        <tr><th scope="col">موضوع الرصد أو الحساب</th><th scope="col">السرعة</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">المفتاح (محاكاة)</th><td>1,027 مم/ث</td></tr>
+        <tr><th scope="row">المطرقة (حساب نظري)</th><td>4,614 مم/ث</td></tr>
+        <tr><th scope="row">المطرقة (محاكاة)</th><td>4,284 مم/ث</td></tr>
+      </tbody>
+    </table>
+
+    <h4>المقارنة بالقيمة النظرية</h4>
+    <p>أنصاف الأقطار المقيسة من النموذج هي <em>r</em><sub>1</sub> = 200 مم، و<em>r</em><sub>1</sub>′ = 88 مم، و<em>r</em><sub>2</sub> = 53 مم، و<em>r</em><sub>2</sub>′ = 78 مم، و<em>r</em><sub>3</sub> = 16 مم، و<em>r</em><sub>3</sub>′ = 111 مم. وبتعويضها في المعادلة تبلغ نسبة السرعات المثالية نحو 4٫49 ضعف، ما يتنبأ بسرعة للمطرقة قدرها 4,614 مم/ث مقابل سرعة للمفتاح قدرها 1,027 مم/ث.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="رسم يعلّم على النموذج ثلاثي الأبعاد في SolidWorks أنصاف الأقطار الستة المقيسة المستخدمة في حساب نسبة السرعات."></a>
+      <figcaption>أنصاف الأقطار الستة المقيسة على النموذج ثلاثي الأبعاد. ومن هذه القيم حُسبت السرعة النظرية للمطرقة البالغة 4,614 مم/ث.</figcaption>
+    </figure>
+
+    <p>قيمة المحاكاة 4,284 مم/ث أدنى من القيمة النظرية بنحو 7٪، غير أن مقدار تضاعف السرعة متقارب. وسبب هذا الفارق، كما يرد لاحقًا، اختلاف المنطلقات بين حساب نظري يمثّل الآلية ثلاثة أجسام صلبة مثالية ومحاكاة ثلاثية الأبعاد تتناول كذلك الفقد بين القطع وتشوّه المادة.</p>
+
+    <h3>التحليل الثاني — كيف تظهر قوة المفتاح في جهة الوتر</h3>
+    <p>سلّط التحليل الثاني 15 نيوتن إلى أسفل على سطح المفتاح، ورصد قوة رد الفعل الظاهرة في جهة الوتر لحظة الضرب. ارتفع الدخل في جهة المفتاح <em>F</em><sub>key</sub> ابتداءً من الثانية 1٫0 حتى بلغ 15 نيوتن، وعند لحظة الضرب ظهرت في قوة رد الفعل <em>V</em><sub>string</sub> قمة قصوى قدرها 31 نيوتن.</p>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="رسم بياني توضيحي للدخل عند المفتاح F key بدلالة الزمن. يرتفع من الثانية الأولى ويثبت عند 15 نيوتن ثم يعود إلى صفر نيوتن."></a>
+      <figcaption>الدخل في جهة المفتاح <em>F</em><sub>key</sub>. سُلّطت القوة ابتداءً من الثانية 1٫0 بدخل قدره 15 نيوتن.</figcaption>
+    </figure>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="رسم بياني توضيحي لقوة رد الفعل في جهة الوتر V string بدلالة الزمن، مع قمة حادة قدرها 31 نيوتن لحظة الضرب."></a>
+      <figcaption>قوة رد الفعل في جهة الوتر <em>V</em><sub>string</sub>. بلغت أقصاها 31 نيوتن لحظة الضرب.</figcaption>
+    </figure>
+
+    <p>ويمكن تفسير هذه القيمة باتزان رافعة، باستخدام طولي الذراعين في جهة المفتاح وجهة المطرقة.</p>
+    <p class="formula formula-long" role="math" aria-label="قوة رد الفعل عند الوتر تساوي 15 في 195 مقسومًا على 94، أي 31٫1 نيوتن">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>وبأخذ المسافة من نقطة الدخل إلى نقطة الارتكاز 195 مم، وإلى نقطة التأثير في جهة الوتر 94 مم، تبلغ القيمة النظرية 31٫1 نيوتن. والفارق عن أقصى قيمة في المحاكاة، وهي 31 نيوتن، 0٫1 نيوتن؛ فجاء هذا التحليل أيضًا مطابقًا تقريبًا لانتقال القوة المتوقع من الأبعاد المحددة.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="رسم لاتزان القوى يبيّن مسافة 195 مليمترًا من نقطة ارتكاز المفتاح إلى نقطة الدخل و94 مليمترًا إلى نقطة التأثير في جهة الوتر."></a>
+      <figcaption>من دخل قدره 15 نيوتن عند المفتاح يعطي اتزان الرافعة قوة رد فعل قدرها 31٫1 نيوتن عند الوتر، تكاد تطابق أقصى قيمة في المحاكاة وهي 31 نيوتن.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>المقاربة</h2>
-  </section>
+    <h2>مقابلة المحاكاة بالقيم النظرية</h2>
+    <h3>نتيجتان متقاربتان في التحليلين</h3>
+    <p>في التحليل الأول، الذي يقارن سرعتي المفتاح والمطرقة، أعطت المحاكاة ثلاثية الأبعاد 4,284 مم/ث مقابل قيمة نظرية لسرعة المطرقة قدرها 4,614 مم/ث. وفي التحليل الثاني، الذي يقارن الدخل عند المفتاح بقوة رد الفعل عند الوتر، بلغت أقصى قيمة في المحاكاة 31 نيوتن مقابل قيمة نظرية قدرها 31٫1 نيوتن. وفي التحليلين كليهما جاءت نتائج المحاكاة بالنموذج ثلاثي الأبعاد المُنشأ قريبة من القيم النظرية المستخرجة من المعادلات.</p>
 
-  <section>
-    <h2>النتيجة</h2>
+    <h3>سبب الفارق الطفيف</h3>
+    <p>يبسّط الحساب النظري آلية العزف إلى آلية مؤلفة من ثلاثة أجسام صلبة، ويفترض انتقال الحركة والقوة عند نقاط التلامس دون فقد. أما المحاكاة بالنموذج ثلاثي الأبعاد فتتناول كل قطعة من قطع الآلية على حدة، فتنعكس في النتيجة كذلك الطاقة المفقودة بين القطع وتشوّه المادة. وهذا الاختلاف في المنطلقات هو ما يظهر في صورة الفارق الطفيف بين القيمة النظرية وقيمة المحاكاة.</p>
+
+    <h3>الخلاصة</h3>
+    <p>أمكن التحقق من أن نتائج المحاكاة ثلاثية الأبعاد تكاد تساوي القيم النظرية. فالنموذج ثلاثي الأبعاد المبني على رسم مقطعي أعاد إنتاج حركة آلية العزف — التي تضاعف الدخل عند المفتاح إلى سرعة للمطرقة وتنقل تلك القوة إلى الوتر — على نحو متسق مع الحساب النظري.</p>
+    <p>ولم يقتصر هذا المشروع على إعادة إنتاج شكل. فقراءة البنية من مرجع مقطعي، ونقل العلاقات بين القطع إلى قيود داخل برنامج التصميم، ثم تبسيط ذلك إلى نموذج ميكانيكي يلائم السؤال المطروح، كل ذلك جرى بوصفه عملية نمذجة واحدة.</p>
   </section>
 
   <nav aria-label="الموقع">
@@ -170,5 +286,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="عرض مكبَّر للشكل" hidden>
+  <button class="lightbox__close" type="button" aria-label="إغلاق العرض المكبَّر"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

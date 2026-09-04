@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Smart Codesign VR — تاكافومي هوريوتشي</title>
-<meta name="description" content="مشروع من مرحلة الماجستير. النص قيد الإعداد.">
+<title>تطوير نظام واقع افتراضي لبناء نماذج أولية لأجسام تفاعلية للأطفال — تاكافومي هوريوتشي</title>
+<meta name="description" content="تركيب الأجسام الذكية التي يبتكرها الأطفال في لعبة SNaP اللوحية وتشغيلها داخل الواقع الافتراضي. مشروع جماعي من برنامج الماجستير نُفِّذ على Oculus Quest 2 بمحرك Unity: تُختار ثلاث بطاقات — البيئة والمدخل والمخرج — ويحدّد اللاعب بنفسه الشرط والسلوك.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ar/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-smart-codesign-vr/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ar_AR">
-<meta property="og:title" content="Smart Codesign VR">
-<meta property="og:description" content="النص قيد الإعداد.">
+<meta property="og:title" content="تطوير نظام واقع افتراضي لبناء نماذج أولية لأجسام تفاعلية للأطفال">
+<meta property="og:description" content="تركيب جسم ذكي في الواقع الافتراضي انطلاقًا من ثلاث بطاقات: البيئة والمدخل والمخرج.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ar/works/masters-project-smart-codesign-vr/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="شاشة اختيار البطاقات في الواقع الافتراضي. ثلاثة صناديق شبه شفافة كُتب عليها input وenvironment وoutput تقف أمام لوحة عليها بطاقات.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +46,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "تاكافومي هوريوتشي",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "الهندسة المعرفية × الذكاء الاصطناعي × التصميم",
       "sameAs": [
@@ -72,37 +57,40 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ar/works/masters-project-smart-codesign-vr/#work",
-      "name": "Smart Codesign VR",
+      "name": "تطوير نظام واقع افتراضي لبناء نماذج أولية لأجسام تفاعلية للأطفال",
       "url": "https://takafumihoriuchi.github.io/ar/works/masters-project-smart-codesign-vr/",
-      "description": "مشروع من مرحلة الماجستير. النص قيد الإعداد.",
-      "creativeWorkStatus": "قيد الإعداد",
+      "description": "بيئة لبناء النماذج الأولية تُركَّب فيها داخل الواقع الافتراضي الأجسام الذكية التي يبتكرها الأطفال في لعبة SNaP اللوحية وتُشغَّل. تُختار ثلاث بطاقات — البيئة والمدخل والمخرج — ويحدّد اللاعب بنفسه الشرط والسلوك. مشروع جماعي من برنامج الماجستير نُفِّذ على Oculus Quest 2 بمحرك Unity.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
+      "datePublished": "2021-02",
       "inLanguage": "ar",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Paul Cozma-Ivan" },
+        { "@type": "Person", "name": "Elmira Katsajeva" },
+        { "@type": "Person", "name": "Olivia Ludkiewicz" }
+      ]
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Smart Codesign VR</h1>
+    <h1>تطوير نظام واقع افتراضي لبناء نماذج أولية لأجسام تفاعلية للأطفال</h1>
     <div class="identity">
       <p class="tagline">بقلم <a class="byline" href="../../">تاكافومي هوريوتشي (Takafumi Horiuchi)</a></p>
-      <nav aria-label="ملفات شخصية في أماكن أخرى">
+      <nav aria-label="حسابات في أماكن أخرى">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">قيد الإعداد</p>
+    <p class="dateline">فبراير 2021</p>
   </header>
 
   <ascii-hero data-scene="smart-codesign-vr" dir="ltr" translate="no" aria-hidden="true">
@@ -115,27 +103,149 @@
                               ~~ (@) ~~</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>نظرة عامة</h2>
-    <p class="lead">مشروع من مرحلة الماجستير. النص قيد الإعداد.</p>
+    <p class="lead">Smart Codesign VR منصة لتركيب أشياء تفاعلية — «أجسام ذكية» — داخل الواقع الافتراضي ولمسها في الحال للتحقق مما تفعله. يختار اللاعب ثلاث بطاقات، واحدة للبيئة وأخرى للمدخل وثالثة للمخرج، ثم يحدّد بيده ما الذي يحدث ومتى يحدث. ويوضع الجسم بعد اكتماله في حديقة افتراضية، حيث يمكن تشغيله وتجربته فعلًا.</p>
+    <p>الأساس هو SNaP (The Smart Nature Protagonists)، لعبة لوحية طوّرها مختبر i3Lab في بوليتكنيك ميلانو. في SNaP يجمع الأطفال بين البطاقات ليبتكروا أجسامًا ذكية، غير أن ما يبتكرونه يقف عند جملة على الورق. أراد هذا المشروع أن يمنح تلك الجملة جسدًا داخل الواقع الافتراضي: شيئًا يُركَّب بحركة الجسد نفسه ويمكن لمسه بعد ذلك.</p>
+    <p>صمّمه ونفّذه فريق من أربعة أشخاص بوصفه المشروع النهائي لمقرر Advanced User Interfaces (العام الدراسي 2020–21) في بوليتكنيك ميلانو. والمستخدمون المفترضون أطفال بين 11 و13 عامًا، مع عناية خاصة بالأطفال ذوي الاضطرابات النمائية العصبية (NDD). نُفِّذ لجهاز Oculus Quest 2 بمحرك Unity ولغة C#، وبلغ نموذجًا أوليًّا يعمل من أوله إلى آخره، من اختيار البطاقات حتى تشغيل الجسم في الحديقة.</p>
+
+    <figure class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="فيديو توضيحي لـ Smart Codesign VR" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>الفيديو التوضيحي: اختيار البطاقات، وتحديد شرط المدخل وسلوك المخرج، ثم تشغيل الجسم الذكي المكتمل في الحديقة الافتراضية.</figcaption>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>لعبة SNaP اللوحية، ومنطلقات التصميم</h2>
+    <h3>لعبة يكون فيها الأطفال هم المصمّمون</h3>
+    <p>SNaP لعبة لوحية يقوم فيها طفلان إلى أربعة بدور «المصمّمين»، بينما يؤدي بالغ يدير الجلسة دور «العمدة». يطرح العمدة مهمة في البداية، فيتحاور الأطفال ويجمعون بين البطاقات ليبتكروا جسمًا ذكيًّا يحلّها. والغاية تنمية القدرة على الابتكار، وعلى التعاون مع الآخرين وصوغ الفكرة في كلمات. ويُذكر كذلك أن اللعبة يمكن استعمالها لأغراض علاجية مع الأطفال ذوي الاضطرابات النمائية العصبية.</p>
+
+    <h3>البيئة والمدخل والمخرج — ثلاثة أنواع من البطاقات</h3>
+    <p>لبطاقات SNaP ثلاثة أنواع، لكل نوع دوره الخاص.</p>
+    <p><strong>بطاقات البيئة (Environment)</strong> هي الشيء نفسه الذي يُجعل ذكيًّا. شجرة، مقعد، أرجوحة، ماء، حجر، عمود إنارة، سلة مهملات، دراجة، جسر، درج، حقيبة مدرسية — أشياء مألوفة في حديقة أو شارع. ليست مستشعرًا ولا وظيفة، بل هي الجسم الذي يُركَّب فيه الاثنان الآخران.</p>
+    <p><strong>بطاقات المدخل (Input)</strong> تحدّد ما يستشعره ذلك الجسم: زر، حركة، لمس، مسافة، حرارة، رطوبة، إضاءة، لون، صوت، نار، منسوب ماء، نشرة جوية — أي المستشعرات.</p>
+    <p><strong>بطاقات المخرج (Output)</strong> تحدّد ما يفعله ذلك الجسم: أن يضيء، أن يُصدر صوتًا، أن يهتزّ، أن يتحرك، أن يعرض، أن يسجّل، أن يرسل — أي المُشغِّلات.</p>
+    <p>الحاجة إلى بطاقة البيئة نابعة من أن الزوج نفسه من المدخل والمخرج يتغير معناه بالكامل بحسب المكان الذي يحلّ فيه. فـ«إصدار صوت عند رصد حركة» على سلة المهملات يصير «إخفاق الرمي في السلة يُحدث صوتًا»، وعلى عمود الإنارة يصير «ضوء يُنبِّه إلى اقتراب أحد». والمدخل والمخرج وحدهما لا يتجاوزان مواصفات جهاز؛ ولا يصيران جملة عن أمر من العالم المحيط بنا إلا بإضافة البيئة.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="بطاقة البيئة «Trash can» وبطاقة المدخل «Motion» وبطاقة المخرج «Make sound» موصولة بعلامات «&»، ويقود سهم إلى الجملة «Missing the trash bin creates a sound.»"></a>
+      <figcaption>يصير الجمع بين ثلاث بطاقات جملةً تصف جسمًا ذكيًّا واحدًا. ولون إطار البطاقة يدل على نوعها: الأخضر للبيئة، والأزرق الفاتح للمدخل، والأصفر للمخرج.</figcaption>
+    </figure>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="جدول يعرض بطاقات SNaP الـ49 كلها. الصفّان العلويان هما بطاقات البيئة العشرون ذات الإطار الأخضر، والصفّان الأوسطان مع الطرف الأيسر من الصف الأخير هي بطاقات المدخل الإحدى والعشرون ذات الإطار الأزرق الفاتح، وبقية الصف الأخير هي بطاقات المخرج الثماني ذات الإطار الأصفر."></a>
+      <figcaption>بطاقات SNaP الـ49 كلها: 20 للبيئة و21 للمدخل و8 للمخرج، وحاصل ضرب هذه المفردات هو فضاء التصميم في اللعبة.</figcaption>
+    </figure>
+
+    <h3>أن تصير الجملة على الورق شيئًا يُلمس</h3>
+    <p>كانت جلسة SNaP تنتهي حتى الآن عند كتابة الجسم الذكي المُبتكَر في جملة واحدة. وكان يجري في i3Lab بالتوازي تطوير «لوح مادي» يجمع بين لوح رقمي وArduino لتركيب تلك الجملة ماديًّا. وSmart Codesign VR جواب آخر عن المسألة نفسها، اختار الواقع الافتراضي وسيطًا — وهو اتجاه لم يكن فريق البحث قد جرّبه بعد.</p>
+    <p>اختيار الواقع الافتراضي يغيّر أمرين. الأول أن الطفل يستطيع بناء النموذج بحركة جسده كله: فالإمساك والحمل وتسليط الضوء والطلاء بالفرشاة تصير مباشرةً أفعال «تحديد الشرط» و«تعيين السلوك». والثاني أن ما ابتكره ينهض أمامه مرئيًّا ويصير قابلًا للّمس في الحال. فالجملة المجردة تصير شيئًا له حجم وشكل.</p>
+    <h3>لمن صُمِّم</h3>
+    <p>الفئة الأساسية أطفال بين 11 و13 عامًا، مع تركيز على الأطفال ذوي الاضطرابات النمائية العصبية. فتصوّر جسم ذكي يقتضي قدرًا من التفكير المنطقي، ولذلك تفترض SNaP وهذه النسخة الافتراضية معًا سنًّا معينة.</p>
+    <p>في العمل العلاجي مع الأطفال ذوي هذه الاضطرابات، كثيرًا ما يكون الهدف تنمية القدرة على التعبير عن الفكرة ونقلها إلى الآخرين. ومعروف كذلك أن التعامل مع المجرَّد صعب عليهم، وأن المدة التي يستطيعون فيها الحفاظ على الانتباه محدودة. في المقابل، تثبت فاعلية الألعاب التي تُلمس باليد، والأنشطة التي تُمارس مع الآخرين، والأنشطة المدعومة بالكبار أو بالتقنية؛ ومعروف أن طريقة الانخراط تتغير حين تكون التجربة نفسها ممتعة. وليس قليلًا عدد الأطفال الذين يشعرون أن العلاج التقليدي مملّ ومُوتِّر.</p>
+
+    <h3>العناية بالفضاء نفسه</h3>
+    <p>تفيد الدراسات السابقة المعتمَدة بأن أربعة أمور تُسهم في تهيئة فضاء مريح للأطفال ذوي هذه الاضطرابات. الصوت (لحساسية السمع: عزل صوتي وإمكان ضبط مستوى الصوت، ويُفضَّل صوت هادئ رتيب)؛ والضوء واللون (تُحصر الألوان الزاهية عالية التشبّع في مساحات صغيرة، على أرضية هادئة منخفضة التشبّع)؛ وتنظيم الفضاء (الفضاء المرتَّب ذو الحدود الواضحة أسهل في المعالجة)؛ والخامات (بسيطة، سهلة القراءة، مرتَّبة بحيث لا تعوق مسارات الحركة). والفضاء الافتراضي كذلك مكان تُحسم فيه هذه الأمور الأربعة كلها من جهة المصمِّم.</p>
+
+    <h3>القيود التي يحملها الواقع الافتراضي بوصفه وسيطًا</h3>
+    <p>وفي الوقت نفسه للواقع الافتراضي قيود لا يمكن تجاهلها: كلفة الأجهزة، والدوار، والعبء على الرأس والرقبة من وزن النظارة، والحوادث الناتجة عن حجب مجال الرؤية، وإجهاد العين من الاستعمال الطويل، والتعلّق الناشئ عن الانغماس المفرط في العالم الافتراضي. ويضاف عند الأطفال ذوي الاضطرابات النمائية العصبية قلق خاص بهم، هو أن الحد بين الواقعي والافتراضي يغدو أسهل التباسًا.</p>
+    <p>وقد أثّر ذلك مباشرةً في قرارات التصميم: إبقاء التفاعل بسيطًا مع ترك ما يكفي من المقاومة ليعلّم شيئًا؛ وجَعْل الصورة والصوت واضحين دون أن يشتدّ المؤثر أكثر مما ينبغي؛ وتهيئة نهاية واضحة للتجربة — فمتى انتهى بناء النموذج والتشغيل في الحديقة اكتمل النشاط. وهو في الوقت نفسه قرار بألّا يُصمَّم شيء يُبقي الطفل في العالم الافتراضي.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>ما بُني — مسار التجربة وتنفيذها</h2>
+    <h3>مشاهد التجربة الأربعة</h3>
+    <p>يتألف التطبيق من أربعة مشاهد: شاشة الانتظار، واختيار البطاقات، وبناء النموذج، والتشغيل في الحديقة.</p>
+
+    <h4>1. شاشة الانتظار</h4>
+    <p>عند التشغيل تظهر أولًا شاشة العنوان، ولا يمضي شيء حتى يُضغط زر في وحدة التحكم. وهو توقّف مقصود، كي لا يبدأ الجزء الأساسي قبل أن تستقر النظارة ويستقيم وضع الجسد.</p>
+
+    <h4>2. اختيار البطاقات — الإمساك ثم الوضع في الصندوق</h4>
+    <p>في المشهد التالي تُختار بطاقة واحدة لكلٍّ من البيئة والمدخل والمخرج. وطريقة الاختيار أن يُمسَك الجسم الذي يمثّل البطاقة ويُحمَل إلى الصندوق المقابل ويوضع فيه. والإمساك والحمل بدل النقر هو ما يستثمر الفضاء ثلاثي الأبعاد الذي يوفّره الواقع الافتراضي. ومتى رُصد امتلاء الصناديق الثلاثة انتقل المشهد إلى بناء النموذج مع إرشاد صوتي. والترتيب غير مهم، لكن لا مضيّ قبل ملء الثلاثة جميعًا.</p>
+
+    <figure class="paper-figure shot-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="شاشة اختيار البطاقات في الواقع الافتراضي. أمام لوحة عليها بطاقات تقف ثلاثة صناديق شبه شفافة كُتب عليها input وenvironment وoutput، ويد تمسك جسمًا على هيئة مكبِّر صوت."></a>
+      <figcaption>مشهد اختيار البطاقات. الصناديق الثلاثة في المقدمة تقابل البيئة والمدخل والمخرج، ووضع الجسم المُمسَك فيها يثبّت الاختيار. أما البطاقات التي لا يمكن التعامل معها في هذه المرحلة فتظهر باهتة.</figcaption>
+    </figure>
+
+    <h4>3. بناء النموذج — تحديد الشرط والسلوك بالجسد</h4>
+    <p>هنا قلب المنظومة. فلبطاقة المدخل المختارة يُحدَّد «متى»، ولبطاقة المخرج «ماذا يفعل». وطريقة التشغيل مبنية لكل بطاقة على حدة، وقد أُسندت إلى كل واحدة حركة لا تتحقق إلا بتتبّع ذي ست درجات حرية.</p>
+    <p>فإذا اختير مثلًا «النشرة الجوية» مدخلًا، ظهرت في متناول اليد أجسام تمثّل الصحو والغيم والمطر والرعد والثلج. ويكفي الإمساك بأحدها وتوجيه الشعاع الخارج منه إلى الجسم المستهدف ليثبت الشرط. وإذا اختير «أن يضيء» مخرجًا، أمسك اللاعب فرشاة وغمس طرفها في علبة الطلاء بحسب اللون ثم مسح بها الجسم ليحدّد لون الإضاءة. ولمحو لون سبق وضعه يكفي غمس الفرشاة في علبة «الماء» ثم المسح من جديد.</p>
+    <p>وكان الأهم على صعيد التنفيذ إتاحة تعريف <strong>عدة</strong> أزواج من المدخل والمخرج جنبًا إلى جنب. فالخطة الأولى لم تتضمن سوى زوج واحد: «إذا كان الجو صحوًا يضيء أحمر»، وانتهى الأمر. وبجعلها متعددة صار الجسم الواحد يردّ على مواقف عدة ردودًا مختلفة: «أحمر مع الصحو، أزرق مع المطر، أبيض مع الثلج». والزوج المُعرَّف يمكن تشغيله وتجربته قبل تثبيته، فإن لم يعجب أمكن الرجوع وتعديله.</p>
+
+    <figure class="paper-figure shot-figure">
+      <div class="figure-pair">
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="شاشة بناء النموذج. على اليسار لوحة شرح تشغيل بطاقة المدخل «Weather»، وفي الوسط ثلاث فقاعات كلام كُتب فيها «When it is about to be sunny / rain / snow»، وعلى اليمين فقاعات المخرج، وفي المقدمة جسم على هيئة شجرة وعلب طلاء."></a>
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="الشاشة نفسها منظورة من اليمين. على جانبي عمود إنارة مطليّ بالأصفر تصطف فقاعات المدخل والمخرج أزواجًا، وعند الطرف الأيمن لوحة شرح تشغيل بطاقة المخرج «Light up»."></a>
+      </div>
+      <figcaption>مشهد بناء النموذج. الفقاعات على الجانبين هي شروط المدخل وسلوكيات المخرج، وتتقابل بالأرقام. زر «+» يزيد زوجًا وزر «−» ينقص واحدًا. وتعرض لوحة جهة المدخل «Max instances: 5».</figcaption>
+    </figure>
+
+    <h4>4. الحديقة — لمس ما صنعتَه</h4>
+    <p>بعد تثبيت الجسم ينتقل المشهد إلى حديقة افتراضية. هنا يضع اللاعب الجسم الذكي الذي ركّبه، ويستدعي شرط المدخل الذي حدّده، ويتحقق بنفسه من سلوك المخرج. وحين يعمل الجسم يظهر مشهد احتفالي وتنتهي التجربة.</p>
+
+    <h4>المسار في مجمله</h4>
+    <p>يجمع الشكل التالي ذلك كله في مخططات نشاط بلغة UML. الأعلى يبيّن المسار العام، والاثنان في الأسفل يبسطان بالتفصيل تشغيل بطاقة «النشرة الجوية» وبطاقة «أن يضيء». وقد كُتبت على هيئة تفرّعات إمكانية العودة إلى إعادة الاختيار بعد اختيار البطاقات عند تلقّي الإرشاد، وإمكانية الرجوع إلى التحرير بعد التثبيت والتجربة.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="مخططات نشاط بلغة UML. المخطط الأعلى «Overall Activity» يمتد من شاشة الانتظار إلى اختيار ثلاث بطاقات، فالإرشادات، فتعريف شروط المدخل وسلوكيات المخرج، فالتثبيت، فالتحقق من العمل، حتى التشغيل في الحديقة. وفي الأسفل إلى اليسار يُبسط تشغيل بطاقة النشرة الجوية، وإلى اليمين تشغيل بطاقة الإضاءة."></a>
+      <figcaption>مخططات نشاط بلغة UML تمثّل أفعال المستخدم. ولأن التشغيل يختلف باختلاف نوع البطاقة، كُتب المسار المشترك وتفاصيل كل بطاقة على حدة.</figcaption>
+    </figure>
+
+    <h3>الجهاز والأدوات</h3>
+    <p>الجهاز المستهدف هو Oculus Quest 2. فهو يتيح تتبّعًا بست درجات حرية، بحيث يصير الالتفات والمشي والإمساك مدخلات مباشرة. ولمّا كان تناول الأجسام الافتراضية باليد مرارًا هو محور التجربة، حُكم بأن جهازًا بثلاث درجات حرية يُركَّب فيه هاتف لا يفي بالغرض.</p>
+    <p>محرّك اللعبة هو Unity واللغة C#؛ وللاتصال بجهاز Quest 2 استُخدمت حزمة Oculus Integration، ومنها جاء سلوك كاميرا الواقع الافتراضي والعرض وواجهة برمجية موحّدة لمدخلات وحدات التحكم.</p>
+
+    <h3>أربعة مشاهد وثلاث عشرة صنفًا</h3>
+    <p>ينقسم النظام إلى أربعة مشاهد في Unity، تقابل مباشرةً مشاهد التجربة الأربعة. والأصناف ثلاثة عشر إجمالًا، ثلاثة منها مجردة.</p>
+    <p><strong>مشهد العنوان</strong> لا يحتوي سوى <code>TitleSceneCore</code>، الذي ينقل إلى المشهد التالي عند ضغط زر.</p>
+    <p><strong>مشهد اختيار البطاقات</strong> يتألف من <code>CardSelectionSceneCore</code> و<code>CardSelectionDetector</code>. ينشئ الأول ثلاث نسخ من الثاني ويسندها إلى صناديق اختيار البيئة والمدخل والمخرج. ولكل صندوق السلوك نفسه: إذا اقترب جسم يمثّل بطاقة جذبه إلى داخله ووسم تلك الفئة بأنها «مختارة». ومتى اكتملت الثلاثة كُتب محتوى الاختيار في الصنف <code>SmartObject</code> ومضى المشهد. و<code>SmartObject</code> صنف ساكن، فلا تُهدر بياناته عند الانتقال بين المشاهد. وهذه النقطة وحدها هي التي تصل المشاهد الأربعة في تجربة واحدة.</p>
+    <p><strong>مشهد بناء النموذج</strong> هو المركز. يدير <code>PrototypingSceneCore</code> الإجراء كله إدارة مركزية، ويُعبَّر عن سلوك البطاقات بتسلسل وراثي على رأسه <code>Card</code>. وتحت <code>Card</code> يأتي <code>InputCard</code> و<code>OutputCard</code>، وتحتهما أصناف البطاقات المحدّدة: <code>Weather</code> و<code>Fire</code> و<code>MakeSound</code> و<code>LightUp</code>. ولمّا كانت أصناف الطرف المحدّدة وحدها هي التي تتولى فعليًّا عمليات بناء النموذج، جُعلت الثلاثة الأعلى منها مجردة.</p>
+    <p>يحتفظ <code>PrototypingSceneCore</code> بقائمة نسخ شروط المدخل وقائمة نسخ سلوكيات المخرج. فإذا كانت البطاقتان المختارتان «النشرة الجوية» و«أن يضيء»، امتلأت الأولى بنسخ <code>Weather</code> وحدها، والثانية بنسخ <code>LightUp</code> وحدها. وتُنشأ واحدة من كلٍّ تلقائيًّا عند البدء، ثم يزداد العدد مع كل ضغطة على زر الإضافة في الواجهة. وفي كل إطار تُقيَّم جميع شروط المدخل في القائمة وتُستدعى سلوكيات المخرج المقابلة. ومتى ثبّت المستخدمُ الاختيار صار <code>isConfirmed</code> صحيحًا وكُتبت بيانات السلوك المُركَّب في الخصائص الساكنة لـ<code>SmartObject</code>.</p>
+    <p><strong>مشهد التفاعل</strong> لا يحتوي سوى <code>InteractionSceneCore</code>، الذي يتولى وضع الجسم في الحديقة، وتشغيل شروط المدخل ومراقبة المخرجات، والمشهد الاحتفالي الختامي.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="مخطط أصناف بلغة UML. رُسمت أربع حزم — Title Scene وCard Selection Scene وPrototyping Scene وInteraction Scene — إلى جانب الصنف الساكن Smart Object الذي تشير إليه جميعها. وداخل Prototyping Scene يرث الصنفُ Input Card والصنفُ Output Card الصنفَ المجرد Card، ويرثهما بدورهما Weather Card وFire Card وMake Sound Card وLight Up Card."></a>
+      <figcaption>مخطط أصناف النظام بلغة UML. الحزم الأربع تقابل مشاهد Unity، ولا يحتفظ بالبيانات عبر المشاهد سوى <code>Smart Object</code> في الأسفل وسطًا. وقد بُسِّطت السمات والدوال في المخطط تسهيلًا للقراءة.</figcaption>
+    </figure>
+
+    <p class="source-link">يمكن الاطلاع على الشيفرة المصدرية عبر الرابط الآتي:<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
   </section>
 
   <section>
-    <h2>القيود</h2>
+    <h2>ما تحقّق وما بقي</h2>
+    <h3>من بين 49 بطاقة، بلغت التنفيذَ تسعٌ</h3>
+    <p>البطاقات المنفَّذة في النموذج الأولي تسع. أما المعالجات الأساسية — اختيار البطاقات، وتعريف الشروط والسلوكيات، وإدارة النسخ المتعددة، وتمرير البيانات بين المشاهد — فقد بُنيت إلى حال تعمل، ومن ثم فإن إضافة بقية البطاقات مسألة وقت من حيث المبدأ. وثمة ست بطاقات أخرى اكتمل تصميمها ولم يُسعف الوقتُ تنفيذَها.</p>
+
+    <table class="results-table">
+      <caption>حال التنفيذ في النموذج الأولي</caption>
+      <thead>
+        <tr><th scope="col">الحال</th><th scope="col">البطاقات</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">مُنفَّذة (9)</th><td>البيئة: شجرة، عمود إنارة، لافتة طريق، سلة مهملات، جسر<br>المدخل: نار، نشرة جوية<br>المخرج: إصدار صوت، إضاءة</td></tr>
+        <tr><th scope="row">مُصمَّمة فقط (6)</th><td>المدخل: زر، سرعة، صوت<br>المخرج: حركة، اهتزاز، إرسال</td></tr>
+        <tr><th scope="row">لم تبدأ (34)</th><td>15 بطاقة بيئة، و16 بطاقة مدخل، و3 بطاقات مخرج (عرض، تشغيل، تسجيل)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>لم يُجرَ تقييم</h3>
+    <p>لم يُجرَ تقييم مع مستخدمين فعليين. فقد تزامنت مدة التطوير مع المشاركة عن بُعد في ظل جائحة كوفيد-19، ولم يتيسّر تنظيم ورشة حضورية قائمة على نظارات الواقع الافتراضي ولا بديل عنها عن بُعد. ومن ثم فإن ما يستطيع هذا المشروع إثباته يقف عند حدّ أن التجربة المصمَّمة تقوم في صورة تعمل؛ أما كونها سهلة على الأطفال أو ذات معنى في السياق العلاجي فلم يُتحقَّق منه.</p>
+    <p>وإذا أُجري تقييم مستقبلًا فسيكون السؤال: إلى أي حد تبدو واجهة الاستخدام وتجربته بديهيةً في عمل بناء النماذج؟ ويصلح للقياس زمنُ الإنجاز، ومدى تطابق الجسم الذكي المتصوَّر سلفًا مع الناتج، وعدد الضغطات غير المقصودة، ويضيف استبيانٌ بعديّ مبني على مقياس SUS (System Usability Scale) بياناتٍ كمية. ولأن نظارة الواقع الافتراضي تحجب مجال رؤية المستخدم، تظهر ردود الفعل الجسدية غير الواعية بسهولة أكبر، ولذلك يفيد تسجيل الجلسة بالفيديو فائدة خاصة. أما السن، فسنّ الثالثة عشرة هي الحد الواقعي، حيث تتقاطع الفئة العمرية التي تفترضها SNaP مع إرشادات السلامة من Oculus التي لا تفترض الاستعمال دون هذه السن.</p>
+
+    <h3>العمل الذي ينتظر</h3>
+    <p>من الأعمال التي لم يتّسع لها الوقت والمهارة، تأتي أولًا إعادة بناء واجهة الاستخدام وتجربته. فقد استغرق التنفيذُ اللازم لإنجاح تركيبات البطاقات الوقتَ، ولم يتسنَّ صقل التعبير البصري والسمعي واللمسي. وبوجه خاص يستحق إعادةَ النظر السؤالُ عن مدى استعمال النص في واجهة الواقع الافتراضي. فالكتابة نشأت أصلًا لتدوين المعلومات على سطح ذي بعدين، وفي الفضاء ثلاثي الأبعاد عناصر كثيرة يُستحسن إعادة تصميمها بوصفها واجهة استخدام مكانية (SUI). وإذا كان الجمهور أطفالًا ذوي اضطرابات نمائية عصبية، فالتفاعل بالصوت اتجاه واعد.</p>
+    <p>أما على الصعيد الأكاديمي فقد ذُكرت ثلاثة مسارات. الأول المقارنة مع اللوح المادي الذي كان يُطوَّر في المختبر نفسه i3Lab. فثمة دراسات سابقة وجدت أن اللعبة التعاونية نفسها، حين تُلعب في مكان واقعي وفي بيئة افتراضية، ولّدت حوارًا أكثر في الجانب الافتراضي؛ ومقارنة من النوع نفسه قد تصحّ بين هذين أيضًا. والثاني دعم مشاركة عدة أشخاص في آنٍ واحد: فما دام الاسم يحمل كلمة «codesign»، فللقدرة على التركيب مع الآخرين داخل الفضاء الافتراضي معنى. والثالث توحيد صيغة وصف الأجسام الذكية لتصير قابلة للنقل عبر المنصات.</p>
+
+    <h3>خلاصة</h3>
+    <p>ما بُني في هذا المشروع ليس نموذجًا لجسم ذكي مكتمل، بل هو المكان الذي يُصنع فيه. فالبطاقات الثلاث — البيئة والمدخل والمخرج — انتقلت كما هي إلى وحدات التركيب: الجسم، والشرط، والسلوك؛ وصارت أفعال الجسد — الإمساك والتوجيه والطلاء — هي ما يربط بينها. والجملة التي وُلدت في لعبة لوحية تصير هنا شيئًا يتحرك بيد صاحبها، وبياناتٍ تبقى بعد انتهاء الورشة.</p>
   </section>
 
-  <section>
-    <h2>المقاربة</h2>
-  </section>
-
-  <section>
-    <h2>النتيجة</h2>
-  </section>
+  <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva, and Olivia Ludkiewicz, «Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD», Advanced User Interfaces (A.Y. 2020–21) Final Exam Project، بوليتكنيك ميلانو، فبراير 2021.</p>
 
   <nav aria-label="الموقع">
     <ul>
@@ -164,5 +274,13 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two strings it
+     needs are written in this page's language, like the rest of the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="عرض مكبَّر للشكل" hidden>
+  <button class="lightbox__close" type="button" aria-label="إغلاق العرض المكبَّر"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

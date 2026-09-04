@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Motion Analysis of the Piano Action — 堀內貴文</title>
-<meta name="description" content="碩士期間的專案。記錄正在籌備中。">
+<title>鋼琴擊弦機的運動分析 — 堀內貴文</title>
+<meta name="description" content="以SolidWorks將平台鋼琴的擊弦機構重建為3D模型。這是一個碩士階段的專題，以理論計算與運動分析相互對照，考察琴鍵輸入如何轉化為琴槌速度與琴弦反作用力。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-piano-action/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
-<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<link rel="stylesheet" href="../../../works/figures.css">
+<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css?v=20260904-6">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="Motion Analysis of the Piano Action">
-<meta property="og:description" content="記錄正在籌備中。">
+<meta property="og:title" content="鋼琴擊弦機的運動分析">
+<meta property="og:description" content="琴鍵上的輸入，在穿過複雜的連桿機構之後，是怎樣變成琴槌的速度與琴弦的反作用力的？">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="木製鋼琴擊弦機的SolidWorks 3D模型，以分解視圖呈現。">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +46,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀內貴文",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "認知工程 × AI × 設計",
       "sameAs": [
@@ -72,37 +57,35 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/#work",
-      "name": "Motion Analysis of the Piano Action",
+      "name": "鋼琴擊弦機的運動分析",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/",
-      "description": "碩士期間的專案。記錄正在籌備中。",
-      "creativeWorkStatus": "籌備中",
+      "description": "以SolidWorks將平台鋼琴的擊弦機構重建為3D模型，並以理論計算與運動分析相互對照，考察從琴鍵輸入到琴槌速度與琴弦反作用力的傳遞。這是一個碩士階段的專題。",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
+      "datePublished": "2020-01",
       "inLanguage": "zh-Hant",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Motion Analysis of the Piano Action</h1>
+    <h1>鋼琴擊弦機的運動分析</h1>
     <div class="identity">
-      <p class="tagline">作者：<a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
-      <nav aria-label="其他平台的主頁">
+      <p class="tagline">作者： <a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
+      <nav aria-label="其他平台上的主頁">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">籌備中</p>
+    <p class="dateline">2020年1月</p>
   </header>
 
   <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
@@ -121,26 +104,159 @@
                                                /__\</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>概覽</h2>
-    <p class="lead">碩士期間的專案。記錄正在籌備中。</p>
+    <h2>概述</h2>
+    <p class="lead">在平台鋼琴的內部，按下琴鍵的動作經由多重連桿逐級傳遞，最終使琴槌向上彈起，轉化為琴弦的振動。這套讓琴鍵被按下時能夠帶動琴槌擊弦的槓桿系統，稱為「擊弦機」。本專題在SolidWorks*上把這套擊弦機重建為3D模型，並以運動分析考察琴鍵上的輸入如何轉化為琴槌的速度與琴弦的反作用力。</p>
+    <p>分析之前，先依據參考圖片從零開始對琴鍵機構進行3D建模，再以這個模型執行了兩項運動分析：一項是下沉的琴鍵與彈起的琴槌之間的速度關係，另一項是施加於琴鍵的力與作用到琴弦的力之間的關係。3D模型上得到的模擬數值，與依尺寸和支點位置推算出的理論值相互對照，藉此確認運動與力在模型內部是如何傳遞的。</p>
+    <p class="citation">* SolidWorks：3D CAD系統。在設計階段即可進行考察零件強度的結構分析，以及確認運動狀況的運動分析。</p>
+
+    <hr class="section-break">
+
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" role="group" aria-label="Motion Analysis of the Piano Action 全17頁。可橫向捲動">
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="標題頁：「Motion Analysis of the Piano Action」。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="平台鋼琴內部的照片，介紹排列在琴鍵後方的擊弦機構。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="3D模型，呈現按下琴鍵時擊弦機各部分如何連動。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="擊弦機的剖面模型，呈現按下琴鍵後琴槌抬起並擊打琴弦。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="描摹剖面資料的輪廓、在SolidWorks中從零建立各零件模型的過程。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="在SolidWorks中完成的擊弦機3D組合件。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="模型的零件名稱與自由度計算，顯示施加拘束後自由度為7。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="兩項分析的主題：琴鍵與琴槌的線速度，以及琴鍵輸入與琴弦反作用力的關係。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分析1的觀測點：琴鍵末端的向下速度與琴槌的向上速度。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="將鋼琴機構簡化為三個轉動構件的示意圖。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="由三個轉動構件的半徑比推導琴鍵速度與琴槌速度關係式的示意圖。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分析條件：在1秒至2秒之間，於琴鍵末端向下施加5牛頓。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="琴鍵與琴槌線速度的曲線圖。尖峰速度分別為每秒1027公釐與4284公釐。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="由實測半徑求得的琴槌速度每秒4614公釐，與分析值每秒4284公釐的比較。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="分析2的條件：對琴鍵向下施加15牛頓，觀測琴弦一側的反作用力。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="琴弦反作用力最大值31牛頓，與依槓桿原理求得的理論值31.1牛頓的比較。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="有關擊弦機力學模型的參考文獻一覽。"></a></li>
+      </ol>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>把擊弦機做成可供分析的3D模型</h2>
+    <h3>把一次觸鍵變成一次擊弦的機構</h3>
+    <p>擊弦機是把琴鍵的向下運動轉換為琴槌向上運動的機構。按下琴鍵後，頂桿螺絲、連動桿、擊弦機頂桿、複振槓桿等隨之連動，琴槌被抬起並擊打琴弦。演奏者看到的只是一次觸鍵，而在其內部，多個零件分別繞著不同的支點轉動，在彼此接觸之中把運動傳遞下去。</p>
+    <p>3D建模涵蓋了琴鍵、琴槌、頂桿、連動桿、複振槓桿、頂桿螺絲、制音器、制音槓桿、金屬線，以及支撐它們的框架。要理解其運動，僅僅端詳成品的形狀並不足夠，還必須界定哪個零件以何處為支點轉動、又觸及下一個零件的哪個部位。</p>
+
+    <h3>從剖面圖做出3D模型</h3>
+    <p>本專題並未採用現成的CAD資料，而是以擊弦機的剖面資料為底圖描摹各零件的輪廓，逐一建立3D模型。隨後把零件組成組合件，並設定與實際機構相對應的固定關係與轉動關係。這道工序把一個供人觀看形狀的模型，轉變為一個可以施力、可以運動的分析模型。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="在SolidWorks畫面中，把作為參考的鋼琴擊弦機剖面圖設為半透明底圖，並沿其輪廓建立3D模型。左側顯示著Windows工作列與零件樹。"></a>
+      <figcaption>把作為參考的剖面圖置於背面作半透明底圖，沿其輪廓在SolidWorks中建立了3D模型。</figcaption>
+    </figure>
+
+    <figure class="paper-figure model-figure">
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="在Windows上執行的SolidWorks畫面。左側是Windows工作列與零件樹，中央是所建立的鋼琴擊弦機3D模型。"></a>
+      <figcaption>在SolidWorks上實際建立的擊弦機3D模型。</figcaption>
+    </figure>
+
+    <h3>以自由度確認拘束條件</h3>
+    <p>扣除固定的框架，可動零件共9個，若無拘束則合計具有54個自由度。把頂桿螺絲與金屬線固定於其他零件，可減少12個自由度；再以轉動接頭拘束其餘7個零件，又減少35個。因此，此CAD組合件的自由度為7，如下所示。</p>
+    <p class="formula" role="math" aria-label="54減12減35等於7">54 − 12 − 35 = 7</p>
+    <p>SolidWorks的拘束診斷同樣顯示，估計自由度與實際自由度皆為7，冗餘拘束為0。這並非斷定實物擊弦機整體自由度的數值，而是確認本專題所設定的零件構成與拘束條件確實依預期組裝完成。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="標註了各零件名稱的擊弦機模型，以及從54個自由度中減去12個固定拘束與35個轉動拘束、得出7的計算。"></a>
+      <figcaption>零件名稱與拘束條件。SolidWorks的診斷同樣顯示模型的自由度為7、冗餘拘束為0。</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>約束</h2>
+    <h2>兩項分析——琴鍵輸入如何被轉換</h2>
+    <p>模型的行為分為兩項分析來考察。分析1是「琴鍵移動的快慢如何轉換為琴槌的快慢」，分析2是「施加於琴鍵的力如何以琴弦一側的反作用力呈現」。每次只擷取一組輸入與輸出，便能把複雜連桿機構的行為，化為可用幾何速度比與槓桿力平衡來說明的形式。</p>
+    <p>比較的基準，是把機構置換為簡單轉動構件之後的理論計算。理論值與模擬值若相接近，至少可以判斷模型內部的運動，符合由所設定的尺寸與拘束條件所應期待的關係。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="兩幅示意圖，表示分析1對應琴鍵與琴槌的線速度，分析2對應施加於琴鍵的力與琴弦的反作用力。"></a>
+      <figcaption>兩項分析的輸入與輸出。分析1比較琴鍵與琴槌的線速度，分析2比較施加於琴鍵的力與琴弦的反作用力。</figcaption>
+    </figure>
+
+    <h3>分析1——琴鍵的速度在琴槌處被放大了多少</h3>
+    <p>在速度分析中，把複雜的擊弦機簡化為琴鍵、以連動桿為中心的中間機構、琴槌這三個在接觸中傳遞運動的剛體。把運動理解為依序從圖中的①傳到③，由眾多零件構成的機構便可當作三級轉動來計算。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="把擊弦機以顏色區分為三個剛體的示意圖：①琴鍵、②以連動桿為中心的中間機構、③琴槌。"></a>
+      <figcaption>為便於分析，把機構簡化為①琴鍵、②中間機構、③琴槌這三個剛體。</figcaption>
+    </figure>
+
+    <p>同一剛體上角速度相同，若以<em>r</em>表示至支點的距離、以<em>v</em>表示該點的線速度，則<em>v</em> = <em>ωr</em>。若假定接觸點處速度無損耗地傳向下一個剛體，把各級的輸入半徑與輸出半徑之比相乘，即可求得琴槌速度。</p>
+    <p class="formula formula-long" role="math" aria-label="琴槌速度等於r1撇、r2撇、r3撇之積，除以r1、r2、r3之積，再乘以琴鍵速度">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="針對三個剛體，把各支點至輸入點與輸出點的距離標為r1、r1撇、r2、r2撇、r3、r3撇的示意圖。"></a>
+      <figcaption>把各剛體自支點至輸入點、輸出點的距離視為半徑，將其比值在三級之間相乘，即得速度比。</figcaption>
+    </figure>
+
+    <h4>輸入條件與觀測結果</h4>
+    <p>在SolidWorks Motion Analysis中，於琴鍵末端向下施加5 N，觀測琴鍵末端與琴槌的線速度。開始施力後不久出現的尖峰速度，琴鍵為1,027 mm/s，琴槌為4,284 mm/s。也就是說，在模擬中琴槌的速度約為琴鍵的4.17倍。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="琴鍵與琴槌速度隨時間變化的兩幅曲線圖，輸入開始後不久的尖峰分別標為每秒1027公釐與4284公釐。"></a>
+      <figcaption>琴鍵與琴槌的線速度。兩者都在輸入開始後隨即達到最大值，且琴槌一側的速度被放大。</figcaption>
+    </figure>
+
+    <table class="results-table">
+      <caption>分析1的尖峰速度</caption>
+      <thead>
+        <tr><th scope="col">觀測·計算對象</th><th scope="col">速度</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">琴鍵（模擬）</th><td>1,027 mm/s</td></tr>
+        <tr><th scope="row">琴槌（理論計算）</th><td>4,614 mm/s</td></tr>
+        <tr><th scope="row">琴槌（模擬）</th><td>4,284 mm/s</td></tr>
+      </tbody>
+    </table>
+
+    <h4>與理論值的比較</h4>
+    <p>自模型上量得的半徑為<em>r</em><sub>1</sub> = 200 mm、<em>r</em><sub>1</sub>′ = 88 mm、<em>r</em><sub>2</sub> = 53 mm、<em>r</em><sub>2</sub>′ = 78 mm、<em>r</em><sub>3</sub> = 16 mm、<em>r</em><sub>3</sub>′ = 111 mm。代入公式之後，理想化的速度比約為4.49倍，據此可預測：對應1,027 mm/s的琴鍵速度，琴槌速度應為4,614 mm/s。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="在SolidWorks的3D模型上，標出用於速度比計算的六個半徑實測值的示意圖。"></a>
+      <figcaption>在3D模型上量得的六個半徑。由這些數值算出琴槌的理論速度4,614 mm/s。</figcaption>
+    </figure>
+
+    <p>模擬值4,284 mm/s雖比理論值低約7%，但速度被放大的幅度相當接近。產生這項差異的原因，如後文所述，在於把機構理想化為三個剛體的理論計算，與連零件間損耗和材料變形一併處理的3D模擬，兩者前提不同。</p>
+
+    <h3>分析2——琴鍵上的力在琴弦一側如何呈現</h3>
+    <p>第二項分析在琴鍵表面向下施加15 N，觀測擊弦時出現於琴弦一側的反作用力。琴鍵一側的輸入<em>F</em><sub>key</sub>自1.0秒起上升至15 N，而在擊弦的瞬間，琴弦一側的反作用力<em>V</em><sub>string</sub>出現了最大31 N的尖峰。</p>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="琴鍵輸入F key隨時間變化的說明用曲線圖。自1秒起上升，維持15牛頓後回到0牛頓。"></a>
+      <figcaption>琴鍵一側的輸入<em>F</em><sub>key</sub>。自1.0秒起施力，輸入為15 N。</figcaption>
+    </figure>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="琴弦一側反作用力V string隨時間變化的說明用曲線圖，在擊弦的瞬間出現31牛頓的尖銳峰值。"></a>
+      <figcaption>琴弦一側的反作用力<em>V</em><sub>string</sub>。在擊弦的瞬間錄得最大31 N。</figcaption>
+    </figure>
+
+    <p>這項數值可由琴鍵一側與琴槌一側的力臂長度所構成的槓桿平衡來說明。</p>
+    <p class="formula formula-long" role="math" aria-label="琴弦反作用力等於15乘195再除以94，即31.1牛頓">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>取輸入點至支點的距離為195 mm、至琴弦一側作用點的距離為94 mm來計算，理論值為31.1 N。與模擬最大值31 N相差0.1 N；在這項分析中，結果同樣與由所設定尺寸所應期待的力的傳遞幾乎一致。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="力平衡示意圖，標出自琴鍵支點至輸入點的195公釐與至琴弦一側作用點的94公釐。"></a>
+      <figcaption>對應琴鍵一側15 N的輸入，由槓桿平衡求得琴弦一側的反作用力31.1 N，與模擬最大值31 N幾乎一致。</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>方法</h2>
-  </section>
+    <h2>模擬結果與理論值的對照</h2>
+    <h3>兩項分析都得到了相近的結果</h3>
+    <p>在比較琴鍵與琴槌速度的分析1中，相對於琴槌速度的理論值4,614 mm/s，3D模擬的結果為4,284 mm/s。在比較琴鍵輸入與琴弦反作用力的分析2中，相對於理論值31.1 N，模擬的最大值為31 N。兩項分析中，所建3D模型的模擬結果都與由公式求得的理論值相接近。</p>
 
-  <section>
-    <h2>結果</h2>
+    <h3>產生細微差異的原因</h3>
+    <p>理論計算把擊弦機簡化為由三個剛體構成的機構，並以接觸點處運動與力無損耗傳遞為前提來計算。而3D模型的模擬須處理構成擊弦機的每一個零件，因此零件之間的能量損耗與材料變形也會反映在結果之中。正是這項前提上的差別，表現為理論值與模擬值之間的細微差異。</p>
+
+    <h3>結論</h3>
+    <p>可以確認，3D模擬的結果與理論值幾乎相等。依剖面圖建立的3D模型，以與理論計算相符的方式再現了擊弦機的運動——把琴鍵的輸入放大為琴槌的速度，並把這份力傳向琴弦。</p>
+    <p>在這個專題中所做的，不只是複現形狀。從剖面資料中讀出結構、把零件之間的關係轉譯為CAD中的拘束、再依所要分析的問題把它簡化為力學模型，這些都作為同一個建模過程被貫通起來。</p>
   </section>
 
   <nav aria-label="網站">
@@ -170,5 +286,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="圖片放大顯示" hidden>
+  <button class="lightbox__close" type="button" aria-label="關閉放大顯示"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

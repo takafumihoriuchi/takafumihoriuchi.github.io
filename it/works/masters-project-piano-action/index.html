@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Motion Analysis of the Piano Action — Takafumi Horiuchi</title>
-<meta name="description" content="Un progetto del corso magistrale. Il testo è in preparazione.">
+<title>Analisi del movimento della meccanica del pianoforte — Takafumi Horiuchi</title>
+<meta name="description" content="La meccanica di un pianoforte a coda ricostruita come modello 3D in SolidWorks. Un progetto del corso magistrale che confronta, con il calcolo teorico e con l’analisi di movimento, come l’input sul tasto diventi velocità del martelletto e forza di reazione sulla corda.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/it/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-piano-action/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
-<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<link rel="stylesheet" href="../../../works/figures.css">
+<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css?v=20260904-6">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="it_IT">
-<meta property="og:title" content="Motion Analysis of the Piano Action">
-<meta property="og:description" content="Il testo è in preparazione.">
+<meta property="og:title" content="Analisi del movimento della meccanica del pianoforte">
+<meta property="og:description" content="Come diventa, attraversando il leveraggio, velocità del martelletto e forza di reazione sulla corda l’input dato al tasto?">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/it/works/masters-project-piano-action/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Modello 3D in SolidWorks di una meccanica per pianoforte in legno, in vista esplosa.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,37 +56,35 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/it/works/masters-project-piano-action/#work",
-      "name": "Motion Analysis of the Piano Action",
+      "name": "Analisi del movimento della meccanica del pianoforte",
       "url": "https://takafumihoriuchi.github.io/it/works/masters-project-piano-action/",
-      "description": "Un progetto del corso magistrale. Il testo è in preparazione.",
-      "creativeWorkStatus": "In preparazione",
+      "description": "La meccanica di un pianoforte a coda ricostruita come modello 3D in SolidWorks, confrontando con il calcolo teorico e con l’analisi di movimento la trasmissione dall’input sul tasto fino alla velocità del martelletto e alla forza di reazione sulla corda. Un progetto del corso magistrale.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
+      "datePublished": "2020-01",
       "inLanguage": "it",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Motion Analysis of the Piano Action</h1>
+    <h1>Analisi del movimento della meccanica del pianoforte</h1>
     <div class="identity">
       <p class="tagline">di <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Profili su altri siti">
+      <nav aria-label="Profili altrove">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">In preparazione</p>
+    <p class="dateline">Gennaio 2020</p>
   </header>
 
   <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
@@ -121,26 +103,159 @@
                                                /__\</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Panoramica</h2>
-    <p class="lead">Un progetto del corso magistrale. Il testo è in preparazione.</p>
+    <p class="lead">Dentro un pianoforte a coda, il movimento di un tasto premuto percorre una catena di leveraggi finché il martelletto viene scagliato verso l’alto e quel movimento si trasforma nella vibrazione di una corda. Quel sistema di leve — quello che permette a un tasto premuto di muovere un martelletto e percuotere una corda — si chiama meccanica del pianoforte. Questo progetto ha ricostruito la meccanica come modello 3D in SolidWorks* e ha usato l’analisi di movimento per osservare come l’input sul tasto si converta nella velocità del martelletto e nella forza di reazione sulla corda.</p>
+    <p>Per l’analisi, il meccanismo del tasto è stato modellato in 3D da zero a partire da immagini di riferimento, e su quel modello sono state condotte due analisi di movimento: una sul rapporto tra la velocità del tasto che scende e quella del martelletto che sale, l’altra sul rapporto tra la forza applicata al tasto e la forza che arriva alla corda. I valori della simulazione sono stati confrontati con i valori teorici ricavati dalle dimensioni e dalla posizione dei perni, per accertare come movimento e forza si trasmettano all’interno del modello.</p>
+    <p class="citation">* SolidWorks: sistema CAD 3D. In fase di progettazione consente di eseguire analisi strutturali per esaminare la resistenza di un componente e analisi di movimento per verificarne il moto.</p>
+
+    <hr class="section-break">
+
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" role="group" aria-label="Tutte le 17 pagine di Motion Analysis of the Piano Action. Si può scorrere orizzontalmente">
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Diapositiva di titolo: «Motion Analysis of the Piano Action»."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Fotografia dell’interno di un pianoforte a coda che presenta la fila di meccaniche collocata dietro i tasti."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modello 3D che mostra come le parti della meccanica si muovano insieme quando si preme un tasto."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modello in sezione della meccanica del pianoforte che mostra come premere un tasto sollevi il martelletto fino a percuotere la corda."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Il procedimento di ricalcare i contorni di una sezione di riferimento e modellare ogni componente da zero in SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="L’assieme 3D completato della meccanica del pianoforte in SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="I nomi dei componenti del modello e il calcolo dei gradi di libertà, che dà 7 una volta applicati i vincoli."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="I due temi di analisi: le velocità lineari di tasto e martelletto, e il rapporto tra l’input sul tasto e la forza di reazione sulla corda."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="I punti di osservazione dell’analisi 1: la velocità discendente all’estremità del tasto e la velocità ascendente del martelletto."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagramma che semplifica il meccanismo del pianoforte in tre elementi rotanti."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagramma che ricava il rapporto tra la velocità del tasto e quella del martelletto dal rapporto dei raggi dei tre elementi rotanti."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Le condizioni dell’analisi: 5 newton applicati verso il basso all’estremità del tasto, da 1 a 2 secondi."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Grafici delle velocità lineari di tasto e martelletto. Le velocità di picco sono di 1.027 e 4.284 millimetri al secondo."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Confronto tra la velocità del martelletto di 4.614 millimetri al secondo ricavata dai raggi misurati e il valore analizzato di 4.284 millimetri al secondo."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Le condizioni dell’analisi 2: 15 newton applicati verso il basso sul tasto, osservando la forza di reazione dal lato della corda."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Confronto tra la forza di reazione massima sulla corda di 31 newton e il valore teorico di 31,1 newton ricavato dal principio della leva."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elenco dei riferimenti bibliografici sui modelli meccanici della meccanica del pianoforte."></a></li>
+      </ol>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>Dalla meccanica del pianoforte a un modello analizzabile</h2>
+    <h3>Il meccanismo che trasforma un tocco in una corda percossa</h3>
+    <p>La meccanica del pianoforte è il meccanismo che converte il movimento discendente di un tasto nel movimento ascendente di un martelletto. Premendo il tasto, pilota, bilanciere, scappamento e leva di ripetizione si mettono in moto insieme e sollevano il martelletto fino a percuotere la corda. Ciò che l’esecutore vede è un solo tocco; al suo interno, più componenti ruotano attorno a perni diversi e si passano il movimento toccandosi.</p>
+    <p>Il modello 3D comprende tasto, martelletto, scappamento, bilanciere, leva di ripetizione, pilota, smorzatore, leva dello smorzatore e filo, insieme al telaio che li sostiene. Comprendere il movimento richiedeva più che osservare la forma finita: bisognava definire quale componente ruoti attorno a quale perno e in quale punto tocchi il successivo.</p>
+
+    <h3>Costruire un modello 3D a partire da un disegno in sezione</h3>
+    <p>Anziché partire da dati CAD già pronti, il contorno di ogni componente è stato ricalcato su una sezione di riferimento della meccanica del pianoforte e modellato in 3D uno alla volta. I componenti sono poi stati riuniti in un assieme, fissando tra loro le relazioni di vincolo e di rotazione del meccanismo reale. Quel passaggio ha trasformato un modello fatto per guardare una forma in un modello a cui si può applicare una forza e che si può far muovere.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Nella finestra di SolidWorks, un disegno in sezione di una meccanica per pianoforte fa da base semitrasparente e sopra i suoi contorni viene costruito il modello 3D. A sinistra si vedono la barra delle applicazioni di Windows e l’albero dei componenti."></a>
+      <figcaption>La sezione di riferimento è stata collocata sul fondo come base semitrasparente, e il modello 3D è stato costruito in SolidWorks seguendone i contorni.</figcaption>
+    </figure>
+
+    <figure class="paper-figure model-figure">
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="La finestra di SolidWorks in esecuzione su Windows. A sinistra la barra delle applicazioni di Windows e l’albero dei componenti, al centro il modello 3D della meccanica del pianoforte."></a>
+      <figcaption>Il modello 3D della meccanica del pianoforte come è stato effettivamente costruito in SolidWorks.</figcaption>
+    </figure>
+
+    <h3>Verificare i vincoli come gradi di libertà</h3>
+    <p>Escluso il telaio fisso, i componenti mobili sono nove, il che senza vincoli dà 54 gradi di libertà complessivi. Fissare il pilota e il filo ad altri componenti ne toglie 12, e vincolare i sette componenti restanti con giunti rotoidali ne toglie altri 35. L’assieme CAD ha quindi 7 gradi di libertà, come segue.</p>
+    <p class="formula" role="math" aria-label="54 meno 12 meno 35 è uguale a 7">54 − 12 − 35 = 7</p>
+    <p>Anche la diagnostica dei vincoli di SolidWorks ha indicato lo stesso: gradi di libertà stimati ed effettivi entrambi pari a 7, vincoli ridondanti 0. Non è un valore che stabilisca i gradi di libertà delle meccaniche per pianoforte in generale: conferma che l’insieme di componenti e i vincoli definiti in questo progetto sono montati come previsto.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Il modello della meccanica del pianoforte con ogni componente etichettato, e il calcolo che sottrae 12 vincoli di fissaggio e 35 vincoli di rotazione a 54 gradi di libertà, dando 7."></a>
+      <figcaption>Nomi dei componenti e vincoli. Anche la diagnostica di SolidWorks ha attribuito al modello 7 gradi di libertà e 0 vincoli ridondanti.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>Vincoli</h2>
+    <h2>Due analisi — come viene convertito l’input sul tasto</h2>
+    <p>Il comportamento del modello è stato esaminato in due analisi separate. L’analisi 1 chiede come la velocità con cui il tasto si muove venga convertita nella velocità del martelletto; l’analisi 2, come la forza applicata al tasto si presenti come forza di reazione dal lato della corda. Isolando una coppia di ingresso e uscita per volta, il comportamento di un leveraggio complesso diventa spiegabile attraverso un rapporto geometrico di velocità e l’equilibrio delle forze di una leva.</p>
+    <p>Come base di confronto è stato usato un calcolo teorico in cui il meccanismo è sostituito da semplici elementi rotanti. Se il valore teorico e quello simulato risultano vicini, si può concludere che almeno il movimento all’interno del modello segue la relazione che ci si attende dalle dimensioni e dai vincoli impostati.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Due diagrammi che mostrano come l’analisi 1 metta a confronto le velocità lineari di tasto e martelletto e l’analisi 2 la forza applicata al tasto con la forza di reazione sulla corda."></a>
+      <figcaption>Ingressi e uscite delle due analisi. L’analisi 1 confronta le velocità lineari di tasto e martelletto; l’analisi 2 confronta la forza applicata al tasto con la forza di reazione sulla corda.</figcaption>
+    </figure>
+
+    <h3>Analisi 1 — di quanto la velocità del tasto viene amplificata al martelletto</h3>
+    <p>Per l’analisi delle velocità, la complessa meccanica del pianoforte è stata semplificata in tre corpi rigidi che si trasmettono il movimento toccandosi: il tasto, il meccanismo intermedio incentrato sul bilanciere e il martelletto. Leggendo il movimento come qualcosa che passa in successione da ① a ③ nella figura, un meccanismo di molti componenti può essere calcolato come tre stadi di rotazione.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Diagramma che distingue con i colori la meccanica del pianoforte in tre corpi rigidi: ① il tasto, ② il meccanismo intermedio incentrato sul bilanciere e ③ il martelletto."></a>
+      <figcaption>Per l’analisi, il meccanismo è stato semplificato in tre corpi rigidi: ① il tasto, ② il meccanismo intermedio e ③ il martelletto.</figcaption>
+    </figure>
+
+    <p>In uno stesso corpo rigido la velocità angolare è comune, per cui, indicando con <em>r</em> la distanza dal perno e con <em>v</em> la velocità lineare in quel punto, <em>v</em> = <em>ωr</em>. Supponendo che nel punto di contatto la velocità passi al corpo successivo senza perdite, la velocità del martelletto si ottiene moltiplicando fra loro il rapporto tra raggio d’ingresso e raggio d’uscita di ciascuno stadio.</p>
+    <p class="formula formula-long" role="math" aria-label="La velocità del martelletto è uguale a r uno primo per r due primo per r tre primo, diviso r uno per r due per r tre, moltiplicato per la velocità del tasto">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Diagramma che indica, per i tre corpi rigidi, le distanze da ciascun perno ai punti di ingresso e di uscita come r1, r1 primo, r2, r2 primo, r3 e r3 primo."></a>
+      <figcaption>Le distanze dal perno di ciascun corpo rigido ai suoi punti di ingresso e uscita sono trattate come raggi, e i loro rapporti vengono moltiplicati sui tre stadi per ottenere il rapporto di velocità.</figcaption>
+    </figure>
+
+    <h4>Condizioni di ingresso e risultati osservati</h4>
+    <p>In SolidWorks Motion Analysis sono stati applicati 5 N verso il basso all’estremità del tasto e sono state rilevate le velocità lineari dell’estremità del tasto e del martelletto. Subito dopo l’inizio dell’applicazione della forza, le velocità di picco sono state di 1.027 mm/s per il tasto e di 4.284 mm/s per il martelletto. Nella simulazione, dunque, il martelletto si è mosso circa 4,17 volte più velocemente del tasto.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Due grafici della velocità di tasto e martelletto in funzione del tempo, con i picchi subito successivi all’inizio dell’ingresso indicati a 1.027 e 4.284 millimetri al secondo."></a>
+      <figcaption>Velocità lineari di tasto e martelletto. Entrambe raggiungono il massimo subito dopo l’inizio dell’ingresso, e dal lato del martelletto la velocità risulta amplificata.</figcaption>
+    </figure>
+
+    <table class="results-table">
+      <caption>Velocità di picco dell’analisi 1</caption>
+      <thead>
+        <tr><th scope="col">Misura o calcolo</th><th scope="col">Velocità</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Tasto (simulazione)</th><td>1.027 mm/s</td></tr>
+        <tr><th scope="row">Martelletto (calcolo teorico)</th><td>4.614 mm/s</td></tr>
+        <tr><th scope="row">Martelletto (simulazione)</th><td>4.284 mm/s</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Confronto con il valore teorico</h4>
+    <p>I raggi misurati sul modello sono <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm e <em>r</em><sub>3</sub>′ = 111 mm. Sostituendoli nell’equazione, il rapporto di velocità idealizzato risulta di circa 4,49 volte, il che prevede una velocità del martelletto di 4.614 mm/s a fronte di una velocità del tasto di 1.027 mm/s.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Diagramma che indica, sul modello 3D di SolidWorks, i sei raggi misurati usati nel calcolo del rapporto di velocità."></a>
+      <figcaption>I sei raggi misurati sul modello 3D. Da questi valori è stata calcolata la velocità teorica del martelletto di 4.614 mm/s.</figcaption>
+    </figure>
+
+    <p>Il valore simulato di 4.284 mm/s è inferiore di circa il 7% a quello teorico, ma l’entità dell’amplificazione resta vicina. Lo scarto nasce, come si vedrà più avanti, dal fatto che il calcolo teorico idealizza la meccanica in tre corpi rigidi, mentre la simulazione 3D tiene conto anche delle perdite fra componenti e della deformazione del materiale.</p>
+
+    <h3>Analisi 2 — come la forza sul tasto si presenta alla corda</h3>
+    <p>La seconda analisi ha applicato 15 N verso il basso sulla superficie del tasto e ha rilevato la forza di reazione che compare dal lato della corda nell’istante della percussione. L’ingresso dal lato del tasto, <em>F</em><sub>key</sub>, cresce a partire da 1,0 secondo fino a raggiungere 15 N, e nell’istante della percussione la forza di reazione <em>V</em><sub>string</sub> presenta un picco massimo di 31 N.</p>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Grafico esplicativo dell’ingresso sul tasto F key in funzione del tempo. Cresce a partire da 1 secondo, si mantiene a 15 newton e torna a 0 newton."></a>
+      <figcaption>Ingresso dal lato del tasto, <em>F</em><sub>key</sub>. La forza è stata applicata a partire da 1,0 secondo, con un ingresso di 15 N.</figcaption>
+    </figure>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Grafico esplicativo della forza di reazione dal lato della corda V string in funzione del tempo, con un picco acuto di 31 newton nell’istante della percussione."></a>
+      <figcaption>Forza di reazione dal lato della corda, <em>V</em><sub>string</sub>. Ha raggiunto un massimo di 31 N nell’istante della percussione.</figcaption>
+    </figure>
+
+    <p>Questo valore si spiega con l’equilibrio di una leva, usando le lunghezze dei bracci dal lato del tasto e dal lato del martelletto.</p>
+    <p class="formula formula-long" role="math" aria-label="La forza di reazione sulla corda è uguale a 15 per 195 diviso 94, cioè 31,1 newton">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>Prendendo 195 mm dal punto di ingresso al perno e 94 mm fino al punto di applicazione dal lato della corda, il valore teorico risulta di 31,1 N. La differenza rispetto al massimo simulato di 31 N è di 0,1 N: anche in questa analisi il risultato coincide quasi del tutto con la trasmissione di forza che ci si attende dalle dimensioni impostate.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Diagramma dell’equilibrio delle forze che mostra la distanza di 195 millimetri dal perno del tasto al punto di ingresso e di 94 millimetri fino al punto di applicazione dal lato della corda."></a>
+      <figcaption>A partire dall’ingresso di 15 N sul tasto, l’equilibrio della leva dà una forza di reazione di 31,1 N sulla corda, quasi identica al massimo simulato di 31 N.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>Approccio</h2>
-  </section>
+    <h2>Confronto fra simulazione e valori teorici</h2>
+    <h3>Due analisi dai risultati vicini</h3>
+    <p>Nell’analisi 1, che confronta le velocità di tasto e martelletto, a fronte della velocità teorica del martelletto di 4.614 mm/s la simulazione 3D ha dato 4.284 mm/s. Nell’analisi 2, che confronta l’ingresso sul tasto con la forza di reazione sulla corda, a fronte del valore teorico di 31,1 N il massimo simulato è stato di 31 N. In entrambe le analisi i risultati simulati con il modello 3D costruito sono risultati vicini ai valori teorici ricavati dalle equazioni.</p>
 
-  <section>
-    <h2>Risultato</h2>
+    <h3>Perché resta una piccola differenza</h3>
+    <p>Il calcolo teorico semplifica la meccanica del pianoforte in un meccanismo di tre corpi rigidi e assume che movimento e forza si trasmettano senza perdite nei punti di contatto. La simulazione sul modello 3D, invece, tratta ciascuno dei componenti che formano la meccanica, per cui anche l’energia persa fra i componenti e la deformazione del materiale si riflettono nel risultato. È questa differenza di premesse a manifestarsi come il piccolo scarto fra valore teorico e valore simulato.</p>
+
+    <h3>Conclusione</h3>
+    <p>Si è potuto verificare che i risultati della simulazione 3D sono pressoché uguali ai valori teorici. Il modello 3D costruito a partire da un disegno in sezione ha riprodotto il movimento della meccanica del pianoforte — che amplifica l’ingresso sul tasto nella velocità del martelletto e trasmette quella forza alla corda — in forma coerente con il calcolo teorico.</p>
+    <p>Questo progetto non è consistito soltanto nel riprodurre una forma. Leggere la struttura da una sezione di riferimento, tradurre le relazioni fra i componenti in vincoli dentro il CAD e semplificare il risultato in un modello meccanico adeguato alla domanda posta hanno fatto parte di un unico processo di modellazione.</p>
   </section>
 
   <nav aria-label="Sito">
@@ -170,5 +285,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Figura ingrandita" hidden>
+  <button class="lightbox__close" type="button" aria-label="Chiudi l’ingrandimento"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

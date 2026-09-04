@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Smart Codesign VR — 호리우치 다카후미</title>
-<meta name="description" content="석사 과정의 프로젝트. 글은 준비 중.">
+<title>어린이를 위한 인터랙티브 오브젝트 프로토타이핑 VR 시스템 개발 — 호리우치 다카후미</title>
+<meta name="description" content="SNaP 보드게임에서 아이들이 생각해 낸 스마트 오브젝트를 VR 공간에서 조립해 움직인다. 환경·입력·출력 세 장의 카드를 고르고 조건과 동작을 스스로 정의하는 프로토타이핑 환경을, Oculus Quest 2와 Unity로 구현한 석사 과정의 공동 프로젝트.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-smart-codesign-vr/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="Smart Codesign VR">
-<meta property="og:description" content="글은 준비 중.">
+<meta property="og:title" content="어린이를 위한 인터랙티브 오브젝트 프로토타이핑 VR 시스템 개발">
+<meta property="og:description" content="환경·입력·출력 세 장의 카드로, VR 공간에서 스마트 오브젝트를 조립한다.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/masters-project-smart-codesign-vr/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="VR 공간의 카드 선택 화면. input, environment, output이라고 적힌 반투명한 상자 세 개가 카드가 늘어선 보드 앞에 놓여 있다.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +46,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "호리우치 다카후미",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "인지공학 × AI × 디자인",
       "sameAs": [
@@ -72,23 +57,30 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ko/works/masters-project-smart-codesign-vr/#work",
-      "name": "Smart Codesign VR",
+      "name": "어린이를 위한 인터랙티브 오브젝트 프로토타이핑 VR 시스템 개발",
       "url": "https://takafumihoriuchi.github.io/ko/works/masters-project-smart-codesign-vr/",
-      "description": "석사 과정의 프로젝트. 글은 준비 중.",
-      "creativeWorkStatus": "준비 중",
+      "description": "SNaP 보드게임에서 아이들이 생각해 낸 스마트 오브젝트를 VR 공간에서 조립해 움직이는 프로토타이핑 환경. 환경·입력·출력 세 장의 카드를 고르고, 조건과 동작을 스스로 정의한다. Oculus Quest 2와 Unity로 구현한 석사 과정의 공동 프로젝트.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
+      "datePublished": "2021-02",
       "inLanguage": "ko",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Paul Cozma-Ivan" },
+        { "@type": "Person", "name": "Elmira Katsajeva" },
+        { "@type": "Person", "name": "Olivia Ludkiewicz" }
+      ]
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Smart Codesign VR</h1>
+    <h1>어린이를 위한 인터랙티브 오브젝트 프로토타이핑 VR 시스템 개발</h1>
     <div class="identity">
       <p class="tagline">제작: <a class="byline" href="../../">호리우치 다카후미 (Takafumi Horiuchi)</a></p>
       <nav aria-label="다른 곳의 프로필">
@@ -98,11 +90,7 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">준비 중</p>
+    <p class="dateline">2021년 2월</p>
   </header>
 
   <ascii-hero data-scene="smart-codesign-vr" dir="ltr" translate="no" aria-hidden="true">
@@ -115,27 +103,149 @@
                               ~~ (@) ~~</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>개요</h2>
-    <p class="lead">석사 과정의 프로젝트. 글은 준비 중.</p>
+    <p class="lead">Smart Codesign VR은 인터랙티브한 사물——‘스마트 오브젝트’——을 VR 공간에서 조립하고, 그 자리에서 만져 확인할 수 있게 만든 플랫폼이다. 플레이어는 환경·입력·출력 세 장의 카드를 고르고, ‘어떤 때에’ ‘무엇이 일어나는가’를 자기 손으로 정의한다. 완성된 오브젝트는 가상의 공원에 놓이고, 실제로 움직여 확인할 수 있다.</p>
+    <p>바탕이 된 것은 밀라노 공과대학 i3Lab이 개발한 ‘SNaP(The Smart Nature Protagonists)’이라는 보드게임이다. SNaP에서 아이들은 카드를 조합해 스마트 오브젝트를 고안한다. 다만 거기서 태어나는 것은 종이 위의 한 문장에 머물러 있었다. 이 프로젝트는 그 한 문장을 VR 공간에서 실체화해, 자기 몸으로 조립하고 만질 수 있는 것으로 만들고자 했다.</p>
+    <p>밀라노 공과대학의 수업 ‘Advanced User Interfaces’(2020–21학년도)의 최종 과제로, 네 명의 팀이 설계·구현했다. 상정한 이용자는 11~13세 아동이며, 그중에서도 신경발달장애(NDD)가 있는 아이를 염두에 두었다. Oculus Quest 2를 대상으로 Unity와 C#으로 구현했고, 카드 선택부터 공원에서의 조작까지 전 과정이 이어져 동작하는 프로토타입에 이르렀다.</p>
+
+    <figure class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Smart Codesign VR 데모 영상" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>데모 영상. 카드를 고르고, 입력 조건과 출력 동작을 정하고, 완성된 스마트 오브젝트를 가상의 공원에서 움직이기까지의 일련의 흐름.</figcaption>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>SNaP이라는 보드게임과, 설계의 전제</h2>
+    <h3>아이가 디자인의 주역이 되는 게임</h3>
+    <p>SNaP은 2~4명의 아이가 ‘디자이너’가 되고, 진행을 맡은 어른이 ‘시장’ 역할을 하는 보드게임이다. 시장이 게임 첫머리에 미션을 내면, 아이들은 서로 의논하며 카드를 조합해 그 미션을 푸는 스마트 오브젝트를 생각한다. 노림수는 창의성과, 타인과 협동하며 자기 생각을 말로 옮기는 힘을 기르는 데 있다. 동시에 이 게임은 신경발달장애가 있는 아이에게 치료·교육적 목적으로 쓸 수도 있다고 한다.</p>
+
+    <h3>환경·입력·출력 — 세 종류의 카드</h3>
+    <p>SNaP의 카드는 세 종류이며, 저마다 역할이 다르다.</p>
+    <p><strong>환경(Environment) 카드</strong>는 스마트하게 만들 대상 그 자체다. 나무, 벤치, 그네, 물가, 돌, 가로등, 쓰레기통, 자전거, 다리, 계단, 책가방 — 공원이나 거리에 흔히 있는 것들이 늘어서 있다. 센서도 기능도 아닌, 그것들을 담아 넣을 ‘대상물’에 해당한다.</p>
+    <p><strong>입력(Input) 카드</strong>는 그 대상물이 무엇을 감지할지 정한다. 버튼, 움직임, 접촉, 거리, 온도, 습도, 밝기, 색, 소리, 불, 수위, 일기예보 등, 센서에 해당하는 것들이다.</p>
+    <p><strong>출력(Output) 카드</strong>는 그 대상물이 무엇을 할지 정한다. 빛나기, 소리 내기, 진동하기, 움직이기, 표시하기, 기록하기, 전송하기 — 액추에이터에 해당하는 것들이다.</p>
+    <p>환경 카드가 필요한 이유는, 같은 입력과 출력의 조합이라도 어디에 깃드느냐에 따라 의미가 통째로 달라지기 때문이다. ‘움직임을 감지하면 소리를 낸다’를 쓰레기통에 얹으면 ‘쓰레기를 잘못 넣으면 소리가 난다’가 되고, 가로등에 얹으면 ‘사람이 다가오면 알려 주는 불빛’이 된다. 입력과 출력만으로는 장치의 사양에 그치고, 거기에 환경을 더해야 비로소 주변에서 일어나는 일에 대한 한 문장이 된다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="환경 카드 ‘Trash can(쓰레기통)’, 입력 카드 ‘Motion(움직임)’, 출력 카드 ‘Make sound(소리 내기)’ 세 장이 ‘&’로 이어지고, 화살표 끝에 ‘Missing the trash bin creates a sound.(쓰레기통에 잘못 넣으면 소리가 난다)’라는 문장이 놓여 있다."></a>
+      <figcaption>세 장의 카드 조합이 하나의 스마트 오브젝트를 설명하는 문장이 된다. 카드 테두리의 색이 종류를 나타내며, 초록이 환경, 하늘색이 입력, 노랑이 출력이다.</figcaption>
+    </figure>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="SNaP의 카드 49장을 늘어놓은 일람표. 위 두 줄이 초록 테두리의 환경 카드 20장, 가운데 두 줄과 맨 아랫줄 왼쪽 끝이 하늘색 테두리의 입력 카드 21장, 맨 아랫줄의 나머지가 노란 테두리의 출력 카드 8장이다."></a>
+      <figcaption>SNaP의 카드 전 49장. 환경이 20장, 입력이 21장, 출력이 8장이며, 이 어휘의 곱셈이 게임의 디자인 공간이 된다.</figcaption>
+    </figure>
+
+    <h3>종이 위의 한 문장을, 만질 수 있는 것으로</h3>
+    <p>그동안 SNaP 세션은 생각해 낸 스마트 오브젝트를 한 문장으로 옮겨 적는 데서 끝났다. i3Lab에서는 태블릿과 Arduino를 결합해 그것을 물리적으로 조립하는 ‘피지컬 보드’도 병행해 개발되고 있었다. Smart Codesign VR은 그에 대한 또 하나의 답으로, VR을 매체로 고른 것이다. 연구 팀이 아직 시도하지 않은 방향이었다.</p>
+    <p>VR을 고르면 두 가지가 달라진다. 하나는 아이가 온몸의 움직임으로 프로토타이핑할 수 있다는 점. 쥐고, 나르고, 빛을 비추고, 붓으로 칠하는 행위가 그대로 ‘조건을 정한다’ ‘동작을 정한다’는 조작이 된다. 다른 하나는 생각한 것이 시각적으로 일어서서 그 자리에서 만질 수 있다는 점. 추상적인 한 문장이 눈앞에 크기와 형태를 가진 것이 된다.</p>
+    <h3>누구를 위해 설계했는가</h3>
+    <p>주된 대상은 11~13세 아동이며, 그중에서도 신경발달장애가 있는 아이에 무게를 두었다. 스마트 오브젝트를 구상하는 작업에는 일정한 논리적 사고가 필요하므로, SNaP도 이 VR 버전도 어느 정도의 연령을 전제로 한다.</p>
+    <p>신경발달장애가 있는 아이에 대한 치료·교육에서는, 생각을 입 밖에 내어 타인에게 전하는 힘을 기르는 것이 흔히 목표가 된다. 추상적인 것을 다루기 어려워한다는 점, 주의를 유지할 수 있는 시간에 한계가 있다는 점도 알려져 있다. 한편으로 손으로 만질 수 있는 게임, 타인과 협동하는 활동, 어른이나 기술이 뒷받침하는 활동은 효과가 있으며, 체험 자체가 재미있으면 임하는 태도가 달라진다는 것도 확인되어 있다. 기존의 치료·교육을 ‘지루하고 긴장된다’고 느끼는 아이는 적지 않다.</p>
+
+    <h3>공간 그 자체에 대한 배려</h3>
+    <p>참조한 선행 지견에 따르면, 신경발달장애가 있는 아이에게 편안한 공간을 만들려면 네 가지가 효과적이다. 소리(민감한 청각을 위해 차음과 음량 조절이 가능할 것. 단조롭고 조용한 소리가 좋다), 빛과 색(밝고 채도 높은 색은 작은 면적에 그치고, 바탕은 차분한 저채도 색으로 한다), 공간 구성(질서가 있고 경계가 뚜렷한 공간이 처리하기 쉽다), 그리고 소재(단순하고 읽기 쉬우며 동선을 막지 않는 배치). VR 공간은 이 네 가지를 모두 설계자 쪽에서 정할 수 있는 곳이기도 하다.</p>
+
+    <h3>VR이라는 매체 자체가 지닌 제약</h3>
+    <p>동시에 VR에는 무시할 수 없는 제약이 있다. 기기의 비용, 멀미, 헤드셋 무게로 인한 머리와 목의 부담, 시야가 가려져 생기는 사고, 장시간 사용으로 인한 눈의 피로, 그리고 가상 세계에 지나치게 몰입해 생기는 의존. 신경발달장애가 있는 아이의 경우에는 현실과 가상의 경계가 더 쉽게 모호해질 수 있다는 고유한 우려가 더해진다.</p>
+    <p>이것들은 설계상의 판단에 곧바로 반영되었다. 인터랙션은 단순하게 유지하되 배움이 될 만큼의 손맛은 남길 것. 시각과 소리는 명쾌하되 자극을 너무 강하게 하지 않을 것. 그리고 체험에 분명한 끝을 마련할 것——프로토타이핑과 공원에서의 조작이 끝나면 활동은 완결된다는 매듭이다. 가상 세계에 계속 머무르게 하는 설계는 하지 않겠다는 판단이기도 하다.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>만든 것 — 체험의 흐름과 구현</h2>
+    <h3>체험의 네 장면</h3>
+    <p>애플리케이션은 네 장면으로 구성되어 있다. 대기 화면, 카드 선택, 프로토타이핑, 그리고 공원에서의 조작이다.</p>
+
+    <h4>1. 대기 화면</h4>
+    <p>실행하면 먼저 타이틀 화면이 나오고, 컨트롤러 버튼을 누르기 전까지는 다음으로 넘어가지 않는다. 착용이나 자세가 갖춰지기 전에 본편이 시작되지 않도록 하기 위한, 의도적인 멈춤이다.</p>
+
+    <h4>2. 카드 선택 — 쥐어서 상자에 넣는다</h4>
+    <p>다음 장면에서 환경·입력·출력 카드를 한 장씩 고른다. 고르는 방법은 카드를 나타내는 오브젝트를 쥐고, 대응하는 상자까지 옮겨 넣는 것이다. 클릭으로 고르게 하지 않고 ‘쥐어서 옮기게’ 한 것은 VR이 가진 3차원 공간을 쓰기 위해서다. 세 상자 모두에 내용물이 들어간 것이 감지되면, 음성 안내와 함께 프로토타이핑 장면으로 넘어간다. 순서는 상관없지만, 셋을 모두 채우지 않으면 앞으로 나아갈 수 없다.</p>
+
+    <figure class="paper-figure shot-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="VR 공간의 카드 선택 화면. 카드가 늘어선 보드 앞에 input, environment, output이라고 적힌 반투명한 상자 세 개가 놓여 있고, 손이 확성기 오브젝트를 쥐고 있다."></a>
+      <figcaption>카드 선택 장면. 앞쪽의 상자 세 개가 환경·입력·출력에 대응하며, 쥔 오브젝트를 넣으면 선택이 확정된다. 이 단계에서 다룰 수 없는 카드는 흐리게 표시된다.</figcaption>
+    </figure>
+
+    <h4>3. 프로토타이핑 — 조건과 동작을 몸으로 정한다</h4>
+    <p>여기가 이 시스템의 중심이다. 고른 입력 카드에 대해 ‘어떤 때에’를, 출력 카드에 대해 ‘무엇을 할지’를 정의해 간다. 조작 방법은 카드마다 따로 만들었고, 6자유도 트래킹이 아니면 할 수 없는 움직임이 배정되어 있다.</p>
+    <p>예컨대 입력으로 ‘일기예보’를 고르면, 맑음·흐림·비·천둥·눈을 각각 나타내는 오브젝트가 손 가까이에 나타난다. 그중 하나를 쥐고 거기서 뻗어 나오는 광선을 대상 오브젝트에 비추면 조건이 확정된다. 출력으로 ‘빛나기’를 고른 경우에는 붓을 쥐고, 색마다 놓인 물감 통에 붓끝을 담근 뒤 대상에 문질러 발광색을 정한다. 칠한 색을 지우고 싶을 때는 ‘물’ 통에 담갔다가 문지르면 된다.</p>
+    <p>구현상 컸던 것은 입력과 출력의 조합을 <strong>여러 개</strong> 나란히 정의할 수 있게 한 점이다. 당초 계획으로는 한 조뿐이어서 ‘맑으면 빨갛게 빛난다’로 끝이었다. 이를 여러 조로 만듦으로써 ‘맑으면 빨강, 비가 오면 파랑, 눈이 오면 하양으로 빛난다’처럼, 하나의 오브젝트가 여러 상황에 다른 응답을 돌려줄 수 있게 되었다. 정의한 조는 확정하기 전에 실제로 움직여 볼 수 있고, 마음에 들지 않으면 돌아가 고칠 수 있다.</p>
+
+    <figure class="paper-figure shot-figure">
+      <div class="figure-pair">
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="프로토타이핑 화면. 왼쪽에 입력 카드 ‘Weather’의 조작 설명 패널, 가운데에 ‘When it is about to be sunny／rain／snow’라고 적힌 말풍선 셋, 오른쪽에 출력 말풍선이 늘어서 있고, 앞쪽에 나무 오브젝트와 물감 통이 있다."></a>
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="같은 화면을 오른쪽에서 본 모습. 노랗게 칠해진 가로등 오브젝트의 좌우에 입력과 출력의 말풍선이 짝을 이루어 늘어서 있고, 오른쪽 끝에 출력 카드 ‘Light up’의 조작 설명 패널이 있다."></a>
+      </div>
+      <figcaption>프로토타이핑 장면. 좌우의 말풍선이 입력의 조건과 출력의 동작이며, 번호로 대응한다. ＋ 버튼으로 조를 늘리고, − 버튼으로 줄인다. 입력 쪽 패널에는 ‘최대 인스턴스 수: 5’가 표시되어 있다.</figcaption>
+    </figure>
+
+    <h4>4. 공원 — 만든 것을 만진다</h4>
+    <p>오브젝트를 확정하면 가상의 공원으로 넘어간다. 여기서는 자신이 조립한 스마트 오브젝트를 놓고, 정의한 입력 조건을 일으켜 출력의 동작을 실제로 확인한다. 오브젝트가 동작한 시점에서 축하 연출이 나오고 체험은 끝난다.</p>
+
+    <h4>전체의 흐름</h4>
+    <p>이상을 UML 액티비티 다이어그램으로 정리한 것이 다음 그림이다. 위쪽이 전체의 흐름, 아래쪽 두 장이 ‘일기예보’ 카드와 ‘빛나기’ 카드 각각의 조작을 자세히 펼친 것이다. 카드 선택 뒤 지시를 받고 다시 고르기로 돌아갈 수 있다는 것, 확정과 시행 뒤 재편집으로 돌아갈 수 있다는 것이 각각 분기로 적혀 있다.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="UML 액티비티 다이어그램. 위쪽의 ‘Overall Activity’는 대기 화면에서 카드 세 장 선택, 지시, 입력 조건과 출력 동작의 정의, 확정, 동작 확인, 공원에서의 조작까지를 보여 준다. 아래 왼쪽은 일기예보 카드의 조작, 아래 오른쪽은 빛나기 카드의 조작을 펼치고 있다."></a>
+      <figcaption>이용자의 행동을 나타낸 UML 액티비티 다이어그램. 카드 종류마다 조작이 다르기 때문에, 공통의 흐름과 카드별 상세를 나누어 적었다.</figcaption>
+    </figure>
+
+    <h3>장치와 도구</h3>
+    <p>대상 기기는 Oculus Quest 2다. 6자유도 트래킹을 갖추고 있어, 돌고 걷고 쥐는 움직임이 그대로 입력이 된다. 가상의 오브젝트를 손으로 거듭 다루는 것이 체험의 중심에 있는 이상, 스마트폰을 끼워 넣는 3자유도 기기로는 성립하지 않는다고 판단했다.</p>
+    <p>게임 엔진은 Unity, 언어는 C#이며, Quest 2와의 연결에는 Oculus Integration 패키지를 사용해 VR 카메라의 거동, 렌더링, 컨트롤러 입력의 공통 API를 거기서 얻고 있다.</p>
+
+    <h3>네 개의 씬과 13개의 클래스</h3>
+    <p>시스템은 Unity의 씬 단위로 넷으로 나뉘어 있으며, 체험의 네 장면에 그대로 대응한다. 클래스는 모두 13개이고, 그중 3개는 추상 클래스다.</p>
+    <p><strong>타이틀 씬</strong>은 <code>TitleSceneCore</code>만을 가지며, 버튼을 누르면 다음 씬으로 넘긴다.</p>
+    <p><strong>카드 선택 씬</strong>은 <code>CardSelectionSceneCore</code>와 <code>CardSelectionDetector</code>로 이루어진다. 전자가 후자를 세 개 생성해 환경·입력·출력 각각의 선택 박스에 할당한다. 각 박스는 카드를 나타내는 오브젝트가 가까이 오면 안쪽으로 끌어들이고 그 분류를 ‘선택됨’으로 만드는 동작을 공통으로 가진다. 셋이 모두 갖춰지면 선택 내용을 <code>SmartObject</code> 클래스에 써 넣고 씬을 진행시킨다. <code>SmartObject</code>는 정적 클래스여서 씬을 넘어가도 데이터가 사라지지 않는다. 바로 이 한 점이 네 개의 씬을 하나의 체험으로 잇고 있다.</p>
+    <p><strong>프로토타이핑 씬</strong>이 중심이다. <code>PrototypingSceneCore</code>가 절차 전체를 집중 관리하고, 카드의 동작은 <code>Card</code>를 정점으로 하는 상속 계층으로 나타낸다. <code>Card</code> 아래에 <code>InputCard</code>와 <code>OutputCard</code>가 있고, 다시 그 아래에 <code>Weather</code>, <code>Fire</code>, <code>MakeSound</code>, <code>LightUp</code> 같은 구체적인 카드 클래스가 늘어선다. 실제로 프로토타이핑 조작을 맡는 것은 말단의 구체 클래스뿐이므로, 위의 셋은 추상 클래스로 두었다.</p>
+    <p><code>PrototypingSceneCore</code>는 입력 조건 인스턴스의 리스트와 출력 동작 인스턴스의 리스트를 가진다. 선택된 카드가 ‘일기예보’와 ‘빛나기’라면, 전자는 <code>Weather</code>의 인스턴스로, 후자는 <code>LightUp</code>의 인스턴스로만 채워진다. 시작할 때 각각 하나씩 자동 생성되고, 이후에는 UI의 추가 버튼을 누를 때마다 늘어난다. 매 프레임 리스트 안의 모든 입력 조건을 평가하고, 대응하는 출력 동작을 호출한다. 이용자가 확정하면 <code>isConfirmed</code>가 참이 되고, 조립된 동작 데이터가 <code>SmartObject</code>의 정적 속성에 기록된다.</p>
+    <p><strong>인터랙션 씬</strong>은 <code>InteractionSceneCore</code>만을 가지며, 공원에의 배치, 입력 조건의 실행과 출력의 관찰, 그리고 마지막의 축하 연출을 맡는다.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="UML 클래스 다이어그램. Title Scene, Card Selection Scene, Prototyping Scene, Interaction Scene의 네 패키지와, 그것들이 참조하는 정적 클래스 Smart Object가 그려져 있다. Prototyping Scene 안에서는 추상 클래스 Card 아래에 Input Card와 Output Card가 있고, 다시 Weather Card, Fire Card, Make Sound Card, Light Up Card가 상속하고 있다."></a>
+      <figcaption>시스템의 UML 클래스 다이어그램. 네 패키지가 Unity의 씬에 대응하고, 가운데 아래의 <code>Smart Object</code>만이 씬을 넘어 데이터를 유지한다. 그림의 속성과 메서드는 읽기 쉽도록 간략화했다.</figcaption>
+    </figure>
+
+    <p class="source-link">소스 코드는 다음 링크에서 볼 수 있다:<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
   </section>
 
   <section>
-    <h2>제약</h2>
+    <h2>해낸 것, 남긴 것</h2>
+    <h3>구현까지 이른 것은 49장 중 9장</h3>
+    <p>프로토타입에 구현한 카드는 9장이다. 기초가 되는 처리——카드의 선택, 조건과 동작의 정의, 복수 인스턴스의 관리, 씬 간 데이터 전달——는 동작하는 상태까지 만들었으므로, 나머지 카드를 더해 가는 작업은 원리적으로 시간의 문제로 남아 있다. 설계까지 마쳤으나 구현에 이르지 못한 카드가 여섯 장 더 있다.</p>
+
+    <table class="results-table">
+      <caption>프로토타입에서의 구현 상황</caption>
+      <thead>
+        <tr><th scope="col">상태</th><th scope="col">카드</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">구현 완료 (9장)</th><td>환경: 나무, 가로등, 도로 표지, 쓰레기통, 다리<br>입력: 불, 일기예보<br>출력: 소리 내기, 빛나기</td></tr>
+        <tr><th scope="row">설계만 (6장)</th><td>입력: 버튼, 속도, 소리<br>출력: 움직이기, 진동하기, 전송하기</td></tr>
+        <tr><th scope="row">미착수 (34장)</th><td>환경 카드 15장, 입력 카드 16장, 출력 카드 3장 (표시하기, 기동하기, 기록하기)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>평가는 실시하지 않았다</h3>
+    <p>실제 이용자에 의한 평가는 실시하지 않았다. 개발 기간이 COVID-19 아래의 원격 참여와 겹쳐, VR 헤드셋을 전제로 한 대면 워크숍도, 원격으로의 대체안도 마련할 수 없었다. 따라서 이 프로젝트가 보일 수 있는 것은 설계한 체험이 동작하는 형태로 성립하는 데까지이며, 그것이 아이에게 쓰기 쉬운지, 치료·교육의 현장에서 의미를 갖는지는 확인되지 않았다.</p>
+    <p>앞으로 평가를 한다면, ‘프로토타이핑이라는 작업에 대해 이 UI/UX는 얼마나 직관적인가’를 물음으로 두게 될 것이다. 완료까지 걸리는 시간, 사전에 생각했던 스마트 오브젝트와 완성된 것의 일치도, 의도하지 않은 버튼 조작의 횟수 등이 지표가 되고, SUS(System Usability Scale)에 기반한 사후 설문을 함께 쓰면 정량적인 데이터를 얻을 수 있다. VR에서는 이용자의 시야가 헤드셋으로 가려지는 만큼, 스스로 의식하지 못하는 신체 반응이 나오기 쉬우므로 동작의 녹화가 특히 유효하다. 대상 연령은 SNaP이 상정한 연령과 Oculus의 안전 지침(13세 미만의 사용을 상정하지 않음)이 겹치는 13세가 현실적인 선이 된다.</p>
+
+    <h3>이 앞에 있는 작업</h3>
+    <p>시간과 기량의 사정으로 손이 닿지 않은 일로는, 우선 UI/UX를 다시 만드는 일이 있다. 카드의 조합을 성립시키는 구현에 시간을 빼앗겨, 시각·청각·촉각의 표현까지 다듬지 못했다. 특히 VR의 UI에서 문자를 어디까지 쓸 것인지는 다시 생각할 여지가 있다. 문자는 본래 2차원의 면에 정보를 기록하기 위해 태어난 것이며, 3차원 공간에는 공간적 사용자 인터페이스(SUI)로 다시 설계하는 편이 나은 요소가 많다. 신경발달장애가 있는 아이를 대상으로 한다면, 음성에 의한 주고받음은 유력한 방향이다.</p>
+    <p>학술적인 확장으로는 세 갈래를 들었다. 하나는 같은 i3Lab에서 개발이 진행되던 피지컬 보드와의 비교다. 현실의 장소와 가상 환경에서 같은 협동 게임을 했을 때 가상 환경 쪽에서 대화의 양이 늘었다는 선행 연구가 있어, 같은 종류의 비교가 이 둘 사이에서도 성립할 수 있다. 둘째는 여러 사람의 동시 참여에 대한 대응이다. ‘Codesign’이라는 이름을 가진 이상, 가상 공간 안에서 타인과 함께 조립할 수 있다는 데에는 의미가 있다. 셋째는 스마트 오브젝트의 기술 형식을 표준화해, 플랫폼을 넘어 가지고 다닐 수 있게 하는 것이다.</p>
+
+    <h3>정리</h3>
+    <p>이 프로젝트에서 만든 것은 완성된 스마트 오브젝트의 견본이 아니라, 그것을 만들기 위한 장소다. 환경·입력·출력이라는 세 장의 카드를 그대로 ‘대상물’ ‘조건’ ‘동작’이라는 조립의 단위로 옮겨 놓고, 쥐고·비추고·칠하는 신체의 동작으로 그것들을 이을 수 있게 했다. 보드게임에서 태어난 한 문장은 여기서 자기 손으로 움직일 수 있는 것이 되고, 워크숍이 끝난 뒤에도 남는 데이터가 된다.</p>
   </section>
 
-  <section>
-    <h2>접근</h2>
-  </section>
-
-  <section>
-    <h2>결과</h2>
-  </section>
+  <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva, and Olivia Ludkiewicz, “Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD,” Advanced User Interfaces (A.Y. 2020–21) Final Exam Project, 밀라노 공과대학, 2021년 2월.</p>
 
   <nav aria-label="사이트">
     <ul>
@@ -164,5 +274,13 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two strings it
+     needs are written in this page's language, like the rest of the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="그림 확대 보기" hidden>
+  <button class="lightbox__close" type="button" aria-label="확대 보기 닫기"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

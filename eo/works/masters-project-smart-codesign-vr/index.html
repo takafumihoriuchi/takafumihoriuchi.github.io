@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Smart Codesign VR — Takafumi Horiuchi</title>
-<meta name="description" content="Projekto el la magistra studado. La teksto estas en preparo.">
+<title>Evoluigo de VR-sistemo por prototipado de interagaj objektoj por infanoj — Takafumi Horiuchi</title>
+<meta name="description" content="Kunmeti kaj funkciigi en VR la inteligentajn objektojn, kiujn infanoj elpensas per la tabulludo SNaP. Kunlabora projekto el la magistra programo, realigita sur Oculus Quest 2 per Unity: oni elektas tri kartojn — medion, enigon, eligon — kaj mem difinas la kondiĉon kaj la konduton.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-smart-codesign-vr/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="eo">
-<meta property="og:title" content="Smart Codesign VR">
-<meta property="og:description" content="La teksto estas en preparo.">
+<meta property="og:title" content="Evoluigo de VR-sistemo por prototipado de interagaj objektoj por infanoj">
+<meta property="og:description" content="Kunmeti inteligentan objekton en VR el tri kartoj: medio, enigo, eligo.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="La ekrano de kartelekto en VR. Tri duontravideblaj skatoloj kun la surskriboj input, environment kaj output staras antaŭ tabulo kun kartoj.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,23 +56,30 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/#work",
-      "name": "Smart Codesign VR",
+      "name": "Evoluigo de VR-sistemo por prototipado de interagaj objektoj por infanoj",
       "url": "https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/",
-      "description": "Projekto el la magistra studado. La teksto estas en preparo.",
-      "creativeWorkStatus": "En preparo",
+      "description": "Prototipa medio, en kiu la inteligentaj objektoj elpensitaj de infanoj per la tabulludo SNaP estas kunmetataj kaj funkciigataj en VR. Oni elektas tri kartojn — medion, enigon, eligon — kaj la ludanto mem difinas la kondiĉon kaj la konduton. Kunlabora projekto el la magistra programo, realigita sur Oculus Quest 2 per Unity.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
+      "datePublished": "2021-02",
       "inLanguage": "eo",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Paul Cozma-Ivan" },
+        { "@type": "Person", "name": "Elmira Katsajeva" },
+        { "@type": "Person", "name": "Olivia Ludkiewicz" }
+      ]
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Smart Codesign VR</h1>
+    <h1>Evoluigo de VR-sistemo por prototipado de interagaj objektoj por infanoj</h1>
     <div class="identity">
       <p class="tagline">de <a class="byline" href="../../">Takafumi Horiuchi</a></p>
       <nav aria-label="Profiloj aliloke">
@@ -98,11 +89,7 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">En preparo</p>
+    <p class="dateline">Februaro 2021</p>
   </header>
 
   <ascii-hero data-scene="smart-codesign-vr" dir="ltr" translate="no" aria-hidden="true">
@@ -115,27 +102,149 @@
                               ~~ (@) ~~</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Superrigardo</h2>
-    <p class="lead">Projekto el la magistra studado. La teksto estas en preparo.</p>
+    <p class="lead">Smart Codesign VR estas platformo por kunmeti interagajn aĵojn — «inteligentajn objektojn» — en virtuala realo (VR) kaj tuŝi ilin surloke por vidi, kion ili faras. La ludanto elektas tri kartojn, po unu por medio, enigo kaj eligo, kaj difinas per propraj manoj, kio okazas kaj kiam. La finita objekto estas metata en virtualan parkon, kie oni povas efektive funkciigi kaj elprovi ĝin.</p>
+    <p>La bazo estas SNaP (The Smart Nature Protagonists), tabulludo evoluigita de la i3Lab de la Politekniko de Milano. En SNaP la infanoj kombinas kartojn por elpensi inteligentajn objektojn — sed tio, kion ili elpensas, restas unu frazo sur papero. Ĉi tiu projekto celis doni al tiu frazo korpon en VR: ion, kion oni kunmetas per la propra movo kaj poste povas tuŝi.</p>
+    <p>Ĝin projektis kaj realigis kvarpersona teamo kiel finan taskon de la kurso Advanced User Interfaces (studjaro 2020–21) ĉe la Politekniko de Milano. La antaŭviditaj uzantoj estas infanoj de 11 ĝis 13 jaroj, precipe infanoj kun neŭroevoluaj malordoj (NDD). Ĝi estis realigita por Oculus Quest 2 per Unity kaj C#, kaj atingis prototipon, kiu funkcias de komenco ĝis fino, de la elekto de kartoj ĝis la manipulado de la objekto en la parko.</p>
+
+    <figure class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Demonstra filmeto de Smart Codesign VR" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>La demonstra filmeto: elekti la kartojn, fiksi la enigan kondiĉon kaj la eligan konduton, kaj funkciigi la finitan inteligentan objekton en la virtuala parko.</figcaption>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>SNaP, la tabulludo, kaj la premisoj de la projekto</h2>
+    <h3>Ludo, en kiu la infanoj estas la dezajnistoj</h3>
+    <p>SNaP estas tabulludo, en kiu du ĝis kvar infanoj rolas kiel «dezajnistoj», dum plenkreskulo kondukanta la sesion rolas kiel «urbestro». La urbestro donas mision komence, kaj la infanoj priparolas ĝin kaj kombinas kartojn por elpensi inteligentan objekton, kiu ĝin solvas. La celo estas kreskigi kreemon kaj la kapablon kunlabori kun aliaj kaj vortigi la propran penson. Samtempe oni diras, ke la ludo uzeblas ankaŭ terapie kun infanoj kun neŭroevoluaj malordoj.</p>
+
+    <h3>Medio, enigo, eligo — tri specoj de kartoj</h3>
+    <p>SNaP havas tri specojn de kartoj, ĉiu kun sia propra rolo.</p>
+    <p>La <strong>mediaj kartoj (Environment)</strong> estas la aĵo mem, kiun oni faras inteligenta. Arbo, benko, balancilo, akvo, ŝtono, stratlampo, rubujo, biciklo, ponto, ŝtuparo, lerneja sako — ordinaraj aĵoj el parko aŭ strato. Nek sensilo nek funkcio, sed la objekto, en kiun la aliaj du estas enmetataj.</p>
+    <p>La <strong>enigaj kartoj (Input)</strong> decidas, kion tiu objekto sentas: butono, movo, tuŝo, distanco, temperaturo, humideco, heleco, koloro, sono, fajro, akvonivelo, veterprognozo — alivorte, la sensiloj.</p>
+    <p>La <strong>eligaj kartoj (Output)</strong> decidas, kion tiu objekto faras: lumi, soni, vibri, moviĝi, montri, registri, sendi — la aktuatoroj.</p>
+    <p>La media karto necesas, ĉar la sama paro de enigo kaj eligo signifas tute alion depende de tio, kie ĝi loĝas. «Soni, kiam movo estas detektita» sur rubujo iĝas «maltrafi la rubujon kreas sonon»; sur stratlampo ĝi iĝas «lumo, kiu anoncas, ke iu proksimiĝas». Enigo kaj eligo solaj donas nur specifon de aparato; nur kun la medio aldonita ili iĝas frazo pri io el la mondo ĉirkaŭ ni.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="La media karto «Trash can», la eniga karto «Motion» kaj la eliga karto «Make sound» kunligitaj per «&», kun sago al la frazo «Missing the trash bin creates a sound.»"></a>
+      <figcaption>La kombino de tri kartoj iĝas la priskribo de unu inteligenta objekto. La koloro de la kadro montras la specon: verda por medio, helblua por enigo, flava por eligo.</figcaption>
+    </figure>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="Tabelo kun ĉiuj 49 kartoj de SNaP. La supraj du vicoj estas la 20 verdkadraj mediaj kartoj, la mezaj du vicoj kaj la maldekstra rando de la lasta estas la 21 helbluaj enigaj kartoj, kaj la resto de la lasta vico estas la 8 flavaj eligaj kartoj."></a>
+      <figcaption>Ĉiuj 49 kartoj de SNaP: 20 mediaj, 21 enigaj kaj 8 eligaj. La produto de tiu vortprovizo estas la dezajna spaco de la ludo.</figcaption>
+    </figure>
+
+    <h3>Fari el frazo sur papero ion tuŝeblan</h3>
+    <p>Ĝis nun sesio de SNaP finiĝis tie, kie la elpensita inteligenta objekto estis surpaperigita kiel unu frazo. En la i3Lab oni paralele evoluigis «fizikan tabulon», kombinantan tabuleton kun Arduino, por konstrui tiun frazon materie. Smart Codesign VR estas alia respondo al la sama problemo, kun VR kiel rimedo — direkto, kiun la esplorteamo ankoraŭ ne provis.</p>
+    <p>Elekti VR-on ŝanĝas du aferojn. Unue, la infano povas prototipi per la movo de la tuta korpo: kapti, porti, prilumi, pentri per peniko iĝas rekte la agoj «fiksi kondiĉon» kaj «decidi konduton». Due, tio, kion li elpensis, leviĝas videble antaŭ li kaj estas tuŝebla surloke. Abstrakta frazo iĝas aĵo kun grando kaj formo.</p>
+    <h3>Por kiu ĝi estis projektita</h3>
+    <p>La ĉefa publiko estas infanoj de 11 ĝis 13 jaroj, kun emfazo sur infanoj kun neŭroevoluaj malordoj. Elpensi inteligentan objekton postulas certan logikan pensadon, do same SNaP kaj ĉi tiu VR-versio antaŭsupozas iun aĝon.</p>
+    <p>En la terapio de infanoj kun NDD ofta celo estas kreskigi la kapablon eldiri la propran penson al alia homo. Sciate estas ankaŭ, ke traktado de abstraktaĵoj estas por ili malfacila kaj ke la tempo, dum kiu ili povas teni la atenton, estas limigita. Aliflanke, ludoj tuŝeblaj per la manoj, agadoj faritaj kune kun aliaj kaj agadoj subtenataj de plenkreskuloj aŭ de tekniko montriĝas efikaj, kaj sciate estas, ke la engaĝiĝo ŝanĝiĝas, kiam la sperto mem estas interesa. Ne malmultaj infanoj sentas la kutiman terapion enuiga kaj streĉa.</p>
+
+    <h3>Zorgo pri la spaco mem</h3>
+    <p>Laŭ la konsultitaj antaŭaj trovoj, kvar punktoj gravas por fari spacon komforta por infanoj kun NDD. La sono (pro sentema aŭdo: sonizolado kaj agordebla laŭteco, prefere trankvila kaj unutona sono); la lumo kaj la koloro (helaj, saturitaj koloroj limigitaj al malgrandaj surfacoj, sur kvieta fono de malalta saturo); la organizo de la spaco (ordigita spaco kun klaraj limoj estas pli facile prilaborebla); kaj la materialoj (simplaj, legeblaj, aranĝitaj tiel, ke ili ne baru la movliniojn). Virtuala spaco krome estas loko, kie ĉiuj kvar punktoj dependas de la projektanto.</p>
+
+    <h3>La limigoj, kiujn VR kiel rimedo mem portas</h3>
+    <p>Samtempe VR portas limigojn, kiujn oni ne povas ignori: la kosto de la aparato, la kapturniĝo, la ŝarĝo sur kapo kaj kolo pro la pezo de la kasko, akcidentoj pro barita vidkampo, laciĝo de la okuloj pro longa uzo, kaj dependeco pro troa mergiĝo en la virtualan mondon. Ĉe infanoj kun NDD aldoniĝas propra zorgo: la limo inter reala kaj virtuala pli facile malklariĝas.</p>
+    <p>Ĉio ĉi rekte influis la projektajn decidojn. Teni la interagon simpla, lasante tamen sufiĉan reziston, por ke ĝi ion instruu. Teni la vidan kaj la aŭdan flankon klaraj sen fari la stimulon tro forta. Kaj doni al la sperto klaran finon — kiam la prototipado kaj la manipulado en la parko finiĝas, la agado estas kompleta. Tio estas samtempe decido ne projekti ion, kio retenas en la virtuala mondo.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>Kio estis konstruita — la fluo de la sperto kaj ĝia realigo</h2>
+    <h3>La kvar scenoj de la sperto</h3>
+    <p>La aplikaĵo konsistas el kvar scenoj: la atendekrano, la kartelekto, la prototipado kaj la manipulado en la parko.</p>
+
+    <h4>1. Atendekrano</h4>
+    <p>Ĉe la lanĉo aperas titolekrano, kiu ne iras plu, ĝis oni premas butonon de la stirilo. Tio estas intenca haltigo, por ke la ĉefa parto ne komenciĝu antaŭ ol la kasko sidas kaj la sinteno estas trovita.</p>
+
+    <h4>2. Kartelekto — kapti kaj meti en la skatolon</h4>
+    <p>En la sekva sceno oni elektas po unu karton por medio, enigo kaj eligo. La maniero elekti konsistas en kapti la objekton, kiu reprezentas la karton, porti ĝin al la responda skatolo kaj meti ĝin internen. Kapti kaj porti anstataŭ klaki estas ĝuste tio, kio uzas la tridimensian spacon, kiun VR havas. Kiam estas detektite, ke ĉiuj tri skatoloj estas plenaj, parola gvidilo kondukas al la sceno de prototipado. La ordo ne gravas, sed sen plenigi ĉiujn tri oni ne iras plu.</p>
+
+    <figure class="paper-figure shot-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="La ekrano de kartelekto en VR. Antaŭ tabulo kun kartoj staras tri duontravideblaj skatoloj kun la surskriboj input, environment kaj output, kaj mano kaptas objekton en formo de laŭtparolilo."></a>
+      <figcaption>La sceno de kartelekto. La tri skatoloj antaŭe respondas al medio, enigo kaj eligo; meti la kaptitan objekton en ilin konfirmas la elekton. La kartoj neuzeblaj en ĉi tiu etapo estas montrataj palaj.</figcaption>
+    </figure>
+
+    <h4>3. Prototipado — decidi kondiĉon kaj konduton per la korpo</h4>
+    <p>Ĉi tie kuŝas la kerno de la sistemo. Por la elektita eniga karto oni difinas la «kiam», por la eliga karto la «kion ĝi faras». La maniero manipuli estas konstruita aparte por ĉiu karto, kaj al ĉiu estas atribuita movo, kiun ebligas nur spurado kun ses gradoj de libereco.</p>
+    <p>Se oni elektas ekzemple «veterprognozon» kiel enigon, ĉemane aperas objektoj reprezentantaj sunon, nubojn, pluvon, tondron kaj neĝon. Kapti unu el ili kaj direkti la radion, kiu el ĝi eliras, al la cela objekto fiksas la kondiĉon. Se oni elektas «lumi» kiel eligon, la ludanto kaptas penikon, trempas ĝian pinton en la farbujon de koloro kaj frotas ĝin sur la objekton por decidi la lumkoloron. Por forigi jam metitan koloron sufiĉas trempi la penikon en la ujon kun «akvo» kaj froti denove.</p>
+    <p>La plej grava realiga decido estis permesi difini <strong>plurajn</strong> parojn de enigo kaj eligo apude. La komenca plano antaŭvidis nur unu: «se estas suno, lumi ruĝe», kaj tio estis ĉio. Farante ilin pluraj, unu sama objekto povas respondi malsame al pluraj situacioj: «ruĝe ĉe suno, blue ĉe pluvo, blanke ĉe neĝo». Difinitan paron oni povas ruli kaj elprovi antaŭ ol konfirmi ĝin, kaj se ĝi ne plaĉas, oni povas reiri kaj korekti ĝin.</p>
+
+    <figure class="paper-figure shot-figure">
+      <div class="figure-pair">
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="La ekrano de prototipado. Maldekstre la instrukcia panelo de la eniga karto «Weather»; meze tri parolvezikoj kun «When it is about to be sunny / rain / snow»; dekstre la eligaj vezikoj; kaj antaŭe arbo-objekto kaj farbujoj."></a>
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="La sama ekrano vidata de dekstre. Ambaŭflanke de flave farbita stratlampo la enigaj kaj eligaj vezikoj staras pare, kaj ĉe la dekstra rando troviĝas la instrukcia panelo de la eliga karto «Light up»."></a>
+      </div>
+      <figcaption>La sceno de prototipado. La vezikoj ambaŭflanke estas la enigaj kondiĉoj kaj la eligaj kondutoj, kunigitaj per numeroj. La butono «+» aldonas paron, la butono «−» forprenas unu. La panelo ĉe la eniga flanko montras «Max instances: 5».</figcaption>
+    </figure>
+
+    <h4>4. La parko — tuŝi tion, kion oni faris</h4>
+    <p>Post la konfirmo de la objekto oni transiras al virtuala parko. Tie la ludanto metas la inteligentan objekton, kiun li kunmetis, elvokas la enigan kondiĉon, kiun li difinis, kaj mem konstatas la eligan konduton. Kiam la objekto funkciis, aperas festa efekto kaj la sperto finiĝas.</p>
+
+    <h4>La fluo entute</h4>
+    <p>La sekva figuro kunigas ĉion ĉi en UML-agadajn diagramojn. La supra montras la ĝeneralan fluon; la du malsupraj disvolvas detale la manipuladon de la karto «veterprognozo» kaj de la karto «lumi». Ke post la kartelekto oni povas reiri al nova elekto, ricevinte instrukciojn, kaj ke post konfirmo kaj provo oni povas reveni al redaktado, estas skribitaj ĉiu kiel disbranĉiĝo.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="UML-agadaj diagramoj. La supra, «Overall Activity», iras de la atendekrano tra la elekto de tri kartoj, la instrukcioj, la difino de la enigaj kondiĉoj kaj eligaj kondutoj, la konfirmo, la kontrolo de la funkciado, ĝis la manipulado en la parko. Malsupre maldekstre estas disvolvita la manipulado de la veterprognoza karto, malsupre dekstre tiu de la luma karto."></a>
+      <figcaption>UML-agadaj diagramoj de la agoj de la uzanto. Ĉar la manipulado diferencas laŭ la speco de karto, la komuna fluo kaj la detaloj de ĉiu karto estas skribitaj aparte.</figcaption>
+    </figure>
+
+    <h3>Aparato kaj iloj</h3>
+    <p>La cela aparato estas Oculus Quest 2. Ĝi havas spuradon kun ses gradoj de libereco, do turniĝi, marŝi kaj kapti iĝas rekte enigo. Ĉar ripete manipuli virtualajn objektojn per la manoj kuŝas en la kerno de la sperto, aparato kun tri gradoj de libereco, en kiun oni enŝovas poŝtelefonon, estis juĝita neadekvata.</p>
+    <p>La ludmotoro estas Unity kaj la lingvo C#; por la konekto kun Quest 2 estis uzata la pakaĵo Oculus Integration, el kiu venas la konduto de la VR-kamerao, la bildigo kaj komuna API por la enigo de la stiriloj.</p>
+
+    <h3>Kvar scenoj kaj dek tri klasoj</h3>
+    <p>La sistemo estas dividita en kvar Unity-scenojn, kiuj rekte respondas al la kvar scenoj de la sperto. La klasoj estas entute dek tri, tri el ili abstraktaj.</p>
+    <p><strong>La titola sceno</strong> havas nur <code>TitleSceneCore</code>, kiu transiras al la sekva sceno ĉe premo de butono.</p>
+    <p><strong>La sceno de kartelekto</strong> konsistas el <code>CardSelectionSceneCore</code> kaj <code>CardSelectionDetector</code>. La unua kreas tri ekzemplerojn de la dua kaj atribuas ilin al la elektaj skatoloj por medio, enigo kaj eligo. Ĉiu skatolo havas la saman konduton: kiam objekto reprezentanta karton proksimiĝas, ĝi tiras ĝin internen kaj markas tiun kategorion «elektita». Kiam ĉiuj tri estas plenaj, la enhavo de la elekto estas skribata en la klason <code>SmartObject</code> kaj la sceno antaŭeniras. <code>SmartObject</code> estas statika klaso, do ĝiaj datumoj ne perdiĝas trans la scenoj. Ĝuste tiu sola punkto ligas kvar scenojn en unu sperton.</p>
+    <p><strong>La sceno de prototipado</strong> estas la centra. <code>PrototypingSceneCore</code> centre administras la tutan proceduron, kaj la konduto de la kartoj estas esprimata per hereda hierarkio kun <code>Card</code> ĉe la supro. Sub <code>Card</code> staras <code>InputCard</code> kaj <code>OutputCard</code>, kaj sub ili la konkretaj kartklasoj: <code>Weather</code>, <code>Fire</code>, <code>MakeSound</code>, <code>LightUp</code>. Nur la konkretaj klasoj ĉe la fino efektive plenumas la operaciojn de prototipado, do la tri supraj estas abstraktaj.</p>
+    <p><code>PrototypingSceneCore</code> tenas liston de ekzempleroj de enigaj kondiĉoj kaj liston de ekzempleroj de eligaj kondutoj. Se la elektitaj kartoj estas «veterprognozo» kaj «lumi», la unua pleniĝas nur per ekzempleroj de <code>Weather</code> kaj la dua nur per ekzempleroj de <code>LightUp</code>. Komence po unu estas kreata aŭtomate, kaj poste ilia nombro kreskas ĉe ĉiu premo de la aldona butono en la interfaco. Ĉiun kadron ĉiuj enigaj kondiĉoj en la listo estas taksataj kaj la respondaj eligaj kondutoj estas vokataj. Kiam la uzanto konfirmas, <code>isConfirmed</code> iĝas vera kaj la datumoj de la kunmetita konduto estas skribataj en la statikajn propraĵojn de <code>SmartObject</code>.</p>
+    <p><strong>La sceno de interago</strong> havas nur <code>InteractionSceneCore</code>, kiu prizorgas la lokadon en la parko, la ruladon de la enigaj kondiĉoj kaj la observadon de la eligoj, kaj la finan festan efekton.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="UML-klasdiagramo. Estas desegnitaj kvar pakaĵoj — Title Scene, Card Selection Scene, Prototyping Scene kaj Interaction Scene — kune kun la statika klaso Smart Object, al kiu ĉiuj referencas. Ene de Prototyping Scene la abstrakta klaso Card estas heredata de Input Card kaj Output Card, kaj tiuj siavice de Weather Card, Fire Card, Make Sound Card kaj Light Up Card."></a>
+      <figcaption>La UML-klasdiagramo de la sistemo. La kvar pakaĵoj respondas al la Unity-scenoj, kaj nur <code>Smart Object</code>, malsupre meze, konservas datumojn trans la scenoj. La atributoj kaj metodoj en la diagramo estas simpligitaj por legebleco.</figcaption>
+    </figure>
+
+    <p class="source-link">La fontkodo estas konsultebla ĉe la jena ligilo:<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
   </section>
 
   <section>
-    <h2>Limigoj</h2>
+    <h2>Kio sukcesis kaj kio restis</h2>
+    <h3>El 49 kartoj, 9 atingis la realigon</h3>
+    <p>En la prototipo estis realigitaj naŭ kartoj. La baza traktado — la elekto de kartoj, la difino de kondiĉoj kaj kondutoj, la administrado de pluraj ekzempleroj, la transdono de datumoj inter scenoj — estis konstruita ĝis funkcianta stato, do aldoni la restajn kartojn estas principe demando de tempo. Ekzistas plie ses kartoj, kies projekto estis finita, sed kiuj ne atingis la realigon.</p>
+
+    <table class="results-table">
+      <caption>Stato de realigo en la prototipo</caption>
+      <thead>
+        <tr><th scope="col">Stato</th><th scope="col">Kartoj</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Realigitaj (9)</th><td>Medio: arbo, stratlampo, trafiksigno, rubujo, ponto<br>Enigo: fajro, veterprognozo<br>Eligo: soni, lumi</td></tr>
+        <tr><th scope="row">Nur projektitaj (6)</th><td>Enigo: butono, rapido, sono<br>Eligo: moviĝi, vibri, sendi</td></tr>
+        <tr><th scope="row">Ne komencitaj (34)</th><td>15 mediaj kartoj, 16 enigaj kartoj, 3 eligaj kartoj (montri, ekfunkciigi, registri)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Taksado ne estis farita</h3>
+    <p>Taksado kun realaj uzantoj ne estis farita. La evoluiga periodo koincidis kun la malĉeesta partopreno sub COVID-19, kaj eblis aranĝi nek ĉeestan laborrondon bazitan sur VR-kaskoj, nek malĉeestan anstataŭaĵon. Tial tio, kion ĉi tiu projekto povas montri, atingas ĝis la punkto, kie la projektita sperto staras en funkcianta formo; ĉu ĝi estas facile uzebla por infanoj, aŭ ĉu ĝi havas sencon en terapia kunteksto, ne estas konstatite.</p>
+    <p>Se estonte oni farus taksadon, la demando estus: kiom intuicia estas ĉi tiu UI/UX por la laboro de prototipado? La tempo ĝis la fino, la grado de kongruo inter la antaŭe imagita inteligenta objekto kaj tiu efektive farita, kaj la nombro de nevolaj butonpremoj servus kiel indikiloj, kaj posta demandaro bazita sur la SUS (System Usability Scale) aldonus kvantajn datumojn. Ĉar en VR la vidkampo de la uzanto estas kovrita de la kasko, korpaj reagoj, kiujn li ne konscias, aperas pli facile, kio faras la videoregistradon de la sesio aparte utila. Pri la aĝo, 13 jaroj estas la realisma limo — tie kie la aĝogamo antaŭvidita de SNaP kruciĝas kun la sekurecaj gvidlinioj de Oculus, kiuj ne antaŭvidas uzon sub 13 jaroj.</p>
+
+    <h3>La laboro, kiu kuŝas antaŭe</h3>
+    <p>El tio, por kio ne sufiĉis tempo kaj lerteco, unue staras la refarado de la UI/UX. La realigo necesa por ke la kartkombinoj funkciu forprenis la tempon, kaj la vida, aŭda kaj palpa esprimo ne povis esti tralaborita. Precipe, kiom da teksto uzi en VR-interfaco meritas reprikonsideron. Skribo naskiĝis por registri informojn sur dudimensia surfaco, kaj tridimensia spaco enhavas multajn elementojn, kiujn pli bone estus reprojekti kiel spacan uzantinterfacon (SUI). Se la publiko estas infanoj kun NDD, interago per voĉo estas promesplena direkto.</p>
+    <p>Kiel akademian etendon oni nomis tri vojojn. Unu estas la komparo kun la fizika tabulo, kiun oni evoluigis en la sama i3Lab. Ekzistas antaŭaj esploroj, laŭ kiuj la sama kunlabora ludo, ludata en reala loko kaj en virtuala medio, produktis pli da interparolo ĉe la virtuala flanko; simila komparo povus validi ankaŭ inter ĉi tiuj du. La dua estas subteno de samtempa partopreno de pluraj homoj: portante «codesign» en la nomo, povi kunmeti kune kun aliaj ene de la virtuala spaco havas sencon. La tria estas normigi la priskriban formaton de inteligentaj objektoj, por ke oni povu porti ilin trans platformojn.</p>
+
+    <h3>Resume</h3>
+    <p>Kion ĉi tiu projekto konstruis, estas ne specimeno de finita inteligenta objekto, sed la loko por fari ĝin. La tri kartoj — medio, enigo, eligo — transiras tia, kia ili estas, en la unuojn de la kunmetado: la objekto, la kondiĉo, la konduto. Kapti, celi kaj pentri estas la korpaj agoj, kiuj ligas ilin inter si. La frazo naskiĝinta en tabulludo iĝas ĉi tie io, kion oni povas movi per la propraj manoj, kaj datumoj, kiuj restas post la fino de la laborrondo.</p>
   </section>
 
-  <section>
-    <h2>Aliro</h2>
-  </section>
-
-  <section>
-    <h2>Rezulto</h2>
-  </section>
+  <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva kaj Olivia Ludkiewicz, «Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD», Advanced User Interfaces (studjaro 2020–21) Final Exam Project, Politekniko de Milano, februaro 2021.</p>
 
   <nav aria-label="Retejo">
     <ul>
@@ -164,5 +273,13 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two strings it
+     needs are written in this page's language, like the rest of the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Pligrandigita figuro" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fermi la pligrandigon"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Smart Codesign VR — Takafumi Horiuchi</title>
-<meta name="description" content="Um projeto do mestrado. O texto está em preparação.">
+<title>Desenvolvimento de um sistema VR de prototipagem de objetos interativos para crianças — Takafumi Horiuchi</title>
+<meta name="description" content="Montar e fazer funcionar em VR os objetos inteligentes que as crianças inventam no jogo de tabuleiro SNaP. Projeto colaborativo do mestrado implementado no Oculus Quest 2 com Unity: escolhem-se três cartas — ambiente, entrada e saída — e definem-se à mão a condição e o comportamento.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/pt/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-smart-codesign-vr/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Smart Codesign VR">
-<meta property="og:description" content="O texto está em preparação.">
+<meta property="og:title" content="Desenvolvimento de um sistema VR de prototipagem de objetos interativos para crianças">
+<meta property="og:description" content="Montar um objeto inteligente em VR a partir de três cartas: ambiente, entrada e saída.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/pt/works/masters-project-smart-codesign-vr/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Tela de seleção de cartas em VR. Três caixas translúcidas rotuladas input, environment e output ficam diante de um painel de cartas.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -72,37 +56,40 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/pt/works/masters-project-smart-codesign-vr/#work",
-      "name": "Smart Codesign VR",
+      "name": "Desenvolvimento de um sistema VR de prototipagem de objetos interativos para crianças",
       "url": "https://takafumihoriuchi.github.io/pt/works/masters-project-smart-codesign-vr/",
-      "description": "Um projeto do mestrado. O texto está em preparação.",
-      "creativeWorkStatus": "Em preparação",
+      "description": "Um ambiente de prototipagem em que os objetos inteligentes inventados pelas crianças no jogo de tabuleiro SNaP são montados e postos a funcionar em VR. Escolhem-se três cartas — ambiente, entrada e saída — e o jogador define a condição e o comportamento. Projeto colaborativo do mestrado implementado no Oculus Quest 2 com Unity.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
+      "datePublished": "2021-02",
       "inLanguage": "pt",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Paul Cozma-Ivan" },
+        { "@type": "Person", "name": "Elmira Katsajeva" },
+        { "@type": "Person", "name": "Olivia Ludkiewicz" }
+      ]
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Smart Codesign VR</h1>
+    <h1>Desenvolvimento de um sistema VR de prototipagem de objetos interativos para crianças</h1>
     <div class="identity">
       <p class="tagline">por <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Perfis em outros sites">
+      <nav aria-label="Perfis em outros lugares">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">Em preparação</p>
+    <p class="dateline">Fevereiro de 2021</p>
   </header>
 
   <ascii-hero data-scene="smart-codesign-vr" dir="ltr" translate="no" aria-hidden="true">
@@ -115,27 +102,149 @@
                               ~~ (@) ~~</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>Resumo</h2>
-    <p class="lead">Um projeto do mestrado. O texto está em preparação.</p>
+    <h2>Visão geral</h2>
+    <p class="lead">Smart Codesign VR é uma plataforma para montar coisas interativas — “objetos inteligentes” — em realidade virtual (VR) e tocá-las ali mesmo para ver o que fazem. O jogador escolhe três cartas, uma de ambiente, uma de entrada e uma de saída, e define com as próprias mãos o que acontece e quando. O objeto pronto é colocado em um parque virtual, onde pode de fato ser acionado e experimentado.</p>
+    <p>A base é o SNaP (The Smart Nature Protagonists), um jogo de tabuleiro desenvolvido pelo i3Lab do Politécnico de Milão. No SNaP, as crianças combinam cartas para inventar objetos inteligentes — mas o que inventam permanece uma frase no papel. Este projeto se propôs a dar corpo a essa frase em VR: algo que se monta com o próprio movimento e que depois se pode tocar.</p>
+    <p>Foi projetado e implementado por uma equipe de quatro pessoas como trabalho final da disciplina Advanced User Interfaces (ano letivo 2020–21) do Politécnico de Milão. Os usuários previstos são crianças de 11 a 13 anos, com atenção especial às crianças com transtornos do neurodesenvolvimento (TND). Foi implementado para o Oculus Quest 2 com Unity e C#, e chegou a um protótipo que funciona de ponta a ponta, da escolha das cartas ao manejo do objeto no parque.</p>
+
+    <figure class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Vídeo de demonstração do Smart Codesign VR" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>O vídeo de demonstração: escolher as cartas, definir a condição de entrada e o comportamento de saída, e fazer funcionar o objeto inteligente pronto no parque virtual.</figcaption>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>SNaP, o jogo de tabuleiro, e as premissas do projeto</h2>
+    <h3>Um jogo em que as crianças são as projetistas</h3>
+    <p>SNaP é um jogo de tabuleiro em que de duas a quatro crianças atuam como “designers”, enquanto um adulto que conduz a sessão faz o papel de “prefeito”. O prefeito propõe uma missão no início, e as crianças conversam e combinam cartas até inventar um objeto inteligente que a resolva. O objetivo é cultivar a criatividade e a capacidade de colaborar e pôr em palavras o próprio pensamento. Diz-se ainda que o jogo pode ser usado com fins terapêuticos junto a crianças com transtornos do neurodesenvolvimento.</p>
+
+    <h3>Ambiente, entrada e saída — três tipos de carta</h3>
+    <p>O SNaP tem três tipos de carta, cada um com um papel diferente.</p>
+    <p>As <strong>cartas de ambiente (Environment)</strong> são a própria coisa que se torna inteligente. Árvore, banco, balanço, água, pedra, poste de luz, lixeira, bicicleta, ponte, escada, mochila escolar: coisas comuns de um parque ou de uma rua. Não são sensor nem função, mas o objeto dentro do qual os outros dois são incorporados.</p>
+    <p>As <strong>cartas de entrada (Input)</strong> decidem o que esse objeto percebe: botão, movimento, contato, distância, temperatura, umidade, luminosidade, cor, som, fogo, nível da água, previsão do tempo — ou seja, os sensores.</p>
+    <p>As <strong>cartas de saída (Output)</strong> decidem o que esse objeto faz: acender, emitir som, vibrar, mover-se, exibir, registrar, enviar — os atuadores.</p>
+    <p>A carta de ambiente é necessária porque um mesmo par de entrada e saída significa algo inteiramente diferente conforme o lugar onde se aloja. “Emitir um som ao detectar movimento” numa lixeira vira “errar a lixeira faz soar algo”; num poste de luz, vira “uma luz que avisa que alguém se aproxima”. Entrada e saída sozinhas não passam da especificação de um aparelho; só com o ambiente acrescentado é que viram uma frase sobre algo do mundo à nossa volta.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="A carta de ambiente “Trash can”, a carta de entrada “Motion” e a carta de saída “Make sound” unidas por sinais “&”, com uma seta que leva à frase “Missing the trash bin creates a sound.”."></a>
+      <figcaption>A combinação de três cartas torna-se a descrição de um objeto inteligente. A cor da borda indica o tipo: verde para ambiente, azul-claro para entrada e amarelo para saída.</figcaption>
+    </figure>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="Uma tabela dispondo as 49 cartas do SNaP. As duas fileiras superiores são as 20 cartas verdes de ambiente; as duas fileiras centrais e o extremo esquerdo da última, as 21 cartas azuis de entrada; o restante da última fileira, as 8 cartas amarelas de saída."></a>
+      <figcaption>As 49 cartas do SNaP: 20 de ambiente, 21 de entrada e 8 de saída. O produto desse vocabulário é o espaço de projeto do jogo.</figcaption>
+    </figure>
+
+    <h3>Transformar uma frase no papel em algo que se toca</h3>
+    <p>Até então, uma sessão de SNaP terminava quando o objeto inteligente imaginado era escrito em uma frase. No i3Lab desenvolvia-se em paralelo uma “placa física”, que combinava um tablet com Arduino, para construir essa frase fisicamente. O Smart Codesign VR é outra resposta ao mesmo problema, com a VR como meio — uma direção que a equipe de pesquisa ainda não havia experimentado.</p>
+    <p>Escolher a VR muda duas coisas. Uma é que a criança pode prototipar com o movimento do corpo inteiro: agarrar, transportar, iluminar ou pintar com um pincel tornam-se, sem mais, os atos de “definir uma condição” e “decidir um comportamento”. A outra é que o que foi imaginado se ergue visualmente diante dela e pode ser tocado ali mesmo. Uma frase abstrata passa a ser algo com tamanho e forma.</p>
+    <h3>Para quem foi projetado</h3>
+    <p>O público principal são crianças de 11 a 13 anos, com ênfase nas crianças com transtornos do neurodesenvolvimento. Conceber um objeto inteligente exige certo raciocínio lógico, de modo que tanto o SNaP quanto esta versão em VR pressupõem uma idade mínima.</p>
+    <p>Na terapia com crianças com TND, um objetivo frequente é desenvolver a capacidade de expressar o próprio pensamento a outra pessoa. Sabe-se também que lidar com o abstrato lhes é difícil e que o tempo de atenção que conseguem sustentar é limitado. Por outro lado, jogos que se podem tocar, atividades feitas junto com outros e atividades apoiadas por adultos ou pela tecnologia mostram-se eficazes, e sabe-se que o envolvimento muda quando a própria experiência é interessante. Não são poucas as crianças que sentem a terapia convencional como entediante e tensa.</p>
+
+    <h3>O cuidado com o próprio espaço</h3>
+    <p>Segundo os antecedentes consultados, quatro pontos pesam na criação de um espaço confortável para crianças com TND. O som (pela sensibilidade auditiva: isolamento e volume ajustável, de preferência um som calmo e uniforme); a luz e a cor (cores claras e saturadas restritas a superfícies pequenas, sobre um fundo sereno de baixa saturação); a organização do espaço (um espaço ordenado e de limites nítidos é mais fácil de processar); e os materiais (simples, legíveis e dispostos de modo a não atrapalhar a circulação). O espaço virtual é, além disso, um lugar em que esses quatro pontos ficam por conta de quem projeta.</p>
+
+    <h3>As limitações próprias do meio VR</h3>
+    <p>Ao mesmo tempo, a VR traz limitações que não se podem ignorar: o custo do equipamento, o enjoo, a carga sobre cabeça e pescoço devida ao peso do visor, os acidentes decorrentes de ter a visão tapada, o cansaço ocular pelo uso prolongado e a dependência por excesso de imersão no mundo virtual. No caso das crianças com TND soma-se uma preocupação própria: a de que o limite entre o real e o virtual pode se tornar mais tênue.</p>
+    <p>Isso pesou diretamente nas decisões de projeto. Manter a interação simples e ainda assim deixar a resistência necessária para que ela ensine algo. Que o visual e o sonoro sejam claros sem que o estímulo fique forte demais. E dar à experiência um fim definido: terminadas a prototipagem e a operação no parque, a atividade se encerra. É também a decisão de não projetar algo que retenha a criança no mundo virtual.</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>O que foi construído — o percurso da experiência e sua implementação</h2>
+    <h3>As quatro cenas da experiência</h3>
+    <p>A aplicação é composta de quatro cenas: a tela de espera, a seleção de cartas, a prototipagem e o manejo no parque.</p>
+
+    <h4>1. Tela de espera</h4>
+    <p>Ao iniciar, aparece uma tela de título que não avança até que se pressione um botão do controle. É uma parada deliberada, para que a parte principal não comece antes de o visor estar posto e a postura ajustada.</p>
+
+    <h4>2. Seleção de cartas — agarrar e colocar na caixa</h4>
+    <p>Na cena seguinte escolhe-se uma carta de cada tipo: ambiente, entrada e saída. O modo de escolher consiste em agarrar o objeto que representa a carta, levá-lo até a caixa correspondente e colocá-lo dentro. Agarrar e transportar, em vez de clicar, é o que aproveita as três dimensões que a VR oferece. Quando se detecta que as três caixas têm conteúdo, uma orientação em voz leva à cena de prototipagem. A ordem não importa, mas não se avança sem preencher as três.</p>
+
+    <figure class="paper-figure shot-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="Tela de seleção de cartas em VR. Diante de um painel de cartas há três caixas translúcidas rotuladas input, environment e output, e uma mão agarra um objeto em forma de megafone."></a>
+      <figcaption>A cena de seleção de cartas. As três caixas em primeiro plano correspondem a ambiente, entrada e saída; ao colocar nelas o objeto agarrado, a escolha é confirmada. As cartas que não podem ser manipuladas nesta fase aparecem esmaecidas.</figcaption>
+    </figure>
+
+    <h4>3. Prototipagem — decidir condição e comportamento com o corpo</h4>
+    <p>Aqui está o centro do sistema. Para a carta de entrada escolhida define-se o “quando”, e para a de saída o “o que faz”. O modo de manejar cada uma é construído separadamente para cada carta, e a cada uma é atribuído um movimento que só o rastreamento de seis graus de liberdade torna possível.</p>
+    <p>Se, por exemplo, escolhemos “previsão do tempo” como entrada, surgem à mão objetos que representam sol, nuvens, chuva, trovoada e neve. Ao agarrar um deles e apontar o raio que dele parte para o objeto de destino, a condição fica definida. Se escolhemos “acender” como saída, o jogador agarra um pincel, mergulha a ponta na lata de tinta de uma cor e a esfrega no objeto para decidir a cor com que ele brilhará. Para apagar uma cor já aplicada, basta mergulhar o pincel na lata de “água” e esfregar de novo.</p>
+    <p>A decisão de implementação de maior alcance foi permitir definir <strong>vários</strong> pares de entrada e saída lado a lado. O plano inicial previa apenas um: “se fizer sol, brilha em vermelho”, e acabava aí. Ao torná-los vários, um mesmo objeto passa a responder de modos diferentes a várias situações: “vermelho no sol, azul na chuva, branco na neve”. Um par já definido pode ser executado e testado antes de ser confirmado, e se não agradar, é possível voltar e corrigi-lo.</p>
+
+    <figure class="paper-figure shot-figure">
+      <div class="figure-pair">
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="Tela de prototipagem. À esquerda, o painel de instruções da carta de entrada “Weather”; ao centro, três balões com “When it is about to be sunny / rain / snow”; à direita, os balões de saída; e em primeiro plano, um objeto em forma de árvore e latas de tinta."></a>
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="A mesma tela vista da direita. Dos dois lados de um poste de luz pintado de amarelo, os balões de entrada e de saída alinham-se aos pares, e no extremo direito está o painel de instruções da carta de saída “Light up”."></a>
+      </div>
+      <figcaption>A cena de prototipagem. Os balões de cada lado são as condições de entrada e os comportamentos de saída, correspondendo-se por número. O botão “+” acrescenta um par e o botão “−” retira um. O painel do lado da entrada mostra “Max instances: 5”.</figcaption>
+    </figure>
+
+    <h4>4. O parque — tocar o que se fez</h4>
+    <p>Confirmado o objeto, passa-se a um parque virtual. Ali o jogador coloca o objeto inteligente que montou, provoca a condição de entrada que definiu e verifica por si mesmo o comportamento de saída. Quando o objeto funciona, surge uma celebração e a experiência termina.</p>
+
+    <h4>O percurso completo</h4>
+    <p>A figura a seguir reúne tudo isso em diagramas de atividade UML. O de cima é o percurso geral; os dois de baixo desdobram em detalhe o manejo da carta “previsão do tempo” e o da carta “acender”. Poder voltar a escolher depois da seleção de cartas, uma vez recebidas as instruções, e poder retornar à edição depois de confirmar e testar estão escritos como ramificações.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="Diagramas de atividade UML. O superior, “Overall Activity”, vai da tela de espera à escolha de três cartas, às instruções, à definição das condições de entrada e dos comportamentos de saída, à confirmação, à verificação do funcionamento e ao manejo no parque. Abaixo à esquerda desdobra-se o manejo da carta de previsão do tempo e abaixo à direita o da carta de acender."></a>
+      <figcaption>Diagramas de atividade UML do comportamento do usuário. Como o manejo muda conforme o tipo de carta, o percurso comum e o detalhe de cada carta são escritos separadamente.</figcaption>
+    </figure>
+
+    <h3>Equipamento e ferramentas</h3>
+    <p>O dispositivo de destino é o Oculus Quest 2. Ele conta com rastreamento de seis graus de liberdade, de modo que girar, caminhar e agarrar tornam-se entrada diretamente. Como manipular objetos virtuais com as mãos, repetidamente, é o centro da experiência, julgou-se que um aparelho de três graus de liberdade com um celular encaixado não daria conta.</p>
+    <p>A engine de jogo é a Unity e a linguagem é C#; para a conexão com o Quest 2 usou-se o pacote Oculus Integration, do qual vêm o comportamento da câmera VR, a renderização e uma API comum para a entrada dos controles.</p>
+
+    <h3>Quatro cenas e treze classes</h3>
+    <p>O sistema divide-se em quatro cenas do Unity, que correspondem diretamente às quatro cenas da experiência. Há treze classes ao todo, três delas abstratas.</p>
+    <p><strong>A cena de título</strong> contém apenas <code>TitleSceneCore</code>, que passa à cena seguinte ao pressionar um botão.</p>
+    <p><strong>A cena de seleção de cartas</strong> compõe-se de <code>CardSelectionSceneCore</code> e <code>CardSelectionDetector</code>. A primeira cria três instâncias da segunda e as atribui às caixas de seleção de ambiente, entrada e saída. Todas as caixas compartilham o mesmo comportamento: quando um objeto que representa uma carta se aproxima, elas o puxam para dentro e marcam aquela categoria como “selecionada”. Quando as três se completam, o conteúdo da seleção é gravado na classe <code>SmartObject</code> e a cena avança. <code>SmartObject</code> é uma classe estática, de modo que seus dados não se perdem na troca de cenas. É esse único ponto que liga as quatro cenas em uma só experiência.</p>
+    <p><strong>A cena de prototipagem</strong> é a central. <code>PrototypingSceneCore</code> gerencia de forma centralizada todo o procedimento, e o comportamento das cartas é expresso como uma hierarquia de herança encabeçada por <code>Card</code>. Sob <code>Card</code> estão <code>InputCard</code> e <code>OutputCard</code>, e sob elas as classes concretas de cada carta: <code>Weather</code>, <code>Fire</code>, <code>MakeSound</code>, <code>LightUp</code>. Só as classes concretas da ponta executam de fato as operações de prototipagem, de modo que as três acima delas são abstratas.</p>
+    <p><code>PrototypingSceneCore</code> mantém uma lista de instâncias de condição de entrada e outra de instâncias de comportamento de saída. Se as cartas escolhidas forem “previsão do tempo” e “acender”, a primeira se preenche apenas com instâncias de <code>Weather</code> e a segunda apenas com instâncias de <code>LightUp</code>. No início gera-se automaticamente uma de cada, e daí em diante o número aumenta a cada toque no botão de adicionar da interface. A cada quadro, todas as condições de entrada da lista são avaliadas e os comportamentos de saída correspondentes são chamados. Quando o usuário confirma, <code>isConfirmed</code> torna-se verdadeiro e os dados do comportamento montado são gravados nas propriedades estáticas de <code>SmartObject</code>.</p>
+    <p><strong>A cena de interação</strong> contém apenas <code>InteractionSceneCore</code>, que se encarrega de colocar o objeto no parque, executar as condições de entrada e observar as saídas, e da celebração final.</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="Diagrama de classes UML. São desenhados quatro pacotes — Title Scene, Card Selection Scene, Prototyping Scene e Interaction Scene — junto com a classe estática Smart Object referenciada por todos. Dentro de Prototyping Scene, a classe abstrata Card é herdada por Input Card e Output Card, e estas, por sua vez, por Weather Card, Fire Card, Make Sound Card e Light Up Card."></a>
+      <figcaption>Diagrama de classes UML do sistema. Os quatro pacotes correspondem às cenas do Unity, e só <code>Smart Object</code>, embaixo ao centro, guarda dados entre cenas. Os atributos e métodos do diagrama estão simplificados para facilitar a leitura.</figcaption>
+    </figure>
+
+    <p class="source-link">O código-fonte pode ser consultado no link a seguir:<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
   </section>
 
   <section>
-    <h2>Restrições</h2>
+    <h2>O que foi alcançado e o que ficou</h2>
+    <h3>Das 49 cartas, 9 chegaram à implementação</h3>
+    <p>No protótipo foram implementadas nove cartas. Os mecanismos de base — escolher cartas, definir condições e comportamentos, gerenciar várias instâncias, passar dados entre cenas — ficaram em estado funcional, de modo que acrescentar as cartas restantes é, em princípio, questão de tempo. Há ainda seis cartas cujo projeto foi concluído mas que não chegaram à implementação.</p>
+
+    <table class="results-table">
+      <caption>Estado de implementação no protótipo</caption>
+      <thead>
+        <tr><th scope="col">Estado</th><th scope="col">Cartas</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Implementadas (9)</th><td>Ambiente: árvore, poste de luz, placa de trânsito, lixeira, ponte<br>Entrada: fogo, previsão do tempo<br>Saída: emitir som, acender</td></tr>
+        <tr><th scope="row">Apenas projetadas (6)</th><td>Entrada: botão, velocidade, som<br>Saída: mover-se, vibrar, enviar</td></tr>
+        <tr><th scope="row">Não iniciadas (34)</th><td>15 cartas de ambiente, 16 de entrada e 3 de saída (exibir, ativar, registrar)</td></tr>
+      </tbody>
+    </table>
+
+    <h3>Não se realizou avaliação</h3>
+    <p>Não foi realizada avaliação com usuários reais. O período de desenvolvimento coincidiu com a participação remota imposta pela COVID-19, e não foi possível organizar nem uma oficina presencial baseada em visores de VR nem uma alternativa a distância. Portanto, o que este projeto consegue mostrar vai até o ponto em que a experiência projetada se sustenta numa forma que funciona; se é fácil de usar para as crianças, ou se faz sentido num contexto terapêutico, não foi verificado.</p>
+    <p>Se no futuro se fizer uma avaliação, a pergunta será: quão intuitiva é esta UI/UX para o trabalho de prototipar? O tempo até a conclusão, o grau de coincidência entre o objeto inteligente imaginado de antemão e o resultado, e o número de toques não intencionais serviriam como indicadores, e um questionário posterior baseado na SUS (System Usability Scale) acrescentaria dados quantitativos. Como em VR o visor tapa a visão do usuário, afloram com mais facilidade reações corporais das quais ele não se dá conta, o que torna a gravação em vídeo da sessão especialmente útil. Quanto à idade, 13 anos é a linha realista: é onde se sobrepõem a faixa prevista pelo SNaP e as orientações de segurança da Oculus, que não preveem o uso abaixo dessa idade.</p>
+
+    <h3>O trabalho que está adiante</h3>
+    <p>Entre o que o tempo e a habilidade não permitiram abordar, o primeiro é refazer a UI/UX. A implementação necessária para que as combinações de cartas funcionassem tomou o tempo, e não foi possível apurar a expressão visual, sonora e tátil. Em especial, vale repensar até que ponto convém usar texto numa interface de VR. A escrita nasceu para registrar informação sobre uma superfície bidimensional, e num espaço tridimensional há muitos elementos que seria melhor redesenhar como interface de usuário espacial (SUI). Se o público são crianças com TND, a interação por voz é uma direção promissora.</p>
+    <p>Quanto ao alcance acadêmico, foram apontados três caminhos. Um é a comparação com a placa física que se desenvolvia no mesmo i3Lab. Há trabalhos anteriores segundo os quais, ao se jogar o mesmo jogo colaborativo num cenário real e num ambiente virtual, a conversa aumentou do lado virtual; uma comparação do mesmo tipo poderia valer entre estes dois. O segundo é dar suporte à participação simultânea de várias pessoas: tendo no nome a palavra “codesign”, faz sentido poder construir junto de outros dentro do espaço virtual. O terceiro é padronizar o formato de descrição dos objetos inteligentes para que possam ser levados de uma plataforma a outra.</p>
+
+    <h3>Em resumo</h3>
+    <p>O que este projeto construiu não é a amostra de um objeto inteligente pronto, mas o lugar onde fazê-lo. As três cartas — ambiente, entrada e saída — passam tal como estão a ser as unidades da montagem: o objeto, a condição e o comportamento. Agarrar, apontar e pintar são as ações do corpo que as ligam. A frase nascida num jogo de tabuleiro torna-se aqui algo que se pode mover com as próprias mãos, e dados que permanecem depois de a oficina acabar.</p>
   </section>
 
-  <section>
-    <h2>Abordagem</h2>
-  </section>
-
-  <section>
-    <h2>Resultado</h2>
-  </section>
+  <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva e Olivia Ludkiewicz, “Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD”, Advanced User Interfaces (ano letivo 2020–21) Final Exam Project, Politécnico de Milão, fevereiro de 2021.</p>
 
   <nav aria-label="Site">
     <ul>
@@ -164,5 +273,13 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two strings it
+     needs are written in this page's language, like the rest of the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Figura ampliada" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fechar a ampliação"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>
