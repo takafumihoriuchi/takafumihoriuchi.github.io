@@ -124,19 +124,19 @@ a:has(> img) {
      is what keeps the promise. */
   padding: 4.5rem 1.5rem 1.5rem;
   background: rgb(0 0 0 / 0.82);
-  cursor: zoom-out;
 }
 
 .lightbox[hidden] { display: none; }
 
-/* `zoom-out` is the backdrop's, and the backdrop is what a click closes. The
-   picture is not a target, so it says so. */
+/* The ground carries no cursor of its own (owner's instruction, 2026-09-04).
+   It closes when clicked, but it is the whole rest of the screen, and a screen
+   filled with a magnifier reads as an instruction rather than as a way out —
+   the pointer belongs on the one thing that is a control. */
 .lightbox__image {
   max-width: 100%;
   max-height: 100%;
   width: auto;
   background: #fff;
-  cursor: default;
 }
 
 /* ------------------------------------------------------ the close signifier
@@ -175,6 +175,15 @@ a:has(> img) {
   background: none;
   cursor: pointer;
 }
+
+/* The pointer covers everything that closes on a click, not only the drawn
+   lines (owner's instruction, 2026-09-04). `cursor` inherits, so the two
+   pseudo-elements would take it anyway; it is restated on them because the
+   hover area is the one place where what is drawn and what answers are
+   deliberately different sizes, and a cursor that changed at the ring would be
+   saying the ring is the edge of the target when it is not. */
+.lightbox__close::before,
+.lightbox__close::after { cursor: pointer; }
 
 /* The hit area and the hover wash, one box. `-0.4rem` on each side puts it
    about a third of the ring's radius outside the drawn edge: enough that the
