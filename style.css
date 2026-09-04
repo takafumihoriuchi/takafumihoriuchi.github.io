@@ -218,6 +218,22 @@ ascii-hero[data-scene="footer-rest"] {
 
 ascii-hero[data-scene="footer-rest"] + footer { margin-top: 1.5rem; }
 
+/* The action is drawn on thirteen rows where the other scenes use seven or
+   eight: the hammer needs the height to swing through, and the key needs room
+   to tilt either side of its pivot. At the shared nine-to-two box the bottom
+   row falls outside the crop, and the bottom row is the base the whole lever
+   turns on — in the striking frame the depressed end of the key goes with it. */
+ascii-hero[data-scene="piano-action"] { aspect-ratio: 4 / 1; }
+
+/* The compact drawing is the same thirteen rows over fewer columns, so it is
+   taller again for its width. It is chosen on the hero's own width rather
+   than the viewport's; 33rem is where that measurement crosses 480px with the
+   body's gutters counted, so the box changes on the same edge the drawing
+   does. */
+@media (max-width: 33rem) {
+  ascii-hero[data-scene="piano-action"] { aspect-ratio: 2.75 / 1; }
+}
+
 .ascii-hero__canvas {
   margin: 0;
   max-width: none;
