@@ -14,7 +14,7 @@
  * and 665px in German, and both numbers move again with every work added.
  */
 
-import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260904-1";
+import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260904-2";
 
 /* Two cards are on show before the control is pressed — the stylesheet hides
  * the rest — so opening to four is what doubles the list at the moment it is

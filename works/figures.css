@@ -57,28 +57,11 @@
  * Written as "a link whose child is an image" rather than as a list of the
  * classes that happen to enlarge today, so the rule is the same one the script
  * applies, and a new figure on a new page needs nothing added here. Browsers
- * without `:has()` lose the pointer shape and keep the behaviour.
- *
- * The image carries the same cursor as the link around it, stated rather than
- * inherited. Whichever of the two boxes the browser resolves the pointer
- * against, it finds the same answer — the cursor over a figure was reported
- * as changing between the arrow and the magnifier depending on whether the
- * mouse was moving (owner's report, 2026-09-04), and a control whose cursor
- * depends on how you arrived at it does not feel like a control.
- *
- * `user-drag: none` is part of the same repair. An image inside a link is a
- * drag source, and a drag source is a second thing the pointer can be about
- * to become while it travels. The image can still be reached: the link it
- * sits in points at the full-size file. */
+ * without `:has()` lose the pointer shape and keep the behaviour. The image
+ * inherits the cursor from the link, so one declaration covers both boxes. */
 a:has(> img) {
   display: block;
   cursor: zoom-in;
-}
-
-a:has(> img) img {
-  cursor: zoom-in;
-  -webkit-user-drag: none;
-  user-drag: none;
 }
 
 /* ------------------------------------------------------------- line art --
@@ -194,7 +177,11 @@ a:has(> img) img {
   border: 0;
   border-radius: 50%;
   background: transparent;
-  cursor: pointer;
+  /* The ordinary arrow, not a pointer (owner's instruction, 2026-09-04). The
+     wash already answers the hover, and it answers it without depending on
+     anything the cursor has to be told: a cursor that is the default cannot
+     fall back to the default. */
+  cursor: default;
   transition: background-color 120ms ease;
 }
 

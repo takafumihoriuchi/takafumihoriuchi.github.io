@@ -1,9 +1,9 @@
 import {
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260904-1";
-import "./ascii-text-reveal.js?v=20260904-1";
+} from "./ascii-layout.js?v=20260904-2";
+import "./ascii-text-reveal.js?v=20260904-2";
 
-const SCENES_URL = new URL("./scenes.json?v=20260904-1", import.meta.url);
+const SCENES_URL = new URL("./scenes.json?v=20260904-2", import.meta.url);
 // Dropped or throttled frames must not extend this load-only phase into
 // scrolling. Keep the clock local so stale dependency caches cannot break the
 // module graph when this behavior changes.
@@ -307,31 +307,42 @@ class AsciiHero extends HTMLElement {
     this._schedule();
   }
 
+  /* Whether the loop should be running, in one place. The sync, the scheduler
+     and the tick each used to spell out their own version of this, and they
+     had already drifted: `paused` reached only the first of the three, so a
+     frame already in flight when the overlay opened would re-arm the loop the
+     overlay had just stopped. Three conditions, one answer:
+
+     - the tab is in front,
+     - nothing in front of the page has asked for quiet,
+     - and the scene is where somebody can see it. Scrolled out of view it
+       stops; scrolled back it starts again, which is the IntersectionObserver
+       calling this. The intro is exempt: it forms once, on load, whether or
+       not the reader has already scrolled past it. */
+  _shouldAnimate() {
+    return !document.hidden
+      && !this.hasAttribute("paused")
+      && (this._phase === "intro" || this._inView);
+  }
+
   _syncPlayback() {
     if (!this._scene || this._motion.matches) return;
-    const shouldRun = (
-      this._phase === "intro" || this._inView
-    ) && !document.hidden && !this.hasAttribute("paused");
-    if (shouldRun) {
-      if (!this._started) this._maybeStart();
-      else this._schedule();
-    } else {
+    if (!this._shouldAnimate()) {
       this._stop(false);
+      return;
     }
+    if (!this._started) this._maybeStart();
+    else this._schedule();
   }
 
   _schedule() {
-    if (
-      this._raf
-      || document.hidden
-      || (this._phase !== "intro" && !this._inView)
-    ) return;
+    if (this._raf || !this._shouldAnimate()) return;
     this._raf = requestAnimationFrame((time) => this._tick(time));
   }
 
   _tick(time) {
     this._raf = null;
-    if (document.hidden || (this._phase !== "intro" && !this._inView)) {
+    if (!this._shouldAnimate()) {
       this._lastTick = null;
       return;
     }
