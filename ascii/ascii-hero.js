@@ -301,6 +301,14 @@ class AsciiHero extends HTMLElement {
     if (this._introEnabled && !asciiLoadHasStarted()) {
       if (!this._awaitingLoadClock) {
         this._awaitingLoadClock = true;
+        // Hold the first frame of the introduction while the page finishes
+        // getting ready, rather than leaving what the <pre> was committed
+        // with — the finished drawing, which is the frame written for the
+        // reader without JavaScript. A tab that loaded in the background is
+        // uncovered by then and can be brought forward at any moment, and
+        // the drawing would be the one thing on it already at its end.
+        this._renderIntro(0);
+        this.dataset.state = "forming";
         asciiLoadStarted().then(() => {
           this._awaitingLoadClock = false;
           this._maybeStart();
