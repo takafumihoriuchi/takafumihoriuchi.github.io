@@ -175,7 +175,11 @@ a:has(> img) {
   height: 3rem;
   padding: 0;
   border: 0;
-  border-radius: 50%;
+  /* 9px, not the mark's 3px: the wash sits 6px outside the mark on every side,
+     and a corner keeps its curve parallel to the one inside it only when the
+     outer radius carries that gap too. Equal radii would read as a sharper
+     corner outside than in. */
+  border-radius: 9px;
   background: transparent;
   /* The ordinary arrow, not a pointer (owner's instruction, 2026-09-04). The
      wash already answers the hover, and it answers it without depending on
@@ -190,9 +194,14 @@ a:has(> img) {
   background: rgb(255 255 255 / 0.14);
 }
 
-/* The ring: 2.25rem inside a 3rem target, so the wash reaches 0.375rem past
+/* The mark: 2.25rem inside a 3rem target, so the wash reaches 0.375rem past
    the drawn edge on every side — enough to read as a halo around the mark
-   rather than as a second ring, while the mark itself stays small. */
+   rather than as a second outline, while the mark itself stays small.
+
+   A rounded square, not a circle (owner's instruction, 2026-09-04), at the
+   3px the index gives its "view more" box. The site has one shape for "this
+   is a control", and this is it; a circle here would have been a second
+   vocabulary for the same idea. */
 .lightbox__close::before {
   content: "";
   position: absolute;
@@ -202,7 +211,7 @@ a:has(> img) {
   height: 2.25rem;
   transform: translate(-50%, -50%);
   border: 1px solid #fff;
-  border-radius: 50%;
+  border-radius: 3px;
 }
 
 /* The cross: one box holding a horizontal rule and a vertical rule through its
