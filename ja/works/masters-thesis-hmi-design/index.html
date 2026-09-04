@@ -74,7 +74,9 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-thesis-hmi-design/page.css">
+<script src="../../../works/figures.js" defer></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260902-2"></script>
 </head>
 <body>
@@ -158,8 +160,8 @@
     <p>そこで、操作者の中心視野を境界として使う。視野の内側にある対象は、操作者が把握している「操作可能な対象」とする。外側にある対象は、見落としている可能性のある「保護対象」とする。人は視線の位置にかかわらず、常に保護対象とする。</p>
     <p>これは視線でロボットへ命令を送る仕組みではない。操作者の認知状態を、ロボットが動いてよい条件へ変換する仕組みである。</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="上から見た図。ロボットの前方に、操作者の中心視野が錐体として描かれている。錐体の内側にある対象Aは白い丸、外側にある対象B・C・Dは濃い四角で示され、二人の人物が錐体の内と外に立っている。">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="上から見た図。ロボットの前方に、操作者の中心視野が錐体として描かれている。錐体の内側にある対象Aは白い丸、外側にある対象B・C・Dは濃い四角で示され、二人の人物が錐体の内と外に立っている。"></a>
       <figcaption>操作者の中心視野の内側にある対象Aは操作可能、外側にある対象B・C・Dは保護対象となる。人はどこに立っていても保護される。</figcaption>
     </figure>
   </section>
@@ -170,8 +172,8 @@
     <p>一方、すでに触れている対象から一時的に目を離しても、進行中の作業は止めない。視線を外しただけで把持や操作が中断されると、かえって不安定になるためである。人への接近だけは別扱いとし、操作者が見ていてもいなくても制限する。</p>
     <p>狙ったのは、安全のために作業を一律に遅くすることではない。操作者が把握している範囲ではロボットの能力を保ち、注意が届いていない範囲だけを保護することで、安全と作業性を両立させることである。</p>
 
-    <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="自由動作の状態から始まるフローチャート。対象が近くにあるか、それが人か、マニピュレータが人へ近づく方向にあるか、対象が注視領域にあるかで分岐し、精密動作、段階的な停止、あるいはロックへと至る。">
+    <figure class="paper-figure line-art figure-2">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="自由動作の状態から始まるフローチャート。対象が近くにあるか、それが人か、マニピュレータが人へ近づく方向にあるか、対象が注視領域にあるかで分岐し、精密動作、段階的な停止、あるいはロックへと至る。"></a>
       <figcaption>判断の過程で操作者の能動的パラメータを読むノードは「対象が注視領域にあるか」の一つだけである。他の分岐はすべて受動的なセンサ情報で動く。</figcaption>
     </figure>
   </section>
@@ -255,5 +257,14 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="図の拡大表示" hidden>
+  <button class="lightbox__close" type="button" aria-label="拡大表示を閉じる"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

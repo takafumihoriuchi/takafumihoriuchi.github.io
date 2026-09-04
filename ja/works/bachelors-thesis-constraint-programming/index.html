@@ -75,7 +75,9 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
+<script src="../../../works/figures.js" defer></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260902-2"></script>
 </head>
 <body>
@@ -126,8 +128,8 @@ o-|\
     <p>跳ねるボールは、ハイブリッドシステムのわかりやすい例である。空中では位置と速度が連続的に変わり、床へ当たった瞬間には、跳ね返るという離散的な出来事が起きる。サーモスタット、自動車、ロボットも、規模は違っても同じ二種類の変化を内側に持つ。</p>
     <p>評価には、水平に進むボールが、複数の区画に分かれた面で跳ね返るモデルを使った。面の区画ごとに「ボールがこの範囲へ来たら跳ね返る」という条件付きの規則がある。区画を増やせば、表現できる対象が増える一方、シミュレータが調べる条件も増える。</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="水平に動くボールと、隣り合うN個の面の区画のいずれかで跳ね返る挙動を定義したHydLaのソースコード。">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="水平に動くボールと、隣り合うN個の面の区画のいずれかで跳ね返る挙動を定義したHydLaのソースコード。"></a>
       <figcaption>短いHydLaのモデルが、一つのボールと、<em>N</em>個のガード付き区画に分割された面を記述している。</figcaption>
     </figure>
   </section>
@@ -149,7 +151,7 @@ o-|\
     <p>階段を跳ねながら下っていくボールを思い描いてほしい。ボールがある段を通り過ぎ、そのまま前へ進み続けるなら、その段はもうボールに影響しえない。図を見た人間は、ボールの後ろにある段をただちに無視する。元のアルゴリズムは、その一つ一つを検査し続けていた。</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="赤い軌跡が、黒い階段の段を跳ねながら下っていくボールを示している。網掛けの領域は、すでに通り過ぎてもはや関係のない段を表す。">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="赤い軌跡が、黒い階段の段を跳ねながら下っていくボールを示している。網掛けの領域は、すでに通り過ぎてもはや関係のない段を表す。"></a>
       <figcaption>ボールが右へ進むにつれ、その後ろにある網掛けの段のガードは省ける。</figcaption>
     </figure>
 
@@ -177,7 +179,7 @@ o-|\
     <p>一様な単調性への対応を実装し、面を分割したモデルで評価した。元のアルゴリズムも提案手法も、区画数が増えれば所要時間は伸びる。ただし提案手法のほうが、一貫して仕事量が少なかった。当てはめた曲線を比べると、最高次の係数は1.1463から0.6083へ下がり、このベンチマークではシミュレーション全体の所要時間がおよそ半分になった。</p>
     <p>これは、あらゆるHydLaのモデルが二倍速くなるという主張ではない。示しているのは、この手法が効く場所である——ガードを持つ対象が多く、変化の向きが証明でき、実行中にガードが恒久的に無関係になっていくようなモデルだ。</p>
 
-    <figure class="paper-figure">
+    <figure class="paper-figure line-art">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Nに対するシミュレーション時間のグラフ。面の区画数10から200の全域で提案手法が元の手法を下回り、N=200では約470秒に対して約250秒に収まっている。">
       <figcaption>評価したモデルでは、提案手法（四角）が元のアルゴリズム（丸）のおよそ半分の時間で済んでいる。</figcaption>
     </figure>
@@ -219,5 +221,14 @@ o-|\
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="図の拡大表示" hidden>
+  <button class="lightbox__close" type="button" aria-label="拡大表示を閉じる"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

@@ -1,0 +1,181 @@
+/* The figure format every work page shares.
+ *
+ * `works/<slug>/page.css` holds what one work needs and the others have no
+ * reason to carry. This file holds the opposite: the rules that must be the
+ * same on every work page, in every language, because a reader who learns how
+ * a figure behaves on one page should not have to learn it again on the next.
+ *
+ * It lives here rather than in style.css because the index has no figures, and
+ * rather than in each page.css because seven copies of it would eventually
+ * stop being seven copies of the same thing. One request, cached across every
+ * work and every language. See OPERATIONS.md §1 "緩め方" and §3 "図版の書式".
+ */
+
+/* ---------------------------------------------------------------- width --
+ *
+ * A figure is at most as wide as the text it explains. Wider, and the eye has
+ * to travel further for the picture than for the sentence that introduced it,
+ * and the page stops having one axis.
+ *
+ * `main` is already capped at `--measure`, so `width: 100%` is that cap. The
+ * declaration is here anyway: an image with intrinsic dimensions would
+ * otherwise render at its own size, which for a 1600px screenshot is a
+ * horizontal scrollbar.
+ *
+ * A figure may be narrower. Where the drawing stays legible smaller — a
+ * diagram with four labels, a plot with two curves — holding it to the full
+ * measure only makes it louder than the paragraph it belongs to. `page.css`
+ * sets those per work, because the size that keeps a figure's internal labels
+ * close to the body type is a property of the drawing, not of the site.
+ *
+ * The one exemption is a slide deck: a strip of slides is read by scrolling
+ * sideways through it, not by reading each slide in place, so it is allowed
+ * past the measure with `.bleed`. */
+.paper-figure img,
+.figure-pair img {
+  width: 100%;
+  height: auto;
+}
+
+.paper-figure { margin-block: 2.5rem; }
+
+/* A caption belongs to the figure's width, not the column's, or a narrowed
+   figure gets a caption wider than the thing it captions. */
+.paper-figure figcaption { width: 100%; }
+
+/* ------------------------------------------------------------ enlarging --
+ *
+ * Only some figures get this. A picture that can be read where it sits does
+ * not need a second way to be read, and a click that does nothing visible is
+ * worse than no click at all. The rule is the markup itself: a figure whose
+ * image is wrapped in a link to the full-size file enlarges, one that is not
+ * wrapped does not. Nothing else has to be declared, and the link is also what
+ * happens when the script is blocked, failed, or still loading.
+ *
+ * `zoom-in` is on the link, so the pointer says which pictures answer.
+ *
+ * Written as "a link whose child is an image" rather than as a list of the
+ * classes that happen to enlarge today, so the rule is the same one the script
+ * applies, and a new figure on a new page needs nothing added here. Browsers
+ * without `:has()` lose the pointer shape and keep the behaviour. */
+a:has(> img) {
+  display: block;
+  cursor: zoom-in;
+}
+
+/* ------------------------------------------------------------- line art --
+ *
+ * A drawing made of black lines on white is a white panel in a dark page —
+ * the one bright rectangle in a column of dark grey, brighter than anything
+ * around it and lit from a different world. Inverted, it reads as though it
+ * were drawn for the page it is on.
+ *
+ * Only for drawings that are actually grey: `invert()` turns colours into
+ * their opposites, so a figure with a red curve comes back cyan. The test is
+ * measured, not eyeballed — see OPERATIONS.md §3. Photographs are never line
+ * art, whatever their palette.
+ *
+ * The border goes with it. A `filter` takes the whole element, frame
+ * included, so a drawn border would invert into a white line around a black
+ * panel; the inverted ground is its own edge. */
+@media (prefers-color-scheme: dark) {
+  .line-art img,
+  .lightbox.is-line-art .lightbox__image {
+    filter: invert(1);
+  }
+
+  .line-art img { border-color: transparent; }
+}
+
+/* ------------------------------------------------------------ lightbox --
+ *
+ * Enlarging happens here, on this page, at this scroll position. The figure
+ * used to be a link to the image file, which meant enlarging navigated away
+ * and returning was the browser's back button and then finding your place
+ * again. A reader who wants a closer look at a diagram has not asked to leave
+ * the article.
+ *
+ * Three ways out, which is the same set on every work page: the dark ground
+ * around the picture, Escape, and the × at the top right. Clicking the
+ * picture itself does not close it — at that size a click is how you point at
+ * something. */
+.lightbox {
+  position: fixed;
+  inset: 0;
+  z-index: 10;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  /* Room at the top for the ×, so no picture ever reaches under it. The mark
+     is drawn in thin white lines with nothing behind it, which is legible on
+     the dark ground and on nothing else; keeping the picture out of that band
+     is what keeps the promise. */
+  padding: 4.5rem 1.5rem 1.5rem;
+  background: rgb(0 0 0 / 0.82);
+  cursor: zoom-out;
+}
+
+.lightbox[hidden] { display: none; }
+
+/* `zoom-out` is the backdrop's, and the backdrop is what a click closes. The
+   picture is not a target, so it says so. */
+.lightbox__image {
+  max-width: 100%;
+  max-height: 100%;
+  width: auto;
+  background: #fff;
+  cursor: default;
+}
+
+/* ------------------------------------------------------ the close signifier
+ *
+ * A circle with a cross in it, top right, drawn in thin white lines — outline
+ * and cross alike (owner's instruction, 2026-09-04). Escape and the backdrop
+ * are the other two ways out, but neither is visible; this is the one that
+ * says a way out exists.
+ *
+ * Drawn in CSS rather than set as a "×" character. A glyph is centred on its
+ * own typographic body, which is not the middle of a circle, and its weight
+ * is whatever the font gives it — the two things this mark has to control.
+ * Two 1px rules crossed at the box's centre are exactly centred vertically
+ * and horizontally, at exactly the weight of the ring around them. It also
+ * keeps the button free of text, which OPERATIONS.md §2 requires: the name a
+ * screen reader speaks is the `aria-label` in the document, written there in
+ * the page's own language. */
+.lightbox__close {
+  position: absolute;
+  inset-block-start: 1rem;
+  inset-inline-end: 1rem;
+  width: 2.75rem;      /* a real touch target, not the size of the drawing */
+  height: 2.75rem;
+  padding: 0;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  background: none;
+  cursor: pointer;
+}
+
+.lightbox__close::before,
+.lightbox__close::after {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  width: 44%;
+  height: 1px;
+  background: #fff;
+}
+
+.lightbox__close::before { transform: translate(-50%, -50%) rotate(45deg); }
+.lightbox__close::after  { transform: translate(-50%, -50%) rotate(-45deg); }
+
+.lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
+
+/* The page behind does not scroll while the overlay is up. The gutter the
+   script measures replaces the scrollbar's own width, so a layout that gives
+   the scrollbar room does not slide sideways on the way in and back on the
+   way out. */
+.lightbox-open {
+  overflow: hidden;
+  padding-inline-end: var(--lightbox-gutter, 0);
+}

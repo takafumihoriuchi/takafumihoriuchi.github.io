@@ -26,7 +26,9 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
@@ -179,11 +181,11 @@
     <figure class="compare">
       <div>
         <p class="compare-label">画一UI（before）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-before-ja.svg" width="772" height="434" alt="目的地の設定画面。自宅、職場、登録地、履歴、周辺施設の7項目と、下端の固定ボタンが並ぶ。">
+        <a href="../../../works/personal-fit-ui/assets/ps-01-before-ja.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-before-ja.svg" width="772" height="434" alt="目的地の設定画面。自宅、職場、登録地、履歴、周辺施設の7項目と、下端の固定ボタンが並ぶ。"></a>
       </div>
       <div>
         <p class="compare-label">個別最適化UI（after）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-after-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ7項目が同じ高さで並ぶ。文字がわずかに大きいほかは、画一UIとほぼ同じ構成。">
+        <a href="../../../works/personal-fit-ui/assets/ps-01-after-ja.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-after-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ7項目が同じ高さで並ぶ。文字がわずかに大きいほかは、画一UIとほぼ同じ構成。"></a>
       </div>
       <figcaption>画一UIがすでに十分に機能している場合、個別最適化を行っても大きな変化は生じない。変えないことも、個別最適化の結果である。</figcaption>
     </figure>
@@ -194,11 +196,11 @@
     <figure class="compare">
       <div>
         <p class="compare-label">画一UI（before）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-before-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="目的地の設定画面。7項目が同じ高さで並ぶ。">
+        <a href="../../../works/personal-fit-ui/assets/ps-12-before-ja.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-before-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="目的地の設定画面。7項目が同じ高さで並ぶ。"></a>
       </div>
       <div>
         <p class="compare-label">個別最適化UI（after）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-after-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ画面が4項目に減り、一つひとつのタッチ領域が大きくなっている。">
+        <a href="../../../works/personal-fit-ui/assets/ps-12-after-ja.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-after-ja.svg" width="772" height="434" loading="lazy" decoding="async" alt="同じ画面が4項目に減り、一つひとつのタッチ領域が大きくなっている。"></a>
       </div>
       <figcaption>手指の巧緻性に合わせて、情報量とタッチ目標の大きさを配分し直した例。年齢や認知特性ではなく、身体特性だけによって画面構成が変化している。</figcaption>
     </figure>
@@ -269,5 +271,14 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="図の拡大表示" hidden>
+  <button class="lightbox__close" type="button" aria-label="拡大表示を閉じる"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

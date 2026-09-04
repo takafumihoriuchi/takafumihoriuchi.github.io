@@ -44,8 +44,6 @@ h4 {
 
 h3 + h4 { margin-top: 1.5rem; }
 
-.paper-figure { margin-block: 2.5rem; }
-
 /* Every figure sits on the text measure. Nothing here bleeds past the column:
    the diagrams reproduced from the source are dense, and widening them buys a
    few hundred pixels while breaking the one vertical edge the page reads
@@ -55,24 +53,10 @@ h3 + h4 { margin-top: 1.5rem; }
    narrower than the column keeps its own size rather than being blown up past
    it, and stays centred on the page's reading axis. */
 .paper-figure img {
-  width: 100%;
   max-width: max-content;
   margin-inline: auto;
   background: #fff;
   border: 1px solid var(--rule);
-}
-
-.paper-figure figcaption { width: 100% }
-
-/* Each image is a link to itself at full resolution. That is what makes the
-   measure enough for the wide diagrams: shrunk here, opened whole there, with
-   the browser's own zoom and pan — which beats any overlay this page could
-   draw, since an overlay is bounded by the same window. `zoom-in` is what says
-   so before the click. */
-.paper-figure > a,
-.figure-pair > a {
-  display: block;
-  cursor: zoom-in;
 }
 
 /* Screenshots of the headset view. At the full measure a square runs taller
@@ -91,21 +75,10 @@ h3 + h4 { margin-top: 1.5rem; }
   gap: 1rem;
 }
 
-/* The two UML diagrams are black line art on white, and nothing else: measured
-   across both images, no pixel has more than one level between its channels.
-   That is the condition under which `invert` is a change of ground rather than
-   a change of colour — it lands on white strokes over black, which is what the
-   diagram would have been drawn as had it been drawn for a dark page. The
-   colour figures on this page are excluded for exactly that reason.
-
-   The filter takes the border with it, so the hairline is dropped here and the
-   inverted white ground supplies the edge instead. */
-@media (prefers-color-scheme: dark) {
-  .line-art img {
-    filter: invert(1);
-    border-color: transparent;
-  }
-}
+/* The two figures marked `line-art` are the UML diagrams, and they qualify by
+   measurement: across both images no pixel has more than one level between its
+   channels. The colour figures on this page are excluded for that reason. The
+   inversion itself is in works/figures.css. */
 
 /* The demo video, embedded rather than linked. 16:9 is declared rather than
    padded for, so the box holds its height before the frame loads and the text
@@ -125,79 +98,6 @@ h3 + h4 { margin-top: 1.5rem; }
    before it. `start`, not `left`, so the rule still means the right thing in a
    right-to-left context. */
 .source-link { text-align: start; }
-
-/* Enlargement, in the page. The figure links still point at the
-   full-resolution file and still work with the script gone; lightbox.js
-   intercepts the click so the reader is not navigated away from the article
-   and left to find the back button. `[hidden]` has to be restated because the
-   `display: flex` below would otherwise beat the browser's own rule for it. */
-.lightbox {
-  position: fixed;
-  inset: 0;
-  z-index: 10;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding: 1.5rem;
-  background: rgb(0 0 0 / 0.82);
-  cursor: zoom-out;
-}
-
-.lightbox[hidden] { display: none; }
-
-/* `zoom-out` is on the backdrop, which is what a click closes; the picture
-   itself is not a target, so it says so. */
-.lightbox__image {
-  max-width: 100%;
-  max-height: 100%;
-  width: auto;
-  background: #fff;
-  cursor: default;
-}
-
-/* The same inversion the diagram gets in the page. Enlarging a figure must not
-   change what it looks like. */
-@media (prefers-color-scheme: dark) {
-  .lightbox.is-line-art .lightbox__image { filter: invert(1); }
-}
-
-/* A symbol, drawn in CSS — the only kind of content OPERATIONS.md §2 allows
-   there. The button's name is an `aria-label` in the document, written in the
-   page's own language.
-
-   It carries its own dark disc rather than relying on the backdrop behind it.
-   The overlay's padding is 1.5rem and the button starts above that, so a tall
-   picture reaches under its lower half — and most of the pictures here are
-   white. Without the disc the cross would disappear into exactly the figures
-   that most need enlarging. 2.75rem square keeps it a real touch target. */
-.lightbox__close {
-  position: absolute;
-  inset-block-start: 0.25rem;
-  inset-inline-end: 0.5rem;
-  width: 2.75rem;
-  height: 2.75rem;
-  padding: 0;
-  border: 0;
-  border-radius: 50%;
-  background: rgb(0 0 0 / 0.6);
-  color: #fff;
-  font-family: inherit;
-  font-size: 1.75rem;
-  line-height: 1;
-  cursor: pointer;
-}
-
-.lightbox__close::before { content: "\00D7"; }
-
-.lightbox__close:focus-visible { outline: 2px solid currentColor; }
-
-/* The page behind does not scroll while the overlay is up. The gutter the
-   script measures replaces the scrollbar's own width, so nothing shifts
-   sideways on the way in or out. */
-.lightbox-open {
-  overflow: hidden;
-  padding-inline-end: var(--lightbox-gutter, 0);
-}
 
 .results-table {
   width: 100%;
