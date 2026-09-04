@@ -52,6 +52,15 @@
        supported the overlay still works, it just does not hold focus. */
     if (supportsInert && main) main.inert = true;
 
+    /* Nothing behind an 82%-black overlay needs to be animating. The ASCII
+       scene's idle loop rewrites its whole <pre> ten times a second for as
+       long as it is on screen, and while the overlay is up that is ten layouts
+       a second spent on something nobody can see — main-thread work that the
+       overlay's own pointer and keyboard handling is competing with. */
+    for (const hero of document.querySelectorAll("ascii-hero")) {
+      hero.setAttribute("paused", "");
+    }
+
     opener = link;
     closeButton.focus();
   }
@@ -65,6 +74,9 @@
     root.classList.remove("lightbox-open");
     root.style.removeProperty("--lightbox-gutter");
     if (supportsInert && main) main.inert = false;
+    for (const hero of document.querySelectorAll("ascii-hero")) {
+      hero.removeAttribute("paused");
+    }
     /* Focus goes back to the figure it came from, so the keyboard does not
        restart at the top of the document. Only after `inert` is lifted — a
        focus call into an inert subtree does nothing. */

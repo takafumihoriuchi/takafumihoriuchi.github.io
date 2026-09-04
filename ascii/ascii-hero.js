@@ -1,9 +1,9 @@
 import {
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260902-2";
-import "./ascii-text-reveal.js?v=20260902-2";
+} from "./ascii-layout.js?v=20260904-1";
+import "./ascii-text-reveal.js?v=20260904-1";
 
-const SCENES_URL = new URL("./scenes.json?v=20260902-2", import.meta.url);
+const SCENES_URL = new URL("./scenes.json?v=20260904-1", import.meta.url);
 // Dropped or throttled frames must not extend this load-only phase into
 // scrolling. Keep the clock local so stale dependency caches cannot break the
 // module graph when this behavior changes.
@@ -196,6 +196,19 @@ class AsciiHero extends HTMLElement {
       });
   }
 
+  /* `paused` is the way something in front of the page can stop the animation
+     without hiding the tab. The idle loop rewrites the whole <pre> ten times a
+     second for as long as the scene is on screen, which is work worth doing
+     while somebody is looking at it and work worth nobody's main thread while
+     an overlay is covering it. See works/figures.js. */
+  static get observedAttributes() {
+    return ["paused"];
+  }
+
+  attributeChangedCallback(name) {
+    if (name === "paused") this._syncPlayback();
+  }
+
   disconnectedCallback() {
     this._stop();
     this._resizeObserver?.disconnect();
@@ -298,7 +311,7 @@ class AsciiHero extends HTMLElement {
     if (!this._scene || this._motion.matches) return;
     const shouldRun = (
       this._phase === "intro" || this._inView
-    ) && !document.hidden;
+    ) && !document.hidden && !this.hasAttribute("paused");
     if (shouldRun) {
       if (!this._started) this._maybeStart();
       else this._schedule();

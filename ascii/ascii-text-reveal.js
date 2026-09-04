@@ -1,7 +1,7 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260902-2";
+} from "./ascii-layout.js?v=20260904-1";
 
 // All text and image instances use one page-level wall clock. A busy frame can
 // skip visual steps, but it cannot postpone completion until the user scrolls.
