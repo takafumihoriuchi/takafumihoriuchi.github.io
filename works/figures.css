@@ -57,10 +57,28 @@
  * Written as "a link whose child is an image" rather than as a list of the
  * classes that happen to enlarge today, so the rule is the same one the script
  * applies, and a new figure on a new page needs nothing added here. Browsers
- * without `:has()` lose the pointer shape and keep the behaviour. */
+ * without `:has()` lose the pointer shape and keep the behaviour.
+ *
+ * The image carries the same cursor as the link around it, stated rather than
+ * inherited. Whichever of the two boxes the browser resolves the pointer
+ * against, it finds the same answer — the cursor over a figure was reported
+ * as changing between the arrow and the magnifier depending on whether the
+ * mouse was moving (owner's report, 2026-09-04), and a control whose cursor
+ * depends on how you arrived at it does not feel like a control.
+ *
+ * `user-drag: none` is part of the same repair. An image inside a link is a
+ * drag source, and a drag source is a second thing the pointer can be about
+ * to become while it travels. The image can still be reached: the link it
+ * sits in points at the full-size file. */
 a:has(> img) {
   display: block;
   cursor: zoom-in;
+}
+
+a:has(> img) img {
+  cursor: zoom-in;
+  -webkit-user-drag: none;
+  user-drag: none;
 }
 
 /* ------------------------------------------------------------- line art --
@@ -153,56 +171,51 @@ a:has(> img) {
  * screen reader speaks is the `aria-label` in the document, written there in
  * the page's own language.
  *
- * The button box is the ring. What is pressed is larger than that: the ring is
- * a thin line, and a target you have to hit a line to press is a target that
- * gets missed. `::before` is a disc reaching past the ring on every side, and
- * because it belongs to the button, a press anywhere on it presses the button.
- * On hover it fills with a faint white, so the thing that lights up and the
- * thing that answers are the same shape — the same arrangement the index uses
- * for its "view more" control, where the ring and its hit area are also two
- * different sizes. */
+ * The button box is the target, and the ring is drawn inside it. That is the
+ * way round it has to be. The ring is a thin line, and a target you have to
+ * hit a line to press is a target that gets missed, so the pressable area is
+ * the larger of the two — but an area made out of a pseudo-element behind the
+ * button is an area the pointer resolves against inconsistently: it reported
+ * the arrow while the mouse was moving and the pointer once it stopped, which
+ * is the kind of flicker that makes a control feel untrustworthy (owner's
+ * report, 2026-09-04). A real element box has no such ambiguity. So the button
+ * is the disc, its own background is the hover wash, and `::before` carries
+ * the ring it used to be.
+ *
+ * The wash is the same arrangement the index uses for its "view more" control,
+ * where the drawn box and its hit area are also two different sizes. */
 .lightbox__close {
   position: absolute;
-  z-index: 0;          /* so the disc below can sit behind the ring, not behind
-                          the overlay's own ground */
-  inset-block-start: 1.25rem;
-  inset-inline-end: 1.25rem;
-  width: 2.25rem;
-  height: 2.25rem;
+  inset-block-start: 0.875rem;
+  inset-inline-end: 0.875rem;
+  width: 3rem;               /* the target: 48px, and the shape that lights up */
+  height: 3rem;
   padding: 0;
-  border: 1px solid #fff;
-  border-radius: 50%;
-  background: none;
-  cursor: pointer;
-}
-
-/* The pointer covers everything that closes on a click, not only the drawn
-   lines (owner's instruction, 2026-09-04). `cursor` inherits, so the two
-   pseudo-elements would take it anyway; it is restated on them because the
-   hover area is the one place where what is drawn and what answers are
-   deliberately different sizes, and a cursor that changed at the ring would be
-   saying the ring is the edge of the target when it is not. */
-.lightbox__close::before,
-.lightbox__close::after { cursor: pointer; }
-
-/* The hit area and the hover wash, one box. `-0.4rem` on each side puts it
-   about a third of the ring's radius outside the drawn edge: enough that the
-   wash reads as a halo around the mark rather than as a second ring, and
-   enough that the target stays comfortably above the size a fingertip needs
-   even though the mark itself came down. */
-.lightbox__close::before {
-  content: "";
-  position: absolute;
-  z-index: -1;
-  inset: -0.4rem;
+  border: 0;
   border-radius: 50%;
   background: transparent;
+  cursor: pointer;
   transition: background-color 120ms ease;
 }
 
-.lightbox__close:hover::before,
-.lightbox__close:focus-visible::before {
+.lightbox__close:hover,
+.lightbox__close:focus-visible {
   background: rgb(255 255 255 / 0.14);
+}
+
+/* The ring: 2.25rem inside a 3rem target, so the wash reaches 0.375rem past
+   the drawn edge on every side — enough to read as a halo around the mark
+   rather than as a second ring, while the mark itself stays small. */
+.lightbox__close::before {
+  content: "";
+  position: absolute;
+  inset-block-start: 50%;
+  inset-inline-start: 50%;
+  width: 2.25rem;
+  height: 2.25rem;
+  transform: translate(-50%, -50%);
+  border: 1px solid #fff;
+  border-radius: 50%;
 }
 
 /* The cross: one box holding a horizontal rule and a vertical rule through its
@@ -223,7 +236,7 @@ a:has(> img) {
     linear-gradient(#fff, #fff) center / 1px 100% no-repeat;
 }
 
-.lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 4px; }
+.lightbox__close:focus-visible { outline: 2px solid #fff; outline-offset: 2px; }
 
 /* The page behind does not scroll while the overlay is up. The gutter the
    script measures replaces the scrollbar's own width, so a layout that gives
