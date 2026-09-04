@@ -1,45 +1,235 @@
-/* A work page's own stylesheet. Copied along with index.html.
+/* Shared by every language version of this work. The Japanese page is the
+   first completed edition; the remaining language editions stay as scaffolds
+   until their translations are reviewed. */
 
-   It lives here rather than inside the page's <head> because a work has thirteen
-   language versions maintained by hand — inline, this would become thirteen
-   copies of identical rules, and the thirteenth would eventually stop matching
-   the first. Language versions differ; the layout of a work does not.
+.lead { font-size: 1.059em; }
 
-   Do not delete this file even if the work needs no layout of its own: the
-   justification below is what distinguishes a work page from the index, and a
-   work page without it would silently read differently from every other one.
+.section-break {
+  margin: calc(var(--space-section) / 2) 0;
+  border: 0;
+  border-top: 1px solid var(--rule);
+}
 
-   Add layout the work needs — image grids, numbered sequences — below. Use
-   logical properties (`padding-inline-start`, not `padding-left`) so the Arabic
-   version mirrors correctly. See OPERATIONS.md §9. */
+.section-break + section { margin-top: 0; }
 
+section[id] { scroll-margin-top: 2rem; }
 
-/* Work pages are set justified; the index is not. A work page is long-form
-   reading, and a flush right edge holds the column steady over that distance.
+/* This Japanese-only scene stays local to the completed page, so publishing it
+   does not rewrite the untranslated editions. Four equal-sized text frames
+   cycle in the same grid cell; the last frame remains still for readers who
+   request reduced motion. */
+ascii-hero[data-scene="coffee-brewing"] { aspect-ratio: 2.5 / 1; }
 
-   `hyphens: auto` is not decoration, it is what makes justification readable.
-   Without word-internal breaks the browser pays for the flush edge entirely in
-   word spacing, which at this measure opens gaps wide enough to line up down
-   the page. The dictionary comes from the `lang` attribute. The -webkit- prefix
-   covers Safari before 17, where the reader would otherwise get justification
-   with no hyphenation — the failure this pairing exists to prevent.
+ascii-hero.coffee-brewing-ascii .coffee-brewing__frame {
+  grid-area: 1 / 1;
+  opacity: 0;
+  font-size: min(0.9rem, 2.2vw);
+  animation: coffee-brewing-frames 2.24s steps(1, end) infinite;
+}
 
-   Set for every language rather than a listed few: a language with no
-   dictionary simply gets no hyphenation, and CJK and Arabic are not hyphenated
-   at all, so declaring it costs them nothing.
+ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:nth-child(2) {
+  animation-delay: 0.56s;
+}
 
-   Extend the selector if the work adds other blocks of running prose. */
-section p {
+ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:nth-child(3) {
+  animation-delay: 1.12s;
+}
+
+ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:nth-child(4) {
+  animation-delay: 1.68s;
+}
+
+@keyframes coffee-brewing-frames {
+  0%, 24.99% { opacity: 1; }
+  25%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  ascii-hero.coffee-brewing-ascii .coffee-brewing__frame {
+    display: none;
+    animation: none;
+  }
+
+  ascii-hero.coffee-brewing-ascii .coffee-brewing__frame:last-child {
+    display: block;
+    opacity: 1;
+  }
+}
+
+section p,
+figcaption {
   text-align: justify;
   -webkit-hyphens: auto;
   hyphens: auto;
 }
 
-/* Indonesian is the exception: no hyphenation dictionary, and the language
-   builds long words by affixing (menangkapnya, membesarkannya), so lines that
-   cannot break inside them pay the whole slack in word spacing. Ragged reads
-   better than a flush edge bought that way. `start`, not `left`, so the rule
-   still means the right thing in a right-to-left context. */
-:lang(id) section p {
+:lang(id) section p,
+:lang(id) figcaption {
   text-align: start;
+}
+
+h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 0.941em;
+  line-height: 1.4;
+  font-weight: 600;
+}
+
+h2 + h3 { margin-top: 1.5rem; }
+
+/* A compact table of contents that is also the promised overview: every entry
+   names the problem space and the artefacts produced, before the long sections
+   begin. */
+.project-summary {
+  margin: 2rem 0 0;
+  padding: 0;
+  list-style: none;
+  counter-reset: project;
+}
+
+.project-summary li {
+  position: relative;
+  padding-block: 1rem;
+  padding-inline: 0;
+  padding-inline-start: 2.25rem;
+  border-block-start: 1px solid var(--rule);
+  counter-increment: project;
+}
+
+.project-summary li:last-child { border-block-end: 1px solid var(--rule); }
+
+.project-summary li::before {
+  content: "0" counter(project);
+  position: absolute;
+  inset-block-start: 1.05rem;
+  inset-inline-start: 0;
+  color: var(--fg-muted);
+  font-size: 0.824em;
+  font-variant-numeric: tabular-nums;
+}
+
+.project-summary a { display: inline; }
+
+.project-summary span {
+  display: block;
+  margin-top: 0.4rem;
+  color: var(--fg-muted);
+}
+
+/* Slide decks are complete reproductions of the submitted PDFs. Keeping them
+   on one horizontal axis preserves the reading order without inserting 71
+   full-width slides into the article. The exposed edge of the following slide
+   remains visible even when the platform hides scrollbars. */
+.deck-figure { margin-block: 3.5rem calc(3.5rem - 0.75rem); }
+
+.deck {
+  display: flex;
+  gap: 1rem;
+  margin: 0;
+  padding: 0 0 0.75rem;
+  list-style: none;
+  overflow-x: auto;
+  scroll-snap-type: x mandatory;
+  overscroll-behavior-x: contain;
+}
+
+.deck > li {
+  flex: 0 0 88%;
+  scroll-snap-align: start;
+}
+
+.deck a { display: block; }
+
+.deck img {
+  width: 100%;
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+.deck-figure figcaption {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+.paper-figure img {
+  background: #fff;
+  border: 1px solid var(--rule);
+}
+
+/* The drawing is kept large enough to reveal its bill of materials in the
+   page; the shared lightbox provides the full-resolution inspection view. */
+.drawing-figure img { max-width: 100%; }
+
+.video-embed { margin-block: 2.5rem; }
+
+.video-embed iframe {
+  display: block;
+  width: 100%;
+  aspect-ratio: 16 / 9;
+  border: 0;
+}
+
+/* The source numbers are design targets rather than project results, so the
+   caption stays attached to the comparison. On a narrow screen the table
+   scrolls instead of squeezing measurements into unreadable fragments. */
+.table-scroll {
+  margin-block: 2rem;
+  overflow-x: auto;
+  overscroll-behavior-x: contain;
+}
+
+.measurement-table {
+  width: 100%;
+  min-width: 36rem;
+  border-collapse: collapse;
+  font-variant-numeric: tabular-nums;
+}
+
+.measurement-table caption {
+  max-width: var(--measure);
+  margin: 0 0 0.65rem;
+  color: var(--fg-muted);
+  font-size: 0.824em;
+  text-align: start;
+}
+
+.measurement-table th,
+.measurement-table td {
+  padding: 0.65rem 0;
+  border-block-end: 1px solid var(--rule);
+  text-align: start;
+  vertical-align: top;
+}
+
+.measurement-table thead th {
+  border-block-start: 1px solid var(--rule);
+  font-size: 0.882em;
+  font-weight: 600;
+}
+
+.measurement-table tbody th {
+  padding-inline-end: 1rem;
+  font-weight: 400;
+  white-space: nowrap;
+}
+
+.measurement-table th + th,
+.measurement-table td + td {
+  padding-inline-start: 1rem;
+}
+
+.project-credit {
+  margin-top: 1.75rem;
+  color: var(--fg-muted);
+  font-size: 0.882em;
+}
+
+:is(:lang(ja), :lang(zh), :lang(ko)) .lead { font-size: inherit; }
+:is(:lang(ja), :lang(zh), :lang(ko)) h3 { font-size: 0.875rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .project-credit { font-size: 0.8125rem; }
+
+@media (max-width: 32rem) {
+  ascii-hero[data-scene="coffee-brewing"] { aspect-ratio: 2 / 1; }
+  .project-summary li { padding-inline-start: 2rem; }
+  .deck > li { flex-basis: 92%; }
 }
