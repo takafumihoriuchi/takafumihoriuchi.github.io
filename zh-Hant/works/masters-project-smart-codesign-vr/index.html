@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Smart Codesign VR — 堀內貴文</title>
-<meta name="description" content="碩士期間的專案。記錄正在籌備中。">
+<title>面向兒童的互動式物件原型設計VR系統的開發 — 堀內貴文</title>
+<meta name="description" content="把孩子們在SNaP桌遊中構思的智慧物件，放進VR空間裡組裝並運行起來。選擇環境、輸入、輸出三張卡片，自己定義條件與行為——這是一個以Oculus Quest 2與Unity實作的碩士階段合作專題。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-smart-codesign-vr/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/masters-project-smart-codesign-vr/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="Smart Codesign VR">
-<meta property="og:description" content="記錄正在籌備中。">
+<meta property="og:title" content="面向兒童的互動式物件原型設計VR系統的開發">
+<meta property="og:description" content="以環境、輸入、輸出三張卡片，在VR空間中組裝出一個智慧物件。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-smart-codesign-vr/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="VR空間中的卡片選擇畫面。寫著input、environment、output的三個半透明箱子，擺在排列著卡片的看板前方。">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +46,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀內貴文",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "認知工程 × AI × 設計",
       "sameAs": [
@@ -72,37 +57,40 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-smart-codesign-vr/#work",
-      "name": "Smart Codesign VR",
+      "name": "面向兒童的互動式物件原型設計VR系統的開發",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-smart-codesign-vr/",
-      "description": "碩士期間的專案。記錄正在籌備中。",
-      "creativeWorkStatus": "籌備中",
+      "description": "把孩子們在SNaP桌遊中構思的智慧物件放進VR空間中組裝並運行的原型設計環境。選擇環境、輸入、輸出三張卡片，由玩家自己定義條件與行為。這是一個以Oculus Quest 2與Unity實作的碩士階段合作專題。",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
+      "datePublished": "2021-02",
       "inLanguage": "zh-Hant",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": [
+        { "@id": "https://takafumihoriuchi.github.io/#person" },
+        { "@type": "Person", "name": "Paul Cozma-Ivan" },
+        { "@type": "Person", "name": "Elmira Katsajeva" },
+        { "@type": "Person", "name": "Olivia Ludkiewicz" }
+      ]
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Smart Codesign VR</h1>
+    <h1>面向兒童的互動式物件原型設計VR系統的開發</h1>
     <div class="identity">
-      <p class="tagline">作者：<a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
-      <nav aria-label="其他平台的主頁">
+      <p class="tagline">作者： <a class="byline" href="../../">堀內貴文（Takafumi Horiuchi）</a></p>
+      <nav aria-label="其他平台上的主頁">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">籌備中</p>
+    <p class="dateline">2021年2月</p>
   </header>
 
   <ascii-hero data-scene="smart-codesign-vr" dir="ltr" translate="no" aria-hidden="true">
@@ -115,27 +103,149 @@
                               ~~ (@) ~~</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
-    <h2>概覽</h2>
-    <p class="lead">碩士期間的專案。記錄正在籌備中。</p>
+    <h2>概述</h2>
+    <p class="lead">Smart Codesign VR是一個平台，讓人能在VR空間中組裝互動式的物件——「智慧物件」——並當場觸碰、確認它們的行為。玩家從環境、輸入、輸出中各選一張卡片，親手定義「在什麼時候」「會發生什麼」。做好的物件被放進虛擬公園，可以真的動起來加以驗證。</p>
+    <p>它的基礎，是米蘭理工大學i3Lab開發的桌遊「SNaP（The Smart Nature Protagonists）」。在SNaP中，孩子們組合卡片來構思智慧物件；只是所構思出來的，止於紙面上的一句話。本專題要做的，就是讓這句話在VR空間中獲得實體，成為可以用自己的身體組裝、可以觸碰的東西。</p>
+    <p>本專題由四人團隊設計與實作，是米蘭理工大學「Advanced User Interfaces」課程（2020–21學年）的期末課題。設定的使用者是11至13歲的兒童，尤其著眼於有神經發展障礙（NDD）的孩子。專題面向Oculus Quest 2，以Unity和C#實作，做到了從選卡到在公園中操作能夠整體跑通的原型。</p>
+
+    <figure class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Smart Codesign VR 的示範影片" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>示範影片。從選擇卡片、決定輸入條件與輸出行為，到把做好的智慧物件放進虛擬公園中運行的整段流程。</figcaption>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>SNaP這款桌遊，以及設計的前提</h2>
+    <h3>讓孩子成為設計主角的遊戲</h3>
+    <p>SNaP是一款桌遊，由2至4名兒童擔任「設計師」，成年主持人擔任「市長」。市長在開局時提出任務，孩子們一邊討論一邊組合卡片，構思能解決這項任務的智慧物件。其用意在於培養創造力，以及與他人協作、把自己的想法說出來的能力。同時，這款遊戲也被認為可以用於對有神經發展障礙的兒童的療育目的。</p>
+
+    <h3>環境、輸入、輸出——三種卡片</h3>
+    <p>SNaP的卡片有三種，各自承擔不同的角色。</p>
+    <p><strong>環境（Environment）卡</strong>就是被賦予智慧的對象本身。樹、長椅、鞦韆、水邊、石頭、路燈、垃圾桶、腳踏車、橋、階梯、書包——都是公園或街道中隨處可見的東西。它既不是感測器也不是功能，而是把兩者嵌入其中的「對象物」。</p>
+    <p><strong>輸入（Input）卡</strong>決定這個對象物感知什麼。按鈕、動作、接觸、距離、溫度、濕度、亮度、顏色、聲音、火、水位、天氣預報等，相當於感測器。</p>
+    <p><strong>輸出（Output）卡</strong>決定這個對象物做什麼。發光、發聲、震動、移動、顯示、記錄、傳送——相當於致動器。</p>
+    <p>之所以需要環境卡，是因為同樣一組輸入與輸出，寄宿在哪裡，意義就完全不同。把「偵測到動作就發出聲音」裝在垃圾桶上，就成了「沒丟進垃圾桶會響」；裝在路燈上，就成了「有人靠近時會提示的燈」。只有輸入與輸出，充其量只是一份裝置規格；加上環境，才第一次成為關於身邊某件事的一句話。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="環境卡「Trash can（垃圾桶）」、輸入卡「Motion（動作）」、輸出卡「Make sound（發出聲音）」三張以「&」相連，箭頭指向一句話「Missing the trash bin creates a sound.（沒丟進垃圾桶就會響）」。"></a>
+      <figcaption>三張卡片的組合，構成一個智慧物件的說明文。卡框的顏色表示種類：綠色為環境，淺藍為輸入，黃色為輸出。</figcaption>
+    </figure>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="把SNaP的49張卡片排開的一覽表。上兩列是20張綠框環境卡，中間兩列與最下一列的左端是21張淺藍框輸入卡，最下一列的其餘部分是8張黃框輸出卡。"></a>
+      <figcaption>SNaP全部49張卡片。環境20張、輸入21張、輸出8張，這套語彙的相乘構成了遊戲的設計空間。</figcaption>
+    </figure>
+
+    <h3>把紙上的一句話，變成可以觸碰的東西</h3>
+    <p>在此之前，SNaP的每一場活動都在把構思出的智慧物件寫成一句話時結束。在i3Lab，還並行開發著把它實際搭建出來的「實體板」，把平板與Arduino結合起來。Smart Codesign VR是對同一個問題的另一個回答，選擇了VR作為媒介——這是研究團隊當時還沒有嘗試過的方向。</p>
+    <p>選擇VR會改變兩件事。其一，孩子可以用全身的動作來做原型：抓取、搬運、照光、用畫筆塗抹這些行為，本身就成了「決定條件」「決定行為」的操作。其二，構思出的東西會在視覺上立起來，當場就能觸碰。抽象的一句話，變成了眼前有大小、有形狀的東西。</p>
+    <h3>為誰而設計</h3>
+    <p>主要對象是11至13歲的兒童，其中特別側重有神經發展障礙的孩子。構思智慧物件需要一定的邏輯思考，因此無論SNaP還是這個VR版本，都以一定的年齡為前提。</p>
+    <p>在對有神經發展障礙的兒童的療育中，培養把想法說出口、傳達給他人的能力常常是目標之一。人們也知道，他們不擅長處理抽象事物，能夠維持注意的時間也有限。另一方面，可以用手觸碰的遊戲、與他人協作的活動、有成人或技術支持的活動都有成效；而且當體驗本身足夠有趣時，投入的方式也會改變。覺得傳統療育「無聊又緊張」的孩子並不在少數。</p>
+
+    <h3>對空間本身的考量</h3>
+    <p>根據所參考的既有研究，要為有神經發展障礙的兒童營造舒適的空間，有四點是有效的。聲音（因聽覺敏感，需要能隔音並調節音量，以單調而安靜的聲音為宜）；光與顏色（明亮高彩度的顏色只用於小面積，底色採用沉穩的低彩度色）；空間構成（有秩序、邊界清晰的空間更容易處理）；以及材質（簡單易讀，配置不妨礙動線）。而VR空間，正是這四點全都可以由設計者一方決定的地方。</p>
+
+    <h3>VR這一媒介本身帶有的限制</h3>
+    <p>與此同時，VR也有不容忽視的限制：設備成本、暈眩、頭戴裝置重量對頭頸的負擔、視野被遮蔽導致的意外、長時間使用造成的眼睛負擔，以及過度沉浸於虛擬世界所帶來的依賴。對有神經發展障礙的兒童而言，還多了一層特有的疑慮——現實與虛擬的界線更容易變得模糊。</p>
+    <p>這些都直接影響了設計上的判斷。互動要保持簡單，同時留下足以帶來學習的手感；視覺與聽覺要明快，又不能把刺激做得過強；並且要為體驗準備一個明確的結束——原型製作與公園中的操作一旦結束，活動就完結。這同時也是一項判斷：不去設計讓人一直留在虛擬世界裡的東西。</p>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>做出來的東西——體驗的流程與實作</h2>
+    <h3>體驗的四個場景</h3>
+    <p>應用由四個場景構成：待機畫面、卡片選擇、原型製作，以及在公園中的操作。</p>
+
+    <h4>1. 待機畫面</h4>
+    <p>啟動後首先出現標題畫面，不按下控制器按鈕就不會往下走。這是刻意設置的停頓，為的是不讓正片在戴好裝置、調整好姿勢之前就開始。</p>
+
+    <h4>2. 卡片選擇——抓起來，放進箱子</h4>
+    <p>在下一個場景中，從環境、輸入、輸出各選一張卡片。選擇的方式，是抓起代表卡片的物體，搬到對應的箱子裡放進去。之所以不用點擊而用「抓取並搬運」，是為了運用VR所擁有的三維空間。當偵測到三個箱子都有了內容，就會伴隨語音提示進入原型製作場景。順序不限，但三個不填滿就無法繼續。</p>
+
+    <figure class="paper-figure shot-figure">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="VR空間中的卡片選擇畫面。排列著卡片的看板前方並排放著三個寫有input、environment、output的半透明箱子，一隻手正抓著擴音器形狀的物體。"></a>
+      <figcaption>卡片選擇的場景。前方的三個箱子分別對應環境、輸入、輸出，把抓起的物體放進去即確定選擇。在這一階段無法使用的卡片會以淡色顯示。</figcaption>
+    </figure>
+
+    <h4>3. 原型製作——用身體決定條件與行為</h4>
+    <p>這裡是整個系統的核心。針對選中的輸入卡定義「在什麼時候」，針對輸出卡定義「做什麼」。操作方式按卡片分別製作，並且分配了唯有六自由度追蹤才能實現的動作。</p>
+    <p>例如，輸入選擇「天氣預報」時，手邊會出現分別代表晴、陰、雨、雷、雪的物體。抓起其中之一，把從它延伸出的光線對準目標物體，條件即告確定。輸出選擇「發光」時，則抓起畫筆，把筆尖浸入各色顏料罐，再塗抹到對象上，以此決定發光的顏色。想擦掉塗上的顏色時，把筆浸入「水」罐再塗一次即可。</p>
+    <p>在實作上意義重大的一點，是讓輸入與輸出的組合可以<strong>並列定義多組</strong>。最初的計畫只有一組，「晴天就發紅光」便到此為止。改為多組之後，一個物件就能對多種情形作出不同的回應，例如「晴天紅、下雨藍、下雪白」。定義好的組在確定之前可以實際運行試一試，不滿意還能退回去修改。</p>
+
+    <figure class="paper-figure shot-figure">
+      <div class="figure-pair">
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="原型製作畫面。左側是輸入卡「Weather」的操作說明面板，中央是寫著「When it is about to be sunny／rain／snow」的三個對話框，右側排著輸出的對話框，前方有樹的物體和顏料罐。"></a>
+        <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="同一畫面從右側看去。在塗成黃色的路燈物體左右，輸入與輸出的對話框成對排列，最右端是輸出卡「Light up」的操作說明面板。"></a>
+      </div>
+      <figcaption>原型製作的場景。左右的對話框分別是輸入的條件與輸出的行為，以編號相互對應。「＋」按鈕增加組數，「−」按鈕減少。輸入一側的面板上顯示著「最大實例數：5」。</figcaption>
+    </figure>
+
+    <h4>4. 公園——觸碰做好的東西</h4>
+    <p>確定物件之後，便移動到虛擬公園。在這裡放下自己組裝的智慧物件，觸發所定義的輸入條件，實際確認輸出的行為。物件成功動作之後，會出現慶祝的演出，體驗就此結束。</p>
+
+    <h4>整體流程</h4>
+    <p>把以上內容整理成UML活動圖，即下圖所示。上段是整體流程，下段兩幅分別把「天氣預報」卡與「發光」卡的操作細緻展開。選卡之後經指示可以退回重選，確定並試運行之後可以返回重新編輯，這些都各自寫成了分支。</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="UML活動圖。上段的「Overall Activity」展示了從待機畫面、選擇三張卡片、接受指示、定義輸入條件與輸出行為、確定、確認動作，直到在公園中操作的全過程。下段左側展開天氣預報卡的操作，下段右側展開發光卡的操作。"></a>
+      <figcaption>表示使用者行為的UML活動圖。由於每種卡片的操作各不相同，共通流程與各卡片的細節被分開來寫。</figcaption>
+    </figure>
+
+    <h3>裝置與工具</h3>
+    <p>目標裝置是Oculus Quest 2。它具備六自由度追蹤，轉身、行走、抓取都能直接成為輸入。既然反覆用手擺弄虛擬物體正是體驗的核心，那麼把智慧型手機插入其中的三自由度裝置就被判斷為無法成立。</p>
+    <p>遊戲引擎為Unity，語言為C#；與Quest 2的連接使用Oculus Integration套件，VR攝影機的行為、算繪與控制器輸入的通用API都來自於它。</p>
+
+    <h3>四個場景與13個類別</h3>
+    <p>系統按Unity的場景分為四個，正好對應體驗的四個場景。類別共13個，其中3個是抽象類別。</p>
+    <p><strong>標題場景</strong>只有<code>TitleSceneCore</code>，按下按鈕即切換到下一場景。</p>
+    <p><strong>卡片選擇場景</strong>由<code>CardSelectionSceneCore</code>與<code>CardSelectionDetector</code>構成。前者生成三個後者，分別分配給環境、輸入、輸出的選擇箱。各個箱子都具有共同的行為：當代表卡片的物體靠近時把它吸入，並把該類別標記為「已選擇」。三者齊備後，就把選擇的內容寫入<code>SmartObject</code>類別並推進場景。<code>SmartObject</code>是靜態類別，即使跨越場景資料也不會被銷毀。正是這一點，把四個場景連成了一次完整的體驗。</p>
+    <p><strong>原型製作場景</strong>是核心。<code>PrototypingSceneCore</code>集中管理整個流程，卡片的行為則以<code>Card</code>為頂點的繼承層次來表示。<code>Card</code>之下是<code>InputCard</code>與<code>OutputCard</code>，再往下則排列著<code>Weather</code>、<code>Fire</code>、<code>MakeSound</code>、<code>LightUp</code>等具體卡片的類別。真正承擔原型製作操作的只有末端的具體類別，因此上面這三個都做成了抽象類別。</p>
+    <p><code>PrototypingSceneCore</code>持有輸入條件實例的清單和輸出行為實例的清單。若所選卡片是「天氣預報」與「發光」，前者就只由<code>Weather</code>的實例填滿，後者只由<code>LightUp</code>的實例填滿。開始時各自動生成一個，此後每按一次介面上的新增按鈕就增加一個。每一影格都會評估清單中所有的輸入條件，並呼叫對應的輸出行為。使用者確定後，<code>isConfirmed</code>變為真，組裝好的行為資料被寫入<code>SmartObject</code>的靜態屬性。</p>
+    <p><strong>互動場景</strong>只有<code>InteractionSceneCore</code>，負責在公園中放置物件、執行輸入條件並觀察輸出，以及最後的慶祝演出。</p>
+
+    <figure class="paper-figure line-art">
+      <a href="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="UML類別圖。畫出了Title Scene、Card Selection Scene、Prototyping Scene、Interaction Scene四個套件，以及它們所參照的靜態類別Smart Object。在Prototyping Scene內，抽象類別Card之下有Input Card與Output Card，再由Weather Card、Fire Card、Make Sound Card、Light Up Card繼承。"></a>
+      <figcaption>系統的UML類別圖。四個套件對應Unity的場景，只有中央下方的<code>Smart Object</code>跨場景保持資料。圖中的屬性與方法為便於閱讀作了簡化。</figcaption>
+    </figure>
+
+    <p class="source-link">原始碼可以從以下連結參閱：<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
   </section>
 
   <section>
-    <h2>約束</h2>
+    <h2>做成的部分，與留下的部分</h2>
+    <h3>49張中，做進實作的是9張</h3>
+    <p>在原型中實作的卡片共9張。作為基礎的處理——卡片的選擇、條件與行為的定義、多實例的管理、場景間的資料傳遞——都做到了可以運行的狀態，因此把剩餘卡片補上，原則上只是時間問題。此外，還有6張卡片完成了設計，卻沒能趕上實作。</p>
+
+    <table class="results-table">
+      <caption>原型中的實作狀況</caption>
+      <thead>
+        <tr><th scope="col">狀態</th><th scope="col">卡片</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">已實作（9張）</th><td>環境：樹、路燈、道路標誌、垃圾桶、橋<br>輸入：火、天氣預報<br>輸出：發出聲音、發光</td></tr>
+        <tr><th scope="row">僅完成設計（6張）</th><td>輸入：按鈕、速度、聲音<br>輸出：移動、震動、傳送</td></tr>
+        <tr><th scope="row">尚未著手（34張）</th><td>環境卡15張、輸入卡16張、輸出卡3張（顯示、啟動、記錄）</td></tr>
+      </tbody>
+    </table>
+
+    <h3>沒有進行評估</h3>
+    <p>沒有實施由真實使用者參與的評估。開發期正值COVID-19下的遠距參與，既無法組織以VR頭戴裝置為前提的實體工作坊，也無法安排遠距的替代方案。因此這個專題所能證明的，止於「所設計的體驗能夠以可運行的形式成立」這一步；至於它對孩子是否好用、在療育場域中是否有意義，都還沒有得到驗證。</p>
+    <p>今後若要進行評估，問題應當設定為：「對於原型製作這項工作而言，這套UI/UX有多直觀？」完成所需的時間、事先構想的智慧物件與做出來的東西之間的吻合度、非本意的按鍵次數等都可作為指標，再輔以基於SUS（System Usability Scale）的事後問卷，就能取得量化資料。在VR中，使用者的視野被頭戴裝置遮住，因而更容易出現自己意識不到的身體反應，所以錄影尤其有效。至於年齡，SNaP設定的年齡與Oculus的安全指引（不設想13歲以下使用）相重疊的13歲，是較為務實的一條線。</p>
+
+    <h3>再往前的工作</h3>
+    <p>因時間與技藝所限而未能顧及的工作，首先是重做UI/UX。讓卡片組合得以成立的實作佔去了時間，視覺、聽覺、觸覺的表現未能打磨到位。尤其是，在VR的UI中該用多少文字，還有重新思考的餘地。文字原本是為了把資訊記錄在二維平面上而誕生的，三維空間中有許多要素，更適合作為空間使用者介面（SUI）重新設計。若以有神經發展障礙的兒童為對象，透過語音進行互動是一個有力的方向。</p>
+    <p>在學術上的延展，列出了三條路徑。其一，是與同在i3Lab推進開發的實體板作比較。既有研究發現，在現實場所與虛擬環境中進行同一款協作遊戲時，虛擬環境一側的對話量有所增加；同類的比較在這兩者之間也可能成立。其二，是支援多人同時參與。既然名字裡帶著「Codesign」，能在虛擬空間中與他人一同組裝，本身就是有意義的。其三，是把智慧物件的描述形式標準化，使其可以跨平台帶走。</p>
+
+    <h3>小結</h3>
+    <p>這個專題做出來的，不是一件完成品智慧物件的樣本，而是製作它的場所。環境、輸入、輸出這三張卡片，被原樣置換為「對象物」「條件」「行為」這三個組裝單位，並讓抓取、照射、塗抹這些身體動作把它們聯結起來。誕生於桌遊中的那一句話，在這裡成了可以用自己的手驅動的東西，也成了工作坊結束之後仍然留存的資料。</p>
   </section>
 
-  <section>
-    <h2>方法</h2>
-  </section>
-
-  <section>
-    <h2>結果</h2>
-  </section>
+  <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva, and Olivia Ludkiewicz，“Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD,” Advanced User Interfaces (A.Y. 2020–21) Final Exam Project，米蘭理工大學，2021年2月。</p>
 
   <nav aria-label="網站">
     <ul>
@@ -164,5 +274,13 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two strings it
+     needs are written in this page's language, like the rest of the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="圖片放大顯示" hidden>
+  <button class="lightbox__close" type="button" aria-label="關閉放大顯示"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

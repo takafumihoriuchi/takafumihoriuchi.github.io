@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
-<title>Motion Analysis of the Piano Action — 호리우치 다카후미</title>
-<meta name="description" content="석사 과정의 프로젝트. 글은 준비 중.">
+<title>피아노 액션의 운동 해석 — 호리우치 다카후미</title>
+<meta name="description" content="그랜드 피아노의 액션 기구를 SolidWorks로 3D 모델링. 건반 입력이 해머 속도와 현 반력으로 전달되는 과정을 이론 계산과 모션 해석으로 비교한 석사 과정 프로젝트.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-piano-action/">
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
-<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<link rel="stylesheet" href="../../../works/figures.css">
+<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css?v=20260904-6">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="Motion Analysis of the Piano Action">
-<meta property="og:description" content="글은 준비 중.">
+<meta property="og:title" content="피아노 액션의 운동 해석">
+<meta property="og:description" content="건반의 입력은 복잡한 링크 기구를 지나 어떻게 해머의 속도와 현의 반력으로 바뀌는가.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/masters-project-piano-action/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="분해도로 표시된 목제 피아노 액션의 SolidWorks 3D 모델.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -62,6 +46,7 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "호리우치 다카후미",
       "url": "https://takafumihoriuchi.github.io/",
       "description": "인지공학 × AI × 디자인",
       "sameAs": [
@@ -72,23 +57,25 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ko/works/masters-project-piano-action/#work",
-      "name": "Motion Analysis of the Piano Action",
+      "name": "피아노 액션의 운동 해석",
       "url": "https://takafumihoriuchi.github.io/ko/works/masters-project-piano-action/",
-      "description": "석사 과정의 프로젝트. 글은 준비 중.",
-      "creativeWorkStatus": "준비 중",
+      "description": "그랜드 피아노의 액션 기구를 SolidWorks로 3D 모델링하고, 건반 입력에서 해머 속도와 현 반력으로 이어지는 전달을 이론 계산과 모션 해석으로 비교한 석사 과정 프로젝트.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
+      "datePublished": "2020-01",
       "inLanguage": "ko",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
   ]
 }
 </script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Motion Analysis of the Piano Action</h1>
+    <h1>피아노 액션의 운동 해석</h1>
     <div class="identity">
       <p class="tagline">제작: <a class="byline" href="../../">호리우치 다카후미 (Takafumi Horiuchi)</a></p>
       <nav aria-label="다른 곳의 프로필">
@@ -98,11 +85,7 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">준비 중</p>
+    <p class="dateline">2020년 1월</p>
   </header>
 
   <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
@@ -121,26 +104,159 @@
                                                /__\</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>개요</h2>
-    <p class="lead">석사 과정의 프로젝트. 글은 준비 중.</p>
+    <p class="lead">그랜드 피아노 내부에서는 건반을 누르는 움직임이 여러 링크 기구를 거쳐 연쇄적으로 전달되고, 마지막에 해머가 튀어 올라 현의 진동으로 바뀐다. 건반이 눌렸을 때 해머를 움직여 현을 치게 하는 이 지레 시스템을 ‘피아노 액션’이라 부른다. 이 프로젝트에서는 피아노 액션을 SolidWorks* 상에 3D 모델로 재구성하고, 건반에 가한 입력이 해머의 속도와 현의 반력으로 어떻게 변환되는지를 모션 해석으로 살펴보았다.</p>
+    <p>해석에 앞서 참고 이미지를 바탕으로 피아노 건반 기구를 처음부터 3D 모델링하고, 그 모델로 두 가지 운동 해석을 수행했다. 하나는 눌리는 건반과 튀어 오르는 해머의 속도 관계이고, 다른 하나는 건반에 가하는 힘과 현에 걸리는 힘의 관계다. 3D 모델에서 얻은 시뮬레이션 값을 치수와 지점 위치로부터 구한 이론값과 대조하여, 모델 안에서 운동과 힘이 어떻게 전달되는지를 확인했다.</p>
+    <p class="citation">* SolidWorks: 3D CAD 시스템. 설계 단계에서 부품의 강도를 살피는 구조 해석과 움직임을 확인하는 모션 해석을 수행할 수 있다.</p>
+
+    <hr class="section-break">
+
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" role="group" aria-label="Motion Analysis of the Piano Action 전 17페이지. 가로로 스크롤할 수 있음">
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="타이틀 슬라이드. “Motion Analysis of the Piano Action”."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="그랜드 피아노 내부 사진. 건반 안쪽에 늘어선 액션 기구를 소개하고 있다."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="건반을 누르면 액션의 각 부분이 연동하는 모습을 보여 주는 3D 모델."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="피아노 액션의 단면 모형. 건반을 누르면 해머가 올라가 현을 친다는 것을 보여 준다."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="단면 자료의 윤곽을 따라 그리며 SolidWorks에서 부품을 처음부터 모델링한 공정."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="SolidWorks에서 완성한 피아노 액션의 3D 어셈블리."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="모델의 부품명과 자유도 계산. 구속 후의 자유도가 7임을 보여 준다."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="두 가지 해석 주제. 건반과 해머의 선속도, 그리고 건반 입력과 현 반력의 관계."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="해석 1의 관측점. 건반 끝의 아래 방향 속도와 해머의 위 방향 속도."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="피아노 기구를 세 개의 회전 요소로 단순화한 그림."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="세 회전 요소의 반지름 비로부터 건반 속도와 해머 속도의 관계식을 이끌어 내는 그림."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="건반 끝에 1초부터 2초까지 아래 방향으로 5뉴턴을 가하는 해석 조건."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="건반과 해머의 선속도 그래프. 최대 속도는 각각 초당 1027밀리미터와 4284밀리미터."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="반지름 실측값으로 구한 해머 속도 초당 4614밀리미터와 해석값 초당 4284밀리미터의 비교."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="해석 2의 조건. 건반에 아래 방향으로 15뉴턴을 가하고 현 쪽의 반력을 관측한다."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="현 반력의 최댓값 31뉴턴과 지렛대 원리로 구한 이론값 31.1뉴턴의 비교."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="피아노 액션의 역학 모델에 관한 참고 문헌 목록."></a></li>
+      </ol>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>피아노 액션을, 해석할 수 있는 3D 모델로</h2>
+    <h3>한 번의 타건을 현을 치는 일로 바꾸는 기구</h3>
+    <p>피아노 액션은 건반의 아래 방향 움직임을 해머의 위 방향 운동으로 바꾸는 기구다. 건반을 누르면 캡스턴, 위펜, 잭, 리피티션 레버 등이 함께 움직이고, 해머가 들려 올라가 현을 친다. 연주자에게 보이는 동작은 한 번의 타건이지만, 그 안에서는 여러 부품이 서로 다른 지점을 중심으로 회전하며, 맞닿은 채 움직임을 넘겨받는다.</p>
+    <p>3D 모델링에는 건반, 해머, 잭, 위펜, 리피티션 레버, 캡스턴, 댐퍼, 댐퍼 레버, 와이어와 이들을 받치는 프레임을 포함했다. 운동을 이해하려면 완성된 형태를 바라보는 것만으로는 부족했고, 어느 부품이 어디를 지점으로 삼아 움직이며 다음 부품의 어디에 닿는지를 정의해야 했다.</p>
+
+    <h3>단면도에서 3D 모델을 만든다</h3>
+    <p>기성 CAD 데이터를 쓰는 대신, 피아노 액션의 단면 자료를 밑그림으로 삼아 각 부품의 윤곽을 따라 그리며 하나씩 3D 모델을 만들었다. 이어서 부품을 어셈블리로 조립하고, 실제 기구에 대응하는 고정 관계와 회전 관계를 설정했다. 이 공정을 통해, 형태를 보기 위한 모델을 힘을 가해 움직일 수 있는 해석 모델로 바꾸었다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="SolidWorks 화면에서 참고할 피아노 액션의 단면도를 반투명 밑그림으로 깔고, 그 윤곽에 겹쳐 3D 모델을 만들고 있다. 왼쪽에는 Windows 작업 표시줄과 부품 트리가 보인다."></a>
+      <figcaption>참고할 단면도를 반투명 밑그림으로 뒤에 배치하고, 그 윤곽을 따라가며 SolidWorks에서 3D 모델을 만들었다.</figcaption>
+    </figure>
+
+    <figure class="paper-figure model-figure">
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="Windows에서 실행 중인 SolidWorks 화면. 왼쪽에 Windows 작업 표시줄과 부품 트리, 중앙에 만들어진 피아노 액션의 3D 모델이 표시되어 있다."></a>
+      <figcaption>SolidWorks에서 실제로 만든 피아노 액션의 3D 모델.</figcaption>
+    </figure>
+
+    <h3>구속 조건을 자유도로 확인한다</h3>
+    <p>고정된 프레임을 뺀 가동 부품은 9개이며, 구속이 없다면 합계 54자유도를 가진다. 캡스턴과 와이어를 다른 부품에 고정하면 12자유도가 줄고, 남은 7개 부품을 회전 조인트로 구속하면 다시 35자유도가 준다. 따라서 이 CAD 어셈블리의 자유도는 다음과 같이 7이 된다.</p>
+    <p class="formula" role="math" aria-label="54 빼기 12 빼기 35는 7">54 − 12 − 35 = 7</p>
+    <p>SolidWorks의 구속 진단에서도 추정 자유도와 실제 자유도가 모두 7, 중복 구속은 0으로 표시되었다. 이는 실물 피아노 액션 전반의 자유도를 단정하는 값이 아니라, 이 프로젝트에서 설정한 부품 구성과 구속 조건이 의도대로 조립되었음을 확인해 주는 것이다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="각 부품에 이름을 붙인 피아노 액션 모델과, 자유도 54에서 고정 구속 12와 회전 구속 35를 빼 7로 만드는 계산."></a>
+      <figcaption>부품명과 구속 조건. SolidWorks의 진단에서도 모델의 자유도는 7, 중복 구속은 0이었다.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>제약</h2>
+    <h2>두 가지 해석 — 건반 입력이 어떻게 변환되는가</h2>
+    <p>모델의 거동은 두 가지 해석으로 나누어 살펴보았다. 해석 1은 ‘건반이 움직이는 빠르기가 해머의 빠르기로 어떻게 변환되는가’, 해석 2는 ‘건반에 가한 힘이 현 쪽의 반력으로 어떻게 나타나는가’이다. 입력과 출력을 한 쌍씩 떼어 냄으로써, 복잡한 링크 기구의 거동을 기하학적인 속도비와 지렛대의 힘의 균형으로 설명할 수 있는 형태로 만들었다.</p>
+    <p>비교의 기준으로는 기구를 단순한 회전 요소로 바꾸어 놓은 이론 계산을 썼다. 이론값과 시뮬레이션 값이 가깝다면, 적어도 모델 내부의 운동이 설정한 치수와 구속에서 기대되는 관계를 따르고 있다고 판단할 수 있다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="해석 1에서는 건반과 해머의 선속도를, 해석 2에서는 건반에 가하는 힘과 현의 반력을 대응시켜 살핀다는 것을 보여 주는 두 개의 그림."></a>
+      <figcaption>두 해석의 입출력. 해석 1에서는 건반과 해머의 선속도를, 해석 2에서는 건반에 가하는 힘과 현의 반력을 비교한다.</figcaption>
+    </figure>
+
+    <h3>해석 1 — 건반의 속도는 해머에서 얼마나 증폭되는가</h3>
+    <p>속도 해석에서는 복잡한 피아노 액션을 건반, 위펜을 중심으로 하는 중간 기구, 해머라는 세 개의 강체가 맞닿으며 움직임을 전달하는 모델로 단순화했다. 그림의 ①에서 ③으로 운동이 차례로 넘어간다고 보면, 많은 부품으로 이루어진 기구를 3단의 회전 운동으로 계산할 수 있다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="피아노 액션을 ① 건반, ② 위펜을 중심으로 하는 중간 기구, ③ 해머의 세 강체로 색을 나누어 표시한 그림."></a>
+      <figcaption>해석을 위해 기구를 ① 건반, ② 중간 기구, ③ 해머의 세 강체로 단순화했다.</figcaption>
+    </figure>
+
+    <p>같은 강체 위에서는 각속도가 공통이므로, 지점으로부터의 거리를 <em>r</em>, 그 점의 선속도를 <em>v</em>라 하면 <em>v</em> = <em>ωr</em>가 된다. 접촉점에서 속도가 손실 없이 다음 강체로 전달된다고 가정하면, 각 단의 입력 반지름과 출력 반지름의 비를 곱하여 해머 속도를 구할 수 있다.</p>
+    <p class="formula formula-long" role="math" aria-label="해머 속도는 r1 프라임, r2 프라임, r3 프라임의 곱을 r1, r2, r3의 곱으로 나누고 건반 속도를 곱한 값">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="세 강체에 대해 각 지점에서 입력점과 출력점까지의 거리를 r1, r1 프라임, r2, r2 프라임, r3, r3 프라임으로 표시한 그림."></a>
+      <figcaption>각 강체의 지점에서 입력점·출력점까지를 반지름으로 나타내고, 그 비를 3단에 걸쳐 곱해 속도비를 구한다.</figcaption>
+    </figure>
+
+    <h4>입력 조건과 관측 결과</h4>
+    <p>SolidWorks Motion Analysis에서 건반 끝에 아래 방향으로 5 N을 가하고, 건반 끝과 해머의 선속도를 관측했다. 힘을 가하기 시작한 직후의 최대 속도는 건반이 1,027 mm/s, 해머가 4,284 mm/s였다. 시뮬레이션에서는 해머가 건반의 약 4.17배 빠르기로 움직인 셈이다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="건반과 해머의 속도를 시간에 대해 보여 주는 두 개의 그래프. 입력 개시 직후의 최댓값이 초당 1027밀리미터와 4284밀리미터로 표시되어 있다."></a>
+      <figcaption>건반과 해머의 선속도. 둘 다 입력 개시 직후에 최대가 되며, 해머 쪽에서 속도가 증폭되어 있다.</figcaption>
+    </figure>
+
+    <table class="results-table">
+      <caption>해석 1의 최대 속도</caption>
+      <thead>
+        <tr><th scope="col">관측·계산 대상</th><th scope="col">속도</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">건반 (시뮬레이션)</th><td>1,027 mm/s</td></tr>
+        <tr><th scope="row">해머 (이론 계산)</th><td>4,614 mm/s</td></tr>
+        <tr><th scope="row">해머 (시뮬레이션)</th><td>4,284 mm/s</td></tr>
+      </tbody>
+    </table>
+
+    <h4>이론값과의 비교</h4>
+    <p>모델에서 잰 반지름은 <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm, <em>r</em><sub>3</sub>′ = 111 mm이다. 이를 식에 대입하면 이상화한 속도비는 약 4.49배가 되고, 건반 속도 1,027 mm/s에 대한 해머 속도는 4,614 mm/s로 예측된다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="SolidWorks의 3D 모델 위에 속도비 계산에 쓴 여섯 개의 반지름 실측값을 표시한 그림."></a>
+      <figcaption>3D 모델 위에서 잰 여섯 개의 반지름. 이 값들로부터 해머의 이론 속도 4,614 mm/s를 산출했다.</figcaption>
+    </figure>
+
+    <p>시뮬레이션 값 4,284 mm/s는 이론값보다 약 7% 낮지만, 속도가 증폭되는 크기는 가까운 값이 되었다. 이 차이가 생긴 이유는 뒤에서 설명하듯, 세 강체로 이상화한 이론 계산과 부품 사이의 손실이나 재료의 변형까지 다루는 3D 시뮬레이션의 전제가 다르기 때문이다.</p>
+
+    <h3>해석 2 — 건반의 힘은 현 쪽에서 어떻게 나타나는가</h3>
+    <p>두 번째 해석에서는 건반 표면에 아래 방향으로 15 N을 가하고, 현을 치는 순간 현 쪽에 나타나는 반력을 관측했다. 건반 쪽 입력 <em>F</em><sub>key</sub>는 1.0초부터 올라가 15 N에 이르렀고, 현을 치는 순간 현 쪽의 반력 <em>V</em><sub>string</sub>에는 최대 31 N의 봉우리가 나타났다.</p>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="시간에 대한 건반 입력 F key의 설명용 그래프. 1초부터 올라가 15뉴턴을 유지한 뒤 0뉴턴으로 돌아온다."></a>
+      <figcaption>건반 쪽 입력 <em>F</em><sub>key</sub>. 1.0초부터 힘을 가해 15 N을 입력했다.</figcaption>
+    </figure>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="시간에 대한 현 쪽 반력 V string의 설명용 그래프. 현을 치는 순간 31뉴턴의 날카로운 봉우리가 나타나 있다."></a>
+      <figcaption>현 쪽의 반력 <em>V</em><sub>string</sub>. 현을 치는 순간 최대 31 N을 기록했다.</figcaption>
+    </figure>
+
+    <p>이 값은 건반 쪽과 해머 쪽의 팔 길이를 사용한 지렛대의 균형으로 설명할 수 있다.</p>
+    <p class="formula formula-long" role="math" aria-label="현 반력은 15 곱하기 195를 94로 나누어 31.1뉴턴">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>입력점에서 지점까지의 거리를 195 mm, 현 쪽 작용점까지를 94 mm로 두고 계산하면 이론값은 31.1 N이 된다. 시뮬레이션 최댓값 31 N과의 차이는 0.1 N이며, 이 해석에서도 설정한 치수에서 기대되는 힘의 전달과 거의 일치했다.</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="건반의 지점에서 입력점까지의 거리 195밀리미터와 현 쪽 작용점까지의 거리 94밀리미터를 표시한 힘의 균형 그림."></a>
+      <figcaption>건반 쪽 입력 15 N에 대해 지렛대의 균형으로부터 현 쪽의 반력 31.1 N을 구했다. 시뮬레이션 최댓값 31 N과 거의 일치했다.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>접근</h2>
-  </section>
+    <h2>시뮬레이션과 이론값의 대조</h2>
+    <h3>가까운 값이 나온 두 해석 결과</h3>
+    <p>건반과 해머의 속도를 비교한 해석 1에서는 해머 속도의 이론값 4,614 mm/s에 대해 3D 시뮬레이션에서는 4,284 mm/s가 나왔다. 건반 입력과 현 반력을 비교한 해석 2에서는 이론값 31.1 N에 대해 시뮬레이션 최댓값이 31 N이었다. 두 해석 모두에서, 만든 3D 모델에 의한 시뮬레이션 결과는 수식으로 구한 이론값과 가까운 값이 되었다.</p>
 
-  <section>
-    <h2>결과</h2>
+    <h3>작은 차이가 생긴 이유</h3>
+    <p>이론 계산에서는 피아노 액션을 세 강체로 이루어진 기구로 단순화하고, 접촉점에서 운동이나 힘이 손실 없이 전달되는 것으로 보고 계산했다. 한편 3D 모델에 의한 시뮬레이션에서는 피아노 액션을 구성하는 부품 하나하나를 다루기 때문에, 부품 사이에서 생기는 에너지 손실이나 재료의 변형도 결과에 반영된다. 이 전제의 차이가 이론값과 시뮬레이션 값 사이에 생긴 작은 차이로 나타난 것이다.</p>
+
+    <h3>결론</h3>
+    <p>3D 시뮬레이션의 결과가 이론값과 거의 같다는 것을 확인할 수 있었다. 단면도를 바탕으로 구축한 3D 모델은, 건반의 입력을 해머의 속도로 증폭하고 그 힘을 현으로 전하는 피아노 액션의 운동을, 이론 계산과 정합하는 형태로 재현했다.</p>
+    <p>이 프로젝트에서는 형상을 재현하는 데 그치지 않고, 단면 자료에서 구조를 읽어 내고, 부품끼리의 관계를 CAD상의 구속으로 옮기고, 해석하려는 물음에 따라 역학 모델로 단순화하기까지를 하나의 모델링 과정으로 수행했다.</p>
   </section>
 
   <nav aria-label="사이트">
@@ -170,5 +286,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="그림 확대 보기" hidden>
+  <button class="lightbox__close" type="button" aria-label="확대 보기 닫기"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

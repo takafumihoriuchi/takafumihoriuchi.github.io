@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop
-     `creativeWorkStatus`, replace the status line, and swap the index's
-     thumb-pending span for the image. -->
 <title>Motion Analysis of the Piano Action — Takafumi Horiuchi</title>
-<meta name="description" content="A project from the master&#x27;s programme. The write-up is in preparation.">
+<meta name="description" content="A grand piano’s action mechanism rebuilt as a 3D model in SolidWorks. A master’s-programme project comparing, in theory and in motion analysis, how input at the key becomes hammer speed and string reaction force.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -32,28 +24,20 @@
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/masters-project-piano-action/">
 <link rel="icon" href="../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../style.css">
-<link rel="stylesheet" href="page.css">
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
+<link rel="stylesheet" href="../figures.css">
+<link rel="stylesheet" href="page.css?v=20260904-6">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Motion Analysis of the Piano Action">
-<meta property="og:description" content="The write-up is in preparation.">
+<meta property="og:description" content="How does input at the key become the speed of the hammer and the reaction force at the string as it travels through the linkage?">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="An exploded SolidWorks 3D model of a wooden piano action.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -74,14 +58,16 @@
       "@id": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/#work",
       "name": "Motion Analysis of the Piano Action",
       "url": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/",
-      "description": "A project from the master&#x27;s programme. The write-up is in preparation.",
-      "creativeWorkStatus": "In preparation",
+      "description": "A grand piano’s action mechanism rebuilt as a 3D model in SolidWorks, with the transfer from key input to hammer speed and string reaction force compared between theoretical calculation and motion analysis. A master’s-programme project.",
+      "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
+      "datePublished": "2020-01",
       "inLanguage": "en",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
   ]
 }
 </script>
+<script defer src="../figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260904-7"></script>
 </head>
 <body>
@@ -98,11 +84,7 @@
         </ul>
       </nav>
     </div>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">In preparation</p>
+    <p class="dateline">January 2020</p>
   </header>
 
   <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
@@ -121,31 +103,164 @@
                                                /__\</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
   <section>
     <h2>Overview</h2>
-    <p class="lead">A project from the master&#x27;s programme. The write-up is in preparation.</p>
+    <p class="lead">Inside a grand piano, the movement of a pressed key travels through a chain of linkages until the hammer is thrown upward and the motion becomes the vibration of a string. That system of levers — the one that lets a pressed key move a hammer and strike a string — is called the piano action. This project rebuilt the piano action as a 3D model in SolidWorks* and used motion analysis to see how input at the key is converted into the speed of the hammer and the reaction force at the string.</p>
+    <p>For the analysis, the mechanism of the piano key was modelled in 3D from scratch on the basis of reference images, and two motion analyses were run on that model: one on the relationship between the speed of the descending key and that of the rising hammer, the other on the relationship between the force applied to the key and the force arriving at the string. The values from the simulation were checked against theoretical values derived from the dimensions and the positions of the pivots, to establish how motion and force are transmitted inside the model.</p>
+    <p class="citation">* SolidWorks: a 3D CAD system. At the design stage it can run structural analysis to examine the strength of a part and motion analysis to check how it moves.</p>
+
+    <hr class="section-break">
+
+    <figure class="deck-figure bleed">
+      <ol class="deck" tabindex="0" role="group" aria-label="All 17 pages of Motion Analysis of the Piano Action. Scrollable horizontally">
+        <li><a href="assets/slide-01.webp"><img src="assets/slide-01.webp" width="1600" height="1200" alt="Title slide: “Motion Analysis of the Piano Action”."></a></li>
+        <li><a href="assets/slide-02.webp"><img src="assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A photograph of the inside of a grand piano, introducing the row of action mechanisms behind the keys."></a></li>
+        <li><a href="assets/slide-03.webp"><img src="assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A 3D model showing how the parts of the action move together when a key is pressed."></a></li>
+        <li><a href="assets/slide-04.webp"><img src="assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A sectional model of the piano action, showing that pressing a key raises the hammer to strike the string."></a></li>
+        <li><a href="assets/slide-05.webp"><img src="assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The process of tracing the outlines of a sectional reference and modelling each part from scratch in SolidWorks."></a></li>
+        <li><a href="assets/slide-06.webp"><img src="assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The completed 3D assembly of the piano action in SolidWorks."></a></li>
+        <li><a href="assets/slide-07.webp"><img src="assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The names of the parts in the model and the degrees-of-freedom calculation, showing 7 once the constraints are applied."></a></li>
+        <li><a href="assets/slide-08.webp"><img src="assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The two analysis topics: the linear speeds of key and hammer, and the relationship between key input and string reaction force."></a></li>
+        <li><a href="assets/slide-09.webp"><img src="assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The observation points for analysis 1: the downward speed at the end of the key and the upward speed of the hammer."></a></li>
+        <li><a href="assets/slide-10.webp"><img src="assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A diagram simplifying the piano mechanism into three rotating elements."></a></li>
+        <li><a href="assets/slide-11.webp"><img src="assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A diagram deriving the relation between key speed and hammer speed from the radius ratios of the three rotating elements."></a></li>
+        <li><a href="assets/slide-12.webp"><img src="assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The analysis conditions: 5 newtons applied downward at the end of the key from 1 to 2 seconds."></a></li>
+        <li><a href="assets/slide-13.webp"><img src="assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Graphs of the linear speeds of key and hammer. The peak speeds are 1,027 and 4,284 millimetres per second."></a></li>
+        <li><a href="assets/slide-14.webp"><img src="assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A comparison between the hammer speed of 4,614 millimetres per second obtained from the measured radii and the analysed value of 4,284 millimetres per second."></a></li>
+        <li><a href="assets/slide-15.webp"><img src="assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="The conditions for analysis 2: 15 newtons applied downward to the key, with the reaction force on the string side observed."></a></li>
+        <li><a href="assets/slide-16.webp"><img src="assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A comparison between the maximum string reaction force of 31 newtons and the theoretical value of 31.1 newtons from the lever principle."></a></li>
+        <li><a href="assets/slide-17.webp"><img src="assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A list of references on mechanical models of the piano action."></a></li>
+      </ol>
+    </figure>
+  </section>
+
+  <hr class="section-break">
+
+  <section>
+    <h2>From the piano action to a model that can be analysed</h2>
+    <h3>The mechanism that turns one keystroke into a struck string</h3>
+    <p>The piano action is the mechanism that converts the downward movement of a key into the upward motion of a hammer. Pressing a key sets the capstan, wippen, jack and repetition lever moving together, lifting the hammer until it strikes the string. What the player sees is a single keystroke; inside it, several parts rotate about different pivots and hand the movement on to one another as they touch.</p>
+    <p>The 3D model includes the key, hammer, jack, wippen, repetition lever, capstan, damper, damper lever and wire, together with the frame that carries them. Understanding the motion took more than looking at the finished shape: it meant defining which part turns about which pivot, and where it meets the next one.</p>
+
+    <h3>Building a 3D model from a sectional drawing</h3>
+    <p>Rather than using ready-made CAD data, the outline of each part was traced over a sectional reference of the piano action and modelled in 3D one at a time. The parts were then brought together as an assembly, with the fixed and rotational relationships of the real mechanism set between them. That step turned a model for looking at a shape into a model that could be loaded and made to move.</p>
+
+    <figure class="paper-figure">
+      <a href="assets/modeling-process.webp"><img src="assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="In the SolidWorks window, a sectional drawing of a piano action serves as a semi-transparent underlay, with the 3D model being built over its outlines. The Windows taskbar and the part tree are visible on the left."></a>
+      <figcaption>The sectional reference was placed behind the work as a semi-transparent underlay, and the 3D model was built in SolidWorks by tracing its outlines.</figcaption>
+    </figure>
+
+    <figure class="paper-figure model-figure">
+      <a href="assets/solidworks-model.webp"><img src="assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="The SolidWorks window running on Windows. The Windows taskbar and the part tree are on the left, with the 3D model of the piano action in the centre."></a>
+      <figcaption>The 3D model of the piano action as actually built in SolidWorks.</figcaption>
+    </figure>
+
+    <h3>Checking the constraints as degrees of freedom</h3>
+    <p>Excluding the fixed frame, nine parts can move, which without constraints gives 54 degrees of freedom in total. Fixing the capstan and the wire to other parts removes 12, and constraining the remaining seven parts with rotational joints removes a further 35. The CAD assembly therefore has 7 degrees of freedom, as follows.</p>
+    <p class="formula" role="math" aria-label="54 minus 12 minus 35 equals 7">54 − 12 − 35 = 7</p>
+    <p>SolidWorks’ own constraint diagnostics reported the same thing: estimated and actual degrees of freedom both 7, redundant constraints 0. This is not a figure that settles the degrees of freedom of piano actions in general — it confirms that the set of parts and the constraints defined for this project are assembled as intended.</p>
+
+    <figure class="paper-figure">
+      <a href="assets/constraints-overview.webp"><img src="assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="The piano action model with each part labelled, and the calculation subtracting 12 fixed constraints and 35 rotational constraints from 54 degrees of freedom to give 7."></a>
+      <figcaption>Part names and constraints. SolidWorks’ own diagnostics also gave the model 7 degrees of freedom and 0 redundant constraints.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>Constraints</h2>
+    <h2>Two analyses — how key input is converted</h2>
+    <p>The behaviour of the model was examined in two separate analyses. Analysis 1 asks how the speed at which the key moves is converted into the speed of the hammer; analysis 2 asks how the force applied to the key appears as a reaction force on the string side. Taking one input–output pair at a time makes the behaviour of a complicated linkage explainable through a geometric speed ratio and the balance of forces on a lever.</p>
+    <p>The basis for comparison is a theoretical calculation in which the mechanism is replaced by simple rotating elements. If the theoretical and simulated values are close, then at least the motion inside the model follows the relationship the chosen dimensions and constraints would lead one to expect.</p>
+
+    <figure class="paper-figure">
+      <a href="assets/analysis-overview.webp"><img src="assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Two diagrams showing that analysis 1 pairs the linear speeds of key and hammer, and analysis 2 pairs the force applied to the key with the reaction force at the string."></a>
+      <figcaption>The inputs and outputs of the two analyses. Analysis 1 compares the linear speeds of key and hammer; analysis 2 compares the force applied to the key with the reaction force at the string.</figcaption>
+    </figure>
+
+    <h3>Analysis 1 — how far the key’s speed is amplified at the hammer</h3>
+    <p>For the speed analysis, the complicated piano action was simplified into three rigid bodies that pass the movement on as they touch: the key, the intermediate mechanism centred on the wippen, and the hammer. Reading the motion as handed on from ① to ③ in the diagram allows a mechanism of many parts to be calculated as three stages of rotation.</p>
+
+    <figure class="paper-figure">
+      <a href="assets/analysis-1-components.webp"><img src="assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="A diagram colour-coding the piano action as three rigid bodies: ① the key, ② the intermediate mechanism centred on the wippen, and ③ the hammer."></a>
+      <figcaption>For the analysis, the mechanism was simplified into three rigid bodies: ① the key, ② the intermediate mechanism, and ③ the hammer.</figcaption>
+    </figure>
+
+    <p>Angular velocity is shared across a single rigid body, so with <em>r</em> as the distance from the pivot and <em>v</em> as the linear speed at that point, <em>v</em> = <em>ωr</em>. Assuming the speed passes to the next rigid body at the contact point without loss, the hammer speed follows from multiplying together the ratio of input radius to output radius at each stage.</p>
+    <p class="formula formula-long" role="math" aria-label="Hammer speed equals r one prime times r two prime times r three prime, divided by r one times r two times r three, multiplied by key speed">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+
+    <figure class="paper-figure">
+      <a href="assets/analysis-1-radii.webp"><img src="assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="A diagram marking, for the three rigid bodies, the distances from each pivot to the input and output points as r1, r1 prime, r2, r2 prime, r3 and r3 prime."></a>
+      <figcaption>The distances from each rigid body’s pivot to its input and output points are treated as radii, and their ratios are multiplied across the three stages to give the speed ratio.</figcaption>
+    </figure>
+
+    <h4>Input conditions and what was observed</h4>
+    <p>In SolidWorks Motion Analysis, 5 N was applied downward at the end of the key and the linear speeds of the key end and of the hammer were recorded. Immediately after the force began, the peak speeds were 1,027 mm/s at the key and 4,284 mm/s at the hammer. In the simulation, then, the hammer moved about 4.17 times as fast as the key.</p>
+
+    <figure class="paper-figure">
+      <a href="assets/slide-13.webp"><img src="assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Two graphs of key and hammer speed against time, with the peaks just after the input begins marked at 1,027 and 4,284 millimetres per second."></a>
+      <figcaption>The linear speeds of key and hammer. Both peak immediately after the input begins, with the speed amplified on the hammer side.</figcaption>
+    </figure>
+
+    <table class="results-table">
+      <caption>Peak speeds in analysis 1</caption>
+      <thead>
+        <tr><th scope="col">Measured or calculated</th><th scope="col">Speed</th></tr>
+      </thead>
+      <tbody>
+        <tr><th scope="row">Key (simulation)</th><td>1,027 mm/s</td></tr>
+        <tr><th scope="row">Hammer (theory)</th><td>4,614 mm/s</td></tr>
+        <tr><th scope="row">Hammer (simulation)</th><td>4,284 mm/s</td></tr>
+      </tbody>
+    </table>
+
+    <h4>Against the theoretical value</h4>
+    <p>The radii measured from the model are <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm and <em>r</em><sub>3</sub>′ = 111 mm. Substituting them into the equation gives an idealised speed ratio of about 4.49, which predicts a hammer speed of 4,614 mm/s against a key speed of 1,027 mm/s.</p>
+
+    <figure class="paper-figure">
+      <a href="assets/analysis-1-comparison.webp"><img src="assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="A diagram marking, on the SolidWorks 3D model, the six measured radii used in the speed-ratio calculation."></a>
+      <figcaption>The six radii measured on the 3D model. The theoretical hammer speed of 4,614 mm/s was calculated from these values.</figcaption>
+    </figure>
+
+    <p>The simulated 4,284 mm/s is about 7% below the theoretical value, but the size of the amplification is close. The difference arises, as set out below, because the theoretical calculation idealises the action as three rigid bodies while the 3D simulation also carries the losses between parts and the deformation of the material.</p>
+
+    <h3>Analysis 2 — how the force at the key appears at the string</h3>
+    <p>The second analysis applied 15 N downward to the surface of the key and recorded the reaction force appearing on the string side at the moment of the strike. The input at the key, <em>F</em><sub>key</sub>, rose from 1.0 seconds to reach 15 N, and at the moment the string was struck the reaction force <em>V</em><sub>string</sub> peaked at 31 N.</p>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="assets/force-key-graph.svg"><img src="assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="An explanatory graph of the key input F key against time. It rises at 1 second, holds at 15 newtons, then returns to 0 newtons."></a>
+      <figcaption>The input at the key, <em>F</em><sub>key</sub>. Force was applied from 1.0 seconds, giving an input of 15 N.</figcaption>
+    </figure>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="assets/force-string-graph.svg"><img src="assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="An explanatory graph of the string-side reaction force V string against time, with a sharp peak of 31 newtons at the moment of the strike."></a>
+      <figcaption>The reaction force at the string, <em>V</em><sub>string</sub>. It reached a maximum of 31 N at the moment of the strike.</figcaption>
+    </figure>
+
+    <p>This value follows from the balance of a lever, using the arm lengths on the key side and the hammer side.</p>
+    <p class="formula formula-long" role="math" aria-label="String reaction force equals 15 times 195 divided by 94, which is 31.1 newtons">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>Taking 195 mm from the input point to the pivot and 94 mm to the point of action on the string side gives a theoretical value of 31.1 N. That is 0.1 N from the simulated maximum of 31 N, so this analysis too came out close to the transfer of force the chosen dimensions would lead one to expect.</p>
+
+    <figure class="paper-figure">
+      <a href="assets/analysis-2-lever.webp"><img src="assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="A force-balance diagram showing the distance of 195 millimetres from the key’s pivot to the input point and 94 millimetres to the point of action on the string side."></a>
+      <figcaption>From the 15 N input at the key, the balance of the lever gives a reaction force of 31.1 N at the string — all but identical to the simulated maximum of 31 N.</figcaption>
+    </figure>
   </section>
 
   <section>
-    <h2>Approach</h2>
-  </section>
+    <h2>Simulation against theory</h2>
+    <h3>Two analyses that came out close</h3>
+    <p>In analysis 1, comparing the speeds of key and hammer, the theoretical hammer speed of 4,614 mm/s met a simulated 4,284 mm/s. In analysis 2, comparing the input at the key with the reaction force at the string, the theoretical 31.1 N met a simulated maximum of 31 N. In both analyses the results simulated on the 3D model came out close to the theoretical values obtained from the equations.</p>
 
-  <section>
-    <h2>Outcome</h2>
+    <h3>Why a small difference remains</h3>
+    <p>The theoretical calculation simplifies the piano action into a mechanism of three rigid bodies and treats motion and force as passing through the contact points without loss. The simulation on the 3D model handles each individual part that makes up the action, so energy lost between parts and deformation of the material appear in the result as well. That difference of premises is what shows up as the small gap between the theoretical and simulated values.</p>
+
+    <h3>Conclusion</h3>
+    <p>The results of the 3D simulation were confirmed to be all but equal to the theoretical values. The 3D model built from a sectional drawing reproduced the motion of the piano action — amplifying the input at the key into the speed of the hammer and carrying that force to the string — in a form consistent with the theoretical calculation.</p>
+    <p>What this project involved was not only reproducing a shape. Reading the structure out of a sectional reference, translating the relationships between parts into constraints in CAD, and simplifying the result into a mechanical model suited to the question being asked were all part of one modelling process.</p>
   </section>
 
   <nav aria-label="Site">
     <ul>
-      <li><a href="../../">Go to Takafumi&#x27;s Portfolio</a></li>
+      <li><a href="../../">Go to Takafumi's Portfolio</a></li>
     </ul>
   </nav>
 
@@ -170,5 +285,10 @@
   </footer>
 
 </main>
+
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden>
+  <button class="lightbox__close" type="button" aria-label="Close the enlargement"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>
