@@ -82,6 +82,7 @@ handoff.
 - `pokemon-generation`
 - `masters-thesis`
 - `constraint-programming`
+- `smart-codesign-vr`
 - `piano-action`
 - `in-preparation`
 
