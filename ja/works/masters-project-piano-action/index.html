@@ -25,7 +25,7 @@
 <link rel="icon" href="../../../favicon.svg" type="image/svg+xml">
 <link rel="stylesheet" href="../../../style.css">
 <link rel="stylesheet" href="../../../works/figures.css">
-<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css?v=20260904-3">
+<link rel="stylesheet" href="../../../works/masters-project-piano-action/page.css?v=20260904-5">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
@@ -70,7 +70,7 @@
 }
 </script>
 <script defer src="../../../works/figures.js"></script>
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-2"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-3"></script>
 </head>
 <body>
 <main>
@@ -90,18 +90,22 @@
   </header>
 
   <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">       v                                  =============*==================
- .--------------------.                                ^
- |        KEY      ___|____o                         (O)
- &#x27;----------o-----&#x27;         \                            \
-            ^                o--------o-------------------o
-                              \______/        ACTION</pre>
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">  ==================== STRING
+
+
+          (O)  HAMMER
+           \________________o
+                      [ACTION]
+                          ^                            v FORCE
+       ==========================o============================= KEY
+                                 ^ PIVOT</pre>
   </ascii-hero>
 
   <section>
     <h2>概要</h2>
-    <p class="lead">グランドピアノの内部では、鍵盤を押す動きが複数のリンク機構を介して伝わり、ハンマーを跳ね上げて弦を打つ。この、鍵盤が押された時にフェルトのハンマーを動かして弦を打てるようにしているテコのシステムを「ピアノ・アクション」と呼ぶ。このプロジェクトでは、複雑なピアノ・アクションをSolidWorks上に3Dモデルとして再構成し、鍵盤への入力がハンマーの速度と弦の反力へどのように変換されるかをモーション解析した。</p>
-    <p>断面資料をもとに部品を一からモデリングし、組み上げた機構について二つの関係を調べた。一つは鍵盤とハンマーの線速度、もう一つは鍵盤に加える力と弦側の反力である。シミュレーションの値を、部品の寸法と支点位置から導いた理論値と照合し、モデルの中で運動と力がどのように伝達されるかを確かめた。</p>
+    <p class="lead">グランドピアノの内部では、鍵盤を押す動きが複数のリンク機構を介して連鎖的に伝わり、最終的にハンマーが跳ね上がり、弦の振動に変換される。この鍵盤が押された時にハンマーを動かして弦を打てるようにしているテコのシステムを「ピアノ・アクション」と呼ぶ。このプロジェクトでは、このピアノ・アクションをSolidWorks（※）上に3Dモデルとして再構成し、鍵盤への入力がハンマーの速度と弦の反力へどのように変換されるかをモーション解析した。</p>
+    <p>解析にあたり、参考画像をもとにピアノ鍵盤の機構を一から3Dモデリングし、そのモデルを使用して二つの運動解析を実施した。一つは押下される鍵盤と跳ね上がるハンマーの速度の関係、もう一つは鍵盤に加える力と弦に加わる力の関係である。3Dモデルで実施したシミュレーションの値を、寸法と支点位置の計算から導いた理論値と照合し、モデルの中で運動と力がどのように伝達されるかを確かめた。</p>
+    <p class="citation">※ SolidWorks：3D CADシステム。設計段階で、部品の強度を調べる構造解析や動きを確認するモーション解析ができる。</p>
 
     <hr class="section-break">
 
@@ -134,14 +138,20 @@
     <h2>ピアノ・アクションを、解析できる3Dモデルへ</h2>
     <h3>一打鍵を、打弦へ変える機構</h3>
     <p>ピアノ・アクションは、鍵盤の下向きの動きをハンマーの上向きの運動へ変える機構である。鍵盤を押すと、キャプスタン、ウィペン、ジャック、レペティションレバーなどが連動し、ハンマーが持ち上がって弦を打つ。演奏者から見える動作は一つの打鍵だが、その内側では複数の部品が異なる支点のまわりを回転し、互いに接触しながら動きを受け渡している。</p>
-    <p>モデルには、鍵盤、ハンマー、ジャック、ウィペン、レペティションレバー、キャプスタン、ダンパー、ダンパーレバー、ワイヤーと、それらを支えるフレームを含めた。運動を理解するには、完成形を眺めるだけでなく、どの部品がどこを支点に動き、次の部品のどこへ触れるかを定義する必要がある。</p>
+    <p>3Dモデリングにおいては、鍵盤、ハンマー、ジャック、ウィペン、レペティションレバー、キャプスタン、ダンパー、ダンパーレバー、ワイヤーと、それらを支えるフレームを含めた。運動を理解するには、完成形を眺めるだけでなく、どの部品がどこを支点に動き、次の部品のどこへ触れるかを定義する必要があった。</p>
 
-    <figure class="paper-figure model-figure">
-      <a href="../../../works/masters-project-piano-action/assets/model.webp"><img src="../../../works/masters-project-piano-action/assets/model.webp" width="904" height="600" loading="lazy" decoding="async" alt="ピアノ・アクションを分解表示したSolidWorksの3Dモデル。長い鍵盤の上にウィペンやジャック、ハンマー、ダンパーなどの部品が配置されている。"></a>
-      <figcaption>SolidWorks上で構築したピアノ・アクションの3Dモデル。部品間の関係が見えるように分解表示している。</figcaption>
-    </figure>
     <h3>断面図から3Dモデルをつくる</h3>
     <p>既製のCADデータを使うのではなく、ピアノ・アクションの断面資料を下絵にして各部品の輪郭をトレースし、一点ずつ3Dモデルを作成した。次に部品をアセンブリとして組み、実際の機構に対応する固定関係と回転関係を設定した。この工程によって、形を見るためのモデルを、力を加えて動かせる解析モデルへ変えた。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="SolidWorksの画面上で、参考となるピアノ・アクションの断面図を半透明の下絵にし、その輪郭に重ねて3Dモデルを作成している。左側にはWindowsのタスクバーと部品ツリーが表示されている。"></a>
+      <figcaption>参考となる断面図を半透明の下絵として背面に配置し、その輪郭をなぞりながらSolidWorksで3Dモデルを作成した。</figcaption>
+    </figure>
+
+    <figure class="paper-figure model-figure">
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="Windows上で動作するSolidWorksの画面。左側にWindowsのタスクバーと部品ツリー、中央に作成したピアノ・アクションの3Dモデルが表示されている。"></a>
+      <figcaption>SolidWorks上で実際に作成したピアノ・アクションの3Dモデル。</figcaption>
+    </figure>
 
     <h3>拘束条件を、自由度として確認する</h3>
     <p>固定したフレームを除く可動部品は9点で、拘束がなければ合計54自由度を持つ。キャプスタンとワイヤーを別の部品へ固定すると12自由度が減り、残る7部品を回転ジョイントで拘束すると、さらに35自由度が減る。したがって、このCADアセンブリの自由度は次のように7となる。</p>
@@ -149,7 +159,7 @@
     <p>SolidWorksの拘束診断でも、推定自由度と実自由度はいずれも7、冗長拘束は0と表示された。これは実物のピアノ・アクション全般の自由度を断定する値ではなく、このプロジェクトで設定した部品構成と拘束条件が意図どおり組まれていることの確認である。</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="各部品に名称を付けたピアノ・アクションのモデルと、自由度54から固定拘束12、回転拘束35を引いて7とする計算。"></a>
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="各部品に名称を付けたピアノ・アクションのモデルと、自由度54から固定拘束12、回転拘束35を引いて7とする計算。"></a>
       <figcaption>部品名と拘束条件。SolidWorks上の診断でも、モデルの自由度は7、冗長拘束は0となった。</figcaption>
     </figure>
   </section>
@@ -158,17 +168,35 @@
     <h2>二つの解析——鍵盤入力がどう変換されるか</h2>
     <p>モデルの挙動は、二つの解析に分けて調べた。解析1は「鍵盤の動く速さが、ハンマーの速さへどう変換されるか」、解析2は「鍵盤へ加えた力が、弦側の反力としてどう現れるか」である。入力と出力を一組ずつ切り出すことで、複雑なリンク機構の挙動を、幾何学的な速度比と、てこの力のつり合いから説明できる形にした。</p>
     <p>比較の基準には、機構を単純な回転要素へ置き換えた理論計算を用いた。理論値とシミュレーション値が近ければ、少なくともモデル内部の運動が、設定した寸法と拘束から期待される関係に沿っていると判断できる。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="解析1では鍵盤とハンマーの線速度、解析2では鍵盤に加える力と弦の反力を対応させて調べることを示した二つの図。"></a>
+      <figcaption>二つの解析の入出力。解析1では鍵盤とハンマーの線速度を、解析2では鍵盤に加える力と弦の反力を比較する。</figcaption>
+    </figure>
+
     <h3>解析1——鍵盤の速度は、ハンマーでどれだけ増幅されるか</h3>
-    <p>速度の解析では、ピアノ・アクションを、三つの回転要素が接触しながら動きを伝える機構へ簡略化した。同じ剛体上では角速度が共通であり、支点からの距離を<em>r</em>、その点の線速度を<em>v</em>とすると、<em>v</em> = <em>ωr</em>となる。接触点で速度が損失なく次の要素へ伝わると仮定すれば、各段の入力半径と出力半径の比を掛け合わせて、ハンマー速度を求められる。</p>
+    <p>速度の解析では、複雑なピアノ・アクションを、鍵盤、ウィペンを中心とする中間機構、ハンマーという三つの剛体が接触しながら動きを伝えるモデルへ単純化した。図中の①から③へ運動が順に受け渡されると捉えることで、多数の部品からなる機構を三段の回転運動として計算できる。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="ピアノ・アクションを、①鍵盤、②ウィペンを中心とする中間機構、③ハンマーの三つの剛体として色分けした図。"></a>
+      <figcaption>解析のため、機構を①鍵盤、②中間機構、③ハンマーの三つの剛体に単純化した。</figcaption>
+    </figure>
+
+    <p>同じ剛体上では角速度が共通であり、支点からの距離を<em>r</em>、その点の線速度を<em>v</em>とすると、<em>v</em> = <em>ωr</em>となる。接触点で速度が損失なく次の剛体へ伝わると仮定すれば、各段の入力半径と出力半径の比を掛け合わせて、ハンマー速度を求められる。</p>
     <p class="formula formula-long" role="math" aria-label="ハンマー速度は、r1プライム、r2プライム、r3プライムの積を、r1、r2、r3の積で割り、鍵盤速度を掛けた値">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="ピアノ・アクションを三つの回転要素へ分け、各支点から入力点と出力点までの半径を示した図。"></a>
-      <figcaption>機構を三段の回転要素として捉え、各段の半径比から鍵盤とハンマーの速度比を求める。</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="三つの剛体について、各支点から入力点と出力点までの距離をr1、r1プライム、r2、r2プライム、r3、r3プライムとして示した図。"></a>
+      <figcaption>各剛体の支点から入力点・出力点までを半径として表し、その比を三段分掛け合わせて速度比を求める。</figcaption>
     </figure>
 
     <h4>入力条件と観測結果</h4>
     <p>SolidWorks Motion Analysisで鍵盤端へ下向きに5 Nを加え、鍵盤端とハンマーの線速度を観測した。力を加え始めた直後のピーク速度は、鍵盤が1,027 mm/s、ハンマーが4,284 mm/sだった。シミュレーション上では、ハンマーが鍵盤の約4.17倍の速さで動いたことになる。</p>
+
+    <figure class="paper-figure">
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤とハンマーの速度を時間に対して示す二つのグラフ。入力開始直後のピークが1027ミリメートル毎秒と4284ミリメートル毎秒として示されている。"></a>
+      <figcaption>鍵盤とハンマーの線速度。どちらも入力開始直後に最大となり、ハンマー側で速度が増幅されている。</figcaption>
+    </figure>
 
     <table class="results-table">
       <caption>解析1のピーク速度</caption>
@@ -184,31 +212,48 @@
 
     <h4>理論値との比較</h4>
     <p>モデルから測った半径は、<em>r</em><sub>1</sub> = 200 mm、<em>r</em><sub>1</sub>′ = 88 mm、<em>r</em><sub>2</sub> = 53 mm、<em>r</em><sub>2</sub>′ = 78 mm、<em>r</em><sub>3</sub> = 16 mm、<em>r</em><sub>3</sub>′ = 111 mmである。これらを式へ代入すると、理想化した速度比は約4.49倍となり、鍵盤速度1,027 mm/sに対するハンマー速度は4,614 mm/sと予測される。</p>
-    <p>シミュレーション値4,284 mm/sは、理論値より約7%低かった。資料では、この差を、理論計算が無視した摩擦や変形などのエネルギー損失をSolidWorks側が扱うためと説明している。完全な一致ではないが、速度が増幅される大きさは両者で近く、モデルが想定した運動伝達を再現していると評価した。</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤とハンマーの速度を時間に対して示す二つのグラフ。入力開始直後のピークが1027ミリメートル毎秒と4284ミリメートル毎秒として示されている。"></a>
-      <figcaption>鍵盤とハンマーの線速度。どちらも入力開始直後に最大となり、ハンマー側で速度が増幅されている。</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="SolidWorksの3Dモデル上に、速度比の計算に使った六つの半径の実測値を示した図。"></a>
+      <figcaption>3Dモデル上で測った六つの半径。これらの値から、ハンマーの理論速度4,614 mm/sを算出した。</figcaption>
     </figure>
+
+    <p>シミュレーション値4,284 mm/sは理論値より約7%低いものの、速度が増幅される大きさは近い値となった。この差が生じた理由は、後述するように、三つの剛体として理想化した理論計算と、部品間の損失や材料の変形まで扱う3Dシミュレーションとで前提が異なるためである。</p>
+
     <h3>解析2——鍵盤の力は、弦側でどのように現れるか</h3>
-    <p>二つ目の解析では、鍵盤表面へ下向きに15 Nを加え、打弦時に弦側へ現れる反力を観測した。シミュレーションで得られた最大反力は31 Nだった。この値は、鍵盤側とハンマー側の腕の長さを使った、てこのつり合いから説明できる。</p>
+    <p>二つ目の解析では、鍵盤表面へ下向きに15 Nを加え、打弦時に弦側へ現れる反力を観測した。鍵盤側の入力<em>F</em><sub>key</sub>は1.0秒から立ち上がって15 Nに達し、打弦の瞬間、弦側の反力<em>V</em><sub>string</sub>には最大31 Nのピークが現れた。</p>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="時間に対する鍵盤への入力F keyの説明用グラフ。1秒から立ち上がり、15ニュートンを維持した後、0ニュートンへ戻る。"></a>
+      <figcaption>鍵盤側への入力 <em>F</em><sub>key</sub>。1.0秒から力を加え、15 Nを入力した。</figcaption>
+    </figure>
+
+    <figure class="paper-figure graph-figure line-art">
+      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="時間に対する弦側の反力V stringの説明用グラフ。打弦の瞬間に31ニュートンの鋭いピークが現れている。"></a>
+      <figcaption>弦側の反力 <em>V</em><sub>string</sub>。打弦の瞬間に最大31 Nを記録した。</figcaption>
+    </figure>
+
+    <p>この値は、鍵盤側とハンマー側の腕の長さを使った、てこのつり合いから説明できる。</p>
     <p class="formula formula-long" role="math" aria-label="弦反力は、15掛ける195を94で割って、31.1ニュートン">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
     <p>入力点から支点までの距離を195 mm、弦側の作用点までを94 mmとして計算すると、理論値は31.1 Nになる。シミュレーションの最大値31 Nとの差は0.1 Nであり、この解析でも、設定した寸法から期待される力の伝達とほぼ一致した。</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤側195ミリメートル、弦側94ミリメートルの腕の長さと、最大31ニュートンを示す弦反力のグラフ。"></a>
-      <figcaption>てこの計算による31.1 Nと、シミュレーションで観測した最大反力31 Nを比較した。</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="鍵盤の支点から入力点までの距離195ミリメートルと、弦側の作用点までの距離94ミリメートルを示した、力のつり合いの図。"></a>
+      <figcaption>鍵盤側の入力15 Nに対し、てこのつり合いから弦側の反力31.1 Nを導いた。シミュレーションの最大値31 Nとほぼ一致した。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>結果と限界</h2>
-    <h3>一致したこと、まだ確かめていないこと</h3>
-    <p>二つの解析で確認したのは、構築したCADモデルの出力が、同じモデルの寸法から導いた単純な力学計算と近いことである。速度の解析では鍵盤の約4.17倍のハンマー速度、力の解析では15 Nの入力に対して約31 Nの弦反力が得られた。複数の部品が連動する挙動を、支点と接触点の関係へ分解して説明できた。</p>
-    <p>一方、この資料には、摩擦係数、材料特性、接触条件、解析の時間刻みなど、物理精度を評価するための設定が記録されていない。また、実物のピアノで速度や打弦力を測った比較実験も示されていない。したがって、この資料から読み取れる範囲では、結果は実機の忠実な再現を実証するものではなく、3Dモデルと理論モデルの内部整合性を確かめたものとして捉えるのが適切である。</p>
-    <h3>まとめ</h3>
-    <p>断面図から構築した3Dモデルを動かすことで、ピアノ・アクションが鍵盤のゆっくりした動きをハンマーの速い運動へ変え、入力した力を弦へ伝える過程を定量的に捉えた。さらに、シミュレーション結果を簡略化した理論式と照合し、複雑なモデルを結果だけで終わらせず、その挙動を部品の寸法と支点の配置から説明した。</p>
-    <p>このプロジェクトで扱ったのは、完成した形状の再現だけではない。断面資料から構造を読み取り、動きに必要な関係をCAD上の拘束へ置き換え、解析する問いに合わせて単純な力学モデルへ分解するまでを、一つのモデリングの過程として行った。</p>
+    <h2>シミュレーションと理論値の照合</h2>
+    <h3>近い値となった二つの解析結果</h3>
+    <p>鍵盤とハンマーの速度を比較した解析1では、ハンマー速度の理論値4,614 mm/sに対して、3Dシミュレーションでは4,284 mm/sとなった。鍵盤の入力と弦の反力を比較した解析2では、理論値31.1 Nに対して、シミュレーションの最大値は31 Nだった。どちらの解析でも、作成した3Dモデルによるシミュレーション結果は、数式から求めた理論値と近い値になった。</p>
+
+    <h3>わずかな差が生じた理由</h3>
+    <p>理論計算では、ピアノ・アクションを三つの剛体からなる機構として単純化し、接触点で運動や力が損失なく伝わるものとして計算した。一方、3Dモデルによるシミュレーションでは、ピアノ・アクションを構成する一つひとつの部品を扱うため、部品間で生じるエネルギーの損失や材料の変形も結果に反映される。この前提の違いが、理論値とシミュレーション値の間に生じたわずかな差として現れた。</p>
+
+    <h3>結論</h3>
+    <p>3Dシミュレーションの結果が理論値とほぼ等しいことを確認できた。断面図をもとに構築した3Dモデルは、鍵盤の入力をハンマーの速度へ増幅し、その力を弦へ伝えるピアノ・アクションの運動を、理論計算と整合する形で再現した。</p>
+    <p>このプロジェクトでは、形状を再現するだけでなく、断面資料から構造を読み取り、部品同士の関係をCAD上の拘束へ置き換え、解析する問いに応じて力学モデルへ単純化するまでを一つのモデリング過程として行った。</p>
   </section>
 
   <nav aria-label="サイト">
