@@ -4,7 +4,7 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
-<title>Smart Codesign VR — 堀内 貴文</title>
+<title>子どものためのインタラクティブ・オブジェクトのプロトタイピングVRシステムの開発 — 堀内 貴文</title>
 <meta name="description" content="SNaPボードゲームで子どもが考えたスマートオブジェクトを、VR空間で組み立てて動かす。環境・入力・出力の3枚のカードを選び、条件と振る舞いを自分で定義するプロトタイピング環境を、Oculus Quest 2とUnityで実装した修士課程の共同プロジェクト。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -30,7 +30,7 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="Smart Codesign VR">
+<meta property="og:title" content="子どものためのインタラクティブ・オブジェクトのプロトタイピングVRシステムの開発">
 <meta property="og:description" content="環境・入力・出力の3枚のカードから、VR空間でスマートオブジェクトを組み立てる。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/masters-project-smart-codesign-vr/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
@@ -58,7 +58,7 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ja/works/masters-project-smart-codesign-vr/#work",
-      "name": "Smart Codesign VR",
+      "name": "子どものためのインタラクティブ・オブジェクトのプロトタイピングVRシステムの開発",
       "url": "https://takafumihoriuchi.github.io/ja/works/masters-project-smart-codesign-vr/",
       "description": "SNaPボードゲームで子どもが考えたスマートオブジェクトを、VR空間で組み立てて動かすプロトタイピング環境。環境・入力・出力の3枚のカードを選び、条件と振る舞いを自分で定義する。Oculus Quest 2とUnityで実装した修士課程の共同プロジェクト。",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
@@ -74,13 +74,13 @@
   ]
 }
 </script>
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-3"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
 </head>
 <body>
 <main>
 
   <header>
-    <h1>Smart Codesign VR</h1>
+    <h1>子どものためのインタラクティブ・オブジェクトのプロトタイピングVRシステムの開発</h1>
     <div class="identity">
       <p class="tagline">制作：<a class="byline" href="../../">堀内 貴文（Takafumi Horiuchi）</a></p>
       <nav aria-label="ほかの場所のプロフィール">
@@ -124,9 +124,9 @@
 
     <h3>環境・入力・出力——3種類のカード</h3>
     <p>SNaPのカードは3種類あり、それぞれ役割が違う。</p>
-    <p><strong>環境（Environment）カード</strong>は、スマートにする対象そのものである。木、ベンチ、ブランコ、水辺、石、街灯、ゴミ箱、自転車、橋、階段、通学かばん——公園や街のなかにある、ありふれたものが並んでいる。センサーでも機能でもなく、それらが宿る「体」にあたる。</p>
-    <p><strong>入力（Input）カード</strong>は、その体が何を感じ取るかを決める。ボタン、動き、接触、距離、温度、湿度、明るさ、色、音、火、水位、天気予報など、センサーにあたるものである。</p>
-    <p><strong>出力（Output）カード</strong>は、その体が何をするかを決める。光る、音を鳴らす、振動する、動く、表示する、記録する、送信する——アクチュエータにあたるものである。</p>
+    <p><strong>環境（Environment）カード</strong>は、スマートにする対象そのものである。木、ベンチ、ブランコ、水辺、石、街灯、ゴミ箱、自転車、橋、階段、通学かばん——公園や街のなかにある、ありふれたものが並んでいる。センサーでも機能でもなく、それらを組み込む「対象物」にあたる。</p>
+    <p><strong>入力（Input）カード</strong>は、その対象物が何を感じ取るかを決める。ボタン、動き、接触、距離、温度、湿度、明るさ、色、音、火、水位、天気予報など、センサーにあたるものである。</p>
+    <p><strong>出力（Output）カード</strong>は、その対象物が何をするかを決める。光る、音を鳴らす、振動する、動く、表示する、記録する、送信する——アクチュエータにあたるものである。</p>
     <p>環境カードが要るのは、同じ入力と出力の組でも、どこに宿るかで意味がまるごと変わるからである。「動きを検知したら音を鳴らす」をゴミ箱に載せれば「ゴミを入れ損ねると音が鳴る」になり、街灯に載せれば「人が近づくと知らせる灯り」になる。入力と出力だけでは装置の仕様にしかならず、そこに環境を足してはじめて、身のまわりの出来事についての一文になる。</p>
 
     <figure class="paper-figure">
@@ -242,7 +242,7 @@
     <p>学術的な広がりとしては、三つの道筋を挙げた。一つは、同じi3Labで開発が進んでいたフィジカルボードとの比較である。現実の場と仮想環境で同じ協働ゲームを行い、仮想環境の側で会話の量が増えたという先行研究があり、同種の比較がこの二つの間でも成り立ちうる。二つめは、複数人での同時参加への対応である。「Codesign」という名を持つ以上、仮想空間の中で他者と一緒に組み立てられることには意味がある。三つめは、スマートオブジェクトの記述形式を標準化し、プラットフォームをまたいで持ち出せるようにすることである。</p>
 
     <h3>まとめ</h3>
-    <p>このプロジェクトで作ったのは、完成したスマートオブジェクトの見本ではなく、それを作るための場所である。環境・入力・出力という3枚のカードを、そのまま「体」「条件」「振る舞い」という組み立ての単位に置き換え、掴む・当てる・塗るという身体の動作でそれらを結びつけられるようにした。ボードゲームで生まれた一文は、ここで自分の手で動かせるものになり、ワークショップが終わったあとも残るデータになる。</p>
+    <p>このプロジェクトで作ったのは、完成したスマートオブジェクトの見本ではなく、それを作るための場所である。環境・入力・出力という3枚のカードを、そのまま「対象物」「条件」「振る舞い」という組み立ての単位に置き換え、掴む・当てる・塗るという身体の動作でそれらを結びつけられるようにした。ボードゲームで生まれた一文は、ここで自分の手で動かせるものになり、ワークショップが終わったあとも残るデータになる。</p>
   </section>
 
   <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva, and Olivia Ludkiewicz, “Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD,” Advanced User Interfaces (A.Y. 2020–21) Final Exam Project, Politecnico di Milano, 2021年2月。</p>
