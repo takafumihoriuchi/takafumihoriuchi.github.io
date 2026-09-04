@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <!-- This work alone is written in Japanese first: /ja/ is the source of record
      and every other language, this one included, is translated from it (owner's
      instruction, 2026-08-23). The mock renders live in this directory's assets
@@ -71,7 +71,7 @@
   ]
 }
 </script>
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>

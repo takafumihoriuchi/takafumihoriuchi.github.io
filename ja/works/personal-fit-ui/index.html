@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <!-- この作品だけは日本語版を正本とし、他言語は日本語版から翻訳する（本人指示
      2026-08-23）。画像は英語版配下の共通 assets を参照し、複製しない。 -->
 <title>Personal Fit UI - 制約型デザインによるUIの個別最適化 — 堀内 貴文</title>
@@ -71,7 +71,7 @@
   ]
 }
 </script>
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>

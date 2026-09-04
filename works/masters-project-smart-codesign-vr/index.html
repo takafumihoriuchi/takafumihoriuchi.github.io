@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <!-- Scaffold for a work whose write-up has not been written yet, in the shape
      OPERATIONS.md §3 fixes for that stage. The title is the name the work is
      known by and is carried untranslated; only the date beside it on the index
@@ -82,7 +82,7 @@
   ]
 }
 </script>
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>

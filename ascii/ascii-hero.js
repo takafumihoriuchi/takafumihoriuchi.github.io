@@ -1,13 +1,15 @@
 import {
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260904-4";
-import "./ascii-text-reveal.js?v=20260904-4";
+} from "./ascii-layout.js?v=20260904-6";
+import "./ascii-text-reveal.js?v=20260904-6";
+import {
+  asciiLoadElapsed,
+  asciiLoadHasStarted,
+  asciiLoadStarted,
+  holdAsciiLoad,
+} from "./ascii-load-clock.js?v=20260904-6";
 
-const SCENES_URL = new URL("./scenes.json?v=20260904-4", import.meta.url);
-// Dropped or throttled frames must not extend this load-only phase into
-// scrolling. Keep the clock local so stale dependency caches cannot break the
-// module graph when this behavior changes.
-const ASCII_LOAD_STARTED_AT = performance.now();
+const SCENES_URL = new URL("./scenes.json?v=20260904-6", import.meta.url);
 const FRAME_INTERVAL = 1000 / 10;
 const INTRO_FRAME_INTERVAL = 1000 / 6;
 const INTRO_DURATION = 625;
@@ -18,6 +20,12 @@ const scenesPromise = fetch(SCENES_URL)
     if (!response.ok) throw new Error(`Could not load ASCII scenes (${response.status})`);
     return response.json();
   });
+// The words wait for the drawing. Until this arrives there is no scene to
+// form, and an introduction that began without it would be over by the time
+// it did — which is what happened whenever this fetch was the slow part of
+// the load. Registered here, at module evaluation, which is well before the
+// reveal stops waiting.
+holdAsciiLoad(scenesPromise);
 
 function padFrames(lineSets, minimumColumns = 0) {
   const columns = Math.max(
@@ -127,6 +135,7 @@ class AsciiHero extends HTMLElement {
     this._raf = null;
     this._inView = false;
     this._started = false;
+    this._awaitingLoadClock = false;
     this._introEnabled = true;
     this._phase = this._introEnabled ? "intro" : "idle";
     this._motion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -285,8 +294,22 @@ class AsciiHero extends HTMLElement {
       || this._started
       || (!this._introEnabled && !this._inView)
     ) return;
+    // The introduction shares the page's one origin, and that origin is not
+    // set until the load reveal has its covers up and the tab is in front of
+    // somebody. Arriving early means waiting, not starting from a clock that
+    // has already run out.
+    if (this._introEnabled && !asciiLoadHasStarted()) {
+      if (!this._awaitingLoadClock) {
+        this._awaitingLoadClock = true;
+        asciiLoadStarted().then(() => {
+          this._awaitingLoadClock = false;
+          this._maybeStart();
+        });
+      }
+      return;
+    }
     this._started = true;
-    this._elapsed = Math.max(0, performance.now() - ASCII_LOAD_STARTED_AT);
+    this._elapsed = Math.max(0, asciiLoadElapsed());
     this._lastTick = null;
     if (this._introEnabled) {
       this._phase = "intro";
@@ -350,7 +373,7 @@ class AsciiHero extends HTMLElement {
     const delta = Math.min(time - this._lastTick, 120);
     this._lastTick = time;
     if (this._phase === "intro") {
-      this._elapsed = Math.max(0, time - ASCII_LOAD_STARTED_AT);
+      this._elapsed = Math.max(0, asciiLoadElapsed(time));
     } else {
       this._elapsed += delta;
     }

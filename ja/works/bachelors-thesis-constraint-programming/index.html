@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>制約型プログラミングに関する卒業論文 — 堀内 貴文</title>
 <meta name="description" content="シミュレーション中に、二度と成立しない条件を見極めて探索から外す。結果を変えずに計算量を減らし、評価モデルの実行時間を約半分にした制約型プログラミングの研究。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/bachelors-thesis-constraint-programming/">
@@ -78,7 +78,7 @@
 <link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
 <script src="../../../works/figures.js" defer></script>
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>

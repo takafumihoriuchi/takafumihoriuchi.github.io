@@ -1,11 +1,18 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260904-4";
+} from "./ascii-layout.js?v=20260904-6";
+import {
+  asciiLoadElapsed,
+  settledAsciiLoadHolds,
+  startAsciiLoadClock,
+} from "./ascii-load-clock.js?v=20260904-6";
 
-// All text and image instances use one page-level wall clock. A busy frame can
-// skip visual steps, but it cannot postpone completion until the user scrolls.
-const ASCII_LOAD_STARTED_AT = performance.now();
+// Tell the inline guard in the document head that this module is alive, so
+// its timeout stops being the thing that decides when the page is shown. It
+// is set before anything below can throw: a module that never got this far is
+// a module the guard should still be covering for.
+document.documentElement.dataset.asciiLoad = "preparing";
 const TARGET_SELECTOR = [
   "main h1", "main h2", "main h3", "main h4", "main h5", "main h6",
   "main p", "main figcaption", "main dt", "main dd", "main li",
@@ -45,6 +52,12 @@ const OUTLINE_SELECTOR = "main .works-more__box";
 const OUTLINE_GLYPH_LEAD = FRAME_INTERVAL * 3;
 const OUTLINE_GLYPHS = { "-": ["-", ".", "-", "~"], "|": ["|", ":", "|", "'"] };
 const PREPAINT_CLASS = "ascii-load-pending";
+// Measured from the navigation, not from this module: it bounds how long the
+// reader spends under the page cover, and the module's own arrival is part of
+// that. Matches the inline guard's timeout, which is the same bound written
+// for the case where this module never arrives at all.
+const READY_DEADLINE = 2500;
+const SETTLE_TIMEOUT = 250;
 const adaptiveAsciiAtlasCache = new Map();
 
 function clamp(value, minimum = 0, maximum = 1) {
@@ -314,9 +327,18 @@ class AsciiTextReveal {
   }
 
   start() {
+    if (this.prepare()) this.begin();
+  }
+
+  /* Everything that has to happen before the clock starts. Measuring the
+     element, walking its graphemes and rasterizing the atlas is the expensive
+     half, and it used to happen inside the formation it was preparing for.
+     The cover is left painted at its first frame, so the page can be
+     uncovered from here without the semantic DOM showing through. */
+  prepare() {
     if (this.motion.matches) {
       this.element.dataset.asciiRevealState = "reduced-motion";
-      return;
+      return false;
     }
 
     this.element.classList.add("ascii-text-reveal");
@@ -327,13 +349,13 @@ class AsciiTextReveal {
     this.context = this.canvas.getContext("2d");
     if (!this.context) {
       this.finish("error");
-      return;
+      return false;
     }
 
     this.rebuild();
     if (!this.glyphs.length || !this.particles.length) {
       this.finish("empty");
-      return;
+      return false;
     }
 
     this.element.dataset.asciiRevealState = this.reverse ? "dissolving" : "running";
@@ -349,11 +371,19 @@ class AsciiTextReveal {
         this.resizeObserver.observe(this.referenceAscii.element);
       }
     }
+    this.render();
+    return true;
+  }
+
+  /* Joins the page clock and runs. Separate from prepare() so that every
+     renderer on the page reads the same origin, whatever it cost to build. */
+  begin() {
+    if (this.complete || !this.canvas) return;
     if (this.reverse) {
       this.startedAt = performance.now();
       this.elapsed = FORMATION_DURATION;
     } else {
-      this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT - this.delay;
+      this.elapsed = asciiLoadElapsed() - this.delay;
       if (this.elapsed >= FORMATION_DURATION) {
         this.finish("complete");
         return;
@@ -531,7 +561,7 @@ class AsciiTextReveal {
       : 0;
     this.elapsed = this.reverse
       ? FORMATION_DURATION * (1 - progress)
-      : time - ASCII_LOAD_STARTED_AT - this.delay;
+      : asciiLoadElapsed(time) - this.delay;
 
     if (time - this.lastRender >= FRAME_INTERVAL) {
       this.render();
@@ -645,11 +675,15 @@ class AsciiImageReveal {
   }
 
   start() {
-    if (this.complete || this.canvas || this.motion.matches) return;
+    if (this.prepare()) this.begin();
+  }
+
+  prepare() {
+    if (this.complete || this.canvas || this.motion.matches) return false;
     const bounds = this.element.getBoundingClientRect();
     if (!bounds.width || !bounds.height) {
       this.finish("empty");
-      return;
+      return false;
     }
 
     this.canvas = document.createElement("canvas");
@@ -659,13 +693,19 @@ class AsciiImageReveal {
     this.context = this.canvas.getContext("2d");
     if (!this.context) {
       this.finish("error");
-      return;
+      return false;
     }
 
     this.motion.addEventListener("change", this.onMotionChange);
     this.element.dataset.asciiRevealState = "running";
     this.rebuild();
-    this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT - this.delay;
+    this.render();
+    return true;
+  }
+
+  begin() {
+    if (this.complete || !this.canvas) return;
+    this.elapsed = asciiLoadElapsed() - this.delay;
     if (this.elapsed >= FORMATION_DURATION) {
       this.finish("complete");
       return;
@@ -734,7 +774,7 @@ class AsciiImageReveal {
   tick(time) {
     this.frame = null;
     if (this.complete) return;
-    this.elapsed = time - ASCII_LOAD_STARTED_AT - this.delay;
+    this.elapsed = asciiLoadElapsed(time) - this.delay;
     if (time - this.lastRender >= FRAME_INTERVAL) {
       this.render();
       this.lastRender = time;
@@ -825,9 +865,13 @@ class AsciiOutlineReveal {
   }
 
   start() {
+    if (this.prepare()) this.begin();
+  }
+
+  prepare() {
     if (this.motion.matches) {
       this.element.dataset.asciiOutlineState = "reduced-motion";
-      return;
+      return false;
     }
 
     // Read the edge before the class hides it: from here on the stylesheet is
@@ -844,7 +888,7 @@ class AsciiOutlineReveal {
     };
     if (!(this.border.top || this.border.right || this.border.bottom || this.border.left)) {
       this.element.dataset.asciiOutlineState = "no-border";
-      return;
+      return false;
     }
 
     this.element.classList.add("ascii-outline-reveal");
@@ -855,20 +899,26 @@ class AsciiOutlineReveal {
     this.context = this.canvas.getContext("2d");
     if (!this.context) {
       this.finish("error");
-      return;
+      return false;
     }
 
     this.rebuild();
     if (!this.cells.length) {
       this.finish("empty");
-      return;
+      return false;
     }
 
     this.element.dataset.asciiOutlineState = "running";
     this.motion.addEventListener("change", this.onMotionChange);
     this.resizeObserver = new ResizeObserver(() => this.rebuild());
     this.resizeObserver.observe(this.element);
-    this.elapsed = performance.now() - ASCII_LOAD_STARTED_AT;
+    this.render();
+    return true;
+  }
+
+  begin() {
+    if (this.complete || !this.canvas) return;
+    this.elapsed = asciiLoadElapsed();
     if (this.elapsed >= FORMATION_DURATION) {
       this.finish("complete");
       return;
@@ -953,7 +1003,7 @@ class AsciiOutlineReveal {
   tick(time) {
     this.frame = null;
     if (this.complete) return;
-    this.elapsed = time - ASCII_LOAD_STARTED_AT;
+    this.elapsed = asciiLoadElapsed(time);
     if (time - this.lastRender >= FRAME_INTERVAL) {
       this.render();
       this.lastRender = time;
@@ -1039,36 +1089,139 @@ function revealableTextElements() {
   });
 }
 
+function afterDelay(milliseconds) {
+  return new Promise((resolve) => setTimeout(resolve, milliseconds));
+}
+
+function afterPageLoad() {
+  if (document.readyState === "complete") return Promise.resolve();
+  return new Promise((resolve) => {
+    window.addEventListener("load", resolve, { once: true });
+  });
+}
+
+function afterOneFrame() {
+  return new Promise((resolve) => requestAnimationFrame(resolve));
+}
+
+function afterTwoFrames() {
+  return new Promise((resolve) => {
+    requestAnimationFrame(() => requestAnimationFrame(resolve));
+  });
+}
+
+function whenVisible() {
+  if (!document.hidden) return Promise.resolve();
+  return new Promise((resolve) => {
+    const onChange = () => {
+      if (document.hidden) return;
+      document.removeEventListener("visibilitychange", onChange);
+      resolve();
+    };
+    document.addEventListener("visibilitychange", onChange);
+  });
+}
+
+/* Resolves once the page is actually being drawn. A tab in the background
+   gets no animation frames at all, so a formation started in one is a
+   formation nobody ever sees: it would sit at its first frame until the
+   reader came to the tab, and then find the clock long past its deadline and
+   finish every cover in a single step. That is most of what this whole change
+   is about, and it is why there is no deadline here — a page nobody is
+   looking at is a page in no hurry.
+
+   Two things say the page is being drawn and either will do: the tab
+   reporting itself visible, or a frame arriving. The frame is the stronger
+   evidence, being the thing the formation is made of, and racing it means an
+   embedding that misreports its visibility cannot leave the covers standing
+   over a page that is on screen. */
+function whenDrawable() {
+  return Promise.race([afterOneFrame(), whenVisible()]);
+}
+
+/* What the reveal is waiting for before it measures anything.
+ *
+ * The fonts are waited for whatever it costs. Every cover is a grid of cells
+ * laid over the boxes real graphemes occupy, so one measured against a
+ * fallback face is a cover standing beside the words it is meant to be over.
+ * The page sets no @font-face and asks for no font over the network, so this
+ * settles locally.
+ *
+ * The rest is bounded: the load event and whatever registered a hold — the
+ * hero's scene, so the drawing and the words still form as one thing. These
+ * are the ones that can hang on a bad connection, and what they hold up is
+ * the reader in front of a covered page. The deadline is counted from the
+ * navigation rather than from here, because this module's own arrival is part
+ * of that wait; past it the reveal goes ahead with what it has. */
+function whenPageIsReady() {
+  const remaining = Math.max(0, READY_DEADLINE - performance.now());
+  return Promise.all([
+    document.fonts.ready,
+    Promise.race([
+      Promise.all([afterPageLoad(), settledAsciiLoadHolds()]),
+      afterDelay(remaining),
+    ]),
+  ]);
+}
+
 async function initialize() {
+  // A reader who asked for less motion gets no formation, so the cover has
+  // nothing to protect and the wait below buys nothing: show the page. Every
+  // renderer refuses to run under this query anyway; this only keeps the
+  // waiting from happening in front of somebody who will see none of it.
+  if (window.matchMedia("(prefers-reduced-motion: reduce)").matches) {
+    startAsciiLoadClock();
+    document.documentElement.classList.remove(PREPAINT_CLASS);
+    return;
+  }
+
   const elements = revealableTextElements();
   const outlines = [...document.querySelectorAll(OUTLINE_SELECTOR)];
   const images = [...document.querySelectorAll("main img")];
   if (!elements.length && !images.length) {
+    // Nothing here to cover, but the hero is still waiting on this clock.
+    startAsciiLoadClock();
     document.documentElement.classList.remove(PREPAINT_CLASS);
     return;
   }
+  const instances = [];
   try {
-    await document.fonts.ready;
-    await new Promise((resolve) => requestAnimationFrame(() => requestAnimationFrame(resolve)));
+    await whenPageIsReady();
+    // One rendering opportunity for the layout the fonts just changed. Raced,
+    // because a tab in the background never gets one and the covers can be
+    // built there perfectly well: measuring and drawing to a canvas do not
+    // need a frame, only running does.
+    await Promise.race([afterTwoFrames(), afterDelay(SETTLE_TIMEOUT)]);
+
     elements.forEach((element, index) => {
-      new AsciiTextReveal(element, index).start();
+      instances.push(new AsciiTextReveal(element, index));
     });
     outlines.forEach((element, index) => {
-      new AsciiOutlineReveal(element, index).start();
+      instances.push(new AsciiOutlineReveal(element, index));
     });
-
     const imageLayer = document.createElement("div");
     imageLayer.className = "ascii-image-reveal";
     imageLayer.setAttribute("aria-hidden", "true");
     document.body.append(imageLayer);
     images.forEach((element, index) => {
-      new AsciiImageReveal(element, index, imageLayer).start();
+      instances.push(new AsciiImageReveal(element, index, imageLayer));
     });
-    // Canvas drawing and class removal happen in one rendering opportunity:
-    // the browser's first visible page frame therefore contains ASCII covers,
+
+    // Every cover is measured and painted at its first frame before the class
+    // goes, so the browser's first visible page frame contains ASCII covers,
     // never the uncovered semantic DOM that was parsed underneath.
+    const ready = instances.filter((instance) => instance.prepare());
     document.documentElement.classList.remove(PREPAINT_CLASS);
+    document.documentElement.dataset.asciiLoad = "covered";
+
+    await whenDrawable();
+    // From here the page has one origin, and it is this line. Nothing before
+    // it was animation; everything after it is.
+    startAsciiLoadClock();
+    ready.forEach((instance) => instance.begin());
+    document.documentElement.dataset.asciiLoad = "running";
   } catch (error) {
+    instances.forEach((instance) => instance.finish?.("error"));
     elements.forEach((element) => {
       element.dataset.asciiRevealState = "error";
       element.querySelector(".ascii-text-reveal__canvas")?.remove();
@@ -1078,7 +1231,9 @@ async function initialize() {
       element.classList.remove("ascii-outline-reveal");
       element.querySelector(".ascii-outline-reveal__canvas")?.remove();
     });
+    startAsciiLoadClock();
     document.documentElement.classList.remove(PREPAINT_CLASS);
+    document.documentElement.dataset.asciiLoad = "error";
     console.warn("ASCII text reveal could not start", error);
   }
 }

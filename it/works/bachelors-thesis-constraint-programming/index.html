@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Tesi di laurea sulla programmazione a vincoli — Takafumi Horiuchi</title>
 <meta name="description" content="Durante la simulazione, identificare le condizioni che non possono più verificarsi e escluderle dalla ricerca. Uno studio sulla programmazione a vincoli che riduce il carico computazionale senza cambiare i risultati, dimezzando circa il tempo di esecuzione del modello di valutazione.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
@@ -80,7 +80,7 @@
 }
 </script>
 <link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>

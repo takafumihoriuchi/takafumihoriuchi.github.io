@@ -31,10 +31,11 @@ MODULE_RE = re.compile(
     r'\n?<script\s+type="module"\s+src="/ascii/ascii-hero\.js'
     r'(?:\?v=[^"]+)?"></script>\n?'
 )
+# Matches whatever form of the guard a page was last wired with, so that
+# changing PREPAINT replaces the old one rather than adding a second.
 PREPAINT_RE = re.compile(
     r'\n?<script>document\.documentElement\.classList\.add\('
-    r'"ascii-load-pending"\);setTimeout\(\(\)=>document\.documentElement'
-    r'\.classList\.remove\("ascii-load-pending"\),2500\);</script>\n?'
+    r'"ascii-load-pending"\);.*?</script>\n?'
 )
 VIEWPORT_RE = re.compile(r'<meta\s+name="viewport"\s+content="[^"]+">')
 PRIMARY_HERO_RE = re.compile(
@@ -123,8 +124,8 @@ def main() -> int:
     root = Path(__file__).resolve().parent.parent
     version_token = f"?v={ASSET_VERSION}"
     versioned_sources = {
-        "ascii/ascii-hero.js": 3,
-        "ascii/ascii-text-reveal.js": 1,
+        "ascii/ascii-hero.js": 4,
+        "ascii/ascii-text-reveal.js": 2,
         # The index's works panel dissolves its control with the same renderer,
         # so it is part of the same module graph and carries the same version.
         "works-panel.js": 1,

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Tesis de graduación sobre programación basada en restricciones — Takafumi Horiuchi</title>
 <meta name="description" content="Durante la simulación, se identifican las condiciones que nunca se cumplirán y se excluyen de la búsqueda. Investigación sobre programación por restricciones que redujo la cantidad de cálculos sin cambiar los resultados y redujo el tiempo de ejecución del modelo de evaluación a aproximadamente la mitad.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/es/works/bachelors-thesis-constraint-programming/">
@@ -80,7 +80,7 @@
 }
 </script>
 <link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>

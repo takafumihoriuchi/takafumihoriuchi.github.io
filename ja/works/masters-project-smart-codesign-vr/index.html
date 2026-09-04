@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>子どものためのインタラクティブ・オブジェクトのプロトタイピングVRシステムの開発 — 堀内 貴文</title>
 <meta name="description" content="SNaPボードゲームで子どもが考えたスマートオブジェクトを、VR空間で組み立てて動かす。環境・入力・出力の3枚のカードを選び、条件と振る舞いを自分で定義するプロトタイピング環境を、Oculus Quest 2とUnityで実装した修士課程の共同プロジェクト。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/masters-project-smart-codesign-vr/">
@@ -74,7 +74,7 @@
   ]
 }
 </script>
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>

@@ -3,7 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>document.documentElement.classList.remove("ascii-load-pending"),2500);</script>
+<script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>세상에 하나뿐인 나만의 포켓몬 생성 — 호리우치 다카후미</title>
 <meta name="description" content="플레이 중 선택한 여섯 단어로 새로운 포켓몬 종을 생성하고, 플레이어가 만나 포획할 수 있는 형태로 게임에 등장시키는 연구 프로토타입. 제약이 게임 밸런스를 어떻게 지키는지, 생성된 캐릭터가 애착을 불러일으키려면 무엇이 필요한지를 탐구했다.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/my-own-pokemon-generation/">
@@ -68,7 +68,7 @@
 }
 </script>
 <link rel="stylesheet" href="../../../works/my-own-pokemon-generation/page.css">
-<script type="module" src="/ascii/ascii-hero.js?v=20260904-4"></script>
+<script type="module" src="/ascii/ascii-hero.js?v=20260904-6"></script>
 </head>
 <body>
 <main>
