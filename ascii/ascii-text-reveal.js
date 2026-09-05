@@ -1,12 +1,12 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260904-7";
+} from "./ascii-layout.js?v=20260906-1";
 import {
   asciiLoadElapsed,
   settledAsciiLoadHolds,
   startAsciiLoadClock,
-} from "./ascii-load-clock.js?v=20260904-7";
+} from "./ascii-load-clock.js?v=20260906-1";
 
 // Tell the inline guard in the document head that this module is alive, so
 // its timeout stops being the thing that decides when the page is shown. It
@@ -45,10 +45,14 @@ const PRINTABLE_ASCII = Array.from(
   { length: 94 },
   (_, index) => String.fromCharCode(index + 33)
 );
-// The one element on the page whose edge is drawn rather than written. Its
-// border cannot be formed by the text renderer — that one covers ink, and a
-// border is not ink — so it gets a pass of its own.
-const OUTLINE_SELECTOR = "main .works-more__box";
+// The two elements on the site whose edge is drawn rather than written: the
+// index control that opens the rest of the list, and the one at the foot of a
+// work page that goes back to it. A border cannot be formed by the text
+// renderer — that one covers ink, and a border is not ink — so it gets a pass
+// of its own. Both are drawn boxes standing on their own in the page, which is
+// what makes an edge that simply appears at the end of the formation read as a
+// mistake rather than as the last frame.
+const OUTLINE_SELECTOR = "main .works-more__box, main .home-button__box";
 const OUTLINE_GLYPH_LEAD = FRAME_INTERVAL * 3;
 const OUTLINE_GLYPHS = { "-": ["-", ".", "-", "~"], "|": ["|", ":", "|", "'"] };
 const PREPAINT_CLASS = "ascii-load-pending";

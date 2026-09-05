@@ -1,15 +1,15 @@
 import {
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260904-7";
-import "./ascii-text-reveal.js?v=20260904-7";
+} from "./ascii-layout.js?v=20260906-1";
+import "./ascii-text-reveal.js?v=20260906-1";
 import {
   asciiLoadElapsed,
   asciiLoadHasStarted,
   asciiLoadStarted,
   holdAsciiLoad,
-} from "./ascii-load-clock.js?v=20260904-7";
+} from "./ascii-load-clock.js?v=20260906-1";
 
-const SCENES_URL = new URL("./scenes.json?v=20260904-7", import.meta.url);
+const SCENES_URL = new URL("./scenes.json?v=20260906-1", import.meta.url);
 const FRAME_INTERVAL = 1000 / 10;
 const INTRO_FRAME_INTERVAL = 1000 / 6;
 const INTRO_DURATION = 625;

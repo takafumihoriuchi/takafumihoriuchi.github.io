@@ -388,6 +388,80 @@ nav a:hover,
 .byline:hover,
 .langs a:hover { background-color: var(--accent-wash); }
 
+/* The way home at the foot of a work page. It is the same control as the
+   index's "show more" — a drawn box inside a padded target, both borrowed from
+   the work cards — because the two do the same kind of thing: that one opens
+   the rest of the list, this one goes back to it. Its own pair of classes
+   rather than a second use of `.works-more`, because that name belongs to a
+   label driving a checkbox and this is a link.
+
+   It opts out of the shared `nav a` treatment above. That box is drawn only on
+   hover, under text that is already underlined; this one is drawn all the
+   time, because at the end of a long page there is nothing else on the line to
+   say that anything is there.
+
+   Wide, and no taller than the type needs. Going back is the only thing this
+   control does, so the reach across is generous — the label runs to 22
+   characters and the box gives it 3rem of air on each side. The height stays
+   the index button's 0.3rem: more would be a larger target, but also a heavier
+   object than the foot of a page wants.
+
+   Nothing comes apart on the way out. The index button dissolves into ASCII
+   when it is clicked because it is leaving a page that stays; this one is
+   followed by a navigation, and an animation with nobody left to watch it is
+   only a delay. */
+.home-button {
+  display: block;
+  width: fit-content;
+  max-width: 100%;
+  margin: 0 auto;
+  padding: 0.225rem 0.35rem;
+  border-radius: 5px;
+  text-decoration: none;
+}
+
+.home-button:hover { background-color: var(--accent-wash); }
+
+/* The box gives up its own ground under the pointer, for the reason the index
+   control does: --accent-wash is translucent, and painted over itself it is a
+   darker colour rather than the same one. */
+.home-button:hover .home-button__box { background-color: transparent; }
+
+/* Except while a cover is over it — same exception, and the same reason, as
+   the index control: the renderer paints the element's own background into the
+   canvas to hide the DOM underneath, and a translucent value neither hides
+   what is beneath it nor stays the colour it started as when it is painted
+   over itself once a frame. */
+.home-button:hover .home-button__box.ascii-text-reveal,
+.home-button:hover .home-button__box.ascii-outline-reveal {
+  background-color: var(--bg);
+}
+
+.home-button__box {
+  display: block;
+  padding: 0.3rem 3rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background-color: var(--bg);
+  color: var(--accent);
+  font-size: 0.75rem;
+  text-align: center;
+}
+
+/* Centred rather than started, because it is a control and not a list of
+   places to go — the one nav on the site where that is true. A browser without
+   `:has()` drops this and leaves the button where every other nav item begins,
+   which is a plainer version of the same thing rather than a broken one. */
+nav ul:has(> li > .home-button) { justify-content: center; }
+
+/* On a phone the padding is what has to give. The label is 22 full-width
+   characters — 264px at this size — and 3rem on both sides would put the box
+   past the measure; at 1rem it holds 296px of the 327px a 375px screen
+   leaves, so the target is nearly the column and still inside it. */
+@media (max-width: 32rem) {
+  .home-button__box { padding-inline: 1rem; }
+}
+
 /* Decorative marker for outbound links — a symbol, not prose, so it stays in
    CSS without putting text out of reach of translation.
 
@@ -730,7 +804,8 @@ nav a:hover,
    The fade belongs to the way out and is declared there. A transition in the
    state being entered is the one that runs, so the border still leaves gently
    when the box is dissolving, without ever arriving that way. */
-.works-more__box.ascii-outline-reveal { border-color: transparent; }
+.works-more__box.ascii-outline-reveal,
+.home-button__box.ascii-outline-reveal { border-color: transparent; }
 
 .works-toggle:checked ~ .works-more .works-more__box {
   border-color: transparent;
@@ -885,7 +960,16 @@ nav ul {
 .home-identity h1 .role {
   color: var(--accent);
   font-weight: 400;
+  white-space: nowrap;
 }
+
+/* Why the role is one unbreakable piece: the line has exactly one place it
+   should turn, and that is between the name and the role. Left to itself a
+   phone breaks wherever the words run out — “…as Design” with “Engineer”
+   alone underneath — which reads as a sentence that ran over rather than as a
+   name with its role beneath it. Held together, the role either follows the
+   name or takes the next line whole. It is 190px at this size, so it fits the
+   column on a 320px screen with room to spare. */
 
 /* With a tagline the index lockup is three lines rather than two, and holding
    0.35rem all the way down would set them as three unrelated lines. The
