@@ -87,15 +87,6 @@
 
   <header>
     <h1>Diplomverko pri programado kun limigoj</h1>
-    <div class="identity">
-      <p class="tagline">de <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Profiloj aliloke">
-        <ul>
-          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
-          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
-        </ul>
-      </nav>
-    </div>
     <p class="dateline">junio 2019</p>
   </header>
 
@@ -120,13 +111,13 @@ o-|\
   <hr class="section-break">
 
   <section>
-    <h2>Defioj——ju pli da eblecoj, des pli malrapida estas la kalkulado</h2>
+    <h2>Defioj — ju pli da eblecoj, des pli malrapida estas la kalkulado</h2>
     <p>HydLa estas lingvo por priskribi “hibridajn sistemojn”, kiuj kombinas kontinuan ŝanĝon kaj diskretajn eventojn, kiel matematikajn kaj logikajn limigojn. Sen neceso skribi ĉiujn procedurojn en ordo, oni povas simuli konduton kiu kontentigas kondiĉojn per deklarado kio devus okazi.</p>
     <p>Aliflanke, en modelo kun multaj reguloj kiuj validas depende de kondiĉoj, la simuililo ripete kontrolas grandan nombron da kandidatoj. Ĉar ili restas kiel kandidatoj eĉ se la kondiĉoj jam ne validas aŭ iam en la estonteco, la pli granda la modelo, des pli multaj nebezonataj kalkuloj akumuliĝas.</p>
   </section>
 
   <section>
-    <h2>Temo——Sistemo kie miksiĝas kontinua kaj diskreta</h2>
+    <h2>Temo — Sistemo kie miksiĝas kontinua kaj diskreta</h2>
     <p>La saltanta pilko estas klara ekzemplo de hibrida sistemo. En aerospaco ĝia pozicio kaj rapido ŝanĝiĝas kontinue, sed kiam ĝi frapas la plankon, okazas disreta evento de reboto. Termostato, aŭtomobilo kaj roboto ankaŭ enhavas la samajn du tipojn de ŝanĝoj interne, kvankam sur malsamaj skaloj.</p>
     <p>Por taksado, oni uzis modelon en kiu horizontale moviĝanta pilko rebatis sur surfaco dividita en plurajn sekciojn. Ĉiu sekcio havas regulon kun kondiĉo: 'se la pilko atingas ĉi tiun gamon, ĝi rebatos'. Pliigante la nombro de sekcioj, oni povas reprezenti pli da objektoj, sed ankaŭ la simulatoro devas esplori pli da kondiĉoj.</p>
 
@@ -137,19 +128,19 @@ o-|\
   </section>
 
   <section>
-    <h2>Kollo—la nombro de kondiĉoj plialtigas la komputdan laboron</h2>
+    <h2>Kollo — la nombro de kondiĉoj plialtigas la komputdan laboron</h2>
     <p>Reguloj kiuj validas nur kiam certaj kondiĉoj estas plenumitaj estas nomataj 'kun-gvardiaj restriktoj'. En la taksa modelo, la rebatiĝa regulo de specifa sekcio validas nur kiam la pilko atingas la plankon kaj ĝia horizontala pozicio troviĝas ene de tiu sekcio.</p>
     <p>Kiam oni pliigis la nombron de sekcioj de 10 ĝis 200, la tradicia simuliilo malrapidis proksimume laŭ la kvadrato de la sekcia nombro. En grandaj modeloj, ĉar la nombro de objektoj, kontaktoareoj kaj eblaj eventoj kreskas, la sama problemo fariĝas pli granda.</p>
   </section>
 
   <section>
-    <h2>Esploro——96% de la prilaborada tempo troviĝis kie</h2>
+    <h2>Esploro — 96% de la prilaborada tempo troviĝis kie</h2>
     <p>Kiam oni mezuris la prilaboran tempon, en modelo kun 100 blokoj, 96% de la tuta tempo estis uzata por <code>FindMinTime</code>. Ĉi tio estas la procezo por trovi la «plej proksime okazos» inter la kandidatoj. Tial ĉiuj gardaj kondiĉoj estis taksataj plurfoje.</p>
     <p>La lokoj por plibonigo fariĝis klaraj. Anstataŭ rekrei la tutan kalkulmetodon, simple sekure malpliigi la kandidatojn transdonotajn al <code>FindMinTime</code>. La celo estis ne ŝanĝi la simulan rezulton sed forigi nur la nebezonatajn eblecojn.</p>
   </section>
 
   <section>
-    <h2>Alproksimiĝo—sekure forigi kondiĉojn, kiujn ne eblas plu ricevi</h2>
+    <h2>Alproksimiĝo — sekure forigi kondiĉojn, kiujn ne eblas plu ricevi</h2>
     <p>Bonvolu imagi pilkon malsupren saltantan ŝtuparon. Se la pilko preterpasas unu paŝon kaj daŭre progresas antaŭen, tiu paŝo jam ne povas influi la pilkon. Homo rigardanta la diagramon tuj ignoras la paŝojn malantaŭ la pilko. La originala algoritmo daŭre kontrolis ĉiun el ili unu post alia.</p>
 
     <figure class="paper-figure">
@@ -157,7 +148,7 @@ o-|\
       <figcaption>Kiam la pilko moviĝas dekstren, la gardo de la ombrita tavolo malantaŭ ĝi povas esti preterlasita.</figcaption>
     </figure>
 
-    <p>La malfacilaĵo estas montrado ke la forigita gardilo poste ne estos bezonata. Se oni forigas ĝin nur ĉar nuntempe ĝi estas falsa, kiam ĝi denove fariĝos vera, ĝi povus silenteme doni malĝustan rezulton. Tial la proponita metodo uzas monotonecon—ĉu oni povas garantii, ke certa variablo daŭre kreskas aŭ malpliiĝas dum certa tempointerspaco.</p>
+    <p>La malfacilaĵo estas montrado ke la forigita gardilo poste ne estos bezonata. Se oni forigas ĝin nur ĉar nuntempe ĝi estas falsa, kiam ĝi denove fariĝos vera, ĝi povus silenteme doni malĝustan rezulton. Tial la proponita metodo uzas monotonecon — ĉu oni povas garantii, ke certa variablo daŭre kreskas aŭ malpliiĝas dum certa tempointerspaco.</p>
 
     <h3>Kiam la direkto de ŝanĝo ne ŝanĝiĝas</h3>
     <p>La unua aliro taŭgas kiam variablo moviĝas unuflanken tra la tuta simulaĵo. En modelo kun dividitaj surfacoj, la horizontala pozicio de la pilko ĉiam kreskas. Post kiam ĝi transpasos iun sekcion, la kondiĉoj de tiu sekcio neniam plu estos plenigitaj. Ĉi tiu trajto povas esti kontrolita antaŭ la simulaĵo per modela kontrola tekniko, do la gardoj, kiuj fariĝis nenecesaj dum la ekzekuto, povas esti sekure forigitaj.</p>
@@ -177,7 +168,7 @@ o-|\
   </section>
 
   <section>
-    <h2>Rezulto——Reduci la ekzekutan tempon de la taksila modelo proksimume je duono</h2>
+    <h2>Rezulto — Reduci la ekzekutan tempon de la taksila modelo proksimume je duono</h2>
     <p>Ni efektivigis respondon al uniforma monotoneco kaj taksis ĝin per modelo kun dividitaj surfacoj. Tamen, ĉu la originala algoritmo aŭ la proponita metodo, la bezonata tempo pliiĝas kiam la nombro de segmentoj kreskas. Tamen, la proponita metodo konstante postulas malpli da laboro. Komparante la kongruajn kurbojn, la plej alta koeficiento malkreskis de 1.1463 al 0.6083, kaj en ĉi tiu referenca testado la tuta simula tempo reduktiĝis preskaŭ duoble.</p>
     <p>Ĉi tio ne estas aserto, ke ĉiuj modeloj de HydLa duobliĝos je rapideco. Ĝi montras, kie ĉi tiu metodo funkcias — en modeloj kun multaj celoj kun gardoj, kie la direkto de ŝanĝo povas esti pruvita, kaj dum la ekzekuto la gardoj fariĝas permanente neapartenantaj.</p>
 

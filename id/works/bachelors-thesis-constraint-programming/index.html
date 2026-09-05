@@ -87,15 +87,6 @@
 
   <header>
     <h1>Tesis kelulusan tentang pemrograman berbasis constraint</h1>
-    <div class="identity">
-      <p class="tagline">oleh <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Profil di tempat lain">
-        <ul>
-          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
-          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
-        </ul>
-      </nav>
-    </div>
     <p class="dateline">Juni 2019</p>
   </header>
 
@@ -137,7 +128,7 @@ o-|\
   </section>
 
   <section>
-    <h2>Titik leher botol——Jumlah kondisi meningkatkan kompleksitas perhitungan</h2>
+    <h2>Titik leher botol — Jumlah kondisi meningkatkan kompleksitas perhitungan</h2>
     <p>Aturan yang hanya berlaku ketika kondisi terpenuhi disebut 'kontraint bersyarat'. Dalam model evaluasi, aturan pantulan dari suatu area hanya berlaku ketika bola mencapai lantai dan posisinya secara horizontal berada di dalam area tertentu.</p>
     <p>Ketika jumlah petak ditingkatkan dari 10 menjadi 200, simulator konvensional menjadi lambat kira-kira sebanding dengan kuadrat jumlah petak. Pada model berskala besar, masalah yang sama menjadi lebih besar karena bertambahnya objek, area kontak, dan kemungkinan kejadian.</p>
   </section>
@@ -177,7 +168,7 @@ o-|\
   </section>
 
   <section>
-    <h2>Hasil——Waktu eksekusi model penilaian sekitar setengahnya</h2>
+    <h2>Hasil — Waktu eksekusi model penilaian sekitar setengahnya</h2>
     <p>Kami mengimplementasikan penanganan untuk monotoni yang seragam dan mengevaluasinya pada model yang dibagi menjadi beberapa bidang. Baik algoritme asli maupun metode yang diusulkan, waktu yang dibutuhkan meningkat seiring bertambahnya jumlah bidang. Namun demikian, metode yang diusulkan konsisten membutuhkan lebih sedikit pekerjaan. Jika dibandingkan kurva yang dipasang, koefisien tertinggi turun dari 1,1463 menjadi 0,6083, dan pada tolok ukur ini, waktu total simulasi menjadi kira-kira setengahnya.</p>
     <p>Ini bukan klaim bahwa semua model HydLa akan menjadi dua kali lebih cepat. Yang ditunjukkan adalah tempat di mana metode ini efektif — yaitu model dengan banyak objek yang memiliki guard, arah perubahan dapat dibuktikan, dan selama eksekusi guard menjadi tidak relevan secara permanen.</p>
 

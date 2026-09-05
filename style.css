@@ -864,6 +864,29 @@ nav ul {
 .home-identity { display: block; }
 .home-identity nav { margin-top: 0.35rem; }
 
+/* The role stays on the name's line rather than moving under it, so the two
+   are met in one movement and read as one phrase. What separates them is
+   colour alone: the name at full text strength — 17.1:1 on the light ground,
+   15.0:1 on the dark — and the role in the accent, at 5.37:1 and 6.74:1. Both
+   are read without effort, and only one of them is read first. Comfortably
+   inside AA at this size in both themes.
+
+   The brown is not decoration. It is the colour this site already gives to
+   the lines that name a thing rather than say something — the section
+   headings — so the role arrives in the one colour the page has already
+   defined as a label.
+
+   The weight comes off with it, but the size does not. Colour alone left the
+   role standing at the name's own weight, which is a lot of presence for a
+   qualifier; at 400 against the name's 600 the second half of the line steps
+   back without being made small. Keeping the size is what holds the two
+   halves in one sentence about one person, rather than a name with a caption
+   bolted underneath it. */
+.home-identity h1 .role {
+  color: var(--accent);
+  font-weight: 400;
+}
+
 /* With a tagline the index lockup is three lines rather than two, and holding
    0.35rem all the way down would set them as three unrelated lines. The
    tagline qualifies the name directly above it and keeps the tight step; the
@@ -999,6 +1022,37 @@ body:is(:lang(ja), :lang(zh), :lang(ko)) { --text: 0.875rem; }
 :is(:lang(ja), :lang(zh), :lang(ko)) h2 {
   font-size: 0.875rem;
   letter-spacing: 0.06em;
+}
+
+/* Where a Japanese title is allowed to break. Japanese is written without
+   spaces, so a browser left to itself may break between any two characters —
+   the line ends in the middle of a word, and the reader has to reassemble it
+   across the turn. The title is the one line on the page where that is least
+   affordable.
+
+   Two declarations and a piece of markup do the work together. `keep-all`
+   removes every break the browser would have invented, `<wbr>` in the title
+   puts back the ones the author accepts, and the line then ends at the last
+   of those that fits. The markup is the part that carries the judgement:
+   `制約型プログラミング` and `インタラクティブ・オブジェクト` are single terms
+   in this author's vocabulary, and only the person writing the title knows
+   that.
+
+   `balance` comes off. Balancing chooses the break that evens the two lines
+   out, which is right for an English headline and wrong here: it leaves the
+   first line short of the measure while the reader is asking why. Filling the
+   line and turning at the last word that fits is what a Japanese title does
+   on paper.
+
+   `break-word` is the floor, not the intent. A title with no `<wbr>` in it —
+   a new work page whose author has not annotated it yet — is one unbreakable
+   run under `keep-all` and would otherwise run out of the measure; this puts
+   it back to the browser's own behaviour instead, which is where it was
+   before this rule existed. */
+:lang(ja) h1 {
+  text-wrap: wrap;
+  word-break: keep-all;
+  overflow-wrap: break-word;
 }
 
 /* The index tagline is a statement rather than something to read through, and

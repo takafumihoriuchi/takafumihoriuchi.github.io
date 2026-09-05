@@ -87,15 +87,6 @@
 
   <header>
     <h1>Tesi di laurea sulla programmazione a vincoli</h1>
-    <div class="identity">
-      <p class="tagline">di <a class="byline" href="../../">Takafumi Horiuchi</a></p>
-      <nav aria-label="Profili su altri siti">
-        <ul>
-          <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
-          <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
-        </ul>
-      </nav>
-    </div>
     <p class="dateline">giugno 2019</p>
   </header>
 
@@ -143,7 +134,7 @@ o-|\
   </section>
 
   <section>
-    <h2>Indagine——Dove si trovava il 96% del tempo di elaborazione</h2>
+    <h2>Indagine — Dove si trovava il 96% del tempo di elaborazione</h2>
     <p>Misurando il tempo di elaborazione, nel modello con 100 sezioni, il 96% del tempo totale veniva utilizzato per <code>FindMinTime</code>. Si tratta del processo di ricerca del "prossimo evento più imminente" tra i candidati. Pertanto, tutte le condizioni di guardia venivano valutate ripetutamente.</p>
     <p>I punti da migliorare sono diventati chiari. Non è necessario rifare l'intero metodo di calcolo, basta ridurre in sicurezza i candidati da passare a <code>FindMinTime</code>. L'obiettivo era evitare solo le possibilità che non è necessario verificare, senza modificare i risultati della simulazione.</p>
   </section>
@@ -177,7 +168,7 @@ o-|\
   </section>
 
   <section>
-    <h2>Risultato——Tempo di esecuzione del modello di valutazione ridotto di circa metà</h2>
+    <h2>Risultato — Tempo di esecuzione del modello di valutazione ridotto di circa metà</h2>
     <p>Abbiamo implementato la gestione della monotonicità uniforme e valutato il modello suddividendo la superficie. Sia l'algoritmo originale sia il metodo proposto hanno tempi di esecuzione maggiori con l'aumentare del numero di suddivisioni. Tuttavia, il metodo proposto richiedeva costantemente meno lavoro. Confrontando le curve adattate, il coefficiente di ordine più alto è passato da 1,1463 a 0,6083, e in questo benchmark il tempo totale di simulazione si è ridotto circa della metà.</p>
     <p>Questo non è un'affermazione che ogni modello HydLa diventerà il doppio più veloce. Ciò che viene indicato è dove questo metodo funziona: modelli che hanno molti oggetti con guardie, nei quali la direzione delle variazioni può essere dimostrata e le guardie divengono permanentemente irrilevanti durante l'esecuzione.</p>
 
