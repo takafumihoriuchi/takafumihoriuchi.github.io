@@ -2,40 +2,48 @@
  * and runs the box open between them.
  *
  * The opening itself is still a checkbox and its label; nothing here decides
- * what is shown. What a stylesheet cannot supply is where the fourth card ends
- * and how tall the control is, because both are sums of text that runs to a
+ * which entries are shown. What a stylesheet cannot supply is the list's open
+ * height and the control's height, because both are sums of text that runs to a
  * different number of lines in every language — and a box cannot be animated
- * to or from `auto`. So this file writes those two numbers and steps out.
+ * to or from `auto`. So this file reads those two numbers and steps out.
  *
- * Without it the panel still opens, still scrolls and still shows its
- * scrollbar; it arrives at once instead of travelling, and falls back to the
- * fixed height in the stylesheet. A hard-coded height was the alternative and
- * it cannot be right twice: the same four cards stand 581px tall in Japanese
- * and 665px in German, and both numbers move again with every work added.
+ * Without it the panel still opens and shows every card; it arrives at once
+ * instead of travelling. A hard-coded height was the alternative and it cannot
+ * be right twice: every language wraps differently, and every new work changes
+ * the answer again.
  */
 
 import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260904-7";
 
-/* Two cards are on show before the control is pressed — the stylesheet hides
- * the rest — so opening to four is what doubles the list at the moment it is
- * asked to. Three was right while there were fewer works behind the control;
- * on a list this length it reads as one more card rather than as more.
+/* This is the one switch between the two supported presentations:
+ *
+ *   "all"    shows the whole list in the page, without an inner scrollbar.
+ *   "scroll" restores the four-card window and its inner scrollbar.
+ *
+ * Two cards remain on show before the control is pressed in either mode.
  */
-const OPEN_CARDS = 4;
+const OPEN_MODE = "all";
+const SCROLL_MODE = "scroll";
+const SCROLL_OPEN_CARDS = 4;
 // A little longer than the 340ms the box takes to be carried off, so the last
 // particles go out after the movement has settled rather than with it.
 const DISSOLVE_DURATION = 420;
 const still = matchMedia("(prefers-reduced-motion: reduce)");
+const stacked = matchMedia("(max-width: 32rem)");
 
-/* Where the fourth card ends, measured from the panel's own top edge so that
- * the half-leading the list carries above its first card is inside the figure,
- * and offset by the current scroll so that measuring an already-scrolled panel
- * is still right. The stylesheet decides what to do with it — take it, or cap
- * it against the window, or ignore it below the width where the cards stack.
+/* In scroll mode, writes where the fourth card ends from the panel's own top
+ * edge. The stylesheet takes that value or caps it against the window. All mode
+ * has no cap to measure: the panel's natural height is the open height, however
+ * many cards the list acquires.
  */
 function fit(panel, list) {
+  if (OPEN_MODE !== SCROLL_MODE) {
+    panel.style.removeProperty("--panel-height");
+    return;
+  }
+
   const cards = list.children;
-  if (cards.length <= OPEN_CARDS) {
+  if (cards.length <= SCROLL_OPEN_CARDS) {
     panel.style.removeProperty("--panel-height");
     return;
   }
@@ -43,7 +51,7 @@ function fit(panel, list) {
   // While the panel is closed the cards past the second are display:none and
   // have no box to measure. Leave the last good value in place; this runs
   // again on the way open, when they have one.
-  const last = cards[OPEN_CARDS - 1];
+  const last = cards[SCROLL_OPEN_CARDS - 1];
   if (!last.getClientRects().length) return;
 
   const top = panel.getBoundingClientRect().top;
@@ -56,7 +64,7 @@ function fit(panel, list) {
  * box occupied still lying between the panel and the bottom of the window.
  *
  * Without it the box does the reader a disservice: the panel grows downward,
- * the fourth card opens below the fold, and pressing `show more` earns a
+ * the newly revealed cards open below the fold, and pressing `show more` earns a
  * scroll before it shows anything more. The page below the section does not
  * move on screen while this runs — it is pushed down by exactly what the
  * window travels — so what changes is the panel filling the space, which is
@@ -105,6 +113,10 @@ for (const panel of document.querySelectorAll(".works-panel")) {
   const label = panel.parentElement.querySelector(".works-more");
   if (!list || !toggle) continue;
 
+  // CSS owns both presentations; this attribute selects one without making
+  // every translated page repeat a mode setting.
+  panel.dataset.openMode = OPEN_MODE;
+
   // The height the panel is leaving from. Only meaningful while it is closed,
   // which is the only time it is written.
   let closed = null;
@@ -148,9 +160,8 @@ for (const panel of document.querySelectorAll(".works-panel")) {
   // The list changes height twice over: when the panel opens and the hidden
   // cards take their place, and whenever the window is resized and the
   // descriptions rewrap. Observing the list catches both, and cannot feed back
-  // into itself — the panel's height is not the list's, and the scrollbar
-  // gutter the stylesheet reserves in both states keeps the width from moving
-  // when the scrollbar arrives.
+  // into itself — the panel's height is not the list's. In optional scroll mode
+  // its reserved gutter also keeps the width from moving when the bar arrives.
   new ResizeObserver(measure).observe(list);
   measure();
 
@@ -179,12 +190,15 @@ for (const panel of document.querySelectorAll(".works-panel")) {
     const rest = panel.getBoundingClientRect().top + scrollY + open + room - innerHeight;
 
     // Downward only — a box that says `more` should not take the reader back
-    // up the page — and only while the panel and the band below it can be on
-    // screen together. Above the stacking width the stylesheet keeps the panel
-    // that short, so that is the ordinary case; below it the panel is the
-    // entire list and taller than any phone, no scroll position shows the
-    // cards that were asked for, and the page is left where the reader had it.
-    const carry = open + room <= innerHeight && rest > scrollY ? rest : null;
+    // up the page. In all mode a long desktop list can exceed the window, but
+    // the page can still follow its growing bottom just as it followed the
+    // fourth card before; this also keeps the behaviour useful as works are
+    // added. On a stacked phone the current rule remains: one card can already
+    // fill most of the screen, so racing through several of them would be less
+    // helpful than leaving the reader where they pressed.
+    const canFollow = open + room <= innerHeight ||
+      (OPEN_MODE === "all" && !stacked.matches);
+    const carry = canFollow && rest > scrollY ? rest : null;
 
     if (still.matches) {
       // Reduced motion asks for the outcome without the travel, and that
