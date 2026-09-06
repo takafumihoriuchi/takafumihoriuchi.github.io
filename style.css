@@ -223,14 +223,18 @@ section:has(+ ascii-hero[data-scene="footer-rest"]) { margin-top: 9rem; }
    weight and tracking, so the break reads as belonging to the same voice as
    the words it stands between.
 
-   The glyphs are generated rather than written into the markup. They carry
-   nothing to translate — the mark is the same on all fourteen index pages —
-   and an <hr> tells a screen reader there is a separator here instead of
-   making it read three asterisks aloud. */
-hr.asterism {
+   The glyphs are written into the markup, and it is a paragraph rather than an
+   <hr>, so that they form with the page: the load animation covers ink it can
+   find in a text node, and generated content leaves nothing there to cover.
+   The mark arriving fully drawn while every word around it assembled would
+   have been the one still thing on the page. `aria-hidden` is what an <hr>
+   was doing before — the marks are a picture of a pause, and three asterisks
+   read aloud are not. `translate="no"` keeps a machine translator from
+   deciding they are words. Fullwidth asterisks with ideographic spaces
+   between them: they set the three marks apart without tracking them open,
+   and they sit on the same body as the CJK text around them. */
+.asterism {
   margin: var(--asterism-gap) 0 0;
-  border: 0;
-  overflow: visible;
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.14em;
@@ -238,11 +242,6 @@ hr.asterism {
   text-align: center;
   color: var(--accent);
 }
-
-/* Fullwidth asterisks separated by ideographic spaces: U+FF0A and U+3000. The
-   wide pair sets the three marks apart at any size without tracking them
-   open, and the glyphs sit on the same body as the CJK text around them. */
-hr.asterism::before { content: "\FF0A\3000\FF0A\3000\FF0A"; }
 
 /* Half the settled interval on each side of the marks, and a line of body text
    on top of that. The half-and-half alone left the break sharing the air with
@@ -252,14 +251,19 @@ hr.asterism::before { content: "\FF0A\3000\FF0A\3000\FF0A"; }
    Japanese, Chinese and Korean versions set their body smaller than the Latin
    ones, and the space follows them down.
 
-   This has the same specificity as the 9rem rule and has to stay after it.
+   The second rule names the section twice — once as what follows the marks,
+   once as what precedes the sketch — so that it outranks the 9rem rule above
+   whatever order the two end up in. The earlier form leaned on source order,
+   which is a thing to remember rather than a thing the file says.
 
    Declared on `body`, not `:root`: --text is set per language on the body
    element, and a custom property resolves var() against the element it is
    declared on. At :root the line would be the default 1.0625rem everywhere,
    which is not the line any of these pages is actually set in. */
 body { --asterism-gap: calc(4.5rem + var(--leading) * var(--text)); }
-hr.asterism + section { margin-top: var(--asterism-gap); }
+.asterism + section:has(+ ascii-hero[data-scene="footer-rest"]) {
+  margin-top: var(--asterism-gap);
+}
 
 /* The closing sketch is a compact epilogue, not a second hero. It occupies a
    shallow full-width strip immediately before the footer rule. */
