@@ -462,6 +462,138 @@ nav ul:has(> li > .home-button) { justify-content: center; }
   .home-button__box { padding-inline: 1rem; }
 }
 
+/* The name at the top of a work page: an introduction and the way home in one
+   mark. A work page has no header — the site has deliberately done without one
+   — so this is the only thing on it that says whose pages these are while the
+   reader is inside a piece of writing rather than at the end of it.
+
+   One element in two shapes, not two elements. While the window is wide enough
+   for the mark to stand clear of the text column, the white stops just after
+   the name and turns a corner; when it is not, the same white runs the width
+   of the glass and becomes a header. The name itself does not move between the
+   two — it sits 24px from the left edge, which is where the body's own text
+   begins on a narrow window, and 12px from the top in both — so what changes is
+   how far the ground reaches and whether it has a corner. That is a length and
+   a radius, and both of them can simply travel.
+
+   Where the white stops, it stops symmetrically. The two paddings that put the
+   name 24px in from the left — 0.5rem on the mark, 1rem on the link — are laid
+   out again on the other side of it, so the name sits centred in the shape it
+   ends up in and the wash under the pointer is inset by the same 0.5rem at
+   both ends. The one thing that is not symmetrical is the corner, and that is
+   the point of it: the mark is anchored to a corner of the window, so only the
+   free corner is rounded.
+
+   The travel is an extension, not the box. A box that ends after its text is
+   `max-content` wide and a box that fills the window is `100%`, and no browser
+   interpolates between those two — while a strip of the same white, lying
+   against the mark's far edge and growing from nothing to a window width, is
+   two lengths and interpolates perfectly. It also leaves the mark itself the
+   size of its own text, which the box cannot be while it carries the width:
+   made full width by padding, the content box goes to zero and the link inside
+   it collapses to its own padding, taking the pointer's target with it.
+
+   62rem is where the mark stops fitting beside the column: it measures about
+   177px, and the margin beside a 36rem column is (window − 576px) / 2, which
+   is 208px at 992px. */
+.home-mark {
+  --mark-fill: rgba(255, 255, 255, 0.94);
+  --mark-ink: #1a1a1a;
+
+  position: fixed;
+  z-index: 11;
+  top: 0;
+  inset-inline-start: 0;
+  width: max-content;
+  max-width: 100%;
+  padding: 0.25rem 0.5rem;
+  border-bottom: 1px solid var(--rule);
+  border-inline-end: 1px solid transparent;
+  background-color: var(--mark-fill);
+  backdrop-filter: blur(2px);
+  -webkit-backdrop-filter: blur(2px);
+  transition:
+    border-color 260ms ease,
+    border-radius 260ms ease;
+}
+
+/* The rest of the header, when there is a rest of it. It lies against the far
+   edge of the mark and carries the same white and the same hairline, so the
+   two read as one strip; going the other way it closes to nothing and leaves
+   the mark standing alone with its corner. `100vw` is more than it can ever
+   need — the mark is already some of the line — and the overshoot costs
+   nothing, since a fixed box contributes no scrollable overflow. */
+.home-mark::after {
+  content: "";
+  position: absolute;
+  top: 0;
+  bottom: -1px;
+  inset-inline-start: 100%;
+  width: 100vw;
+  border-bottom: 1px solid var(--rule);
+  background-color: inherit;
+  transition: width 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+}
+
+/* The ground inverts with the theme instead of following it: white over a light
+   page, black over a dark one, so the mark is a place where the page is held
+   back rather than a card laid on top of it. The ink is chosen to hold the same
+   relationship to its own ground in either theme — 17.4:1 light, 18.1:1 dark. */
+@media (prefers-color-scheme: dark) {
+  .home-mark {
+    --mark-fill: rgba(0, 0, 0, 0.94);
+    --mark-ink: #efefec;
+  }
+}
+
+/* Wide: the white ends after the name, and the free corner is the only one
+   rounded. Left and top belong to the window, so they stay square against it. */
+@media (min-width: 62rem) {
+  .home-mark {
+    border-inline-end-color: var(--rule);
+    border-end-end-radius: 8px;
+  }
+
+  .home-mark::after { width: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .home-mark,
+  .home-mark::after { transition: none; }
+}
+
+/* The link carries the reach, and its start padding is what puts the name where
+   the body's text begins. Inset from the strip above and below, so the wash
+   under the pointer is a shape inside the mark rather than the whole of it. */
+.home-mark__link {
+  display: block;
+  padding: 0.5rem 1rem;
+  border-radius: 5px;
+  color: var(--mark-ink);
+  font-size: 0.875rem;
+  font-weight: 700;
+  line-height: 1.4;
+  letter-spacing: 0.02em;
+  text-decoration: none;
+  white-space: nowrap;
+  cursor: pointer;
+}
+
+.home-mark__link:hover { background-color: var(--accent-wash); }
+
+/* While a cover is over it during the page's arrival, the ground belongs to the
+   canvas: the renderer is handed the fill declared above — read off the element
+   before the cover goes on, so it follows the theme without the module having
+   to know the colour — and what is painted is the fill itself rather than the
+   fill twice over. The edges go with it, since a hairline left standing around
+   a mark that has not formed yet is a band with nothing in it. */
+.home-mark.ascii-text-reveal {
+  background-color: transparent;
+  border-color: transparent;
+}
+
+.home-mark.ascii-text-reveal::after { border-bottom-color: transparent; }
+
 /* Decorative marker for outbound links — a symbol, not prose, so it stays in
    CSS without putting text out of reach of translation.
 

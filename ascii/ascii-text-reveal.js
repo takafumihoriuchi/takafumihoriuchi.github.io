@@ -1,12 +1,12 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260906-1";
+} from "./ascii-layout.js?v=20260906-4";
 import {
   asciiLoadElapsed,
   settledAsciiLoadHolds,
   startAsciiLoadClock,
-} from "./ascii-load-clock.js?v=20260906-1";
+} from "./ascii-load-clock.js?v=20260906-4";
 
 // Tell the inline guard in the document head that this module is alive, so
 // its timeout stops being the thing that decides when the page is shown. It
@@ -18,6 +18,10 @@ const TARGET_SELECTOR = [
   "main p", "main figcaption", "main dt", "main dd", "main li",
   "main .work-title", "main .work-desc", "main .works-more__box",
   "footer p", "footer li",
+  // The mark at the top of a work page stands outside `main` — it is fixed to
+  // the window rather than set in the page — and it arrives with the rest of
+  // the writing rather than after it.
+  ".home-mark",
 ].join(", ");
 const BLOCK_DESCENDANT_SELECTOR = [
   "h1", "h2", "h3", "h4", "h5", "h6", "p", "figcaption", "dt", "dd",
@@ -53,6 +57,12 @@ const PRINTABLE_ASCII = Array.from(
 // what makes an edge that simply appears at the end of the formation read as a
 // mistake rather than as the last frame.
 const OUTLINE_SELECTOR = "main .works-more__box, main .home-button__box";
+// Targets that bring their own ground. Everything else on the page is text on
+// the page's own background, found by walking up from the element; these two
+// are a translucent veil over whatever the page has put behind them, and a
+// veil found rather than given would be painted twice — once by the element
+// and once by the cover over it — which is a colour that is in neither theme.
+const OWN_GROUND_SELECTOR = ".home-mark";
 const OUTLINE_GLYPH_LEAD = FRAME_INTERVAL * 3;
 const OUTLINE_GLYPHS = { "-": ["-", ".", "-", "~"], "|": ["|", ":", "|", "'"] };
 const PREPAINT_CLASS = "ascii-load-pending";
@@ -317,6 +327,13 @@ class AsciiTextReveal {
     // to the sparse punctuation they started from. Nothing in render() knows
     // which way time is going.
     this.reverse = Boolean(options.reverse);
+    // The ground the cover is painted with. Normally found by walking up from
+    // the element, which is right for text sitting on the page. An element
+    // whose own background is part of what is being animated has to hand its
+    // ground in instead: found, it would be painted twice — once by the
+    // element and once by the canvas over it — and a translucent value
+    // painted over itself is a colour that was never in the design.
+    this.givenBackground = options.background || null;
     this.duration = options.duration || FORMATION_DURATION;
     this.seed = hashString(`${location.pathname}:${index}:${element.textContent}`);
     this.delay = this.reverse ? 0 : Math.floor(noise(this.seed, 701) * ELEMENT_STAGGER);
@@ -415,7 +432,7 @@ class AsciiTextReveal {
     this.style = getComputedStyle(this.element);
     this.referenceAscii = referenceAsciiStyle();
     this.foreground = this.referenceAscii.color;
-    this.background = findBackground(this.element);
+    this.background = this.givenBackground || findBackground(this.element);
     this.glyphs = collectGlyphs(this.element);
     shuffledRevealTimes(this.glyphs, this.seed);
     this.prepareMask();
@@ -1198,7 +1215,10 @@ async function initialize() {
     await Promise.race([afterTwoFrames(), afterDelay(SETTLE_TIMEOUT)]);
 
     elements.forEach((element, index) => {
-      instances.push(new AsciiTextReveal(element, index));
+      const options = element.matches(OWN_GROUND_SELECTOR)
+        ? { background: getComputedStyle(element).backgroundColor }
+        : undefined;
+      instances.push(new AsciiTextReveal(element, index, options));
     });
     outlines.forEach((element, index) => {
       instances.push(new AsciiOutlineReveal(element, index));
