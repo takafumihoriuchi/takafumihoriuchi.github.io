@@ -1,19 +1,53 @@
 import {
+  ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260906-4";
-import "./ascii-text-reveal.js?v=20260906-4";
+} from "./ascii-layout.js?v=20260906-6";
+import "./ascii-text-reveal.js?v=20260906-6";
 import {
   asciiLoadElapsed,
   asciiLoadHasStarted,
   asciiLoadStarted,
   holdAsciiLoad,
-} from "./ascii-load-clock.js?v=20260906-4";
+} from "./ascii-load-clock.js?v=20260906-6";
 
-const SCENES_URL = new URL("./scenes.json?v=20260906-4", import.meta.url);
+const SCENES_URL = new URL("./scenes.json?v=20260906-6", import.meta.url);
 const FRAME_INTERVAL = 1000 / 10;
 const INTRO_FRAME_INTERVAL = 1000 / 6;
 const INTRO_DURATION = 625;
 const COMPACT_BREAKPOINT = 480;
+// How far a pointer may travel and still be a tap rather than a scroll or a
+// drag across the selectable text of the <pre>.
+const TAP_MOVE_TOLERANCE = 10;
+// Densest first, then the same thinning the introduction climbs, read
+// backwards. A cell falls one rung down the ramp per step until there is
+// nothing left of it. `@` rather than `#` at the top: the mark is laid over
+// the drawing in the drawing's own ink, and at the sizes these scenes are
+// fitted to, `#` tiles into a texture where `@` tiles into a solid.
+const MARK_GLYPHS = ["@", "#", "*", "+", ":", "."];
+/* The mark is drawn whole on the very first frame — the answer to a tap should
+   not take a formation to arrive — held only long enough to be read, and then
+   only its leaving is animated. Short, and the same length for both: whichever
+   way the tap went, the thing the reader wants to look at is the drawing, and
+   every frame the mark is held is a frame of the drawing held under it.
+   `MARK_CRUMBLE_SPREAD` is how far apart the cells start leaving,
+   `MARK_CRUMBLE_STEP` how long each rung of the ramp lasts. */
+const MARK_HOLD = 320;
+const MARK_CRUMBLE_SPREAD = 170;
+const MARK_CRUMBLE_STEP = 50;
+const MARK_DURATION = MARK_HOLD + MARK_CRUMBLE_SPREAD
+  + MARK_CRUMBLE_STEP * MARK_GLYPHS.length;
+// Proportions of a transport symbol, expressed against its own height. A cell
+// is taller than it is wide, so a shape measured in cells has to be widened by
+// that ratio to come out the shape it is meant to be.
+const CELL_ASPECT = 1.08 / ASCII_CELL_WIDTH_RATIO;
+// The tallest scene is drawn on thirteen rows and the shortest on five, but
+// the boxes they are drawn in are within a few pixels of the same row height.
+// So the ceiling is written in rows: past this the mark stops being a mark on
+// the drawing and starts being the drawing.
+const MARK_MAX_ROWS = 9;
+const PAUSE_BAR_RATIO = 0.30;
+const PAUSE_GAP_RATIO = 0.22;
+const PLAY_WIDTH_RATIO = 0.866;
 
 const scenesPromise = fetch(SCENES_URL)
   .then((response) => {
@@ -119,6 +153,85 @@ function idleCharacter(character, x, y, elapsed, mode = true) {
     : character;
 }
 
+/* The two transport marks, as cell coordinates on the scene's own grid. Both
+   are built from the height they are handed rather than stored as art: the
+   scenes are drawn on anything from five rows to thirteen, and a mark kept as
+   lines would be either lost on the tall ones or too big for the short ones. */
+function markShape(kind, columns, rows, height) {
+  const ink = [];
+  const top = Math.floor((rows - height) / 2);
+  const stamp = (x, y) => {
+    if (x < 0 || x >= columns || y < 0 || y >= rows) return;
+    ink.push({ x, y });
+  };
+
+  if (kind === "pause") {
+    const bar = Math.max(2, Math.round(PAUSE_BAR_RATIO * height * CELL_ASPECT));
+    const gap = Math.max(1, Math.round(PAUSE_GAP_RATIO * height * CELL_ASPECT));
+    const left = Math.floor((columns - (bar * 2 + gap)) / 2);
+    for (let row = 0; row < height; row += 1) {
+      for (let offset = 0; offset < bar; offset += 1) {
+        stamp(left + offset, top + row);
+        stamp(left + bar + gap + offset, top + row);
+      }
+    }
+  } else {
+    // A triangle on its side: every row begins on the same left edge and
+    // reaches further the nearer it is to the apex row, so the stepped side is
+    // the one the point is on.
+    const width = Math.max(3, Math.round(PLAY_WIDTH_RATIO * height * CELL_ASPECT));
+    const half = (height - 1) / 2;
+    // A triangle carries its weight at the base, so the box it fits in and the
+    // shape inside it do not look centred in the same place. Centring the mass
+    // instead of the box moves it right by the distance between the two.
+    const left = Math.floor((columns - width) / 2) + Math.round(width / 6);
+    for (let row = 0; row < height; row += 1) {
+      const reach = Math.max(2, Math.round(
+        width * (half - Math.abs(row - half) + 0.5) / (half + 0.5)
+      ));
+      for (let offset = 0; offset < reach; offset += 1) {
+        stamp(left + offset, top + row);
+      }
+    }
+  }
+
+  /* One cell of clear air all the way round. The mark is laid on the drawing
+     in the drawing's own ink, so without it a stroke of the scene running up
+     against a bar joins on to it and the silhouette stops being a silhouette.
+     These cells are not erased, only held blank for as long as the mark is
+     there — each one on its own clock, like the ink, so what the drawing gets
+     back it gets back in the same pieces the mark left in. */
+  const taken = new Set(ink.map(({ x, y }) => y * columns + x));
+  const halo = [];
+  for (const { x, y } of ink) {
+    for (let dy = -1; dy <= 1; dy += 1) {
+      for (let dx = -1; dx <= 1; dx += 1) {
+        const hx = x + dx;
+        const hy = y + dy;
+        if (hx < 0 || hx >= columns || hy < 0 || hy >= rows) continue;
+        const key = hy * columns + hx;
+        if (taken.has(key)) continue;
+        taken.add(key);
+        halo.push({ x: hx, y: hy });
+      }
+    }
+  }
+
+  const seeded = ({ x, y }) => ({ x, y, seed: deterministicNoise(x + 7, y + 53) });
+  return { ink: ink.map(seeded), halo: halo.map(seeded) };
+}
+
+/* Each cell keeps its full weight until its own moment, then falls one rung
+   down the ramp per step until there is nothing left of it. The moments are a
+   fixed function of position, so the mark comes apart in the same pieces every
+   time rather than dissolving evenly. */
+function markCharacter(elapsed, seed) {
+  const crumbleAt = MARK_HOLD + seed * MARK_CRUMBLE_SPREAD;
+  if (elapsed < crumbleAt) return MARK_GLYPHS[0];
+  const index = Math.floor((elapsed - crumbleAt) / MARK_CRUMBLE_STEP) + 1;
+  return index < MARK_GLYPHS.length ? MARK_GLYPHS[index] : " ";
+}
+
 class AsciiHero extends HTMLElement {
   constructor() {
     super();
@@ -136,6 +249,9 @@ class AsciiHero extends HTMLElement {
     this._inView = false;
     this._started = false;
     this._awaitingLoadClock = false;
+    this._userPaused = false;
+    this._mark = null;
+    this._pointer = null;
     this._introEnabled = true;
     this._phase = this._introEnabled ? "intro" : "idle";
     this._motion = window.matchMedia("(prefers-reduced-motion: reduce)");
@@ -160,6 +276,10 @@ class AsciiHero extends HTMLElement {
 
     this._onMotionChange = () => {
       if (!this._scene) return;
+      // The scene is being restarted from either end of this switch, so the
+      // reader's own pause and the mark that announced it both go with it.
+      this._mark = null;
+      this._userPaused = false;
       if (this._motion.matches) {
         this._stop();
         this._renderFinal();
@@ -176,6 +296,45 @@ class AsciiHero extends HTMLElement {
       if (this._scene) this._selectVariant(true);
     };
     this._colorScheme.addEventListener("change", this._onColorSchemeChange);
+
+    /* A vertical pan stays native. Pointer capture on a touchscreen is
+       implicit, so a scroll arrives as pointercancel while a short, still
+       gesture reaches pointerup — no preventDefault(), and none of the delay a
+       synthetic click carries. The travel check is what a plain click handler
+       would not give: the <pre> is selectable text, and a drag that selects
+       some of it is not a tap on the drawing. */
+    this._onPointerDown = (event) => {
+      if (
+        !event.isPrimary
+        || (event.pointerType === "mouse" && event.button !== 0)
+        || !this._canToggle()
+      ) return;
+      this._pointer = {
+        id: event.pointerId,
+        x: event.clientX,
+        y: event.clientY,
+        moved: false,
+      };
+    };
+    this._onPointerMove = (event) => {
+      if (this._pointer?.id !== event.pointerId) return;
+      if (this._travelled(event)) this._pointer.moved = true;
+    };
+    this._onPointerUp = (event) => {
+      if (this._pointer?.id !== event.pointerId) return;
+      const moved = this._pointer.moved || this._travelled(event);
+      this._pointer = null;
+      // Conditions are read again here rather than remembered from the press:
+      // an overlay can have opened, or the scene scrolled away, in between.
+      if (!moved) this._toggleMotion();
+    };
+    this._onPointerCancel = (event) => {
+      if (this._pointer?.id === event.pointerId) this._pointer = null;
+    };
+    this.addEventListener("pointerdown", this._onPointerDown);
+    this.addEventListener("pointermove", this._onPointerMove);
+    this.addEventListener("pointerup", this._onPointerUp);
+    this.addEventListener("pointercancel", this._onPointerCancel);
 
     this._resizeObserver = new ResizeObserver(() => this._selectVariant());
     this._resizeObserver.observe(this);
@@ -219,12 +378,18 @@ class AsciiHero extends HTMLElement {
   }
 
   disconnectedCallback() {
+    this._mark = null;
+    this._pointer = null;
     this._stop();
     this._resizeObserver?.disconnect();
     this._intersectionObserver?.disconnect();
     this._motion.removeEventListener("change", this._onMotionChange);
     this._colorScheme.removeEventListener("change", this._onColorSchemeChange);
     document.removeEventListener("visibilitychange", this._onVisibilityChange);
+    this.removeEventListener("pointerdown", this._onPointerDown);
+    this.removeEventListener("pointermove", this._onPointerMove);
+    this.removeEventListener("pointerup", this._onPointerUp);
+    this.removeEventListener("pointercancel", this._onPointerCancel);
   }
 
   _selectVariant(force = false) {
@@ -236,6 +401,7 @@ class AsciiHero extends HTMLElement {
     const key = `${name}:${baseVariant.themes ? themeName : "default"}`;
     if (!force && key === this._variantKey) {
       this._fitText();
+      this._refitMark();
       return;
     }
 
@@ -251,6 +417,7 @@ class AsciiHero extends HTMLElement {
     this._frames = prepared.frames;
     this._prepareAnimation();
     this._fitText();
+    this._refitMark();
 
     if (this._motion.matches) this._renderFinal();
     else if (!this._started || this._phase === "intro") {
@@ -338,11 +505,11 @@ class AsciiHero extends HTMLElement {
     this._schedule();
   }
 
-  /* Whether the loop should be running, in one place. The sync, the scheduler
-     and the tick each used to spell out their own version of this, and they
-     had already drifted: `paused` reached only the first of the three, so a
-     frame already in flight when the overlay opened would re-arm the loop the
-     overlay had just stopped. Three conditions, one answer:
+  /* What the page permits, in one place. The sync, the scheduler and the tick
+     each used to spell out their own version of this, and they had already
+     drifted: `paused` reached only the first of the three, so a frame already
+     in flight when the overlay opened would re-arm the loop the overlay had
+     just stopped. Three conditions, one answer:
 
      - the tab is in front,
      - nothing in front of the page has asked for quiet,
@@ -350,15 +517,35 @@ class AsciiHero extends HTMLElement {
        stops; scrolled back it starts again, which is the IntersectionObserver
        calling this. The intro is exempt: it forms once, on load, whether or
        not the reader has already scrolled past it. */
-  _shouldAnimate() {
+  _pageAllowsMotion() {
     return !document.hidden
       && !this.hasAttribute("paused")
       && (this._phase === "intro" || this._inView);
   }
 
+  /* The reader's own answer, kept apart from the page's three because it means
+     something different. The page's conditions come back by themselves when
+     the tab or the scroll position does; this one only ever changes because
+     somebody asked, so it survives a scroll away and back, an overlay opening
+     and closing, and the tab going behind another. */
+  _shouldAnimate() {
+    return this._pageAllowsMotion() && !this._userPaused;
+  }
+
+  /* The loop also runs for a mark standing on a stopped drawing: the drawing
+     has nothing left to redraw, but the mark that says so is still leaving. */
+  _shouldRun() {
+    return this._shouldAnimate()
+      || (this._mark !== null && this._pageAllowsMotion());
+  }
+
   _syncPlayback() {
     if (!this._scene || this._motion.matches) return;
-    if (!this._shouldAnimate()) {
+    if (!this._pageAllowsMotion()) {
+      // The mark answers a tap. Finishing it later, for a reader who has come
+      // back to the tab or scrolled the scene into view again, would be
+      // answering a question nobody is still asking.
+      this._clearMark();
       this._stop(false);
       return;
     }
@@ -367,22 +554,31 @@ class AsciiHero extends HTMLElement {
   }
 
   _schedule() {
-    if (this._raf || !this._shouldAnimate()) return;
+    if (this._raf) return;
+    if (!this._shouldRun()) {
+      // Nothing is coming, so the next frame after this is a fresh start
+      // rather than one holding a delta measured across the whole pause.
+      this._lastTick = null;
+      return;
+    }
     this._raf = requestAnimationFrame((time) => this._tick(time));
   }
 
   _tick(time) {
     this._raf = null;
-    if (!this._shouldAnimate()) {
+    if (!this._shouldRun()) {
       this._lastTick = null;
       return;
     }
     if (this._lastTick === null) this._lastTick = time;
     const delta = Math.min(time - this._lastTick, 120);
     this._lastTick = time;
+    // Two clocks, because the mark keeps going while the drawing does not:
+    // that is the whole of what a pause looks like from here.
+    if (this._mark) this._mark.elapsed += delta;
     if (this._phase === "intro") {
       this._elapsed = Math.max(0, asciiLoadElapsed(time));
-    } else {
+    } else if (!this._userPaused) {
       this._elapsed += delta;
     }
 
@@ -394,6 +590,8 @@ class AsciiHero extends HTMLElement {
       else this._render(this._elapsed);
       this._lastRender = time;
     }
+
+    if (this._mark && this._mark.elapsed >= MARK_DURATION) this._clearMark();
 
     if (this._phase === "intro" && this._elapsed >= INTRO_DURATION) {
       // Hold the canonical first frame once before idle mutations begin. The
@@ -441,7 +639,7 @@ class AsciiHero extends HTMLElement {
 
     // Keep every cell, including trailing spaces, so the max-content <pre>
     // cannot change its width as line glyphs wobble.
-    this._pre.textContent = grid.map((row) => row.join("")).join("\n");
+    this._commit(grid.map((row) => row.join("")));
   }
 
   _renderIntro(elapsed) {
@@ -456,13 +654,125 @@ class AsciiHero extends HTMLElement {
         ? " "
         : introCharacter(character, x, y, elapsed)
     ).join(""));
-    this._pre.textContent = lines.join("\n");
+    this._commit(lines);
   }
 
   _renderFinal() {
     if (!this._variant) return;
-    this._pre.textContent = this._variant.lines.join("\n");
+    this._commit(this._variant.lines);
     if (this._motion.matches) this.dataset.state = "reduced-motion";
+  }
+
+  /* The one place the drawing becomes text, so the mark is stamped over
+     whatever the scene last drew — the frozen frame while it is paused, the
+     moving one while it is not — without any of the three renderers having to
+     know that a mark exists. Standing in the same grid is also what makes it
+     the same ink at the same size as everything else on the page; there is no
+     second layer to keep in step. */
+  _commit(rows) {
+    if (!this._mark) {
+      this._pre.textContent = rows.join("\n");
+      return;
+    }
+    const { elapsed, ink, halo } = this._mark;
+    const grid = rows.map((row) => [...row]);
+    // The clear air first, then the mark into it. A cell that has finished
+    // leaving — blank or inked — gives the drawing underneath it back.
+    for (const cell of halo) {
+      if (markCharacter(elapsed, cell.seed) !== " ") grid[cell.y][cell.x] = " ";
+    }
+    for (const cell of ink) {
+      const character = markCharacter(elapsed, cell.seed);
+      if (character !== " ") grid[cell.y][cell.x] = character;
+    }
+    this._pre.textContent = grid.map((row) => row.join("")).join("\n");
+  }
+
+  _travelled(event) {
+    return Math.hypot(
+      event.clientX - this._pointer.x,
+      event.clientY - this._pointer.y
+    ) > TAP_MOVE_TOLERANCE;
+  }
+
+  _canToggle() {
+    return Boolean(
+      this._scene
+      && this._variant
+      && this._started
+      && this._phase === "idle"
+      // Nothing to stop, and a mark that arrives and comes apart is itself
+      // motion. A reader who has asked for none is left with the still frame.
+      && !this._motion.matches
+      && this._pageAllowsMotion()
+    );
+  }
+
+  /* A tap stops the drawing where it stands; the next one lets it go on. The
+     mark is the whole of the feedback, and it is drawn into the scene's own
+     grid rather than laid over it, so what the reader sees is the drawing
+     answering rather than a control appearing on top of it. */
+  _toggleMotion() {
+    if (!this._canToggle()) return;
+    this._userPaused = !this._userPaused;
+    this.dataset.state = this._userPaused ? "paused" : "idle";
+    this._showMark(this._userPaused ? "pause" : "play");
+    this._lastTick = null;
+    this._schedule();
+  }
+
+  _showMark(kind) {
+    this._mark = { kind, elapsed: 0, ink: [], halo: [] };
+    this._refitMark();
+    // Drawn on this frame, not on the loop's next one. The mark acknowledges
+    // the tap, and an acknowledgement that waits for a frame is not one — so
+    // it arrives whole, with no formation, and only its leaving is animated.
+    this._repaint();
+  }
+
+  /* The mark is measured in cells of the grid it stands on, so anything that
+     changes the grid, or the height of the box the grid is cropped to, has to
+     lay it out again where it is now. */
+  _refitMark() {
+    if (!this._mark || !this._variant) return;
+    const { ink, halo } = markShape(
+      this._mark.kind,
+      this._variant.columns,
+      this._variant.rows,
+      this._markHeight()
+    );
+    this._mark.ink = ink;
+    this._mark.halo = halo;
+  }
+
+  /* As tall as the scene lets it be. `ascii-hero` is a fixed box with
+     `overflow: hidden`, and the taller scenes are drawn on more rows than the
+     box shows, so what the mark has to fill is the visible band and not the
+     grid — measured against the grid, a mark would have its ends cropped away
+     on exactly the scenes with the most room in the middle. Odd, so that the
+     play triangle comes to one apex row rather than two. */
+  _markHeight() {
+    const rows = this._variant.rows;
+    const drawn = this._pre.getBoundingClientRect().height;
+    const shown = this.getBoundingClientRect().height;
+    const visible = drawn && shown
+      ? Math.max(1, Math.min(rows, Math.floor(shown / (drawn / rows))))
+      : rows;
+    const usable = Math.max(3, Math.min(visible - 2, MARK_MAX_ROWS));
+    return usable % 2 ? usable : usable - 1;
+  }
+
+  _repaint() {
+    if (!this._variant) return;
+    if (this._motion.matches) this._renderFinal();
+    else if (this._phase === "intro") this._renderIntro(this._elapsed);
+    else this._render(this._elapsed);
+  }
+
+  _clearMark() {
+    if (!this._mark) return;
+    this._mark = null;
+    this._repaint();
   }
 
   _stop(resetClock = true) {

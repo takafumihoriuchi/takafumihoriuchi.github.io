@@ -196,6 +196,12 @@ ascii-hero {
   overflow: hidden;
   contain: layout paint;
   color: var(--accent);
+  /* The drawing answers a tap by stopping and starting, so the tap should
+     land at the moment of the tap. `manipulation` drops the wait for a
+     possible second tap without taking panning or pinch-to-zoom with it —
+     the scene is decoration, and nothing about it is worth making the page
+     harder to scroll or to magnify. */
+  touch-action: manipulation;
 }
 
 ascii-hero:empty { display: none; }
