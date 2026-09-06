@@ -561,6 +561,7 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    is 208px at 992px. */
 .home-mark {
   --mark-fill: rgba(255, 255, 255, 0.94);
+  --mark-ink: var(--accent);
 
   position: fixed;
   z-index: 11;
@@ -599,12 +600,13 @@ nav ul:has(> li > .home-button) { justify-content: center; }
 
 /* The ground inverts with the theme instead of following it: white over a light
    page, black over a dark one, so the mark is a place where the page is held
-   back rather than a card laid on top of it. Only the ground is set here: the
-   name is written in the page's accent, which turns over with the theme on its
-   own. */
+   back rather than a card laid on top of it. The light mark keeps the accent
+   ink used elsewhere on the page; against the dark mark the name turns white,
+   independently of whether the mark is compact or spans the window. */
 @media (prefers-color-scheme: dark) {
   .home-mark {
     --mark-fill: rgba(0, 0, 0, 0.94);
+    --mark-ink: #efefec;
   }
 }
 
@@ -637,19 +639,13 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    the body's text begins. Inset from the strip above and below, so the wash
    under the pointer is a shape inside the mark rather than the whole of it.
 
-   The name is set in the accent, not in the page's ink. What a work page is
-   for is the work, and a name in full black at the top of it reads as the
-   first thing on the page rather than as the way back from it. In the brown it
-   is still the first thing the eye finds when it goes looking for a way out,
-   and nothing before that — the same colour the section headings are set in,
-   which is what the site already uses for a word that names rather than says.
-   On the mark's own ground it comes to 5.5:1 light and 7.6:1 dark, down from
-   17.4 and 18.1: quieter by a long way, and still past AA. */
+   The name follows the mark's own ink token: the accent on the light mark and
+   white on the dark mark. */
 .home-mark__link {
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  color: var(--accent);
+  color: var(--mark-ink);
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.4;
