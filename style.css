@@ -216,6 +216,41 @@ ascii-hero[data-scene="philosophy"] + section { margin-top: 5.5rem; }
    paragraph reads as a coda and not as a fourth list. */
 section:has(+ ascii-hero[data-scene="footer-rest"]) { margin-top: 9rem; }
 
+/* The break between the work and the closing thought is drawn as an asterism,
+   not a line. The site has no rules anywhere, and three marks in the heading's
+   brown say "pause" without adding a horizontal edge to a page whose only
+   straight edges are the thumbnails. They are set at the heading's size,
+   weight and tracking, so the break reads as belonging to the same voice as
+   the words it stands between.
+
+   The glyphs are generated rather than written into the markup. They carry
+   nothing to translate — the mark is the same on all fourteen index pages —
+   and an <hr> tells a screen reader there is a separator here instead of
+   making it read three asterisks aloud. */
+hr.asterism {
+  margin: 4.5rem 0 0;
+  border: 0;
+  overflow: visible;
+  font-size: 0.75rem;
+  font-weight: 600;
+  letter-spacing: 0.14em;
+  line-height: 1;
+  text-align: center;
+  color: var(--accent);
+}
+
+/* Fullwidth asterisks separated by ideographic spaces: U+FF0A and U+3000. The
+   wide pair sets the three marks apart at any size without tracking them
+   open, and the glyphs sit on the same body as the CJK text around them. */
+hr.asterism::before { content: "\FF0A\3000\FF0A\3000\FF0A"; }
+
+/* Half the interval on each side of the marks. The distance from the work list
+   to the heading is the one settled above; standing the break in the middle of
+   it adds only the height of the marks themselves, so the page gains the pause
+   without losing the air. This has the same specificity as the 9rem rule and
+   has to stay after it. */
+hr.asterism + section { margin-top: 4.5rem; }
+
 /* The closing sketch is a compact epilogue, not a second hero. It occupies a
    shallow full-width strip immediately before the footer rule. */
 ascii-hero[data-scene="footer-rest"] {
