@@ -228,7 +228,7 @@ section:has(+ ascii-hero[data-scene="footer-rest"]) { margin-top: 9rem; }
    and an <hr> tells a screen reader there is a separator here instead of
    making it read three asterisks aloud. */
 hr.asterism {
-  margin: 4.5rem 0 0;
+  margin: var(--asterism-gap) 0 0;
   border: 0;
   overflow: visible;
   font-size: 0.75rem;
@@ -244,12 +244,22 @@ hr.asterism {
    open, and the glyphs sit on the same body as the CJK text around them. */
 hr.asterism::before { content: "\FF0A\3000\FF0A\3000\FF0A"; }
 
-/* Half the interval on each side of the marks. The distance from the work list
-   to the heading is the one settled above; standing the break in the middle of
-   it adds only the height of the marks themselves, so the page gains the pause
-   without losing the air. This has the same specificity as the 9rem rule and
-   has to stay after it. */
-hr.asterism + section { margin-top: 4.5rem; }
+/* Half the settled interval on each side of the marks, and a line of body text
+   on top of that. The half-and-half alone left the break sharing the air with
+   the work list above it and the heading below; a line is the smallest step
+   that reads as its own space rather than as a wider paragraph gap, and taking
+   it from --text and --leading keeps it a line of *this* page's prose — the
+   Japanese, Chinese and Korean versions set their body smaller than the Latin
+   ones, and the space follows them down.
+
+   This has the same specificity as the 9rem rule and has to stay after it.
+
+   Declared on `body`, not `:root`: --text is set per language on the body
+   element, and a custom property resolves var() against the element it is
+   declared on. At :root the line would be the default 1.0625rem everywhere,
+   which is not the line any of these pages is actually set in. */
+body { --asterism-gap: calc(4.5rem + var(--leading) * var(--text)); }
+hr.asterism + section { margin-top: var(--asterism-gap); }
 
 /* The closing sketch is a compact epilogue, not a second hero. It occupies a
    shallow full-width strip immediately before the footer rule. */
