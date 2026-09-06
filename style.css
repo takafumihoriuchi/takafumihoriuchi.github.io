@@ -555,7 +555,6 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    is 208px at 992px. */
 .home-mark {
   --mark-fill: rgba(255, 255, 255, 0.94);
-  --mark-ink: #1a1a1a;
 
   position: fixed;
   z-index: 11;
@@ -594,20 +593,29 @@ nav ul:has(> li > .home-button) { justify-content: center; }
 
 /* The ground inverts with the theme instead of following it: white over a light
    page, black over a dark one, so the mark is a place where the page is held
-   back rather than a card laid on top of it. The ink is chosen to hold the same
-   relationship to its own ground in either theme — 17.4:1 light, 18.1:1 dark. */
+   back rather than a card laid on top of it. Only the ground is set here: the
+   name is written in the page's accent, which turns over with the theme on its
+   own. */
 @media (prefers-color-scheme: dark) {
   .home-mark {
     --mark-fill: rgba(0, 0, 0, 0.94);
-    --mark-ink: #efefec;
   }
 }
 
 /* Wide: the white ends after the name, and the free corner is the only one
-   rounded. Left and top belong to the window, so they stay square against it. */
+   rounded. Left and top belong to the window, so they stay square against it.
+
+   That shape carries no hairline. A line drawn round a box that has ended is
+   an outline, and an outline makes the mark a card laid on the page — the one
+   thing it is meant not to be; the white and the blur behind it are already
+   enough to hold the name off the text at this width. The band keeps its line,
+   because there the hairline is the whole of what separates a header from the
+   writing running under it. The border keeps its width and gives up only its
+   colour, so the two shapes still turn into one another across the breakpoint
+   instead of stepping. */
 @media (min-width: 62rem) {
   .home-mark {
-    border-inline-end-color: var(--rule);
+    border-block-end-color: transparent;
     border-end-end-radius: 8px;
   }
 
@@ -621,12 +629,21 @@ nav ul:has(> li > .home-button) { justify-content: center; }
 
 /* The link carries the reach, and its start padding is what puts the name where
    the body's text begins. Inset from the strip above and below, so the wash
-   under the pointer is a shape inside the mark rather than the whole of it. */
+   under the pointer is a shape inside the mark rather than the whole of it.
+
+   The name is set in the accent, not in the page's ink. What a work page is
+   for is the work, and a name in full black at the top of it reads as the
+   first thing on the page rather than as the way back from it. In the brown it
+   is still the first thing the eye finds when it goes looking for a way out,
+   and nothing before that — the same colour the section headings are set in,
+   which is what the site already uses for a word that names rather than says.
+   On the mark's own ground it comes to 5.5:1 light and 7.6:1 dark, down from
+   17.4 and 18.1: quieter by a long way, and still past AA. */
 .home-mark__link {
   display: block;
   padding: 0.5rem 1rem;
   border-radius: 5px;
-  color: var(--mark-ink);
+  color: var(--accent);
   font-size: 0.875rem;
   font-weight: 700;
   line-height: 1.4;
