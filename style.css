@@ -209,11 +209,18 @@ ascii-hero + section { margin-top: 2.25rem; }
 ascii-hero[data-scene="philosophy"] { margin-top: 5rem; }
 ascii-hero[data-scene="philosophy"] + section { margin-top: 5.5rem; }
 
+/* The closing thought is the one section on the index that is read rather than
+   scanned, so it is given twice the usual interval above it and a little over
+   twice below. The distances were chosen by eye at a 900px window rather than
+   by multiplying the section step: what the extra air buys is that the
+   paragraph reads as a coda and not as a fourth list. */
+section:has(+ ascii-hero[data-scene="footer-rest"]) { margin-top: 9rem; }
+
 /* The closing sketch is a compact epilogue, not a second hero. It occupies a
    shallow full-width strip immediately before the footer rule. */
 ascii-hero[data-scene="footer-rest"] {
   aspect-ratio: 8 / 1;
-  margin-top: 3rem;
+  margin-top: 7rem;
 }
 
 ascii-hero[data-scene="footer-rest"] + footer { margin-top: 1.5rem; }
@@ -264,7 +271,7 @@ ascii-hero:not(:defined) .ascii-hero__canvas {
   ascii-hero[data-scene="philosophy"] + section { margin-top: 3.5rem; }
   ascii-hero[data-scene="footer-rest"] {
     aspect-ratio: 11 / 2;
-    margin-top: 2.5rem;
+    margin-top: 5.75rem;
   }
   ascii-hero[data-scene="footer-rest"] + footer { margin-top: 1.25rem; }
 }
