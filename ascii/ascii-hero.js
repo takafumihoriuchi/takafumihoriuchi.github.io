@@ -1,16 +1,16 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260906-6";
-import "./ascii-text-reveal.js?v=20260906-6";
+} from "./ascii-layout.js?v=20260907-1";
+import "./ascii-text-reveal.js?v=20260907-1";
 import {
   asciiLoadElapsed,
   asciiLoadHasStarted,
   asciiLoadStarted,
   holdAsciiLoad,
-} from "./ascii-load-clock.js?v=20260906-6";
+} from "./ascii-load-clock.js?v=20260907-1";
 
-const SCENES_URL = new URL("./scenes.json?v=20260906-6", import.meta.url);
+const SCENES_URL = new URL("./scenes.json?v=20260907-1", import.meta.url);
 const FRAME_INTERVAL = 1000 / 10;
 const INTRO_FRAME_INTERVAL = 1000 / 6;
 const INTRO_DURATION = 625;
@@ -24,13 +24,21 @@ const TAP_MOVE_TOLERANCE = 10;
 // the drawing in the drawing's own ink, and at the sizes these scenes are
 // fitted to, `#` tiles into a texture where `@` tiles into a solid.
 const MARK_GLYPHS = ["@", "#", "*", "+", ":", "."];
-/* The mark is drawn whole on the very first frame — the answer to a tap should
-   not take a formation to arrive — held only long enough to be read, and then
-   only its leaving is animated. Short, and the same length for both: whichever
-   way the tap went, the thing the reader wants to look at is the drawing, and
-   every frame the mark is held is a frame of the drawing held under it.
-   `MARK_CRUMBLE_SPREAD` is how far apart the cells start leaving,
-   `MARK_CRUMBLE_STEP` how long each rung of the ramp lasts. */
+/* Both marks are struck whole on the frame of the tap — an acknowledgement
+   that waits for a formation is not one — but only one of them leaves.
+
+   The pause mark is not an event that passes. It is what a stopped drawing
+   looks like, so it stands, unmoving, for exactly as long as the drawing is
+   stopped: tap, and in the same frame the scene halts and the mark appears,
+   and from then until the next tap there is nothing moving on it at all. The
+   next tap takes it away in the same frame it arrived in — no crumble, because
+   a crumble is motion, and what that tap is for is to let the motion be the
+   drawing's again.
+
+   Only the play mark keeps a clock. It is held long enough to be read and then
+   comes apart down the ramp the introduction climbs, each cell on its own
+   moment: `MARK_CRUMBLE_SPREAD` is how far apart the cells start leaving,
+   `MARK_CRUMBLE_STEP` how long each rung lasts. */
 const MARK_HOLD = 320;
 const MARK_CRUMBLE_SPREAD = 170;
 const MARK_CRUMBLE_STEP = 50;
@@ -402,6 +410,9 @@ class AsciiHero extends HTMLElement {
     if (!force && key === this._variantKey) {
       this._fitText();
       this._refitMark();
+      // A held mark stands on a stopped drawing, so there is no loop coming
+      // round to draw it where the resize has just put it.
+      if (this._mark) this._repaint();
       return;
     }
 
@@ -532,20 +543,14 @@ class AsciiHero extends HTMLElement {
     return this._pageAllowsMotion() && !this._userPaused;
   }
 
-  /* The loop also runs for a mark standing on a stopped drawing: the drawing
-     has nothing left to redraw, but the mark that says so is still leaving. */
-  _shouldRun() {
-    return this._shouldAnimate()
-      || (this._mark !== null && this._pageAllowsMotion());
-  }
-
   _syncPlayback() {
     if (!this._scene || this._motion.matches) return;
     if (!this._pageAllowsMotion()) {
-      // The mark answers a tap. Finishing it later, for a reader who has come
-      // back to the tab or scrolled the scene into view again, would be
-      // answering a question nobody is still asking.
-      this._clearMark();
+      // The play mark answers a tap, and finishing it later — for a reader who
+      // has come back to the tab or scrolled the scene into view again — would
+      // be answering a question nobody is still asking. The pause mark is not
+      // an answer but a state, and it stays as long as the state does.
+      if (this._mark?.kind === "play") this._clearMark();
       this._stop(false);
       return;
     }
@@ -555,7 +560,7 @@ class AsciiHero extends HTMLElement {
 
   _schedule() {
     if (this._raf) return;
-    if (!this._shouldRun()) {
+    if (!this._shouldAnimate()) {
       // Nothing is coming, so the next frame after this is a fresh start
       // rather than one holding a delta measured across the whole pause.
       this._lastTick = null;
@@ -566,16 +571,17 @@ class AsciiHero extends HTMLElement {
 
   _tick(time) {
     this._raf = null;
-    if (!this._shouldRun()) {
+    if (!this._shouldAnimate()) {
       this._lastTick = null;
       return;
     }
     if (this._lastTick === null) this._lastTick = time;
     const delta = Math.min(time - this._lastTick, 120);
     this._lastTick = time;
-    // Two clocks, because the mark keeps going while the drawing does not:
-    // that is the whole of what a pause looks like from here.
-    if (this._mark) this._mark.elapsed += delta;
+    // The play mark is the only thing here with a clock of its own. A held
+    // pause mark never reaches this line: the drawing it stands on is stopped,
+    // so the loop is not running.
+    if (this._mark?.kind === "play") this._mark.elapsed += delta;
     if (this._phase === "intro") {
       this._elapsed = Math.max(0, asciiLoadElapsed(time));
     } else if (!this._userPaused) {
@@ -591,7 +597,9 @@ class AsciiHero extends HTMLElement {
       this._lastRender = time;
     }
 
-    if (this._mark && this._mark.elapsed >= MARK_DURATION) this._clearMark();
+    if (this._mark?.kind === "play" && this._mark.elapsed >= MARK_DURATION) {
+      this._clearMark();
+    }
 
     if (this._phase === "intro" && this._elapsed >= INTRO_DURATION) {
       // Hold the canonical first frame once before idle mutations begin. The
@@ -711,22 +719,32 @@ class AsciiHero extends HTMLElement {
   /* A tap stops the drawing where it stands; the next one lets it go on. The
      mark is the whole of the feedback, and it is drawn into the scene's own
      grid rather than laid over it, so what the reader sees is the drawing
-     answering rather than a control appearing on top of it. */
+     answering rather than a control appearing on top of it.
+
+     The two halves are meant to look like opposites. Stopping is total and
+     immediate: the frame in flight is cancelled rather than allowed to land,
+     so the scene halts, the mark appears, and from that moment nothing on it
+     moves. Starting is the reverse — the held mark is gone in the same frame
+     the tap arrives, and what fills the gap it leaves is the drawing, moving
+     again, with the play mark on its way out over it. */
   _toggleMotion() {
     if (!this._canToggle()) return;
     this._userPaused = !this._userPaused;
     this.dataset.state = this._userPaused ? "paused" : "idle";
     this._showMark(this._userPaused ? "pause" : "play");
-    this._lastTick = null;
-    this._schedule();
+    if (this._userPaused) this._stop();
+    else {
+      this._lastTick = null;
+      this._schedule();
+    }
   }
 
+  /* Replaces whatever mark was there, on this frame rather than on the loop's
+     next one — including the held pause mark, which is why the changeover from
+     one to the other has no crumble between them and no frame with neither. */
   _showMark(kind) {
     this._mark = { kind, elapsed: 0, ink: [], halo: [] };
     this._refitMark();
-    // Drawn on this frame, not on the loop's next one. The mark acknowledges
-    // the tap, and an acknowledgement that waits for a frame is not one — so
-    // it arrives whole, with no formation, and only its leaving is animated.
     this._repaint();
   }
 
