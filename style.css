@@ -947,11 +947,15 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    edge of a control says where to look, not where the click lands. Here the
    answer is a ring of it on every side.
 
+   Its drawn top edge sits 1.75rem below the second thumbnail, matching the
+   space between the first two thumbnails in the desktop list. The target adds
+   0.225rem above that edge, so the margin gives that amount back.
+
    `cursor: pointer` is here and not on the site's links, which are already
    given the hand by being links. A label is not. */
 .works-more {
   display: block;
-  margin: calc(var(--space-para) - 0.225rem) -0.35rem -0.225rem;
+  margin: calc(var(--space-para) + 0.5rem - 0.225rem) -0.35rem -0.225rem;
   padding: 0.225rem 0.35rem;
   border-radius: 5px;
   cursor: pointer;
