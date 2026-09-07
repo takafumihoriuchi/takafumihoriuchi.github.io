@@ -462,20 +462,21 @@ nav a:hover,
    time, because at the end of a long page there is nothing else on the line to
    say that anything is there.
 
-   Wide, and no taller than the type needs. Going back is the only thing this
-   control does, so the reach across is generous — the label runs to 22
-   characters and the box gives it 3rem of air on each side. The height stays
-   the index button's 0.3rem: more would be a larger target, but also a heavier
-   object than the foot of a page wants.
+   Wide, with a 3.5rem (56px) minimum height for an easier target. Going back
+   is the only thing this control does, so the reach across is generous — the
+   label runs to 22 characters and the box gives it 3rem of air on each side.
+   The height is a minimum rather than a fixed value so a translated label can
+   still wrap without being clipped.
 
    Nothing comes apart on the way out. The index button dissolves into ASCII
    when it is clicked because it is leaving a page that stays; this one is
    followed by a navigation, and an animation with nobody left to watch it is
    only a delay. */
 .home-button {
-  display: block;
+  display: flex;
   width: fit-content;
   max-width: 100%;
+  min-height: 3.5rem;
   margin: 0 auto;
   padding: 0.225rem 0.35rem;
   border-radius: 5px;
@@ -500,7 +501,9 @@ nav a:hover,
 }
 
 .home-button__box {
-  display: block;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding: 0.3rem 3rem;
   border: 1px solid var(--accent);
   border-radius: 3px;
@@ -930,12 +933,13 @@ nav ul:has(> li > .home-button) { justify-content: center; }
   }
 }
 
-/* The control is two boxes, centred under the list. The inner one is what is
-   drawn: an outline and a word in the brown the section headings are set in,
-   over the page's own ground, so the shape reads as a thing to press without
-   putting a second solid colour on a page made of words and hairlines. It
-   takes --accent, the heading token, so the two move together if that value is
-   ever retuned.
+/* The control is two boxes under the list. The inner one is what is drawn: an
+   outline and a word in the brown the section headings are set in, over the
+   page's own ground, so the shape reads as a thing to press without putting a
+   second solid colour on a page made of words and hairlines. It spans the card
+   content width, from the thumbnail's outer edge to the description's outer
+   edge. It takes --accent, the heading token, so the two move together if that
+   value is ever retuned.
 
    The outer one is the target. It is the same arrangement the work cards use —
    a padded box, pulled back by an equal negative margin so nothing moves, lit
@@ -947,8 +951,7 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    given the hand by being links. A label is not. */
 .works-more {
   display: block;
-  width: fit-content;
-  margin: calc(var(--space-para) - 0.225rem) auto -0.225rem;
+  margin: calc(var(--space-para) - 0.225rem) -0.35rem -0.225rem;
   padding: 0.225rem 0.35rem;
   border-radius: 5px;
   cursor: pointer;
@@ -1062,7 +1065,7 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    this wrong later, whichever of them is drawn first. */
 .works-toggle:checked ~ .works-more {
   height: 0;
-  margin: 0.5rem auto 0;
+  margin: 0.5rem -0.35rem 0;
   padding-block: 0;
   opacity: 0;
   pointer-events: none;
