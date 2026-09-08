@@ -300,6 +300,13 @@ p.note {
   text-align: start;
 }
 
+/* The Japanese canonical article identifies notes typographically: a visible
+   note marker, smaller muted type, and no rule that could be read as a quote. */
+:lang(ja) p.note {
+  border-inline-start: 0;
+  padding-inline-start: 0;
+}
+
 /* Subheads in the Japanese canonical article follow the scale used by the
    site's other Japanese work pages. Classes above override this where a
    subhead belongs to a compact journey step. */
