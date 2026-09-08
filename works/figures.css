@@ -115,7 +115,9 @@ a:has(> img) {
 .lightbox {
   position: fixed;
   inset: 0;
-  z-index: 10;
+  /* The fixed home mark sits at 11. An open enlargement must cover that mark
+     at every viewport width, as well as the rest of the page behind it. */
+  z-index: 12;
   display: flex;
   align-items: center;
   justify-content: center;
