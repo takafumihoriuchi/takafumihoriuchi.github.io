@@ -41,6 +41,12 @@
   --text: 1.0625rem;
   --leading: 1.75;
 
+  /* The TH monogram, as four rectangles on the ink's own bounding box. Kept
+     here with the other design values rather than inline in the rule that uses
+     it: it is the site's mark, and a second use — a footer, an OG template —
+     should take it from one place. */
+  --mark-glyph: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 80 66'%3E%3Cpath d='M0 0h53v12H0zM19 17h16v49H19zM41 35h25v11H41zM66 14h14v52H66z'/%3E%3C/svg%3E");
+
   --measure: 36rem;   /* text column */
   --wide: 60rem;      /* upper bound for media that breaks out of it */
   --space-para: 1.25rem;
@@ -70,7 +76,15 @@
 
 * { box-sizing: border-box; }
 
-html { -webkit-text-size-adjust: 100%; }
+html {
+  -webkit-text-size-adjust: 100%;
+
+  /* A work page cites its sources with in-page links, and the band is fixed
+     over the top of the window. Without this, following a citation back up the
+     page lands the target underneath it. Sized to the band — 0.5rem of padding,
+     a 1rem link box and a 1.225rem line — with a line of air over it. */
+  scroll-padding-top: 3.5rem;
+}
 
 /* Japanese load reveals need a pre-paint guard: the module cannot install its
    ASCII canvases until after HTML parsing, while the stylesheet can otherwise
@@ -529,39 +543,20 @@ nav ul:has(> li > .home-button) { justify-content: center; }
 }
 
 /* The name at the top of a work page: an introduction and the way home in one
-   mark. A work page has no header — the site has deliberately done without one
-   — so this is the only thing on it that says whose pages these are while the
-   reader is inside a piece of writing rather than at the end of it.
+   mark. A work page has no header of its own — the site deliberately does
+   without one — so this band is the only thing on the page that says whose
+   pages these are while the reader is inside a piece of writing rather than at
+   the end of it.
 
-   One element in two shapes, not two elements. While the window is wide enough
-   for the mark to stand clear of the text column, the white stops just after
-   the name and turns a corner; when it is not, the same white runs the width
-   of the glass and becomes a header. The name itself does not move between the
-   two — it sits 24px from the left edge, which is where the body's own text
-   begins on a narrow window, and 12px from the top in both — so what changes is
-   how far the ground reaches and whether it has a corner. That is a length and
-   a radius, and both of them can simply travel.
-
-   Where the white stops, it stops symmetrically. The two paddings that put the
-   name 24px in from the left — 0.5rem on the mark, 1rem on the link — are laid
-   out again on the other side of it, so the name sits centred in the shape it
-   ends up in and the wash under the pointer is inset by the same 0.5rem at
-   both ends. The one thing that is not symmetrical is the corner, and that is
-   the point of it: the mark is anchored to a corner of the window, so only the
-   free corner is rounded.
-
-   The travel is an extension, not the box. A box that ends after its text is
-   `max-content` wide and a box that fills the window is `100%`, and no browser
-   interpolates between those two — while a strip of the same white, lying
-   against the mark's far edge and growing from nothing to a window width, is
-   two lengths and interpolates perfectly. It also leaves the mark itself the
-   size of its own text, which the box cannot be while it carries the width:
-   made full width by padding, the content box goes to zero and the link inside
-   it collapses to its own padding, taking the pointer's target with it.
-
-   62rem is where the mark stops fitting beside the column: it measures about
-   177px, and the margin beside a 36rem column is (window − 576px) / 2, which
-   is 208px at 992px. */
+   One shape at every width. The mark used to have two: a compact chip beside
+   the column on a wide window, the full band on a narrow one. The chip was the
+   better object and the worse sign. A reader who has finished a work page and
+   wants to get back looks along the top edge for a band, because that is what
+   a way back is on every other site they read that day; a white lozenge
+   floating near the corner is read as a label naming the page, and a label is
+   not somewhere you click. That was the report from the one designer who has
+   looked at these pages: they could not find the way home. Losing the chip
+   costs a shape that was doing nothing the writing needed. */
 .home-mark {
   --mark-fill: rgba(255, 255, 255, 0.94);
   --mark-ink: var(--accent);
@@ -569,43 +564,27 @@ nav ul:has(> li > .home-button) { justify-content: center; }
   position: fixed;
   z-index: 11;
   top: 0;
-  inset-inline-start: 0;
-  width: max-content;
-  max-width: 100%;
+  inset-inline: 0;
+  display: flex;
+  align-items: center;
   padding: 0.25rem 0.5rem;
   border-bottom: 1px solid var(--rule);
-  border-inline-end: 1px solid transparent;
   background-color: var(--mark-fill);
   backdrop-filter: blur(2px);
   -webkit-backdrop-filter: blur(2px);
-  transition:
-    border-color 260ms ease,
-    border-radius 260ms ease;
-}
 
-/* The rest of the header, when there is a rest of it. It lies against the far
-   edge of the mark and carries the same white and the same hairline, so the
-   two read as one strip; going the other way it closes to nothing and leaves
-   the mark standing alone with its corner. `100vw` is more than it can ever
-   need — the mark is already some of the line — and the overshoot costs
-   nothing, since a fixed box contributes no scrollable overflow. */
-.home-mark::after {
-  content: "";
-  position: absolute;
-  top: 0;
-  bottom: -1px;
-  inset-inline-start: 100%;
-  width: 100vw;
-  border-bottom: 1px solid var(--rule);
-  background-color: inherit;
-  transition: width 260ms cubic-bezier(0.22, 0.61, 0.36, 1);
+  /* How far the band is lifted out of the window, written by home-mark.js as
+     the reader scrolls. Held here as a length rather than a class so the band
+     can travel with the scroll instead of snapping between two states, and so
+     that with the script blocked or still loading the fallback is zero — the
+     band simply stays. */
+  transform: translateY(calc(-1 * var(--mark-shift, 0px)));
 }
 
 /* The ground inverts with the theme instead of following it: white over a light
    page, black over a dark one, so the mark is a place where the page is held
-   back rather than a card laid on top of it. The light mark keeps the accent
-   ink used elsewhere on the page; against the dark mark the name turns white,
-   independently of whether the mark is compact or spans the window. */
+   back rather than a card laid on top of it. The light band keeps the accent
+   ink used elsewhere on the page; against the dark band the name turns white. */
 @media (prefers-color-scheme: dark) {
   .home-mark {
     --mark-fill: rgba(0, 0, 0, 0.94);
@@ -613,39 +592,18 @@ nav ul:has(> li > .home-button) { justify-content: center; }
   }
 }
 
-/* Wide: the white ends after the name, and the free corner is the only one
-   rounded. Left and top belong to the window, so they stay square against it.
-
-   That shape carries no hairline. A line drawn round a box that has ended is
-   an outline, and an outline makes the mark a card laid on the page — the one
-   thing it is meant not to be; the white and the blur behind it are already
-   enough to hold the name off the text at this width. The band keeps its line,
-   because there the hairline is the whole of what separates a header from the
-   writing running under it. The border keeps its width and gives up only its
-   colour, so the two shapes still turn into one another across the breakpoint
-   instead of stepping. */
-@media (min-width: 62rem) {
-  .home-mark {
-    border-block-end-color: transparent;
-    border-end-end-radius: 8px;
-  }
-
-  .home-mark::after { width: 0; }
-}
-
-@media (prefers-reduced-motion: reduce) {
-  .home-mark,
-  .home-mark::after { transition: none; }
-}
-
 /* The link carries the reach, and its start padding is what puts the name where
-   the body's text begins. Inset from the strip above and below, so the wash
-   under the pointer is a shape inside the mark rather than the whole of it.
+   the body's text begins. Inset from the band above and below, so the wash
+   under the pointer is a shape inside the band rather than the whole of it —
+   which is also why the band is a flex container: a block-level link in a
+   full-width band would stretch to the window, and the wash with it.
 
-   The name follows the mark's own ink token: the accent on the light mark and
-   white on the dark mark. */
+   The name follows the band's own ink token: the accent on the light band and
+   white on the dark one. */
 .home-mark__link {
-  display: block;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.5rem;
   padding: 0.5rem 1rem;
   border-radius: 5px;
   color: var(--mark-ink);
@@ -660,6 +618,30 @@ nav ul:has(> li > .home-button) { justify-content: center; }
 
 .home-mark__link:hover { background-color: var(--accent-wash); }
 
+/* The monogram, in CSS for the same reason the outbound arrow below is: it is a
+   mark, not prose. Written into the markup it would be an image on 99 pages
+   with nothing useful to say in its `alt`, sitting inside a link whose text
+   already names where it goes.
+
+   Carried as a mask rather than a background, so what the browser paints is
+   `currentColor` in the shape of the mark. That is the one thing a data URI
+   cannot do on its own — the colour inside it is fixed at the moment it is
+   written — and it is what lets the same declaration serve both themes and
+   stay exactly the ink of the name beside it.
+
+   The four rectangles are the mark as it is drawn in favicon.ico: the T's stem
+   is also the H's left leg, and the three joins are all left open. The viewBox
+   is the ink's own bounding box, so the height below is the height of the
+   drawing and not of a square with air around it. */
+.home-mark__link::before {
+  content: "";
+  height: 1.05em;
+  aspect-ratio: 80 / 66;
+  background-color: currentColor;
+  -webkit-mask: var(--mark-glyph) center / contain no-repeat;
+  mask: var(--mark-glyph) center / contain no-repeat;
+}
+
 /* While a cover is over it during the page's arrival, the ground belongs to the
    canvas: the renderer is handed the fill declared above — read off the element
    before the cover goes on, so it follows the theme without the module having
@@ -670,8 +652,6 @@ nav ul:has(> li > .home-button) { justify-content: center; }
   background-color: transparent;
   border-color: transparent;
 }
-
-.home-mark.ascii-text-reveal::after { border-bottom-color: transparent; }
 
 /* Decorative marker for outbound links — a symbol, not prose, so it stays in
    CSS without putting text out of reach of translation.
@@ -1301,7 +1281,25 @@ figcaption {
    size the device works again: colour, weight and tracking carry it, and none
    of them need it to be small to do so. The tracking comes down because 0.14em
    was opening a word that no longer needs it. */
-body:is(:lang(ja), :lang(zh), :lang(ko)) { --text: 0.875rem; }
+body:is(:lang(ja), :lang(zh), :lang(ko)) {
+  --text: 0.875rem;
+
+  /* The column widens with the heading scale below, not on its own. 14px in
+     36rem holds 41 characters; in 40rem it holds 45, which is the top of the
+     35-45 band this size was chosen to sit inside. Going further would buy
+     more of the page per screen by making the line longer than the band the
+     rest of this block is written to keep. 45 is the last width that is still
+     an argument rather than a preference. */
+  --measure: 40rem;
+
+  /* The interval between one heading-and-its-text and the next. Qiita sets 56px
+     over a 17px body and note 36px over an 18px one; this was 72px over a 14px
+     body, already the largest of the three measured against its own line, and
+     still read as tight. The reason was the grouping above, not the gap — but
+     with the groups now formed, the gap is what tells them apart, and it is
+     worth the extra line of silence. Four times the leading. */
+  --space-section: 6rem;
+}
 
 /* Carries `body` only to outrank `body.home`, which sets the Latin index to a
    step under its work pages. Written as a bare `:lang()` list this loses that
@@ -1318,9 +1316,86 @@ body:is(:lang(ja), :lang(zh), :lang(ko)) { --text: 0.875rem; }
    while the body size was index-only put the heading under the body on every
    CJK work page, which is the inversion this whole block exists to prevent. */
 
+/* Four sizes, and the heading is one of them.
+
+   Holding the heading at the body size was a real choice and it is written out
+   above: with `text-transform` inert there are no capitals to say "label", so
+   the size came up to the body and colour, weight and tracking were left to
+   carry it. What that reasoning did not survive is a reader. A product
+   designer given these pages could not see the sections at all — "the heading
+   and the body are the same size, so the structure does not arrive" — and a
+   device that three signals cannot deliver is not a device. Size is the fourth
+   signal and the only one that works before anything is read.
+
+   1.25rem against a 0.875rem body is 1.43x. Qiita sets 1.53x and note 1.11x,
+   and note gets away with the smaller step by spending 36px of air on either
+   side of the heading; this column has the air already, in `--space-section`.
+
+   The tracking comes nearly off with the size. 0.14em opened a small-caps
+   eyebrow, 0.06em was that value talked down for a heading that was still
+   label-sized, and neither is anything a 20px line of kanji needs. What is
+   left is the small positive tracking Japanese takes at display sizes. */
+:is(:lang(ja), :lang(zh), :lang(ko)) h1 { font-size: 2rem; }
+
 :is(:lang(ja), :lang(zh), :lang(ko)) h2 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+
+  /* Black, not the accent. The accent was chosen to sit at the same lightness
+     as `--fg-muted` — that is what lets it change the page's hue without
+     changing its rhythm — and a heading is the one place on the page where
+     changing the rhythm is the entire job. Read beside body text set in
+     `--fg`, a heading a step lighter than the words it governs is quieter
+     than them, whatever its size. The accent keeps every other place it had:
+     the links, the mark, the button, the asterism. */
+  color: var(--fg);
+
+  /* Closer to the text it heads than paragraphs are to each other. This is the
+     grouping, and it was the missing half of the size problem: at 16px under
+     the heading and 20px between paragraphs, the heading sat almost exactly as
+     far from its own first line as two paragraphs sit from one another, so
+     nothing below it read as belonging to it. A heading that owns nothing
+     cannot be a boundary, and the space between sections then has no groups on
+     either side of it to separate — which is why that space read as narrow
+     while measuring 72px. */
+  margin-bottom: 0.875rem;
+
+  /* Where a Japanese heading is allowed to break. The title solves this with
+     `keep-all` and hand-placed `<wbr>`, because only the author knows which
+     compounds in a title are single terms. A section heading cannot be
+     annotated that way — there are hundreds of them across the languages, and
+     they are edited far more often than a title — so it asks the browser
+     instead: `auto-phrase` breaks a Japanese line at the phrase boundaries the
+     grammar allows, never inside a word.
+
+     A progressive enhancement. Where it is not implemented the declaration is
+     dropped and the line breaks where it always did — between any two
+     characters — which is the behaviour every one of these headings has now. */
+  word-break: auto-phrase;
+}
+
+/* The index headings are not the headings of an argument. They name the three
+   lists the page is made of, and the reader is scanning them rather than
+   reading through them, so what they need is to be findable, not to be loud.
+   Back to the size of running text, in the accent, weight carrying the rest —
+   the eyebrow treatment this file gave them before the work pages needed
+   something else. The tracking is the value that was tuned for a CJK heading
+   at this size; it came off with the size on the work pages and comes back
+   with it here. */
+body.home:is(:lang(ja), :lang(zh), :lang(ko)) h2 {
   font-size: 0.875rem;
+  font-weight: 700;
   letter-spacing: 0.06em;
+  color: var(--accent);
+}
+
+/* The last 12px of running text in the scale. It is a control rather than a
+   caption, which is what let it sit under the supporting size in Latin; in
+   kanji it is simply below the size the block above holds text to. */
+:is(:lang(ja), :lang(zh), :lang(ko)) .works-more__box {
+  font-size: 0.875rem;
+  font-weight: 400;
 }
 
 /* Where a Japanese title is allowed to break. Japanese is written without
@@ -1370,14 +1445,14 @@ body:is(:lang(ja), :lang(zh), :lang(ko)) { --text: 0.875rem; }
    against a 17px body. Against a 14px one it says nothing — the caption
    arrives at the size of the text it is meant to defer to. Down a step, to the
    floor the Japanese scale keeps for supporting text. */
-:is(:lang(ja), :lang(zh), :lang(ko)) figcaption { font-size: 0.8125rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) figcaption { font-size: 0.75rem; }
 
 /* Same problem one size down: the work description is set compact to hold the
    card's two columns to a matching height, and 12px is where that lands for
    Latin. In kanji it is below the size at which a paragraph is comfortably
    read, and this one is doing the work of telling the reader what the piece
    is. The card gives up a little of its alignment for it. */
-:is(:lang(ja), :lang(zh), :lang(ko)) .work-desc { font-size: 0.8125rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .work-desc { font-size: 0.75rem; }
 
 /* The language switcher sits in the footer, above the copyright line. Each
    name is written in its own language, so each anchor carries its own `lang`
