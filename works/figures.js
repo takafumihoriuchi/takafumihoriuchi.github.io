@@ -27,6 +27,20 @@
   const supportsInert = "inert" in HTMLElement.prototype;
   let opener = null;
 
+  /* What the overlay covers, and therefore what it has to take out of the tab
+     order: everything in the body except itself. `main` alone was not that —
+     the home mark is a sibling of `main`, fixed over the top of the window,
+     and it kept its link in the tab order the whole time the overlay was up.
+     Two presses of Tab from the close button landed on a link that is behind
+     an 82%-black ground, and a third followed it off the page the reader was
+     still reading.
+
+     Read at open rather than kept in a variable: the ASCII module appends its
+     own layer to the body after this script runs, so a list built now would
+     be missing whatever arrived since. Anything already inert for a reason of
+     its own is left alone, and left alone again on the way out. */
+  let inerted = [];
+
   function open(link) {
     const source = link.querySelector("img");
     image.src = link.href;
@@ -50,7 +64,10 @@
     /* `inert` is the trap: it takes the page behind the overlay out of the tab
        order and out of the accessibility tree in one property. Where it is not
        supported the overlay still works, it just does not hold focus. */
-    if (supportsInert && main) main.inert = true;
+    if (supportsInert) {
+      inerted = [...document.body.children].filter((el) => el !== box && !el.inert);
+      for (const el of inerted) el.inert = true;
+    }
 
     /* Nothing behind an 82%-black overlay needs to be animating. The ASCII
        scene's idle loop rewrites its whole <pre> ten times a second for as
@@ -73,7 +90,8 @@
     box.classList.remove("is-line-art", "keeps-colour");
     root.classList.remove("lightbox-open");
     root.style.removeProperty("--lightbox-gutter");
-    if (supportsInert && main) main.inert = false;
+    for (const el of inerted) el.inert = false;
+    inerted = [];
     for (const hero of document.querySelectorAll("ascii-hero")) {
       hero.removeAttribute("paused");
     }
