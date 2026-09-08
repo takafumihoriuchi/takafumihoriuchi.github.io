@@ -26,8 +26,10 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/my-own-pokemon-generation/page.css">
 <script src="../../../works/home-mark.js" defer></script>
+<script defer src="../../../works/figures.js"></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ar_AR">
@@ -251,5 +253,14 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="عرض مكبَّر للشكل" hidden>
+  <button class="lightbox__close" type="button" aria-label="إغلاق العرض المكبَّر"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

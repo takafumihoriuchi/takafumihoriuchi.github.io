@@ -77,8 +77,10 @@
   ]
 }
 </script>
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
 <script src="../../../works/home-mark.js" defer></script>
+<script defer src="../../../works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
@@ -212,5 +214,14 @@ o-|\
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="그림 확대 보기" hidden>
+  <button class="lightbox__close" type="button" aria-label="확대 보기 닫기"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>
