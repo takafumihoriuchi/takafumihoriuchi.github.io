@@ -8,8 +8,8 @@
      and every other language is translated from it (owner's instruction,
      2026-08-23). The mock renders live under the English tree, one file per
      language, and are referenced from here rather than copied. -->
-<title>Personal Fit UI - Individua optimumigo de UI per dezajno laŭ limigoj — Takafumi Horiuchi</title>
-<meta name="description" content="Generi interfacon, kiu kongruas kun la kognaj, sensaj kaj korpaj trajtoj de unu homo, ene de la limoj starigitaj de sciencaj konoj kaj dezajnaj limigoj. Provo de koncepto farita sur aŭtomobila navigilo.">
+<title>Individua optimumigo de la interfaco per limig-bazita dezajno — Takafumi Horiuchi</title>
+<meta name="description" content="Mekanismo, kiu generas interfacon el la kognaj, sensaj kaj korpaj trajtoj de homo kaj el dezajna scio, prototipita sur aŭtomobila navigilo. Efektivigo kaj komparo de limig-bazita dezajno, por esplori kion povas doni individuigo kaj kiom da libereco restas al generativa AI.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -30,18 +30,20 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="eo">
-<meta property="og:title" content="Personal Fit UI - Individua optimumigo de UI per dezajno laŭ limigoj">
-<meta property="og:description" content="La homo dezajnas la kadron, kiu devas teni; ene de ĝi la artefarita inteligenteco konkretigas la interfacon de ĉiu unuopulo. Dezajno laŭ limigoj en la praktiko.">
+<meta property="og:title" content="Individua optimumigo de la interfaco per limig-bazita dezajno">
+<meta property="og:description" content="Mekanismo, kiu generas interfacon el la trajtoj de homo kaj el dezajna scio, prototipita sur aŭtomobila navigilo, por esplori kion povas doni individuigo kaj kiom da libereco restas al generativa AI.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="La unueca ekrano de Personal Fit UI, kun menuo de celo kaj navigado.">
+<meta property="og:image:alt" content="La unueca interfaco de Personal Fit UI, montranta menuon de celloko kaj navigado.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -61,9 +63,9 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/#work",
-      "name": "Personal Fit UI - individuigo de la interfaco per dezajno laŭ limigoj",
+      "name": "Individua optimumigo de la interfaco per limig-bazita dezajno",
       "url": "https://takafumihoriuchi.github.io/eo/works/personal-fit-ui/",
-      "description": "Generi interfacon, kiu kongruas kun la kognaj, sensaj kaj korpaj trajtoj de unu homo, ene de la limoj starigitaj de sciencaj konoj kaj dezajnaj limigoj. Provo de koncepto farita sur aŭtomobila navigilo.",
+      "description": "Mekanismo, kiu generas interfacon el la kognaj, sensaj kaj korpaj trajtoj de homo kaj el dezajna scio, prototipita sur aŭtomobila navigilo. Efektivigo kaj komparo de limig-bazita dezajno, por esplori kion povas doni individuigo kaj kiom da libereco restas al generativa AI.",
       "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
       "datePublished": "2026-08",
       "inLanguage": "eo",
@@ -79,8 +81,8 @@
 <main>
 
   <header>
-    <h1>Individua optimumigo de UI per dezajno laŭ limigoj</h1>
-    <p class="dateline">aŭgusto 2026</p>
+    <h1>Individua optimumigo de la interfaco per limig-bazita dezajno</h1>
+    <p class="dateline">Aŭgusto 2026</p>
   </header>
 
   <ascii-hero data-scene="personal-fit-ui" dir="ltr" translate="no" aria-hidden="true">
@@ -96,146 +98,198 @@
 
   <section>
     <h2>Superrigardo</h2>
-    <p class="lead">Ĉiuj uzas la saman interfacon en la sama maniero. Ĉi tiu verko forlasas tiun premison de amasproduktado kaj demandas, ĉu eblas anstataŭe generi interfacon, kiu kongruas kun la kognaj, sensaj kaj korpaj trajtoj de ĉiu unuopa homo.</p>
-    <p>La celo ne estis interfaco, kies ekrano senĉese ŝanĝiĝas laŭ la situacio dum la uzado. Temas pri mekanismo, kiu kaptas la trajtojn de la homo je la komenco de la uzado kaj anticipe generas al li konvenan interfacon, respektante la limigojn pri sekureco kaj alirebleco.</p>
-    <p>En ĉi tiu esploro mi praktikis ideon, kiun mi nomas dezajno laŭ limigoj. Surbaze de literaturo kaj normoj, la homo dezajnas la direktojn sekvindajn kaj la limojn ne transpaŝeblajn. Ene de tiu kadro la artefarita inteligenteco decidas la konkretajn valorojn kaj vortumojn, kaj la generitaĵo estas kontrolata, ĉu ĝi ne malobeas la kadron.</p>
-    <p>La provo de koncepto prenis aŭtomobilan navigilon kiel temon kaj generis interfacon por dek tri person-modeloj kun malsamaj trajtoj. Rezulte, granda ŝanĝo en la aspekto preskaŭ ne aperis. Aliflanke, la procezo de surpaperigo de la limigoj en kontrolebla formo montris, kie restas spaco por individuigo kaj kie la limigoj ĝin formanĝas.</p>
+    <p class="lead">Mi proponas mekanismon, kiu ricevas personajn informojn pri la kognaj trajtoj de homo kaj generas interfacon konvenan al tiu homo, konsultante la bazajn dezajnajn principojn de interfacoj, la kondiĉojn de sekureco kaj alirebleco, kaj esplorajn konojn pri homaj trajtoj.</p>
+    <p>Ĝi aplikas la ideon, kiun mi nomas limig-bazita dezajno: homo dezajnas la kondiĉojn, kiuj devas validi, kaj ilian aplikan amplekson, kaj ene de tiu kadro generativa AI ellaboras la konkretan proponon. Kun aŭtomobila navigilo kiel temo, mi efektivigis pruvon de koncepto, kiu generas interfacojn el dek tri fikciaj personecoj — inkluzive de sensaj kaj korpaj trajtoj — kaj kontrolas la konformecon al la kondiĉoj en aparta paŝo.</p>
+    <p>En la komparo unu kazo montris klaran ŝanĝon de la ekranstrukturo pro korpa trajto, dum ĉe la plimulto de la generaĵoj granda vida ŝanĝo ne aperis. La reala uzeblo kaj sekureco restas nekontrolitaj, sed la laboro klarigis, ĝis kie oni povas transdoni la juĝon al generativa AI, kaj kiuj dezajnaj kondiĉoj mallarĝigis la spacon por individuigo.</p>
   </section>
 
   <section>
-    <h2>Kion signifas doni al ĉiuj la saman interfacon</h2>
-    <p>Plej multaj produktoj hodiaŭ estas dezajnitaj sub la premiso de amasproduktado: unu interfaco, kiu kovru kiel eble plej multajn homojn. Eĉ kiam la litergrandeco aŭ la nombro de montrataj eroj estas ŝanĝeblaj, la uzanto mem devas trovi la al si konvenan staton kaj agordi ĝin.</p>
-    <p>Tiu maniero funkcias por multaj homoj. Sed „konveni al multaj“ kaj „konveni al ĉiuj“ ne estas la samo. Eĉ produkto, kiu plenumas ĉiujn komunajn dezajnajn normojn, lasas homojn, al kiuj tiu interfaco restas malfacile uzebla.</p>
-    <p>La sama strukturo aperas ankaŭ en la takso de enaŭtaj interfacoj. La akcepta proceduro de la usona NHTSA pri forturno de la rigardo dum stirado ne postulas, ke ĉiuj partoprenantoj plenumu la kriterion. Tasko estas konsiderata sukcesa, kiam 21 el 24 partoprenantoj ĝin plenumas: ke iu parto ne plenumas ĝin, estas anticipe enskribita en la proceduron mem. Krome, dokumento prezentita al la reguliganto de aŭtofabrikantoj raportas, ke ĉirkaŭ unu homo el ses konstante forturnas la rigardon pli longe tra pluraj taskoj. Tiu dokumento devenas de la fabrikantoj mem, kiujn la reguligo koncernas, kaj petis malstreĉon de la kriterio. Kion ĉi tiu verko celas, ne estas malstreĉi la kriterion, sed pliigi per individuigo la nombron de homoj kapablaj ĝin plenumi.</p>
-    <p>La senco de individuigita interfaco ne estas fari la ekranon de ĉiuj nova kaj neordinara. Ĝi estas enkonduki la homojn, kiujn la unueca interfaco ĝis nun perdis, en la amplekson, kie ili povas ĝin uzi kaj sekure manipuli.</p>
-    <p>Ĝis nun la kosto dezajni unu interfacon por unu homo ne estis realisma. De kiam la artefarita inteligenteco uzeblas kiel parto de la dezajna procezo, tiu premiso komencas ŝanĝiĝi.</p>
+    <h2>Fono — ĝis kie sufiĉas unu sola interfaco</h2>
+    <p>La plej multaj produktoj dezajnas kaj liveras komunan interfacon uzeblan de kiel eble plej multaj homoj. Sed kiom da informo oni kaptas samtempe, kiel facile oni direktas la atenton, kiel kompreneblaj estas la vortoj kaj kiel precizaj la etaj manipuladoj — ĉio tio diferencas de homo al homo. Ke komuna interfaco konsideras multajn homojn, ne signifas, ke ĝi konvenas al tiu unu homo.</p>
+    <p>Ankaŭ la taksado je la nivelo de grupo havas siajn limojn. En la libervolaj gvidlinioj, kiujn la usona NHTSA publikigis en 2013, ekzemple, ĉiu akceptokriterio pri rigardado postulas, ke almenaŭ 21 el 24 partoprenantoj plenumu ĝin. Tio ne estas kondiĉo signifanta, ke ĉiuj povas uzi ĝin same. <a class="citation-marker" href="#ref-nhtsa" aria-label="Al referenco 1">[1]</a></p>
+    <p>Eĉ ĉe produktoj, kie la litergrandeco aŭ la montrata kvanto ŝanĝeblas, la uzanto devas rimarki, ke la agordo ekzistas, ligi ĝin al sia propra malfacilaĵo kaj elekti la ĝustan alĝustigon. Ĉu tiuj agordoj restas nesufiĉe uzataj, kaj homoj plu uzas nekonvenan staton? De tiu demando ĉio komenciĝis.</p>
+    <p>En aŭtomobila navigilo, rigardi la ekranon kaj manipuli ĝin konkurencas kun la atento, kiun postulas la stirado. <a class="citation-marker" href="#ref-nhtsa" aria-label="Al referenco 1">[1]</a> Se malbona kongruo kun la interfaco povas pligrandigi tiun ŝarĝon, tiam prepari jam ĉe la komenco de la uzado staton konvenan al la homo indas esplori, kaj pro uzeblo kaj pro sekureco.</p>
+    <p>Per generativa AI eblas nun prototipi paŝon, kiu ellaboras interfacon el personaj informoj kaj dezajna scio. Tiel aperis maniero liveri interfacon konvenan al ĉiu homo, samtempe malpliigante la ŝarĝon dezajni ĉiun ekranon mane, unu homon post la alia.</p>
+    <p class="note">Kiom ofte tiuj agordoj efektive estas uzataj, kaj kiel malbona kongruo kun la interfaco influas akcidentojn, ne estis kontrolitaj en ĉi tiu projekto.</p>
   </section>
 
   <section>
-    <h2>Aŭtomobila navigilo kiel temo</h2>
-    <p>La temo de ĉi tiu verko ne estas la aŭtomobila navigilo, sed la individuigita interfaco. La navigilo estis elektita kiel unu ekzemplo, sur kiu kontroli ĝiajn eblojn kaj ĝiajn limojn.</p>
-    <p>Enaŭta interfaco portas fortajn limigojn: malvasta ekrano, tre mallonga rigarda tempo, sekureco de ĉiu manipulo. Antaŭ la ekspedo ĝi estas validigita kiel unueca interfaco uzebla de plej multaj homoj — kaj la sama interfaco poste transdoniĝas ankaŭ al tiuj, al kiuj tiu dezajno ne konvenas.</p>
-    <p>Se individuigo tenas en kampo tiel strikte limigita, la ideon de dezajno laŭ limigoj eblas kontroli konkrete. Inverse, eblas ankaŭ, ke la limigoj lasas al la artefarita inteligenteco preskaŭ neniom da libereco. Tio estis temo, ĉe kiu ambaŭ observeblas.</p>
-    <p class="note"><strong>En Japanio, en 2026, kunekzistas modeloj kapablaj je ĝisdatigo tra la aero kaj tradiciaj fabrike instalitaj navigiloj, kiuj ĝisdatigon ne akceptas.</strong> Krome, eĉ kie la mapaj datumoj ĝisdatigeblas, la baza strukturo de la interfaco ne nepre estas re-dezajnata denove kaj denove post la aĉeto. Ĉi tiu provo de koncepto supozas sistemon, kies interfaco ne estas ofte ĝisdatigata post la komenco de la uzado.</p>
+    <h2>Propono — ligi personajn informojn al du specoj de dezajna scio</h2>
+    <p>Enigataj estas informoj pri la kognaj trajtoj de tiu uzanto. La AI komparas ilin kun du antaŭe pretigitaj scikorpoj: unu enhavas la bazajn dezajnajn regulojn de interfaco, la alia ligas homajn trajtojn al la interfacoj, kiujn ili rekomendas.</p>
+    <p>Sur tiu bazo la AI konkretigas la interfacon ene de la permesata amplekso, kaj la konformeco al la kondiĉoj estas kontrolata. La eligo estas la interfaco konvena al tiu homo kune kun klarigo pri tio, kio estis ŝanĝita kaj kial.</p>
+
+    <figure class="concept-figure line-art">
+      <a class="concept-figure__desktop" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg" width="1400" height="815" loading="lazy" decoding="async" alt="La koncepto: personaj kognaj trajtoj eniras, kaj la interfaco estas generata konsultante la bazajn regulojn de interfaca dezajno kaj la scion pri interfacoj rekomendataj laŭ trajtoj. Generativa AI konkretigas la proponon, aparta paŝo kontrolas la kondiĉojn, kaj la eligo estas interfaco konvena al la homo kune kun la kialoj de ĉiu ŝanĝo."></a>
+      <a class="concept-figure__mobile" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg" width="480" height="1414" loading="lazy" decoding="async" alt="La koncepto: personaj kognaj trajtoj eniras, kaj la interfaco estas generata konsultante la bazajn regulojn de interfaca dezajno kaj la scion pri interfacoj rekomendataj laŭ trajtoj. Generativa AI konkretigas la proponon, aparta paŝo kontrolas la kondiĉojn, kaj la eligo estas interfaco konvena al la homo kune kun la kialoj de ĉiu ŝanĝo."></a>
+      <figcaption><strong>Figuro 1 | La koncepto: personaj informoj eniras, la interfaco estas generata konsultante dezajnan scion.</strong> La enigo, kiu ŝanĝiĝas de homo al homo, estas apartigita de la scio, kiun la dezajnisto pretigas anticipe. En la pruvo de koncepto la enigo inkluzivis, krom kognaj, ankaŭ sensajn kaj korpajn trajtojn.</figcaption>
+    </figure>
+
+    <h3>Enigo: informoj pri la homo</h3>
+    <p>Ekzemple: kiom facile oni memoras kaj traktas plurajn informojn samtempe, kiom facile aliaj stimuloj forlogas la atenton, kian klarigon oni plej facile sekvas. La efektivigo inkluzivis ankaŭ la vidon kaj la fingran lertecon. La ekrano ne estas decidata el diagnoza nomo; traktataj estas personaj informoj rilataj al la uzado de la interfaco.</p>
+
+    <h3>Scio A: la reguloj, por ke interfaco staru kiel interfaco</h3>
+    <p>Oni ordigas la bazajn dezajnajn principojn: konsekvenco, respondo al agoj, grupigo de informo, legebleco de teksto kaj videbleco de tuŝceloj. Aldone, la manipulaj limigoj de enveturilaj interfacoj kaj la kondiĉoj de alirebleco estas difinitaj kune kun la situacioj, en kiuj ili validas.</p>
+
+    <h3>Scio B: de trajtoj al la interfaco, kiun ili rekomendas</h3>
+    <p>Homaj trajtoj konstatitaj de esploroj estas ligataj al principoj de informprezentado kaj de tie al la dezajno de la interfaco. Al trajto kiel «teni informon dum oni manipulas estas ŝarĝe» respondas la direkto «malpliigi tion, kion oni devas memori», kio kondukas al solvoj, kiuj lasas la necesajn informojn sur la ekrano.</p>
+    <p>Tamen esploro pri trajto ne donas senpere dezajnan valoron por aŭtomobila navigilo. <strong>Tio, kion la esploroj konstatas, estas distingata de la dezajnaj decidoj, kiujn ĉi tiu projekto eltiris el ili.</strong> Plibonigoj same utilaj al ĉiuj apartenas al la bazaj reguloj kaj ne kalkuliĝas kiel rezulto de individuigo.</p>
   </section>
 
   <section>
-    <h2>Fari individuigon io, kion oni povas generi</h2>
-    <p>Dezajno laŭ limigoj signifas klare fiksi la kadron kaj poste lasi la artefaritan inteligentecon movi sin ene de ĝi flekseble kaj kun sento por nuancoj. Malsame ol parametra mekanismo, kiu ĉerpas valorojn el fiksita tabelo, ĉi tie oni dezajnas la amplekson mem de la solvoj, kiujn la artefarita inteligenteco rajtas esplori.</p>
-    <p>Sciencaj konoj ne ĉiam atingas konkretan nombron. Foje ili indikas nur direkton: pligrandigi, montri malpli. Kie la valoro estas difinita, ĝi estas kalkulata kiel regulo; kie konata estas nur la direkto, la artefarita inteligenteco decidas la konkretaĵon ene de tio, kion la limigoj permesas. Ne lasi tiun distingon malklariĝi estas mem parto de la mekanismo.</p>
+    <h2>La celata sperto — kune konstati ĉe la unua veturo, kio estas oportuna</h2>
+    <p class="note"><strong>Estonta koncepto.</strong> La komenca agordado per konversacio ne estas efektivigita en ĉi tiu pruvo de koncepto.</p>
+    <p>Oni aĉetas aŭton kaj unuafoje sidiĝas ĉe la stirilo. Dum la aŭto staras, AI-agento demandas pri la kutima maniero uzi ĝin. Anstataŭ tralegi teknikajn agordoerojn, la homo rakontas, kio kutime malfaciligas kaj kio ŝajnas al li facile uzebla.</p>
 
-    <figure class="framework">
-      <div class="framework-branches">
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>Fiksi la kognajn dimensiojn</h3>
-            <p>La aksoj estas difinitaj ne kiel diagnozaj nomoj, sed kiel trajtoj rilataj al la facileco de uzado: labormemoro, eltenemo kontraŭ distraj stimuloj, vidaj kaj aŭdaj trajtoj, fingra lerteco.</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>Kongrua tabelo</h3>
-            <p>Ligas la trajtojn de la uzanto al la interfacaj parametroj movendaj: kiu trajto movas kion kaj en kiun direkton, kune kun la pravigo.</p>
-          </div>
-        </div>
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>Sciencaj konoj kaj normoj</h3>
-            <p>Kolektiĝas sekurecaj kriterioj, normoj pri alirebleco, rezultoj de la kogna scienco kaj ĝeneralaj principoj de interfaca dezajno.</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>Aro da limigoj</h3>
-            <p>La kondiĉoj, kiujn ĉiu generitaĵo nepre respektu. Ne restante idealoj, ili estas skribitaj en formo, ĉe kiu kontroleblas: plenumita aŭ malobeita.</p>
-          </div>
-        </div>
+    <figure class="journey-figure line-art">
+      <a href="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg" width="1200" height="1030" loading="lazy" decoding="async" alt="La estonta uzantvojaĝo ĉe la unua veturo: dum la aŭto staras, la homo elektas komenci, respondas al la demandoj de la AI, korektas la komprenon de la AI, provas la generitan interfacon kaj ekuzas la interfacon, kiun li konfirmis."></a>
+      <figcaption><strong>Figuro 2 | La uzantvojaĝo de la unua veturo ĝis la komenco de la uzado.</strong> Demandado, konfirmo de la komprenita, generado de la interfaco kaj provo dum halto kune pretigas la komencan interfacon de tiu homo.</figcaption>
+    </figure>
+
+    <ol class="journey-steps">
+      <li>
+        <h3>Unua veturo: komenci la konversacion</h3>
+        <p class="dialogue"><span>AI</span>«Por agordi la ekranon al vi, ĉu vi povus rakonti kelkajn aferojn pri via kutima uzo? Ni povas fari tion ankaŭ poste.»</p>
+        <p>La homo komprenas la celon kaj elektas, ĉu komenci nun aŭ poste.</p>
+      </li>
+      <li>
+        <h3>Intervjuo: rakonti pri la malfacilaĵoj</h3>
+        <p class="dialogue"><span>AI</span>«Kiam la instrukcioj sekvas unu la alian, en kiuj lokoj fariĝas malfacile sekvi ilin?»</p>
+        <p class="dialogue"><span>Uzanto</span>«Kiam venas la sekva instrukcio, mi foje forgesas, kion diris la antaŭa.»</p>
+        <p>La AI demandas pri konkretaj situacioj kaj ordigas la malfacilaĵojn ligitajn al la tenado de informo kaj al la direktado de la atento.</p>
+      </li>
+      <li>
+        <h3>Konfirmo: la homo povas korekti tion, kion la AI komprenis</h3>
+        <p class="dialogue"><span>AI</span>«Do estus pli oportune por vi, se la necesaj informoj restus sur la ekrano, anstataŭ ke vi devu memori la paŝojn — ĉu mi ĝuste komprenis?»</p>
+        <p>La homo konfirmas aŭ korektas tiun komprenon. Kion li mem raportas en la konversacio, oni traktas aparte de mezuritaj kognaj valoroj kaj de diagnozoj; kie mezurado necesas, oni antaŭvidas apartan manieron konstati ĝin.</p>
+      </li>
+      <li>
+        <h3>Propono kaj provo: aŭdi la kialon, provi la ekranon</h3>
+        <p class="dialogue"><span>AI</span>«Por malpliigi tion, kion vi devas teni en la kapo, mi proponas ekranon, kie videblas samtempe la nuna ago kaj la sekva paŝo.»</p>
+        <p>Dum la aŭto staras, la homo provas ekzemple elekti cellokon. Li povas diri «antaŭe estis pli klare» aŭ «ĉi tie mi ŝanĝus la vortojn», kaj la propono estas alĝustigebla, aŭ la origina interfaco restarigebla.</p>
+      </li>
+      <li>
+        <h3>Komenco de la uzado: uzi la konfirmitan interfacon</h3>
+        <p>La interfaco konfirmita de la homo estas konservata kiel komenca stato. Dum la veturado restas la baza strukturo, kiun la homo jam lernis. Kiam li volas retrakti ĝin, li povas realĝustigi dum halto.</p>
+      </li>
+    </ol>
+    <p>La celo de la konversacio ne estas klasifiki la uzanton unufoje por ĉiam. Ĝi estas pretigi la staton, de kiu li ekiras, per interŝanĝo, en kiu li povas klarigi sin kaj korekti la komprenitan.</p>
+  </section>
+
+  <section>
+    <h2>Efektivigo — apartigi la nepre validajn kondiĉojn de la juĝoj lasitaj al la AI</h2>
+    <p>Efektivigita estas la mekanismo, kiu ricevas la trajtajn informojn de homo, generas interfacon kaj poste kontrolas, desegnas kaj komparas ĝin. Anstataŭ la konversacia demandado, kiel enigo estis difinitaj dek tri fikciaj personecoj kun malsamaj trajtoj.</p>
+    <p>Aŭtomobila navigilo estis elektita kiel temo, ĉar ĝi permesas trakti kondiĉojn konkrete: la areon de la ekrano, la grandecon de la tuŝceloj, la montreblan informkvanton kaj tion, kio manipuleblas dum veturado.</p>
+
+    <h3>Limig-bazita dezajno kiel maniero labori</h3>
+    <p>Limig-bazita dezajno, en la senco de ĉi tiu projekto, estas <strong>metodo, en kiu homo dezajnas la nepre validajn kondiĉojn kaj ilian aplikan amplekson, kaj la AI proponas konkretajn solvojn ene de tiu kadro</strong>.</p>
+    <p>Ĉe regul-bazita parametra ŝanĝo la responda valoro aŭ opcio por ĉiu enigo estas fiksita anticipe. Ĉi tiu koncepto, anstataŭ plenigi ĉiujn respondojn, fiksas la permesatan amplekson kaj la bazon de la juĝo, kaj lasas la ankoraŭ nefiksitajn valorojn kaj vortumojn al la bontrovo de la generativa AI. La efektivigo kombinas la partojn decidatajn per kalkulo kun tiuj decidataj de la generativa AI.</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Traktado en la efektivigo laŭ la fidindeco de la pruvoj">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">Kion la pruvoj konstatas</th><th scope="col">Traktado en la efektivigo</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Valoro aŭ rilato estas difinita</td><td>Kalkulata ene de la kondiĉoj kaj amplekso, kiujn eblis konfirmi</td></tr>
+          <tr><td>La direkto de la alĝustigo estas konata, sed ne ĝia grado</td><td>Konkretigata ene de la direkto kaj la limigoj, kun noto, ke temas pri nekontrolita dezajna decido</td></tr>
+          <tr><td>La pruvoj solaj ne difinas taŭgan elekton</td><td>Traktata kiel esplora propono kaj markata kiel bezonanta taksadon</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Ĉiufoje, kiam esplora konstato estis transportita en la interfacon, la fonto, la aplikaj kondiĉoj kaj la dezajna decido estis registritaj. Ĉar la kialoj estas eligataj kune kun la interfaco, eblas retrovi, kial por tiu homo aperis ĝuste tiu ekrano.</p>
+
+    <h3>Kontroli la generitan interfacon en aparta paŝo</h3>
+    <p>La interfaco estas generata kiel strukturitaj datenoj kun siaj elementoj kaj aranĝo, kaj desegnata el tiuj datenoj. Nombrajn kaj strukturajn kondiĉojn kontrolas kodo; kelkajn kondiĉojn, kiuj postulas interpreti sencon, kontrolas aparte LLM. Ankaŭ la eroj ekster la aŭtomata juĝo kaj tiuj, kiujn oni ne povis kontroli pro manko de materialo, estas registritaj.</p>
+    <p>Kion la kontrolo konfirmas, estas la konformeco al la kondiĉoj tiaj, kiaj ili estas difinitaj. Ĉu la interfaco vere estas pli facile uzebla aŭ pli sekura, postulas taksadon fare de uzantoj.</p>
+    <p>Se en la dezajna fazo aperas kontraŭdiro inter kondiĉoj, la AI montras la lokon, kaj homo decidas, kiel revizii ilin. Tio ne estas mekanismo, en kiu la AI ĉe ĉiu generado ŝanĝas la kondiĉojn laŭ sia oportuno.</p>
+  </section>
+
+  <section>
+    <h2>Komparo de interfacoj — kazo kun granda ŝanĝo kaj kazo preskaŭ senŝanĝa</h2>
+    <p>La komparbazo estas la interfaco farita el komunaj defaŭltaj valoroj, sen enigo de personaj trajtoj. Ĉe la sama funkciaro, al ĝi estis komparata la eligo, kiam personaj trajtoj estis enigitaj.</p>
+    <p class="note"><strong>La subaj bildoj estas eligoj de la prototipo, ne komerca navigilo antaŭ kaj post refarado.</strong> Ankaŭ la personecoj ne reproduktas realajn uzantojn; ili estas fikciaj enigoj por konstati la efikon de trajto.</p>
+
+    <h3>Kazo, en kiu la tuŝceloj pligrandiĝis</h3>
+    <h4>PS-12 — personeco kun korpa trajto, kiu malfaciligas precizan tuŝadon</h4>
+    <p>La aĝo kaj la kognaj kaj sensaj trajtoj kongruas kun la bazo PS-01; ŝanĝita estas nur la fingra lerteco. En la montrataj bildoj ĉiu tuŝcelo pligrandiĝis, kaj la eroj vicigitaj meze de la ekrano falas de sep al kvar. La fiksaj butonoj ĉe la malsupro ne estas kalkulitaj en tiu nombro.</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">Komuna defaŭlta interfaco</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-before-eo.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-before-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La komuna defaŭlta interfaco. Meze de la ekrano por elekti cellokon viciĝas sep eroj, kun kvar fiksaj butonoj ĉe la malsupro."></a>
       </div>
-      <div class="framework-merge" aria-hidden="true"></div>
-      <div class="framework-box framework-space">
-        <h3>Dezajna spaco</h3>
-        <p>Ĉio, kion la interfaco povas varii: litergrandeco, tuŝceloj, nombro de montrataj eroj, informa hierarkio, sciigoj, vortprovizo, ordo, grupigo. La kongrua tabelo donas la direkton de la agordo; la aro da limigoj forigas la nepermesatajn solvojn.</p>
+      <div>
+        <p class="compare-label">Interfaco generita el personaj trajtoj</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-after-eo.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-after-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La eligo generita kun la fingra lerteco kiel enigo. Meze estas kvar eroj, ĉiu kun pli granda tuŝareo. Ĉe la malsupro restas kvar fiksaj butonoj."></a>
       </div>
-      <div class="framework-arrow" aria-hidden="true"></div>
-      <div class="framework-box framework-ai">
-        <h3>La artefarita inteligenteco konkretigas ene de la kadro</h3>
-        <p>El la restanta libereco ĝi decidas valorojn, vortprovizon, ordon kaj grupigon. Aparta kontrolo konfirmas la kongruon kun la kadro, kaj eliras nur individuigita interfaco, kiu plenumas ĉiujn kondiĉojn.</p>
+      <figcaption><strong>Figuro 3 | La grandeco de la tuŝceloj kaj la montrata kvanto sur unu ekrano, redisdonitaj.</strong> Ke la ekrano ŝanĝiĝas laŭ la persona enigo, eblis montri. Tamen tiu ŝanĝo devenas de korpa trajto; ĝi ne estas rezulto montranta la efikecon de interfaco adaptita al kognaj trajtoj.</figcaption>
+    </figure>
+    <p>Pligrandigi la tuŝcelojn havas sian prezon: sur la sama ekrano oni povas elekti malpli da eroj samtempe. La funkciaro laŭ la dezajno konserviĝas, sed el ĉi tiu sola ekrano ne eblas taksi, kiom facile oni atingas la sekvajn ekranojn.</p>
+
+    <h3>Kazo, en kiu la strukturo preskaŭ ne ŝanĝiĝis</h3>
+    <h4>PS-01 — la personeco fiksita kiel bazo</h4>
+    <p>En la litergrandeco estas malgrandaj diferencoj, sed la nombro de la eroj, la aranĝo kaj la grandeco de la tuŝareoj estas preskaŭ samaj. Kun ĉi tiu kombino de reguloj kaj enigoj ne aperis rezulto, kiu grande ŝanĝus la strukturon kompare kun la komuna defaŭlta interfaco.</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">Komuna defaŭlta interfaco</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-before-eo.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-before-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La komuna defaŭlta interfaco. Meze de la ekrano por elekti cellokon viciĝas sep eroj."></a>
       </div>
-      <figcaption>Homa taksado ne estas konstanta paŝo. Nur kiam homo juĝas alĝustigon necesa, ĝi retrofluas en la limigojn — tiom, kiom la sciencaj konoj permesas — kaj oni regeneras.</figcaption>
+      <div>
+        <p class="compare-label">Interfaco generita el personaj trajtoj</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-after-eo.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-after-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La eligo generita el la informoj de la baza personeco. La sep eroj meze kaj ilia aranĝo estas preskaŭ samaj; la literoj estas iomete pli grandaj."></a>
+      </div>
+      <figcaption><strong>Figuro 4 | Kazo, en kiu eĉ kun personaj informoj kiel enigo la strukturo preskaŭ ne ŝanĝiĝis.</strong> El la malgrandeco de la ŝanĝo ne eblas juĝi, kiom oportuna la interfaco estas por tiu homo.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Provo de koncepto: interfaco por dek tri person-modeloj</h2>
-    <p>Por la provo de koncepto estis pretigitaj dek tri person-modeloj kun malsamaj kombinoj de trajtoj. Ili ne reproduktas realan distribuon de uzantoj: ili estas kradpunktoj por kontrolo, kies trajtoj estas intence lokitaj por konstati, kiu el ili ŝanĝas la interfacon.</p>
-    <p>Por ĉiu person-modelo la komuna unueca interfaco estas la before, kaj la interfaco generita el ĝiaj trajtoj estas la after.</p>
+    <h2>Rezultoj kaj diskuto — kie restis la libereco generi</h2>
 
-    <h3>Ekzemplo, ĉe kiu preskaŭ nenio ŝanĝiĝis</h3>
-    <h4>PS-01 — referenco (matura aĝo, tipa)</h4>
-    <p>Tiu ĉi person-modelo troviĝas en la tipa amplekso ĉe ĉiuj kognaj, sensaj kaj korpaj trajtoj. Post la individuigo la literoj iĝis iomete pli grandaj, sed la nombro de montrataj eroj, la aranĝo kaj la grandeco de la tuŝzonoj restis preskaŭ senŝanĝaj.</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">Unueca interfaco (before)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-before-eo.svg" width="772" height="434" alt="Ekrano por elekti celon: sep eroj — hejmo, laborejo, konservitaj lokoj, lastaj celoj kaj proksimaj instalaĵoj — super fiksita vico da butonoj.">
-      </div>
-      <div>
-        <p class="compare-label">Individuigita interfaco (after)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-after-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La samaj sep eroj en la sama alto. Krom iom pli grandaj literoj, la konsisto preskaŭ egalas al la unueca interfaco.">
-      </div>
-      <figcaption>Kie la unueca interfaco jam funkcias sufiĉe bone, individuigo ne kaŭzas grandan ŝanĝon. Ankaŭ nenion ŝanĝi estas rezulto de individuigo.</figcaption>
-    </figure>
+    <h3>La propran valoron de generativa AI ne eblis sufiĉe montri</h3>
+    <p>En mia propra vida komparo, PS-12 estis tiu, kiun mi povis rekoni kiel klaran ŝanĝon de la ekranstrukturo. Aliaj eligoj diferencis en vortoj kaj agordoj, sed el la aspekto de la ekrano grandan diferencon de valoro ne eblis rekoni.</p>
+    <p>Ankaŭ la ŝanĝo ĉe PS-12 estis ene de tio, kion atingas agordoj de montrogrando kaj montrata kvanto. En la sperto, ke la komenca stato jam konvenas sen ke oni mem serĉu la agordojn, kuŝas ebleco. Sed la valoro de tiu sperto kaj la neceso de generativa AI por produkti la interfacon devas esti kontrolataj aparte.</p>
+    <p>Ĉi tiu pruvo de koncepto ne montras, ke adapto al kognaj trajtoj plibonigis la manipulan rezulton, nek ke generativa AI kreis pli bonan interfacon ol regul-bazita aliro.</p>
 
-    <h3>Ekzemplo, ĉe kiu la ŝanĝo videblas</h3>
-    <h4>PS-12 — matura aĝo, malalta fingra lerteco (sensaj kaj kognaj trajtoj tipaj)</h4>
-    <p>Tiu ĉi person-modelo kongruas kun PS-01 laŭ aĝo kaj laŭ sensaj kaj kognaj trajtoj; nur la fingra lerteco estas malalta. En la after la tuŝceloj pligrandiĝis kaj la eroj montrataj sur unu ekrano malpliiĝis de sep al kvar. La ceteraj transiris al la sekva ekrano, kaj ĝuste tio certigas al ĉiu unuopa celo ĝian grandecon.</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">Unueca interfaco (before)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-before-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="Ekrano por elekti celon kun sep eroj de la sama alto.">
-      </div>
-      <div>
-        <p class="compare-label">Individuigita interfaco (after)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-after-eo.svg" width="772" height="434" loading="lazy" decoding="async" alt="La sama ekrano reduktita al kvar eroj, ĉiu kun pli granda tuŝzono.">
-      </div>
-      <figcaption>Ekzemplo de redistribuo de la informkvanto kaj de la grandeco de la tuŝceloj laŭ la fingra lerteco. La konsisto de la ekrano ŝanĝiĝas pro korpa trajto sola, ne pro aĝo aŭ kognaj trajtoj.</figcaption>
-    </figure>
-    <p>La literaturo montras la malsupran limon, kiun tuŝcelo devas plenumi, kaj la direkton pligrandigi ĝin, kiam la precizeco de la manipulado estas malalta. Sed ĝi ne difinas unusignife, kiom aldoni ĝuste por ĉi tiu homo. Tiun nedifinitan parton la artefarita inteligenteco konkretigis ene de la limigoj.</p>
+    <h3>La dezajna spaco konstruita ĉi-foje estis mallarĝa</h3>
+    <p>Kiam la necesaj grandecoj por teksto kaj tuŝceloj estas garantiitaj kaj la kondiĉoj pri ekranareo kaj montrata kvanto aplikitaj, la elekteblaj strukturoj malmultiĝas. En la efektivigo multo krome estis fiksita per kalkulo aŭ per fiksaj strukturoj, tiel ke al la AI restis malmulte da spaco elekti inter pluraj taŭgaj proponoj.</p>
+    <p>En la vortumado restis libereco, sed tiuj diferencoj estas malpli videblaj ol ŝanĝo de la strukturo, kaj la ĉi-foja vida taksado ne kaptis ilian valoron. Por konstati la valoron de generativa AI necesas, mi konkludis, <strong>ke la elekteblaj proponoj havu amplekson kaj ke iliaj diferencoj signifu ion por la sperto de la uzanto</strong>.</p>
+    <p>Ĉi tiu rezulto koncernas la regulojn kolektitajn ĉi-foje, la adoptitajn interfacajn parametrojn kaj la efektivigitan esprimamplekson. Ĝi ne estas limo de aŭtomobila navigado ĝenerale, nek de individuigitaj interfacoj ĝenerale.</p>
+    <p>Krome mi ne kontrolis rekte la plenan tekston de ĉiuj koncernaj normoj de JIS, ISO kaj aliaj. La dezajna scio estis kunmetita el la havebla materialo: artikoloj, oficialaj gvidiloj, publikaj datenoj, kaj la teksto aŭ antaŭrigardo de kelkaj normoj. La amplekso de tio, kion mi konsultis, eble influis, kiuj dezajnaj elektebloj disponeblis. Ĉu atenta legado de la normtekstoj plilarĝigus tiun liberecon aŭ male mallarĝigus ĝin per pluaj kondiĉoj, restas konstatenda.</p>
+
+    <h3>La laboro kun la AI plibonigis la regulojn mem</h3>
+    <p>La rezulto aperis ĝuste en la procezo dezajni la kondiĉojn por la generado kaj fari ilin kontroleblaj.</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Trovitaj problemoj kaj ilia enkonduko en la dezajnon">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">Trovita problemo</th><th scope="col">Enkonduko en la dezajnon</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>La sama elemento havis plurajn malsuprajn limojn, kaj ilia kombino restis malklara</td><td>La aplikaj rilatoj estis klarigitaj, por ke neniu limo estu subpasita</td></tr>
+          <tr><td>Kondiĉo aplikenda nur dum veturado aplikiĝis ankaŭ dum halto</td><td>La veturstato, en kiu ĉiu kondiĉo validas, estis eksplicite indikita</td></tr>
+          <tr><td>La klareco de la vortoj kaj la ĉeesto de piktogramo estis kunigitaj en unu akson</td><td>Ili estis apartigitaj en memstarajn dezajnajn aksojn, redonante elekteblojn senbezone malaperintajn</td></tr>
+          <tr><td>La AI uzis kiel bazon ankaŭ kondiĉojn, kiuj ne validas por tiu eligo</td><td>Por ĉiu eligo estis eksplicite indikite, kiujn kondiĉojn konsulti</td></tr>
+          <tr><td>Juĝoj, kiuj devis resti ĉe la AI, estis fiksitaj flanke de la efektivigo</td><td>La divido de roloj inter specifo kaj efektivigo estis reviziita</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>La AI montras problemon, homo juĝas, la dezajno enprenas ĝin. Per tiu iro-reveno klariĝis, <strong>kio devas validi por ĉiuj kaj kie la interfaco povas adaptiĝi al la individuo</strong>.</p>
   </section>
 
   <section>
-    <h2>Kion donis la provo de koncepto</h2>
-    <p>Klare videbla ŝanĝo konstateblis nur ĉe PS-12, unu el dek tri. Ĉe la plimulto de la person-modeloj la unueca interfaco de la before jam funkciis sufiĉe bone; la gajno el individuigo preskaŭ ne aperis, almenaŭ en formo rekonebla laŭ la aspekto de la ekrano.</p>
-    <p>Ĉe PS-12 la individuigon eblis montri videble, sed ŝanĝo de tiu grado atingeblas ankaŭ per la montraj kaj alireblecaj agordoj de ekzistantaj produktoj. Ke la konvena stato haveblas ekde la komenco, sen ke la uzanto mem devu agordi, havas sian valoron. Tamen ne eblas diri, ke naskiĝis nova interfaco, kiun povus proponi nur artefarita inteligenteco.</p>
-    <p>Mi ne konkludis el tiu rezulto, ke individuigo per artefarita inteligenteco sukcesis.</p>
+    <h2>Estonte — konstati la valoron de la sperto kaj la valoron de generativa AI</h2>
+    <p>Sekve mi volas kontroli du demandojn aparte.</p>
+    <p>Unue: kiom valoras sperto, en kiu la komenca interfaco jam konvenas sen ke oni mem agordu ĝin. Tio postulas efektivigi la konversacian demandadon, la korektadon de la komprenita kaj la provon, kaj poste konstati la fidindecon de la enigitaj informoj kaj la ŝarĝon por la uzanto.</p>
+    <p>Due: ĉe kia dezajna objekto la diferencoj inter la proponoj de generativa AI iĝas plibonigo de la sperto. Mi volas etendi la laboron al objektoj, kie, konservante la necesajn kondiĉojn, restas pluraj taŭgaj proponoj en la strukturo de la informoj kaj en la fluo de la manipulado.</p>
+    <p>En taksado kun realaj uzantoj oni komparus, ĉe la sama tasko, la komunan defaŭltan interfacon, interfacon alĝustigitan regul-baze el personaj informoj, kaj interfacon konkretigitan de generativa AI. Manipula daŭro, eraroj, rigardoj kaj subjektiva ŝarĝo permesus apartigi la efikon de la adapto al la homo disde la efiko de la uzo de generativa AI.</p>
+    <p>Ankaŭ la kontrolado de la koncernaj normoj daŭros, por ĝisdatigi la limon inter tio, kion la esploroj konstatas, kaj tio, kio estas dezajna decido. Krom la kontrolebleco de la kondiĉoj, la sekva tasko estas lasi ene de ili elekteblojn, kiuj signifas ion por la uzanto.</p>
   </section>
 
-  <section>
-    <h2>Kial la diferenco ne aperis</h2>
-    <p>La kaŭzo kuŝas en tio, ke la dezajna spaco plenumanta la limigojn estis malvasta.</p>
-    <p>Enaŭta interfaco havas multajn malsuprajn kaj suprajn limojn pro sekureco. Literoj kaj tuŝceloj bezonas certan minimuman grandecon, kaj por la informkvanto sur unu ekrano validas supra limo. Aplikante ilin unu post la alia, al la artefarita inteligenteco restis nur malmultaj solvoj elekteblaj.</p>
-    <p>Ankaŭ plej multo el tio, kion la artefarita inteligenteco konkretigis, en la nuna skalo estis tio, kion homo povus decidi unufoje kaj fiksi kiel malgrandan kongruan tabelon. Tio ne signifas, ke la artefarita inteligenteco estis superflua — ĝi plenigis konkretajn valorojn, kiujn la literaturo ne donas. Sed por esplori restis al ĝi tro malmultaj elektebloj.</p>
-    <p>Aliflanke, ĉe la reformulado de la vortprovizo restis larĝa libereco. Tamen tiu diferenco malfacile videblas kiel ŝanĝo de la ekrana konsisto: la kampo, kie la homo povis rekoni la valoron, kaj la kampo, kiun reguloj ne kapablas plene skribi, ne interkovriĝis.</p>
-  </section>
-
-  <section>
-    <h2>La rezulto aperis en la kadro, ne en la interfaco</h2>
-    <p>La plej granda rezulto de ĉi tiu provo de koncepto naskiĝis ne en la etapo de generado de interfacoj, sed antaŭe, en la etapo de dezajnado de la limigoj. Dum normoj kaj literaturo estis surpaperigataj kiel maŝine kontroleblaj kondiĉoj, en la kadro mem troviĝis pluraj malkongruoj.</p>
-    <ul class="findings">
-      <li>Malsamaj normoj donis malsamajn malsuprajn limojn por la sama interfaca elemento.</li>
-      <li>La kondiĉo „validas nur dum veturado“ havis nenian lokon, kie ĝi estus skribebla en la specifo.</li>
-      <li>Du dezajnaj aksoj, esence sendependaj, estis kunfanditaj en unu, tial la limigoj forigis preskaŭ ĉiujn elekteblojn.</li>
-      <li>Al la artefarita inteligenteco ne estis sufiĉe klare komunikite, kiu limigo regas kiun eligon, do senrilataj kondiĉoj eniris la juĝon.</li>
-      <li>Juĝoj, kiuj devus resti ĉe la artefarita inteligenteco, estis fiksitaj en la realigo, kio proksimigis la dezajnon laŭ limigoj al nura regul-motoro.</li>
-    </ul>
-    <p>Pri ĉiu el ili la artefarita inteligenteco detektis la malkongruon kaj montris la koncernan lokon, homo juĝis, kaj la limigo estis korektita.</p>
-    <p>Alivorte, la rezulto de ĉi tiu verko kuŝas malpli en tio, ke artefarita inteligenteco kreis novan interfacon, ol en tio, ke <strong>per la interŝanĝo kun la artefarita inteligenteco la kadro mem, el kiu naskiĝas interfacoj, estis kontrolita kaj ĝisdatigita</strong>. La rolo de la artefarita inteligenteco en dezajno laŭ limigoj ne estas nur generi finitan produkton. Ĝi estas ankaŭ, antaŭ ol io ajn estas generita, trovi, kie reguloj interpuŝiĝas kaj kie dezajna eblo estis forviŝita sen ies intenco.</p>
-  </section>
-
-  <section>
-    <h2>Estonta laboro — klara kadro, vasta interno</h2>
-    <p>Kion oni atendas de la artefarita inteligenteco en dezajno laŭ limigoj, ne estas ĉerpi fiksitajn valorojn el tabelo. Estas per la limigoj ekskludi la evidente maltaŭgan kaj poste, el la multaj restantaj ebloj, proponi la solvon plej verŝajne trafan — aŭ montri ŝablonon, pri kiu homo antaŭe ne estus pensinta.</p>
-    <p>Ĉi-foje tiu efiko ne aperis sufiĉe. Ne pro tio, ke mankis konfliktoj, sed ĉar la dezajna spaco plenumanta la limigojn estis malvasta kaj elekti „pli taŭgan“ aŭ „novan“ solvon preskaŭ perdis sencon.</p>
-    <p>La sekva demando ne estas, ĉu artefarita inteligenteco utilas. Ĝi estas: <strong>ekde kiu vasteco de la dezajna spaco naskiĝas la efiko, kiun donas nur artefarita inteligenteco?</strong></p>
-    <p>Por la sekva praktiko mi elektos temon, ĉe kiu la sekureco restas konservita, tamen postrestas pluraj taŭgaj solvoj, kaj la diferencoj neskribeblaj per reguloj estas rekoneblaj kiel valoro ankaŭ de homoj. La kadro estas difinita klare. Sed interne restas tiom da vasteco, ke la artefarita inteligenteco povas esplori. Tiu kunekzisto faras el dezajno laŭ limigoj ne nuran aŭtomatigon, sed dezajnan metodon por la epoko de artefarita inteligenteco.</p>
-  </section>
+  <details class="references">
+    <summary>Referencoj</summary>
+    <ol>
+      <li id="ref-nhtsa">NHTSA, <cite>Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices</cite> (publikigita en 2013). Libervolaj gvidlinioj. Pri la akceptokriterioj laŭ rigardado vidu VI.E; pri la klarigo pri deturniĝo de la atento kaj risko vidu I.C kaj aliajn lokojn de la ĉefteksto. Tio ne signifas, ke ĉi tiu pruvo de koncepto estas atestita kiel konforma al tiu testo. <a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">La dokumento en Federal Register</a></li>
+    </ol>
+  </details>
 
   <nav aria-label="Retejo">
     <ul>
@@ -264,5 +318,14 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Pligrandigita figuro" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fermi la pligrandigitan figuron"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

@@ -8,8 +8,8 @@
      and every other language is translated from it (owner's instruction,
      2026-08-23). The mock renders live under the English tree, one file per
      language, and are referenced from here rather than copied. -->
-<title>Personal Fit UI - Individuelle UI-Optimierung durch constraint-basiertes Design — Takafumi Horiuchi</title>
-<meta name="description" content="Eine Oberfläche, die zu den kognitiven, sensorischen und körperlichen Merkmalen eines Menschen passt, erzeugt innerhalb der Grenzen von Evidenz und Entwurfsvorgaben. Ein Proof of Concept am Navigationssystem im Auto.">
+<title>Individuelle UI-Optimierung durch constraint-basiertes Design — Takafumi Horiuchi</title>
+<meta name="description" content="Ein Mechanismus, der eine Oberfläche aus den kognitiven, sensorischen und körperlichen Merkmalen eines Menschen und aus Entwurfswissen erzeugt, prototypisch am Navigationssystem im Auto. Umsetzung und Vergleich von constraint-basiertem Design, um auszuloten, was Individualisierung leisten kann und wie viel Spielraum der generativen KI bleibt.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/de/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -30,12 +30,14 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Personal Fit UI - Individuelle UI-Optimierung durch constraint-basiertes Design">
-<meta property="og:description" content="Der Mensch entwirft den Rahmen, der halten muss; darin arbeitet die KI die Oberfläche für den Einzelnen aus. Constraint-basiertes Design in der Praxis.">
+<meta property="og:title" content="Individuelle UI-Optimierung durch constraint-basiertes Design">
+<meta property="og:description" content="Ein Mechanismus, der eine Oberfläche aus den Merkmalen eines Menschen und aus Entwurfswissen erzeugt, prototypisch am Navigationssystem im Auto — und die Frage, was Individualisierung leisten kann und wie viel Spielraum der generativen KI bleibt.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/de/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
@@ -61,9 +63,9 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/de/works/personal-fit-ui/#work",
-      "name": "Personal Fit UI - Individualisierung der Oberfläche durch constraint-basiertes Design",
+      "name": "Individuelle UI-Optimierung durch constraint-basiertes Design",
       "url": "https://takafumihoriuchi.github.io/de/works/personal-fit-ui/",
-      "description": "Eine Oberfläche, die zu den kognitiven, sensorischen und körperlichen Merkmalen eines Menschen passt, erzeugt innerhalb der Grenzen von Evidenz und Entwurfsvorgaben. Ein Proof of Concept am Navigationssystem im Auto.",
+      "description": "Ein Mechanismus, der eine Oberfläche aus den kognitiven, sensorischen und körperlichen Merkmalen eines Menschen und aus Entwurfswissen erzeugt, prototypisch am Navigationssystem im Auto. Umsetzung und Vergleich von constraint-basiertem Design, um auszuloten, was Individualisierung leisten kann und wie viel Spielraum der generativen KI bleibt.",
       "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
       "datePublished": "2026-08",
       "inLanguage": "de",
@@ -96,146 +98,198 @@
 
   <section>
     <h2>Überblick</h2>
-    <p class="lead">Alle benutzen dieselbe Oberfläche auf dieselbe Weise. Diese Arbeit verlässt diese Voraussetzung der Massenproduktion und fragt, ob sich eine Oberfläche stattdessen so erzeugen lässt, dass sie zu den kognitiven, sensorischen und körperlichen Merkmalen eines einzelnen Menschen passt.</p>
-    <p>Angestrebt war keine Oberfläche, die sich während der Nutzung fortwährend an die Situation anpasst. Es geht um einen Mechanismus, der die Merkmale eines Menschen zu Beginn der Nutzung erfasst und daraus im Voraus eine passende Oberfläche erzeugt — innerhalb der Vorgaben, die Sicherheit und Barrierefreiheit setzen.</p>
-    <p>Dabei habe ich einen Ansatz erprobt, den ich constraint-basiertes Design nenne. Der Mensch entwirft anhand von Literatur und Normen die Richtungen, in die verändert werden darf, und die Grenzen, die dabei gelten. Innerhalb dieses Rahmens legt die KI die konkreten Werte und Formulierungen fest, und das Erzeugte wird daraufhin geprüft, ob es den Rahmen verletzt.</p>
-    <p>Im Proof of Concept diente ein Navigationssystem im Auto als Gegenstand; für dreizehn Personas mit unterschiedlichen Merkmalen wurde je eine Oberfläche erzeugt. Sichtbar veränderte sich dabei fast nichts. Der Ertrag entstand an anderer Stelle: Beim Aufschreiben der Constraints in prüfbarer Form zeigte sich, wo Spielraum für Individualisierung bleibt und wo die Constraints ihn aufzehren.</p>
+    <p class="lead">Vorgeschlagen wird ein Mechanismus, der persönliche Angaben zu den kognitiven Merkmalen eines Menschen aufnimmt und daraus eine auf ihn zugeschnittene Oberfläche erzeugt — unter Rückgriff auf die grundlegenden Entwurfsprinzipien von Oberflächen, auf Anforderungen an Sicherheit und Barrierefreiheit sowie auf Forschungsergebnisse zu menschlichen Merkmalen.</p>
+    <p>Zum Einsatz kommt der Gedanke des constraint-basierten Designs: Der Mensch entwirft die einzuhaltenden Bedingungen und ihren Geltungsbereich, und innerhalb dieses Rahmens arbeitet die generative KI den konkreten Vorschlag aus. Am Beispiel eines Navigationssystems im Auto entstand ein Proof of Concept, der aus dreizehn fiktiven Personas — samt sensorischer und körperlicher Merkmale — Oberflächen erzeugt und die Einhaltung der Bedingungen in einem eigenen Schritt prüft.</p>
+    <p>Im Vergleich zeigte ein Fall eine deutliche, durch ein körperliches Merkmal ausgelöste Veränderung des Bildschirmaufbaus, während sich der Großteil der Ergebnisse visuell kaum unterschied. Tatsächliche Bedienbarkeit und Sicherheit sind nicht geprüft; deutlich wurde aber, wie weit Entscheidungen der generativen KI überlassen werden können und welche Entwurfsbedingungen den Spielraum für Individualisierung eingeengt haben.</p>
   </section>
 
   <section>
-    <h2>Was es heißt, allen dieselbe Oberfläche zu geben</h2>
-    <p>Die meisten Produkte sind heute auf Massenproduktion hin entworfen: eine Oberfläche, die möglichst viele Menschen abdeckt. Selbst wo sich Schriftgröße oder die Zahl der angezeigten Einträge ändern lässt, müssen die Nutzenden den für sie passenden Zustand selbst finden und einstellen.</p>
-    <p>Für sehr viele Menschen funktioniert das. Aber „für viele passend“ und „für alle passend“ ist nicht dasselbe. Auch ein Produkt, das alle gemeinsamen Entwurfsstandards erfüllt, lässt Menschen zurück, denen diese Oberfläche schwerfällt.</p>
-    <p>Dieselbe Struktur zeigt sich darin, wie Fahrzeugoberflächen geprüft werden. Das Abnahmeverfahren der US-Behörde NHTSA für Blickabwendungen während der Fahrt verlangt nicht, dass alle Probanden das Kriterium erfüllen. Eine Aufgabe gilt als bestanden, wenn 21 von 24 Probanden es einhalten — dass ein Teil es nicht erfüllt, ist also von vornherein einkalkuliert. Eine Eingabe von Herstellern an die Behörde geht noch weiter: Danach schaut etwa einer von sechs Menschen über mehrere Aufgaben hinweg durchgängig länger weg. Diese Eingabe stammt von den regulierten Herstellern selbst und zielte auf eine Lockerung des Kriteriums. Der hier vorgeschlagene Weg will das Kriterium nicht lockern, sondern durch Individualisierung mehr Menschen in die Lage versetzen, es zu erfüllen.</p>
-    <p>Der Sinn einer individualisierten Oberfläche liegt nicht darin, allen einen neuartigen Bildschirm zu geben. Er liegt darin, die Menschen, die eine einheitliche Oberfläche bisher verloren hat, in den Bereich zu holen, in dem sie das Gerät benutzen und sicher bedienen können.</p>
-    <p>Bislang waren die Kosten dafür, für einen einzelnen Menschen eine eigene Oberfläche zu entwerfen, nicht realistisch. Seit sich KI als Teil des Entwurfsprozesses einsetzen lässt, beginnt sich diese Voraussetzung zu ändern.</p>
+    <h2>Hintergrund — wie weit trägt eine einzige Oberfläche?</h2>
+    <p>Die meisten Produkte entwerfen und liefern eine gemeinsame Oberfläche, die möglichst viele Menschen bedienen können. Doch wie viel Information jemand auf einmal erfassen kann, wie leicht die Aufmerksamkeit sich lenken lässt, wie verständlich Formulierungen sind und wie genau feine Bedienschritte gelingen — all das ist von Person zu Person verschieden. Eine Oberfläche, die auf viele Rücksicht nimmt, passt deshalb nicht zwangsläufig zu einem bestimmten Menschen.</p>
+    <p>Auch die Bewertung auf Gruppenebene hat ihre Grenzen. In den freiwilligen Leitlinien, die die US-Behörde NHTSA 2013 veröffentlicht hat, verlangt jedes Akzeptanzkriterium zur Blickzuwendung, dass mindestens 21 von 24 Personen es erfüllen. Das ist keine Bedingung, die besagt, dass alle das Gerät gleichermaßen benutzen können. <a class="citation-marker" href="#ref-nhtsa" aria-label="Zu Quelle 1">[1]</a></p>
+    <p>Selbst bei Produkten, in denen sich Schriftgröße oder Informationsmenge ändern lassen, muss die Nutzerin erst bemerken, dass es die Einstellung gibt, sie mit der eigenen Schwierigkeit in Verbindung bringen und die passende Anpassung wählen. Bleiben diese Einstellungen ungenutzt, sodass Menschen weiter mit einer Oberfläche arbeiten, die ihnen nicht passt? Diese Frage stand am Anfang.</p>
+    <p>Beim Navigationssystem im Auto konkurrieren der Blick auf den Bildschirm und dessen Bedienung mit der Aufmerksamkeit, die das Fahren verlangt. <a class="citation-marker" href="#ref-nhtsa" aria-label="Zu Quelle 1">[1]</a> Wenn eine schlecht passende Oberfläche diese Last erhöhen kann, dann lohnt es sich — für Bedienbarkeit wie für Sicherheit —, schon zu Beginn der Nutzung einen passenden Zustand bereitzustellen.</p>
+    <p>Mit generativer KI lässt sich inzwischen ein Schritt prototypisch bauen, der aus persönlichen Angaben und Entwurfswissen eine Oberfläche ausarbeitet. Damit eröffnete sich ein Weg, individuell passende Oberflächen auszuliefern und zugleich den Aufwand zu senken, jeden Bildschirm einzeln von Hand zu entwerfen.</p>
+    <p class="note">Wie häufig diese Einstellungen tatsächlich genutzt werden und wie sich eine schlecht passende Oberfläche auf Unfälle auswirkt, wurde in diesem Projekt nicht untersucht.</p>
   </section>
 
   <section>
-    <h2>Das Navigationssystem als Gegenstand</h2>
-    <p>Gegenstand dieser Arbeit ist nicht das Navigationssystem, sondern die individualisierte Oberfläche. Das Navigationssystem wurde als ein Beispiel gewählt, an dem sich deren Möglichkeiten und Grenzen prüfen lassen.</p>
-    <p>Eine Fahrzeugoberfläche unterliegt harten Vorgaben: wenig Bildschirmfläche, sehr kurze Blickzeiten, Sicherheit bei jeder Bedienung. Vor der Auslieferung wird sie als einheitliche Oberfläche geprüft, die möglichst viele bedienen können — und dieselbe Oberfläche erhalten dann auch die Menschen, denen dieser Entwurf nicht entspricht.</p>
-    <p>Wenn Individualisierung in einem derart eng begrenzten Feld trägt, lässt sich der Gedanke des constraint-basierten Designs konkret prüfen. Ebenso gut kann es sein, dass die Vorgaben der KI kaum Freiheit lassen. Der Gegenstand macht beides beobachtbar.</p>
-    <p class="note"><strong>In Japan sind 2026 sowohl Modelle mit Over-the-Air-Updates als auch herkömmliche, ab Werk verbaute Navigationsgeräte ohne Update-Möglichkeit unterwegs.</strong> Und selbst wo sich die Kartendaten aktualisieren lassen, wird die Grundstruktur der Oberfläche nach dem Kauf nicht zwangsläufig immer wieder neu entworfen. Dieser Proof of Concept geht von einem System aus, dessen Oberfläche nach Nutzungsbeginn nicht häufig aktualisiert wird.</p>
+    <h2>Vorschlag — persönliche Angaben mit zwei Arten von Entwurfswissen verbinden</h2>
+    <p>Eingegeben werden Angaben zu den kognitiven Merkmalen der jeweiligen Nutzerin. Die KI gleicht sie mit zwei zuvor aufbereiteten Wissensbeständen ab: dem einen mit den grundlegenden Entwurfsregeln einer Oberfläche, dem anderen mit dem Wissen, welche Oberfläche zu welchen Merkmalen passt.</p>
+    <p>Auf dieser Grundlage arbeitet die KI die Oberfläche innerhalb des Erlaubten aus, und die Einhaltung der Bedingungen wird geprüft. Ausgegeben werden die auf die Person zugeschnittene Oberfläche und eine Erläuterung, was wo und warum geändert wurde.</p>
+
+    <figure class="concept-figure line-art">
+      <a class="concept-figure__desktop" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg" width="1400" height="815" loading="lazy" decoding="async" alt="Das Konzept: Persönliche kognitive Merkmale gehen ein, und die Oberfläche wird unter Rückgriff auf die Grundregeln des UI-Entwurfs und auf das Wissen über merkmalsgerechte Oberflächen erzeugt. Die generative KI arbeitet den Vorschlag aus, ein eigener Schritt prüft die Bedingungen, und ausgegeben werden die passende Oberfläche und die Gründe für jede Änderung."></a>
+      <a class="concept-figure__mobile" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg" width="480" height="1414" loading="lazy" decoding="async" alt="Das Konzept: Persönliche kognitive Merkmale gehen ein, und die Oberfläche wird unter Rückgriff auf die Grundregeln des UI-Entwurfs und auf das Wissen über merkmalsgerechte Oberflächen erzeugt. Die generative KI arbeitet den Vorschlag aus, ein eigener Schritt prüft die Bedingungen, und ausgegeben werden die passende Oberfläche und die Gründe für jede Änderung."></a>
+      <figcaption><strong>Abbildung 1 | Das Konzept: Persönliche Angaben gehen ein, die Oberfläche entsteht unter Rückgriff auf Entwurfswissen.</strong> Die von Person zu Person wechselnde Eingabe ist getrennt von dem Wissen, das Entwerfende vorab aufbereiten. Im Proof of Concept umfasste die Eingabe neben kognitiven auch sensorische und körperliche Merkmale.</figcaption>
+    </figure>
+
+    <h3>Eingabe: Angaben über die Person</h3>
+    <p>Etwa: wie gut jemand Informationen auf einmal behalten und verarbeiten kann, wie leicht andere Reize die Aufmerksamkeit abziehen und welche Art von Erklärung besonders gut verständlich ist. In der Umsetzung kamen Sehvermögen und Fingerfertigkeit hinzu. Nicht eine Diagnose bestimmt den Bildschirm; verarbeitet werden persönliche Angaben, die für die Nutzung einer Oberfläche von Belang sind.</p>
+
+    <h3>Wissen A: Regeln, damit eine Oberfläche als solche trägt</h3>
+    <p>Zusammengestellt werden die grundlegenden Entwurfsprinzipien: Konsistenz, Rückmeldung auf Eingaben, Gruppierung von Information, Lesbarkeit von Text und Erkennbarkeit von Bedienelementen. Hinzu kommen die Bedienbeschränkungen für Fahrzeugoberflächen und die Anforderungen der Barrierefreiheit, jeweils zusammen mit den Situationen, in denen sie gelten.</p>
+
+    <h3>Wissen B: von Merkmalen zur passenden Oberfläche</h3>
+    <p>In der Forschung belegte Merkmale werden mit Prinzipien der Informationsdarstellung und von dort mit dem Entwurf der Oberfläche verknüpft. Zu einem Merkmal wie „Informationen zu behalten und dabei zu bedienen, ist belastend“ gehört die Richtung „weniger im Kopf behalten müssen“, und daraus folgen Entwürfe, die die nötigen Informationen auf dem Bildschirm halten.</p>
+    <p>Forschung zu einem Merkmal liefert allerdings nicht ohne Weiteres einen Entwurfswert für ein Navigationssystem. <strong>Was die Forschung zeigt, wird von den Entwurfsentscheidungen unterschieden, die dieses Projekt daraus abgeleitet hat.</strong> Verbesserungen, die allen gleichermaßen nützen, gehören zu den Grundregeln und zählen nicht als Ergebnis der Individualisierung.</p>
   </section>
 
   <section>
-    <h2>Individualisierung zu etwas machen, das sich erzeugen lässt</h2>
-    <p>Constraint-basiertes Design heißt: den Rahmen klar festlegen und die KI sich darin flexibel und mit Gespür für Nuancen bewegen lassen. Anders als bei einem parametrischen Verfahren, das Werte aus einer festgelegten Tabelle zieht, wird hier der Lösungsraum selbst entworfen, den die KI durchsuchen darf.</p>
-    <p>Wissenschaftliche Erkenntnisse liefern nicht immer konkrete Zahlen. Manchmal geben sie nur eine Richtung an: größer machen, weniger zeigen. Wo ein Wert feststeht, wird er als Regel berechnet; wo nur die Richtung bekannt ist, legt die KI das Konkrete innerhalb des Erlaubten fest. Diese Unterscheidung nicht verschwimmen zu lassen, gehört selbst zum Mechanismus.</p>
+    <h2>Die angestrebte Erfahrung — beim ersten Einsteigen gemeinsam herausfinden, was passt</h2>
+    <p class="note"><strong>Ein Zukunftsentwurf.</strong> Die Ersteinrichtung im Gespräch ist in diesem Proof of Concept nicht umgesetzt.</p>
+    <p>Man kauft ein Auto und sitzt zum ersten Mal auf dem Fahrersitz. Im Stand fragt ein KI-Agent nach der eigenen Art zu bedienen. Statt sich durch Fachbegriffe in den Einstellungen zu arbeiten, erzählt man, was üblicherweise Mühe macht und was sich leicht bedienen lässt.</p>
 
-    <figure class="framework">
-      <div class="framework-branches">
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>Kognitive Dimensionen festlegen</h3>
-            <p>Als Achsen dienen nicht Diagnosen, sondern Merkmale, die für die Bedienbarkeit relevant sind: Arbeitsgedächtnis, Widerstandsfähigkeit gegen Ablenkung, Seh- und Hörvermögen, Fingerfertigkeit.</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>Zuordnungstabelle</h3>
-            <p>Verbindet die Merkmale der Nutzenden mit den Parametern der Oberfläche, die sich bewegen sollen: welches Merkmal was in welche Richtung verschiebt — mit Begründung.</p>
-          </div>
-        </div>
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>Erkenntnisse und Normen</h3>
-            <p>Sicherheitskriterien, Normen zur Barrierefreiheit, Befunde der Kognitionswissenschaft und allgemeine Gestaltungsprinzipien werden zusammengetragen.</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>Constraints</h3>
-            <p>Bedingungen, die jedes Erzeugnis einhalten muss. Nicht als Leitbild, sondern so formuliert, dass sich prüfen lässt: erfüllt oder verletzt.</p>
-          </div>
-        </div>
+    <figure class="journey-figure line-art">
+      <a href="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg" width="1200" height="1030" loading="lazy" decoding="async" alt="Die künftige User Journey beim ersten Einsteigen: Im Stand wählt die Person den Start, beantwortet die Fragen der KI, korrigiert deren Verständnis, probiert die erzeugte Oberfläche aus und beginnt die Nutzung mit der bestätigten Oberfläche."></a>
+      <figcaption><strong>Abbildung 2 | Die User Journey vom ersten Einsteigen bis zum Nutzungsbeginn.</strong> Befragung, Rückversicherung des Verstandenen, Erzeugung der Oberfläche und ein Probelauf im Stand bereiten die anfängliche Oberfläche dieser Person vor.</figcaption>
+    </figure>
+
+    <ol class="journey-steps">
+      <li>
+        <h3>Erstes Einsteigen: das Gespräch beginnen</h3>
+        <p class="dialogue"><span>KI</span>„Damit der Bildschirm zu Ihnen passt: Erzählen Sie mir bitte ein paar Dinge darüber, wie Sie ihn üblicherweise nutzen. Wir können das auch später machen.“</p>
+        <p>Die Person versteht den Zweck und entscheidet, ob sie jetzt beginnt oder später.</p>
+      </li>
+      <li>
+        <h3>Interview: von den Schwierigkeiten erzählen</h3>
+        <p class="dialogue"><span>KI</span>„Wenn Ansagen dicht aufeinanderfolgen — an welchen Stellen wird es dann schwer verständlich?“</p>
+        <p class="dialogue"><span>Nutzer</span>„Wenn die nächste Ansage kommt, vergesse ich manchmal, was gerade gesagt wurde.“</p>
+        <p>Die KI fragt nach konkreten Situationen und ordnet die Schwierigkeiten, die mit dem Behalten von Informationen und der Lenkung der Aufmerksamkeit zusammenhängen.</p>
+      </li>
+      <li>
+        <h3>Rückversicherung: die Person kann korrigieren, was die KI verstanden hat</h3>
+        <p class="dialogue"><span>KI</span>„Es wäre für Sie also einfacher, wenn die nötigen Informationen auf dem Bildschirm bleiben, statt dass Sie sich die Schritte merken müssen — habe ich das richtig verstanden?“</p>
+        <p>Die Person bestätigt oder korrigiert dieses Verständnis. Was im Gespräch selbst berichtet wird, bleibt getrennt von gemessenen kognitiven Werten und von Diagnosen; wo eine Messung nötig ist, steht ein eigener Weg der Feststellung bereit.</p>
+      </li>
+      <li>
+        <h3>Vorschlag und Probe: den Grund hören, den Bildschirm ausprobieren</h3>
+        <p class="dialogue"><span>KI</span>„Damit Sie sich weniger merken müssen, schlage ich einen Bildschirm vor, auf dem der aktuelle Schritt und der nächste zugleich zu sehen sind.“</p>
+        <p>Im Stand probiert die Person etwa die Zielauswahl aus. Sie kann sagen „vorher war es klarer“ oder „hier hätte ich gern eine andere Formulierung“, und der Vorschlag lässt sich anpassen oder die ursprüngliche Oberfläche wiederherstellen.</p>
+      </li>
+      <li>
+        <h3>Nutzungsbeginn: mit der bestätigten Oberfläche arbeiten</h3>
+        <p>Die bestätigte Oberfläche wird als Ausgangszustand gespeichert. Während der Fahrt bleibt der Grundaufbau, den die Person gelernt hat, unverändert. Wer ihn überdenken möchte, kann im Stand erneut nachjustieren.</p>
+      </li>
+    </ol>
+    <p>Das Gespräch soll die Person nicht ein für alle Mal einordnen. Es soll den Ausgangszustand herrichten — in einem Austausch, in dem sie sich erklären und Missverstandenes korrigieren kann.</p>
+  </section>
+
+  <section>
+    <h2>Umsetzung — einzuhaltende Bedingungen und der KI überlassene Entscheidungen trennen</h2>
+    <p>Umgesetzt wurde der Mechanismus, der Merkmale einer Person aufnimmt, eine Oberfläche erzeugt und sie anschließend prüft, zeichnet und vergleicht. Anstelle der Befragung im Gespräch dienten dreizehn fiktive Personas mit unterschiedlichen Merkmalen als Eingabe.</p>
+    <p>Das Navigationssystem wurde als Gegenstand gewählt, weil sich Bedingungen dort konkret fassen lassen: Bildschirmfläche, Größe der Bedienelemente, darstellbare Informationsmenge und das, was während der Fahrt bedient werden darf.</p>
+
+    <h3>Constraint-basiertes Design als Vorgehen</h3>
+    <p>Constraint-basiertes Design meint in diesem Projekt <strong>ein Vorgehen, bei dem der Mensch die einzuhaltenden Bedingungen und ihren Geltungsbereich entwirft und die KI innerhalb dieses Rahmens konkrete Lösungen vorschlägt</strong>.</p>
+    <p>Eine regelbasierte parametrische Änderung legt vorab fest, welcher Eingabe welcher Wert oder welche Option entspricht. Dieser Entwurf füllt statt aller Zuordnungen den zulässigen Bereich und die Gründe der Entscheidung aus und überlässt die noch offenen Werte und Formulierungen dem Ermessen der generativen KI. Die Umsetzung verbindet die rechnerisch bestimmten Teile mit den von der KI bestimmten.</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Umgang in der Umsetzung je nach Belastbarkeit der Belege">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">Was die Belege hergeben</th><th scope="col">Umgang in der Umsetzung</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Wert oder Zusammenhang sind bestimmt</td><td>Wird berechnet, innerhalb der bestätigten Bedingungen und ihres Geltungsbereichs</td></tr>
+          <tr><td>Die Richtung der Anpassung ist bekannt, das Ausmaß nicht</td><td>Wird innerhalb von Richtung und Randbedingungen ausgearbeitet und als ungeprüfte Entwurfsentscheidung festgehalten</td></tr>
+          <tr><td>Die Belege allein bestimmen keine tragfähige Wahl</td><td>Wird als explorativer Vorschlag behandelt und als bewertungsbedürftig gekennzeichnet</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Wo ein Forschungsbefund in die Oberfläche überführt wurde, sind Quelle, Anwendungsbedingungen und Entwurfsentscheidung festgehalten. Weil die Gründe zusammen mit der Oberfläche ausgegeben werden, lässt sich nachvollziehen, warum für diese Person dieser Bildschirm entstanden ist.</p>
+
+    <h3>Die erzeugte Oberfläche in einem eigenen Schritt prüfen</h3>
+    <p>Die Oberfläche entsteht als strukturierte Daten mit Elementen und Anordnung und wird aus diesen Daten gezeichnet. Numerische und strukturelle Bedingungen prüft Code; einige Bedingungen, die eine Deutung des Sinns verlangen, prüft eine gesonderte Instanz mit einem LLM. Auch was der automatischen Prüfung entzogen ist oder mangels Material nicht geprüft werden konnte, wird festgehalten.</p>
+    <p>Die Prüfung bestätigt die Einhaltung der definierten Bedingungen. Ob die Oberfläche tatsächlich leichter zu bedienen oder sicherer ist, verlangt eine Bewertung durch Nutzende.</p>
+    <p>Zeigt sich in der Entwurfsphase ein Widerspruch zwischen Bedingungen, weist die KI auf die Stelle hin, und ein Mensch entscheidet über die Überarbeitung. Es ist kein Mechanismus, in dem die KI die Bedingungen bei jeder Erzeugung nach eigenem Bedarf ändert.</p>
+  </section>
+
+  <section>
+    <h2>UI-Vergleich — ein Fall mit großer Veränderung und einer mit fast keiner</h2>
+    <p>Vergleichsmaßstab ist die Oberfläche aus gemeinsamen Vorgabewerten, ohne Eingabe persönlicher Merkmale. Bei gleichem Funktionsumfang wurde ihr das Ergebnis gegenübergestellt, das mit persönlichen Merkmalen als Eingabe entsteht.</p>
+    <p class="note"><strong>Die folgenden Bilder sind Ausgaben des Prototyps, nicht ein handelsübliches Navigationssystem vor und nach einer Überarbeitung.</strong> Auch die Personas bilden keine realen Nutzenden nach; sie sind fiktive Eingaben, um die Wirkung einzelner Merkmale zu prüfen.</p>
+
+    <h3>Ein Fall, in dem die Bedienelemente größer wurden</h3>
+    <h4>PS-12 — eine Persona mit einem körperlichen Merkmal, das feine Touch-Bedienung erschwert</h4>
+    <p>Alter sowie kognitive und sensorische Merkmale entsprechen der Referenz PS-01; verändert ist allein die Fingerfertigkeit. Auf den gezeigten Bildern ist jedes Bedienelement größer geworden, und die Einträge in der Bildschirmmitte gehen von sieben auf vier zurück. Die festen Schaltflächen am unteren Rand sind darin nicht mitgezählt.</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">Gemeinsame Vorgabeoberfläche</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-before-de.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-before-de.svg" width="772" height="434" loading="lazy" decoding="async" alt="Die gemeinsame Vorgabeoberfläche. In der Mitte des Zielauswahl-Bildschirms stehen sieben Einträge, am unteren Rand vier feste Schaltflächen."></a>
       </div>
-      <div class="framework-merge" aria-hidden="true"></div>
-      <div class="framework-box framework-space">
-        <h3>Designraum</h3>
-        <p>Alles, was die Oberfläche variieren kann: Schriftgröße, Berührflächen, Zahl der angezeigten Einträge, Informationshierarchie, Hinweise, Wortwahl, Reihenfolge, Gruppierung. Die Zuordnungstabelle gibt die Richtung vor, die Constraints entfernen die unzulässigen Lösungen.</p>
+      <div>
+        <p class="compare-label">Aus persönlichen Merkmalen erzeugte Oberfläche</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-after-de.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-after-de.svg" width="772" height="434" loading="lazy" decoding="async" alt="Das Ergebnis mit der Fingerfertigkeit als Eingabe. In der Mitte stehen vier Einträge, jeder mit größerer Berührfläche. Am unteren Rand weiterhin vier feste Schaltflächen."></a>
       </div>
-      <div class="framework-arrow" aria-hidden="true"></div>
-      <div class="framework-box framework-ai">
-        <h3>Die KI konkretisiert innerhalb des Rahmens</h3>
-        <p>Aus der verbleibenden Freiheit legt sie Werte, Wortwahl, Reihenfolge und Gruppierung fest. Eine getrennte Prüfung bestätigt die Passung zum Rahmen; ausgegeben wird nur eine individualisierte Oberfläche, die alle Bedingungen erfüllt.</p>
+      <figcaption><strong>Abbildung 3 | Größe der Bedienelemente und Informationsmenge pro Bildschirm neu verteilt.</strong> Dass sich der Bildschirm mit der persönlichen Eingabe verändert, ließ sich zeigen. Diese Veränderung folgt allerdings aus einem körperlichen Merkmal; sie belegt nicht die Wirksamkeit einer auf kognitive Merkmale zugeschnittenen Oberfläche.</figcaption>
+    </figure>
+    <p>Größere Bedienelemente haben ihren Preis: Auf demselben Bildschirm stehen weniger Einträge zur Auswahl. Der Funktionsumfang soll erhalten bleiben, doch dieser eine Bildschirm allein erlaubt kein Urteil darüber, wie leicht sich die folgenden Bildschirme erreichen lassen.</p>
+
+    <h3>Ein Fall, in dem sich der Aufbau kaum änderte</h3>
+    <h4>PS-01 — die als Referenz gesetzte Persona</h4>
+    <p>Bei der Schriftgröße gibt es kleine Unterschiede, doch Anzahl der Einträge, Anordnung und Größe der Berührflächen sind nahezu gleich. Mit dieser Kombination aus Regeln und Eingabe entstand kein Ergebnis, das den Aufbau gegenüber der gemeinsamen Vorgabeoberfläche stark verändert.</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">Gemeinsame Vorgabeoberfläche</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-before-de.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-before-de.svg" width="772" height="434" loading="lazy" decoding="async" alt="Die gemeinsame Vorgabeoberfläche. In der Mitte des Zielauswahl-Bildschirms stehen sieben Einträge."></a>
       </div>
-      <figcaption>Die menschliche Bewertung ist kein ständiger Schritt. Nur wenn ein Mensch eine Anpassung für nötig hält, fließt sie — soweit die Evidenz es zulässt — in die Constraints zurück, und es wird neu erzeugt.</figcaption>
+      <div>
+        <p class="compare-label">Aus persönlichen Merkmalen erzeugte Oberfläche</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-after-de.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-after-de.svg" width="772" height="434" loading="lazy" decoding="async" alt="Das Ergebnis mit den Angaben der Referenz-Persona. Die sieben Einträge in der Mitte und ihre Anordnung sind nahezu gleich, die Schrift ist geringfügig größer."></a>
+      </div>
+      <figcaption><strong>Abbildung 4 | Ein Fall, in dem sich der Aufbau trotz persönlicher Eingabe kaum änderte.</strong> Aus der geringen Veränderung lässt sich nicht schließen, wie gut die Oberfläche zu dieser Person passt.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Proof of Concept — eine Oberfläche für dreizehn Personas</h2>
-    <p>Für den Proof of Concept wurden dreizehn Personas mit unterschiedlichen Merkmalskombinationen angelegt. Sie bilden keine reale Verteilung von Nutzenden ab, sondern sind Gitterpunkte zur Prüfung: Die Merkmale wurden bewusst so gesetzt, dass sich erkennen lässt, welches von ihnen die Oberfläche verändert.</p>
-    <p>Für jede Persona wurde die gemeinsame, einheitliche Oberfläche als Before und die aus ihren Merkmalen erzeugte Oberfläche als After gegenübergestellt.</p>
+    <h2>Ergebnisse und Diskussion — wo blieb der Spielraum der Erzeugung?</h2>
 
-    <h3>Ein Fall, in dem sich kaum etwas änderte</h3>
-    <h4>PS-01 — Referenz (mittleres Alter, typisch)</h4>
-    <p>Diese Persona liegt in allen kognitiven, sensorischen und körperlichen Merkmalen im typischen Bereich. Nach der Individualisierung ist die Schrift etwas größer, doch die Zahl der angezeigten Einträge, die Anordnung und die Größe der Berührflächen bleiben nahezu unverändert.</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">Einheitliche Oberfläche (before)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-before-de.svg" width="772" height="434" alt="Bildschirm zur Zielauswahl: sieben Einträge — Zuhause, Arbeit, gespeicherte Orte, zuletzt genutzt sowie Ziele in der Nähe — über einer festen Schaltflächenleiste.">
-      </div>
-      <div>
-        <p class="compare-label">Individualisierte Oberfläche (after)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-after-de.svg" width="772" height="434" loading="lazy" decoding="async" alt="Dieselben sieben Einträge in derselben Höhe. Abgesehen von etwas größerer Schrift entspricht der Aufbau der einheitlichen Oberfläche.">
-      </div>
-      <figcaption>Wo die einheitliche Oberfläche bereits gut genug funktioniert, bringt Individualisierung keine große Veränderung. Nichts zu ändern ist ebenfalls ein Ergebnis der Individualisierung.</figcaption>
-    </figure>
+    <h3>Der eigene Beitrag der generativen KI ließ sich nicht hinreichend zeigen</h3>
+    <p>Im eigenen visuellen Vergleich war PS-12 der Fall, den ich als deutliche Veränderung des Bildschirmaufbaus erkennen konnte. Andere Ergebnisse unterschieden sich in Wortwahl und Einstellungen, doch am Erscheinungsbild ließ sich kein großer Unterschied im Nutzen erkennen.</p>
+    <p>Auch die Änderung bei PS-12 lag in dem Bereich, den Einstellungen für Anzeigegröße und Informationsmenge erreichen können. In der Erfahrung, dass der Ausgangszustand passt, ohne dass man selbst nach Einstellungen sucht, steckt Potenzial. Ob diese Erfahrung wertvoll ist und ob es für die Erzeugung der Oberfläche generative KI braucht, sind jedoch zwei getrennt zu prüfende Fragen.</p>
+    <p>Dieser Proof of Concept zeigt weder, dass die Anpassung an kognitive Merkmale die Bedienleistung verbessert, noch dass die generative KI eine bessere Oberfläche hervorgebracht hätte als ein regelbasiertes Vorgehen.</p>
 
-    <h3>Ein Fall mit sichtbarer Veränderung</h3>
-    <h4>PS-12 — mittleres Alter, geringe Fingerfertigkeit (sensorisch und kognitiv typisch)</h4>
-    <p>Diese Persona stimmt in Alter, sensorischen und kognitiven Merkmalen mit PS-01 überein; nur die Fingerfertigkeit ist gering. Im After werden die Berührflächen größer, und die Zahl der Einträge auf einem Bildschirm sinkt von sieben auf vier. Die übrigen wandern auf den nächsten Bildschirm — genau das verschafft jedem einzelnen Bedienziel seine Größe.</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">Einheitliche Oberfläche (before)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-before-de.svg" width="772" height="434" loading="lazy" decoding="async" alt="Bildschirm zur Zielauswahl mit sieben gleich hohen Einträgen.">
-      </div>
-      <div>
-        <p class="compare-label">Individualisierte Oberfläche (after)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-after-de.svg" width="772" height="434" loading="lazy" decoding="async" alt="Derselbe Bildschirm, auf vier Einträge reduziert, jeder mit größerer Berührfläche.">
-      </div>
-      <figcaption>Informationsmenge und Größe der Berührflächen wurden auf die Fingerfertigkeit hin neu verteilt. Der Aufbau ändert sich allein aufgrund eines körperlichen Merkmals, nicht wegen Alter oder Kognition.</figcaption>
-    </figure>
-    <p>Die Literatur nennt die Untergrenze, die eine Berührfläche einhalten muss, und die Richtung, in die sie bei geringerer Bediengenauigkeit zu vergrößern ist. Wie viel für diesen einen Menschen aufzuschlagen ist, legt sie nicht eindeutig fest. Genau diesen offenen Teil hat die KI innerhalb der Constraints konkretisiert.</p>
+    <h3>Der hier geschaffene Entwurfsraum war eng</h3>
+    <p>Sobald Text und Bedienelemente die nötigen Größen einhalten und die Bedingungen zu Bildschirmfläche und Informationsmenge greifen, bleiben nur noch wenige mögliche Aufbauten. In der Umsetzung war zudem vieles rechnerisch oder durch feste Strukturen bestimmt, sodass der KI wenig Raum blieb, zwischen mehreren tragfähigen Vorschlägen zu wählen.</p>
+    <p>Bei der Wortwahl blieb Spielraum, doch diese Unterschiede sind weniger sichtbar als ein veränderter Aufbau, und die hier verwendete visuelle Bewertung konnte ihren Wert nicht erfassen. Um den Beitrag generativer KI zu belegen, braucht es — so mein Schluss — <strong>eine Bandbreite wählbarer Vorschläge, deren Unterschiede für die Erfahrung der Nutzenden Bedeutung haben</strong>.</p>
+    <p>Dieses Ergebnis betrifft die hier zusammengetragenen Regeln, die übernommenen UI-Parameter und den umgesetzten Ausdrucksraum. Es ist keine Grenze der Fahrzeugnavigation im Allgemeinen und auch keine der individualisierten Oberflächen im Allgemeinen.</p>
+    <p>Zudem habe ich nicht den vollständigen Text aller einschlägigen Normen von JIS, ISO und anderen eingesehen. Das Entwurfswissen entstand aus dem verfügbaren Material: Fachaufsätzen, offiziellen Leitfäden, öffentlichen Daten sowie dem Text oder der Vorschau einiger Normen. Der Umfang des Herangezogenen dürfte beeinflusst haben, welche Entwurfsoptionen zur Verfügung standen. Ob eine genaue Lektüre der Normtexte den Spielraum erweitert oder ihn durch zusätzliche Bedingungen weiter einengt, bleibt zu klären.</p>
+
+    <h3>Die Arbeit mit der KI verbesserte die Regeln selbst</h3>
+    <p>Ergebnisse zeigten sich vor allem dort, wo die Bedingungen für die Erzeugung entworfen und prüfbar gemacht wurden.</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Gefundene Probleme und ihre Aufnahme in den Entwurf">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">Gefundenes Problem</th><th scope="col">Aufnahme in den Entwurf</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Für dasselbe Element galten mehrere Untergrenzen, deren Verknüpfung unklar war</td><td>Die Anwendungsbeziehungen wurden geklärt, damit keine Untergrenze unterschritten wird</td></tr>
+          <tr><td>Eine nur für die Fahrt gedachte Bedingung galt auch im Stand</td><td>Der Fahrzustand, in dem eine Bedingung gilt, wurde ausdrücklich benannt</td></tr>
+          <tr><td>Verständlichkeit der Wortwahl und Vorhandensein eines Symbols waren zu einer Achse verschmolzen</td><td>Beides wurde als eigenständige Entwurfsachse getrennt, wodurch unnötig verschwundene Optionen zurückkehrten</td></tr>
+          <tr><td>Die KI stützte ihre Entscheidungen auch auf Bedingungen, die für die jeweilige Ausgabe nicht gelten</td><td>Für jede Ausgabe wurde ausdrücklich benannt, welche Bedingungen heranzuziehen sind</td></tr>
+          <tr><td>Entscheidungen, die der KI überlassen bleiben sollten, waren in der Umsetzung festgeschrieben</td><td>Die Rollenverteilung zwischen Spezifikation und Umsetzung wurde überarbeitet</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Die KI benennt ein Problem, ein Mensch entscheidet, der Entwurf nimmt es auf. Durch dieses Hin und Her wurde deutlich, <strong>was für alle gelten muss und wo sich eine Oberfläche an die einzelne Person anpassen lässt</strong>.</p>
   </section>
 
   <section>
-    <h2>Was der Proof of Concept ergab</h2>
-    <p>Eine deutlich sichtbare Veränderung zeigte sich nur bei PS-12, einer von dreizehn. Bei den meisten Personas funktionierte die einheitliche Oberfläche des Before bereits gut genug; was die Individualisierung einbrachte, wurde zumindest am Bildschirm kaum erkennbar.</p>
-    <p>Bei PS-12 ließ sich die Individualisierung sichtbar machen, doch eine Änderung dieser Größenordnung ist auch über die Anzeige- und Barrierefreiheitseinstellungen heutiger Produkte erreichbar. Dass der passende Zustand von Anfang an bereitsteht, ohne dass die Nutzenden ihn selbst einstellen müssen, hat durchaus Wert. Eine neue Oberfläche, die nur eine KI hätte vorschlagen können, ist dabei aber nicht entstanden.</p>
-    <p>Ich habe dieses Ergebnis nicht als gelungene Individualisierung durch KI gewertet.</p>
+    <h2>Ausblick — den Wert der Erfahrung und den Wert der generativen KI prüfen</h2>
+    <p>Als Nächstes möchte ich zwei Fragen getrennt untersuchen.</p>
+    <p>Die eine: Wie viel Wert liegt in der Erfahrung, dass die Oberfläche zu Beginn passt, ohne dass man sie selbst einstellen muss? Dafür sind Befragung im Gespräch, Korrektur des Verstandenen und Probelauf umzusetzen, um die Verlässlichkeit der Eingaben und die Belastung für die Nutzenden zu prüfen.</p>
+    <p>Die andere: Bei welchen Entwurfsgegenständen führen die Unterschiede zwischen den Vorschlägen einer generativen KI zu einer besseren Erfahrung? Ich möchte auf Gegenstände ausweiten, bei denen die nötigen Bedingungen gewahrt bleiben und in Informationsaufbau und Bedienablauf mehrere tragfähige Vorschläge offenbleiben.</p>
+    <p>In einer Bewertung mit realen Nutzenden würden die gemeinsame Vorgabeoberfläche, eine regelbasiert aus persönlichen Angaben angepasste Oberfläche und eine von generativer KI ausgearbeitete Oberfläche an derselben Aufgabe verglichen. Bearbeitungszeit, Fehlbedienungen, Blickverhalten und subjektive Belastung würden die Wirkung der Anpassung an die Person von der Wirkung des KI-Einsatzes trennen.</p>
+    <p>Außerdem wird die Sichtung der einschlägigen Normen fortgesetzt, um die Grenze zwischen dem Belegten und der Entwurfsentscheidung fortzuschreiben. Über die Prüfbarkeit der Bedingungen hinaus besteht die nächste Aufgabe darin, innerhalb dieser Bedingungen Optionen zu lassen, die für die Nutzenden Bedeutung haben.</p>
   </section>
 
-  <section>
-    <h2>Warum kein Unterschied entstand</h2>
-    <p>Der Grund liegt darin, dass der Designraum, der die Constraints erfüllt, eng war.</p>
-    <p>Eine Fahrzeugoberfläche kennt zahlreiche sicherheitsbedingte Unter- und Obergrenzen. Schrift und Berührflächen brauchen eine Mindestgröße, und für die Informationsmenge auf einem Bildschirm gilt eine Obergrenze. Wendet man diese nacheinander an, bleiben der KI nur noch wenige Lösungen zur Wahl.</p>
-    <p>Auch das meiste, was die KI konkretisiert hat, ließe sich in dieser Größenordnung einmal von Hand entscheiden und als kleine Zuordnungstabelle festschreiben. Das heißt nicht, dass die KI überflüssig war — sie füllte konkrete Werte, die die Literatur nicht angibt. Für eine Suche blieben ihr allerdings zu wenige Möglichkeiten.</p>
-    <p>Bei der Wortwahl blieb dagegen viel Freiheit. Nur sind diese Unterschiede im Aufbau des Bildschirms kaum zu sehen: Der Bereich, in dem Menschen den Wert erkennen konnten, und der Bereich, der sich nicht in Regeln fassen lässt, überlappten sich nicht.</p>
-  </section>
-
-  <section>
-    <h2>Das Ergebnis lag im Rahmen, nicht in der Oberfläche</h2>
-    <p>Das größte Ergebnis dieses Proof of Concept entstand nicht beim Erzeugen der Oberflächen, sondern davor, beim Entwerfen der Constraints. Beim Aufschreiben von Normen und Literatur als maschinell prüfbare Bedingungen traten mehrere Widersprüche im Rahmen selbst zutage.</p>
-    <ul class="findings">
-      <li>Verschiedene Normen setzten für dasselbe Element der Oberfläche unterschiedliche Untergrenzen.</li>
-      <li>Für die Bedingung „gilt nur während der Fahrt“ gab es in der Spezifikation keinen Ort, an dem sie sich hätte notieren lassen.</li>
-      <li>Zwei eigentlich unabhängige Entwurfsachsen waren zu einer zusammengefasst, sodass die Constraints fast alle Optionen ausschlossen.</li>
-      <li>Der KI war nicht deutlich genug mitgeteilt, welches Constraint welche Ausgabe bestimmt, sodass unbeteiligte Bedingungen in die Entscheidung eingingen.</li>
-      <li>Entscheidungen, die der KI hätten überlassen bleiben sollen, waren in der Implementierung festgeschrieben und rückten das constraint-basierte Design in die Nähe einer bloßen Regel-Engine.</li>
-    </ul>
-    <p>In jedem dieser Fälle hat die KI den Widerspruch erkannt und die betreffende Stelle benannt, ein Mensch hat entschieden, und das Constraint wurde korrigiert.</p>
-    <p>Der Ertrag dieser Arbeit liegt also weniger darin, dass eine KI eine neue Oberfläche geschaffen hätte, als darin, <strong>dass im Austausch mit der KI der Rahmen selbst, aus dem Oberflächen hervorgehen, geprüft und überarbeitet wurde</strong>. Die Rolle der KI im constraint-basierten Design besteht nicht nur darin, ein fertiges Ergebnis zu erzeugen. Sie besteht auch darin, vor dem Erzeugen zu finden, wo Regeln miteinander kollidieren und wo Entwurfsmöglichkeiten unbeabsichtigt verschwunden sind.</p>
-  </section>
-
-  <section>
-    <h2>Weitere Arbeit — klarer Rahmen, weiter Raum darin</h2>
-    <p>Was das constraint-basierte Design von der KI erwartet, ist nicht, festgelegte Werte aus einer Tabelle zu holen. Es ist, offensichtlich Unpassendes durch die Constraints auszuschließen und aus den vielen verbleibenden Möglichkeiten die wahrscheinlich tragfähigste Lösung vorzuschlagen — oder ein Muster zu zeigen, auf das ein Mensch vorab nicht gekommen wäre.</p>
-    <p>Diese Wirkung ist hier nicht hinreichend eingetreten. Nicht weil nichts kollidiert wäre, sondern weil der Designraum, der die Constraints erfüllt, eng war und die Wahl einer besseren oder einer neuen Lösung kaum noch Bedeutung hatte.</p>
-    <p>Die nächste Frage lautet nicht, ob KI wirksam ist. Sie lautet: <strong>Ab welcher Weite eines Designraums entsteht die Wirkung, die nur eine KI hervorbringt?</strong></p>
-    <p>Für die nächste Erprobung wähle ich einen Gegenstand, bei dem die Sicherheit gewahrt bleibt, mehrere tragfähige Lösungen bestehen bleiben und die nicht in Regeln fassbaren Unterschiede auch für Menschen als Wert erkennbar sind. Der Rahmen wird klar definiert. Doch in ihm bleibt so viel Raum, dass die KI suchen kann. Beides zusammen macht constraint-basiertes Design zu einer Entwurfsmethode für das KI-Zeitalter statt zu bloßer Automatisierung.</p>
-  </section>
+  <details class="references">
+    <summary>Quellen</summary>
+    <ol>
+      <li id="ref-nhtsa">NHTSA, <cite>Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices</cite> (veröffentlicht 2013). Freiwillige Leitlinien. Die Akzeptanzkriterien zur Blickzuwendung finden sich in VI.E, die Ausführungen zu Ablenkung und Risiko unter anderem in I.C des Haupttextes. Das bedeutet nicht, dass dieser Proof of Concept als konform mit dieser Prüfung zertifiziert wäre. <a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">Das Dokument im Federal Register</a></li>
+    </ol>
+  </details>
 
   <nav aria-label="Website">
     <ul>
@@ -264,5 +318,14 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Abbildung" hidden>
+  <button class="lightbox__close" type="button" aria-label="Vergrößerte Abbildung schließen"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

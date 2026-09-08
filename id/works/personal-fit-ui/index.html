@@ -8,8 +8,8 @@
      and every other language is translated from it (owner's instruction,
      2026-08-23). The mock renders live under the English tree, one file per
      language, and are referenced from here rather than copied. -->
-<title>Personal Fit UI - Optimalisasi Individu UI dengan Desain Berbasis Batasan — Takafumi Horiuchi</title>
-<meta name="description" content="Membangkitkan antarmuka yang pas dengan karakteristik kognitif, indrawi, dan fisik seseorang, di dalam batas yang ditetapkan bukti ilmiah dan batasan perancangan. Sebuah bukti konsep pada sistem navigasi mobil.">
+<title>Optimalisasi antarmuka per individu lewat desain berbasis batasan — Takafumi Horiuchi</title>
+<meta name="description" content="Mekanisme yang membangkitkan antarmuka dari karakteristik kognitif, indrawi, dan fisik seseorang serta dari pengetahuan perancangan, diprototipekan pada sistem navigasi mobil. Implementasi dan perbandingan desain berbasis batasan, untuk menelaah apa yang bisa diberikan individualisasi dan seberapa besar keleluasaan yang tersisa bagi AI generatif.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -30,18 +30,20 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="id_ID">
-<meta property="og:title" content="Personal Fit UI - Optimalisasi Individu UI dengan Desain Berbasis Batasan">
-<meta property="og:description" content="Manusia merancang kerangka yang harus dipatuhi; di dalamnya AI mewujudkan antarmuka bagi tiap orang. Desain berbasis batasan dalam praktik.">
+<meta property="og:title" content="Optimalisasi antarmuka per individu lewat desain berbasis batasan">
+<meta property="og:description" content="Mekanisme yang membangkitkan antarmuka dari karakteristik seseorang dan pengetahuan perancangan, diprototipekan pada navigasi mobil, untuk menelaah apa yang bisa diberikan individualisasi dan seberapa besar keleluasaan yang tersisa bagi AI generatif.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Layar seragam Personal Fit UI yang menampilkan menu tujuan dan navigasi.">
+<meta property="og:image:alt" content="Antarmuka seragam Personal Fit UI, menampilkan menu tujuan dan navigasi.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -61,9 +63,9 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/id/works/personal-fit-ui/#work",
-      "name": "Personal Fit UI - Mengindividualkan antarmuka lewat desain berbasis batasan",
+      "name": "Optimalisasi antarmuka per individu lewat desain berbasis batasan",
       "url": "https://takafumihoriuchi.github.io/id/works/personal-fit-ui/",
-      "description": "Membangkitkan antarmuka yang pas dengan karakteristik kognitif, indrawi, dan fisik seseorang, di dalam batas yang ditetapkan bukti ilmiah dan batasan perancangan. Sebuah bukti konsep pada sistem navigasi mobil.",
+      "description": "Mekanisme yang membangkitkan antarmuka dari karakteristik kognitif, indrawi, dan fisik seseorang serta dari pengetahuan perancangan, diprototipekan pada sistem navigasi mobil. Implementasi dan perbandingan desain berbasis batasan, untuk menelaah apa yang bisa diberikan individualisasi dan seberapa besar keleluasaan yang tersisa bagi AI generatif.",
       "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
       "datePublished": "2026-08",
       "inLanguage": "id",
@@ -79,7 +81,7 @@
 <main>
 
   <header>
-    <h1>Optimalisasi Individu UI dengan Desain Berbasis Batasan</h1>
+    <h1>Optimalisasi antarmuka per individu lewat desain berbasis batasan</h1>
     <p class="dateline">Agustus 2026</p>
   </header>
 
@@ -96,146 +98,198 @@
 
   <section>
     <h2>Ikhtisar</h2>
-    <p class="lead">Semua orang memakai satu antarmuka yang sama dengan cara yang sama. Karya ini meninggalkan premis produksi massal itu dan menelaah apakah antarmuka justru dapat dibangkitkan agar pas dengan karakteristik kognitif, indrawi, dan fisik tiap orang.</p>
-    <p>Yang dituju bukan antarmuka yang layarnya terus berubah mengikuti situasi selama dipakai, melainkan sebuah mekanisme yang menangkap karakteristik seseorang pada saat ia mulai memakai produk, lalu membangkitkan lebih dahulu antarmuka yang cocok baginya, sambil mematuhi batasan keselamatan dan aksesibilitas.</p>
-    <p>Dalam penelaahan ini saya mempraktikkan gagasan yang saya sebut desain berbasis batasan. Berbekal literatur dan standar, manusia merancang arah yang boleh ditempuh dan garis batas yang tidak boleh dilewati. Di dalam kerangka itu AI menetapkan nilai dan pilihan kata yang konkret, lalu hasilnya diperiksa apakah melanggar kerangka atau tidak.</p>
-    <p>Bukti konsep ini mengambil sistem navigasi mobil sebagai bahan dan membangkitkan antarmuka untuk tiga belas persona dengan karakteristik yang berbeda-beda. Hasilnya, hampir tidak ada perubahan tampilan yang mencolok. Sebaliknya, proses menuliskan batasan dalam bentuk yang dapat diperiksa justru memperlihatkan di mana ruang untuk individualisasi masih tersisa dan di mana ia habis dimakan batasan.</p>
+    <p class="lead">Karya ini mengusulkan mekanisme yang menerima informasi pribadi tentang karakteristik kognitif seseorang lalu membangkitkan antarmuka yang pas untuk orang itu, dengan merujuk pada prinsip dasar perancangan antarmuka, pada syarat keselamatan dan aksesibilitas, serta pada temuan penelitian tentang karakteristik manusia.</p>
+    <p>Karya ini memakai gagasan yang saya sebut desain berbasis batasan: manusia merancang syarat yang harus dipenuhi beserta lingkup berlakunya, dan di dalam kerangka itu AI generatif menyusun usulan yang konkret. Dengan navigasi mobil sebagai bahan, saya membangun bukti konsep yang membangkitkan antarmuka dari tiga belas persona fiktif — termasuk karakteristik indrawi dan fisik — dan memeriksa kesesuaian terhadap syarat pada tahap terpisah.</p>
+    <p>Dalam perbandingan, satu kasus menunjukkan perubahan susunan layar yang jelas akibat karakteristik fisik, sementara sebagian besar keluaran tidak memperlihatkan perubahan visual yang besar. Kemudahan pakai dan keselamatan yang sesungguhnya belum diuji, tetapi karya ini memperjelas sejauh mana penilaian dapat diserahkan kepada AI generatif, dan syarat perancangan mana yang telah mempersempit ruang individualisasi.</p>
   </section>
 
   <section>
-    <h2>Apa artinya menyerahkan satu antarmuka kepada semua orang</h2>
-    <p>Sebagian besar produk saat ini dirancang dengan asumsi produksi massal: satu antarmuka untuk menjangkau sebanyak mungkin orang. Bahkan pada produk yang ukuran hurufnya atau jumlah butir tampilannya bisa diubah, penggunalah yang harus menemukan sendiri keadaan yang cocok dan mengaturnya.</p>
-    <p>Cara ini berhasil untuk banyak orang. Tetapi cocok untuk banyak orang tidak sama dengan cocok untuk semua orang. Produk yang memenuhi seluruh standar perancangan bersama pun tetap menyisakan orang yang kesulitan memakai antarmukanya.</p>
-    <p>Struktur yang sama tampak pula dalam penilaian antarmuka kendaraan. Prosedur penerimaan NHTSA Amerika Serikat mengenai pengalihan pandangan saat berkendara tidak menuntut semua peserta memenuhi kriteria. Sebuah tugas dinyatakan lulus bila 21 dari 24 peserta memenuhinya, jadi kenyataan bahwa sebagian orang tidak memenuhinya sudah diperhitungkan sejak awal di dalam prosedur itu. Sebuah dokumen yang diserahkan pabrikan mobil kepada regulator melangkah lebih jauh: sekitar satu dari enam orang secara konsisten mengalihkan pandangan lebih lama pada beberapa tugas sekaligus. Dokumen itu berasal dari pabrikan yang justru menjadi objek pengaturan dan mengusulkan pelonggaran kriteria. Yang diusulkan di sini bukan melonggarkan kriteria, melainkan menambah jumlah orang yang mampu memenuhinya melalui individualisasi.</p>
-    <p>Arti penting antarmuka yang diindividualkan bukanlah membuat layar semua orang menjadi serba baru, melainkan membawa orang yang selama ini tercecer oleh antarmuka seragam ke dalam jangkauan tempat mereka dapat memakainya dan mengoperasikannya dengan aman.</p>
-    <p>Selama ini biaya merancang satu antarmuka untuk satu orang tidak realistis. Sejak AI dapat diperlakukan sebagai bagian dari proses perancangan, premis itu mulai berubah.</p>
+    <h2>Latar — sejauh mana satu antarmuka bisa menjangkau</h2>
+    <p>Kebanyakan produk merancang dan menyediakan satu antarmuka bersama yang dapat dipakai sebanyak mungkin orang. Namun berapa banyak informasi yang bisa ditangkap sekaligus, semudah apa perhatian diarahkan, sejelas apa kata-katanya, dan setepat apa gerakan halus dilakukan berbeda-beda bagi tiap orang. Antarmuka bersama yang memperhatikan banyak orang belum tentu pas untuk satu orang tertentu.</p>
+    <p>Penilaian pada tingkat kelompok pun ada batasnya. Dalam pedoman sukarela yang diterbitkan NHTSA Amerika Serikat pada 2013, misalnya, tiap kriteria penerimaan tentang arah pandang meminta agar sedikitnya 21 dari 24 peserta memenuhinya. Itu bukan syarat yang berarti semua orang bisa memakainya dengan sama baiknya. <a class="citation-marker" href="#ref-nhtsa" aria-label="Ke rujukan 1">[1]</a></p>
+    <p>Bahkan pada produk yang ukuran hurufnya atau jumlah tampilannya dapat diubah, penggunalah yang harus menyadari bahwa pengaturan itu ada, menghubungkannya dengan kesulitannya sendiri, lalu memilih penyesuaian yang tepat. Jangan-jangan pengaturan itu kurang dimanfaatkan, sehingga orang terus memakai antarmuka yang tidak pas? Pertanyaan itulah titik berangkatnya.</p>
+    <p>Pada navigasi mobil, menatap layar dan mengoperasikannya bersaing dengan perhatian yang dituntut oleh mengemudi. <a class="citation-marker" href="#ref-nhtsa" aria-label="Ke rujukan 1">[1]</a> Jika ketidakcocokan dengan antarmuka dapat menambah beban itu, maka menyiapkan keadaan yang pas bagi orang tersebut sejak awal pemakaian layak ditelaah, baik dari sisi kemudahan pakai maupun keselamatan.</p>
+    <p>AI generatif kini memungkinkan pembuatan prototipe tahap yang menyusun antarmuka dari informasi pribadi dan pengetahuan perancangan. Dari sanalah muncul cara menghadirkan antarmuka yang pas bagi tiap orang sambil mengurangi beban merancang tiap layar dengan tangan, satu per satu.</p>
+    <p class="note">Seberapa sering pengaturan itu benar-benar dipakai, dan bagaimana ketidakcocokan dengan antarmuka berpengaruh pada kecelakaan, tidak diuji dalam proyek ini.</p>
   </section>
 
   <section>
-    <h2>Navigasi mobil sebagai bahan</h2>
-    <p>Pokok karya ini bukan navigasi mobil, melainkan antarmuka yang diindividualkan. Navigasi mobil dipilih sebagai satu contoh untuk menguji kemungkinan sekaligus batasnya.</p>
-    <p>Antarmuka kendaraan memikul batasan yang keras: layar yang terbatas, waktu pandang yang sangat singkat, dan keselamatan setiap pengoperasian. Sebelum dilepas ke pasar ia divalidasi sebagai antarmuka seragam yang bisa dipakai kebanyakan orang, dan antarmuka yang sama itu pula yang diserahkan kepada orang-orang yang tidak cocok dengan rancangan tersebut.</p>
-    <p>Jika individualisasi tetap berdiri di ranah yang batasannya seketat itu, gagasan desain berbasis batasan dapat diuji secara konkret. Sebaliknya, ada kemungkinan batasan tersebut nyaris tidak menyisakan kebebasan bagi AI. Bahan ini memungkinkan keduanya diamati.</p>
-    <p class="note"><strong>Di Jepang, pada 2026, mobil yang mendukung pembaruan lewat udara dan perangkat navigasi bawaan pabrik model lama yang tidak mendukung pembaruan sama-sama beredar.</strong> Selain itu, meski data peta dapat diperbarui, struktur dasar antarmukanya belum tentu dirancang ulang terus-menerus setelah pembelian. Bukti konsep ini mengandaikan sistem yang antarmukanya tidak sering diperbarui setelah mulai dipakai.</p>
+    <h2>Usulan — menghubungkan informasi pribadi dengan dua jenis pengetahuan perancangan</h2>
+    <p>Yang dimasukkan adalah informasi tentang karakteristik kognitif pengguna tersebut. AI mencocokkannya dengan dua kumpulan pengetahuan yang disiapkan lebih dahulu: satu berisi aturan dasar perancangan antarmuka, satu lagi menghubungkan karakteristik manusia dengan antarmuka yang dianjurkan untuknya.</p>
+    <p>Atas dasar itu, AI mewujudkan antarmuka dalam batas yang diizinkan, dan kesesuaian terhadap syarat diperiksa. Keluarannya adalah antarmuka yang pas bagi orang itu, beserta penjelasan apa yang diubah dan mengapa.</p>
+
+    <figure class="concept-figure line-art">
+      <a class="concept-figure__desktop" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg" width="1400" height="815" loading="lazy" decoding="async" alt="Konsepnya: karakteristik kognitif pribadi dimasukkan, dan antarmuka dibangkitkan dengan merujuk pada aturan dasar antarmuka serta pengetahuan tentang antarmuka yang dianjurkan bagi karakteristik tertentu. AI generatif mewujudkan usulan, tahap terpisah memeriksa syarat, dan keluarannya adalah antarmuka yang pas bagi orang itu beserta alasan tiap perubahan."></a>
+      <a class="concept-figure__mobile" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg" width="480" height="1414" loading="lazy" decoding="async" alt="Konsepnya: karakteristik kognitif pribadi dimasukkan, dan antarmuka dibangkitkan dengan merujuk pada aturan dasar antarmuka serta pengetahuan tentang antarmuka yang dianjurkan bagi karakteristik tertentu. AI generatif mewujudkan usulan, tahap terpisah memeriksa syarat, dan keluarannya adalah antarmuka yang pas bagi orang itu beserta alasan tiap perubahan."></a>
+      <figcaption><strong>Gambar 1 | Konsep: informasi pribadi masuk, antarmuka dibangkitkan dengan merujuk pengetahuan perancangan.</strong> Masukan yang berbeda-beda antarorang dipisahkan dari pengetahuan yang disiapkan perancang lebih dahulu. Pada bukti konsep, masukan mencakup karakteristik indrawi dan fisik selain kognitif.</figcaption>
+    </figure>
+
+    <h3>Masukan: informasi tentang orang tersebut</h3>
+    <p>Misalnya, seberapa mudah seseorang mengingat dan mengolah beberapa informasi sekaligus, seberapa gampang perhatiannya tersedot rangsangan lain, dan penjelasan macam apa yang paling mudah diikuti. Implementasinya juga mencakup penglihatan dan ketangkasan jari. Layar tidak ditentukan oleh nama diagnosis; yang ditangani adalah informasi pribadi yang berkaitan dengan pemakaian antarmuka.</p>
+
+    <h3>Pengetahuan A: aturan agar sebuah antarmuka berdiri sebagai antarmuka</h3>
+    <p>Prinsip dasar perancangan antarmuka ditata: konsistensi, umpan balik atas tindakan, pengelompokan informasi, keterbacaan teks dan keterlihatan sasaran sentuh. Di atasnya, pembatasan pengoperasian antarmuka di kendaraan dan syarat aksesibilitas didefinisikan bersama situasi tempat semuanya berlaku.</p>
+
+    <h3>Pengetahuan B: dari karakteristik menuju antarmuka yang dianjurkan</h3>
+    <p>Karakteristik manusia yang ditegakkan penelitian dihubungkan dengan prinsip penyajian informasi, lalu ke perancangan antarmuka. Untuk karakteristik seperti “menahan informasi sambil mengoperasikan itu membebani”, arahnya menjadi “kurangi apa yang harus diingat”, yang berujung pada rancangan yang membiarkan informasi yang diperlukan tetap di layar.</p>
+    <p>Namun penelitian tentang suatu karakteristik tidak begitu saja memberikan nilai rancangan untuk navigasi mobil. <strong>Apa yang ditegakkan penelitian dibedakan dari keputusan perancangan yang ditarik proyek ini darinya.</strong> Perbaikan yang berguna bagi semua orang secara sama termasuk aturan dasar dan tidak dihitung sebagai hasil individualisasi.</p>
   </section>
 
   <section>
-    <h2>Menjadikan individualisasi sesuatu yang dapat dibangkitkan</h2>
-    <p>Desain berbasis batasan berarti menetapkan kerangkanya dengan jelas, lalu membiarkan AI bergerak luwes di dalamnya sambil menangkap nuansa. Berbeda dengan mekanisme parametrik yang mengambil nilai dari tabel yang sudah ditetapkan, yang dirancang di sini adalah rentang solusi yang boleh ditelusuri AI itu sendiri.</p>
-    <p>Pengetahuan ilmiah tidak selalu sampai pada angka yang konkret. Kadang ia hanya menunjukkan arah: perbesar, kurangi yang ditampilkan. Bagian yang nilainya sudah pasti dihitung sebagai aturan; bagian yang hanya diketahui arahnya diserahkan kepada AI untuk ditetapkan secara konkret dalam batas yang diizinkan. Menjaga agar pembedaan itu tidak kabur juga merupakan bagian dari mekanismenya.</p>
+    <h2>Pengalaman yang dituju — menemukan bersama apa yang pas, pada perjalanan pertama</h2>
+    <p class="note"><strong>Gagasan untuk masa depan.</strong> Penyiapan awal lewat percakapan tidak diimplementasikan pada bukti konsep ini.</p>
+    <p>Seseorang membeli mobil dan untuk pertama kalinya duduk di kursi pengemudi. Dalam keadaan berhenti, agen AI bertanya tentang cara memakainya. Alih-alih menyusuri butir pengaturan yang teknis, orang itu bercerita tentang apa yang biasanya menyulitkan dan cara mana yang terasa mudah dipakai.</p>
 
-    <figure class="framework">
-      <div class="framework-branches">
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>Menetapkan dimensi kognitif</h3>
-            <p>Sumbu didefinisikan bukan sebagai nama diagnosis, melainkan sebagai karakteristik yang berkaitan dengan kemudahan pemakaian: memori kerja, ketahanan terhadap gangguan, karakteristik penglihatan dan pendengaran, serta kecekatan jari.</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>Tabel pemetaan</h3>
-            <p>Menghubungkan karakteristik pengguna dengan parameter antarmuka yang harus digeser: karakteristik mana menggeser apa, ke arah mana, dan atas dasar apa.</p>
-          </div>
-        </div>
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>Bukti ilmiah dan standar</h3>
-            <p>Mengumpulkan kriteria keselamatan, standar aksesibilitas, temuan ilmu kognitif, dan prinsip umum perancangan antarmuka.</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>Himpunan batasan</h3>
-            <p>Syarat yang wajib dipatuhi setiap hasil bangkitan. Tidak berhenti sebagai gagasan, melainkan ditulis dalam bentuk yang memungkinkan diperiksa: terpenuhi atau dilanggar.</p>
-          </div>
-        </div>
+    <figure class="journey-figure line-art">
+      <a href="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg" width="1200" height="1030" loading="lazy" decoding="async" alt="Perjalanan pengguna di masa depan pada perjalanan pertama: saat berhenti, orang itu memilih memulai, menjawab pertanyaan AI, membetulkan pemahaman AI, mencoba antarmuka yang dibangkitkan, lalu mulai memakai antarmuka yang telah dikonfirmasinya."></a>
+      <figcaption><strong>Gambar 2 | Perjalanan pengguna dari perjalanan pertama sampai mulai memakai.</strong> Wawancara, pemastian apa yang dipahami, pembangkitan antarmuka, dan uji coba saat berhenti bersama-sama menyiapkan antarmuka awal orang itu.</figcaption>
+    </figure>
+
+    <ol class="journey-steps">
+      <li>
+        <h3>Perjalanan pertama: memulai percakapan</h3>
+        <p class="dialogue"><span>AI</span>“Agar layarnya pas untuk Anda, boleh saya tanya beberapa hal tentang cara Anda biasa memakainya? Kita juga bisa melakukannya nanti.”</p>
+        <p>Orang itu memahami tujuannya dan memilih mulai sekarang atau nanti.</p>
+      </li>
+      <li>
+        <h3>Wawancara: menceritakan kesulitan</h3>
+        <p class="dialogue"><span>AI</span>“Ketika panduan datang beruntun, di bagian mana biasanya jadi sulit diikuti?”</p>
+        <p class="dialogue"><span>Pengguna</span>“Begitu panduan berikutnya datang, kadang saya lupa isi yang barusan.”</p>
+        <p>AI menanyakan situasi yang konkret dan menata kesulitan yang berkaitan dengan menahan informasi dan mengarahkan perhatian.</p>
+      </li>
+      <li>
+        <h3>Pemastian: orang itu dapat membetulkan apa yang ditangkap AI</h3>
+        <p class="dialogue"><span>AI</span>“Jadi lebih pas bagi Anda kalau informasi yang diperlukan tetap ada di layar, ketimbang harus mengingat langkah-langkahnya — apakah pemahaman saya benar?”</p>
+        <p>Orang itu memastikan atau membetulkan pemahaman tersebut. Apa yang dilaporkannya sendiri dalam percakapan ditangani terpisah dari nilai pengukuran fungsi kognitif dan dari diagnosis; untuk butir yang menuntut pengukuran, disediakan cara pemastian tersendiri.</p>
+      </li>
+      <li>
+        <h3>Usulan dan uji coba: mendengar alasannya, mencoba layarnya</h3>
+        <p class="dialogue"><span>AI</span>“Untuk mengurangi apa yang harus Anda ingat, saya usulkan layar yang menampilkan tindakan saat ini dan langkah berikutnya sekaligus.”</p>
+        <p>Dalam keadaan berhenti, orang itu mencoba misalnya memilih tujuan. Ia bisa berkata “yang tadi lebih jelas” atau “di sini kata-katanya ingin saya ubah”, dan usulan dapat disesuaikan, atau antarmuka semula dipulihkan.</p>
+      </li>
+      <li>
+        <h3>Mulai memakai: memakai antarmuka yang telah dikonfirmasi</h3>
+        <p>Antarmuka yang telah dikonfirmasi disimpan sebagai keadaan awal. Selama berkendara, susunan dasar yang sudah dikenal pengguna dipertahankan. Bila ingin meninjaunya kembali, penyesuaian dapat dilakukan lagi saat berhenti.</p>
+      </li>
+    </ol>
+    <p>Tujuan percakapan bukan menggolongkan pengguna sekali untuk selamanya. Tujuannya menyiapkan keadaan awal pemakaian, lewat pertukaran yang memungkinkan orang itu menjelaskan diri dan membetulkan apa yang tertangkap.</p>
+  </section>
+
+  <section>
+    <h2>Implementasi — memisahkan syarat yang harus dipenuhi dari penilaian yang diserahkan kepada AI</h2>
+    <p>Yang diimplementasikan adalah mekanisme yang menerima informasi karakteristik seseorang, membangkitkan antarmuka, lalu memeriksa, menggambar, dan membandingkannya. Sebagai pengganti wawancara percakapan, tiga belas persona fiktif dengan karakteristik berbeda ditetapkan sebagai masukan.</p>
+    <p>Navigasi mobil dipilih sebagai bahan karena syarat-syaratnya dapat ditangani secara konkret: luas layar, ukuran sasaran sentuh, jumlah informasi yang bisa ditampilkan, dan apa yang boleh dioperasikan sambil berkendara.</p>
+
+    <h3>Desain berbasis batasan sebagai cara kerja</h3>
+    <p>Desain berbasis batasan, dalam pengertian proyek ini, adalah <strong>metode ketika manusia merancang syarat yang harus dipenuhi beserta lingkup berlakunya, dan AI mengusulkan solusi konkret di dalam kerangka itu</strong>.</p>
+    <p>Pada perubahan parametrik berbasis aturan, padanan antara masukan dan nilai atau pilihannya ditetapkan lebih dahulu. Rancangan ini, alih-alih mengisi seluruh padanan, menetapkan rentang yang diizinkan dan dasar penilaiannya, lalu menyerahkan nilai dan kata-kata yang belum pasti kepada keleluasaan AI generatif. Implementasinya menggabungkan bagian yang ditentukan lewat perhitungan dengan bagian yang ditentukan AI generatif.</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Penanganan dalam implementasi menurut kekuatan dasar buktinya">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">Apa yang bisa dipastikan dari bukti</th><th scope="col">Penanganan dalam implementasi</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Nilai atau hubungannya sudah tertentu</td><td>Dihitung, di dalam syarat dan lingkup yang bisa dipastikan</td></tr>
+          <tr><td>Arah penyesuaiannya diketahui, tetapi kadarnya tidak</td><td>Diwujudkan dalam batas arah dan batasan, dengan catatan bahwa ini keputusan perancangan yang belum teruji</td></tr>
+          <tr><td>Bukti saja tidak menentukan pilihan yang sahih</td><td>Diperlakukan sebagai usulan penjajakan dan ditandai sebagai menunggu evaluasi</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>Setiap kali temuan penelitian diturunkan ke antarmuka, sumber, syarat penerapan, dan keputusan perancangan dicatat. Dengan mengeluarkan alasan bersama antarmuka, dapat ditelusuri mengapa orang itu berakhir dengan layar seperti itu.</p>
+
+    <h3>Memeriksa antarmuka yang dibangkitkan pada tahap terpisah</h3>
+    <p>Antarmuka dibangkitkan sebagai data terstruktur berisi elemen dan tata letaknya, lalu digambar dari data itu. Syarat numerik dan struktural diperiksa oleh kode; sebagian syarat yang menuntut penafsiran makna diperiksa terpisah oleh LLM. Butir di luar penilaian otomatis, dan butir yang tak bisa diperiksa karena bahannya kurang, juga dicatat.</p>
+    <p>Yang dipastikan pemeriksaan adalah kesesuaian terhadap syarat sebagaimana didefinisikan. Apakah antarmukanya benar-benar lebih mudah dipakai atau lebih aman menuntut penilaian oleh pengguna.</p>
+    <p>Bila pada tahap perancangan ditemukan pertentangan antar syarat, AI menunjukkan letaknya dan manusia memutuskan bagaimana meninjaunya. Ini bukan mekanisme yang membiarkan AI mengubah syarat sesuka hatinya setiap kali membangkitkan.</p>
+  </section>
+
+  <section>
+    <h2>Perbandingan antarmuka — satu kasus berubah besar, satu lagi nyaris tidak</h2>
+    <p>Acuan perbandingannya adalah antarmuka yang dibuat dari nilai bawaan bersama, tanpa memasukkan karakteristik pribadi. Dengan himpunan fungsi yang sama, keluaran ketika karakteristik pribadi dimasukkan dibandingkan dengannya.</p>
+    <p class="note"><strong>Gambar-gambar di bawah adalah keluaran prototipe, bukan navigasi komersial sebelum dan sesudah perombakan.</strong> Persona pun tidak menirukan pengguna nyata; keduanya masukan fiktif untuk memastikan pengaruh suatu karakteristik.</p>
+
+    <h3>Kasus ketika sasaran sentuh membesar</h3>
+    <h4>PS-12 — persona dengan karakteristik fisik yang menyulitkan sentuhan halus</h4>
+    <p>Usia serta karakteristik kognitif dan indrawinya disamakan dengan acuan PS-01; hanya ketangkasan jarinya yang diubah. Pada gambar yang ditampilkan, tiap sasaran sentuh membesar dan butir yang berderet di tengah layar turun dari tujuh menjadi empat. Tombol tetap di bagian bawah tidak dihitung dalam jumlah itu.</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">Antarmuka bawaan bersama</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-before-id.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-before-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Antarmuka bawaan bersama. Tujuh butir berderet di tengah layar penyetelan tujuan, dengan empat tombol tetap di bagian bawah."></a>
       </div>
-      <div class="framework-merge" aria-hidden="true"></div>
-      <div class="framework-box framework-space">
-        <h3>Ruang rancangan</h3>
-        <p>Segala pilihan yang mungkin diambil antarmuka: ukuran huruf, sasaran sentuh, jumlah butir yang ditampilkan, hierarki informasi, pemberitahuan, pilihan kata, urutan, pengelompokan. Tabel pemetaan memberi arah penyetelan, himpunan batasan menyingkirkan solusi yang tidak diizinkan.</p>
+      <div>
+        <p class="compare-label">Antarmuka yang dibangkitkan dari karakteristik pribadi</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-after-id.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-after-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Keluaran ketika ketangkasan jari dimasukkan. Di tengah ada empat butir, masing-masing dengan area sentuh yang lebih besar. Di bawah tetap empat tombol tetap."></a>
       </div>
-      <div class="framework-arrow" aria-hidden="true"></div>
-      <div class="framework-box framework-ai">
-        <h3>AI mewujudkan yang konkret di dalam kerangka</h3>
-        <p>Dari kebebasan yang tersisa, ia menetapkan nilai, pilihan kata, urutan, dan pengelompokan. Pemeriksaan terpisah memastikan kecocokannya dengan kerangka, dan hanya antarmuka terindividualkan yang memenuhi semua syarat yang dikeluarkan.</p>
+      <figcaption><strong>Gambar 3 | Ukuran sasaran sentuh dan jumlah tampilan per layar, dibagi ulang.</strong> Bahwa layar berubah mengikuti masukan pribadi berhasil ditunjukkan. Namun perubahan ini berasal dari karakteristik fisik; ini bukan hasil yang menunjukkan efektifnya antarmuka yang dipaskan dengan karakteristik kognitif.</figcaption>
+    </figure>
+    <p>Memperbesar sasaran sentuh ada harganya: butir yang bisa dipilih sekaligus pada layar yang sama jadi lebih sedikit. Himpunan fungsi dirancang tetap dipertahankan, tetapi dari satu layar ini saja kemudahan berpindah ke layar berikutnya belum bisa dinilai.</p>
+
+    <h3>Kasus ketika susunannya nyaris tidak berubah</h3>
+    <h4>PS-01 — persona yang ditetapkan sebagai acuan</h4>
+    <p>Ukuran huruf sedikit berbeda, tetapi jumlah butir, tata letak, dan luas area sentuh hampir sama. Dengan padanan aturan dan masukan kali ini, tidak muncul hasil yang mengubah susunan secara besar dari antarmuka bawaan bersama.</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">Antarmuka bawaan bersama</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-before-id.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-before-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Antarmuka bawaan bersama. Tujuh butir berderet di tengah layar penyetelan tujuan."></a>
       </div>
-      <figcaption>Penilaian manusia bukan tahap yang berjalan terus-menerus. Hanya ketika manusia menilai suatu penyesuaian diperlukan, umpan baliknya dikembalikan ke batasan — sejauh tidak bertentangan dengan bukti ilmiah — lalu antarmuka dibangkitkan ulang.</figcaption>
+      <div>
+        <p class="compare-label">Antarmuka yang dibangkitkan dari karakteristik pribadi</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-after-id.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-after-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Keluaran ketika informasi persona acuan dimasukkan. Tujuh butir di tengah dan tata letaknya hampir sama; hurufnya sedikit lebih besar."></a>
+      </div>
+      <figcaption><strong>Gambar 4 | Kasus ketika informasi pribadi dimasukkan tetapi susunannya nyaris tak berubah.</strong> Dari kecilnya perubahan, kemudahan pakai bagi orang itu belum bisa dinilai.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Bukti konsep: membangkitkan antarmuka untuk tiga belas persona</h2>
-    <p>Bukti konsep ini menyiapkan tiga belas persona dengan kombinasi karakteristik yang berbeda-beda. Persona itu bukan tiruan sebaran pengguna yang nyata, melainkan titik-titik kisi untuk pengujian, dengan karakteristik yang sengaja ditempatkan agar terlihat karakteristik mana yang mengubah antarmuka.</p>
-    <p>Untuk tiap persona, antarmuka seragam yang sama dijadikan before, dan antarmuka yang dibangkitkan dari karakteristiknya dijadikan after.</p>
+    <h2>Hasil dan pembahasan — di mana keleluasaan membangkitkan itu tersisa</h2>
 
-    <h3>Contoh yang hampir tidak berubah</h3>
-    <h4>PS-01 — acuan (usia paruh baya, khas)</h4>
-    <p>Persona ini berada pada rentang khas untuk seluruh karakteristik kognitif, indrawi, dan fisiknya. Setelah individualisasi, hurufnya sedikit membesar, tetapi jumlah butir yang ditampilkan, tata letaknya, dan ukuran area sentuhnya nyaris tidak berubah.</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">Antarmuka seragam (before)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-before-id.svg" width="772" height="434" alt="Layar pengaturan tujuan. Tujuh butir — rumah, kantor, tempat tersimpan, terakhir dikunjungi, dan fasilitas terdekat — di atas deretan tombol tetap.">
-      </div>
-      <div>
-        <p class="compare-label">Antarmuka terindividualkan (after)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-after-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Tujuh butir yang sama dengan tinggi yang sama. Selain hurufnya yang sedikit lebih besar, susunannya nyaris sama dengan antarmuka seragam.">
-      </div>
-      <figcaption>Bila antarmuka seragam sudah cukup berfungsi, individualisasi tidak menimbulkan perubahan besar. Tidak mengubah apa pun juga merupakan hasil individualisasi.</figcaption>
-    </figure>
+    <h3>Nilai khas AI generatif belum cukup ditunjukkan</h3>
+    <p>Dalam perbandingan visual saya sendiri, PS-12 adalah kasus yang bisa saya kenali sebagai perubahan jelas pada susunan layar. Keluaran lain berbeda dalam pilihan kata dan pengaturan, tetapi dari rupa layarnya perbedaan nilai yang besar tak bisa dikenali.</p>
+    <p>Perubahan pada PS-12 pun masih dalam jangkauan pengaturan yang menyesuaikan ukuran tampilan dan jumlah yang ditampilkan. Pengalaman keadaan awal yang sudah pas tanpa harus mencari pengaturannya sendiri memang menyimpan potensi. Namun nilai pengalaman itu, dan perlu-tidaknya AI generatif untuk membangkitkan antarmuka, harus dipastikan secara terpisah.</p>
+    <p>Bukti konsep ini tidak menunjukkan bahwa memaskan antarmuka dengan karakteristik kognitif memperbaiki hasil pengoperasian, tidak pula bahwa AI generatif menghasilkan antarmuka yang lebih baik daripada pendekatan berbasis aturan.</p>
 
-    <h3>Contoh yang perubahannya terlihat</h3>
-    <h4>PS-12 — paruh baya, kecekatan jari rendah (indrawi dan kognitif khas)</h4>
-    <p>Persona ini sama dengan PS-01 dalam usia serta karakteristik indrawi dan kognitif; hanya kecekatan jarinya yang rendah. Pada after, sasaran sentuh membesar dan butir yang tampil dalam satu layar turun dari tujuh menjadi empat. Sisanya dipindahkan ke layar berikutnya, dan justru itulah yang mengamankan ukuran tiap sasaran.</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">Antarmuka seragam (before)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-before-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Layar pengaturan tujuan dengan tujuh butir yang sama tingginya.">
-      </div>
-      <div>
-        <p class="compare-label">Antarmuka terindividualkan (after)</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-after-id.svg" width="772" height="434" loading="lazy" decoding="async" alt="Layar yang sama menyusut menjadi empat butir, masing-masing dengan area sentuh yang lebih besar.">
-      </div>
-      <figcaption>Contoh pembagian ulang jumlah informasi dan ukuran sasaran sentuh menurut kecekatan jari. Susunan layar berubah semata-mata karena karakteristik fisik, bukan karena usia atau karakteristik kognitif.</figcaption>
-    </figure>
-    <p>Literatur menunjukkan batas bawah yang harus dipenuhi sasaran sentuh dan arah pembesarannya ketika ketelitian pengoperasian rendah, tetapi tidak menetapkan secara tunggal berapa banyak tambahannya untuk orang tertentu ini. Bagian yang belum pasti itulah yang diwujudkan AI dalam rentang yang diizinkan batasan.</p>
+    <h3>Ruang perancangan yang dibangun kali ini sempit</h3>
+    <p>Setelah ukuran yang diperlukan bagi teks dan sasaran sentuh dijamin, dan syarat luas layar serta jumlah tampilan diterapkan, susunan yang masih bisa dipilih kian menipis. Dalam implementasinya, banyak pula yang ditentukan lewat perhitungan atau susunan tetap, sehingga ruang bagi AI untuk memilih di antara beberapa usulan yang sahih menjadi kecil.</p>
+    <p>Pada pilihan kata keleluasaan masih tersisa, tetapi perbedaan itu tak sekasatmata perubahan susunan, dan penilaian visual kali ini tak cukup menangkap nilainya. Untuk memastikan nilai AI generatif, saya simpulkan, <strong>usulan yang tersedia harus punya rentang, dan perbedaannya harus bermakna bagi pengalaman pengguna</strong>.</p>
+    <p>Hasil ini menyangkut aturan yang dikumpulkan kali ini, parameter antarmuka yang dipakai, dan rentang ungkapan yang diimplementasikan. Ini bukan batas navigasi mobil pada umumnya, bukan pula batas antarmuka terindividualisasi pada umumnya.</p>
+    <p>Selain itu, saya tidak memeriksa langsung teks lengkap seluruh standar terkait dari JIS, ISO, dan lainnya. Pengetahuan perancangan disusun dari bahan yang dapat diperoleh: makalah, panduan resmi, data publik, serta teks atau pratinjau sebagian standar. Luas rujukan itu mungkin memengaruhi pilihan perancangan yang tersedia. Namun apakah pembacaan cermat atas teks standar akan memperluas keleluasaan itu, atau justru mempersempitnya dengan syarat tambahan, masih harus dipastikan.</p>
+
+    <h3>Bekerja bersama AI memperbaiki aturannya sendiri</h3>
+    <p>Hasilnya justru muncul pada proses merancang syarat yang dipakai untuk membangkitkan dan membuatnya dapat diperiksa.</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Masalah yang ditemukan dan pengaruhnya pada perancangan">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">Masalah yang ditemukan</th><th scope="col">Pengaruhnya pada perancangan</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>Satu elemen yang sama punya beberapa batas bawah, dan cara menggabungkannya kabur</td><td>Hubungan penerapannya diperjelas agar tak ada batas bawah yang dilanggar</td></tr>
+          <tr><td>Syarat yang seharusnya berlaku hanya saat berkendara juga berlaku saat berhenti</td><td>Keadaan berkendara tempat tiap syarat berlaku dinyatakan tegas</td></tr>
+          <tr><td>Kejelasan pilihan kata dan ada-tidaknya ikon disatukan dalam satu sumbu</td><td>Keduanya dipisah menjadi sumbu perancangan yang berdiri sendiri, mengembalikan pilihan yang hilang tanpa perlu</td></tr>
+          <tr><td>AI memakai syarat yang tidak berlaku bagi suatu keluaran sebagai dasar penilaian</td><td>Untuk tiap keluaran, syarat yang harus dirujuk dinyatakan tegas</td></tr>
+          <tr><td>Penilaian yang seharusnya tetap diserahkan kepada AI dipatok di sisi implementasi</td><td>Pembagian peran antara spesifikasi dan implementasi ditinjau ulang</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>AI menunjukkan masalah, manusia memutuskan, perancangan menampungnya. Lewat bolak-balik itu menjadi jelas <strong>apa yang harus dipenuhi untuk semua orang, dan di mana antarmuka boleh dipaskan dengan tiap orang</strong>.</p>
   </section>
 
   <section>
-    <h2>Hasil bukti konsep</h2>
-    <p>Perubahan yang jelas terlihat hanya terpastikan pada PS-12, satu dari tiga belas. Pada sebagian besar persona, antarmuka seragam di before sudah cukup berfungsi; manfaat individualisasi nyaris tidak muncul, setidaknya dalam bentuk yang dapat dikenali dari tampilan layar.</p>
-    <p>Pada PS-12 individualisasi memang dapat ditunjukkan secara kasatmata, tetapi perubahan sebesar itu masih dapat dicapai lewat pengaturan tampilan atau aksesibilitas pada produk yang sudah ada. Menyediakan keadaan yang pas sejak awal, tanpa pengguna harus mengaturnya sendiri, tetap bermakna. Namun belum bisa dikatakan bahwa lahir antarmuka baru yang hanya bisa diusulkan AI.</p>
-    <p>Saya tidak menyimpulkan hasil ini sebagai keberhasilan individualisasi oleh AI.</p>
+    <h2>Ke depan — memastikan nilai pengalaman dan nilai AI generatif</h2>
+    <p>Berikutnya saya ingin menguji dua pertanyaan secara terpisah.</p>
+    <p>Pertama, seberapa besar nilai pengalaman ketika antarmuka awal sudah pas tanpa perlu diatur sendiri. Untuk itu wawancara percakapan, pembetulan pemahaman, hingga uji coba perlu diimplementasikan, lalu keandalan informasi masukan dan beban bagi pengguna dipastikan.</p>
+    <p>Kedua, pada objek perancangan macam apa perbedaan antarusulan dari AI generatif berujung pada pengalaman yang lebih baik. Saya ingin melebarkannya ke objek yang, sambil menjaga syarat yang diperlukan, masih menyisakan beberapa usulan sahih pada susunan informasi dan alur pengoperasian.</p>
+    <p>Pada penilaian oleh pengguna nyata, antarmuka bawaan bersama, antarmuka yang disesuaikan berbasis aturan dari informasi pribadi, dan antarmuka yang diwujudkan AI generatif dibandingkan pada tugas yang sama. Waktu pengoperasian, kesalahan, arah pandang, dan beban subjektif akan memisahkan efek memaskan antarmuka dengan orangnya dari efek memakai AI generatif.</p>
+    <p>Penelusuran standar terkait juga akan dilanjutkan, untuk memperbarui batas antara apa yang ditegakkan penelitian dan apa yang merupakan keputusan perancangan. Selain agar syarat dapat diperiksa, tugas berikutnya adalah menyisakan pilihan di dalamnya yang bermakna bagi pengguna.</p>
   </section>
 
-  <section>
-    <h2>Mengapa perbedaan itu tidak muncul</h2>
-    <p>Sebabnya adalah ruang rancangan yang memenuhi batasan itu sempit.</p>
-    <p>Antarmuka kendaraan memiliki banyak sekali batas bawah dan batas atas demi keselamatan. Huruf dan sasaran sentuh memerlukan ukuran minimum tertentu, dan jumlah informasi yang bisa ditampilkan dalam satu layar memiliki batas atas. Ketika semuanya diterapkan satu per satu, solusi yang bisa dipilih AI tinggal sedikit sekali.</p>
-    <p>Sebagian besar butir yang diwujudkan AI pun, pada skala kali ini, masih termasuk hal yang cukup diputuskan manusia sekali lalu dipatok sebagai tabel padanan kecil. Ini bukan berarti AI tidak diperlukan — ia mengisi nilai konkret yang tidak disebutkan literatur. Hanya saja pilihan yang tersisa terlalu sedikit untuk ditelusuri.</p>
-    <p>Sebaliknya, pada penggantian pilihan kata masih tersisa kebebasan yang luas. Namun perbedaan itu sukar terlihat sebagai perubahan susunan layar: ranah yang nilainya dapat dikenali manusia dan ranah yang tidak habis ditulis sebagai aturan ternyata tidak bertumpang tindih.</p>
-  </section>
-
-  <section>
-    <h2>Hasilnya muncul pada rancangan kerangka, bukan pada antarmuka</h2>
-    <p>Hasil terbesar bukti konsep ini lahir bukan pada tahap membangkitkan antarmuka, melainkan sebelumnya, pada tahap merancang batasan. Dalam proses menuliskan standar dan literatur sebagai syarat yang dapat diperiksa mesin, ditemukan beberapa ketidakselarasan pada kerangkanya sendiri.</p>
-    <ul class="findings">
-      <li>Standar yang berbeda memberi batas bawah yang berbeda untuk elemen antarmuka yang sama.</li>
-      <li>Syarat “hanya berlaku saat kendaraan berjalan” tidak punya tempat untuk dituliskan di dalam spesifikasi.</li>
-      <li>Dua sumbu perancangan yang sebenarnya saling bebas digabungkan menjadi satu, sehingga hampir semua pilihan tersingkir oleh batasan.</li>
-      <li>AI tidak diberi tahu dengan cukup jelas batasan mana yang mengatur keluaran mana, sehingga syarat yang tidak berkaitan ikut dipakai dalam penilaian.</li>
-      <li>Penilaian yang seharusnya disisakan untuk AI justru dipatok di sisi implementasi, sehingga desain berbasis batasan mendekat menjadi sekadar mesin aturan.</li>
-    </ul>
-    <p>Untuk tiap temuan itu, AI mendeteksi ketidakselarasannya dan menunjuk bagian yang bersangkutan, manusia memutuskan, lalu batasannya diperbaiki.</p>
-    <p>Dengan kata lain, hasil kali ini terletak bukan pada AI membuat antarmuka baru, melainkan pada <strong>kerangka yang melahirkan antarmuka itu sendiri yang teruji dan diperbarui lewat bolak-balik dengan AI</strong>. Peran AI dalam desain berbasis batasan bukan hanya membangkitkan produk jadi, melainkan juga menemukan, sebelum apa pun dibangkitkan, di mana aturan saling bertabrakan dan kemungkinan rancangan mana yang terhapus tanpa disengaja.</p>
-  </section>
-
-  <section>
-    <h2>Pekerjaan lanjutan — kerangka yang tegas, ruang yang lapang di dalamnya</h2>
-    <p>Yang diharapkan dari AI dalam desain berbasis batasan bukanlah mengambil nilai yang sudah ditetapkan dari sebuah tabel. Melainkan menyingkirkan lebih dulu hasil yang jelas tidak pantas lewat batasan, lalu dari sekian banyak kemungkinan yang tersisa mengajukan solusi yang secara peluang paling masuk akal, atau menunjukkan pola yang tidak terpikirkan manusia sebelumnya.</p>
-    <p>Kali ini efek tersebut belum cukup muncul. Bukan karena tidak ada benturan, melainkan karena ruang rancangan yang memenuhi batasan itu sempit, sehingga memilih solusi yang lebih cocok atau solusi yang baru hampir kehilangan maknanya.</p>
-    <p>Pertanyaan berikutnya bukanlah apakah AI berguna, melainkan: <strong>seluas apa ruang rancangan yang diperlukan agar efek khas AI itu muncul?</strong></p>
-    <p>Pada praktik berikutnya saya akan memilih bahan yang keselamatannya tetap terjaga, tetapi menyisakan beberapa solusi yang sama-sama masuk akal, dan perbedaannya yang tak habis ditulis sebagai aturan pun dapat dikenali manusia sebagai nilai. Kerangkanya ditetapkan dengan tegas, tetapi di dalamnya disisakan keluasan yang cukup untuk ditelusuri AI. Memenuhi keduanya sekaligus itulah yang menjadikan desain berbasis batasan bukan sekadar otomatisasi, melainkan sebuah metode desain untuk zaman AI.</p>
-  </section>
+  <details class="references">
+    <summary>Rujukan</summary>
+    <ol>
+      <li id="ref-nhtsa">NHTSA, <cite>Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices</cite> (terbit 2013). Pedoman sukarela. Untuk kriteria penerimaan berdasarkan arah pandang lihat VI.E; untuk uraian tentang lepasnya perhatian dan risikonya lihat I.C dan bagian lain teks utamanya. Ini tidak berarti bukti konsep ini telah disertifikasi memenuhi uji tersebut. <a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">Dokumennya di Federal Register</a></li>
+    </ol>
+  </details>
 
   <nav aria-label="Situs">
     <ul>
@@ -264,5 +318,14 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Gambar diperbesar" hidden>
+  <button class="lightbox__close" type="button" aria-label="Tutup gambar yang diperbesar"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

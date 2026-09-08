@@ -8,8 +8,8 @@
      and every other language is translated from it (owner's instruction,
      2026-08-23). The mock renders live under the English tree, one file per
      language, and are referenced from here rather than copied. -->
-<title>Personal Fit UI - 通过约束型设计实现UI的个性化优化 — 堀内贵文</title>
-<meta name="description" content="在科学依据与设计约束的范围之内，生成贴合个人认知、感知与身体特点的界面。以车载导航为题材，验证约束型设计能带来多大程度的个体化优化。">
+<title>以约束型设计实现界面的个体化优化 — 堀内贵文</title>
+<meta name="description" content="把从个人的认知、感知与身体特点及设计知识生成界面的机制，在车载导航上做了原型。通过约束型设计的实现与对比，考察个体化的可能性，以及留给生成式 AI 的裁量空间。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -30,18 +30,20 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/personal-fit-ui/page.css">
+<script src="../../../works/figures.js" defer></script>
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="Personal Fit UI - 通过约束型设计实现UI的个性化优化">
-<meta property="og:description" content="由人来设计必须守住的框架，AI 在框架之内为每一个人具体化界面。这是约束型设计的一次实践。">
+<meta property="og:title" content="以约束型设计实现界面的个体化优化">
+<meta property="og:description" content="把从个人特点与设计知识生成界面的机制在车载导航上做成原型，考察个体化的可能性与留给生成式 AI 的裁量空间。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Personal Fit UI 的统一界面，显示着目的地与导航的菜单。">
+<meta property="og:image:alt" content="显示目的地与导航菜单的 Personal Fit UI 统一界面。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -62,9 +64,9 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/personal-fit-ui/#work",
-      "name": "Personal Fit UI - 以约束型设计实现界面的个体化优化",
+      "name": "以约束型设计实现界面的个体化优化",
       "url": "https://takafumihoriuchi.github.io/zh-Hans/works/personal-fit-ui/",
-      "description": "在科学依据与设计约束的范围之内，生成贴合个人认知、感知与身体特点的界面。以车载导航为题材，验证约束型设计能带来多大程度的个体化优化。",
+      "description": "把从个人的认知、感知与身体特点及设计知识生成界面的机制，在车载导航上做了原型。通过约束型设计的实现与对比，考察个体化的可能性，以及留给生成式 AI 的裁量空间。",
       "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
       "datePublished": "2026-08",
       "inLanguage": "zh-Hans",
@@ -80,7 +82,7 @@
 <main>
 
   <header>
-    <h1>通过约束型设计实现UI的个性化优化</h1>
+    <h1>以约束型设计实现界面的个体化优化</h1>
     <p class="dateline">2026年8月</p>
   </header>
 
@@ -97,148 +99,200 @@
 
   <section>
     <h2>概述</h2>
-    <p class="lead">所有人都以同样的方式使用同一套界面。本作品离开这一大规模生产的前提，探讨能否按照每个人的认知、感知与身体特点来生成界面。</p>
-    <p>所追求的并不是在使用过程中随情境不断变化的界面，而是这样一种机制：在开始使用的阶段掌握此人的特点，在遵守安全与无障碍相关约束的前提下，预先生成适合他的界面。</p>
-    <p>在这次探讨中，我实践了自己称之为“约束型设计”的思路。人依据文献与标准，设计出应当遵循的方向与边界；AI 在这一框架之内决定具体的数值与措辞，并对生成结果是否违反框架加以验证。</p>
-    <p>PoC 以车载导航为题材，为特点各异的十三个人物模型生成了界面。结果是，外观上几乎没有出现明显变化。另一方面，把约束改写成可验证形式的过程，反而让人看清了个体化优化的余地留在哪里、又在哪里被约束吞掉。</p>
+    <p class="lead">提出一套机制：输入关于认知特点的个人信息，参照界面的基本设计原则、安全与无障碍条件，以及关于人的特点的研究结论，生成贴合这个人的界面。</p>
+    <p>其中采用了「约束型设计」的思路——由人来设计必须守住的条件及其适用范围，在这个范围之内由生成式 AI 拿出具体方案。以车载导航为题材，从包含感知与身体特点在内的十三种虚构人物模型生成界面，并在另一道工序中检查是否符合条件，实现了一个 PoC。</p>
+    <p>对比中，有一个案例确认到由身体特点带来的明显画面结构变化；而多数生成结果并未出现大的视觉变化。实际的易用性与安全性尚未验证，但这项工作弄清了可以交给生成式 AI 判断的范围，以及那些收窄了个体化余地的设计条件。</p>
   </section>
 
   <section>
-    <h2>把同一套界面交给所有人，意味着什么</h2>
-    <p>如今大多数产品都以大规模生产为前提来设计：用一套界面覆盖尽可能多的人。即便产品允许更改字号或显示项目的数量，用户仍需自己找到适合自己的状态并进行设置。</p>
-    <p>这种方式对许多人是奏效的。但“适合许多人”与“适合所有人”并不相同。即使产品满足了共同的设计基准，仍会留下用起来吃力的人。</p>
-    <p>这一结构同样出现在车载界面的评估之中。美国 NHTSA 关于驾驶中视线偏离的验收程序，并不要求所有被试都达到基准。合格判定以 24 名被试中有 21 名达标为条件，也就是把一定比例的人达不到基准这件事，事先写进了制度里。此外，汽车厂商提交给监管机构的材料还报告说，在多项任务中持续长时间移开视线的人大约每六人就有一位。需要说明的是，这份材料出自受监管的厂商之手，其诉求是放宽基准。本作品所追求的不是放宽基准，而是通过个体化，让能够达标的人变多。</p>
-    <p>个体化优化的界面，其意义并不在于让所有人的屏幕都变得新奇，而在于把统一界面此前漏掉的人，带进能够使用、能够安全操作的范围。</p>
-    <p>在此之前，为一个人单独设计一套界面的成本并不现实。随着 AI 可以被纳入设计流程的一部分，这一前提正开始发生变化。</p>
+    <h2>背景 —— 一套界面究竟能覆盖到哪里</h2>
+    <p>多数产品会设计并提供一套尽可能多人可用的通用界面。然而，一次能掌握的信息量、注意力投放的难易、语言表述的理解难度、精细操作的顺手程度，都因人而异。通用界面照顾到了很多人，却未必贴合其中的某一个人。</p>
+    <p>以群体为单位的评估同样有其局限。例如美国 NHTSA 于 2013 年公布的自愿性指南中，关于视线的各项接受标准要求 24 人中至少 21 人达标。这并不是一个意味着所有人都能同样使用的条件。<a class="citation-marker" href="#ref-nhtsa" aria-label="跳转到参考资料 1">[1]</a></p>
+    <p>即便产品可以更改字号或显示信息量，使用者也必须先注意到设置的存在，把它和自己的不便联系起来，再选出合适的调整。设置功能是不是没有被充分利用，人们就这样在不合适的状态下继续使用？这个疑问是本项目的起点。</p>
+    <p>在车载导航中，看屏幕与做操作会与驾驶所需的注意力相竞争。<a class="citation-marker" href="#ref-nhtsa" aria-label="跳转到参考资料 1">[1]</a> 如果与界面的不匹配可能加重这份负担，那么在开始使用时就准备好贴合这个人的状态，从易用性与安全两方面都值得考察。</p>
+    <p>借助生成式 AI，已经可以把「由个人信息与设计知识具体化出界面」的工序做成原型。于是我思考：如何在减轻逐人手工设计画面负担的同时，把贴合个人的界面交到他们手中。</p>
+    <p class="note">设置功能的使用率，以及与界面的不匹配对事故的影响，本项目并未验证。</p>
   </section>
 
   <section>
-    <h2>作为题材的车载导航</h2>
-    <p>本作品的主题不是车载导航，而是个体化优化的界面。之所以选择车载导航，是把它当作检验其可能性与界限的一个例子。</p>
-    <p>车载界面带有强烈的约束：有限的屏幕、极短的注视时间、操作的安全性。出厂前，它作为多数人都能使用的统一界面接受验证；而同样的界面，也会交到那些并不适合这一设计的人手里。</p>
-    <p>如果在约束如此严苛的领域里个体化优化仍能成立，就能具体地检验约束型设计这一思路。反过来说，也可能因为约束太强，几乎不给 AI 留下自由度。这是一个能同时观察到两种结果的题材。</p>
-    <p class="note"><strong>在日本，截至 2026 年，支持 OTA 更新的车型与不支持更新的传统原厂导航仍然并存。</strong>另外，即使地图数据可以更新，界面的基本结构也未必会在购买之后被持续重新设计。本 PoC 设想的是一种在开始使用之后界面不会频繁更新的系统。</p>
+    <h2>提案 —— 把个人信息与两类设计知识连接起来</h2>
+    <p>输入的是关于该用户认知特点的信息。AI 将其与事先整理好的两类知识对照：一类是界面的基本设计规则，另一类是由人的特点通向推荐界面的知识。</p>
+    <p>在此基础上，AI 在允许的范围内把界面具体化，并检查其是否符合条件。输出的是贴合这个人的界面，以及改了哪里、为什么改的说明。</p>
+
+    <figure class="concept-figure line-art">
+      <a class="concept-figure__desktop" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg" width="1400" height="815" loading="lazy" decoding="async" alt="输入个人的认知特点，参照界面的基本规则与「按特点推荐界面」的知识来生成的构想。生成式 AI 把方案具体化，另一道工序检查条件，输出贴合这个人的界面与变更理由。"></a>
+      <a class="concept-figure__mobile" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg" width="480" height="1414" loading="lazy" decoding="async" alt="输入个人的认知特点，参照界面的基本规则与「按特点推荐界面」的知识来生成的构想。生成式 AI 把方案具体化，另一道工序检查条件，输出贴合这个人的界面与变更理由。"></a>
+      <figcaption><strong>图1｜输入个人信息、参照设计知识生成界面的构想。</strong> 因人而异的输入，与设计者事先整备的知识被分开。PoC 的输入除认知特点外，还包含感知与身体特点。</figcaption>
+    </figure>
+
+    <h3>输入：关于这个人的信息</h3>
+    <p>例如，一次记住并处理信息是否得心应手，是否容易被其他刺激吸走注意力，哪一类说明更容易理解。实现中还把视觉表现与手指操作特点纳入了对象。画面不是由诊断名决定的，处理的是与界面使用相关的个人信息。</p>
+
+    <h3>参照知识 A：界面得以成立的规则</h3>
+    <p>整理界面的基本设计原则：一致性、对操作的反馈、信息的归组、文字与操作对象是否易见等。在此之上，把车载界面的操作限制与无障碍条件，连同其适用情形一并定义。</p>
+
+    <h3>参照知识 B：由特点通向推荐界面的知识</h3>
+    <p>把研究中确认的人的特点，连接到信息呈现的原则，再连接到界面设计。例如针对「一边记住信息一边操作会有负担」这一特征，考虑「减少需要记住的内容」这一方向，进而落到把必要信息留在画面上的设计。</p>
+    <p>不过，关于特点的研究未必能直接给出车载导航的设计取值。<strong>研究已经弄清的事，与本项目由此得出的设计判断，要加以区分。</strong> 对所有人都同样有效的改进归入基本规则，不计入个体化的成果。</p>
   </section>
 
   <section>
-    <h2>把个体化优化变成可以生成的机制</h2>
-    <p>所谓约束型设计，是先把框架明确定下来，再让 AI 在框架之内捕捉细微差别、灵活地行动。它不同于从既定表格中取值的参数化机制——被设计的，是 AI 可以探索的解的范围本身。</p>
-    <p>科学知见并不总能给到具体的数值，有时只指明“放大”“减少信息”这样的方向。数值已经确定的部分，作为规则来计算；只知道方向的部分，则由 AI 在约束允许的范围内决定具体取值。不让这一区分变得含混，本身也是机制的一部分。</p>
+    <h2>理想的体验 —— 在第一次乘车时，一起确认怎样才好用</h2>
+    <p class="note"><strong>面向未来的构想。</strong> 通过对话完成初始设置，在本次 PoC 中并未实现。</p>
+    <p>买下车、第一次坐进驾驶座时。在停车状态下，AI 助手询问平时的使用方式。使用者不必去挑选专业的设置项，而是讲讲平时的困扰，以及自己觉得好用的方式。</p>
 
-    <figure class="framework">
-      <div class="framework-branches">
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>确定认知维度</h3>
-            <p>不以诊断名称，而以与界面易用性相关的特点作为轴来定义：工作记忆、对干扰刺激的耐受、视觉与听觉特点、手指的精细动作能力等。</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>映射表</h3>
-            <p>把用户的特点与应当调整的界面参数联系起来，并连同依据一并写明：哪一项特点使什么、朝哪个方向变化。</p>
-          </div>
-        </div>
-        <div class="framework-branch">
-          <div class="framework-box">
-            <h3>科学知见与标准</h3>
-            <p>收集安全基准、无障碍标准、认知科学的研究成果，以及通用的界面设计原则。</p>
-          </div>
-          <div class="framework-arrow" aria-hidden="true"></div>
-          <div class="framework-box">
-            <h3>约束条件群</h3>
-            <p>生成结果必须遵守的条件。不停留在理念层面，而写成能够验证“满足了还是违反了”的形式。</p>
-          </div>
-        </div>
+    <figure class="journey-figure line-art">
+      <a href="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg" width="1200" height="1030" loading="lazy" decoding="async" alt="首次乘车时的未来用户旅程。停车时选择开始，回答 AI 的询问，纠正 AI 的理解，试用生成的界面，并以确认过的界面开始使用。"></a>
+      <figcaption><strong>图2｜从首次乘车到开始使用的用户旅程。</strong> 经过询问、确认理解、生成界面、停车时试用，为这个人准备好初始界面。</figcaption>
+    </figure>
+
+    <ol class="journey-steps">
+      <li>
+        <h3>首次乘车：开始对话</h3>
+        <p class="dialogue"><span>AI</span>“为了把画面调整到您用着顺手，能否告诉我几点您平时的使用方式？也可以稍后再开始。”</p>
+        <p>使用者理解其目的，选择现在开始还是稍后再说。</p>
+      </li>
+      <li>
+        <h3>访谈：说说困扰</h3>
+        <p class="dialogue"><span>AI</span>“当导航提示接连出现时，通常在哪些地方会变得不好理解？”</p>
+        <p class="dialogue"><span>使用者</span>“下一条说明一来，我有时就忘了刚才那条的内容。”</p>
+        <p>AI 询问具体场景，整理出与信息保持、注意力投放相关的使用困难。</p>
+      </li>
+      <li>
+        <h3>确认理解：可以纠正 AI 的理解</h3>
+        <p class="dialogue"><span>AI</span>“比起记住步骤再往下走，让需要的信息留在画面上会更好用——我这样理解对吗？”</p>
+        <p>使用者确认并纠正这一理解。对话中获得的自述，与认知功能的测量值或诊断分开处理。对需要测量的项目，另行准备确认的方法。</p>
+      </li>
+      <li>
+        <h3>提案与试用：听过理由，再试画面</h3>
+        <p class="dialogue"><span>AI</span>“为减轻需要记住的负担，我提议一种能同时看到当前操作与下一步的画面。”</p>
+        <p>使用者在停车时试着选择目的地等。可以说「之前那个更清楚」「这里想换个说法」，必要时可以调整提案，或退回原来的界面。</p>
+      </li>
+      <li>
+        <h3>开始使用：使用确认过的界面</h3>
+        <p>把使用者确认过的界面保存为初始状态。行驶中维持使用者已经记住的基本结构。想重新调整时，可以在停车时再作调整。</p>
+      </li>
+    </ol>
+    <p>对话的目的不是把使用者一次性归类，而是通过一段他本人能够说明、能够纠正的往来，把开始使用时的状态整备好。</p>
+  </section>
+
+  <section>
+    <h2>实现 —— 把须守住的条件与交给 AI 的判断分开</h2>
+    <p>本次实现的是这样一套机制：接收个人的特点信息，生成界面，再检查、绘制并对比。作为替代对话询问的输入，定义了十三种特点各异的虚构人物模型。</p>
+    <p>选择车载导航作为验证题材，是因为画面面积、操作对象的大小、可显示的信息量、行驶中的操作等条件都能被具体地处理。</p>
+
+    <h3>名为约束型设计的推进方式</h3>
+    <p>本项目所说的约束型设计，是<strong>由人来设计须守住的条件与适用范围，并在其内部由 AI 提出具体解的方法</strong>。</p>
+    <p>在基于规则的参数化变更中，输入与取值或选项的对应是事先定好的。本次构想不去填满全部对应，而是定下允许的范围与判断依据，把尚未确定的具体取值与表述留给生成式 AI 裁量。实现上把由计算决定的部分与由生成式 AI 决定的部分组合起来。</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="依据确凿程度不同，在实现中的处理方式">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">依据能说明什么</th><th scope="col">在实现中的处理</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>连取值或关系式都能确定</td><td>在已确认的条件与适用范围内计算</td></tr>
+          <tr><td>知道调整方向，但程度无法确定</td><td>在守住方向与约束的范围内具体化，并留下「这是未经验证的设计判断」的记录</td></tr>
+          <tr><td>仅凭依据无法确定妥当的选择</td><td>作为探索性提案处理，并标记为需要评估</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>把研究结论落到界面上时，记录了出处、适用条件与设计判断。通过与界面一并输出变更理由，使「为什么对这个人是这样的画面」可以被追溯。</p>
+
+    <h3>在另一道工序中检查生成的界面</h3>
+    <p>界面以带有画面元素与布局的结构化数据生成，再由这些数据绘制。数值与结构方面的条件由代码检查，少数需要解释语义的条件由 LLM 的另一道检查确认。自动判定之外的项目，以及材料不足而无法确认的项目，也一并记录。</p>
+    <p>检查所确认的是「是否符合已定义的条件」。实际是否好用、安全性是否提升，则需要由使用者来评估。</p>
+    <p>设计阶段若发现条件间存在矛盾，由 AI 指出相应位置，再由人来判断并修订条件。不做成每次生成时 AI 都按自己方便改动条件的机制。</p>
+  </section>
+
+  <section>
+    <h2>界面对比 —— 变化很大的例子与几乎没变的例子</h2>
+    <p>对比基准是不输入个人特点、以通用默认值生成的界面。在功能集合相同的前提下，比较输入个人特点后的输出。</p>
+    <p class="note"><strong>以下图像是原型的输出，并非市售车载导航改造前后的对比。</strong> 人物模型也不是对真实用户的再现，而是为确认特点影响而设的虚构输入。</p>
+
+    <h3>操作对象变大的例子</h3>
+    <h4>PS-12｜带有「精细触控操作困难」这一身体特点的人物模型</h4>
+    <p>与作为基准的 PS-01 在年龄、认知、感知特点上保持一致，只改变手指操作特点。在所示图像中，各操作对象变大，画面中部排列的条目由 7 条减为 4 条。底部的固定按钮不计入这一数量。</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">通用默认界面</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-before-zh-Hans.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-before-zh-Hans.svg" width="772" height="434" loading="lazy" decoding="async" alt="通用默认界面。目的地设置画面中部排列着 7 个条目，底部有 4 个固定按钮。"></a>
       </div>
-      <div class="framework-merge" aria-hidden="true"></div>
-      <div class="framework-box framework-space">
-        <h3>设计空间</h3>
-        <p>界面可能采取的各种选择：字号、触控目标、显示项目数、信息层级、通知、措辞、顺序、分组等。映射表给出调整的方向，约束条件群则剔除不被允许的解。</p>
+      <div>
+        <p class="compare-label">输入个人特点后生成的界面</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-12-after-zh-Hans.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-after-zh-Hans.svg" width="772" height="434" loading="lazy" decoding="async" alt="输入手指操作特点后的生成结果。中部条目变为 4 个，各触控区域更大。底部的固定按钮为 4 个。"></a>
       </div>
-      <div class="framework-arrow" aria-hidden="true"></div>
-      <div class="framework-box framework-ai">
-        <h3>AI 在框架之内加以具体化</h3>
-        <p>在剩余的自由度中决定数值、措辞、顺序与分组，再通过另一道检查确认其是否符合框架，只输出满足全部条件的个体化界面。</p>
+      <figcaption><strong>图3｜重新分配操作对象大小与单屏显示量的例子。</strong> 「画面会随个人输入而变化」这一点得到了展示。不过这一变化源自身体特点，并不能说明贴合认知特点的界面是有效的。</figcaption>
+    </figure>
+    <p>把操作对象放大是有代价的：同一画面上一次能选择的条目变少了。设计上功能集合得以保留，但仅凭这一屏，无法评估通往后续画面是否依然顺畅。</p>
+
+    <h3>结构几乎没有变化的例子</h3>
+    <h4>PS-01｜设为基准的人物模型</h4>
+    <p>字号上虽有细微差别，但条目数量、布局、触控区域的大小几乎相同。在本次的规则与输入组合下，并未得到相对通用默认界面大幅改变结构的结果。</p>
+    <figure class="compare line-art">
+      <div>
+        <p class="compare-label">通用默认界面</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-before-zh-Hans.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-before-zh-Hans.svg" width="772" height="434" loading="lazy" decoding="async" alt="通用默认界面。目的地设置画面中部排列着 7 个条目。"></a>
       </div>
-      <figcaption>人的评估并非常设环节。只有当人判断需要调整时，才在不违背科学依据的范围内把意见反馈给约束，并重新生成。</figcaption>
+      <div>
+        <p class="compare-label">输入个人特点后生成的界面</p>
+        <a href="../../../works/personal-fit-ui/assets/ps-01-after-zh-Hans.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-after-zh-Hans.svg" width="772" height="434" loading="lazy" decoding="async" alt="输入基准人物模型信息后的生成结果。中部的 7 个条目与布局几乎相同，文字略大一些。"></a>
+      </div>
+      <figcaption><strong>图4｜即便输入个人信息，结构也几乎没有变化的例子。</strong> 仅凭变化之小，无法判断它对这个人是否更好用。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>PoC：为十三个人物模型生成界面</h2>
-    <p>PoC 准备了十三个特点组合各不相同的人物模型。它们并非对真实用户分布的再现，而是为了确认哪些特点会让界面发生变化，而有意布置特点所形成的验证用格点。</p>
-    <p>对每个人物模型，都把共通的统一界面作为 before，把输入其特点后生成的界面作为 after，加以对照。</p>
+    <h2>结果与讨论 —— 生成的自由度留在了哪里</h2>
 
-    <h3>几乎没有变化的例子</h3>
-    <h4>PS-01 —— 基准（壮年、典型）</h4>
-    <p>这个人物模型在认知、感知与身体特点上都处于典型范围。个体化优化之后，文字略微变大，但显示的项目数、排布以及触控区域的大小几乎没有改变。</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">统一界面（before）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-before-zh-Hans.svg" width="772" height="434" alt="目的地设置画面。回家、去公司、收藏地点、最近去过、附近设施共七个项目，下方还有一排固定按钮。">
-      </div>
-      <div>
-        <p class="compare-label">个体化界面（after）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-01-after-zh-Hans.svg" width="772" height="434" loading="lazy" decoding="async" alt="同样的七个项目以同样的高度排列。除了文字略大之外，构成与统一界面几乎一致。">
-      </div>
-      <figcaption>当统一界面本身已经足够好用时，即便进行个体化优化，也不会产生大的变化。不作改变，同样是个体化优化的一种结果。</figcaption>
-    </figure>
+    <h3>生成式 AI 特有的价值未能充分展示</h3>
+    <p>以作者的目视比较，能被认作画面结构明显变化的是 PS-12。其他输出虽在措辞与设置上有差异，但从画面外观上难以识别出价值上的显著不同。</p>
+    <p>PS-12 的改动也在「调整显示尺寸与显示量」的设置所能实现的范围之内。不必自己去找设置、初始状态就已整备好——这种体验是有潜力的。但这种体验的价值，与「生成界面是否需要生成式 AI」，必须分开验证。</p>
+    <p>本次 PoC 并未证明贴合认知特点能改善操作成绩，也未证明生成式 AI 做出的界面优于基于规则的方式。</p>
 
-    <h3>出现了可见变化的例子</h3>
-    <h4>PS-12 —— 壮年、精细动作能力较低（感知与认知为典型）</h4>
-    <p>这个人物模型在年龄、感知特点与认知特点上都与 PS-01 相同，只有手指的精细动作能力较低。在 after 中，触控目标变大，一屏显示的项目从七项减为四项。其余项目被移到下一屏，从而为每一个操作对象保证了足够的尺寸。</p>
-    <figure class="compare">
-      <div>
-        <p class="compare-label">统一界面（before）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-before-zh-Hans.svg" width="772" height="434" loading="lazy" decoding="async" alt="目的地设置画面。七个项目以同样的高度排列。">
-      </div>
-      <div>
-        <p class="compare-label">个体化界面（after）</p>
-        <img src="../../../works/personal-fit-ui/assets/ps-12-after-zh-Hans.svg" width="772" height="434" loading="lazy" decoding="async" alt="同一画面减为四个项目，每一个的触控区域都变得更大。">
-      </div>
-      <figcaption>这是按照手指精细动作能力，重新分配信息量与触控目标大小的例子。画面构成的变化仅仅来自身体特点，而非年龄或认知特点。</figcaption>
-    </figure>
-    <p>文献给出了触控目标应满足的下限，也指出了操作精度较低时应当放大的方向，却没有唯一地规定“对这个人要加大多少”。正是这一未确定的部分，由 AI 在约束范围内加以具体化。</p>
+    <h3>本次构建的设计空间过窄</h3>
+    <p>在确保文字与操作对象所需尺寸、并套用画面面积与显示量的条件之后，可选的结构就越来越有限。实现上由计算或固定结构决定的部分也不少，AI 在多个妥当方案之间挑选的余地很小。</p>
+    <p>措辞的改写上还留有自由度，但这类差异不像画面结构那样显眼，本次目视评估难以充分捕捉其价值。我认为，要确认生成式 AI 的价值，需要<strong>可选方案本身具有幅度，且这些差异对使用者的体验具有意义</strong>。</p>
+    <p>这一结果只针对本次收集的规则、采用的界面参数与实现的表现范围，不能说是车载导航整体或个体化界面整体的极限。</p>
+    <p>另外，我并未逐一直接查阅 JIS、ISO 等相关标准的全部正文，而是以论文、官方指引、公开数据、部分标准正文或预览等可获取的资料为基础构成设计知识。参照范围有可能影响了可采用的设计选项。不过，细读标准正文究竟会拓宽自由度，还是会因附加条件而进一步收窄，仍有待今后确认。</p>
+
+    <h3>与 AI 的协作，带来了规则本身的改进</h3>
+    <p>成果同样出现在「设计用于生成的条件、并使其可被检查」的过程之中。</p>
+
+    <div class="table-wrap" tabindex="0" role="region" aria-label="发现的问题与在设计上的反映">
+      <table class="method-table">
+        <thead>
+          <tr><th scope="col">发现的问题</th><th scope="col">在设计上的反映</th></tr>
+        </thead>
+        <tbody>
+          <tr><td>同一元素存在多个下限，组合方式含糊不清</td><td>明确了适用关系，使任一下限都不会被突破</td></tr>
+          <tr><td>本应只在行驶中适用的条件，在停车时也被套用</td><td>明示了每项条件适用的行驶状态</td></tr>
+          <tr><td>把措辞的易懂程度与是否配有图标合并成了一个维度</td><td>将其拆为彼此独立的设计维度，找回了被无谓排除的选项</td></tr>
+          <tr><td>AI 把并不适用于某项输出的条件也当成了判断依据</td><td>针对每项输出，明示了应参照的条件</td></tr>
+          <tr><td>原本打算留给 AI 的判断，被固定在了实现一侧</td><td>重新审视了规格与实现之间的分工</td></tr>
+        </tbody>
+      </table>
+    </div>
+    <p>AI 指出问题，人来判断，再反映到设计中。经由这样的往返，<strong>哪些要共同守住、哪些可以贴合个人</strong>变得清晰了。</p>
   </section>
 
   <section>
-    <h2>PoC 的结果</h2>
-    <p>在十三个人物模型中，能够确认出明显视觉变化的只有 PS-12。对多数人物模型而言，before 的统一界面本来就足够好用；个体化优化带来的好处，至少在从画面外观上可以辨认的层面，几乎没有显现出来。</p>
-    <p>PS-12 虽然把个体化直观地呈现了出来，但这种程度的改动，用现有产品的显示设置或无障碍设置也能实现。不必由用户自己设置，一开始就提供合适的状态，这本身是有意义的；但还不能说，它创造出了非 AI 不能提出的新界面。</p>
-    <p>因此，我没有把这一结果判定为“由 AI 实现的个体化优化取得了成功”。</p>
+    <h2>今后 —— 确认体验的价值与生成式 AI 的价值</h2>
+    <p>接下来想把两个问题分开验证。</p>
+    <p>其一，不必自己设置、开始使用时界面就已整备好，这样的体验究竟有多大价值。为此要实现对话询问、纠正理解直至试用的全过程，确认输入信息的可靠程度与给使用者带来的负担。</p>
+    <p>其二，在什么样的设计对象上，生成式 AI 带来的方案差异才会转化为体验的改善。希望拓展到这样的对象：在守住必要条件的同时，信息结构与操作流程上仍留有多个妥当方案。</p>
+    <p>在真实用户的评估中，把通用默认界面、由个人信息按规则调整的界面、由生成式 AI 具体化的界面放在同一任务下比较。通过操作时间、误操作、视线、主观负担等指标，分别考察「贴合个人」的效果与「使用生成式 AI」的效果。</p>
+    <p>同时推进对相关标准的查证，更新「研究已确认之事」与「设计判断」之间的边界。除了条件可被检查之外，把「在条件之内为使用者留下有意义的选项」作为下一个课题。</p>
   </section>
 
-  <section>
-    <h2>为什么没有产生差异</h2>
-    <p>原因在于，满足约束的设计空间太窄。</p>
-    <p>车载界面存在大量出于安全考虑的下限与上限：文字与触控目标需要达到一定大小，一屏可显示的信息量也有上限。把这些逐一施加之后，留给 AI 可选的解就所剩无几。</p>
-    <p>AI 具体化的项目，在这一规模下大多也属于人只要决定一次、就能固化成一张小对照表的范围。这并不意味着“AI 是多余的”——它承担了填补文献未给出的具体数值的角色；只是留给它去探索的选项实在太少。</p>
-    <p>另一方面，措辞的改写仍留有很大的自由度。但这类差异很难被看作画面构成上的变化：人能够认知其价值的领域，与规则写不尽的领域，并没有重叠。</p>
-  </section>
+  <details class="references">
+    <summary>参考资料</summary>
+    <ol>
+      <li id="ref-nhtsa">NHTSA，<cite>Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices</cite>（2013 年公布）。自愿性指南。关于视线的接受标准见 VI.E，关于注意力偏离与风险的说明见正文 I.C 等处。这并不意味着本 PoC 已获得符合该测试的认证。<a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">Federal Register 上的资料</a></li>
+    </ol>
+  </details>
 
-  <section>
-    <h2>成果出现在框架的设计上，而不是界面上</h2>
-    <p>这次 PoC 中最大的成果，并非诞生于生成界面的阶段，而是在此之前设计约束的阶段。在把标准与文献改写成机器可验证的条件的过程中，框架本身暴露出了若干处不一致。</p>
-    <ul class="findings">
-      <li>对同一个界面元素，不同标准给出了各自不同的下限。</li>
-      <li>“仅在行驶中适用”这一条件，在规格里没有可以写下的位置。</li>
-      <li>两条本应彼此独立的设计轴被合并成了一条，导致大多数选项都被约束排除掉了。</li>
-      <li>没有向 AI 充分说明哪条约束支配哪项输出，以致无关的条件被用于判断。</li>
-      <li>本该留给 AI 的判断被固定在了实现一侧，使约束型设计更接近一个单纯的规则引擎。</li>
-    </ul>
-    <p>对于每一处，都是由 AI 发现不一致并指出相应位置，再由人做出判断，进而修正约束。</p>
-    <p>也就是说，这次的成果与其说是“AI 做出了新的界面”，不如说在于<strong>通过与 AI 的往复，生成界面的框架本身得到了检验与更新</strong>。在约束型设计中，AI 的角色不只是生成成品，还包括在生成之前，找出规则之间的冲突，以及那些被无意间抹掉的设计可能性。</p>
-  </section>
-
-  <section>
-    <h2>未来工作 —— 框架要清晰，框架之内要宽</h2>
-    <p>在约束型设计中，对 AI 的期待并不是从表格里取出既定的数值，而是先用约束排除明显不合适的生成结果，再从剩下的众多可能性中，给出在概率上更为妥当的解；或者，提示出人事先不会想到的模式。</p>
-    <p>这一次，这种效果没有充分显现。原因不是没有发生冲突，而是满足约束的设计空间太窄，以至于选择“更合适的解”或“新的解”几乎失去了意义。</p>
-    <p>接下来该问的，不是 AI 是否有效，而是：<strong>设计空间要宽到什么程度，才会产生只有 AI 才能带来的效果？</strong></p>
-    <p>在下一次实践中，我会选择这样的题材：既能保持安全性，又能留下多个妥当的解，而且那些用规则写不尽的差异，人也能够识别为价值。框架要明确地定下来，但要在其中留出足以让 AI 探索的宽度。二者兼顾，才能让约束型设计不只是自动化，而成为 AI 时代的一种设计方法。</p>
-  </section>
-
-  <nav aria-label="站点">
+  <nav aria-label="网站">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀内贵文的作品集首页</span></a></li>
     </ul>
@@ -265,5 +319,14 @@
   </footer>
 
 </main>
+
+<!-- The enlargement overlay, empty until a figure is clicked. It lives in the
+     document rather than being built by works/figures.js so that the two
+     strings it needs are written in this page's language, like the rest of
+     the page. -->
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="放大的图像" hidden>
+  <button class="lightbox__close" type="button" aria-label="关闭放大的图像"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>
