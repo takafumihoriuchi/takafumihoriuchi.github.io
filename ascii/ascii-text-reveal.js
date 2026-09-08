@@ -1,12 +1,12 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260907-1";
+} from "./ascii-layout.js?v=20260908-1";
 import {
   asciiLoadElapsed,
   settledAsciiLoadHolds,
   startAsciiLoadClock,
-} from "./ascii-load-clock.js?v=20260907-1";
+} from "./ascii-load-clock.js?v=20260908-1";
 
 // Tell the inline guard in the document head that this module is alive, so
 // its timeout stops being the thing that decides when the page is shown. It
@@ -63,6 +63,13 @@ const OUTLINE_SELECTOR = "main .works-more__box, main .home-button__box";
 // veil found rather than given would be painted twice — once by the element
 // and once by the cover over it — which is a colour that is in neither theme.
 const OWN_GROUND_SELECTOR = ".home-mark";
+// The one mark on the site that is drawn rather than written: the monogram at
+// the head of the band, carried by the stylesheet as a ::before with a mask
+// image so it takes the ink of the name beside it. It is ink on the same line
+// as that name and belongs to the same formation, but the walk over text
+// nodes cannot reach it — a pseudo-element has no node to hand a range and no
+// grapheme to measure — so it is collected by shape instead.
+const DRAWN_MARK_SELECTOR = ".home-mark__link";
 const OUTLINE_GLYPH_LEAD = FRAME_INTERVAL * 3;
 const OUTLINE_GLYPHS = { "-": ["-", ".", "-", "~"], "|": ["|", ":", "|", "'"] };
 const PREPAINT_CLASS = "ascii-load-pending";
@@ -73,6 +80,7 @@ const PREPAINT_CLASS = "ascii-load-pending";
 const READY_DEADLINE = 2500;
 const SETTLE_TIMEOUT = 250;
 const adaptiveAsciiAtlasCache = new Map();
+const drawnMarkImages = new Map();
 
 function clamp(value, minimum = 0, maximum = 1) {
   return Math.min(maximum, Math.max(minimum, value));
@@ -241,6 +249,94 @@ function textNodesWithin(element) {
   return nodes;
 }
 
+/* The shape the stylesheet drew the mark with, named rather than reproduced.
+   Reading it back out of the mask declaration is what keeps the drawing in one
+   place: change the monogram in style.css and the formation changes with it,
+   because this asks the page what the mark is instead of holding a second copy
+   of the answer. */
+function drawnMarkSource(host) {
+  const style = getComputedStyle(host, "::before");
+  if (!style || style.content === "none") return null;
+  const declared = style.maskImage && style.maskImage !== "none"
+    ? style.maskImage
+    : style.webkitMaskImage;
+  const url = /^url\((.*)\)$/s.exec(declared || "")?.[1];
+  return url ? url.replace(/^["']|["']$/g, "") : null;
+}
+
+/* Where the browser put that ::before, worked out rather than measured, since
+   there is no node to ask. It is the first item of a centred inline flex row:
+   it stands at the inline start of the host's content box and centred across
+   it. `direction` is what decides which edge that start is — on the Arabic
+   pages the name runs the other way and the mark leads it from the right. */
+function drawnMarkBox(host, width, height) {
+  const style = getComputedStyle(host);
+  const rect = host.getBoundingClientRect();
+  const inset = (side) => (parseFloat(style[`border${side}Width`]) || 0)
+    + (parseFloat(style[`padding${side}`]) || 0);
+  const top = rect.top + inset("Top");
+  const bottom = rect.bottom - inset("Bottom");
+  return {
+    left: style.direction === "rtl"
+      ? rect.right - inset("Right") - width
+      : rect.left + inset("Left"),
+    top: top + (bottom - top - height) / 2,
+  };
+}
+
+function drawnMarkGlyphs(element, bounds) {
+  const glyphs = [];
+  for (const host of element.querySelectorAll(DRAWN_MARK_SELECTOR)) {
+    const source = drawnMarkSource(host);
+    const image = source && drawnMarkImages.get(source);
+    if (!image) continue;
+    const before = getComputedStyle(host, "::before");
+    const width = parseFloat(before.width);
+    const height = parseFloat(before.height);
+    // A browser that answers `auto` here has not said where the mark is, and a
+    // mark formed in the wrong place is worse than one that waits for the
+    // cover to lift.
+    if (!(width > 0) || !(height > 0)) continue;
+    const box = drawnMarkBox(host, width, height);
+    glyphs.push({
+      character: "",
+      image,
+      x: box.left - bounds.left,
+      y: box.top - bounds.top,
+      width,
+      height,
+    });
+  }
+  return glyphs;
+}
+
+function decodedImage(source) {
+  return new Promise((resolve) => {
+    const image = new Image();
+    image.addEventListener("load", () => resolve(image), { once: true });
+    image.addEventListener("error", () => resolve(null), { once: true });
+    image.src = source;
+  });
+}
+
+/* Decodes every drawn mark on the page before anything is measured. The mask a
+   renderer builds is one synchronous pass — it has to be, since the page is
+   already under its cover by then — so a mark that has not arrived by that
+   moment is a mark the formation goes without. That is not a failure state:
+   the stylesheet still draws it, and it appears when the cover lifts, which is
+   what it did before this pass existed. */
+async function loadDrawnMarks() {
+  const sources = new Set();
+  for (const host of document.querySelectorAll(DRAWN_MARK_SELECTOR)) {
+    const source = drawnMarkSource(host);
+    if (source && !drawnMarkImages.has(source)) sources.add(source);
+  }
+  await Promise.all([...sources].map(async (source) => {
+    const image = await decodedImage(source);
+    if (image) drawnMarkImages.set(source, image);
+  }));
+}
+
 function collectGlyphs(element) {
   const bounds = element.getBoundingClientRect();
   const locale = element.closest("[lang]")?.lang || document.documentElement.lang;
@@ -265,6 +361,11 @@ function collectGlyphs(element) {
     }
   }
   range.detach();
+  // Appended, not interleaved: from here the mark is one more glyph, and the
+  // shuffle, the cell grid, the character its own gradient chooses and the
+  // window that opens when it lands all treat it exactly as they treat a
+  // letter. Order carries no meaning — the reveal times are shuffled.
+  glyphs.push(...drawnMarkGlyphs(element, bounds));
   return glyphs;
 }
 
@@ -453,6 +554,15 @@ class AsciiTextReveal {
     if ("letterSpacing" in context) context.letterSpacing = this.style.letterSpacing;
 
     for (const glyph of this.glyphs) {
+      // A drawn mark has no baseline and no metrics to centre against: its ink
+      // is the shape itself, laid into the mask over the box the layout gave
+      // it. Only the alpha channel is read back, so the colour inside the
+      // shape does not matter — which is the same reason the stylesheet
+      // carries it as a mask rather than as a picture.
+      if (glyph.image) {
+        context.drawImage(glyph.image, glyph.x, glyph.y, glyph.width, glyph.height);
+        continue;
+      }
       const metrics = context.measureText(glyph.character);
       const ascent = metrics.actualBoundingBoxAscent || parseFloat(this.style.fontSize) * 0.8;
       const descent = metrics.actualBoundingBoxDescent || parseFloat(this.style.fontSize) * 0.2;
@@ -1168,6 +1278,11 @@ function whenDrawable() {
  * The page sets no @font-face and asks for no font over the network, so this
  * settles locally.
  *
+ * The drawn marks are waited for on the same terms and for the same reason:
+ * the stylesheet carries them as data URIs, so they settle locally too, and a
+ * shape that arrives after the mask is built is a shape left out of the
+ * formation.
+ *
  * The rest is bounded: the load event and whatever registered a hold — the
  * hero's scene, so the drawing and the words still form as one thing. These
  * are the ones that can hang on a bad connection, and what they hold up is
@@ -1178,6 +1293,7 @@ function whenPageIsReady() {
   const remaining = Math.max(0, READY_DEADLINE - performance.now());
   return Promise.all([
     document.fonts.ready,
+    loadDrawnMarks(),
     Promise.race([
       Promise.all([afterPageLoad(), settledAsciiLoadHolds()]),
       afterDelay(remaining),

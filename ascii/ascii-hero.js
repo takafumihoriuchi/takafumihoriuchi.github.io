@@ -1,16 +1,16 @@
 import {
   ASCII_CELL_WIDTH_RATIO,
   fittedAsciiFontSize,
-} from "./ascii-layout.js?v=20260907-1";
-import "./ascii-text-reveal.js?v=20260907-1";
+} from "./ascii-layout.js?v=20260908-1";
+import "./ascii-text-reveal.js?v=20260908-1";
 import {
   asciiLoadElapsed,
   asciiLoadHasStarted,
   asciiLoadStarted,
   holdAsciiLoad,
-} from "./ascii-load-clock.js?v=20260907-1";
+} from "./ascii-load-clock.js?v=20260908-1";
 
-const SCENES_URL = new URL("./scenes.json?v=20260907-1", import.meta.url);
+const SCENES_URL = new URL("./scenes.json?v=20260908-1", import.meta.url);
 const FRAME_INTERVAL = 1000 / 10;
 const INTRO_FRAME_INTERVAL = 1000 / 6;
 const INTRO_DURATION = 625;
