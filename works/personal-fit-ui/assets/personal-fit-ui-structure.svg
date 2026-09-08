@@ -1,0 +1,60 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="1400" height="815" viewBox="0 105 1400 815" role="img" aria-labelledby="title desc">
+<title id="title">個人の入力と、AIが参照する二種類の設計知識</title><desc id="desc">提案する仕組みの概念図。個人の認知特性を入力し、一般的なUIルールと人の特性に応じた推奨UIの知識を参照する。生成AIが案を具体化し、別工程で検査してUIと変更理由を出力する。</desc>
+<style>text{font-family:"Noto Sans CJK JP","Hiragino Kaku Gothic ProN","Yu Gothic",sans-serif;fill:#202020}.muted{fill:#646464}</style>
+<defs><marker id="arrow" viewBox="0 0 10 10" refX="8" refY="5" markerWidth="7" markerHeight="7" orient="auto-start-reverse"><path d="M 1 1 L 9 5 L 1 9" fill="none" stroke="#202020" stroke-width="1.4"/></marker></defs>
+<rect width="1400" height="920" fill="white"/>
+<text x="40" y="145" font-size="21" font-weight="700" style="fill:#202020" text-anchor="start">AIが参照する知識  ─  設計者が事前に整理</text>
+<rect x="40" y="168" width="610" height="250" rx="12" fill="#f3f3ef" stroke="#9a9a94" stroke-width="1.5"/>
+<rect x="678" y="168" width="682" height="250" rx="12" fill="#f3f3ef" stroke="#9a9a94" stroke-width="1.5"/>
+<text x="68" y="205" font-size="18" font-weight="700" style="fill:#646464" text-anchor="start">知識 A</text>
+<text x="68" y="246" font-size="27" font-weight="700" style="fill:#202020" text-anchor="start">UIとして成立するためのルール</text>
+<text x="68" y="290" font-size="20" font-weight="700" style="fill:#202020" text-anchor="start">基本原則</text>
+<text x="188" y="290" font-size="21" font-weight="400" style="fill:#202020" text-anchor="start">一貫性・フィードバック・情報のまとまり</text>
+<text x="68" y="328" font-size="20" font-weight="700" style="fill:#202020" text-anchor="start">守る条件</text>
+<text x="188" y="328" font-size="21" font-weight="400" style="fill:#202020" text-anchor="start">安全性・アクセシビリティ・操作の制限</text>
+<text x="68" y="384" font-size="20" font-weight="400" style="fill:#646464" text-anchor="start">条件を適用する状況と、確認方法も定義する</text>
+<text x="706" y="205" font-size="18" font-weight="700" style="fill:#646464" text-anchor="start">知識 B</text>
+<text x="706" y="246" font-size="27" font-weight="700" style="fill:#202020" text-anchor="start">人の特性に応じた、推奨UIの知識</text>
+<text x="706" y="289" font-size="22" font-weight="400" style="fill:#202020" text-anchor="start">特性についての研究知見</text>
+<text x="716" y="323" font-size="23" font-weight="400" style="fill:#202020" text-anchor="start">↓</text>
+<text x="755" y="323" font-size="22" font-weight="400" style="fill:#202020" text-anchor="start">情報提示の原則</text>
+<text x="716" y="358" font-size="23" font-weight="400" style="fill:#202020" text-anchor="start">↓</text>
+<text x="755" y="358" font-size="22" font-weight="400" style="fill:#202020" text-anchor="start">その特徴を持つ人への推奨UI</text>
+<text x="706" y="391" font-size="20" font-weight="400" style="fill:#646464" text-anchor="start">研究で分かることと、設計上の導出を区別する</text>
+<path d="M 345 418 V 447 H 590 V 475" fill="none" stroke="#202020" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+<path d="M 1019 418 V 447 H 810 V 475" fill="none" stroke="#202020" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+<rect x="40" y="495" width="345" height="314" rx="12" fill="#ffffff" stroke="#9a9a94" stroke-width="1.5"/>
+<text x="65" y="535" font-size="18" font-weight="700" style="fill:#646464" text-anchor="start">INPUT / 入力</text>
+<text x="65" y="579" font-size="25" font-weight="700" style="fill:#202020" text-anchor="start">そのユーザー個人の</text>
+<text x="65" y="617" font-size="25" font-weight="700" style="fill:#202020" text-anchor="start">認知特性についての情報</text>
+<text x="65" y="666" font-size="21" font-weight="400" style="fill:#202020" text-anchor="start">情報を覚えて扱う負担</text>
+<text x="65" y="700" font-size="21" font-weight="400" style="fill:#202020" text-anchor="start">注意の向け方・説明の理解</text>
+<text x="65" y="753" font-size="18" font-weight="400" style="fill:#646464" text-anchor="start">PoCでは感覚・身体特性も含む</text>
+<text x="65" y="781" font-size="18" font-weight="400" style="fill:#646464" text-anchor="start">入力は架空ペルソナ</text>
+<path d="M 386 647 H 460" fill="none" stroke="#202020" stroke-width="2.7" marker-end="url(#arrow)"/>
+<rect x="467" y="482" width="466" height="340" rx="12" fill="#ffffff" stroke="#202020" stroke-width="2.3"/>
+<text x="495" y="524" font-size="18" font-weight="700" style="fill:#646464" text-anchor="start">PROCESS / 生成と検査</text>
+<text x="495" y="572" font-size="32" font-weight="700" style="fill:#202020" text-anchor="start">生成AI</text>
+<text x="495" y="616" font-size="22" font-weight="400" style="fill:#202020" text-anchor="start">個人の情報と設計知識を照合し、</text>
+<text x="495" y="650" font-size="22" font-weight="400" style="fill:#202020" text-anchor="start">許容される範囲でUI案を具体化する</text>
+<text x="495" y="683" font-size="19" font-weight="400" style="fill:#646464" text-anchor="start">式で決まる値は、計算で確定</text>
+<path d="M 700 699 V 720" fill="none" stroke="#202020" stroke-width="1.6" marker-end="url(#arrow)"/>
+<rect x="491" y="733" width="418" height="64" rx="8" fill="#f3f3ef" stroke="#c9c9c3" stroke-width="1"/>
+<text x="511" y="773" font-size="21" font-weight="700" style="fill:#202020" text-anchor="start">別工程：定義した条件への適合を検査</text>
+<path d="M 934 647 H 1008" fill="none" stroke="#202020" stroke-width="2.7" marker-end="url(#arrow)"/>
+<rect x="1016" y="495" width="344" height="314" rx="12" fill="#ffffff" stroke="#9a9a94" stroke-width="1.5"/>
+<text x="1041" y="535" font-size="18" font-weight="700" style="fill:#646464" text-anchor="start">OUTPUT / 出力</text>
+<text x="1041" y="579" font-size="25" font-weight="700" style="fill:#202020" text-anchor="start">その人に合わせたUI</text>
+<text x="1041" y="617" font-size="25" font-weight="700" style="fill:#202020" text-anchor="start">＋ 変更理由・根拠</text>
+<rect x="1041" y="648" width="294" height="107" rx="8" fill="#f3f3ef" stroke="#c9c9c3" stroke-width="1"/>
+<rect x="1056" y="663" width="93" height="77" rx="5" fill="#ffffff" stroke="#aaa" stroke-width="1"/>
+<rect x="1170" y="663" width="148" height="20" rx="3" fill="#ffffff" stroke="#aaa" stroke-width="1"/>
+<rect x="1170" y="691" width="148" height="20" rx="3" fill="#ffffff" stroke="#aaa" stroke-width="1"/>
+<rect x="1170" y="719" width="148" height="20" rx="3" fill="#ffffff" stroke="#aaa" stroke-width="1"/>
+<text x="1041" y="788" font-size="19" font-weight="400" style="fill:#646464" text-anchor="start">構成・表示・表現を具体化</text>
+<path d="M 40 866 H 87" fill="none" stroke="#202020" stroke-width="2" marker-end="url(#arrow)"/>
+<text x="104" y="873" font-size="19" font-weight="400" style="fill:#646464" text-anchor="start">処理の流れ</text>
+<path d="M 302 866 H 350" fill="none" stroke="#202020" stroke-width="2" stroke-dasharray="6 6" marker-end="url(#arrow)"/>
+<text x="367" y="873" font-size="19" font-weight="400" style="fill:#646464" text-anchor="start">知識の参照</text>
+<text x="688" y="873" font-size="20" font-weight="400" style="fill:#646464" text-anchor="start">検査への適合と、実際の使いやすさの検証は別</text>
+</svg>

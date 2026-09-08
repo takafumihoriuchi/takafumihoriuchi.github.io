@@ -110,6 +110,143 @@ figure.framework figcaption {
   .framework-branch { grid-template-rows: auto auto auto; }
 }
 
+/* The updated Japanese article uses supplied SVGs for the proposal and future
+   journey. The desktop and mobile structure drawings carry the same meaning,
+   but use different reading orders so neither has to be squeezed into the
+   other's proportions. Both remain ordinary image links for the shared,
+   keyboard-accessible lightbox. */
+.concept-figure,
+.journey-figure {
+  margin-block: 2rem;
+}
+
+.concept-figure img,
+.journey-figure img {
+  width: 100%;
+  height: auto;
+}
+
+.concept-figure__mobile { display: none; }
+
+.concept-figure figcaption strong,
+.journey-figure figcaption strong,
+figure.compare figcaption strong {
+  color: var(--fg);
+}
+
+@media (max-width: 34rem) {
+  .concept-figure__desktop { display: none; }
+  .concept-figure__mobile { display: block; }
+}
+
+/* The journey drawing is an overview; these HTML steps are the complete,
+   responsive reading experience, including the dialogue that would be too
+   small inside the figure on a phone. */
+.journey-steps {
+  margin: 2rem 0;
+  padding: 0;
+  border-block: 1px solid var(--rule);
+  list-style: none;
+  counter-reset: journey;
+}
+
+.journey-steps > li {
+  position: relative;
+  padding: 1.25rem 0 1.25rem 3rem;
+  counter-increment: journey;
+}
+
+.journey-steps > li + li { border-top: 1px solid var(--rule); }
+
+.journey-steps > li::before {
+  content: counter(journey, decimal-leading-zero);
+  position: absolute;
+  inset-block-start: 1.25rem;
+  inset-inline-start: 0;
+  color: var(--fg-muted);
+  font-size: 0.8125rem;
+  font-weight: 600;
+  letter-spacing: 0.08em;
+}
+
+.journey-steps h3 {
+  margin: 0 0 0.75rem;
+  font-size: 0.941em;
+  line-height: 1.5;
+}
+
+.journey-steps .dialogue {
+  text-align: start;
+}
+
+.dialogue span {
+  display: inline-block;
+  min-width: 3.5rem;
+  color: var(--fg-muted);
+  font-size: 0.875em;
+  font-weight: 600;
+}
+
+/* Tables retain the site's quiet rules and typographic scale. Fixed layout
+   lets Japanese wrap inside each cell at narrow widths without forcing the
+   page itself to scroll sideways. */
+.table-wrap {
+  margin: 2rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.method-table {
+  width: 100%;
+  border-collapse: collapse;
+  table-layout: fixed;
+  font-size: 0.882em;
+  line-height: 1.65;
+}
+
+.method-table th,
+.method-table td {
+  padding: 0.8rem 0.75rem;
+  border-block-end: 1px solid var(--rule);
+  text-align: start;
+  vertical-align: top;
+  overflow-wrap: anywhere;
+}
+
+.method-table th {
+  border-block-start: 1px solid var(--rule);
+  color: var(--fg-muted);
+  font-weight: 600;
+}
+
+.references {
+  margin-top: var(--space-section);
+  padding-block: 1rem;
+  border-block: 1px solid var(--rule);
+  color: var(--fg-muted);
+  font-size: 0.8125rem;
+}
+
+.references summary {
+  cursor: pointer;
+  color: var(--fg);
+  font-weight: 600;
+}
+
+.references ol {
+  margin: 1rem 0 0;
+  padding-inline-start: 1.35rem;
+}
+
+.references li { padding-inline-start: 0.25rem; }
+
+@media (max-width: 34rem) {
+  .journey-steps > li { padding-inline-start: 2.5rem; }
+  .method-table { font-size: 0.8125rem; }
+  .method-table th,
+  .method-table td { padding-inline: 0.55rem; }
+}
+
 /* before / after の並置。1 行に 2 枚、狭い画面では縦に積む。
    figure ごとに見出しを持たせるので、どちらがどちらかは文字で分かる。 */
 figure.compare {
@@ -163,6 +300,16 @@ p.note {
   text-align: start;
 }
 
+/* Subheads in the Japanese canonical article follow the scale used by the
+   site's other Japanese work pages. Classes above override this where a
+   subhead belongs to a compact journey step. */
+:lang(ja) section > h3 {
+  margin: 2.5rem 0 0.75rem;
+  font-size: 0.875rem;
+  line-height: 1.5;
+  font-weight: 600;
+}
+
 /* The Japanese page sets its body at 14px, where the Latin one sets 17px, so
    every size derived from the Latin body arrives on the Japanese page holding
    a relationship it was not given: what was a step below the text lands level
@@ -178,3 +325,5 @@ p.note {
 :is(:lang(ja), :lang(zh), :lang(ko)) .compare-label { font-size: 0.8125rem; }
 :is(:lang(ja), :lang(zh), :lang(ko)) figure.framework figcaption,
 :is(:lang(ja), :lang(zh), :lang(ko)) figure.compare figcaption { font-size: 0.8125rem; }
+:lang(ja) .concept-figure figcaption,
+:lang(ja) .journey-figure figcaption { font-size: 0.8125rem; }
