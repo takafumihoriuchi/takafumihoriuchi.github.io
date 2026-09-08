@@ -157,8 +157,8 @@
     <p>Portanto, utiliza-se o campo visual central do operador como limite. Os objetos dentro do campo visual são considerados "alvos operáveis" que o operador compreende. Os objetos fora do campo visual são considerados "alvos a proteger" que podem ter sido negligenciados. As pessoas, independentemente da posição do olhar, são sempre consideradas alvos a proteger.</p>
     <p>Isto não é um mecanismo para enviar comandos ao robô usando o olhar. É um mecanismo que converte o estado cognitivo do operador em condições para que o robô possa se mover.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Figura vista de cima. À frente do robô, o campo de visão central do operador é desenhado como um cone. O objeto A, que está dentro do cone, é representado por um círculo branco, enquanto os objetos B, C e D, que estão fora, são mostrados como quadrados escuros, e duas pessoas estão posicionadas dentro e fora do cone.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Figura vista de cima. À frente do robô, o campo de visão central do operador é desenhado como um cone. O objeto A, que está dentro do cone, é representado por um círculo branco, enquanto os objetos B, C e D, que estão fora, são mostrados como quadrados escuros, e duas pessoas estão posicionadas dentro e fora do cone."></a>
       <figcaption>O objeto A dentro do campo de visão central do operador pode ser manipulado, enquanto os objetos B, C e D do lado de fora se tornam objetos de proteção. A pessoa é protegida esteja ela onde estiver.</figcaption>
     </figure>
   </section>
@@ -169,8 +169,8 @@
     <p>Por outro lado, mesmo que se desvie temporariamente o olhar de um objeto que já está sendo tocado, o trabalho em andamento não é interrompido. Isso ocorre porque, se a apreensão ou a operação forem interrompidas apenas por desviar o olhar, isso se tornaria mais instável. A aproximação de pessoas é tratada de forma diferente, sendo limitada independentemente de o operador estar observando ou não.</p>
     <p>O objetivo não é retardar uniformemente o trabalho por razões de segurança. Trata-se de manter a capacidade do robô dentro do alcance do que o operador compreende e proteger apenas as áreas fora de sua atenção, equilibrando assim segurança e operacionalidade.</p>
 
-    <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Um fluxograma que começa a partir de um estado de movimento livre. Ele se ramifica dependendo se o objeto está próximo, se é uma pessoa, se o manipulador está na direção de aproximação à pessoa, ou se o objeto está na área de atenção, levando a movimentos precisos, parada gradual ou travamento.">
+    <figure class="paper-figure line-art figure-2">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Um fluxograma que começa a partir de um estado de movimento livre. Ele se ramifica dependendo se o objeto está próximo, se é uma pessoa, se o manipulador está na direção de aproximação à pessoa, ou se o objeto está na área de atenção, levando a movimentos precisos, parada gradual ou travamento."></a>
       <figcaption>O nó que lê os parâmetros ativos do operador no processo de julgamento é apenas aquele que verifica se o objeto está na área de atenção. Todos os outros ramos funcionam com informações sensoriais passivas.</figcaption>
     </figure>
   </section>

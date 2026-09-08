@@ -125,8 +125,8 @@ o-|\
     <p>Una pelota que rebota es un ejemplo claro de un sistema híbrido. En el aire, la posición y la velocidad cambian de manera continua, y en el momento en que toca el suelo, ocurre un evento discreto de rebote. Los termostatos, los automóviles y los robots también poseen estos dos tipos de cambios internamente, aunque a diferente escala.</p>
     <p>Para la evaluación, se utilizó un modelo en el que una bola que se mueve horizontalmente rebota en una superficie dividida en múltiples secciones. Para cada sección de la superficie, hay una regla condicional que establece 'si la bola llega a este rango, rebotará'. Al aumentar el número de secciones, se incrementa la cantidad de objetos que se pueden representar, pero también aumentan las condiciones que el simulador debe verificar.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Código fuente de HydLa que define el comportamiento de una bola que se mueve horizontalmente y rebota en cualquiera de los N segmentos de superficies adyacentes.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Código fuente de HydLa que define el comportamiento de una bola que se mueve horizontalmente y rebota en cualquiera de los N segmentos de superficies adyacentes."></a>
       <figcaption>Un modelo corto de HydLa describe una superficie dividida en una pelota y <em>N</em> secciones con guardia.</figcaption>
     </figure>
   </section>
@@ -147,8 +147,8 @@ o-|\
     <h2>Enfoque — Eliminar de manera segura condiciones que nunca se cumplirán</h2>
     <p>Quiero que imagines una pelota bajando las escaleras rebotando. Si la pelota pasa de un escalón y continúa avanzando, ese escalón ya no puede afectar a la pelota. Cualquiera que vea el diagrama ignora inmediatamente los escalones detrás de la pelota. El algoritmo original seguía examinando cada uno de ellos.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La trazada roja indica la pelota que desciende rebotando en los peldaños de la escalera negra. La zona sombreada representa los peldaños que ya han sido superados y que ya no tienen relevancia.">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La trazada roja indica la pelota que desciende rebotando en los peldaños de la escalera negra. La zona sombreada representa los peldaños que ya han sido superados y que ya no tienen relevancia."></a>
       <figcaption>A medida que la pelota avanza hacia la derecha, se puede omitir la protección de la sección enrejada que está detrás.</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ o-|\
     <h3>Cuando la dirección del cambio no cambia</h3>
     <p>La primera medida corresponde a los casos en los que una variable se mueve en una sola dirección a lo largo de toda la simulación. En un modelo con superficies divididas, la posición horizontal de la bola siempre aumenta. Una vez que atraviesa un sector, las condiciones de ese sector ya no se cumplen nunca más. Esta propiedad puede verificarse antes de la simulación mediante técnicas de verificación de modelos, por lo que los controles que se vuelven innecesarios a medida que avanza la ejecución pueden eliminarse de manera segura.</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="La línea roja que asciende desde α en el tiempo 0 hasta β en el tiempo máximo representa una variable que sigue aumentando a lo largo de la simulación.">
       <figcaption>La monotonía uniforme significa que la dirección del cambio se mantiene en todo el intervalo que se está simulando.</figcaption>
     </figure>
@@ -165,7 +165,7 @@ o-|\
     <h3>Cuando la dirección del cambio cambia a mitad de camino</h3>
     <p>Muchos sistemas en la realidad no se mueven en una sola dirección para siempre. Las variables pueden aumentar, cambiar de dirección y luego disminuir. Por lo tanto, el artículo presentó una segunda correspondencia. Primero se supone una dirección, se supervisa esa suposición mediante una afirmación, y cuando la dirección cambia, se reanuda el proceso de reducción a partir de ese punto. Los guardias eliminados para un intervalo monótono se restauran cuando comienza el siguiente intervalo.</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Los cinco diagramas muestran cómo se van confirmando sucesivamente el intervalo asumido de aumento, la falla de la aserción, el nuevo intervalo de disminución, la segunda falla y el intervalo monótono.">
       <figcaption>El fallo de la aserción divide el comportamiento cambiante en intervalos que pueden tratarse como monótonos.</figcaption>
     </figure>
@@ -176,8 +176,8 @@ o-|\
     <p>Se implementó la correspondencia con la monotonía uniforme y se evaluó en un modelo con superficies divididas. Tanto el algoritmo original como el método propuesto requieren más tiempo a medida que aumenta el número de secciones. Sin embargo, el método propuesto tuvo consistentemente menos carga de trabajo. Al comparar las curvas ajustadas, el coeficiente de mayor grado disminuyó de 1.1463 a 0.6083, y en este punto de referencia, el tiempo total de simulación se redujo aproximadamente a la mitad.</p>
     <p>Esto no es una afirmación de que todos los modelos de HydLa se vuelvan el doble de rápidos. Lo que se muestra es dónde funciona este método: en modelos con muchos objetos que tienen guardias, donde se puede demostrar la dirección del cambio y donde los guardias se vuelven permanentemente irrelevantes durante la ejecución.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Gráfico del tiempo de simulación en función de N. En todo el rango de 10 a 200 secciones de la superficie, el método propuesto es inferior al método original, y para N=200 se mantiene en aproximadamente 250 segundos frente a unos 470 segundos.">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Gráfico del tiempo de simulación en función de N. En todo el rango de 10 a 200 secciones de la superficie, el método propuesto es inferior al método original, y para N=200 se mantiene en aproximadamente 250 segundos frente a unos 470 segundos."></a>
       <figcaption>En el modelo evaluado, el método propuesto (cuadrado) tarda aproximadamente la mitad del tiempo que el algoritmo original (círculo).</figcaption>
     </figure>
   </section>

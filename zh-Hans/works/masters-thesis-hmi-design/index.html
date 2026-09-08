@@ -158,8 +158,8 @@
     <p>因此，以操作者的中央视野为界。在视野内的对象，被视为操作者掌握的“可操作对象”。在视野外的对象，被视为可能被忽视的“保护对象”。无论人的视线位置如何，总是将其视为保护对象。</p>
     <p>这不是通过视线向机器人发送命令的机制。而是将操作者的认知状态转换为机器人可以运动的条件的机制。</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="从上方看到的图。机器人的前方描绘了操作者的中心视野作为锥体。锥体内部的目标A用白色圆表示，外部的目标B、C、D用深色方块表示，两个人分别站在锥体的内外。">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="从上方看到的图。机器人的前方描绘了操作者的中心视野作为锥体。锥体内部的目标A用白色圆表示，外部的目标B、C、D用深色方块表示，两个人分别站在锥体的内外。"></a>
       <figcaption>位于操作者中心视野内的目标A是可操作的，位于外侧的目标B、C、D是保护对象。无论人站在哪里，都会受到保护。</figcaption>
     </figure>
   </section>
@@ -170,8 +170,8 @@
     <p>另一方面，即使暂时移开对已经接触的对象的视线，也不会停止正在进行的作业。因为仅仅移开视线就中断抓握或操作，反而会变得不稳定。只有接近人这一情况是例外，无论操作员是否在看，都要加以限制。</p>
     <p>目标并不是为了安全而统一减慢作业速度。而是在操作员能够掌握的范围内保持机器人的能力，仅保护操作员注意不到的范围，从而实现安全性与作业性的兼顾。</p>
 
-    <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="从自由动作状态开始的流程图。根据对象是否在附近、是否为人、操纵器是否在靠近人的方向、对象是否在注视区域而分支，最终达到精密动作、逐步停止或锁定。">
+    <figure class="paper-figure line-art figure-2">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="从自由动作状态开始的流程图。根据对象是否在附近、是否为人、操纵器是否在靠近人的方向、对象是否在注视区域而分支，最终达到精密动作、逐步停止或锁定。"></a>
       <figcaption>在判断的过程中，读取操作者主动参数的节点只有“对象是否在注视区域”这一项。其他分支全部依靠被动的传感器信息运作。</figcaption>
     </figure>
   </section>

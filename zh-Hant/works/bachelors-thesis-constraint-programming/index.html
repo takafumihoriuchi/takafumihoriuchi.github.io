@@ -126,8 +126,8 @@ o-|\
     <p>彈跳的球是混合系統的容易理解的例子。在空中時，位置和速度持續變化，而在接觸地板的瞬間，會發生彈回這種離散的事件。恆溫器、汽車、機器人也不論規模大小，都內含相同的兩種變化。</p>
     <p>評估時，使用了讓水平運動的球在被分成多個區塊的面上反彈的模型。每個區塊都有「球如果來到這個範圍就反彈」的條件規則。增加區塊數量雖然可以表達的對象更多，但模擬器需要檢查的條件也會增加。</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="定義了一個在水平面上移動的球，並且在相鄰N個面區塊的任一處反彈行為的HydLa源代碼。">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="定義了一個在水平面上移動的球，並且在相鄰N個面區塊的任一處反彈行為的HydLa源代碼。"></a>
       <figcaption>簡短的HydLa模型描述了一個球體和被分割成<em>N</em>個帶護欄的區域的面。</figcaption>
     </figure>
   </section>
@@ -148,8 +148,8 @@ o-|\
     <h2>方法——安全地解除永遠無法成立的條件</h2>
     <p>請想像一個沿著階梯彈跳下去的球。如果球越過某一階，並且繼續向前，那麼那一階就無法再影響球。看到圖的人會立即忽略球後面的階。原本的演算法則是一直檢查每一個階。</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="紅色的軌跡顯示著球在黑色階梯的階段上彈跳下落。網狀區域表示已經過去、不再相關的階段。">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="紅色的軌跡顯示著球在黑色階梯的階段上彈跳下落。網狀區域表示已經過去、不再相關的階段。"></a>
       <figcaption>隨著球向右移動，後方有網格的階層護欄可以省略。</figcaption>
     </figure>
 
@@ -158,7 +158,7 @@ o-|\
     <h3>變化的方向沒有改變的情況</h3>
     <p>第一種對應方法適用於變數在整個模擬過程中單向變動的情況。在將平面分割的模型中，球的水平位置總是增加。一旦越過某個區段，就不會再滿足該區段的條件。由於這種特性可以通過模型檢測技術在模擬之前確認，因此可以在執行過程中安全地移除不再需要的守護條件。</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="從時刻0的α上升到最大時刻的β的紅線，表示在整個模擬過程中持續增加的變數。">
       <figcaption>一致的單調性是指變化的方向在整個被模擬的區間內保持不變。</figcaption>
     </figure>
@@ -166,7 +166,7 @@ o-|\
     <h3>變化的方向在途中改變的情況</h3>
     <p>現實中的許多系統並不是永遠朝單一方向運行的。變數可能會增加、改變方向，然後減少。因此論文提出了第二種對應方法。首先假設方向，利用斷言來監控這個假設，當方向改變時，從那個時間點重新進行減少的處理。為一個單調區間移除的保護措施，會在下一個區間開始時恢復。</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五個圖顯示了假設增加的區間、斷言失敗、新的減少區間、第二次失敗以及單調區間依次確定的情況。">
       <figcaption>斷言失敗將變化的行為，分割成可以各自作為單調處理的區間。</figcaption>
     </figure>
@@ -177,8 +177,8 @@ o-|\
     <p>實現了對均一單調性的應對，並在分割面模型上進行了評估。無論是原始演算法還是提案方法，區域數量增加時所需時間都會增加。然而，提案方法的工作量始終較少。比較擬合的曲線後發現，最高次項的係數從1.1463下降到0.6083，在這個基準測試中，整體模擬所需時間大約減半。</p>
     <p>這並不是說所有的 HydLa 模型都會變成兩倍快。所示的是，這種方法有效的地方——擁有許多守護條件的對象，可以證明變化方向，且在執行中守護條件逐漸變得無關的模型。</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="針對N的模擬時間圖。從面區劃數10到200的全範圍，提議的方法均低於原始方法，當N=200時，大約從470秒縮短至約250秒。">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="針對N的模擬時間圖。從面區劃數10到200的全範圍，提議的方法均低於原始方法，當N=200時，大約從470秒縮短至約250秒。"></a>
       <figcaption>在評估的模型中，所提方法（方形）比原始算法（圓形）大約用了一半的時間。</figcaption>
     </figure>
   </section>

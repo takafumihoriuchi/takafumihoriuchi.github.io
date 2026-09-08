@@ -125,8 +125,8 @@ o-|\
     <p>Une balle qui rebondit est un exemple clair d'un système hybride. Dans les airs, sa position et sa vitesse changent de manière continue, et au moment où elle touche le sol, un événement discret de rebondissement se produit. Les thermostats, les voitures et les robots possèdent également ces deux types de changements en leur sein, même si à des échelles différentes.</p>
     <p>Pour l'évaluation, nous avons utilisé un modèle où une balle se déplaçant horizontalement rebondit sur une surface divisée en plusieurs sections. Pour chaque section de la surface, il existe une règle conditionnelle « la balle rebondit si elle atteint cette zone ». En augmentant le nombre de sections, on peut représenter un plus grand nombre de cibles, mais le simulateur doit également examiner davantage de conditions.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Code source HydLa définissant le comportement d'une balle se déplaçant horizontalement et rebondissant sur l'une des sections de N faces adjacentes.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Code source HydLa définissant le comportement d'une balle se déplaçant horizontalement et rebondissant sur l'une des sections de N faces adjacentes."></a>
       <figcaption>Un court modèle HydLa décrit une surface divisée en une balle et <em>N</em> sections avec des gardes.</figcaption>
     </figure>
   </section>
@@ -147,8 +147,8 @@ o-|\
     <h2>Approche — Retirer en toute sécurité des conditions qui ne se réaliseront plus jamais</h2>
     <p>Imaginez une balle descendant les escaliers en rebondissant. Si la balle passe un degré et continue à avancer, ce degré n'a plus d'effet sur la balle. Une personne regardant le schéma ignore immédiatement les degrés derrière la balle. L'algorithme original continuait à vérifier chacun d'entre eux.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La trajectoire rouge montre la balle qui descend en rebondissant sur les marches noires. La zone hachurée représente les marches déjà dépassées et qui ne sont plus pertinentes.">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La trajectoire rouge montre la balle qui descend en rebondissant sur les marches noires. La zone hachurée représente les marches déjà dépassées et qui ne sont plus pertinentes."></a>
       <figcaption>À mesure que la balle avance vers la droite, il est possible de passer la garde du niveau avec le treillis situé derrière.</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ o-|\
     <h3>Lorsque le sens du changement ne change pas</h3>
     <p>La première mesure s'applique lorsque la variable évolue dans une seule direction tout au long de la simulation. Dans un modèle où la surface est divisée, la position horizontale de la balle ne cesse d'augmenter. Une fois qu'elle a dépassé une section, les conditions de cette section ne seront plus jamais remplies. Cette propriété peut être vérifiée avant la simulation grâce aux techniques de vérification de modèle, ce qui permet de supprimer en toute sécurité les gardes devenus inutiles à mesure que l'exécution progresse.</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="La ligne rouge qui monte de α à l'heure 0 jusqu'à β au temps maximal représente une variable qui continue d'augmenter tout au long de la simulation.">
       <figcaption>La monotonie uniforme signifie que la direction du changement est maintenue sur l'ensemble de l'intervalle simulé.</figcaption>
     </figure>
@@ -165,7 +165,7 @@ o-|\
     <h3>Lorsque la direction du changement change en cours de route</h3>
     <p>De nombreux systèmes réels ne fonctionnent pas toujours dans une seule direction. Les variables peuvent augmenter, changer de direction, puis diminuer. L'article a donc présenté une deuxième approche. D'abord, on suppose une direction, on surveille cette hypothèse par une assertion, et lorsqu'un changement de direction se produit, le processus de réduction est recommencé depuis ce point. Les gardes retirés pour un intervalle monotone sont rétablis au début du prochain intervalle.</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Les cinq graphiques montrent comment les intervalles supposés en augmentation, l’échec d’assertion, le nouvel intervalle en diminution, le deuxième échec et l’intervalle monotone se confirment successivement.">
       <figcaption>L'échec d'assertion divise le comportement changeant en intervalles pouvant chacun être traités comme monotone.</figcaption>
     </figure>
@@ -176,8 +176,8 @@ o-|\
     <p>Nous avons mis en œuvre la gestion de la monotonie uniforme et évalué le modèle avec les surfaces divisées. Tant l'algorithme original que la méthode proposée voient le temps requis augmenter avec le nombre de segments. Cependant, la méthode proposée nécessitait systématiquement moins de travail. En comparant les courbes ajustées, le coefficient du terme le plus élevé est passé de 1,1463 à 0,6083, ce qui a réduit d'environ moitié le temps total de simulation pour ce benchmark.</p>
     <p>Il ne s'agit pas d'une affirmation selon laquelle tous les modèles HydLa deviennent deux fois plus rapides. Ce qui est montré, c'est où cette méthode fonctionne — dans les modèles où il y a beaucoup d'objets avec des gardes, où la direction des changements peut être prouvée, et où les gardes deviennent définitivement sans rapport pendant l'exécution.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Graphique du temps de simulation en fonction de N. Sur toute la plage de 10 à 200 sections de surface, la méthode proposée est inférieure à la méthode originale, et pour N = 200, elle se situe à environ 250 secondes contre environ 470 secondes.">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Graphique du temps de simulation en fonction de N. Sur toute la plage de 10 à 200 sections de surface, la méthode proposée est inférieure à la méthode originale, et pour N = 200, elle se situe à environ 250 secondes contre environ 470 secondes."></a>
       <figcaption>Dans le modèle évalué, la méthode proposée (carré) prend environ la moitié du temps de l'algorithme original (cercle).</figcaption>
     </figure>
   </section>

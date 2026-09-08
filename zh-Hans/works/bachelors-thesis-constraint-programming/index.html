@@ -126,8 +126,8 @@ o-|\
     <p>弹跳的球是混合系统的一个易于理解的例子。在空中时，位置和速度连续变化，而在接触地面的一瞬间，会发生弹回这样的离散事件。温控器、汽车、机器人也是如此，虽然规模不同，但内部也存在相同的两种变化。</p>
     <p>为了评估，使用了一个模型，即水平移动的球在被分成多个区块的面上反弹。每个区块都有一个条件规则：“球如果进入这个范围就会反弹”。增加区块的数量可以扩展可表达的对象，同时也增加了模拟器需要检查的条件。</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="定义了在水平移动的球以及在相邻的N个面区块中的任意一个反弹行为的HydLa源码。">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="定义了在水平移动的球以及在相邻的N个面区块中的任意一个反弹行为的HydLa源码。"></a>
       <figcaption>简短的HydLa模型描述了一个球体和被划分为<em>N</em>个带护栏的区域的面。</figcaption>
     </figure>
   </section>
@@ -148,8 +148,8 @@ o-|\
     <h2>方法——安全地去除永远无法成立的条件</h2>
     <p>请想象一个沿着台阶跳下的球。如果球越过某一台阶并继续向前，那么这个台阶将不再影响球。看到图的人会立即忽略球身后的台阶。原来的算法则会继续检查每一个台阶。</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="红色的轨迹显示了球沿着黑色楼梯台阶跳下的路径。网格区域表示那些已经过去、与之无关的台阶。">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="红色的轨迹显示了球沿着黑色楼梯台阶跳下的路径。网格区域表示那些已经过去、与之无关的台阶。"></a>
       <figcaption>随着球向右移动，可以省略其后面带网格的台阶的防护。</figcaption>
     </figure>
 
@@ -158,7 +158,7 @@ o-|\
     <h3>变化的方向不改变的情况</h3>
     <p>第一个对应适用于变量在整个模拟过程中朝一个方向变化的情况。在将面分割的模型中，球的水平位置总是增加。一旦超过某个区间，该区间的条件将不再被满足。这一特性可以通过模型检查技术在模拟前确认，因此在执行过程中可以安全地移除不再需要的守卫。</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="从时刻0的α向最大时刻的β上升的红线，表示在整个模拟过程中持续增加的变量。">
       <figcaption>一致的单调性是指变化的方向在整个被模拟的区间内保持不变。</figcaption>
     </figure>
@@ -166,7 +166,7 @@ o-|\
     <h3>变化的方向在途中发生变化的情况</h3>
     <p>现实中的许多系统，并不是永远朝一个方向运行。变量会增加，改变方向，然后可能减少。因此论文展示了第二种对应方法。首先假设方向，通过断言进行监控，并且从方向改变的时间点重新执行减少的处理。为一个单调区间移除的保护措施，会在下一个区间开始时恢复。</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五个图展示了假定增加的区间、断言失败、新的减少区间、第二次失败，以及单调区间依次被确定的情况。">
       <figcaption>断言失败将可将变化的行为分割为可以作为单调处理的各个区间。</figcaption>
     </figure>
@@ -177,8 +177,8 @@ o-|\
     <p>实现了对统一单调性的处理，并在分割面的模型上进行了评估。无论是原算法还是提案方法，区块数增加时所需时间都会增长。但提案方法的工作量始终较少。对比拟合的曲线后发现，最高次的系数从1.1463下降到0.6083，在这一基准测试中，整个模拟所需的时间大约减半。</p>
     <p>这并不是说所有的 HydLa 模型都会加倍变快。这里所展示的是，这种方法有效的场景——即拥有许多守卫的对象，可以证明变化的方向，并且在执行过程中守卫会永久地变得无关的模型。</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="针对N的仿真时间的图表。在面分区数从10到200的整个范围内，提议的方法都低于原方法，N=200时约为470秒，而提议的方法约为250秒。">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="针对N的仿真时间的图表。在面分区数从10到200的整个范围内，提议的方法都低于原方法，N=200时约为470秒，而提议的方法约为250秒。"></a>
       <figcaption>在评估的模型中，提出的方法（方形）大约只花原始算法（圆形）一半的时间。</figcaption>
     </figure>
   </section>

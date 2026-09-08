@@ -157,8 +157,8 @@
     <p>Ainsi, on utilise le champ visuel central de l'opérateur comme frontière. Les objets situés à l'intérieur du champ visuel sont considérés comme des « objets manipulables » que l'opérateur peut saisir. Les objets situés à l'extérieur sont considérés comme des « objets à protéger » qui pourraient être négligés. Les personnes sont toujours considérées comme des objets à protéger, quel que soit l'endroit où se trouve leur regard.</p>
     <p>Ce mécanisme n'envoie pas d'ordres au robot par le regard. C'est un mécanisme qui convertit l'état cognitif de l'opérateur en conditions permettant au robot de bouger.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Vue de dessus. Devant le robot, le champ visuel central de l'opérateur est représenté sous forme de cône. L'objet A à l'intérieur du cône est indiqué par un cercle blanc, les objets B, C et D à l'extérieur par des carrés foncés, et deux personnes se tiennent à l'intérieur et à l'extérieur du cône.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Vue de dessus. Devant le robot, le champ visuel central de l'opérateur est représenté sous forme de cône. L'objet A à l'intérieur du cône est indiqué par un cercle blanc, les objets B, C et D à l'extérieur par des carrés foncés, et deux personnes se tiennent à l'intérieur et à l'extérieur du cône."></a>
       <figcaption>L'objet A situé à l'intérieur du champ visuel central de l'opérateur peut être manipulé, tandis que les objets B, C et D situés à l'extérieur sont des objets à protéger. Une personne est protégée où qu'elle se trouve.</figcaption>
     </figure>
   </section>
@@ -169,8 +169,8 @@
     <p>D'autre part, même si le regard se détourne temporairement de l'objet déjà touché, le travail en cours ne s'arrête pas. Si la préhension ou l'opération était interrompue rien qu'en détournant le regard, cela deviendrait plutôt instable. Seule l'approche envers une personne est traitée différemment, et des restrictions sont appliquées que l'opérateur regarde ou non.</p>
     <p>L'objectif n'était pas de ralentir uniformément le travail pour des raisons de sécurité. Il s'agit de maintenir les capacités du robot dans la mesure où l'opérateur les maîtrise, et de ne protéger que les zones qui échappent à son attention, afin de concilier sécurité et productivité.</p>
 
-    <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Un organigramme qui commence à l'état de mouvement libre. Il se divise selon que l'objet est proche, s'il s'agit d'une personne, si le manipulateur est orienté dans la direction de la personne, ou si l'objet se trouve dans la zone de regard, menant à une opération précise, un arrêt progressif, ou un verrouillage.">
+    <figure class="paper-figure line-art figure-2">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Un organigramme qui commence à l'état de mouvement libre. Il se divise selon que l'objet est proche, s'il s'agit d'une personne, si le manipulateur est orienté dans la direction de la personne, ou si l'objet se trouve dans la zone de regard, menant à une opération précise, un arrêt progressif, ou un verrouillage."></a>
       <figcaption>Le seul nœud qui lit les paramètres actifs de l'opérateur dans le processus de jugement est « si la cible se trouve dans la zone de fixation ». Toutes les autres branches fonctionnent avec des informations sensorielles passives.</figcaption>
     </figure>
   </section>

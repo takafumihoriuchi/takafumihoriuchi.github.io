@@ -125,8 +125,8 @@ o-|\
     <p>Bola yang memantul adalah contoh yang mudah dipahami dari sistem hibrida. Di udara, posisi dan kecepatan berubah secara terus-menerus, dan pada saat mengenai lantai, terjadi peristiwa diskret berupa pantulan. Termostat, mobil, dan robot juga memiliki dua jenis perubahan yang sama di dalamnya, meskipun skalanya berbeda.</p>
     <p>Untuk evaluasi, digunakan model di mana bola yang bergerak secara horizontal memantul pada permukaan yang dibagi menjadi beberapa bagian. Pada setiap bagian permukaan terdapat aturan bersyarat 'bola akan memantul jika datang ke area ini'. Jika jumlah bagian ditambah, objek yang bisa diekspresikan juga bertambah, sementara kondisi yang harus diperiksa oleh simulator juga meningkat.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Kode sumber HydLa yang mendefinisikan perilaku bola yang bergerak horizontal dan memantul di salah satu dari N bagian permukaan yang bersebelahan.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Kode sumber HydLa yang mendefinisikan perilaku bola yang bergerak horizontal dan memantul di salah satu dari N bagian permukaan yang bersebelahan."></a>
       <figcaption>Model HydLa yang singkat menggambarkan sebuah bola dan permukaan yang dibagi menjadi <em>N</em> bagian yang memiliki pengaman.</figcaption>
     </figure>
   </section>
@@ -147,8 +147,8 @@ o-|\
     <h2>Pendekatan — dengan aman menghapus kondisi yang tidak akan pernah terpenuhi lagi</h2>
     <p>Bayangkan sebuah bola yang turun sambil melompat di tangga. Jika bola melewati satu anak tangga dan terus bergerak ke depan, anak tangga itu tidak akan berpengaruh pada bola lagi. Orang yang melihat gambar akan segera mengabaikan anak tangga yang ada di belakang bola. Algoritma asli terus memeriksa masing-masing anak tangga itu satu per satu.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Jejak merah menunjukkan bola yang turun sambil memantul di anak tangga hitam. Area yang diarsir menunjukkan anak tangga yang sudah dilewati dan tidak lagi relevan.">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Jejak merah menunjukkan bola yang turun sambil memantul di anak tangga hitam. Area yang diarsir menunjukkan anak tangga yang sudah dilewati dan tidak lagi relevan."></a>
       <figcaption>Seiring bola bergerak ke kanan, pengaman pada tingkat yang memiliki jaring di belakangnya dapat dihilangkan.</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ o-|\
     <h3>Jika arah perubahan tidak berubah</h3>
     <p>Tindakan pertama berlaku ketika variabel bergerak ke satu arah sepanjang keseluruhan simulasi. Dalam model yang membagi permukaan, posisi horizontal bola selalu meningkat. Setelah melewati suatu area, kondisi di area itu tidak akan pernah terpenuhi lagi. Sifat ini dapat diperiksa sebelum simulasi dengan teknik pemeriksaan model, sehingga guard yang tidak dibutuhkan bisa dengan aman dihapus seiring berjalannya eksekusi.</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Garis merah yang meningkat dari α pada waktu 0 ke β pada waktu maksimum menunjukkan variabel yang terus meningkat sepanjang simulasi.">
       <figcaption>Kekonsistenan monoton artinya arah perubahan dipertahankan di seluruh interval yang disimulasikan.</figcaption>
     </figure>
@@ -165,7 +165,7 @@ o-|\
     <h3>Jika arah perubahan berubah di tengah jalan</h3>
     <p>Banyak sistem dalam kenyataan tidak bergerak satu arah selamanya. Variabel bisa bertambah, berubah arah, dan kemudian berkurang. Oleh karena itu, makalah ini menunjukkan pendekatan kedua. Pertama, arah diasumsikan, asumsi tersebut dipantau dengan assertion, dan ketika arah berubah, proses pengurangan diulang dari titik tersebut. Guard yang dihapus untuk satu interval monoton dikembalikan ketika interval berikutnya dimulai.</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Lima gambar menunjukkan bagaimana interval dengan asumsi peningkatan, kegagalan asersi, interval penurunan baru, kegagalan kedua, dan interval monoton ditetapkan satu per satu.">
       <figcaption>Kegagalan asumsi membagi perilaku yang berubah menjadi interval yang dapat diperlakukan masing-masing sebagai monoton.</figcaption>
     </figure>
@@ -176,8 +176,8 @@ o-|\
     <p>Kami mengimplementasikan penanganan untuk monotoni yang seragam dan mengevaluasinya pada model yang dibagi menjadi beberapa bidang. Baik algoritme asli maupun metode yang diusulkan, waktu yang dibutuhkan meningkat seiring bertambahnya jumlah bidang. Namun demikian, metode yang diusulkan konsisten membutuhkan lebih sedikit pekerjaan. Jika dibandingkan kurva yang dipasang, koefisien tertinggi turun dari 1,1463 menjadi 0,6083, dan pada tolok ukur ini, waktu total simulasi menjadi kira-kira setengahnya.</p>
     <p>Ini bukan klaim bahwa semua model HydLa akan menjadi dua kali lebih cepat. Yang ditunjukkan adalah tempat di mana metode ini efektif — yaitu model dengan banyak objek yang memiliki guard, arah perubahan dapat dibuktikan, dan selama eksekusi guard menjadi tidak relevan secara permanen.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik waktu simulasi terhadap N. Di seluruh rentang dari 10 hingga 200 bagian permukaan, metode yang diusulkan lebih rendah dibandingkan metode asli, dan pada N=200, waktu simulasi sekitar 470 detik dapat ditekan menjadi sekitar 250 detik.">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik waktu simulasi terhadap N. Di seluruh rentang dari 10 hingga 200 bagian permukaan, metode yang diusulkan lebih rendah dibandingkan metode asli, dan pada N=200, waktu simulasi sekitar 470 detik dapat ditekan menjadi sekitar 250 detik."></a>
       <figcaption>Pada model yang dievaluasi, metode yang diusulkan (persegi) memakan waktu sekitar setengah dari algoritma asli (lingkaran).</figcaption>
     </figure>
   </section>

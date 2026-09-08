@@ -157,8 +157,8 @@
     <p>Entonces, se utiliza el campo visual central del operador como límite. Los objetos dentro del campo visual se consideran "objetos operables" que el operador está comprendiendo. Los objetos fuera del campo visual se consideran "objetos a proteger" que podrían ser pasados por alto. Las personas, sin importar la posición de la mirada, siempre se consideran objetos a proteger.</p>
     <p>Este no es un sistema para enviar órdenes al robot con la mirada. Es un sistema que convierte el estado cognitivo del operador en condiciones en las que el robot puede moverse.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Vista desde arriba. Frente al robot, el campo de visión central del operador está representado como un cono. El objeto A, que se encuentra dentro del cono, se muestra como un círculo blanco, mientras que los objetos B, C y D, que están fuera, se indican con cuadrados oscuros, y dos personas están de pie dentro y fuera del cono.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Vista desde arriba. Frente al robot, el campo de visión central del operador está representado como un cono. El objeto A, que se encuentra dentro del cono, se muestra como un círculo blanco, mientras que los objetos B, C y D, que están fuera, se indican con cuadrados oscuros, y dos personas están de pie dentro y fuera del cono."></a>
       <figcaption>El objeto A que se encuentra dentro del campo visual central del operador puede ser manipulado, mientras que los objetos B, C y D que se encuentran en el exterior se consideran objetos a proteger. Las personas están protegidas sin importar dónde se encuentren.</figcaption>
     </figure>
   </section>
@@ -169,8 +169,8 @@
     <p>Por otro lado, incluso si se aparta temporalmente la vista del objeto que ya se ha tocado, el trabajo en curso no se detiene. Esto se debe a que si la sujeción o la operación se interrumpen solo al apartar la vista, se vuelve más inestable. Solo el acercamiento a las personas se trata de manera diferente, limitándose independientemente de que el operador esté mirando o no.</p>
     <p>El objetivo no era ralentizar uniformemente las operaciones por seguridad. Se trata de mantener la capacidad del robot dentro del alcance que el operador puede controlar y proteger únicamente el área que no puede supervisar, logrando así un equilibrio entre seguridad y operatividad.</p>
 
-    <figure class="paper-figure figure-2">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Un diagrama de flujo que comienza desde un estado de movimiento libre. Se ramifica según si el objeto está cerca, si es una persona, si el manipulador está en dirección a acercarse a la persona o si el objeto está en el área de atención, y conduce a movimientos precisos, parada gradual o bloqueo.">
+    <figure class="paper-figure line-art figure-2">
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Un diagrama de flujo que comienza desde un estado de movimiento libre. Se ramifica según si el objeto está cerca, si es una persona, si el manipulador está en dirección a acercarse a la persona o si el objeto está en el área de atención, y conduce a movimientos precisos, parada gradual o bloqueo."></a>
       <figcaption>El único nodo que lee los parámetros activos del operador durante el proceso de juicio es 'si el objeto está en la zona de atención'. Todas las demás ramificaciones funcionan con información sensorial pasiva.</figcaption>
     </figure>
   </section>

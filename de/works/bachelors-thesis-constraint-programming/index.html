@@ -125,8 +125,8 @@ o-|\
     <p>Ein springender Ball ist ein leicht verständliches Beispiel für ein Hybridsystem. In der Luft ändern sich seine Position und Geschwindigkeit kontinuierlich, und im Moment des Aufpralls auf den Boden tritt ein diskretes Ereignis auf, nämlich das Abprallen. Thermostate, Autos und Roboter besitzen ebenfalls, wenn auch in unterschiedlichem Umfang, diese beiden Arten von Veränderungen.</p>
     <p>Für die Bewertung wurde ein Modell verwendet, bei dem eine horizontal bewegende Kugel auf einer in mehrere Bereiche unterteilten Fläche abprallt. Für jeden Bereich der Fläche gibt es eine bedingte Regel: "Wenn die Kugel in diesen Bereich kommt, prallt sie ab." Je mehr Bereiche hinzugefügt werden, desto mehr Objekte können dargestellt werden, aber gleichzeitig steigen auch die Bedingungen, die der Simulator prüfen muss.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="HydLa-Quellcode, der das Verhalten eines horizontal bewegten Balls definiert, der an einem der N benachbarten Flächenabschnitte abprallt.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="HydLa-Quellcode, der das Verhalten eines horizontal bewegten Balls definiert, der an einem der N benachbarten Flächenabschnitte abprallt."></a>
       <figcaption>Ein kurzes HydLa-Modell beschreibt eine Fläche, die in einen Ball und <em>N</em> bewachte Abschnitte unterteilt ist.</figcaption>
     </figure>
   </section>
@@ -147,8 +147,8 @@ o-|\
     <h2>Ansatz – Bedingungen sicher entfernen, die nie wieder erfüllt werden</h2>
     <p>Stellen Sie sich einen Ball vor, der die Treppe hinunterhüpft. Wenn der Ball eine Stufe passiert und weiter nach vorne rollt, kann diese Stufe den Ball nicht mehr beeinflussen. Menschen, die das Diagramm betrachten, ignorieren sofort die Stufen hinter dem Ball. Der ursprüngliche Algorithmus überprüfte jedoch jede einzelne weiterhin.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Die rote Spur zeigt den Ball, der die Stufen der schwarzen Treppe hinunterspringt. Der schraffierte Bereich stellt die Stufen dar, die bereits passiert wurden und die keine Rolle mehr spielen.">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Die rote Spur zeigt den Ball, der die Stufen der schwarzen Treppe hinunterspringt. Der schraffierte Bereich stellt die Stufen dar, die bereits passiert wurden und die keine Rolle mehr spielen."></a>
       <figcaption>Wenn der Ball nach rechts geht, kann man das Gittergestell dahinter weglassen.</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ o-|\
     <h3>Wenn sich die Richtung der Veränderung nicht ändert</h3>
     <p>Die erste Maßnahme gilt, wenn eine Variable während der gesamten Simulation in eine Richtung bewegt wird. In einem Modell mit geteilter Fläche nimmt die horizontale Position des Balls stets zu. Wenn er einen Abschnitt überschreitet, werden die Bedingungen dieses Abschnitts nie wieder erfüllt. Diese Eigenschaft kann vor der Simulation mithilfe von Model-Checking-Techniken überprüft werden, sodass nicht mehr benötigte Schutzvorrichtungen im Verlauf der Ausführung sicher entfernt werden können.</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Die rote Linie, die von α zur Zeit 0 bis β zur maximalen Zeit ansteigt, stellt eine Variable dar, die im Verlauf der Simulation weiter zunimmt.">
       <figcaption>Eine gleichmäßige Monotonie bedeutet, dass die Richtung der Veränderung über das gesamte simulierte Intervall beibehalten wird.</figcaption>
     </figure>
@@ -165,7 +165,7 @@ o-|\
     <h3>Wenn sich die Richtung der Veränderung unterwegs ändert</h3>
     <p>Viele reale Systeme bewegen sich nicht ewig in eine Richtung. Variablen können zunehmen, die Richtung ändern und wieder abnehmen. In der Arbeit wurde daher die zweite Vorgehensweise gezeigt. Zuerst wird eine Richtung angenommen, diese Annahme mit Assertions überwacht, und wenn sich die Richtung ändert, wird der Abbauprozess von diesem Zeitpunkt an neu gestartet. Guard-Statements, die für ein monotones Intervall entfernt wurden, werden wieder eingesetzt, wenn das nächste Intervall beginnt.</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Die fünf Diagramme zeigen, wie sich nacheinander Intervalle mit angenommener Zunahme, das Scheitern von Assertions, neue Intervalle mit Abnahme, ein zweites Scheitern und schließlich ein monotones Intervall herausbilden.">
       <figcaption>Ein Assertionsfehlschlag teilt das sich ändernde Verhalten in Abschnitte, die jeweils als monoton behandelt werden können.</figcaption>
     </figure>
@@ -176,8 +176,8 @@ o-|\
     <p>Wir haben eine Umsetzung zur Bewältigung einheitlicher Monotonie entwickelt und das Modell mit unterteilten Flächen bewertet. Sowohl der ursprüngliche Algorithmus als auch die vorgeschlagene Methode benötigen mehr Zeit, je mehr Segmente es gibt. Allerdings war der Arbeitsaufwand bei der vorgeschlagenen Methode durchgehend geringer. Wenn man die angepassten Kurven vergleicht, sinkt der Koeffizient der höchsten Ordnung von 1,1463 auf 0,6083, wodurch sich in diesem Benchmark die gesamte Simulationszeit etwa halbierte.</p>
     <p>Dies ist keine Behauptung, dass jedes HydLa-Modell doppelt so schnell wird. Es zeigt vielmehr, wo diese Methode wirksam ist – nämlich bei Modellen, die viele Guards haben, deren Richtungsänderung nachgewiesen werden kann und bei denen die Guards während der Ausführung dauerhaft irrelevant werden.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik der Simulationszeit in Bezug auf N. Über den gesamten Bereich von 10 bis 200 Flächensegmenten liegt die vorgeschlagene Methode unter der ursprünglichen Methode, und bei N=200 beträgt sie etwa 250 Sekunden im Vergleich zu etwa 470 Sekunden.">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik der Simulationszeit in Bezug auf N. Über den gesamten Bereich von 10 bis 200 Flächensegmenten liegt die vorgeschlagene Methode unter der ursprünglichen Methode, und bei N=200 beträgt sie etwa 250 Sekunden im Vergleich zu etwa 470 Sekunden."></a>
       <figcaption>In dem bewerteten Modell benötigt die vorgeschlagene Methode (Quadrat) etwa die Hälfte der Zeit des ursprünglichen Algorithmus (Kreis).</figcaption>
     </figure>
   </section>

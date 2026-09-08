@@ -125,8 +125,8 @@ o-|\
     <p>Una palla che rimbalza è un esempio chiaro di un sistema ibrido. In aria, posizione e velocità cambiano continuamente, mentre nel momento in cui tocca il pavimento avviene un evento discreto, il rimbalzo. Anche termostati, automobili e robot, pur su scale diverse, possiedono internamente gli stessi due tipi di cambiamento.</p>
     <p>Per la valutazione è stato utilizzato un modello in cui una palla che si muove orizzontalmente rimbalza su una superficie suddivisa in più settori. Ogni settore della superficie ha una regola condizionale del tipo "se la palla arriva in questo intervallo, rimbalza". Aumentando il numero di settori, aumenta la gamma degli oggetti che si possono rappresentare, ma aumentano anche le condizioni da esaminare per il simulatore.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Codice sorgente HydLa che definisce il comportamento di una palla che si muove orizzontalmente e rimbalza su uno qualsiasi dei N settori di superfici adiacenti.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Codice sorgente HydLa che definisce il comportamento di una palla che si muove orizzontalmente e rimbalza su uno qualsiasi dei N settori di superfici adiacenti."></a>
       <figcaption>Un breve modello HydLa descrive una superficie suddivisa in una palla e <em>N</em> sezioni con guardia.</figcaption>
     </figure>
   </section>
@@ -147,8 +147,8 @@ o-|\
     <h2>Approccio — Rimuovere in sicurezza le condizioni che non si realizzeranno mai più</h2>
     <p>Immagina una palla che scende saltando le scale. Quando la palla supera un gradino e continua a muoversi in avanti, quel gradino non può più influenzare la palla. Chi guarda il diagramma ignora immediatamente i gradini dietro la palla. L'algoritmo originale continuava invece a esaminarli uno a uno.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La traiettoria rossa indica la palla che scende saltando i gradini neri della scala. L'area tratteggiata rappresenta i gradini già superati e ormai irrilevanti.">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La traiettoria rossa indica la palla che scende saltando i gradini neri della scala. L'area tratteggiata rappresenta i gradini già superati e ormai irrilevanti."></a>
       <figcaption>Man mano che la palla si muove verso destra, si può saltare la guardia del gradino con la rete dietro di essa.</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ o-|\
     <h3>Quando la direzione del cambiamento non cambia</h3>
     <p>La prima misura si applica quando una variabile si muove in una sola direzione per tutta la simulazione. In un modello con la superficie suddivisa, la posizione orizzontale della palla aumenta sempre. Una volta superata una sezione, le condizioni di quella sezione non saranno più soddisfatte. Questa proprietà può essere verificata prima della simulazione tramite tecniche di model checking, quindi le guardie non più necessarie possono essere rimosse in sicurezza man mano che l'esecuzione procede.</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="La linea rossa che sale da α al tempo 0 fino a β al tempo massimo rappresenta una variabile che continua ad aumentare durante tutta la simulazione.">
       <figcaption>La monotonia uniforme significa che la direzione del cambiamento viene mantenuta su tutto l'intervallo simulato.</figcaption>
     </figure>
@@ -165,7 +165,7 @@ o-|\
     <h3>Quando la direzione del cambiamento cambia a metà</h3>
     <p>Molti sistemi reali non si muovono in una sola direzione per sempre. Le variabili possono aumentare, cambiare direzione e poi diminuire. In questo contesto, il documento ha presentato una seconda corrispondenza. Prima, si assume una direzione, si monitora tale ipotesi con un'asserzione e si rifà il processo di riduzione dal momento in cui la direzione cambia. La guardia rimossa per un intervallo monotono viene ripristinata quando inizia l'intervallo successivo.</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="I cinque diagrammi mostrano come si stabiliscono successivamente l'intervallo in cui si suppone un aumento, il fallimento dell'asserzione, un nuovo intervallo di diminuzione, il secondo fallimento e l'intervallo monotono.">
       <figcaption>Il fallimento delle asserzioni suddivide il comportamento variabile in intervalli che possono essere trattati ciascuno come monotoni.</figcaption>
     </figure>
@@ -176,8 +176,8 @@ o-|\
     <p>Abbiamo implementato la gestione della monotonicità uniforme e valutato il modello suddividendo la superficie. Sia l'algoritmo originale sia il metodo proposto hanno tempi di esecuzione maggiori con l'aumentare del numero di suddivisioni. Tuttavia, il metodo proposto richiedeva costantemente meno lavoro. Confrontando le curve adattate, il coefficiente di ordine più alto è passato da 1,1463 a 0,6083, e in questo benchmark il tempo totale di simulazione si è ridotto circa della metà.</p>
     <p>Questo non è un'affermazione che ogni modello HydLa diventerà il doppio più veloce. Ciò che viene indicato è dove questo metodo funziona: modelli che hanno molti oggetti con guardie, nei quali la direzione delle variazioni può essere dimostrata e le guardie divengono permanentemente irrilevanti durante l'esecuzione.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafico del tempo di simulazione rispetto a N. In tutto il intervallo da 10 a 200 suddivisioni della superficie, il metodo proposto rimane al di sotto del metodo originale, e per N=200 si attesta a circa 250 secondi rispetto a circa 470 secondi.">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafico del tempo di simulazione rispetto a N. In tutto il intervallo da 10 a 200 suddivisioni della superficie, il metodo proposto rimane al di sotto del metodo originale, e per N=200 si attesta a circa 250 secondi rispetto a circa 470 secondi."></a>
       <figcaption>Nel modello valutato, il metodo proposto (quadrato) impiega circa la metà del tempo rispetto all'algoritmo originale (cerchio).</figcaption>
     </figure>
   </section>

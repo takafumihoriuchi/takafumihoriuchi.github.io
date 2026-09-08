@@ -125,8 +125,8 @@ o-|\
     <p>A bouncing ball is a clear example of a hybrid system. In the air, its position and velocity change continuously, and the moment it hits the floor, a discrete event of bouncing occurs. Thermostats, cars, and robots also have the same two types of changes internally, though on different scales.</p>
     <p>For the evaluation, a model was used in which a ball moving horizontally bounces off a surface divided into multiple sections. Each section of the surface has a conditional rule that 'the ball will bounce back if it comes into this area.' Increasing the number of sections allows for more objects to be represented, but at the same time, the conditions that the simulator needs to check also increase.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="assets/figure-1.webp" width="950" height="600" alt="HydLa source code that defines the behavior of a ball moving horizontally and bouncing off one of the N adjacent surface segments.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="assets/figure-1.webp"><img src="assets/figure-1.webp" width="950" height="600" alt="HydLa source code that defines the behavior of a ball moving horizontally and bouncing off one of the N adjacent surface segments."></a>
       <figcaption>A short HydLa model describes a surface divided into one ball and <em>N</em> guarded compartments.</figcaption>
     </figure>
   </section>
@@ -147,8 +147,8 @@ o-|\
     <h2>Approach — Safely remove conditions that will never be met again</h2>
     <p>Imagine a ball bouncing down a staircase. Once it has passed a step and continues forwards, that step can no longer affect it. A person looking at the diagram immediately ignores the steps behind the ball; the original algorithm continued to inspect every one.</p>
 
-    <figure class="paper-figure">
-      <img src="assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="The red trace shows the ball descending the black steps while bouncing. The hatched area represents the steps that are already passed and no longer relevant.">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="assets/figure-2.webp"><img src="assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="The red trace shows the ball descending the black steps while bouncing. The hatched area represents the steps that are already passed and no longer relevant."></a>
       <figcaption>As the ball moves to the right, the guard on the shaded step behind it can be skipped.</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ o-|\
     <h3>When the direction of change does not change</h3>
     <p>The first measure applies when a variable moves in only one direction throughout the entire simulation. In a model with divided surfaces, the horizontal position of the ball always increases. Once it passes a certain section, the conditions of that section will never be satisfied again. Since this property can be verified before the simulation using model checking techniques, guards that become unnecessary as the execution progresses can be safely removed.</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="The red line, rising from α at time 0 to β at the maximum time, represents a variable that continues to increase throughout the simulation.">
       <figcaption>Uniform monotonicity means that the direction of change is maintained throughout the interval being simulated.</figcaption>
     </figure>
@@ -165,7 +165,7 @@ o-|\
     <h3>In cases where the direction of change reverses midway</h3>
     <p>Many real-world systems do not move in only one direction indefinitely. Variables can increase, change direction, and then decrease. The paper therefore presented a second approach. First, the direction is assumed, and this assumption is monitored with assertions, and when the direction changes, the reduction process is restarted from that point. Guards removed for a single monotonic interval are restored when the next interval begins.</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="The five diagrams show the progression of intervals assuming an increase, assertion failures, new intervals of decrease, a second failure, and finally a monotone interval being determined one after another.">
       <figcaption>A failed assertion divides the changing behavior into intervals that can each be treated as monotonic.</figcaption>
     </figure>
@@ -176,8 +176,8 @@ o-|\
     <p>We implemented support for uniform monotonicity and evaluated it using a model with subdivided surfaces. Both the original algorithm and the proposed method take longer as the number of sections increases. However, the proposed method consistently required less work. Comparing the fitted curves, the highest-order coefficient decreased from 1.1463 to 0.6083, and in this benchmark, the total simulation time was roughly halved.</p>
     <p>This is not a claim that every HydLa model will run twice as fast. What it shows is where this method is effective — in models with many guarded objects, where the directions of change can be proven, and where guards become permanently irrelevant during execution.</p>
 
-    <figure class="paper-figure">
-      <img src="assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Graph of simulation time versus N. Across the entire range from 10 to 200 surface divisions, the proposed method stays below the original method, and at N=200 it is about 250 seconds compared to approximately 470 seconds.">
+    <figure class="paper-figure line-art result-figure">
+      <a href="assets/figure-4.webp"><img src="assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Graph of simulation time versus N. Across the entire range from 10 to 200 surface divisions, the proposed method stays below the original method, and at N=200 it is about 250 seconds compared to approximately 470 seconds."></a>
       <figcaption>In the evaluated models, the proposed method (square) takes about half the time of the original algorithm (circle).</figcaption>
     </figure>
   </section>

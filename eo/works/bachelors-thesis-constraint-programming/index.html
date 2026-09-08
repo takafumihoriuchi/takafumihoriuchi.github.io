@@ -125,8 +125,8 @@ o-|\
     <p>La saltanta pilko estas klara ekzemplo de hibrida sistemo. En aerospaco ĝia pozicio kaj rapido ŝanĝiĝas kontinue, sed kiam ĝi frapas la plankon, okazas disreta evento de reboto. Termostato, aŭtomobilo kaj roboto ankaŭ enhavas la samajn du tipojn de ŝanĝoj interne, kvankam sur malsamaj skaloj.</p>
     <p>Por taksado, oni uzis modelon en kiu horizontale moviĝanta pilko rebatis sur surfaco dividita en plurajn sekciojn. Ĉiu sekcio havas regulon kun kondiĉo: 'se la pilko atingas ĉi tiun gamon, ĝi rebatos'. Pliigante la nombro de sekcioj, oni povas reprezenti pli da objektoj, sed ankaŭ la simulatoro devas esplori pli da kondiĉoj.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Fonto-kodo de HydLa kiu difinas la konduton de pilko moviĝanta horizontale kaj rebatiĝanta en iu ajn el la najbaraj N-flankaj segmentoj.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Fonto-kodo de HydLa kiu difinas la konduton de pilko moviĝanta horizontale kaj rebatiĝanta en iu ajn el la najbaraj N-flankaj segmentoj."></a>
       <figcaption>La mallonga modelo de HydLa priskribas surfacon dividitan en unu pilkon kaj <em>N</em> sekciojn kun gardo.</figcaption>
     </figure>
   </section>
@@ -147,8 +147,8 @@ o-|\
     <h2>Alproksimiĝo — sekure forigi kondiĉojn, kiujn ne eblas plu ricevi</h2>
     <p>Bonvolu imagi pilkon malsupren saltantan ŝtuparon. Se la pilko preterpasas unu paŝon kaj daŭre progresas antaŭen, tiu paŝo jam ne povas influi la pilkon. Homo rigardanta la diagramon tuj ignoras la paŝojn malantaŭ la pilko. La originala algoritmo daŭre kontrolis ĉiun el ili unu post alia.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Ruĝa spuro montras pilkon desupreniĝantan la nigrajn ŝtuparojn dum ĝi saltas de paŝo al paŝo. Ombrita regiono reprezentas paŝojn jam preterpasitajn kaj ne plu rilatajn.">
+    <figure class="paper-figure line-art keeps-colour">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Ruĝa spuro montras pilkon desupreniĝantan la nigrajn ŝtuparojn dum ĝi saltas de paŝo al paŝo. Ombrita regiono reprezentas paŝojn jam preterpasitajn kaj ne plu rilatajn."></a>
       <figcaption>Kiam la pilko moviĝas dekstren, la gardo de la ombrita tavolo malantaŭ ĝi povas esti preterlasita.</figcaption>
     </figure>
 
@@ -157,7 +157,7 @@ o-|\
     <h3>Kiam la direkto de ŝanĝo ne ŝanĝiĝas</h3>
     <p>La unua aliro taŭgas kiam variablo moviĝas unuflanken tra la tuta simulaĵo. En modelo kun dividitaj surfacoj, la horizontala pozicio de la pilko ĉiam kreskas. Post kiam ĝi transpasos iun sekcion, la kondiĉoj de tiu sekcio neniam plu estos plenigitaj. Ĉi tiu trajto povas esti kontrolita antaŭ la simulaĵo per modela kontrola tekniko, do la gardoj, kiuj fariĝis nenecesaj dum la ekzekuto, povas esti sekure forigitaj.</p>
 
-    <figure class="paper-figure figure-3">
+    <figure class="paper-figure line-art keeps-colour figure-3">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="La ruĝa linio kiu supreniĝas de α je tempo 0 ĝis β ĉe la maksimuma tempo reprezentas la variablon kiu daŭre kreskas dum la simulado.">
       <figcaption>Unuforme monotoneco signifas, ke la direkto de ŝanĝo estas konservata tra la tuta simula intervalo.</figcaption>
     </figure>
@@ -165,7 +165,7 @@ o-|\
     <h3>Kiam la direkto de ŝanĝo ŝanĝiĝas meze</h3>
     <p>Multaj realaj sistemoj ne moviĝas ĉiam en unu direkto. Variabloj povas pliiĝi, ŝanĝi direkton kaj poste malpliiĝi. Tial la artikolo prezentis duan aliron. Unue oni supozas direkton, monitoras tiun supozon per aserto, kaj refaras la reduktan procezon ekde la momento kiam la direkto ŝanĝiĝas. Gardoj forigitaj por unu monotona segmento estas revenigitaj kiam la sekva segmento komenciĝas.</p>
 
-    <figure class="paper-figure figure-5">
+    <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="La kvin figuroj montras la ordon, en kiu sekcioj kun supozita kresko, malsukcesoj de asertoj, sekcioj kun nova malkresko, dua malsukceso, kaj monotona sekcio estas unu post alia determinataj.">
       <figcaption>La fiasko de aserto dividas la ŝanĝantajn kondutojn en intervalojn kiuj povas esti traktataj kiel monotonaj.</figcaption>
     </figure>
@@ -176,8 +176,8 @@ o-|\
     <p>Ni efektivigis respondon al uniforma monotoneco kaj taksis ĝin per modelo kun dividitaj surfacoj. Tamen, ĉu la originala algoritmo aŭ la proponita metodo, la bezonata tempo pliiĝas kiam la nombro de segmentoj kreskas. Tamen, la proponita metodo konstante postulas malpli da laboro. Komparante la kongruajn kurbojn, la plej alta koeficiento malkreskis de 1.1463 al 0.6083, kaj en ĉi tiu referenca testado la tuta simula tempo reduktiĝis preskaŭ duoble.</p>
     <p>Ĉi tio ne estas aserto, ke ĉiuj modeloj de HydLa duobliĝos je rapideco. Ĝi montras, kie ĉi tiu metodo funkcias — en modeloj kun multaj celoj kun gardoj, kie la direkto de ŝanĝo povas esti pruvita, kaj dum la ekzekuto la gardoj fariĝas permanente neapartenantaj.</p>
 
-    <figure class="paper-figure">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafeo de la simulada tempo rilate al N. La proponita metodo restas sub la originala metodo en la tuta intervalo de 10 ĝis 200 sekcioj, kaj ĉe N=200 ĝi atingas proksimume 250 sekundojn kontraste al ĉirkaŭ 470 sekundoj.">
+    <figure class="paper-figure line-art result-figure">
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafeo de la simulada tempo rilate al N. La proponita metodo restas sub la originala metodo en la tuta intervalo de 10 ĝis 200 sekcioj, kaj ĉe N=200 ĝi atingas proksimume 250 sekundojn kontraste al ĉirkaŭ 470 sekundoj."></a>
       <figcaption>En la taksita modelo, la proponita metodo (kvadrato) necesas ĉirkaŭ duonon de la tempo kompare kun la originala algoritmo (circulo).</figcaption>
     </figure>
   </section>

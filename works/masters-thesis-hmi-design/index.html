@@ -157,8 +157,8 @@
     <p>Therefore, the operator's central field of vision is used as the boundary. Objects within the field of vision are considered 'operable objects' that the operator is aware of. Objects outside of it are considered 'protected objects' that might be overlooked. Regardless of the position of their gaze, people are always considered protected objects.</p>
     <p>Gaze is not used to issue commands. Instead, the system translates the operator’s cognitive state into conditions that determine where the robot is allowed to move.</p>
 
-    <figure class="paper-figure figure-1">
-      <img src="assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="View from above. In front of the robot, the operator's central vision is depicted as a cone. Target A, which is inside the cone, is shown as a white circle, while targets B, C, and D, which are outside, are represented by dark squares. Two people are standing inside and outside the cone.">
+    <figure class="paper-figure line-art figure-1">
+      <a href="assets/figure-1.webp"><img src="assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="View from above. In front of the robot, the operator's central vision is depicted as a cone. Target A, which is inside the cone, is shown as a white circle, while targets B, C, and D, which are outside, are represented by dark squares. Two people are standing inside and outside the cone."></a>
       <figcaption>Target A, which is within the operator's central field of vision, can be operated, while targets B, C, and D, which are outside, are to be protected. People are protected regardless of where they are standing.</figcaption>
     </figure>
   </section>
@@ -169,8 +169,8 @@
     <p>On the other hand, even if you temporarily look away from the object you are already touching, ongoing work is not stopped. This is because if grasping or operation is interrupted just by averting your gaze, it actually becomes unstable. Only approaching people is treated separately, and it is restricted regardless of whether the operator is watching or not.</p>
     <p>The aim was not to uniformly slow down operations for safety. It is to maintain the robot's capabilities within the operator's grasp and to protect only the areas that are beyond their attention, thereby achieving both safety and operability.</p>
 
-    <figure class="paper-figure figure-2">
-      <img src="assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="A flowchart that starts from a state of free movement. It branches based on whether an object is nearby, whether it is a person, whether the manipulator is in the direction of approaching the person, or whether the object is in the gaze area, leading to precise operations, gradual stopping, or locking.">
+    <figure class="paper-figure line-art figure-2">
+      <a href="assets/figure-2.webp"><img src="assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="A flowchart that starts from a state of free movement. It branches based on whether an object is nearby, whether it is a person, whether the manipulator is in the direction of approaching the person, or whether the object is in the gaze area, leading to precise operations, gradual stopping, or locking."></a>
       <figcaption>In the decision-making process, the node that reads the operator's active parameters is only the one for 'whether the target is in the gaze area.' All other branches operate on passive sensor information.</figcaption>
     </figure>
   </section>
