@@ -1166,6 +1166,38 @@ nav ul {
    name or takes the next line whole. It is 190px at this size, so it fits the
    column on a 320px screen with room to spare. */
 
+/* The Japanese name is the same problem one level down. It is written as a
+   name with its reading — 堀内 貴文（ほりうち たかふみ）— and each half is two
+   words with a space between them, which under `word-break: keep-all` is the
+   only place the line can turn. Left to itself a phone turns it wherever the
+   space happens to fall: 「堀内 貴文（ほりうち」 with 「たかふみ）」 alone
+   underneath, which splits a reading across two lines and reads as a mistake.
+
+   The one break the name is allowed inside it is written into the markup as
+   `<wbr>` between the two spans — the same way the Japanese work titles say
+   where they may turn. It has to sit between them rather than inside either:
+   the rules below hold each half together, and a hold suppresses a `<wbr>`
+   underneath it.
+
+   The name is 133px at this size and fits every column the site has, so it is
+   simply never broken. The reading is 323px, which fits the 327px column of a
+   375px phone and does not fit the 272px one of a 320px phone — so it is held
+   whole by being made an atomic box instead, and clamped to the column. An
+   inline-block takes the width it wants when the column can give it and the
+   column's width when it cannot: it moves to its own line whole while it
+   fits, and only turns at its own space when nothing else will do. That is a
+   floor rather than a breakpoint — it follows the font the reader actually
+   has, and no width has to be guessed here.
+
+   The order the line gives way in is then: the role drops first, then the
+   reading, and only on the narrowest phones does the reading itself turn. */
+.home-identity h1 .name { white-space: nowrap; }
+
+.home-identity h1 .reading {
+  display: inline-block;
+  max-width: 100%;
+}
+
 /* With a tagline the index lockup is three lines rather than two, and holding
    0.35rem all the way down would set them as three unrelated lines. The
    tagline qualifies the name directly above it and keeps the tight step; the
