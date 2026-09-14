@@ -234,7 +234,11 @@ ascii-hero[data-scene="philosophy"] + section { margin-top: 5.5rem; }
    twice below. The distances were chosen by eye at a 900px window rather than
    by multiplying the section step: what the extra air buys is that the
    paragraph reads as a coda and not as a fourth list. */
-section:has(+ ascii-hero[data-scene="footer-rest"]) { margin-top: 9rem; }
+/* Commented out while the closing thought is hidden in the index pages. With
+   that section in a comment, the earlier-work list becomes the section right
+   before the sketch, and this rule would push it 9rem down the page. Bring it
+   back together with the section.
+section:has(+ ascii-hero[data-scene="footer-rest"]) { margin-top: 9rem; } */
 
 /* The break between the work and the closing thought is drawn as an asterism,
    not a line. The site has no rules anywhere, and three marks in the heading's
@@ -294,6 +298,13 @@ ascii-hero[data-scene="footer-rest"] {
 
 ascii-hero[data-scene="footer-rest"] + footer { margin-top: 1.5rem; }
 
+/* While the closing thought is hidden, the sketch follows the earlier-work
+   list directly, and 7rem after a list whose sections are 4.5–6rem apart
+   reads as one more step of the list rather than as its epilogue. It takes
+   the 9rem the closing thought had above it instead. Scoped to the list, so
+   the sketch goes back to 7rem under the thought when the section returns. */
+section:has(.works-more) + ascii-hero[data-scene="footer-rest"] { margin-top: 9rem; }
+
 /* The action is drawn on thirteen rows where the other scenes use seven or
    eight: the hammer needs the height to swing through, and the key needs room
    to tilt either side of its pivot. At the shared nine-to-two box the bottom
@@ -342,6 +353,7 @@ ascii-hero:not(:defined) .ascii-hero__canvas {
     aspect-ratio: 11 / 2;
     margin-top: 5.75rem;
   }
+  section:has(.works-more) + ascii-hero[data-scene="footer-rest"] { margin-top: 7.5rem; }
   ascii-hero[data-scene="footer-rest"] + footer { margin-top: 1.25rem; }
 }
 
