@@ -118,26 +118,44 @@
     <!-- Keep the date inside every card title in the form “Title (Month Year)”.
          For work that is not yet complete, the month is when the work began;
          its status belongs in the description, not in place of the date. -->
-    <ul class="works">
-      <li>
-        <a class="work" href="works/personal-fit-ui/">
-          <img src="works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">Personalising Interfaces Through Constraint-Driven Design (August 2026)</span>
-            <span class="work-desc">Generating interfaces tailored to cognitive, sensory, and physical characteristics within the boundaries of scientific evidence and design constraints. A car-navigation prototype was used to examine both the potential and the limitations of the approach.</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="work" href="works/my-own-pokemon-generation/">
-          <img src="works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">My Own Pokémon Generation (July 2026)</span>
-            <span class="work-desc">A new Pokémon species is generated from the player&#x27;s words during play, then brought into the game as an encounter they can catch. What I designed is not what the AI makes, but what it is not allowed to break.</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- Three entries now, so this list takes the same control the section
+         below it does: the same checkbox, panel and label, and every rule and
+         measurement that governs them. Only the id differs — two labels cannot
+         point at one checkbox. The note under the next heading is where the
+         mechanism is written down; it is not repeated here. -->
+    <input class="works-toggle" type="checkbox" id="more-recent-work" autocomplete="off">
+    <div class="works-panel">
+      <ul class="works">
+        <li>
+          <a class="work" href="works/practice-log-n-share/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Practice Log n Share (September 2026)</span>
+              <span class="work-desc">A personal project. The write-up is in preparation.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/personal-fit-ui/">
+            <img src="works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">Personalising Interfaces Through Constraint-Driven Design (August 2026)</span>
+              <span class="work-desc">Generating interfaces tailored to cognitive, sensory, and physical characteristics within the boundaries of scientific evidence and design constraints. A car-navigation prototype was used to examine both the potential and the limitations of the approach.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/my-own-pokemon-generation/">
+            <img src="works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">My Own Pokémon Generation (July 2026)</span>
+              <span class="work-desc">A new Pokémon species is generated from the player&#x27;s words during play, then brought into the game as an encounter they can catch. What I designed is not what the AI makes, but what it is not allowed to break.</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label class="works-more" for="more-recent-work"><span class="works-more__box">view more</span></label>
   </section>
 
   <section>

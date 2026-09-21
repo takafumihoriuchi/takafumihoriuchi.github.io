@@ -90,26 +90,44 @@
 
   <section>
     <h2>أحدث الأعمال بمبادرة ذاتية</h2>
-    <ul class="works">
-      <li>
-        <a class="work" href="works/personal-fit-ui/">
-          <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">تحسين فردي لواجهة المستخدم باستخدام التصميم بالقيود (أغسطس 2026)</span>
-            <span class="work-desc">إنشاء واجهة مستخدم تتوافق مع الخصائص الإدراكية والحسية والجسدية، ضمن الأسس العلمية وقيود التصميم. تم اختبار إمكانياتها وحدودها في نظام الملاحة بالسيارة.</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="work" href="works/my-own-pokemon-generation/">
-          <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">توليد البوكيمون الخاص بي في العالم(يوليو 2026)</span>
-            <span class="work-desc">أثناء اللعبة، تم إنشاء نوع جديد من الكلمات التي يقولها اللاعب، وجعلت تجربة اللقاء والقبض جزءًا واحدًا من التجربة. إنه نموذج بحثي أولي صمّم ليس حول ما يجعله الذكاء الاصطناعي يخلق، بل حول ما يجعله يحمي.</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- Three entries now, so this list takes the same control the section
+         below it does: the same checkbox, panel and label, and every rule and
+         measurement that governs them. Only the id differs — two labels cannot
+         point at one checkbox. The note under the next heading is where the
+         mechanism is written down; it is not repeated here. -->
+    <input class="works-toggle" type="checkbox" id="more-recent-work" autocomplete="off">
+    <div class="works-panel">
+      <ul class="works">
+        <li>
+          <a class="work" href="works/practice-log-n-share/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Practice Log n Share (سبتمبر 2026)</span>
+              <span class="work-desc">مشروع شخصي. النص قيد الإعداد.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/personal-fit-ui/">
+            <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">تحسين فردي لواجهة المستخدم باستخدام التصميم بالقيود (أغسطس 2026)</span>
+              <span class="work-desc">إنشاء واجهة مستخدم تتوافق مع الخصائص الإدراكية والحسية والجسدية، ضمن الأسس العلمية وقيود التصميم. تم اختبار إمكانياتها وحدودها في نظام الملاحة بالسيارة.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/my-own-pokemon-generation/">
+            <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">توليد البوكيمون الخاص بي في العالم(يوليو 2026)</span>
+              <span class="work-desc">أثناء اللعبة، تم إنشاء نوع جديد من الكلمات التي يقولها اللاعب، وجعلت تجربة اللقاء والقبض جزءًا واحدًا من التجربة. إنه نموذج بحثي أولي صمّم ليس حول ما يجعله الذكاء الاصطناعي يخلق، بل حول ما يجعله يحمي.</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label class="works-more" for="more-recent-work"><span class="works-more__box">عرض المزيد</span></label>
   </section>
 
   <section>

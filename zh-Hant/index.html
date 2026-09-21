@@ -90,26 +90,44 @@
 
   <section>
     <h2>近期自主專案</h2>
-    <ul class="works">
-      <li>
-        <a class="work" href="works/personal-fit-ui/">
-          <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">透過約束型設計進行UI的個別最佳化（2026年8月）</span>
-            <span class="work-desc">根據認知、感覺和身體特性生成用戶界面，並在科學根據與設計限制之內進行。已在汽車導航中驗證其可能性與限制。</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="work" href="works/my-own-pokemon-generation/">
-          <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">生成世界上只有自己的寶可夢 （2026年7月）</span>
-            <span class="work-desc">在遊戲的途中，從玩家的話語生成新種，並將遇見與捕捉整合為一個體驗。這是一個研究原型，設計重點不是讓 AI 創造什麼，而是讓它守護什麼。</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- Three entries now, so this list takes the same control the section
+         below it does: the same checkbox, panel and label, and every rule and
+         measurement that governs them. Only the id differs — two labels cannot
+         point at one checkbox. The note under the next heading is where the
+         mechanism is written down; it is not repeated here. -->
+    <input class="works-toggle" type="checkbox" id="more-recent-work" autocomplete="off">
+    <div class="works-panel">
+      <ul class="works">
+        <li>
+          <a class="work" href="works/practice-log-n-share/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Practice Log n Share（2026年9月）</span>
+              <span class="work-desc">個人專案。記錄正在籌備中。</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/personal-fit-ui/">
+            <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">透過約束型設計進行UI的個別最佳化（2026年8月）</span>
+              <span class="work-desc">根據認知、感覺和身體特性生成用戶界面，並在科學根據與設計限制之內進行。已在汽車導航中驗證其可能性與限制。</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/my-own-pokemon-generation/">
+            <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">生成世界上只有自己的寶可夢 （2026年7月）</span>
+              <span class="work-desc">在遊戲的途中，從玩家的話語生成新種，並將遇見與捕捉整合為一個體驗。這是一個研究原型，設計重點不是讓 AI 創造什麼，而是讓它守護什麼。</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label class="works-more" for="more-recent-work"><span class="works-more__box">查看更多</span></label>
   </section>
 
   <section>

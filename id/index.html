@@ -89,26 +89,44 @@
 
   <section>
     <h2>Karya terbaru atas inisiatif sendiri</h2>
-    <ul class="works">
-      <li>
-        <a class="work" href="works/personal-fit-ui/">
-          <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">Optimalisasi Individu UI dengan Desain Berbasis Batasan (Agustus 2026)</span>
-            <span class="work-desc">Membuat UI yang sesuai dengan karakteristik kognitif, sensorik, dan fisik, di dalam dasar ilmiah dan batasan desain. Kemungkinan dan keterbatasannya diuji pada navigasi mobil.</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="work" href="works/my-own-pokemon-generation/">
-          <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">Pembuatan Pokémon yang unik untuk diri sendiri di dunia(Juli 2026)</span>
-            <span class="work-desc">Di tengah permainan, spesies baru dibuat dari kata-kata pemain, menjadikan pertemuan dan penangkapannya sebagai satu pengalaman. Ini adalah prototipe penelitian yang merancang bukan apa yang dibuat oleh AI, tetapi apa yang harus dilindungi.</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- Three entries now, so this list takes the same control the section
+         below it does: the same checkbox, panel and label, and every rule and
+         measurement that governs them. Only the id differs — two labels cannot
+         point at one checkbox. The note under the next heading is where the
+         mechanism is written down; it is not repeated here. -->
+    <input class="works-toggle" type="checkbox" id="more-recent-work" autocomplete="off">
+    <div class="works-panel">
+      <ul class="works">
+        <li>
+          <a class="work" href="works/practice-log-n-share/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Practice Log n Share (September 2026)</span>
+              <span class="work-desc">Proyek pribadi. Tulisannya sedang disiapkan.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/personal-fit-ui/">
+            <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">Optimalisasi Individu UI dengan Desain Berbasis Batasan (Agustus 2026)</span>
+              <span class="work-desc">Membuat UI yang sesuai dengan karakteristik kognitif, sensorik, dan fisik, di dalam dasar ilmiah dan batasan desain. Kemungkinan dan keterbatasannya diuji pada navigasi mobil.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/my-own-pokemon-generation/">
+            <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">Pembuatan Pokémon yang unik untuk diri sendiri di dunia(Juli 2026)</span>
+              <span class="work-desc">Di tengah permainan, spesies baru dibuat dari kata-kata pemain, menjadikan pertemuan dan penangkapannya sebagai satu pengalaman. Ini adalah prototipe penelitian yang merancang bukan apa yang dibuat oleh AI, tetapi apa yang harus dilindungi.</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label class="works-more" for="more-recent-work"><span class="works-more__box">lihat lainnya</span></label>
   </section>
 
   <section>

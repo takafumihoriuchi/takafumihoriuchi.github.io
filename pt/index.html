@@ -89,26 +89,44 @@
 
   <section>
     <h2>Trabalhos recentes de iniciativa própria</h2>
-    <ul class="works">
-      <li>
-        <a class="work" href="works/personal-fit-ui/">
-          <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">Otimização individualizada de UI pelo design por restrições (agosto de 2026)</span>
-            <span class="work-desc">Gerar uma interface de usuário (UI) adaptada às características cognitivas, sensoriais e físicas, dentro de fundamentos científicos e restrições de design. Verificamos suas possibilidades e limitações usando um GPS automotivo.</span>
-          </span>
-        </a>
-      </li>
-      <li>
-        <a class="work" href="works/my-own-pokemon-generation/">
-          <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
-          <span>
-            <span class="work-title">Geração do meu próprio Pokémon no mundo(julho de 2026)</span>
-            <span class="work-desc">Durante o jogo, novas espécies foram geradas a partir das palavras dos jogadores, transformando o encontro e a captura em uma única experiência. Um protótipo de pesquisa que projetou não o que a IA deveria criar, mas o que deveria proteger.</span>
-          </span>
-        </a>
-      </li>
-    </ul>
+    <!-- Three entries now, so this list takes the same control the section
+         below it does: the same checkbox, panel and label, and every rule and
+         measurement that governs them. Only the id differs — two labels cannot
+         point at one checkbox. The note under the next heading is where the
+         mechanism is written down; it is not repeated here. -->
+    <input class="works-toggle" type="checkbox" id="more-recent-work" autocomplete="off">
+    <div class="works-panel">
+      <ul class="works">
+        <li>
+          <a class="work" href="works/practice-log-n-share/">
+            <span class="thumb-pending"></span>
+            <span>
+              <span class="work-title">Practice Log n Share (setembro de 2026)</span>
+              <span class="work-desc">Um projeto pessoal. O texto está em preparação.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/personal-fit-ui/">
+            <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">Otimização individualizada de UI pelo design por restrições (agosto de 2026)</span>
+              <span class="work-desc">Gerar uma interface de usuário (UI) adaptada às características cognitivas, sensoriais e físicas, dentro de fundamentos científicos e restrições de design. Verificamos suas possibilidades e limitações usando um GPS automotivo.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/my-own-pokemon-generation/">
+            <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
+            <span>
+              <span class="work-title">Geração do meu próprio Pokémon no mundo(julho de 2026)</span>
+              <span class="work-desc">Durante o jogo, novas espécies foram geradas a partir das palavras dos jogadores, transformando o encontro e a captura em uma única experiência. Um protótipo de pesquisa que projetou não o que a IA deveria criar, mas o que deveria proteger.</span>
+            </span>
+          </a>
+        </li>
+      </ul>
+    </div>
+    <label class="works-more" for="more-recent-work"><span class="works-more__box">ver mais</span></label>
   </section>
 
   <section>
