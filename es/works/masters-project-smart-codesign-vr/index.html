@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Desarrollo de un sistema VR de prototipado de objetos interactivos para niños — Takafumi Horiuchi</title>
 <meta name="description" content="Montar y hacer funcionar en VR los objetos inteligentes que los niños idean con el juego de mesa SNaP. Un proyecto colaborativo del máster implementado en Oculus Quest 2 con Unity: se eligen tres cartas —entorno, entrada y salida— y se definen a mano la condición y el comportamiento.">
@@ -79,7 +80,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Volver al portfolio de Takafumi Horiuchi">Takafumi Horiuchi</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Volver al portfolio de Takafumi Horiuchi">Takafumi Horiuchi</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="Apariencia" dir="ltr" hidden>
+    <label title="Modo claro">
+      <input type="radio" name="theme" value="light" aria-label="Modo claro">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="Modo oscuro">
+      <input type="radio" name="theme" value="dark" aria-label="Modo oscuro">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

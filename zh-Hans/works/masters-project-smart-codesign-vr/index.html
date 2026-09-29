@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>面向儿童的交互式物件原型设计VR系统的开发 — 堀内贵文</title>
 <meta name="description" content="把孩子们在SNaP桌游中构思的智能物件，放到VR空间里组装并运行起来。选择环境、输入、输出三张卡片，自己定义条件与行为——这是一个用Oculus Quest 2与Unity实现的硕士阶段合作项目。">
@@ -80,7 +81,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀内贵文的作品集首页">堀内贵文</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀内贵文的作品集首页">堀内贵文</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="外观" dir="ltr" hidden>
+    <label title="浅色模式">
+      <input type="radio" name="theme" value="light" aria-label="浅色模式">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="深色模式">
+      <input type="radio" name="theme" value="dark" aria-label="深色模式">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

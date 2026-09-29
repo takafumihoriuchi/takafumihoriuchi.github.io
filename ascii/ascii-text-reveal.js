@@ -1351,6 +1351,11 @@ async function initialize() {
     // goes, so the browser's first visible page frame contains ASCII covers,
     // never the uncovered semantic DOM that was parsed underneath.
     const ready = instances.filter((instance) => instance.prepare());
+    // Covers cache their palette. Reveal the real content if the reader
+    // changes theme while it is still forming, including offscreen covers.
+    window.addEventListener("themechange", () => {
+      ready.forEach((instance) => instance.finish("theme-change"));
+    }, { once: true });
     document.documentElement.classList.remove(PREPAINT_CLASS);
     document.documentElement.dataset.asciiLoad = "covered";
 

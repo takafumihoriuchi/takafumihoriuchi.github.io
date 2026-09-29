@@ -304,6 +304,7 @@ class AsciiHero extends HTMLElement {
       if (this._scene) this._selectVariant(true);
     };
     this._colorScheme.addEventListener("change", this._onColorSchemeChange);
+    window.addEventListener("themechange", this._onColorSchemeChange);
 
     /* A vertical pan stays native. Pointer capture on a touchscreen is
        implicit, so a scroll arrives as pointercancel while a short, still
@@ -393,6 +394,7 @@ class AsciiHero extends HTMLElement {
     this._intersectionObserver?.disconnect();
     this._motion.removeEventListener("change", this._onMotionChange);
     this._colorScheme.removeEventListener("change", this._onColorSchemeChange);
+    window.removeEventListener("themechange", this._onColorSchemeChange);
     document.removeEventListener("visibilitychange", this._onVisibilityChange);
     this.removeEventListener("pointerdown", this._onPointerDown);
     this.removeEventListener("pointermove", this._onPointerMove);
@@ -404,7 +406,8 @@ class AsciiHero extends HTMLElement {
     if (!this._scene) return;
     const name = this.clientWidth < COMPACT_BREAKPOINT ? "compact" : "wide";
     const baseVariant = this._scene.variants[name];
-    const themeName = this._colorScheme.matches ? "dark" : "light";
+    const themeName = document.documentElement.dataset.theme
+      || (this._colorScheme.matches ? "dark" : "light");
     const variant = baseVariant.themes?.[themeName] || baseVariant;
     const key = `${name}:${baseVariant.themes ? themeName : "default"}`;
     if (!force && key === this._variantKey) {
