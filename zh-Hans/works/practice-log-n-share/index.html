@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop `creativeWorkStatus`,
-     replace the status line, and swap the index's thumb-pending span for the
-     image. -->
 <title>Practice Log n Share — 堀内贵文</title>
-<meta name="description" content="个人项目。记录正在筹备中。">
+<meta name="description" content="练习时轻点一下就能记录，上课时直接把同一个画面展示给老师。为了自己的萨克斯学习，我策划并设计了这款 iPhone 应用，并与 AI 协作完成开发。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/practice-log-n-share/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
@@ -34,29 +26,23 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/practice-log-n-share/page.css">
+<script src="../../../works/figures.js" defer></script>
+<script src="../../../works/practice-log-n-share/dayscale.js" defer></script>
 <script src="../../../works/home-mark.js" defer></script>
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="Practice Log n Share">
-<meta property="og:description" content="记录正在筹备中。">
+<meta property="og:description" content="练习时轻点一下就能记录，上课时直接把同一个画面展示给老师。为了自己的萨克斯学习，我策划并设计了这款 iPhone 应用，并与 AI 协作完成开发。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/practice-log-n-share/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Practice Log n Share 的 iPhone 界面。左侧是正在计时的记录页，右侧是汇总两次课程之间练习时长与明细的分享页。">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,10 +63,13 @@
       "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/practice-log-n-share/#work",
       "name": "Practice Log n Share",
       "url": "https://takafumihoriuchi.github.io/zh-Hans/works/practice-log-n-share/",
-      "description": "个人项目。记录正在筹备中。",
-      "creativeWorkStatus": "筹备中",
+      "description": "练习时轻点一下就能记录，上课时直接把同一个画面展示给老师。为了自己的萨克斯学习，我策划并设计了这款 iPhone 应用，并与 AI 协作完成开发。",
+      "datePublished": "2026-09-29",
+      "image": "https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg",
       "inLanguage": "zh-Hans",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,49 +77,161 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀内贵文的作品集首页">堀内贵文</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀内贵文的作品集首页">Takafumi Horiuchi</a></div>
 <main>
-
   <header>
     <h1>Practice Log n Share</h1>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">筹备中</p>
+    <p class="dateline">2026年9月</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
+## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
+++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
+@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
+## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
+++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
+++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
-  <section>
+  <section id="overview">
     <h2>概览</h2>
-    <p class="lead">个人项目。记录正在筹备中。</p>
+    <p class="lead">练习时轻点一下就能记录，上课时直接把同一个画面展示给老师。为了自己的萨克斯学习，我策划并设计了这款 iPhone 应用，并与 AI 协作完成开发。</p>
+    <figure class="pl-pair">
+      <div class="pl-pair__screens">
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="记录页。上方是练习记录网格，下方是今日进度条（共54分钟）和分类卡片。“乐曲练习”已计时超过27分钟，以亮色和白色边框突出显示。" fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="分享页。汇总9月17日上课当天至24日的练习，共4小时38分钟，并展示分类条形图和无需横向滚动即可查看所有分类的每日明细表。" fetchpriority="high"></picture>
+      </div>
+      <figcaption>左侧记录，右侧分享。轻点分类开始计时，上课时展示课间练习的汇总。画面使用的是说明用虚构数据。 截图保留原应用的日语界面。</figcaption>
+    </figure>
+    <dl class="pl-facts">
+      <div><dt>职责</dt><dd>策划、UX/UI 设计、开发（与 Claude Code、Codex 协作）</dd></div>
+      <div><dt>时间</dt><dd>2026年9月</dd></div>
+      <div><dt>技术</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
+    </dl>
+    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">试用 Web 演示</a>（收录截至2026年9月20日的本人练习记录）</p>
   </section>
 
-  <section>
-    <h2>约束</h2>
+  <section id="background">
+    <h2>缘起——面对“最近练得怎么样？”，<wbr>我答不上来</h2>
+    <p>每两周上一次课，即使回答“主要练音阶”，也无法说明具体练了什么、练了多久。萨克斯挂在脖子上时很难写纸质日志，而试过的计时应用都是供自己回顾记录的工具。</p>
+    <figure class="pl-moments">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-zh-Hans.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-zh-Hans.svg" width="960" height="285" loading="lazy" decoding="async" alt="两次上课日期之间，排列着练习日的条形和休息日。将每天各分类的时长汇总成下方的一根条形，总计10小时06分钟。"></picture>
+      <figcaption>上方条形表示每日练习，红框标记上课日期。上课时展示这段时间的练习汇总。日期与时长均为说明用虚构数据，上下条形的总时长相同。</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>方法</h2>
+  <section id="recording">
+    <h2>记录——手持乐器，<wbr>轻点一下</h2>
+    <p>练习时只需操作分类卡片。轻点开始计时，点另一张切换，再点同一张停止。</p>
+    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="记录页。上方是练习记录网格，下方是今日进度条（共54分钟）和分类卡片。“乐曲练习”已计时超过27分钟，以亮色和白色边框突出显示。" loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>积累</dt><dd>至今的练习。打开应用最先看到的内容。</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>今日</dt><dd>练习顺序与时间分配。满一小时填满。</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>计时中</dt><dd>仅此卡片变亮，并以白色边框标示。</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>卡片</dt><dd>轻点切换。突出显示今日时长。</dd></div></dl></figure>
   </section>
 
-  <section>
-    <h2>结果</h2>
+  <section id="day">
+    <h2>一天——填满的进度条，<wbr>始终保持填满</h2>
+    <p>今日进度条在一小时处填满。超过一小时后，以当前总时长作为右端，避免已经填满的条形再次出现空白。</p>
+    <figure class="pl-dayscale" data-unit-hour="小时" data-unit-minute="分钟">
+      <div class="pl-dayscale__control" hidden><label for="practice-minutes">今日练习</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1小时05分钟"><output for="practice-minutes">1小时05分钟</output></div>
+      <p class="pl-dayscale__static">今日练习 — <span data-print-value>1小时05分钟</span></p>
+      <div class="pl-dayscale__row" data-scale="adopted">
+        <p>采用</p>
+        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30分钟</span><span style="--position:100">1小时05分钟</span></div>
+      </div>
+      <div class="pl-dayscale__row" data-scale="rejected">
+        <p>弃用</p>
+        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30分钟</span><span style="--position:66.6667">1小时</span><span style="--position:100">1小时30分钟</span></div>
+      </div>
+      <figcaption><span data-static-caption>练习65分钟时的比较。</span><span data-interactive-caption hidden>拖动滑块可调整今日练习时长。</span>上方为采用方案，以总时长作为右端（最少一小时）；下方为弃用方案，将刻度从60扩展到90、120分钟。超过一小时的瞬间，只有下方条形重新出现空白。</figcaption>
+    </figure>
   </section>
 
+  <section id="history">
+    <h2>积累——从第一天起，<wbr>全部看得见</h2>
+    <p>以绿色深浅表示练习日，以红框标记上课日期，横向滚动可追溯到开始记录的那一天。相比减轻渲染负担，我更看重能够查看多年的练习。</p>
+    <figure class="pl-crop">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="练习记录网格。绿色深浅表示6月至9月的练习量，红框标记每两周一次的上课日期。"></picture>
+      <figcaption>分为五档：0分钟、不满30分钟、不满60分钟、不满90分钟、90分钟及以上。打开应用时，最先看到的就是这些积累。</figcaption>
+    </figure>
+  </section>
+
+  <section id="sharing">
+    <h2>分享——课程开始时，<wbr>一屏便能说明</h2>
+    <p>把上次上课至今的练习汇总为各分类总时长和每日明细，直接展示给老师。每日表格即使缩小文字，也要在一屏内放下所有分类，免去横向滚动。</p>
+    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="分享页。汇总9月17日上课当天至24日的练习，共4小时38分钟，并展示分类条形图和无需横向滚动即可查看所有分类的每日明细表。" loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>时间</dt><dd>从上次上课日期到今天。</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>总计</dt><dd>这段时间的练习时长与天数。</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>分配</dt><dd>名称、条形、时长排在同一行。</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>明细</dt><dd>一屏容纳所有分类，无需横向滚动。</dd></div></dl><figcaption>打开图片，可放大查看每日明细。</figcaption></figure>
+  </section>
+
+  <section id="evolution">
+    <h2>演变——让卡片成为<wbr>练习的操作面板</h2>
+    <p>根据与 AI 对话整理出的规格文档搭建界面，反复亲自操作并修改。先在早期 Web 版中探索记录与分享的形式，再实现为 iPhone 应用。</p>
+    <figure class="pl-evolution">
+      <div class="pl-evolution__screens">
+        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月9日的初版。六张小型分类卡片与今日总计40分钟分别放在记录页的不同区域。"></a><p>9月9日<br>初版</p></div>
+        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月21日的 Web 版。分类与今日时长整合为大卡片，正在计时的视谱练习10分钟以亮色显示。"></a><p>9月21日<br>Web 版</p></div>
+        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="记录页。上方是练习记录网格，下方是今日进度条（共54分钟）和分类卡片。“乐曲练习”已计时超过27分钟，以亮色和白色边框突出显示。" loading="lazy" decoding="async"></picture><p>9月24日<br>iOS 1.0</p></div>
+      </div>
+      <figcaption>初版与 Web 版使用相同的虚构数据（六个分类，今日共40分钟）。iOS 1.0 使用另一组虚构数据。</figcaption>
+    </figure>
+    <dl class="pl-changes">
+      <div><dt>名称与时长放在一起</dt><dd>在卡片上突出显示今日时长，将练了什么与练了多久关联起来。</dd></div>
+      <div><dt>当前状态，一目了然</dt><dd>只让计时中的卡片变亮，其余卡片调暗。</dd></div>
+      <div><dt>操作范围留在屏幕内</dt><dd>让滚动停在整排卡片能完整显示于屏幕内的位置。</dd></div>
+    </dl>
+    <p>开发后期，反复进行了约15轮流程：Claude Code 提出潜在问题，Codex 验证并修复，由我决定是否采纳。</p>
+  </section>
+
+  <section id="touch">
+    <h2>手感——如何停下来，<wbr>亲手试过再选</h2>
+    <p>仅靠文字要求，无法做出“流畅移动、利落停稳”的手感。我与 AI 开发了可即时切换方式和数值的调节工具，在真机上比较五种方式后，选择了浏览器原生的滚动吸附。</p>
+    <figure class="pl-traces">
+      <div class="pl-traces__grid">
+        <div><p>隆起曲线型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="隆起曲线型的五次真机操作。横轴为手指松开后0–1200毫秒，纵轴为距吸附位置的距离。虚线0为吸附位置，每条线末端的点为最后测得的位置。"></div>
+        <div><p>落点预测型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="落点预测型的五次真机操作。横轴为手指松开后0–1200毫秒，纵轴为距吸附位置的距离。虚线0为吸附位置，每条线末端的点为最后测得的位置。"></div>
+        <div class="pl-traces__adopted"><p>浏览器原生 proximity<br><span>采用</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="浏览器原生 proximity的五次真机操作。横轴为手指松开后0–1200毫秒，纵轴为距吸附位置的距离。虚线0为吸附位置，每条线末端的点为最后测得的位置。"></div>
+        <div><p>浏览器原生 mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="浏览器原生 mandatory的五次真机操作。横轴为手指松开后0–1200毫秒，纵轴为距吸附位置的距离。虚线0为吸附位置，每条线末端的点为最后测得的位置。"></div>
+        <div><p>无吸附</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="无吸附的五次真机操作。横轴为手指松开后0–1200毫秒，纵轴为距吸附位置的距离。虚线0为吸附位置，每条线末端的点为最后测得的位置。"></div>
+      </div>
+      <figcaption>以相同比例比较松手后的位置，虚线0为吸附位置。根据真机日志中松手前60毫秒的位置计算速度，在0.6–1.8 px/ms范围内，按接近1.2 px/ms的顺序为每种方式选取五次操作。各次操作的设置、起点与方向不同。</figcaption>
+    </figure>
+    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="滚动调节工具。切换五种吸附方式的选项与参数，旁边是用于体验操作手感的手机界面。"></a><figcaption>记录滚动距离与速度，在真机上比较停止方式。打开图片可放大。</figcaption></figure>
+  </section>
+
+  <section id="product">
+    <h2>作为产品——练习之外</h2>
+    <p>外观随设备设置切换。练习记录保存在设备本地，并自动备份至 iCloud。</p>
+    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="浅色模式。记录页。上方是练习记录网格，下方是今日进度条（共54分钟）和分类卡片。“乐曲练习”已计时超过27分钟，以亮色和白色边框突出显示。" loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="深色模式。记录页。上方是练习记录网格，下方是今日进度条（共54分钟）和分类卡片。“乐曲练习”已计时超过27分钟，以亮色和白色边框突出显示。" loading="lazy" decoding="async"></picture></div><figcaption>同一记录页的浅色与深色模式。</figcaption></figure>
+    <figure class="pl-icons">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="可按练习内容选择的109个主题图标，依次为乐器、运动、学习、绘画、手工和表达活动。"></picture>
+      <figcaption>可根据练习内容选择应用页眉图标：音乐47个、运动15个、语言与学习15个、美术11个、制作与生活14个、表达7个。萨克斯图标基于 Qlementine Icons（MIT License）。</figcaption>
+    </figure>
+  </section>
+
+  <section id="reflection">
+    <h2>实际使用——下一个问题是，<wbr>记录要细到什么程度</h2>
+    <p>每天早晨练习时使用，并在课上向老师展示画面后，得到的反馈是练习内容一目了然，如果连音阶种类也能记录就更有帮助（大意）。我正在考虑在分类下再加一层，在保持便捷的同时记录更多细节。</p>
+  </section>
+
+  <section id="slides">
+    <h2>资料</h2>
+    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Web 演示</a>可体验记录与分享功能。收录截至2026年9月20日的本人练习记录，操作结果仅保存在当前浏览器中。</p>
+    <figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="项目资料幻灯片" aria-describedby="slides-help">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第1页。封面：开发一款向授课老师分享练习情况的记录应用。堀内贵文。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第2页。概览：用于记录练习的 Log 与向老师分享情况的 Share。职责、制作时间与工具。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第3页。背景：希望准确地向老师说明萨克斯练习情况。纸质日志与现有应用的问题。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第4页。方法：一键记录与即时传达信息的可视化。在一天和月、年两种时间尺度上展示练习积累。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第5页。使用 AI 的四个环节：调研、基础开发、操作手感调节工具开发、实现优化。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第6页。与 AI 协作：调研现有应用，通过对话细化概念。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第7页。基础开发：比较 AI 生成的初版 V0 与反复反馈布局、配色后调整的 V1。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第8页。调整操作手感：与 AI 开发辅助工具，亲自比较滚动速度和停止方式。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第9页。实现优化：反复由 Claude Code 提出潜在问题、Codex 验证修复，再由人做出判断。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第10页。成果与后续：用于自己的练习、老师的反馈，以及为更细致的记录考虑子分类。"></a></li>
+      </ol>
+      <figcaption id="slides-help">横向滚动翻页，点击或轻点放大。原幻灯片为日语。</figcaption>
+    </figure>
+    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">以 PDF 打开项目资料（日语，4.4 MB）</a></p>
+  </section>
   <nav aria-label="站点">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀内贵文的作品集首页</span></a></li>
@@ -158,5 +259,9 @@
   </footer>
 
 </main>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="图片放大视图" hidden>
+  <button class="lightbox__close" type="button" aria-label="关闭放大视图"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

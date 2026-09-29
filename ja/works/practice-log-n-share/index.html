@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop `creativeWorkStatus`,
-     replace the status line, and swap the index's thumb-pending span for the
-     image. -->
 <title>Practice Log n Share — 堀内 貴文</title>
-<meta name="description" content="個人プロジェクト。記事は準備中。">
+<meta name="description" content="練習中はワンタップで記録し、レッスンではその画面をそのまま先生に見せる。サックスを習う自分のために、iPhoneアプリを企画・デザインし、AIと協働して実装した。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/practice-log-n-share/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
@@ -34,29 +26,23 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/practice-log-n-share/page.css">
+<script src="../../../works/figures.js" defer></script>
+<script src="../../../works/practice-log-n-share/dayscale.js" defer></script>
 <script src="../../../works/home-mark.js" defer></script>
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="Practice Log n Share">
-<meta property="og:description" content="記事は準備中。">
+<meta property="og:description" content="練習中はワンタップで記録し、レッスンではその画面をそのまま先生に見せる。サックスを習う自分のために、iPhoneアプリを企画・デザインし、AIと協働して実装した。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/practice-log-n-share/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Practice Log n ShareのiPhone画面。左は練習を計測中の記録画面、右はレッスン間の練習時間と内訳をまとめた共有画面。">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,8 +63,9 @@
       "@id": "https://takafumihoriuchi.github.io/ja/works/practice-log-n-share/#work",
       "name": "Practice Log n Share",
       "url": "https://takafumihoriuchi.github.io/ja/works/practice-log-n-share/",
-      "description": "個人プロジェクト。記事は準備中。",
-      "creativeWorkStatus": "準備中",
+      "description": "練習中はワンタップで記録し、レッスンではその画面をそのまま先生に見せる。サックスを習う自分のために、iPhoneアプリを企画・デザインし、AIと協働して実装した。",
+      "datePublished": "2026-09-29",
+      "image": "https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg",
       "inLanguage": "ja",
       "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
     }
@@ -90,47 +77,159 @@
 <body>
 <div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Takafumi Horiuchi のポートフォリオトップへ">Takafumi Horiuchi</a></div>
 <main>
-
   <header>
     <h1>Practice Log n Share</h1>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">準備中</p>
+    <p class="dateline">2026年9月</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
+## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
+++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
+@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
+## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
+++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
+++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
-  <section>
+  <section id="overview">
     <h2>概要</h2>
-    <p class="lead">個人プロジェクト。記事は準備中。</p>
+    <p class="lead">練習中はワンタップで記録し、レッスンではその画面をそのまま先生に見せる。サックスを習う自分のために、iPhoneアプリを企画・デザインし、AIと協働して実装した。</p>
+    <figure class="pl-pair">
+      <div class="pl-pair__screens">
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="共有画面。9月17日のレッスン日から24日までを集計し、合計4時間38分、カテゴリ別の棒グラフ、全カテゴリを横スクロールなしで見渡せる日別表を表示。" fetchpriority="high"></picture>
+      </div>
+      <figcaption>左が記録、右が共有。カテゴリをタップして計測し、レッスンではその間の練習をまとめて見せる。画面は説明用の架空データ。</figcaption>
+    </figure>
+    <dl class="pl-facts">
+      <div><dt>役割</dt><dd>企画、UX/UIデザイン、実装（Claude Code・Codexと協働）</dd></div>
+      <div><dt>期間</dt><dd>2026年9月</dd></div>
+      <div><dt>技術</dt><dd>React・TypeScript、Swift（WKWebView、Live Activity、StoreKit、iCloud）</dd></div>
+    </dl>
+    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Webデモで操作する</a>（2026年9月20日時点の自身の練習記録を収録）</p>
   </section>
 
-  <section>
-    <h2>制約</h2>
+  <section id="background">
+    <h2>きっかけ&thinsp;——&thinsp;「練習はどんな感じ？」に、<wbr>答えられない</h2>
+    <p>隔週のレッスンで「スケールを多めに」と答えても、何をどれだけ練習したかまでは伝わらない。紙の日誌は楽器を首から下げたままでは書きにくく、試した時間記録のアプリは、自分で見返すための道具だった。</p>
+    <figure class="pl-moments">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments.svg" width="960" height="285" loading="lazy" decoding="async" alt="2つのレッスン日の間に、練習した日の棒と休みの日が並ぶ。日々のカテゴリ別の時間を下の一本の棒にまとめると、合計10時間06分になる。"></picture>
+      <figcaption>上の棒が日々の練習、赤い枠がレッスン日。レッスンでは、その間の練習をまとめて見せる。日付と時間は説明用の架空データで、上下の棒の時間の合計は同じ。</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>アプローチ</h2>
+  <section id="recording">
+    <h2>記録&thinsp;——&thinsp;楽器を持ったまま、<wbr>ワンタップで</h2>
+    <p>練習中に触るのは、カテゴリのカードだけ。タップで計測が始まり、別のカードで切り替わり、同じカードをもう一度タップすると止まる。</p>
+    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>実績</dt><dd>これまでの練習。開くと最初に目に入る。</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>今日</dt><dd>取り組んだ順と配分。1時間で満杯。</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>計測中</dt><dd>このカードだけ明るくし、白い輪郭で示す。</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>カード</dt><dd>タップで切り替え。今日の時間を大きく。</dd></div></dl></figure>
   </section>
 
-  <section>
-    <h2>結果</h2>
+  <section id="day">
+    <h2>一日&thinsp;——&thinsp;満たしたバーは、<wbr>満たされたまま</h2>
+    <p>今日のバーは1時間で満杯になる。1時間を超えたら、その時点の合計を右端にして、一度満たしたバーに空白が戻らないようにした。</p>
+    <figure class="pl-dayscale" data-unit-hour="時間" data-unit-minute="分">
+      <div class="pl-dayscale__control" hidden><label for="practice-minutes">今日の練習</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1時間05分"><output for="practice-minutes">1時間05分</output></div>
+      <p class="pl-dayscale__static">今日の練習&thinsp;——&thinsp;<span data-print-value>1時間05分</span></p>
+      <div class="pl-dayscale__row" data-scale="adopted">
+        <p>採用</p>
+        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30分</span><span style="--position:100">1時間05分</span></div>
+      </div>
+      <div class="pl-dayscale__row" data-scale="rejected">
+        <p>没案</p>
+        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30分</span><span style="--position:66.6667">1時間</span><span style="--position:100">1時間30分</span></div>
+      </div>
+      <figcaption><span data-static-caption>65分練習したときの比較。</span><span data-interactive-caption hidden>スライダーで今日の練習時間を動かせる。</span>上は合計を右端にする採用案（最低1時間）、下は目盛りを60→90→120分と広げる没案。1時間を超えた瞬間、下のバーにだけ空白が戻る。</figcaption>
+    </figure>
   </section>
 
+  <section id="history">
+    <h2>積み重ね&thinsp;——&thinsp;始めた日から、<wbr>すべて見える</h2>
+    <p>練習した日を緑の濃さで、レッスン日を赤い枠で示し、記録を始めた日まで横にたどれる。表示の軽さより、何年分でも見渡せることを優先した。</p>
+    <figure class="pl-crop">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="実績の格子。6月から9月までの練習量を緑の濃さで表し、隔週のレッスン日に赤い枠が付いている。"></picture>
+      <figcaption>0分、30分未満、60分未満、90分未満、90分以上の5段階。アプリを開くと、この積み重ねが最初に目に入る。</figcaption>
+    </figure>
+  </section>
+
+  <section id="sharing">
+    <h2>共有&thinsp;——&thinsp;レッスンの冒頭、<wbr>ひと目で伝わる一画面</h2>
+    <p>前回のレッスン日から今日までを、カテゴリ別の合計と日ごとの内訳でまとめ、そのまま先生に見せる。日別の表は、文字を小さくしてでも全カテゴリを一画面に収め、横スクロールをなくした。</p>
+    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="共有画面。9月17日のレッスン日から24日までを集計し、合計4時間38分、カテゴリ別の棒グラフ、全カテゴリを横スクロールなしで見渡せる日別表を表示。" loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>期間</dt><dd>前回のレッスン日から今日まで。</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>合計</dt><dd>期間の練習時間と日数。</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>配分</dt><dd>名前、棒、時間を横一列に。</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>内訳</dt><dd>全カテゴリを一画面に。横スクロールなし。</dd></div></dl><figcaption>画像を開くと、日別の内訳まで拡大して確認できます。</figcaption></figure>
+  </section>
+
+  <section id="evolution">
+    <h2>変遷&thinsp;——&thinsp;カードを、<wbr>練習の操作盤に</h2>
+    <p>AIとの対話でまとめた仕様書から画面を組み立て、自分で触って直すことを繰り返した。初期のWeb版で記録と共有の形を探り、iPhoneで使うアプリとして実装した。</p>
+    <figure class="pl-evolution">
+      <div class="pl-evolution__screens">
+        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月9日の初期版。6つの小さなカテゴリカードと今日の合計40分が別の領域に置かれた記録画面。"></a><p>9月9日<br>初期版</p></div>
+        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月21日のWeb版。カテゴリと今日の時間を一つの大きなカードにまとめ、計測中の譜読み10分を明るく示した記録画面。"></a><p>9月21日<br>Web版</p></div>
+        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture><p>9月24日<br>iOS 1.0</p></div>
+      </div>
+      <figcaption>初期版とWeb版は同じ架空データ（6カテゴリ、今日の合計40分）。iOS 1.0は別の架空データ。</figcaption>
+    </figure>
+    <dl class="pl-changes">
+      <div><dt>名前と時間を、一緒に</dt><dd>カードに今日の時間を大きく置き、何をどれだけ練習したかを結びつけた。</dd></div>
+      <div><dt>今の状態を、ひと目で</dt><dd>計測中のカードだけを明るくし、ほかを沈めた。</dd></div>
+      <div><dt>操作する範囲を、画面の中に</dt><dd>カードの並びが画面に収まる位置で、スクロールが止まるようにした。</dd></div>
+    </dl>
+    <p>終盤は、Claude Codeが問題の候補を挙げ、Codexが検証して直し、自分が採否を決める工程を約15回繰り返した。</p>
+  </section>
+
+  <section id="touch">
+    <h2>手触り&thinsp;——&thinsp;止まり方は、<wbr>触って選ぶ</h2>
+    <p>「すっと動いて、ストンと止まる」感触は、言葉で頼むだけでは作れなかった。方式と値をその場で切り替える調整ツールをAIとつくり、5つの方式を実機で触り比べて、ブラウザ標準のスナップを選んだ。</p>
+    <figure class="pl-traces">
+      <div class="pl-traces__grid">
+        <div><p>ハンプ型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="ハンプ型の実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
+        <div><p>着地点予測型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="着地点予測型の実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
+        <div class="pl-traces__adopted"><p>ブラウザ標準 proximity<br><span>採用</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="ブラウザ標準 proximityの実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
+        <div><p>ブラウザ標準 mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="ブラウザ標準 mandatoryの実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
+        <div><p>スナップなし</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="スナップなしの実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
+      </div>
+      <figcaption>指を離してからの位置を、同じ縮尺で比較。点線の0が吸着位置。実機ログから、直前60&nbsp;msの位置で求めた速さが0.6–1.8&nbsp;px/msの操作を、1.2&nbsp;px/msに近い順に各5本選んだ。各操作の設定・開始位置・方向は異なる。</figcaption>
+    </figure>
+    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="スクロール調整ツール。5つの吸着方式を切り替える項目とパラメータ、操作感を試すスマートフォン画面が並ぶ。"></a><figcaption>スクロールの距離と速度を記録しながら、実機で止まり方を比べた。画像を開くと拡大できます。</figcaption></figure>
+  </section>
+
+  <section id="product">
+    <h2>製品として&thinsp;——&thinsp;練習の外側まで</h2>
+    <p>外観は端末の設定に合わせて切り替わる。練習の記録は端末内に保存し、iCloudへ自動でバックアップする。</p>
+    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="ライトモードの記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="ダークモードの記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture></div><figcaption>同じ記録画面のライトモードとダークモード。</figcaption></figure>
+    <figure class="pl-icons">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="練習するものに合わせて選べる109点のテーマアイコン。楽器、運動、学習、絵画、手仕事、表現活動の順に並んでいる。"></picture>
+      <figcaption>練習するものに合わせ、アプリのヘッダーに置くアイコンを選べる。音楽47点、運動15点、語学・学習15点、美術11点、ものづくり・暮らし14点、表現7点。サックスはQlementine Icons（MIT License）を元にした。</figcaption>
+    </figure>
+  </section>
+
+  <section id="reflection">
+    <h2>使ってみて&thinsp;——&thinsp;次の問いは、<wbr>どこまで細かく残すか</h2>
+    <p>毎朝の練習で使い、レッスンで先生に画面を見せたところ、練習の中身がひと目でわかるという反応と、スケールの種類まで残せるとさらに役立つという意見をもらった（要旨）。手軽さを保ちながら詳しく残せるよう、カテゴリの下にもう一段を設けることを検討している。</p>
+  </section>
+
+  <section id="slides">
+    <h2>資料</h2>
+    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Webデモ</a>では、記録と共有を操作できる。2026年9月20日時点の自身の練習記録を収録し、操作した結果は閲覧中のブラウザ内にだけ保存される。</p>
+    <figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="制作資料のスライド" aria-describedby="slides-help">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="1ページ目。表紙：レッスンの先生に練習状況を共有するための記録アプリの開発。堀内貴文。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="2ページ目。概要：練習を記録するLogと、先生に状況を共有するShare。担当範囲、制作期間、使用ツール。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="3ページ目。背景：サックスの練習状況を先生に的確に伝えたい。紙の練習日誌と既存アプリで感じた課題。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="4ページ目。アプローチ：ワンタップでの記録と瞬時に伝わる可視化。一日と月・年の二つの時間軸で練習の積み重ねを見せる。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="5ページ目。AIを活用した四つの場面：リサーチ、基本実装、操作感を調整する補助ツールの開発、実装の最適化。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="6ページ目。AIとの協働：既存アプリのリサーチと、対話によるコンセプトの具体化。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="7ページ目。基本実装：AIが生成した初版V0と、レイアウトや色彩へのフィードバックを重ねた調整版V1の比較。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="8ページ目。操作感の調整：スクロールの速度や止まり方を自分で比較するため、AIと補助ツールを開発。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="9ページ目。実装の最適化：Claude Codeによる問題候補の提示と、Codexによる検証・修正を反復し、人が判断する工程。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="10ページ目。成果と今後：自身の練習での利用、レッスンの先生からのフィードバック、より細かな記録に向けたサブカテゴリの検討。"></a></li>
+      </ol>
+      <figcaption id="slides-help">横スクロールでページ送り。クリック・タップで拡大。</figcaption>
+    </figure>
+    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">制作資料をPDFで開く（4.4&nbsp;MB）</a></p>
+  </section>
   <nav aria-label="サイト">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Takafumi Horiuchi のポートフォリオトップへ</span></a></li>
@@ -158,5 +257,9 @@
   </footer>
 
 </main>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="図の拡大表示" hidden>
+  <button class="lightbox__close" type="button" aria-label="拡大表示を閉じる"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

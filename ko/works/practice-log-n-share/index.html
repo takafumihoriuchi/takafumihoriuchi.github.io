@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop `creativeWorkStatus`,
-     replace the status line, and swap the index's thumb-pending span for the
-     image. -->
 <title>Practice Log n Share — 호리우치 다카후미</title>
-<meta name="description" content="개인 프로젝트. 글은 준비 중.">
+<meta name="description" content="연습할 때는 한 번 탭해 기록하고, 레슨에서는 그 화면을 그대로 선생님께 보여 준다. 색소폰을 배우는 나 자신을 위해 iPhone 앱을 기획·디자인하고 AI와 협업해 구현했다.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/practice-log-n-share/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
@@ -34,29 +26,23 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/practice-log-n-share/page.css">
+<script src="../../../works/figures.js" defer></script>
+<script src="../../../works/practice-log-n-share/dayscale.js" defer></script>
 <script src="../../../works/home-mark.js" defer></script>
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="Practice Log n Share">
-<meta property="og:description" content="글은 준비 중.">
+<meta property="og:description" content="연습할 때는 한 번 탭해 기록하고, 레슨에서는 그 화면을 그대로 선생님께 보여 준다. 색소폰을 배우는 나 자신을 위해 iPhone 앱을 기획·디자인하고 AI와 협업해 구현했다.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/practice-log-n-share/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Practice Log n Share의 iPhone 화면. 왼쪽은 연습 시간을 측정 중인 기록 화면, 오른쪽은 레슨 사이의 연습 시간과 내역을 정리한 공유 화면.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,10 +63,13 @@
       "@id": "https://takafumihoriuchi.github.io/ko/works/practice-log-n-share/#work",
       "name": "Practice Log n Share",
       "url": "https://takafumihoriuchi.github.io/ko/works/practice-log-n-share/",
-      "description": "개인 프로젝트. 글은 준비 중.",
-      "creativeWorkStatus": "준비 중",
+      "description": "연습할 때는 한 번 탭해 기록하고, 레슨에서는 그 화면을 그대로 선생님께 보여 준다. 색소폰을 배우는 나 자신을 위해 iPhone 앱을 기획·디자인하고 AI와 협업해 구현했다.",
+      "datePublished": "2026-09-29",
+      "image": "https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg",
       "inLanguage": "ko",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,49 +77,161 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="호리우치 다카후미의 포트폴리오로 돌아가기">호리우치 다카후미</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="호리우치 다카후미의 포트폴리오로 돌아가기">Takafumi Horiuchi</a></div>
 <main>
-
   <header>
     <h1>Practice Log n Share</h1>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">준비 중</p>
+    <p class="dateline">2026년 9월</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
+## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
+++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
+@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
+## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
+++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
+++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
-  <section>
+  <section id="overview">
     <h2>개요</h2>
-    <p class="lead">개인 프로젝트. 글은 준비 중.</p>
+    <p class="lead">연습할 때는 한 번 탭해 기록하고, 레슨에서는 그 화면을 그대로 선생님께 보여 준다. 색소폰을 배우는 나 자신을 위해 iPhone 앱을 기획·디자인하고 AI와 협업해 구현했다.</p>
+    <figure class="pl-pair">
+      <div class="pl-pair__screens">
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="공유 화면. 9월 17일 레슨일부터 24일까지 총 4시간 38분을 집계하고, 카테고리별 막대그래프와 가로 스크롤 없이 모든 카테고리를 볼 수 있는 일별 표를 표시한다." fetchpriority="high"></picture>
+      </div>
+      <figcaption>왼쪽은 기록, 오른쪽은 공유. 카테고리를 탭해 시간을 측정하고, 레슨에서는 그동안의 연습을 모아 보여 준다. 화면은 설명을 위한 가상 데이터다. 스크린샷은 원본 앱의 일본어 화면이다.</figcaption>
+    </figure>
+    <dl class="pl-facts">
+      <div><dt>역할</dt><dd>기획, UX/UI 디자인, 구현(Claude Code·Codex와 협업)</dd></div>
+      <div><dt>기간</dt><dd>2026년 9월</dd></div>
+      <div><dt>기술</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
+    </dl>
+    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">웹 데모 사용해 보기</a> (2026년 9월 20일 기준 나의 실제 연습 기록 수록)</p>
   </section>
 
-  <section>
-    <h2>제약</h2>
+  <section id="background">
+    <h2>계기 — “연습은 어때요?”라는 질문에, <wbr>답할 수 없었다</h2>
+    <p>격주 레슨에서 “스케일을 많이 했어요”라고 답해도 무엇을 얼마나 연습했는지는 전해지지 않는다. 악기를 목에 건 채 종이 일지를 쓰기는 어려웠고, 사용해 본 시간 기록 앱은 혼자 돌아보기 위한 도구였다.</p>
+    <figure class="pl-moments">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-ko.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-ko.svg" width="960" height="285" loading="lazy" decoding="async" alt="두 레슨일 사이에 연습한 날의 막대와 쉰 날이 나란히 놓여 있다. 일별 카테고리 시간을 아래의 막대 하나로 합치면 총 10시간 06분이 된다."></picture>
+      <figcaption>위쪽 막대는 매일의 연습, 빨간 테두리는 레슨일이다. 레슨에서는 그사이의 연습을 모아 보여 준다. 날짜와 시간은 설명용 가상 데이터이며 위아래 막대의 총시간은 같다.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>접근</h2>
+  <section id="recording">
+    <h2>기록 — 악기를 든 채, <wbr>한 번의 탭으로</h2>
+    <p>연습 중에는 카테고리 카드만 만진다. 탭하면 측정이 시작되고, 다른 카드를 누르면 전환되며, 같은 카드를 다시 누르면 멈춘다.</p>
+    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>누적 기록</dt><dd>지금까지의 연습. 앱을 열면 가장 먼저 보인다.</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>오늘</dt><dd>연습 순서와 시간 배분. 한 시간이면 가득 찬다.</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>측정 중</dt><dd>이 카드만 밝게 하고 흰 테두리로 표시한다.</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>카드</dt><dd>탭으로 전환. 오늘의 시간은 크게 표시한다.</dd></div></dl></figure>
   </section>
 
-  <section>
-    <h2>결과</h2>
+  <section id="day">
+    <h2>하루 — 한 번 채운 막대는, <wbr>채워진 채로</h2>
+    <p>오늘의 막대는 한 시간이면 가득 찬다. 한 시간을 넘기면 그 시점의 합계를 오른쪽 끝으로 삼아, 이미 채운 막대에 빈 공간이 다시 생기지 않도록 했다.</p>
+    <figure class="pl-dayscale" data-unit-hour="시간 " data-unit-minute="분">
+      <div class="pl-dayscale__control" hidden><label for="practice-minutes">오늘의 연습</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1시간 05분"><output for="practice-minutes">1시간 05분</output></div>
+      <p class="pl-dayscale__static">오늘의 연습 — <span data-print-value>1시간 05분</span></p>
+      <div class="pl-dayscale__row" data-scale="adopted">
+        <p>채택</p>
+        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30분</span><span style="--position:100">1시간 05분</span></div>
+      </div>
+      <div class="pl-dayscale__row" data-scale="rejected">
+        <p>미채택</p>
+        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30분</span><span style="--position:66.6667">1시간</span><span style="--position:100">1시간 30분</span></div>
+      </div>
+      <figcaption><span data-static-caption>65분 연습했을 때의 비교. </span><span data-interactive-caption hidden>슬라이더로 오늘의 연습 시간을 바꿀 수 있다. </span>위는 합계를 오른쪽 끝으로 삼는 채택안(최소 한 시간), 아래는 눈금을 60→90→120분으로 늘리는 미채택안이다. 한 시간을 넘기는 순간, 아래 막대에만 빈 공간이 다시 나타난다.</figcaption>
+    </figure>
   </section>
 
+  <section id="history">
+    <h2>쌓임 — 시작한 날부터, <wbr>모두 보이도록</h2>
+    <p>연습한 날은 녹색의 진하기로, 레슨일은 빨간 테두리로 표시하며, 가로로 이동해 기록을 시작한 날까지 돌아갈 수 있다. 가벼운 렌더링보다 여러 해의 연습을 모두 살펴볼 수 있는 것을 우선했다.</p>
+    <figure class="pl-crop">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="연습 기록 격자. 6월부터 9월까지의 연습량을 녹색의 진하기로 나타내고 격주 레슨일에 빨간 테두리를 표시한다."></picture>
+      <figcaption>0분, 30분 미만, 60분 미만, 90분 미만, 90분 이상의 다섯 단계. 앱을 열면 이 누적 기록이 가장 먼저 보인다.</figcaption>
+    </figure>
+  </section>
+
+  <section id="sharing">
+    <h2>공유 — 레슨을 시작하며, <wbr>한눈에 전해지는 한 화면</h2>
+    <p>지난 레슨일부터 오늘까지를 카테고리별 합계와 일별 내역으로 정리해 그대로 선생님께 보여 준다. 일별 표는 글자를 줄이더라도 모든 카테고리를 한 화면에 넣어 가로 스크롤을 없앴다.</p>
+    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="공유 화면. 9월 17일 레슨일부터 24일까지 총 4시간 38분을 집계하고, 카테고리별 막대그래프와 가로 스크롤 없이 모든 카테고리를 볼 수 있는 일별 표를 표시한다." loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>기간</dt><dd>지난 레슨일부터 오늘까지.</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>합계</dt><dd>해당 기간의 연습 시간과 일수.</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>배분</dt><dd>이름, 막대, 시간을 한 줄에.</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>내역</dt><dd>모든 카테고리를 한 화면에. 가로 스크롤 없이.</dd></div></dl><figcaption>이미지를 열면 일별 내역까지 확대해 볼 수 있다.</figcaption></figure>
+  </section>
+
+  <section id="evolution">
+    <h2>변화 — 카드를, <wbr>연습의 조작판으로</h2>
+    <p>AI와 대화하며 정리한 명세서로 화면을 만들고, 직접 써 보며 고치기를 반복했다. 초기 웹 버전에서 기록과 공유의 형태를 탐색한 뒤 iPhone에서 쓸 앱으로 구현했다.</p>
+    <figure class="pl-evolution">
+      <div class="pl-evolution__screens">
+        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9월 9일의 초기 버전. 작은 카테고리 카드 여섯 개와 오늘의 합계 40분이 서로 다른 영역에 놓인 기록 화면."></a><p>9월 9일<br>초기 버전</p></div>
+        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9월 21일의 웹 버전. 카테고리와 오늘의 시간을 큰 카드 하나로 묶고, 측정 중인 악보 읽기 10분을 밝게 표시한 기록 화면."></a><p>9월 21일<br>웹 버전</p></div>
+        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture><p>9월 24일<br>iOS 1.0</p></div>
+      </div>
+      <figcaption>초기 버전과 웹 버전은 같은 가상 데이터(카테고리 여섯 개, 오늘 총 40분)를 쓴다. iOS 1.0은 별도의 가상 데이터다.</figcaption>
+    </figure>
+    <dl class="pl-changes">
+      <div><dt>이름과 시간을 함께</dt><dd>카드에 오늘의 시간을 크게 표시해 무엇을 얼마나 연습했는지 연결했다.</dd></div>
+      <div><dt>현재 상태를 한눈에</dt><dd>측정 중인 카드만 밝게 하고 나머지는 어둡게 했다.</dd></div>
+      <div><dt>조작 범위를 화면 안에</dt><dd>카드 한 줄이 화면 안에 들어오는 위치에서 스크롤이 멈추도록 했다.</dd></div>
+    </dl>
+    <p>마지막 단계에서는 Claude Code가 잠재적 문제를 제시하고, Codex가 검증·수정하며, 내가 채택 여부를 결정하는 과정을 약 15회 반복했다.</p>
+  </section>
+
+  <section id="touch">
+    <h2>손맛 — 멈추는 방식은, <wbr>직접 써 보고 고른다</h2>
+    <p>“부드럽게 움직이다 딱 멈추는” 느낌은 말로 요청하는 것만으로는 만들 수 없었다. 방식과 값을 즉시 바꾸는 조정 도구를 AI와 만들고, 실제 기기에서 다섯 방식을 비교해 브라우저 기본 스냅을 골랐다.</p>
+    <figure class="pl-traces">
+      <div class="pl-traces__grid">
+        <div><p>험프형</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="험프형의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
+        <div><p>착지점 예측형</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="착지점 예측형의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
+        <div class="pl-traces__adopted"><p>브라우저 기본 proximity<br><span>채택</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="브라우저 기본 proximity의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
+        <div><p>브라우저 기본 mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="브라우저 기본 mandatory의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
+        <div><p>스냅 없음</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="스냅 없음의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
+      </div>
+      <figcaption>손가락을 뗀 뒤의 위치를 같은 축척으로 비교했다. 점선 0이 스냅 위치다. 실제 기기 로그에서 직전 60 ms의 위치로 계산한 속도가 0.6–1.8 px/ms인 조작 중 1.2 px/ms에 가까운 순서로 각 방식마다 다섯 건씩 골랐다. 각 조작의 설정·시작 위치·방향은 서로 다르다.</figcaption>
+    </figure>
+    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="스크롤 조정 도구. 다섯 스냅 방식의 전환 항목과 매개변수 옆에 조작감을 시험하는 스마트폰 화면이 놓여 있다."></a><figcaption>스크롤 거리와 속도를 기록하며 실제 기기에서 멈추는 방식을 비교했다. 이미지를 열면 확대할 수 있다.</figcaption></figure>
+  </section>
+
+  <section id="product">
+    <h2>제품으로서 — 연습 너머까지</h2>
+    <p>외관은 기기 설정에 맞춰 바뀐다. 연습 기록은 기기 안에 저장하고 iCloud에 자동으로 백업한다.</p>
+    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="라이트 모드. 기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="다크 모드. 기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture></div><figcaption>같은 기록 화면의 라이트 모드와 다크 모드.</figcaption></figure>
+    <figure class="pl-icons">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="연습 대상에 맞춰 고를 수 있는 테마 아이콘 109개. 악기, 운동, 학습, 그림, 수공예, 표현 활동 순으로 배열되어 있다."></picture>
+      <figcaption>연습 대상에 맞춰 앱 헤더의 아이콘을 고를 수 있다. 음악 47개, 운동 15개, 언어·학습 15개, 미술 11개, 만들기·생활 14개, 표현 7개. 색소폰은 Qlementine Icons(MIT License)를 바탕으로 했다.</figcaption>
+    </figure>
+  </section>
+
+  <section id="reflection">
+    <h2>사용해 보니 — 다음 질문은, <wbr>얼마나 자세히 남길 것인가</h2>
+    <p>매일 아침 연습에 쓰고 레슨에서 선생님께 화면을 보여 드렸다. 연습 내용이 한눈에 보인다는 반응과, 스케일 종류까지 기록하면 더 유용하겠다는 의견을 받았다(요지). 간편함을 유지하면서 자세히 남길 수 있도록 카테고리 아래에 한 단계를 더 두는 것을 검토하고 있다.</p>
+  </section>
+
+  <section id="slides">
+    <h2>자료</h2>
+    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">웹 데모</a>에서 기록과 공유를 직접 사용해 볼 수 있다. 2026년 9월 20일 기준 나의 실제 연습 기록이 수록되어 있으며, 조작 결과는 현재 사용하는 브라우저에만 저장된다.</p>
+    <figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="제작 자료 슬라이드" aria-describedby="slides-help">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="1쪽. 표지: 레슨 선생님께 연습 상황을 공유하기 위한 기록 앱 개발. 호리우치 다카후미."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="2쪽. 개요: 연습을 기록하는 Log와 선생님께 상황을 공유하는 Share. 담당 범위, 제작 기간, 사용 도구."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="3쪽. 배경: 색소폰 연습 상황을 선생님께 정확히 전하고 싶은 마음. 종이 연습 일지와 기존 앱의 문제."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="4쪽. 접근: 한 번의 탭으로 기록하고 즉시 전달하는 시각화. 하루와 월·년이라는 두 시간 축으로 연습의 축적을 보여 준다."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="5쪽. AI를 활용한 네 장면: 조사, 기본 구현, 조작감 조정 보조 도구 개발, 구현 최적화."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="6쪽. AI와의 협업: 기존 앱 조사와 대화를 통한 콘셉트 구체화."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="7쪽. 기본 구현: AI가 생성한 초판 V0와 레이아웃·색상 피드백을 반복한 수정판 V1의 비교."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="8쪽. 조작감 조정: 스크롤 속도와 멈추는 방식을 직접 비교하려고 AI와 보조 도구를 개발."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="9쪽. 구현 최적화: Claude Code의 잠재적 문제 제시와 Codex의 검증·수정을 반복하고 사람이 판단하는 과정."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="10쪽. 성과와 향후: 자신의 연습에서 사용, 선생님의 피드백, 자세한 기록을 위한 하위 카테고리 검토."></a></li>
+      </ol>
+      <figcaption id="slides-help">가로로 스크롤해 넘기고 클릭하거나 탭해 확대할 수 있다. 원본 슬라이드는 일본어다.</figcaption>
+    </figure>
+    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">제작 자료 PDF 열기(일본어, 4.4 MB)</a></p>
+  </section>
   <nav aria-label="사이트">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">호리우치 다카후미의 포트폴리오로 돌아가기</span></a></li>
@@ -158,5 +259,9 @@
   </footer>
 
 </main>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="그림 확대 보기" hidden>
+  <button class="lightbox__close" type="button" aria-label="확대 보기 닫기"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

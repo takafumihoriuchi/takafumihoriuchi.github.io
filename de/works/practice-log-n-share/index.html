@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop `creativeWorkStatus`,
-     replace the status line, and swap the index's thumb-pending span for the
-     image. -->
 <title>Practice Log n Share — Takafumi Horiuchi</title>
-<meta name="description" content="Ein persönliches Projekt. Der Text ist in Vorbereitung.">
+<meta name="description" content="Üben mit einem Fingertipp erfassen und im Unterricht denselben Bildschirm zeigen. Ich habe diese iPhone-App für mein eigenes Saxofonüben konzipiert, gestaltet und gemeinsam mit KI umgesetzt.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/de/works/practice-log-n-share/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
@@ -34,29 +26,23 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/practice-log-n-share/page.css">
+<script src="../../../works/figures.js" defer></script>
+<script src="../../../works/practice-log-n-share/dayscale.js" defer></script>
 <script src="../../../works/home-mark.js" defer></script>
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Practice Log n Share">
-<meta property="og:description" content="Der Text ist in Vorbereitung.">
+<meta property="og:description" content="Üben mit einem Fingertipp erfassen und im Unterricht denselben Bildschirm zeigen. Ich habe diese iPhone-App für mein eigenes Saxofonüben konzipiert, gestaltet und gemeinsam mit KI umgesetzt.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/de/works/practice-log-n-share/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Practice Log n Share auf dem iPhone. Links die Erfassungsansicht mit laufender Zeitmessung, rechts die Ansicht zum Teilen mit Übezeit und Aufschlüsselung zwischen den Unterrichtsterminen.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,10 +63,13 @@
       "@id": "https://takafumihoriuchi.github.io/de/works/practice-log-n-share/#work",
       "name": "Practice Log n Share",
       "url": "https://takafumihoriuchi.github.io/de/works/practice-log-n-share/",
-      "description": "Ein persönliches Projekt. Der Text ist in Vorbereitung.",
-      "creativeWorkStatus": "In Vorbereitung",
+      "description": "Üben mit einem Fingertipp erfassen und im Unterricht denselben Bildschirm zeigen. Ich habe diese iPhone-App für mein eigenes Saxofonüben konzipiert, gestaltet und gemeinsam mit KI umgesetzt.",
+      "datePublished": "2026-09-29",
+      "image": "https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg",
       "inLanguage": "de",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -90,47 +79,159 @@
 <body>
 <div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Zurück zum Portfolio von Takafumi Horiuchi">Takafumi Horiuchi</a></div>
 <main>
-
   <header>
     <h1>Practice Log n Share</h1>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">In Vorbereitung</p>
+    <p class="dateline">September 2026</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
+## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
+++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
+@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
+## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
+++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
+++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
-  <section>
+  <section id="overview">
     <h2>Überblick</h2>
-    <p class="lead">Ein persönliches Projekt. Der Text ist in Vorbereitung.</p>
+    <p class="lead">Üben mit einem Fingertipp erfassen und im Unterricht denselben Bildschirm zeigen. Ich habe diese iPhone-App für mein eigenes Saxofonüben konzipiert, gestaltet und gemeinsam mit KI umgesetzt.</p>
+    <figure class="pl-pair">
+      <div class="pl-pair__screens">
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Erfassungsansicht. Über dem Tagesbalken (insgesamt 54 Minuten) und den Kategoriekarten liegt ein Übeverlaufsraster. Die Kategorie Stücke wird seit über 27 Minuten gemessen und durch eine hellere Farbe und einen weißen Rand hervorgehoben." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Ansicht zum Teilen. Vom Unterricht am 17. September bis zum 24. September: insgesamt 4 Stunden 38 Minuten, Balken je Kategorie und eine Tagestabelle mit allen Kategorien ohne horizontales Scrollen." fetchpriority="high"></picture>
+      </div>
+      <figcaption>Links erfassen, rechts teilen. Eine Kategorie antippen, um die Zeit zu messen, und im Unterricht die Übezeit dazwischen zusammengefasst zeigen. Die Bildschirme verwenden fiktive Beispieldaten. Die Screenshots zeigen die japanische Originaloberfläche.</figcaption>
+    </figure>
+    <dl class="pl-facts">
+      <div><dt>Aufgaben</dt><dd>Konzeption, UX/UI-Design und Umsetzung (mit Claude Code und Codex)</dd></div>
+      <div><dt>Zeitraum</dt><dd>September 2026</dd></div>
+      <div><dt>Technik</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
+    </dl>
+    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Webdemo ausprobieren</a> (enthält meine eigenen Übeaufzeichnungen mit Stand vom 20. September 2026)</p>
   </section>
 
-  <section>
-    <h2>Beschränkungen</h2>
+  <section id="background">
+    <h2>Ausgangspunkt — „Wie läuft das Üben?“: <wbr>Darauf wusste ich keine Antwort</h2>
+    <p>Im Unterricht alle zwei Wochen sagte „hauptsächlich Tonleitern“ wenig darüber aus, was ich wie lange geübt hatte. Mit dem Saxofon um den Hals ließ sich schwer in ein Papierheft schreiben. Die ausprobierten Zeiterfassungs-Apps waren dafür gedacht, die eigenen Daten allein nachzusehen.</p>
+    <figure class="pl-moments">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-de.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-de.svg" width="960" height="285" loading="lazy" decoding="async" alt="Zwischen zwei Unterrichtsterminen stehen Balken für Übetage und Lücken für freie Tage. Die täglichen Zeiten je Kategorie ergeben im zusammengefassten unteren Balken 10 Stunden 06 Minuten."></picture>
+      <figcaption>Oben die tägliche Übezeit, rote Rahmen markieren Unterrichtstage. Im Unterricht zeige ich die Zusammenfassung des Zeitraums dazwischen. Daten und Zeiten sind fiktiv; die Balken oben und unten ergeben dieselbe Gesamtdauer.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>Vorgehen</h2>
+  <section id="recording">
+    <h2>Erfassen — Mit dem Instrument in der Hand, <wbr>ein Fingertipp genügt</h2>
+    <p>Beim Üben bediene ich nur die Kategoriekarten. Antippen startet die Messung, eine andere Karte wechselt die Kategorie und erneutes Antippen derselben Karte stoppt sie.</p>
+    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Erfassungsansicht. Über dem Tagesbalken (insgesamt 54 Minuten) und den Kategoriekarten liegt ein Übeverlaufsraster. Die Kategorie Stücke wird seit über 27 Minuten gemessen und durch eine hellere Farbe und einen weißen Rand hervorgehoben." loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>Verlauf</dt><dd>Das bisherige Üben. Beim Öffnen als Erstes sichtbar.</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>Heute</dt><dd>Reihenfolge und Verteilung. Nach einer Stunde voll.</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>Messung</dt><dd>Nur diese Karte ist hell und weiß umrandet.</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>Karten</dt><dd>Antippen zum Wechseln. Die Tageszeit steht groß da.</dd></div></dl></figure>
   </section>
 
-  <section>
-    <h2>Ergebnis</h2>
+  <section id="day">
+    <h2>Ein Tag — Ein voller Balken <wbr>bleibt voll</h2>
+    <p>Der Tagesbalken füllt sich nach einer Stunde. Danach bildet die aktuelle Gesamtdauer den rechten Rand, damit in einem bereits gefüllten Balken keine Lücke zurückkehrt.</p>
+    <figure class="pl-dayscale" data-unit-hour=" Std. " data-unit-minute=" Min.">
+      <div class="pl-dayscale__control" hidden><label for="practice-minutes">Heute geübt</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1 Std. 05 Min."><output for="practice-minutes">1 Std. 05 Min.</output></div>
+      <p class="pl-dayscale__static">Heute geübt — <span data-print-value>1 Std. 05 Min.</span></p>
+      <div class="pl-dayscale__row" data-scale="adopted">
+        <p>Gewählt</p>
+        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30 Min.</span><span style="--position:100">1 Std. 05 Min.</span></div>
+      </div>
+      <div class="pl-dayscale__row" data-scale="rejected">
+        <p>Verworfen</p>
+        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30 Min.</span><span style="--position:66.6667">1 Std.</span><span style="--position:100">1 Std. 30 Min.</span></div>
+      </div>
+      <figcaption><span data-static-caption>Vergleich bei 65 Minuten Übezeit. </span><span data-interactive-caption hidden>Mit dem Regler lässt sich die heutige Übezeit verändern. </span>Oben die gewählte Lösung: Die Gesamtdauer bildet den rechten Rand, bei einer Mindestskala von einer Stunde. Unten der verworfene Entwurf, dessen Skala von 60 auf 90 und 120 Minuten wächst. Sobald eine Stunde überschritten wird, entsteht nur unten wieder eine Lücke.</figcaption>
+    </figure>
   </section>
 
+  <section id="history">
+    <h2>Aufbau — Alles sehen, <wbr>vom ersten Tag an</h2>
+    <p>Grüntöne zeigen die Übeintensität, rote Rahmen die Unterrichtstage. Horizontal lässt sich bis zum ersten erfassten Tag zurückscrollen. Mir war der Überblick über beliebig viele Jahre wichtiger als eine möglichst leichte Darstellung.</p>
+    <figure class="pl-crop">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="Übeverlaufsraster. Grüntöne zeigen das Übevolumen von Juni bis September, rote Rahmen die Unterrichtstermine im Abstand von zwei Wochen."></picture>
+      <figcaption>Fünf Stufen: 0 Minuten, unter 30, unter 60, unter 90 und mindestens 90. Beim Öffnen der App sieht man zuerst, was sich bereits angesammelt hat.</figcaption>
+    </figure>
+  </section>
+
+  <section id="sharing">
+    <h2>Teilen — Zu Unterrichtsbeginn <wbr>ein Bildschirm für den Überblick</h2>
+    <p>Kategoriesummen und Tagesdetails fassen den Zeitraum vom letzten Unterricht bis heute zusammen, direkt zum Vorzeigen. Die Tagestabelle enthält alle Kategorien auf einem Bildschirm, auch wenn die Schrift dafür kleiner wird. Horizontales Scrollen entfällt.</p>
+    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Ansicht zum Teilen. Vom Unterricht am 17. September bis zum 24. September: insgesamt 4 Stunden 38 Minuten, Balken je Kategorie und eine Tagestabelle mit allen Kategorien ohne horizontales Scrollen." loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>Zeitraum</dt><dd>Vom letzten Unterrichtstag bis heute.</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>Gesamt</dt><dd>Übezeit und Übetage im Zeitraum.</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>Verteilung</dt><dd>Name, Balken und Zeit in einer Zeile.</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>Details</dt><dd>Alle Kategorien auf einem Bildschirm, ohne horizontales Scrollen.</dd></div></dl><figcaption>Das Bild öffnen, um die Tagesdetails zu vergrößern.</figcaption></figure>
+  </section>
+
+  <section id="evolution">
+    <h2>Entwicklung — Karten werden zum <wbr>Bedienfeld fürs Üben</h2>
+    <p>Ich baute die Ansichten anhand einer im Dialog mit KI erarbeiteten Spezifikation und probierte und überarbeitete sie immer wieder selbst. In einer frühen Webversion erkundete ich Erfassung und Teilen, bevor ich die App fürs iPhone umsetzte.</p>
+    <figure class="pl-evolution">
+      <div class="pl-evolution__screens">
+        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="Erste Version vom 9. September. Sechs kleine Kategoriekarten und die heutige Summe von 40 Minuten stehen in getrennten Bereichen der Erfassungsansicht."></a><p>9. September<br>Erste Version</p></div>
+        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="Webversion vom 21. September. Kategorie und Tageszeit sind in großen Karten vereint; die laufenden 10 Minuten Notenlesen werden hervorgehoben."></a><p>21. September<br>Webversion</p></div>
+        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="Erfassungsansicht. Über dem Tagesbalken (insgesamt 54 Minuten) und den Kategoriekarten liegt ein Übeverlaufsraster. Die Kategorie Stücke wird seit über 27 Minuten gemessen und durch eine hellere Farbe und einen weißen Rand hervorgehoben." loading="lazy" decoding="async"></picture><p>24. September<br>iOS 1.0</p></div>
+      </div>
+      <figcaption>Erste Version und Webversion nutzen dieselben fiktiven Daten (sechs Kategorien, heute insgesamt 40 Minuten). iOS 1.0 verwendet andere fiktive Daten.</figcaption>
+    </figure>
+    <dl class="pl-changes">
+      <div><dt>Name und Zeit zusammen</dt><dd>Ich platzierte die Tageszeit groß auf der Karte und verband so den Übeinhalt mit der dafür aufgewendeten Zeit.</dd></div>
+      <div><dt>Der aktuelle Zustand auf einen Blick</dt><dd>Ich hellte nur die gerade gemessene Karte auf und dunkelte die übrigen ab.</dd></div>
+      <div><dt>Die Bedienung bleibt im Bildschirm</dt><dd>Das Scrollen hält dort an, wo eine Kartenreihe vollständig in den Bildschirm passt.</dd></div>
+    </dl>
+    <p>Gegen Ende wiederholte ich etwa 15-mal einen Ablauf: Claude Code schlug mögliche Probleme vor, Codex prüfte und behob sie, und ich entschied über die Übernahme.</p>
+  </section>
+
+  <section id="touch">
+    <h2>Bediengefühl — Wie das Scrollen stoppt, <wbr>entscheide ich beim Ausprobieren</h2>
+    <p>Ein Gefühl von „weich gleiten und sauber einrasten“ ließ sich mit Worten allein nicht herstellen. Gemeinsam mit KI baute ich ein Werkzeug zum direkten Wechseln von Verfahren und Werten, verglich fünf Verfahren auf einem echten Gerät und wählte das native Scroll-Snapping des Browsers.</p>
+    <figure class="pl-traces">
+      <div class="pl-traces__grid">
+        <div><p>Buckelmodell</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="Fünf Gesten auf einem echten Gerät mit Buckelmodell. Horizontal: 0–1200 Millisekunden nach dem Loslassen; vertikal: Abstand zur Einrastposition. Die gestrichelte Null markiert diese Position, der Punkt am Linienende die letzte gemessene Position."></div>
+        <div><p>Zielprognose</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="Fünf Gesten auf einem echten Gerät mit Zielprognose. Horizontal: 0–1200 Millisekunden nach dem Loslassen; vertikal: Abstand zur Einrastposition. Die gestrichelte Null markiert diese Position, der Punkt am Linienende die letzte gemessene Position."></div>
+        <div class="pl-traces__adopted"><p>Nativ proximity<br><span>Gewählt</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="Fünf Gesten auf einem echten Gerät mit Nativ proximity. Horizontal: 0–1200 Millisekunden nach dem Loslassen; vertikal: Abstand zur Einrastposition. Die gestrichelte Null markiert diese Position, der Punkt am Linienende die letzte gemessene Position."></div>
+        <div><p>Nativ mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="Fünf Gesten auf einem echten Gerät mit Nativ mandatory. Horizontal: 0–1200 Millisekunden nach dem Loslassen; vertikal: Abstand zur Einrastposition. Die gestrichelte Null markiert diese Position, der Punkt am Linienende die letzte gemessene Position."></div>
+        <div><p>Ohne Snapping</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="Fünf Gesten auf einem echten Gerät mit Ohne Snapping. Horizontal: 0–1200 Millisekunden nach dem Loslassen; vertikal: Abstand zur Einrastposition. Die gestrichelte Null markiert diese Position, der Punkt am Linienende die letzte gemessene Position."></div>
+      </div>
+      <figcaption>Positionen nach dem Loslassen im gleichen Maßstab. Die gestrichelte Null ist die Einrastposition. Aus den Gerätelogs wählte ich je Verfahren fünf Gesten mit 0,6–1,8 px/ms, berechnet aus den Positionen der vorangegangenen 60 ms, jeweils möglichst nahe an 1,2 px/ms. Einstellungen, Startpositionen und Richtungen unterscheiden sich.</figcaption>
+    </figure>
+    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="Werkzeug zur Scroll-Abstimmung. Auswahl und Parameter für fünf Einrastverfahren neben einer Telefonansicht zum Erproben der Bedienung."></a><figcaption>Ich verglich das Anhalten auf einem echten Gerät und zeichnete Scrollstrecke und Geschwindigkeit auf. Das Bild lässt sich zum Vergrößern öffnen.</figcaption></figure>
+  </section>
+
+  <section id="product">
+    <h2>Als Produkt — Über das Üben hinaus</h2>
+    <p>Das Erscheinungsbild folgt den Geräteeinstellungen. Übeaufzeichnungen werden lokal gespeichert und automatisch in iCloud gesichert.</p>
+    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Heller Modus. Erfassungsansicht. Über dem Tagesbalken (insgesamt 54 Minuten) und den Kategoriekarten liegt ein Übeverlaufsraster. Die Kategorie Stücke wird seit über 27 Minuten gemessen und durch eine hellere Farbe und einen weißen Rand hervorgehoben." loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Dunkler Modus. Erfassungsansicht. Über dem Tagesbalken (insgesamt 54 Minuten) und den Kategoriekarten liegt ein Übeverlaufsraster. Die Kategorie Stücke wird seit über 27 Minuten gemessen und durch eine hellere Farbe und einen weißen Rand hervorgehoben." loading="lazy" decoding="async"></picture></div><figcaption>Dieselbe Erfassungsansicht im hellen und dunklen Modus.</figcaption></figure>
+    <figure class="pl-icons">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="109 Themensymbole passend zur Tätigkeit, geordnet nach Instrumenten, Sport, Lernen, Malerei, Handwerk und Ausdruck."></picture>
+      <figcaption>Das Symbol im App-Kopf lässt sich passend zum Üben wählen: 47 für Musik, 15 für Sport, 15 für Sprachen und Lernen, 11 für Kunst, 14 für Gestalten und Alltag sowie 7 für Ausdruck. Das Saxofon basiert auf Qlementine Icons (MIT-Lizenz).</figcaption>
+    </figure>
+  </section>
+
+  <section id="reflection">
+    <h2>Im Gebrauch — Die nächste Frage: <wbr>Wie genau soll die Aufzeichnung sein?</h2>
+    <p>Ich nutzte die App beim morgendlichen Üben und zeigte meinem Lehrer den Bildschirm. Seine Rückmeldung: Die Übeinhalte seien auf einen Blick erkennbar; mit den Tonleiterarten wäre die Aufzeichnung noch hilfreicher (sinngemäß). Ich erwäge eine weitere Ebene unter den Kategorien, um mehr Details bei einfacher Bedienung zu ermöglichen.</p>
+  </section>
+
+  <section id="slides">
+    <h2>Materialien</h2>
+    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Die Webdemo</a> lässt Erfassung und Teilen ausprobieren. Sie enthält meine eigenen Übeaufzeichnungen mit Stand vom 20. September 2026. Änderungen werden nur im verwendeten Browser gespeichert.</p>
+    <figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="Projektfolien" aria-describedby="slides-help">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 1. Titel: Entwicklung einer App, um Übezeiten zu erfassen und dem Lehrer zu zeigen. Takafumi Horiuchi."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 2. Überblick: Log zum Erfassen und Share zum Zeigen der Übepraxis. Aufgaben, Zeitraum und Werkzeuge."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 3. Hintergrund: dem Lehrer das Saxofonüben genau vermitteln. Schwierigkeiten mit Papierheft und vorhandenen Apps."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 4. Ansatz: Erfassung mit einem Fingertipp und unmittelbar verständliche Visualisierung. Übeverlauf auf zwei Zeitskalen: Tag sowie Monate und Jahre."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 5. Vier KI-Einsätze: Recherche, erste Umsetzung, Werkzeug zur Abstimmung der Bedienung und Optimierung."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 6. Zusammenarbeit mit KI: vorhandene Apps recherchieren und das Konzept im Dialog konkretisieren."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 7. Erste Umsetzung: Vergleich der KI-generierten V0 mit V1 nach wiederholtem Feedback zu Layout und Farben."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 8. Bediengefühl: mit KI entwickeltes Werkzeug, um Scrollgeschwindigkeit und Anhalten selbst zu vergleichen."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 9. Optimierung: wiederholte Problemvorschläge von Claude Code, Prüfungen und Korrekturen durch Codex sowie menschliche Entscheidungen."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Folie 10. Ergebnisse und Ausblick: eigene Nutzung, Rückmeldung des Lehrers und Überlegungen zu Unterkategorien für genauere Aufzeichnungen."></a></li>
+      </ol>
+      <figcaption id="slides-help">Horizontal durch die Folien scrollen. Zum Vergrößern klicken oder tippen. Die Originale sind auf Japanisch.</figcaption>
+    </figure>
+    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">Projektmaterial als PDF öffnen (Japanisch, 4,4 MB)</a></p>
+  </section>
   <nav aria-label="Website">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Zurück zum Portfolio von Takafumi Horiuchi</span></a></li>
@@ -158,5 +259,9 @@
   </footer>
 
 </main>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Abbildung" hidden>
+  <button class="lightbox__close" type="button" aria-label="Vergrößerung schließen"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

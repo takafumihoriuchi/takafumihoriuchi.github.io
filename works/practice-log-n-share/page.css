@@ -43,3 +43,384 @@ section p {
 :lang(id) section p {
   text-align: start;
 }
+
+/* Same Japanese heading rhythm as the metronome page. The breaks are part
+   of the claim; the page inherits the site's type, palette and measure. */
+:lang(ja) section > h2 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+
+/* Only figures about a relationship leave the text column. This is the
+   shared bleed calculation, so their edges align with the slide strip. */
+main { --figure-wide: min(92vw, var(--wide)); }
+.pl-pair,
+.pl-evolution,
+.pl-moments,
+.pl-traces {
+  width: var(--figure-wide);
+  margin-inline-start: calc(50% - var(--figure-wide) / 2);
+}
+.pl-pair,
+.pl-map,
+.pl-crop,
+.pl-dayscale,
+.pl-evolution,
+.pl-moments,
+.pl-traces,
+.pl-icons,
+.pl-tuner,
+.pl-slides { margin-block: 2.5rem; }
+.pl-pair figcaption,
+.pl-evolution figcaption,
+.pl-moments figcaption,
+.pl-traces figcaption {
+  max-width: var(--measure);
+  margin-inline: auto;
+}
+
+/* Authentic iPhone captures, with the same display corner and single-pixel
+   edge as the metronome's device__screen. No frame or invented UI. */
+.pl-phone { display: block; }
+.pl-phone img {
+  width: 100%;
+  height: auto;
+  border-radius: 14.1% / 6.49%;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.pl-pair__screens {
+  display: flex;
+  justify-content: center;
+  gap: 4rem;
+}
+.pl-pair__screens > .pl-phone {
+  flex: 0 0 auto;
+  width: min(18rem, 40vw);
+}
+.pl-pair--appearance .pl-phone { width: min(15rem, 38vw); }
+.pl-facts { margin-block: 2rem 1.25rem; }
+.pl-facts > div {
+  display: grid;
+  grid-template-columns: 2em minmax(0, 1fr);
+  gap: 1.5rem;
+  margin-block: .5rem;
+}
+.pl-facts dt { color: var(--fg-muted); }
+.pl-facts dd { margin: 0; }
+.pl-links { color: var(--fg-muted); }
+
+/* Coordinates measured on the 1320 × 2868 captures. Y is the element
+   centre: Log grid 874, bar 1377, active card 2379, inactive card 1767;
+   Share dates 600, total 771, allocation 1120, daily table 1840.
+   Reach is measured from the right edge to the marked element. */
+.pl-map {
+  --phone: 17rem;
+  --gap: 1.75rem;
+  display: grid;
+  grid-template-columns: var(--phone) minmax(0, 1fr);
+  column-gap: var(--gap);
+}
+.pl-map__screen { position: relative; }
+.pl-map__notes {
+  position: relative;
+  margin: 0;
+  font-size: .8125rem;
+  line-height: 1.6;
+}
+.pl-map__note {
+  /* Give each term and description one rectangular text box. A wrapped
+     inline dd makes the shared reveal canvas start at the first line while
+     measuring the union of both lines, briefly spilling past a narrow page. */
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  column-gap: .5em;
+  position: absolute;
+  inset-inline: 0;
+  top: var(--y);
+  margin-top: -.8em;
+  word-break: auto-phrase;
+}
+.pl-map__note dt,
+.pl-map__note dd { margin: 0; }
+.pl-map__note dt { font-weight: 600; }
+.pl-map__note dd { color: var(--fg-muted); }
+.pl-map__note::before,
+.pl-map__note::after {
+  content: "";
+  position: absolute;
+  top: .8em;
+  pointer-events: none;
+}
+.pl-map__note::before {
+  inset-inline-end: calc(100% + .5rem);
+  width: calc(var(--gap) - .5rem);
+  border-top: 1px solid var(--fg-muted);
+}
+.pl-map__note::after {
+  inset-inline-end: calc(100% + var(--gap));
+  width: calc(var(--phone) * var(--reach));
+  border-top: 1px dotted var(--fg-muted);
+}
+.pl-map__point--log-1 { --y: 30.47%; --reach: .12; }
+.pl-map__point--log-2 { --y: 48.01%; --reach: .12; }
+.pl-map__point--log-3 { --y: 82.95%; --reach: .53; }
+.pl-map__point--log-4 { --y: 61.61%; --reach: .12; }
+.pl-map__point--share-1 { --y: 20.92%; --reach: .15; }
+.pl-map__point--share-2 { --y: 26.88%; --reach: .06; }
+.pl-map__point--share-3 { --y: 39.05%; --reach: .3; }
+.pl-map__point--share-4 { --y: 64.16%; --reach: .12; }
+.pl-map__pin,
+.pl-map__number { display: none; }
+.pl-map figcaption { grid-column: 1 / -1; margin-top: 1rem; }
+.pl-enlarge { display: block; cursor: zoom-in; }
+.pl-crop img { width: 100%; }
+
+/* This comparison uses the actual category colors from lib/practice.ts,
+   not a second site palette. A fixed 65-minute state also works without JS. */
+.pl-dayscale__static { margin-block-end: 1.75rem; }
+.pl-dayscale[data-enhanced] .pl-dayscale__static { display: none; }
+.pl-dayscale__control:not([hidden]) {
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr) 6.5em;
+  align-items: center;
+  gap: 1rem;
+  margin-block-end: 1.75rem;
+}
+.pl-dayscale__control input {
+  width: 100%;
+  min-width: 0;
+  margin: 0;
+  min-height: 44px;
+  accent-color: var(--accent);
+  cursor: ew-resize;
+}
+.pl-dayscale__control input:focus-visible {
+  outline: 2px solid var(--accent);
+  outline-offset: 4px;
+}
+.pl-dayscale__control output {
+  text-align: end;
+  font-variant-numeric: tabular-nums;
+}
+.pl-dayscale__measure {
+  position: absolute;
+  visibility: hidden;
+  white-space: nowrap;
+  font-variant-numeric: tabular-nums;
+}
+.pl-dayscale__row + .pl-dayscale__row { margin-block-start: 1.75rem; }
+.pl-dayscale__row > p { margin-block-end: .5rem; }
+.pl-dayscale__bar {
+  display: flex;
+  height: 2rem;
+  overflow: hidden;
+  border-radius: .35rem;
+  background: var(--rule);
+}
+.pl-dayscale__bar > span {
+  flex: 0 0 calc(var(--minutes) / var(--maximum) * 100%);
+  background: var(--category);
+  border-inline-end: 1px solid var(--bg);
+}
+.pl-dayscale__bar > span:last-child { border-inline-end: 0; }
+.pl-dayscale__ticks {
+  position: relative;
+  height: 1.75rem;
+  margin-block-start: .25rem;
+  color: var(--fg-muted);
+  font-variant-numeric: tabular-nums;
+}
+.pl-dayscale__ticks > span {
+  position: absolute;
+  inset-inline-start: calc(var(--position) * 1%);
+  transform: translateX(-50%);
+  white-space: nowrap;
+}
+.pl-dayscale__ticks > span:first-child { transform: none; }
+.pl-dayscale__ticks > span:last-child { transform: translateX(-100%); }
+
+/* The two early captures are 393px wide: <=196px keeps them at 2× density.
+   All three dates stay aligned even though the web viewport ratio differs
+   fractionally from the iPhone display. */
+.pl-evolution__screens {
+  display: flex;
+  align-items: flex-start;
+  justify-content: center;
+  gap: clamp(.25rem, 1vw, 1.5rem);
+}
+.pl-evolution__screens > div { width: min(12.25rem, 28vw); }
+.pl-evolution__screens img { width: 100%; }
+.pl-evolution__screens > div > a > img {
+  border-radius: 14.1% / 6.49%;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.pl-evolution__screens p { margin-block: 1rem 0; text-align: center; }
+.pl-changes { margin-block: 2rem; }
+.pl-changes > div { margin-block: 1.1rem; }
+.pl-changes dt { font-weight: 600; }
+.pl-changes dd { margin: .25rem 0 0; color: var(--fg-muted); }
+
+/* The original tool capture is 1005px wide; cap it at 500 to keep its labels
+   crisp at 2×. The full-size file is available through the shared lightbox. */
+.pl-tuner { width: min(100%, 500px); margin-inline: auto; }
+.pl-tuner img { width: 100%; }
+
+/* Source-generated drawings inherit this site's colors within their own
+   SVG stylesheet. No filtering: category colors keep their meaning. */
+.pl-moments img,
+.pl-icons img { width: 100%; }
+.pl-traces__grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: 1rem;
+}
+.pl-traces__grid > div { display: grid; grid-template-rows: 4.5em auto; }
+.pl-traces__grid p { text-align: start; line-height: 1.5; }
+.pl-traces__grid img { width: 100%; }
+.pl-traces__adopted p { color: var(--accent); }
+.pl-traces__adopted p > span { font-weight: 600; }
+
+@media (min-width: 36.01rem) and (max-width: 55rem) {
+  .pl-traces__grid { grid-template-columns: repeat(3, minmax(0, 1fr)); }
+}
+
+/* Small horizontal contact strip. These are supporting originals at the
+   end of the story, so a whole slide never dominates the reading column. */
+.pl-slides__strip {
+  display: flex;
+  gap: 1rem;
+  list-style: none;
+  overflow-x: auto;
+  overscroll-behavior-inline: contain;
+  scroll-snap-type: x proximity;
+  padding: 0 0 1rem;
+  margin: 0;
+}
+.pl-slides__strip > li {
+  flex: 0 0 min(20rem, 72vw);
+  scroll-snap-align: start;
+}
+.pl-slides__strip img {
+  width: 100%;
+  border: 1px solid var(--rule);
+}
+.pl-slides__strip:focus-visible { outline: 1px solid var(--accent); outline-offset: .25rem; }
+.pl-language-note { color: var(--fg-muted); }
+
+@media (max-width: 36rem) {
+  .pl-pair__screens { gap: .75rem; }
+  .pl-pair__screens > .pl-phone { width: 44vw; }
+  .pl-pair--appearance .pl-phone { width: 38vw; }
+  .pl-pair figcaption,
+  .pl-evolution figcaption,
+  .pl-moments figcaption,
+  .pl-traces figcaption { max-width: calc(100vw - 3rem); }
+  .pl-traces__grid { grid-template-columns: repeat(2, minmax(0, 1fr)); row-gap: 1.75rem; }
+  .pl-dayscale__control:not([hidden]) {
+    grid-template-columns: minmax(0, 1fr) auto;
+    column-gap: .75rem;
+  }
+  .pl-dayscale__control label { grid-column: 1; grid-row: 1; }
+  .pl-dayscale__control output { grid-column: 2; grid-row: 1; }
+  .pl-dayscale__control input { grid-column: 1 / -1; grid-row: 2; }
+  .pl-map {
+    --phone: min(17rem, 68vw);
+    grid-template-columns: minmax(0, 1fr);
+    justify-items: center;
+  }
+  .pl-map__screen { width: var(--phone); }
+  .pl-map__notes { justify-self: stretch; margin-top: 1.5rem; }
+  .pl-map__note { position: static; margin: 0 0 .75rem; }
+  .pl-map__note::before,
+  .pl-map__note::after { content: none; }
+  .pl-map__number { display: inline; color: var(--accent); }
+  .pl-map__pin {
+    display: grid;
+    place-items: center;
+    position: absolute;
+    top: var(--y);
+    inset-inline-end: calc(var(--reach) * 100%);
+    transform: translate(50%, -50%);
+    width: 1.5rem;
+    aspect-ratio: 1;
+    border: 1px solid var(--fg-muted);
+    border-radius: 50%;
+    background: var(--bg);
+    color: var(--fg);
+    font-size: .8125rem;
+    line-height: 1;
+    pointer-events: none;
+  }
+}
+
+@media print {
+  .pl-dayscale[data-enhanced] .pl-dayscale__static { display: block; }
+  .pl-dayscale__control,
+  .pl-dayscale__control:not([hidden]),
+  .pl-dayscale__row[data-scale="rejected"],
+  .pl-dayscale figcaption { display: none; }
+  .pl-slides__strip { flex-wrap: wrap; overflow: visible; }
+}
+
+/* Translated labels need more room than the original two-character terms.
+   Numbered notes stay in normal flow so longer text never collides with a
+   neighbouring callout. The screenshot coordinates remain unchanged. */
+html:not(:lang(ja)) .pl-facts > div {
+  grid-template-columns: 7.5em minmax(0, 1fr);
+}
+html:not(:lang(ja)) .pl-map {
+  --phone: min(17rem, 68vw);
+  grid-template-columns: minmax(0, 1fr);
+  justify-items: center;
+}
+html:not(:lang(ja)) .pl-map__screen { width: var(--phone); }
+html:not(:lang(ja)) .pl-map__notes {
+  justify-self: stretch;
+  margin-top: 1.5rem;
+}
+html:not(:lang(ja)) .pl-map__note { position: static; margin: 0 0 .75rem; }
+html:not(:lang(ja)) .pl-map__note::before,
+html:not(:lang(ja)) .pl-map__note::after { content: none; }
+html:not(:lang(ja)) .pl-map__number { display: inline; color: var(--accent); }
+html:not(:lang(ja)) .pl-map__pin {
+  display: grid;
+  place-items: center;
+  position: absolute;
+  top: var(--y);
+  inset-inline-end: calc(var(--reach) * 100%);
+  transform: translate(50%, -50%);
+  width: 1.5rem;
+  aspect-ratio: 1;
+  border: 1px solid var(--fg-muted);
+  border-radius: 50%;
+  background: var(--bg);
+  color: var(--fg);
+  font-size: .8125rem;
+  line-height: 1;
+  pointer-events: none;
+}
+html:not(:lang(ja)) .pl-traces__grid > div { grid-template-rows: minmax(6em, auto) auto; }
+/* These are physical image positions and a left-to-right time axis. Keep
+   them aligned with the original captures while Arabic prose reads RTL. */
+:lang(ar) .pl-pair__screens,
+:lang(ar) .pl-evolution__screens,
+:lang(ar) .pl-map__screen,
+:lang(ar) .pl-dayscale__bar,
+:lang(ar) .pl-dayscale__ticks,
+:lang(ar) .pl-dayscale__control input { direction: ltr; }
+:lang(ar) .pl-evolution__screens p { direction: rtl; }
+:lang(ar) .pl-dayscale__ticks > span { direction: rtl; unicode-bidi: isolate; }
+/* inset-inline-start is resolved on the label itself, whose text is RTL. */
+:lang(ar) .pl-dayscale__ticks > span {
+  inset-inline-start: auto;
+  inset-inline-end: calc(var(--position) * 1%);
+}
+@media (max-width: 36rem) {
+  html:not(:lang(ja)) .pl-facts > div {
+    grid-template-columns: minmax(0, 1fr);
+    gap: .2rem;
+    margin-block: .8rem;
+  }
+  html:not(:lang(ja)) .pl-map__note { grid-template-columns: minmax(0, 1fr); }
+}

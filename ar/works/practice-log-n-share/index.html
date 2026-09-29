@@ -4,16 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<!-- Scaffold for a work whose write-up has not been written yet, in the shape
-     OPERATIONS.md §3 fixes for that stage. The title is the name the work is
-     known by and is carried untranslated; only the date beside it on the index
-     is written in each language. When the write-up is added: fill the four
-     sections, add assets/og.jpg and assets/thumb.webp, point og:image and the
-     JSON-LD `image` at og.jpg, add `datePublished`, drop `creativeWorkStatus`,
-     replace the status line, and swap the index's thumb-pending span for the
-     image. -->
 <title>Practice Log n Share — تاكافومي هوريوتشي</title>
-<meta name="description" content="مشروع شخصي. النص قيد الإعداد.">
+<meta name="description" content="تسجيل التمرين بلمسة واحدة، ثم عرض الشاشة نفسها على المعلّم أثناء الدرس. خططت لهذا التطبيق على iPhone وصمّمته من أجل تماريني على الساكسفون، ونفّذته بالتعاون مع الذكاء الاصطناعي.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ar/works/practice-log-n-share/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/practice-log-n-share/">
@@ -34,29 +26,23 @@
 <link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
 <link rel="stylesheet" href="../../../style.css">
+<link rel="stylesheet" href="../../../works/figures.css">
 <link rel="stylesheet" href="../../../works/practice-log-n-share/page.css">
+<script src="../../../works/figures.js" defer></script>
+<script src="../../../works/practice-log-n-share/dayscale.js" defer></script>
 <script src="../../../works/home-mark.js" defer></script>
-<!-- Absolute URLs, as on the index: crawlers do not resolve relative paths.
-     og:image is the site's own card, not a placeholder for this work: the
-     work's own image will live at assets/og.jpg, a different URL, so nothing
-     cached now has to be invalidated later. See OPERATIONS.md §7. -->
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ar_AR">
 <meta property="og:title" content="Practice Log n Share">
-<meta property="og:description" content="النص قيد الإعداد.">
+<meta property="og:description" content="تسجيل التمرين بلمسة واحدة، ثم عرض الشاشة نفسها على المعلّم أثناء الدرس. خططت لهذا التطبيق على iPhone وصمّمته من أجل تماريني على الساكسفون، ونفّذته بالتعاون مع الذكاء الاصطناعي.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ar/works/practice-log-n-share/">
-<meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
-<meta property="og:image:type" content="image/png">
+<meta property="og:image" content="https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg">
+<meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="تطبيق Practice Log n Share على iPhone. يسارًا شاشة التسجيل أثناء قياس وقت التمرين، ويمينًا شاشة المشاركة التي تلخّص وقت التمرين وتفاصيله بين الدروس.">
 <meta name="twitter:card" content="summary_large_image">
-<!-- The Person node is repeated rather than only referenced, so this page
-     stands on its own when read in isolation; the shared @id ties the copies
-     together. `creativeWorkStatus` is here because the page visibly says the
-     same thing — nothing is claimed in the markup that the reader cannot see.
-     No `datePublished` and no `image`: neither is true of this page yet. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
@@ -77,10 +63,13 @@
       "@id": "https://takafumihoriuchi.github.io/ar/works/practice-log-n-share/#work",
       "name": "Practice Log n Share",
       "url": "https://takafumihoriuchi.github.io/ar/works/practice-log-n-share/",
-      "description": "مشروع شخصي. النص قيد الإعداد.",
-      "creativeWorkStatus": "قيد الإعداد",
+      "description": "تسجيل التمرين بلمسة واحدة، ثم عرض الشاشة نفسها على المعلّم أثناء الدرس. خططت لهذا التطبيق على iPhone وصمّمته من أجل تماريني على الساكسفون، ونفّذته بالتعاون مع الذكاء الاصطناعي.",
+      "datePublished": "2026-09-29",
+      "image": "https://takafumihoriuchi.github.io/works/practice-log-n-share/assets/og.jpg",
       "inLanguage": "ar",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -88,49 +77,161 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="العودة إلى معرض أعمال تاكافومي هوريوتشي">تاكافومي هوريوتشي</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="العودة إلى معرض أعمال تاكافومي هوريوتشي">Takafumi Horiuchi</a></div>
 <main>
-
   <header>
     <h1>Practice Log n Share</h1>
-    <!-- The dateline carries the status until there is a page to put a date on.
-         A work page with no date and no explanation reads as an oversight; this
-         says which of the two it is. The date the work itself was made is on the
-         index, beside its title. -->
-    <p class="dateline">قيد الإعداد</p>
+    <p class="dateline">سبتمبر 2026</p>
   </header>
 
-  <ascii-hero data-scene="in-preparation" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">                .------------------------------.
-   o            |    .        .         .      |
-  /|\  ------&gt;  |        .       ( o )         |
-  / \           |   .         .        .       |
-                |       .         .       .    |
-                &#x27;------------------------------&#x27;</pre>
+  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
+    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
+## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
+++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
+@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
+## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
+++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
+++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
   </ascii-hero>
 
-  <!-- The four headings are the shape the write-up will take, in the order
-       OPERATIONS.md §3 fixes: the constraints are stated before what was
-       generated inside them. The one sentence below is not content — it is the
-       description the metadata already carries, made visible, because §8 does
-       not allow the markup to assert what the page does not say. -->
-  <section>
+  <section id="overview">
     <h2>نظرة عامة</h2>
-    <p class="lead">مشروع شخصي. النص قيد الإعداد.</p>
+    <p class="lead">تسجيل التمرين بلمسة واحدة، ثم عرض الشاشة نفسها على المعلّم أثناء الدرس. خططت لهذا التطبيق على iPhone وصمّمته من أجل تماريني على الساكسفون، ونفّذته بالتعاون مع الذكاء الاصطناعي.</p>
+    <figure class="pl-pair">
+      <div class="pl-pair__screens">
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="شاشة التسجيل. في الأعلى شبكة لسجل التمرين، وتحتها شريط اليوم (54 دقيقة إجمالًا) وبطاقات الفئات. تمرين المقطوعات قيد القياس منذ أكثر من 27 دقيقة، ويظهر بلون أكثر سطوعًا وإطار أبيض." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="شاشة المشاركة. تلخّص الفترة من درس 17 سبتمبر إلى 24 سبتمبر: 4 ساعات و38 دقيقة إجمالًا، وأشرطة حسب الفئة، وجدول يومي يعرض جميع الفئات دون تمرير أفقي." fetchpriority="high"></picture>
+      </div>
+      <figcaption>التسجيل يسارًا والمشاركة يمينًا. المس فئة لبدء قياس الوقت، ثم اعرض ملخّص التمرين بين الدروس. تستخدم الشاشات بيانات افتراضية للتوضيح. تعرض لقطات الشاشة الواجهة اليابانية الأصلية.</figcaption>
+    </figure>
+    <dl class="pl-facts">
+      <div><dt>دوري</dt><dd>التخطيط وتصميم UX/UI والتنفيذ (بالتعاون مع Claude Code وCodex)</dd></div>
+      <div><dt>الفترة</dt><dd>سبتمبر 2026</dd></div>
+      <div><dt>التقنيات</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
+    </dl>
+    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">جرّب النسخة التجريبية على الويب</a> (تتضمن سجلات تماريني حتى 20 سبتمبر 2026)</p>
   </section>
 
-  <section>
-    <h2>القيود</h2>
+  <section id="background">
+    <h2>البداية — «كيف تسير تمارينك؟»: <wbr>لم أجد جوابًا</h2>
+    <p>في دروسي التي تُعقد كل أسبوعين، لم تكن إجابة «تمرّنت على السلالم الموسيقية أكثر» توضّح ما تمرّنت عليه أو مدته. كان من الصعب الكتابة في دفتر ورقي والساكسفون معلّق حول عنقي، وكانت تطبيقات تتبّع الوقت التي جرّبتها أدوات لمراجعة سجلاتي بمفردي.</p>
+    <figure class="pl-moments">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-ar.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-ar.svg" width="960" height="285" loading="lazy" decoding="async" alt="بين تاريخَي درسين تتوالى أشرطة أيام التمرين وأيام الراحة. جمع أوقات كل فئة يوميًا في الشريط السفلي يعطي إجماليًا قدره 10 ساعات و06 دقائق."></picture>
+      <figcaption>الأشرطة العلوية تمثّل التمرين اليومي، والإطارات الحمراء تحدّد أيام الدروس. في الدرس أعرض ملخّص الفترة بينهما. التواريخ والأوقات افتراضية للتوضيح، ومجموع الأوقات متساوٍ في الأشرطة العلوية والشريط السفلي.</figcaption>
+    </figure>
   </section>
 
-  <section>
-    <h2>المقاربة</h2>
+  <section id="recording">
+    <h2>التسجيل — والآلة في يدي، <wbr>بلمسة واحدة</h2>
+    <p>أثناء التمرين لا ألمس إلا بطاقات الفئات. تبدأ اللمسة قياس الوقت، وتبدّل بطاقة أخرى الفئة، وتوقفه لمسة ثانية على البطاقة نفسها.</p>
+    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="شاشة التسجيل. في الأعلى شبكة لسجل التمرين، وتحتها شريط اليوم (54 دقيقة إجمالًا) وبطاقات الفئات. تمرين المقطوعات قيد القياس منذ أكثر من 27 دقيقة، ويظهر بلون أكثر سطوعًا وإطار أبيض." loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>السجل</dt><dd>التمارين السابقة. أول ما يظهر عند فتح التطبيق.</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>اليوم</dt><dd>ترتيب التمرين وتوزيعه. يمتلئ بعد ساعة.</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>قيد القياس</dt><dd>هذه البطاقة وحدها ساطعة ومحاطة بالأبيض.</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>البطاقات</dt><dd>المس للتبديل. وقت اليوم بحجم بارز.</dd></div></dl></figure>
   </section>
 
-  <section>
-    <h2>النتيجة</h2>
+  <section id="day">
+    <h2>يوم واحد — حين يمتلئ الشريط، <wbr>يبقى ممتلئًا</h2>
+    <p>يمتلئ شريط اليوم عند بلوغ ساعة. بعدها يصبح المجموع الحالي هو الطرف الأيمن، كي لا يعود الفراغ إلى شريط سبق أن امتلأ.</p>
+    <figure class="pl-dayscale" data-unit-hour=" س " data-unit-minute=" د">
+      <div class="pl-dayscale__control" hidden><label for="practice-minutes">تمرين اليوم</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1 س 05 د"><output for="practice-minutes">1 س 05 د</output></div>
+      <p class="pl-dayscale__static">تمرين اليوم — <span data-print-value>1 س 05 د</span></p>
+      <div class="pl-dayscale__row" data-scale="adopted">
+        <p>المعتمد</p>
+        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30 د</span><span style="--position:100">1 س 05 د</span></div>
+      </div>
+      <div class="pl-dayscale__row" data-scale="rejected">
+        <p>المستبعد</p>
+        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
+        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30 د</span><span style="--position:66.6667">1 س</span><span style="--position:100">1 س 30 د</span></div>
+      </div>
+      <figcaption><span data-static-caption>مقارنة عند 65 دقيقة من التمرين. </span><span data-interactive-caption hidden>حرّك المنزلق لتغيير وقت تمرين اليوم. </span>في الأعلى التصميم المعتمد: المجموع هو الطرف الأيمن، بحد أدنى للمقياس قدره ساعة. في الأسفل التصميم المستبعد، الذي يوسّع المقياس من 60 إلى 90 ثم 120 دقيقة. فور تجاوز ساعة يعود الفراغ إلى الشريط السفلي وحده.</figcaption>
+    </figure>
   </section>
 
+  <section id="history">
+    <h2>التراكم — كل شيء ظاهر، <wbr>منذ اليوم الأول</h2>
+    <p>تبيّن درجات الأخضر مقدار التمرين، وتحدّد الإطارات الحمراء أيام الدروس. يتيح التمرير الأفقي العودة إلى أول يوم مسجّل. أعطيت الأولوية لاستعراض سنوات من التمرين على خفة عرض البيانات.</p>
+    <figure class="pl-crop">
+      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="شبكة السجل. درجات الأخضر تبيّن مقدار التمرين من يونيو إلى سبتمبر، والإطارات الحمراء تحدّد الدروس التي تُعقد كل أسبوعين."></picture>
+      <figcaption>خمسة مستويات: 0 دقيقة، وأقل من 30، وأقل من 60، وأقل من 90، و90 فأكثر. هذا التراكم هو أول ما يظهر عند فتح التطبيق.</figcaption>
+    </figure>
+  </section>
+
+  <section id="sharing">
+    <h2>المشاركة — في بداية الدرس، <wbr>شاشة تُفهم بنظرة</h2>
+    <p>تُلخّص المجاميع حسب الفئة والتفاصيل اليومية الفترة من الدرس السابق إلى اليوم، لتُعرض مباشرة على المعلّم. وضعت جميع الفئات في شاشة واحدة داخل الجدول اليومي، حتى لو استلزم ذلك تصغير النص، وألغيت التمرير الأفقي.</p>
+    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="شاشة المشاركة. تلخّص الفترة من درس 17 سبتمبر إلى 24 سبتمبر: 4 ساعات و38 دقيقة إجمالًا، وأشرطة حسب الفئة، وجدول يومي يعرض جميع الفئات دون تمرير أفقي." loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>الفترة</dt><dd>من تاريخ الدرس السابق إلى اليوم.</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>المجموع</dt><dd>وقت التمرين وعدد أيامه خلال الفترة.</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>التوزيع</dt><dd>الاسم والشريط والوقت في صف واحد.</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>التفاصيل</dt><dd>كل الفئات في شاشة واحدة، دون تمرير أفقي.</dd></div></dl><figcaption>افتح الصورة لتكبير التفاصيل اليومية.</figcaption></figure>
+  </section>
+
+  <section id="evolution">
+    <h2>التطور — البطاقات تصبح <wbr>لوحة تحكّم للتمرين</h2>
+    <p>بنيت الشاشات انطلاقًا من مواصفات صغتها بالحوار مع الذكاء الاصطناعي، وكرّرت تجربتها وتعديلها بنفسي. استكشفت التسجيل والمشاركة في نسخة ويب مبكرة، ثم نفّذت تطبيقًا للاستخدام على iPhone.</p>
+    <figure class="pl-evolution">
+      <div class="pl-evolution__screens">
+        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="النسخة الأولى في 9 سبتمبر. ست بطاقات صغيرة للفئات وإجمالي اليوم البالغ 40 دقيقة في منطقتين منفصلتين من شاشة التسجيل."></a><p>9 سبتمبر<br>النسخة الأولى</p></div>
+        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="نسخة الويب في 21 سبتمبر. جُمعت الفئة ووقت اليوم في بطاقة كبيرة، وأُبرزت جلسة قراءة النوتة الجارية ومدتها 10 دقائق."></a><p>21 سبتمبر<br>نسخة الويب</p></div>
+        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="شاشة التسجيل. في الأعلى شبكة لسجل التمرين، وتحتها شريط اليوم (54 دقيقة إجمالًا) وبطاقات الفئات. تمرين المقطوعات قيد القياس منذ أكثر من 27 دقيقة، ويظهر بلون أكثر سطوعًا وإطار أبيض." loading="lazy" decoding="async"></picture><p>24 سبتمبر<br>iOS 1.0</p></div>
+      </div>
+      <figcaption>تستخدم النسختان الأولى والويب البيانات الافتراضية نفسها (ست فئات، وإجمالي 40 دقيقة اليوم). أما iOS 1.0 فيستخدم بيانات افتراضية أخرى.</figcaption>
+    </figure>
+    <dl class="pl-changes">
+      <div><dt>الاسم والوقت معًا</dt><dd>أبرزت وقت اليوم على كل بطاقة، لربط ما تمرّنت عليه بالوقت الذي خصّصته له.</dd></div>
+      <div><dt>الحالة الحالية بنظرة واحدة</dt><dd>جعلت البطاقة الجاري قياسها وحدها ساطعة، وخفّفت سطوع البقية.</dd></div>
+      <div><dt>نطاق التحكّم داخل الشاشة</dt><dd>جعلت التمرير يتوقف حيث يظهر صف البطاقات كاملًا داخل الشاشة.</dd></div>
+    </dl>
+    <p>في المرحلة الأخيرة كرّرت دورة نحو 15 مرة: يقترح Claude Code مشكلات محتملة، ويتحقق Codex منها ويصلحها، وأقرّر أنا ما أعتمده من التغييرات.</p>
+  </section>
+
+  <section id="touch">
+    <h2>الإحساس — اختيار طريقة التوقف <wbr>بالتجربة</h2>
+    <p>لم تكفِ التعليمات اللفظية لتحقيق إحساس «حركة سلسة ثم توقف محكم». أنشأت مع الذكاء الاصطناعي أداة لتبديل الأساليب والقيم فورًا، وقارنت خمسة أساليب على جهاز فعلي، ثم اخترت تثبيت التمرير الأصلي في المتصفح.</p>
+    <figure class="pl-traces">
+      <div class="pl-traces__grid">
+        <div><p>نموذج الحدبة</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="خمس حركات على جهاز فعلي باستخدام نموذج الحدبة. المحور الأفقي من 0 إلى 1200 مللي ثانية بعد رفع الإصبع، والعمودي هو المسافة من موضع التثبيت. خط الصفر المتقطّع هو موضع التثبيت، والنقطة في نهاية كل خط هي آخر موضع مقاس."></div>
+        <div><p>توقّع نقطة الوصول</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="خمس حركات على جهاز فعلي باستخدام توقّع نقطة الوصول. المحور الأفقي من 0 إلى 1200 مللي ثانية بعد رفع الإصبع، والعمودي هو المسافة من موضع التثبيت. خط الصفر المتقطّع هو موضع التثبيت، والنقطة في نهاية كل خط هي آخر موضع مقاس."></div>
+        <div class="pl-traces__adopted"><p>الأصلي proximity<br><span>المعتمد</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="خمس حركات على جهاز فعلي باستخدام الأصلي proximity. المحور الأفقي من 0 إلى 1200 مللي ثانية بعد رفع الإصبع، والعمودي هو المسافة من موضع التثبيت. خط الصفر المتقطّع هو موضع التثبيت، والنقطة في نهاية كل خط هي آخر موضع مقاس."></div>
+        <div><p>الأصلي mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="خمس حركات على جهاز فعلي باستخدام الأصلي mandatory. المحور الأفقي من 0 إلى 1200 مللي ثانية بعد رفع الإصبع، والعمودي هو المسافة من موضع التثبيت. خط الصفر المتقطّع هو موضع التثبيت، والنقطة في نهاية كل خط هي آخر موضع مقاس."></div>
+        <div><p>دون تثبيت</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="خمس حركات على جهاز فعلي باستخدام دون تثبيت. المحور الأفقي من 0 إلى 1200 مللي ثانية بعد رفع الإصبع، والعمودي هو المسافة من موضع التثبيت. خط الصفر المتقطّع هو موضع التثبيت، والنقطة في نهاية كل خط هي آخر موضع مقاس."></div>
+      </div>
+      <figcaption>مقارنة المواضع بعد رفع الإصبع بالمقياس نفسه. خط الصفر المتقطّع هو موضع التثبيت. اخترت من سجلات الجهاز خمس حركات لكل أسلوب، بسرعات بين 0.6 و1.8 px/ms محسوبة من مواضع آخر 60 ms، بدءًا بالأقرب إلى 1.2 px/ms. تختلف الإعدادات ومواضع البداية والاتجاهات بين الحركات.</figcaption>
+    </figure>
+    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="أداة ضبط التمرير. خيارات للتبديل بين خمسة أساليب للتثبيت ومعاملاتها، إلى جانب شاشة هاتف لتجربة التفاعل."></a><figcaption>قارنت طريقة توقف التمرير على جهاز فعلي مع تسجيل المسافة والسرعة. افتح الصورة لتكبيرها.</figcaption></figure>
+  </section>
+
+  <section id="product">
+    <h2>بوصفه منتجًا — ما وراء التمرين</h2>
+    <p>يتبع المظهر إعدادات الجهاز. تُحفظ سجلات التمرين على الجهاز وتُنسخ احتياطيًا إلى iCloud تلقائيًا.</p>
+    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="الوضع الفاتح. شاشة التسجيل. في الأعلى شبكة لسجل التمرين، وتحتها شريط اليوم (54 دقيقة إجمالًا) وبطاقات الفئات. تمرين المقطوعات قيد القياس منذ أكثر من 27 دقيقة، ويظهر بلون أكثر سطوعًا وإطار أبيض." loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="الوضع الداكن. شاشة التسجيل. في الأعلى شبكة لسجل التمرين، وتحتها شريط اليوم (54 دقيقة إجمالًا) وبطاقات الفئات. تمرين المقطوعات قيد القياس منذ أكثر من 27 دقيقة، ويظهر بلون أكثر سطوعًا وإطار أبيض." loading="lazy" decoding="async"></picture></div><figcaption>شاشة التسجيل نفسها في الوضعين الفاتح والداكن.</figcaption></figure>
+    <figure class="pl-icons">
+      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="109 أيقونات موضوعية للاختيار حسب النشاط، مرتبة إلى آلات موسيقية ورياضة وتعلّم ورسم وأعمال يدوية وأنشطة تعبيرية."></picture>
+      <figcaption>يمكن اختيار أيقونة رأس التطبيق حسب التمرين: 47 للموسيقى، و15 للرياضة، و15 للغات والتعلّم، و11 للفن، و14 للصنع والحياة اليومية، و7 للتعبير. أيقونة الساكسفون مستندة إلى Qlementine Icons (ترخيص MIT).</figcaption>
+    </figure>
+  </section>
+
+  <section id="reflection">
+    <h2>عند الاستخدام — السؤال التالي: <wbr>ما مقدار التفاصيل التي نسجّلها؟</h2>
+    <p>استخدمت التطبيق في تماريني الصباحية، وعرضت الشاشة على معلّمي أثناء الدرس. كان رأيه أن محتوى التمرين واضح من نظرة واحدة، وأن تسجيل أنواع السلالم الموسيقية سيجعله أكثر فائدة (إعادة صياغة). أدرس إضافة مستوى تحت الفئات لتسجيل تفاصيل أكثر مع الحفاظ على سهولة الاستخدام.</p>
+  </section>
+
+  <section id="slides">
+    <h2>المواد</h2>
+    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">النسخة التجريبية على الويب</a> تتيح تجربة التسجيل والمشاركة. تتضمن سجلات تماريني حتى 20 سبتمبر 2026، وتُحفظ التغييرات في المتصفح الذي تستخدمه فقط.</p>
+    <figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="شرائح المشروع" aria-describedby="slides-help">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 1. الغلاف: تطوير تطبيق لتسجيل التمرين وعرضه على معلّم الموسيقى. تاكافومي هوريوتشي."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 2. نظرة عامة: Log للتسجيل وShare لعرض التمرين على المعلّم. الدور والفترة والأدوات."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 3. الخلفية: الرغبة في نقل صورة دقيقة عن تمارين الساكسفون إلى المعلّم. صعوبات الدفتر الورقي والتطبيقات الموجودة."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 4. النهج: تسجيل بلمسة واحدة وتصوير بصري يُفهم فورًا. عرض تراكم التمرين على مقياسين: يوم واحد، وأشهر أو سنوات."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 5. أربعة استخدامات للذكاء الاصطناعي: البحث والتنفيذ الأساسي وأداة ضبط التفاعل وتحسين التنفيذ."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 6. التعاون مع الذكاء الاصطناعي: دراسة التطبيقات الموجودة وبلورة الفكرة بالحوار."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 7. التنفيذ الأساسي: مقارنة V0 التي ولّدها الذكاء الاصطناعي مع V1 المعدّلة بعد ملاحظات متكررة على التخطيط والألوان."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 8. ضبط التفاعل: تطوير أداة مع الذكاء الاصطناعي لمقارنة سرعة التمرير وتوقفه بنفسي."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 9. تحسين التنفيذ: تكرار اقتراح المشكلات بواسطة Claude Code، والتحقق والإصلاح بواسطة Codex، واتخاذ الإنسان للقرارات."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="الشريحة 10. النتائج والخطوات التالية: الاستخدام الشخصي وملاحظات المعلّم ودراسة فئات فرعية لتسجيل أكثر تفصيلًا."></a></li>
+      </ol>
+      <figcaption id="slides-help">مرّر أفقيًا للتنقل بين الشرائح. انقر أو المس للتكبير. الشرائح الأصلية باللغة اليابانية.</figcaption>
+    </figure>
+    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">فتح مواد المشروع بصيغة PDF (باليابانية، 4.4 MB)</a></p>
+  </section>
   <nav aria-label="الموقع">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">العودة إلى معرض أعمال تاكافومي هوريوتشي</span></a></li>
@@ -158,5 +259,9 @@
   </footer>
 
 </main>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="عرض الصورة مكبّرة" hidden>
+  <button class="lightbox__close" type="button" aria-label="إغلاق العرض المكبّر"></button>
+  <img class="lightbox__image" alt="">
+</div>
 </body>
 </html>

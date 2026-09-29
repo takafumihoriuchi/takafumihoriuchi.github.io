@@ -123,6 +123,7 @@ function pulseCharacter(character) {
     "=": "~",
     "o": "*",
     "O": "*",
+    "@": "*",
   };
   return replacements[character] || character;
 }

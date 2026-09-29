@@ -43,7 +43,8 @@
 
   function open(link) {
     const source = link.querySelector("img");
-    image.src = link.href;
+    image.src = link.dataset.darkHref && matchMedia("(prefers-color-scheme: dark)").matches
+      ? link.dataset.darkHref : link.href;
     image.alt = source ? source.alt : "";
 
     /* A line-art figure is inverted where it sits in a dark page. Enlarged, it
@@ -111,7 +112,7 @@
   for (const link of (main || document).querySelectorAll("a[href]")) {
     if (!IMAGE_FILE.test(link.getAttribute("href"))) continue;
     if (link.children.length !== 1) continue;
-    if (link.firstElementChild.tagName !== "IMG") continue;
+    if (!["IMG", "PICTURE"].includes(link.firstElementChild.tagName) || !link.querySelector("img")) continue;
 
     link.setAttribute("aria-haspopup", "dialog");
     link.addEventListener("click", (event) => {
