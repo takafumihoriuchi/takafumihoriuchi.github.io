@@ -1,0 +1,45 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 420 215" width="420" height="215">
+<style>
+  svg { --ink: #1a1a1a; --muted: #6b6b68; --accent: #7c6553; --rule: rgba(26, 26, 26, 0.13); }
+  @media (prefers-color-scheme: dark) {
+    svg { --ink: #e8e8e5; --muted: #96968f; --accent: #b49780; --rule: rgba(232, 232, 229, 0.16); }
+  }
+  text { font-family: system-ui, -apple-system, "Segoe UI", Roboto, "Helvetica Neue", Arial, "Noto Sans", "Liberation Sans", sans-serif; font-size: 15px; fill: var(--muted); font-variant-numeric: tabular-nums; }
+  .ink { fill: var(--ink); }
+  .line { fill: none; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; stroke-linecap: round; }
+  .shape { fill: var(--ink); fill-opacity: 0.08; stroke: var(--ink); stroke-width: 2; stroke-linejoin: round; }
+  .guide { fill: none; stroke: var(--rule); stroke-width: 1.25; }
+  .axis { fill: none; stroke: var(--muted); stroke-width: 1.25; }
+  .rest { fill: none; stroke: var(--muted); stroke-width: 1.25; stroke-dasharray: 3 4; }
+  .click { fill: var(--accent); }
+  .accent { fill: none; stroke: var(--accent); stroke-width: 3; stroke-linecap: round; }
+  .faint { fill: none; stroke: var(--accent); stroke-width: 1.5; stroke-dasharray: 4 5; }
+</style>
+<defs><linearGradient id="sax" x1="14" x2="347" y1="0" y2="0" gradientUnits="userSpaceOnUse">
+  <stop offset="0" stop-color="var(--ink)" stop-opacity="0.1"/>
+  <stop offset="0.59" stop-color="var(--ink)" stop-opacity="0.1"/>
+  <stop offset="1" stop-color="var(--ink)" stop-opacity="0"/>
+</linearGradient>
+<pattern id="hatch" width="7" height="7" patternUnits="userSpaceOnUse" patternTransform="rotate(45)"><line x1="0" y1="0" x2="0" y2="7" stroke="var(--muted)" stroke-width="1.25" stroke-opacity="0.6"/></pattern></defs>
+<rect x="14" y="34" width="333" height="150" fill="url(#sax)"/>
+<rect x="288" y="34" width="40.01" height="150" fill="url(#hatch)"/>
+<line class="axis" x1="14" x2="406" y1="184" y2="184"/>
+<line class="axis" x1="14" x2="14" y1="184" y2="190"/>
+<text x="14" y="207" text-anchor="start">100</text>
+<line class="axis" x1="210" x2="210" y1="184" y2="190"/>
+<text x="210" y="207" text-anchor="middle">1k</text>
+<line class="axis" x1="288" x2="288" y1="184" y2="190"/>
+<text x="288" y="207" text-anchor="middle">2.5k</text>
+<line class="axis" x1="328" x2="328" y1="184" y2="190"/>
+<text x="328" y="207" text-anchor="middle">4k</text>
+<line class="axis" x1="406" x2="406" y1="184" y2="190"/>
+<text x="406" y="207" text-anchor="end">10k Hz</text>
+<line class="faint" x1="210" x2="210" y1="184" y2="112"/>
+<line class="faint" x1="244.51" x2="244.51" y1="184" y2="64"/>
+<line class="accent" x1="228.99" x2="228.99" y1="184" y2="112"/>
+<circle class="click" cx="228.99" cy="112" r="4"/>
+<text x="228.99" y="101" text-anchor="middle" style="fill: var(--ink)">1250</text>
+<line class="accent" x1="263.51" x2="263.51" y1="184" y2="64"/>
+<circle class="click" cx="263.51" cy="64" r="4"/>
+<text x="263.51" y="53" text-anchor="middle" style="fill: var(--ink)">1875</text>
+</svg>
