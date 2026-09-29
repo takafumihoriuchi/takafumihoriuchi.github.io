@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>인간-로봇 인터랙션 디자인에 관한 석사 논문 — 호리우치 다카후미</title>
 <meta name="description" content="조작자의 시선을 읽어, 다루어야 할 대상과 지켜야 할 대상을 미리가 아니라 작업하는 그 순간에 구분하는 충돌 회피 시스템에 관한 석사 연구.">
@@ -83,7 +84,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="호리우치 다카후미의 포트폴리오로 돌아가기">호리우치 다카후미</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="호리우치 다카후미의 포트폴리오로 돌아가기">호리우치 다카후미</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="화면 모드" dir="ltr" hidden>
+    <label title="라이트 모드">
+      <input type="radio" name="theme" value="light" aria-label="라이트 모드">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="다크 모드">
+      <input type="radio" name="theme" value="dark" aria-label="다크 모드">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

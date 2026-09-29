@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Practice Log n Share — Takafumi Horiuchi</title>
 <meta name="description" content="Log practice with one tap, then show the same screen to your teacher at a lesson. I planned and designed this iPhone app for my own saxophone practice and implemented it in collaboration with AI.">
@@ -77,7 +78,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Go Back to Takafumi Horiuchi&#x27;s Portfolio">Takafumi Horiuchi</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Go Back to Takafumi Horiuchi&#x27;s Portfolio">Takafumi Horiuchi</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="Appearance" dir="ltr" hidden>
+    <label title="Light mode">
+      <input type="radio" name="theme" value="light" aria-label="Light mode">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="Dark mode">
+      <input type="radio" name="theme" value="dark" aria-label="Dark mode">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
   <header>
     <h1>Practice Log n Share</h1>

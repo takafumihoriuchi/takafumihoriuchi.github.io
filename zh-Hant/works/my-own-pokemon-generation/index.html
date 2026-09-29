@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>生成世界上只有自己的寶可夢 — Takafumi Horiuchi</title>
 <meta name="description" content="在遊戲過程中，從玩家的言語生成新種寶可夢，並連接到遇見與捕捉的研究原型。考慮了保持遊戲平衡的限制，以及影響對生成物喜愛程度的條件。">
@@ -78,7 +79,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀內貴文的作品集首頁">堀內貴文</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀內貴文的作品集首頁">堀內貴文</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="外觀" dir="ltr" hidden>
+    <label title="淺色模式">
+      <input type="radio" name="theme" value="light" aria-label="淺色模式">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="深色模式">
+      <input type="radio" name="theme" value="dark" aria-label="深色模式">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

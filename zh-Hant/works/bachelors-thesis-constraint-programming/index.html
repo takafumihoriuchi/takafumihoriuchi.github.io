@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>關於約束型程式設計的畢業論文 — Takafumi Horiuchi</title>
 <meta name="description" content="在模擬過程中，識別出永遠不會成立的條件並將其排除在搜索之外。在不改變結果的情況下減少計算量，使約束型程式設計的評估模型執行時間減半的研究。">
@@ -89,7 +90,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀內貴文的作品集首頁">堀內貴文</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀內貴文的作品集首頁">堀內貴文</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="外觀" dir="ltr" hidden>
+    <label title="淺色模式">
+      <input type="radio" name="theme" value="light" aria-label="淺色模式">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="深色模式">
+      <input type="radio" name="theme" value="dark" aria-label="深色模式">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

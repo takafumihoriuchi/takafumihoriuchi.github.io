@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Practice Log n Share — 堀内贵文</title>
 <meta name="description" content="练习时轻点一下就能记录，上课时直接把同一个画面展示给老师。为了自己的萨克斯学习，我策划并设计了这款 iPhone 应用，并与 AI 协作完成开发。">
@@ -77,7 +78,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀内贵文的作品集首页">Takafumi Horiuchi</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀内贵文的作品集首页">Takafumi Horiuchi</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="外观" dir="ltr" hidden>
+    <label title="浅色模式">
+      <input type="radio" name="theme" value="light" aria-label="浅色模式">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="深色模式">
+      <input type="radio" name="theme" value="dark" aria-label="深色模式">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
   <header>
     <h1>Practice Log n Share</h1>

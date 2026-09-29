@@ -6,6 +6,13 @@
    OS supports, which is what makes browser translation legible. */
 
 :root {
+  color-scheme: light;
+  --mark-fill: rgba(255, 255, 255, 0.94);
+  --mark-ink: var(--accent);
+  --font-smoothing: auto;
+  --line-art-filter: none;
+  --line-art-colour-filter: none;
+  --line-art-border: var(--rule);
   --fg: #1a1a1a;
   --fg-muted: #6b6b68;
   --bg: #fdfdfc;
@@ -53,8 +60,11 @@
   --space-section: 4.5rem;
 }
 
+/* The explicit choice wins over the OS. The media query is also the
+   no-JavaScript fallback; keep its palette identical to the dark override. */
 @media (prefers-color-scheme: dark) {
-  :root {
+  :root:not([data-theme="light"]) {
+    color-scheme: dark;
     --fg: #e8e8e5;
     --fg-muted: #96968f;
     --bg: #141413;
@@ -62,16 +72,32 @@
     --accent-wash: rgba(180, 151, 128, 0.10);
     --rule: rgba(232, 232, 229, 0.16);
     --scrollbar: rgba(232, 232, 229, 0.28);
-    /* The dark counterpart is not an off white — a pale block would burn a
-       hole in the page here. What carries over is the relationship: one step
-       away from the ground, and clear of the hover wash. */
     --placeholder: #2b2a27;
+    --mark-fill: rgba(0, 0, 0, 0.94);
+    --mark-ink: #efefec;
+    --font-smoothing: antialiased;
+    --line-art-filter: invert(1);
+    --line-art-colour-filter: invert(1) hue-rotate(180deg);
+    --line-art-border: transparent;
   }
+}
 
-  /* Light text on a dark ground optically gains weight, so subpixel rendering
-     reads as too heavy here. This is the one place thinning it helps; in light
-     mode the browser default is left alone deliberately. */
-  body { -webkit-font-smoothing: antialiased; }
+:root[data-theme="dark"] {
+  color-scheme: dark;
+  --fg: #e8e8e5;
+  --fg-muted: #96968f;
+  --bg: #141413;
+  --accent: #b49780;
+  --accent-wash: rgba(180, 151, 128, 0.10);
+  --rule: rgba(232, 232, 229, 0.16);
+  --scrollbar: rgba(232, 232, 229, 0.28);
+  --placeholder: #2b2a27;
+  --mark-fill: rgba(0, 0, 0, 0.94);
+  --mark-ink: #efefec;
+  --font-smoothing: antialiased;
+  --line-art-filter: invert(1);
+  --line-art-colour-filter: invert(1) hue-rotate(180deg);
+  --line-art-border: transparent;
 }
 
 * { box-sizing: border-box; }
@@ -81,9 +107,9 @@ html {
 
   /* A work page cites its sources with in-page links, and the band is fixed
      over the top of the window. Without this, following a citation back up the
-     page lands the target underneath it. Sized to the band — 0.5rem of padding,
-     a 1rem link box and a 1.225rem line — with a line of air over it. */
-  scroll-padding-top: 3.5rem;
+     page lands the target underneath it. Leave room for the appearance
+     control and the band's padding, plus a line of air above the target. */
+  scroll-padding-top: 4.5rem;
 }
 
 /* Japanese load reveals need a pre-paint guard: the module cannot install its
@@ -100,6 +126,7 @@ html.ascii-load-pending::after {
 }
 
 body {
+  -webkit-font-smoothing: var(--font-smoothing);
   margin: 0;
   padding: 5rem 1.5rem 7rem;
   background: var(--bg);
@@ -570,16 +597,19 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    looked at these pages: they could not find the way home. Losing the chip
    costs a shape that was doing nothing the writing needed. */
 .home-mark {
-  --mark-fill: rgba(255, 255, 255, 0.94);
-  --mark-ink: var(--accent);
-
+  /* The Latin signature and symbolic controls keep their order in every locale. */
+  direction: ltr;
+  gap: 0.5rem;
+  /* Keep the band's height independent of the slimmer appearance control. */
+  min-block-size: calc(2.75rem + 9px);
   position: fixed;
   z-index: 11;
   top: 0;
   inset-inline: 0;
   display: flex;
   align-items: center;
-  padding: 0.25rem 0.5rem;
+  padding-block: 0.25rem;
+  padding-inline: 0.5rem 1rem;
   border-bottom: 1px solid var(--rule);
   background-color: var(--mark-fill);
   backdrop-filter: blur(2px);
@@ -591,17 +621,6 @@ nav ul:has(> li > .home-button) { justify-content: center; }
      that with the script blocked or still loading the fallback is zero — the
      band simply stays. */
   transform: translateY(calc(-1 * var(--mark-shift, 0px)));
-}
-
-/* The ground inverts with the theme instead of following it: white over a light
-   page, black over a dark one, so the mark is a place where the page is held
-   back rather than a card laid on top of it. The light band keeps the accent
-   ink used elsewhere on the page; against the dark band the name turns white. */
-@media (prefers-color-scheme: dark) {
-  .home-mark {
-    --mark-fill: rgba(0, 0, 0, 0.94);
-    --mark-ink: #efefec;
-  }
 }
 
 /* The link carries the reach, and its start padding is what puts the name where
@@ -629,6 +648,78 @@ nav ul:has(> li > .home-button) { justify-content: center; }
 }
 
 .home-mark__link:hover { background-color: var(--accent-wash); }
+
+/* A quiet two-way control, using the site's brown accent and warm surfaces.
+   Native radios provide one tab stop and arrow-key selection. */
+.theme-toggle {
+  display: flex;
+  flex: 0 0 auto;
+  margin-inline-start: auto;
+  padding: 3px;
+  border: 1px solid var(--rule);
+  border-radius: 999px;
+  background: var(--accent-wash);
+}
+.theme-toggle[hidden] { display: none; }
+.theme-toggle label {
+  position: relative;
+  display: grid;
+  place-items: center;
+  width: 2.75rem;
+  height: 1.5rem;
+  border-radius: 999px;
+  color: var(--fg-muted);
+  cursor: pointer;
+  transition: background-color 160ms ease, color 160ms ease;
+}
+.theme-toggle label:hover { color: var(--accent); }
+.theme-toggle label:has(input:checked) {
+  color: var(--accent);
+  background: var(--bg);
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.theme-toggle label:has(input:focus-visible) {
+  outline: 2px solid var(--accent);
+  outline-offset: 2px;
+}
+.theme-toggle input {
+  position: absolute;
+  /* Keep a comfortable touch target around the slim visual pill. */
+  inset-inline: 0;
+  inset-block: -0.625rem;
+  width: 100%;
+  height: calc(100% + 1.25rem);
+  margin: 0;
+  opacity: 0;
+  cursor: pointer;
+}
+.theme-toggle__icon {
+  width: 1rem;
+  height: 1rem;
+  background: currentColor;
+  pointer-events: none;
+  -webkit-mask: var(--theme-icon) center / contain no-repeat;
+  mask: var(--theme-icon) center / contain no-repeat;
+}
+.theme-toggle__sun {
+  --theme-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round'%3E%3Ccircle cx='12' cy='12' r='4'/%3E%3Cpath d='M12 2v2m0 16v2M2 12h2m16 0h2M4.93 4.93l1.42 1.42m11.3 11.3 1.42 1.42M4.93 19.07l1.42-1.42m11.3-11.3 1.42-1.42'/%3E%3C/svg%3E");
+}
+.theme-toggle__moon {
+  --theme-icon: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='black' stroke-width='1.75' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.463.402.807a6.25 6.25 0 0 0 8.268 8.268c.344-.215.829-.004.803.397'/%3E%3C/svg%3E");
+}
+@media (prefers-reduced-motion: reduce) {
+  .theme-toggle label { transition: none; }
+}
+@media (forced-colors: active) {
+  .theme-toggle label:has(input:checked) { outline: 2px solid CanvasText; }
+  .theme-toggle label:has(input:focus-visible) { outline: 2px dashed Highlight; }
+  .theme-toggle__icon { background: CanvasText; forced-color-adjust: none; }
+}
+@media (max-width: 22rem) {
+  .home-mark { padding-inline: 0.5rem; gap: 0.25rem; }
+  .home-mark__link { padding-inline: 0.5rem; }
+}
+
 
 /* The monogram, in CSS for the same reason the outbound arrow below is: it is a
    mark, not prose. Written into the markup it would be an image on 99 pages

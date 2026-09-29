@@ -86,19 +86,17 @@ a:has(> img) {
  * The border goes with it. A `filter` takes the whole element, frame
  * included, so a drawn border would invert into a white line around a black
  * panel; the inverted ground is its own edge. */
-@media (prefers-color-scheme: dark) {
-  .line-art img,
-  .lightbox.is-line-art .lightbox__image {
-    filter: invert(1);
-  }
-
-  .line-art.keeps-colour img,
-  .lightbox.is-line-art.keeps-colour .lightbox__image {
-    filter: invert(1) hue-rotate(180deg);
-  }
-
-  .line-art img { border-color: transparent; }
+.line-art img,
+.lightbox.is-line-art .lightbox__image {
+  filter: var(--line-art-filter);
 }
+
+.line-art.keeps-colour img,
+.lightbox.is-line-art.keeps-colour .lightbox__image {
+  filter: var(--line-art-colour-filter);
+}
+
+.line-art img { border-color: var(--line-art-border); }
 
 /* ------------------------------------------------------------ lightbox --
  *

@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Génération de mon propre Pokémon dans le monde — Takafumi Horiuchi</title>
 <meta name="description" content="Au cours du jeu, un prototype de recherche qui générait de nouvelles espèces de Pokémon à partir des paroles des joueurs et reliait la rencontre à la capture. Les contraintes visant à maintenir l&#x27;équilibre du jeu et les conditions influençant l&#x27;attachement aux créations ont été examinées.">
@@ -77,7 +78,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Retour au portfolio de Takafumi Horiuchi">Takafumi Horiuchi</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Retour au portfolio de Takafumi Horiuchi">Takafumi Horiuchi</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="Apparence" dir="ltr" hidden>
+    <label title="Mode clair">
+      <input type="radio" name="theme" value="light" aria-label="Mode clair">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="Mode sombre">
+      <input type="radio" name="theme" value="dark" aria-label="Mode sombre">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

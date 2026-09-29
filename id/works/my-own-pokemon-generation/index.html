@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Pembuatan Pokémon yang unik untuk diri sendiri di dunia — Takafumi Horiuchi</title>
 <meta name="description" content="Sebuah prototipe penelitian yang menghasilkan jenis Pokémon baru dari kata-kata pemain selama permainan, dan menghubungkan dari pertemuan hingga penangkapannya. Kami memeriksa batasan yang menjaga keseimbangan permainan dan kondisi yang memengaruhi keterikatan terhadap hasil yang dihasilkan.">
@@ -77,7 +78,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Kembali ke portofolio Takafumi Horiuchi">Takafumi Horiuchi</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Kembali ke portofolio Takafumi Horiuchi">Takafumi Horiuchi</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="Tampilan" dir="ltr" hidden>
+    <label title="Mode terang">
+      <input type="radio" name="theme" value="light" aria-label="Mode terang">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="Mode gelap">
+      <input type="radio" name="theme" value="dark" aria-label="Mode gelap">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

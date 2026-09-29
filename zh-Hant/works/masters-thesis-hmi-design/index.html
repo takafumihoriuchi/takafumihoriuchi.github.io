@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>關於人與機器人互動設計的碩士論文 — Takafumi Horiuchi</title>
 <meta name="description" content="將操作員所看到的範圍，轉換為機器人可以觸碰的條件。將人的認知狀態整合到安全控制中，提出並實作了一個無需事前登記對象即可防止碰撞的系統的碩士研究。">
@@ -88,7 +89,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀內貴文的作品集首頁">堀內貴文</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀內貴文的作品集首頁">堀內貴文</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="外觀" dir="ltr" hidden>
+    <label title="淺色模式">
+      <input type="radio" name="theme" value="light" aria-label="淺色模式">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="深色模式">
+      <input type="radio" name="theme" value="dark" aria-label="深色模式">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>

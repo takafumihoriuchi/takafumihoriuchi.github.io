@@ -3,6 +3,7 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
+<script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <!-- この作品だけは日本語版を正本とし、他言語は日本語版から翻訳する（本人指示
      2026-08-23）。画像は英語版配下の共通 assets を参照し、複製しない。 -->
@@ -77,7 +78,18 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260908-1"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Takafumi Horiuchi のポートフォリオトップへ">Takafumi Horiuchi</a></div>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Takafumi Horiuchi のポートフォリオトップへ">Takafumi Horiuchi</a>
+  <div class="theme-toggle" role="radiogroup" aria-label="表示テーマ" dir="ltr" hidden>
+    <label title="ライトモード">
+      <input type="radio" name="theme" value="light" aria-label="ライトモード">
+      <span class="theme-toggle__icon theme-toggle__sun" aria-hidden="true"></span>
+    </label>
+    <label title="ダークモード">
+      <input type="radio" name="theme" value="dark" aria-label="ダークモード">
+      <span class="theme-toggle__icon theme-toggle__moon" aria-hidden="true"></span>
+    </label>
+  </div>
+</div>
 <main>
 
   <header>
