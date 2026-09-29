@@ -41,10 +41,19 @@
      its own is left alone, and left alone again on the way out. */
   let inerted = [];
 
+  function imageForTheme(link) {
+    const theme = root.dataset.theme
+      || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    return link.dataset.darkHref && theme === "dark" ? link.dataset.darkHref : link.href;
+  }
+
+  window.addEventListener("themechange", () => {
+    if (opener && !box.hidden) image.src = imageForTheme(opener);
+  });
+
   function open(link) {
     const source = link.querySelector("img");
-    image.src = link.dataset.darkHref && matchMedia("(prefers-color-scheme: dark)").matches
-      ? link.dataset.darkHref : link.href;
+    image.src = imageForTheme(link);
     image.alt = source ? source.alt : "";
 
     /* A line-art figure is inverted where it sits in a dark page. Enlarged, it

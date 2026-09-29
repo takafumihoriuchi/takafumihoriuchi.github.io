@@ -7,6 +7,7 @@
   const valid = (value) => value === "light" || value === "dark";
   let choice = null;
   let controls = [];
+  let colourSources = [];
 
   function readChoice() {
     try {
@@ -22,6 +23,11 @@
     const changed = root.dataset.theme !== theme;
     root.dataset.theme = theme;
     for (const input of controls) input.checked = input.value === theme;
+    // Picture media queries follow the OS, so explicitly match the site's
+    // selected appearance. Other queries (such as viewport width) stay intact.
+    for (const { source, scheme } of colourSources) {
+      source.media = scheme === theme ? "all" : "not all";
+    }
     if (changed) window.dispatchEvent(new CustomEvent("themechange", { detail: { theme } }));
   }
 
@@ -30,6 +36,11 @@
 
   document.addEventListener("DOMContentLoaded", () => {
     controls = [...document.querySelectorAll('.theme-toggle input[type="radio"]')];
+    colourSources = [...document.querySelectorAll('picture source[media]')]
+      .flatMap(source => {
+        const match = /^\(prefers-color-scheme:\s*(light|dark)\)$/.exec(source.media);
+        return match ? [{ source, scheme: match[1] }] : [];
+      });
     apply();
     for (const input of controls) {
       input.addEventListener("change", () => {

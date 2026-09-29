@@ -13,7 +13,7 @@
  * the answer again.
  */
 
-import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260908-1";
+import { asciiDissolve } from "./ascii/ascii-text-reveal.js?v=20260930-1";
 
 /* This is the one switch between the two supported presentations:
  *

@@ -74,13 +74,23 @@ def wire(
     footer_scene_id: str,
     scenes: dict,
 ) -> str:
-    # Add the synchronous guard immediately after the viewport declaration so
-    # it is active before a render-blocking stylesheet can permit first paint.
+    # Keep the saved appearance ahead of the guard when theme.js is wired.
+    # Both scripts must run before a stylesheet can permit first paint.
     source = PREPAINT_RE.sub("\n", source)
     viewport = VIEWPORT_RE.search(source)
     if not viewport:
         raise ValueError("no viewport meta anchor")
-    source = source[: viewport.end()] + "\n" + PREPAINT + source[viewport.end():]
+    theme = re.match(r'\n<script src="[^"]*theme\.js"></script>', source[viewport.end():])
+    guard_anchor = viewport.end() + (theme.end() if theme else 0)
+    source = source[:guard_anchor] + "\n" + PREPAINT + source[guard_anchor:]
+
+    # The home panel imports the same reveal module. Version its entry point
+    # too, so a cached panel cannot pull an older module graph into the page.
+    source = re.sub(
+        r'(<script type="module" src="[^"]*works-panel\.js)(?:\?v=[^"]+)?("[>]\s*</script>)',
+        lambda match: f"{match[1]}?v={ASSET_VERSION}{match[2]}",
+        source,
+    )
 
     # Keep one module tag, anchored at the end of the head.
     source = MODULE_RE.sub("\n", source)
