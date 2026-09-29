@@ -43,6 +43,7 @@ PAGES = [
     "works/masters-project-design-studio/",
     "works/masters-project-piano-action/",
     "works/practice-log-n-share/",
+    "works/no-ads-simplest-metronome/",
 ]
 
 # Occupies the site root and the x-default slot. That is a statement about

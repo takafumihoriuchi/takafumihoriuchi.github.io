@@ -1,0 +1,615 @@
+/* A work page's own stylesheet. Copied along with index.html.
+
+   It lives here rather than inside the page's <head> because a work has thirteen
+   language versions maintained by hand — inline, this would become thirteen
+   copies of identical rules, and the thirteenth would eventually stop matching
+   the first. Language versions differ; the layout of a work does not.
+
+   Do not delete this file even if the work needs no layout of its own: the
+   justification below is what distinguishes a work page from the index, and a
+   work page without it would silently read differently from every other one.
+
+   Add layout the work needs — image grids, numbered sequences — below. Use
+   logical properties (`padding-inline-start`, not `padding-left`) so the Arabic
+   version mirrors correctly. See OPERATIONS.md §9. */
+
+
+/* Work pages are set justified; the index is not. A work page is long-form
+   reading, and a flush right edge holds the column steady over that distance.
+
+   `hyphens: auto` is not decoration, it is what makes justification readable.
+   Without word-internal breaks the browser pays for the flush edge entirely in
+   word spacing, which at this measure opens gaps wide enough to line up down
+   the page. The dictionary comes from the `lang` attribute. The -webkit- prefix
+   covers Safari before 17, where the reader would otherwise get justification
+   with no hyphenation — the failure this pairing exists to prevent.
+
+   Set for every language rather than a listed few: a language with no
+   dictionary simply gets no hyphenation, and CJK and Arabic are not hyphenated
+   at all, so declaring it costs them nothing.
+
+   Extend the selector if the work adds other blocks of running prose. */
+section p {
+  text-align: justify;
+  -webkit-hyphens: auto;
+  hyphens: auto;
+}
+
+/* Indonesian is the exception: no hyphenation dictionary, and the language
+   builds long words by affixing (menangkapnya, membesarkannya), so lines that
+   cannot break inside them pay the whole slack in word spacing. Ragged reads
+   better than a flush edge bought that way. `start`, not `left`, so the rule
+   still means the right thing in a right-to-left context. */
+:lang(id) section p {
+  text-align: start;
+}
+
+
+/* The drawing at the top is nine rows: the beat dots, a row of air, and the
+   circle with its ripples. The shared 9 : 2 box shows about eleven rows of the
+   wide grid (80 columns) but under eight of the compact one (56), which would
+   crop the circle's lower edge. On the compact grid the box is made tall
+   enough for all nine, on the same 33rem edge the engine changes grids at. */
+@media (max-width: 33rem) {
+  ascii-hero[data-scene="metronome-pulse"] { aspect-ratio: 3.2 / 1; }
+}
+
+/* The headings here are statements, and short enough that where a line
+   breaks is visible. They take the rule the site's Japanese titles take
+   (OPERATIONS.md §11): the browser may not break inside them, the places a
+   line may break are written into the markup with <wbr> (and the thin spaces
+   either side of the dash), and of those the most even pair is chosen.
+   `break-word` is the net for a heading written without them. The notes on
+   the screen are left to the phrase breaker, which is enough for a sentence. */
+:lang(ja) section > h2 {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
+.touch-map__note { word-break: auto-phrase; }
+
+
+/* ---- This work: shown rather than told ----------------------------------
+
+   The other work pages are read; this one is looked at. Every section is a
+   short claim, a figure that makes it, and at most a paragraph or two around
+   it — so the figures carry the page, and the space between them is the
+   rhythm it is read in. Everything below is in service of that: a live copy
+   of the screen, the screen annotated in place, and drawings made from the
+   app's own numbers (source/diagrams.mjs). */
+
+
+/* ---------------------------------------------------------------- device --
+
+   The screen at the top of the page is not a picture of the app but a copy of
+   it, running. The screenshot supplies everything that does not move — the
+   status bar, the ⓘ, the tempo — with the circle and the beat dots painted
+   out, and the two are laid back over it as elements, at the positions
+   measured from the 1320 × 2868 original: circle centred at 47.943% of the
+   height and 0.56 of the width across, dots on the line at 20.781%.
+
+   The circle is drawn at the size an accented beat swells it to (0.70 of the
+   width, 1.25 × rest) and scaled down to rest, never up, so the browser keeps
+   a sharp edge instead of enlarging a rasterised one. The keyframes are the
+   app's pulse at 120 BPM (Core/Pulse.swift, via source/diagrams.mjs): scale
+   1 + 0.25 × intensity, opacity 0.8 + 0.2 × intensity, the downbeat at full
+   level and the other three at 0.6. Four beats, two seconds, one loop.
+
+   Tapping the circle stops it, the way it does in the app. That is a checkbox
+   and its label, as the index's "more" control is, so it works with scripts
+   off; stopped, the real stopped screen fades in over the copy in the 0.2 s
+   the app takes, and starting again starts from the downbeat, as the app
+   does. It is also what lets a reader stop a thing that would otherwise move
+   for as long as the page is open. */
+.device {
+  margin: 3.5rem 0;
+}
+
+.device__toggle {
+  position: absolute;
+  width: 1px;
+  height: 1px;
+  margin: 0;
+  clip-path: inset(50%);
+  overflow: hidden;
+  white-space: nowrap;
+}
+
+.device__screen {
+  position: relative;
+  width: min(17rem, 68vw);
+  margin-inline: auto;
+  aspect-ratio: 1320 / 2868;
+  overflow: hidden;
+  /* The display's own corner, 62 pt on a 440 pt wide screen. */
+  border-radius: 14.1% / 6.49%;
+  background: #000;
+  /* Invisible against a light page; in the dark one it is the edge of the
+     phone, which would otherwise be black on near-black. */
+  box-shadow: 0 0 0 1px var(--rule);
+}
+
+.device__screen > img {
+  width: 100%;
+  height: 100%;
+}
+
+.device__circle,
+.device__dots > span,
+.device__stopped,
+.device__button {
+  position: absolute;
+}
+
+.device__circle {
+  inset-inline-start: 15%;
+  top: 47.943%;
+  width: 70%;
+  aspect-ratio: 1;
+  /* Percentage margins resolve against the width, so this is half the
+     circle's own diameter, upward. */
+  margin-top: -35%;
+  border-radius: 50%;
+  background: #fff;
+  transform: scale(0.8);
+  opacity: 0.8;
+  animation: device-pulse 2s linear infinite;
+  /* `--lead` is 0 unless sound.js holds a restart back for the first click
+     to be heard; the dots below keep their offsets on top of it. */
+  animation-delay: var(--lead, 0s);
+  will-change: transform, opacity;
+}
+
+/* One dot per beat, the downbeat larger (14 and 10 pt, 12 pt apart); the one
+   being heard is lit. Each is lit for a quarter of the bar, offset by its
+   beat. Physical left, not inline-start: these are coordinates on a
+   screenshot, which does not mirror. */
+.device__dots > span {
+  top: 20.781%;
+  width: 2.273%;
+  aspect-ratio: 1;
+  margin: -1.136% 0 0 -1.136%;
+  border-radius: 50%;
+  background: #fff;
+  opacity: 0.25;
+  animation: device-dot 2s step-end infinite;
+  animation-delay: var(--lead, 0s);
+}
+.device__dots > span:nth-child(1) {
+  left: 42.5%;
+  width: 3.182%;
+  margin: -1.591% 0 0 -1.591%;
+}
+.device__dots > span:nth-child(2) { left: 47.955%; animation-delay: calc(var(--lead, 0s) - 1.5s); }
+.device__dots > span:nth-child(3) { left: 52.955%; animation-delay: calc(var(--lead, 0s) - 1s); }
+.device__dots > span:nth-child(4) { left: 57.955%; animation-delay: calc(var(--lead, 0s) - 0.5s); }
+
+.device__stopped {
+  inset: 0;
+  background: url("assets/screen-stopped.webp") 0 0 / 100% 100%;
+  opacity: 0;
+  transition: opacity 0.2s ease-out;
+  pointer-events: none;
+}
+
+.device__button {
+  left: 22%;
+  top: 47.943%;
+  width: 56%;
+  aspect-ratio: 1;
+  margin-top: -28%;
+  border-radius: 50%;
+  cursor: pointer;
+  -webkit-tap-highlight-color: transparent;
+}
+
+.device__toggle:checked ~ .device__screen .device__stopped { opacity: 1; }
+.device__toggle:checked ~ .device__screen .device__circle,
+.device__toggle:checked ~ .device__screen .device__dots > span {
+  animation: none;
+}
+
+.device__toggle:focus-visible ~ .device__screen .device__button {
+  outline: 2px solid #fff;
+  outline-offset: 4px;
+}
+
+.device figcaption {
+  max-width: 25rem;
+  margin: 1.25rem auto 0;
+  text-align: center;
+  /* Centred lines break between phrases, not inside 「4拍子」. */
+  word-break: auto-phrase;
+  text-wrap: balance;
+}
+
+/* The sound is the script's to add (sound.js): the button is hidden in the
+   markup and shown by the script that makes it do something. Both of its
+   labels are written here, in the page's language; the script only chooses
+   between them. */
+/* Written to outrank `:lang(ja) section p`, which justifies every paragraph
+   in a section; this one is a single centred control. */
+.device p.device__sound {
+  margin: 0.75rem 0 0;
+  text-align: center;
+}
+
+.sound-toggle {
+  display: inline-flex;
+  align-items: center;
+  padding: 0.225rem 0.35rem;
+  border: 0;
+  border-radius: 5px;
+  background: none;
+  color: inherit;
+  font: inherit;
+  cursor: pointer;
+}
+.sound-toggle:hover { background-color: var(--accent-wash); }
+.sound-toggle:focus-visible {
+  outline: 2px solid currentColor;
+  outline-offset: 3px;
+}
+
+.sound-toggle__box {
+  display: block;
+  padding: 0.3rem 1.5rem;
+  border: 1px solid var(--accent);
+  border-radius: 3px;
+  background-color: var(--bg);
+  color: var(--accent);
+  font-size: 0.75rem;
+  font-weight: bold;
+}
+.sound-toggle:hover .sound-toggle__box { background-color: transparent; }
+
+.sound-toggle__off { display: none; }
+.sound-toggle[data-on] .sound-toggle__on { display: none; }
+.sound-toggle[data-on] .sound-toggle__off { display: inline; }
+
+/* A reader who asked for less motion gets the screen as it looks between two
+   beats, with the downbeat's dot lit, and no loop. The app answers the same
+   setting by trading the swelling for brightness; a page that nobody has
+   started should not flash at all. */
+@media (prefers-reduced-motion: reduce) {
+  .device__circle,
+  .device__dots > span { animation: none; }
+  .device__dots > span:nth-child(1) { opacity: 1; }
+  .device__stopped { transition: none; }
+}
+
+/* Generated by source/diagrams.mjs from Core/Pulse.swift at 120 BPM; do not
+   edit by hand. Each beat is the curve reduced to the points that keep it
+   within 0.01 of the original (0.25% of the circle). */
+@keyframes device-pulse {
+  0% { transform: scale(0.8000); opacity: 0.800; }
+  0.1% { transform: scale(0.8518); opacity: 0.852; }
+  0.2% { transform: scale(0.8915); opacity: 0.891; }
+  0.3% { transform: scale(0.9217); opacity: 0.922; }
+  0.45% { transform: scale(0.9538); opacity: 0.954; }
+  0.6% { transform: scale(0.9744); opacity: 0.974; }
+  0.8% { transform: scale(0.9903); opacity: 0.990; }
+  1% { transform: scale(0.9976); opacity: 0.998; }
+  1.25% { transform: scale(1.0000); opacity: 1.000; }
+  2.25% { transform: scale(0.9927); opacity: 0.993; }
+  3.35% { transform: scale(0.9718); opacity: 0.972; }
+  4.4% { transform: scale(0.9440); opacity: 0.944; }
+  7.25% { transform: scale(0.8592); opacity: 0.859; }
+  8.9% { transform: scale(0.8185); opacity: 0.819; }
+  10.3% { transform: scale(0.7933); opacity: 0.793; }
+  11.7% { transform: scale(0.7771); opacity: 0.777; }
+  13.25% { transform: scale(0.7686); opacity: 0.769; }
+  14.95% { transform: scale(0.7681); opacity: 0.768; }
+  22.25% { transform: scale(0.7983); opacity: 0.798; }
+  24.95% { transform: scale(0.8041); opacity: 0.804; }
+  25% { transform: scale(0.8000); opacity: 0.800; }
+  25.1% { transform: scale(0.8311); opacity: 0.831; }
+  25.2% { transform: scale(0.8549); opacity: 0.855; }
+  25.3% { transform: scale(0.8730); opacity: 0.873; }
+  25.45% { transform: scale(0.8923); opacity: 0.892; }
+  25.6% { transform: scale(0.9047); opacity: 0.905; }
+  25.8% { transform: scale(0.9142); opacity: 0.914; }
+  26% { transform: scale(0.9186); opacity: 0.919; }
+  26.25% { transform: scale(0.9200); opacity: 0.920; }
+  27.25% { transform: scale(0.9156); opacity: 0.916; }
+  28.35% { transform: scale(0.9031); opacity: 0.903; }
+  29.4% { transform: scale(0.8864); opacity: 0.886; }
+  32.25% { transform: scale(0.8355); opacity: 0.836; }
+  33.9% { transform: scale(0.8111); opacity: 0.811; }
+  35.3% { transform: scale(0.7960); opacity: 0.796; }
+  36.7% { transform: scale(0.7863); opacity: 0.786; }
+  38.25% { transform: scale(0.7812); opacity: 0.781; }
+  39.95% { transform: scale(0.7808); opacity: 0.781; }
+  47.25% { transform: scale(0.7990); opacity: 0.799; }
+  49.95% { transform: scale(0.8025); opacity: 0.802; }
+  50% { transform: scale(0.8000); opacity: 0.800; }
+  50.1% { transform: scale(0.8311); opacity: 0.831; }
+  50.2% { transform: scale(0.8549); opacity: 0.855; }
+  50.3% { transform: scale(0.8730); opacity: 0.873; }
+  50.45% { transform: scale(0.8923); opacity: 0.892; }
+  50.6% { transform: scale(0.9047); opacity: 0.905; }
+  50.8% { transform: scale(0.9142); opacity: 0.914; }
+  51% { transform: scale(0.9186); opacity: 0.919; }
+  51.25% { transform: scale(0.9200); opacity: 0.920; }
+  52.25% { transform: scale(0.9156); opacity: 0.916; }
+  53.35% { transform: scale(0.9031); opacity: 0.903; }
+  54.4% { transform: scale(0.8864); opacity: 0.886; }
+  57.25% { transform: scale(0.8355); opacity: 0.836; }
+  58.9% { transform: scale(0.8111); opacity: 0.811; }
+  60.3% { transform: scale(0.7960); opacity: 0.796; }
+  61.7% { transform: scale(0.7863); opacity: 0.786; }
+  63.25% { transform: scale(0.7812); opacity: 0.781; }
+  64.95% { transform: scale(0.7808); opacity: 0.781; }
+  72.25% { transform: scale(0.7990); opacity: 0.799; }
+  74.95% { transform: scale(0.8025); opacity: 0.802; }
+  75% { transform: scale(0.8000); opacity: 0.800; }
+  75.1% { transform: scale(0.8311); opacity: 0.831; }
+  75.2% { transform: scale(0.8549); opacity: 0.855; }
+  75.3% { transform: scale(0.8730); opacity: 0.873; }
+  75.45% { transform: scale(0.8923); opacity: 0.892; }
+  75.6% { transform: scale(0.9047); opacity: 0.905; }
+  75.8% { transform: scale(0.9142); opacity: 0.914; }
+  76% { transform: scale(0.9186); opacity: 0.919; }
+  76.25% { transform: scale(0.9200); opacity: 0.920; }
+  77.25% { transform: scale(0.9156); opacity: 0.916; }
+  78.35% { transform: scale(0.9031); opacity: 0.903; }
+  79.4% { transform: scale(0.8864); opacity: 0.886; }
+  82.25% { transform: scale(0.8355); opacity: 0.836; }
+  83.9% { transform: scale(0.8111); opacity: 0.811; }
+  85.3% { transform: scale(0.7960); opacity: 0.796; }
+  86.7% { transform: scale(0.7863); opacity: 0.786; }
+  88.25% { transform: scale(0.7812); opacity: 0.781; }
+  89.95% { transform: scale(0.7808); opacity: 0.781; }
+  97.25% { transform: scale(0.7990); opacity: 0.799; }
+  99.95% { transform: scale(0.8025); opacity: 0.802; }
+  100% { transform: scale(0.8000); opacity: 0.800; }
+}
+
+@keyframes device-dot {
+  0% { opacity: 1; }
+  25% { opacity: 0.25; }
+}
+
+
+/* ------------------------------------------------------------- touch map --
+
+   The screen, annotated where the annotations belong. Everything on it is
+   stacked on one centred axis, so the height of a note is enough to say what
+   it is about: each note stands level with its element, and a line runs from
+   the element to it — a dotted one over the black of the screen, a solid one
+   across the gap. `--y` is the element's height and `--reach` how far in from
+   the screen's edge the line goes, both as fractions of the 1320 × 2868
+   screenshot. */
+.touch-map {
+  --phone: min(15rem, 42vw);
+  --gap: 1.75rem;
+  display: grid;
+  grid-template-columns: var(--phone) minmax(0, 1fr);
+  column-gap: var(--gap);
+  margin: 3rem 0;
+}
+
+.touch-map__screen {
+  grid-row: 1;
+  width: 100%;
+  height: auto;
+  border-radius: 14.1% / 6.49%;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+
+.touch-map__notes {
+  grid-row: 1;
+  position: relative;
+  margin: 0;
+  font-size: 0.8125rem;
+  line-height: 1.6;
+}
+
+.touch-map__note {
+  position: absolute;
+  inset-inline: 0;
+  top: var(--y);
+  /* The first line's middle on the element's line. */
+  margin-top: -0.8em;
+}
+
+.touch-map__note dt,
+.touch-map__note dd {
+  display: inline;
+  margin: 0;
+}
+.touch-map__note dt {
+  margin-inline-end: 0.5em;
+  font-weight: 600;
+}
+.touch-map__note dd { color: var(--fg-muted); }
+
+.touch-map__note::before,
+.touch-map__note::after {
+  content: "";
+  position: absolute;
+  top: 0.8em;
+  pointer-events: none;
+}
+/* Across the gap. */
+.touch-map__note::before {
+  inset-inline-end: calc(100% + 0.5rem);
+  width: calc(var(--gap) - 0.5rem);
+  border-top: 1px solid var(--fg-muted);
+}
+/* Over the screen, from its edge to the element, ending in a point on it. */
+.touch-map__note::after {
+  inset-inline-end: calc(100% + var(--gap));
+  width: calc(var(--phone) * var(--reach));
+  height: 5px;
+  margin-top: -2px;
+  background:
+    radial-gradient(circle at 2.5px 2.5px, #fff 2px, transparent 2.6px) 0 0 / 5px 5px no-repeat,
+    repeating-linear-gradient(to right, rgb(255 255 255 / 0.55) 0 2px, transparent 2px 5px) 0 2px / 100% 1px no-repeat;
+}
+
+.touch-map__note--info   { --y: 8.79%;  --reach: 0.9; }
+.touch-map__note--dots   { --y: 20.78%; --reach: 0.395; }
+.touch-map__note--circle { --y: 47.94%; --reach: 0.205; }
+.touch-map__note--tempo  { --y: 78.63%; --reach: 0.185; }
+
+.touch-map figcaption {
+  grid-column: 1 / -1;
+}
+
+/* On the narrowest screens the notes no longer fit beside a legible phone.
+   They go under it, in the same order, and the lines go with the layout
+   they belonged to. */
+@media (max-width: 22.5rem) {
+  .touch-map {
+    --phone: 12rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  .touch-map__screen { width: var(--phone); }
+  .touch-map__notes { grid-row: auto; justify-self: stretch; margin-top: 1.5rem; }
+  .touch-map__note { position: static; margin: 0 0 0.6rem; }
+  .touch-map__note::before,
+  .touch-map__note::after { content: none; }
+}
+
+
+/* Translated notes need more lines than the Japanese source. At phone
+   widths, put them below the screen instead of letting absolute positions
+   overlap each other or the caption. Keep the finished Japanese layout. */
+@media (max-width: 36rem) {
+  html:not([lang="ja"]) .touch-map {
+    --phone: 12rem;
+    grid-template-columns: 1fr;
+    justify-items: center;
+  }
+  html:not([lang="ja"]) .touch-map__screen { width: var(--phone); }
+  html:not([lang="ja"]) .touch-map__notes {
+    grid-row: auto;
+    justify-self: stretch;
+    margin-top: 1.5rem;
+  }
+  html:not([lang="ja"]) .touch-map__note {
+    position: static;
+    margin: 0 0 0.6rem;
+  }
+  html:not([lang="ja"]) .touch-map__note::before,
+  html:not([lang="ja"]) .touch-map__note::after { content: none; }
+}
+
+/* The Arabic notes sit to the left of an unmirrored screenshot. The info
+   icon is still at its physical top left; the leader dot faces the screen. */
+:lang(ar) .touch-map__note--info { --reach: 0.1; }
+:lang(ar) .touch-map__note::after { transform: scaleX(-1); }
+
+
+/* ---------------------------------------------------------------- tuning --
+
+   The tool the jelly was tuned with, beside what it says about it. The screen
+   is small here, and its sliders' words are smaller, so it enlarges — the
+   one figure on the page that does (OPERATIONS.md §3). */
+.tuning {
+  display: grid;
+  grid-template-columns: min(12rem, 38vw) minmax(0, 1fr);
+  column-gap: 1.75rem;
+  align-items: center;
+  margin: 2.5rem 0;
+}
+.tuning__screen {
+  width: 100%;
+  height: auto;
+  border-radius: 14.1% / 6.49%;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.tuning figcaption { margin: 0; }
+
+@media (max-width: 22.5rem) {
+  .tuning { grid-template-columns: 1fr; justify-items: center; row-gap: 1rem; }
+  .tuning a { width: 12rem; }
+}
+
+
+/* --------------------------------------------------------------- figures --
+
+   The drawings. Each comes in two widths (source/diagrams.mjs): text in an
+   SVG grows and shrinks with it, and the narrow drawing is what keeps the
+   numbers at caption size on a phone. It is never shown wider than it was
+   drawn, for the same reason. */
+.diagram {
+  margin: 2.5rem 0;
+}
+.diagram img {
+  width: 100%;
+  height: auto;
+}
+@media (max-width: 36rem) {
+  .diagram picture {
+    display: block;
+    max-width: 420px;
+    margin-inline: auto;
+  }
+}
+
+.diagram figcaption,
+.touch-map figcaption { margin-top: 1rem; }
+
+
+/* --------------------------------------------------------------- omitted --
+
+   What was left out, struck through, each with why. Two columns while there
+   is room, so the struck words line up as one list and the reasons as
+   another; under that, each reason sits under its word. */
+.omitted {
+  display: grid;
+  grid-template-columns: max-content minmax(0, 1fr);
+  gap: 0.85rem 1.75rem;
+  margin: 2.25rem 0 0;
+  padding: 1.75rem 0 0;
+  border-top: 1px solid var(--rule);
+}
+.omitted dt {
+  text-decoration: line-through;
+  text-decoration-thickness: 1px;
+  text-decoration-color: var(--accent);
+}
+.omitted dd {
+  margin: 0;
+  color: var(--fg-muted);
+}
+
+@media (max-width: 32rem) {
+  .omitted {
+    grid-template-columns: 1fr;
+    row-gap: 0.2rem;
+  }
+  .omitted dd + dt { margin-top: 0.75rem; }
+}
+
+
+/* Long translated terms must share the row with their explanation instead
+   of claiming an unbounded max-content column. */
+@media (min-width: 32.001rem) {
+  html:not([lang="ja"]) .omitted {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1.1fr);
+  }
+}
+html:not([lang="ja"]) .omitted {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
+
+
+/* -------------------------------------------------------------- colophon -- */
+.colophon {
+  margin-top: var(--space-section);
+  font-size: 0.824em;
+  color: var(--fg-muted);
+}
+
+
+/* The Japanese page sets its body at 14px, where the Latin one sets 17px.
+   Restated against that scale, the way the other Japanese work pages do:
+   captions and small print at 12px, the notes on the screen a step above. */
+:is(:lang(ja), :lang(zh), :lang(ko)) .colophon { font-size: 0.75rem; }
+:is(:lang(ja), :lang(zh), :lang(ko)) .omitted dd { font-size: 0.8125rem; }
