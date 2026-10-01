@@ -875,22 +875,9 @@ nav ul:has(> li > .home-button) { justify-content: center; }
   .work-desc { font-size: 0.875rem; }
 }
 
-/* A works list that opens with two entries and keeps the rest one control
-   away. The list of earlier work grows as older projects are written up, and a
-   section that spends most of its height on them pushes everything after it
-   off the first screen.
-
-   The mechanism is a checkbox and its label; no script decides what is shown.
-   With JavaScript off the control still opens the panel, and with CSS off
-   every entry is simply in the page in document order. The script's only job
-   is to measure — see --panel-height below.
-
-   Entries past the second are `display: none` rather than clipped, so the
-   closed panel is exactly as tall as the two cards in it and no stylesheet has
-   to know how tall a card is. That is what makes the closed state right in all
-   fourteen languages at once: the same two cards measure 266px in Japanese and
-   348px in Russian, because a description that runs to three lines in one runs
-   to five in the other. */
+/* Lists show three entries initially. The native checkbox reveals the rest,
+   including without JavaScript. Hidden cards have no layout or focus targets,
+   so the collapsed height follows each language's actual card content. */
 .works-toggle {
   position: absolute;
   width: 1px;
@@ -901,16 +888,16 @@ nav ul:has(> li > .home-button) { justify-content: center; }
   white-space: nowrap;
 }
 
-.works-panel > .works > li:nth-child(n+3) { display: none; }
-.works-toggle:checked ~ .works-panel > .works > li:nth-child(n+3) { display: list-item; }
+.works-panel > .works > li:nth-child(n+4) { display: none; }
+.works-toggle:checked ~ .works-panel > .works > li:nth-child(n+4) { display: list-item; }
 
-/* Closed, the second card is the last one on show, and .works gives a bottom
+/* Closed, the third card is the last one on show, and .works gives a bottom
    margin to every card but its own last child — which is the fifth. Left
-   alone that puts a card's worth of gap between the second card and the
+   alone that puts a card's worth of gap between the third card and the
    control, and the control reads as belonging to the section rather than to
    the list it opens. */
-.works-panel > .works > li:nth-child(2) { margin-bottom: 0; }
-.works-toggle:checked ~ .works-panel > .works > li:nth-child(2) { margin-bottom: var(--space-para); }
+.works-panel > .works > li:nth-child(3) { margin-bottom: 0; }
+.works-toggle:checked ~ .works-panel > .works > li:nth-child(3) { margin-bottom: var(--space-para); }
 
 /* A card's hover wash reaches 0.85rem past the text column to either side and
    0.5rem above and below it (see .work), and a panel clips whatever leaves its
@@ -1030,7 +1017,7 @@ nav ul:has(> li > .home-button) { justify-content: center; }
    edge of a control says where to look, not where the click lands. Here the
    answer is a ring of it on every side.
 
-   Its drawn top edge sits 1.75rem below the second thumbnail, matching the
+   Its drawn top edge sits 1.75rem below the third thumbnail, matching the
    space between the first two thumbnails in the desktop list. The target adds
    0.225rem above that edge, so the margin gives that amount back.
 
@@ -1192,7 +1179,7 @@ nav ul:has(> li > .home-button) { justify-content: center; }
 /* Nothing to open. Written as a negation so that a browser without :has()
    drops the rule and shows the control, rather than hiding the one thing that
    could reveal the entries the rule above has hidden. */
-.works-panel:not(:has(> .works > li:nth-child(3))) ~ .works-more { display: none; }
+.works-panel:not(:has(> .works > li:nth-child(4))) ~ .works-more { display: none; }
 
 nav { margin-top: var(--space-section); }
 

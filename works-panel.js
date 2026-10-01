@@ -48,7 +48,7 @@ function fit(panel, list) {
     return;
   }
 
-  // While the panel is closed the cards past the second are display:none and
+  // While the panel is closed the cards past the third are display:none and
   // have no box to measure. Leave the last good value in place; this runs
   // again on the way open, when they have one.
   const last = cards[SCROLL_OPEN_CARDS - 1];

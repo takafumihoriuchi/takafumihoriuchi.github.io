@@ -21,6 +21,7 @@ def main() -> int:
         (root / "ascii" / "page-scenes.json").read_text(encoding="utf-8")
     )
     page_scenes = manifest.get("pages", {})
+    illustrated_pages = set(manifest.get("illustratedPages", []))
     footer_scene_id = manifest.get("homeFooter")
     problems: list[str] = []
 
@@ -31,10 +32,12 @@ def main() -> int:
         variant = scenes[scene_id]["variants"]["wide"]
         return variant.get("themes", {}).get("light", variant)["lines"]
 
-    for page in sorted(set(PAGES) - set(page_scenes)):
+    for page in sorted(set(PAGES) - (set(page_scenes) | illustrated_pages)):
         bad("ascii/page-scenes.json", f"missing page route {page!r}")
-    for page in sorted(set(page_scenes) - set(PAGES)):
+    for page in sorted((set(page_scenes) | illustrated_pages) - set(PAGES)):
         bad("ascii/page-scenes.json", f"unknown page route {page!r}")
+    for page in sorted(set(page_scenes) & illustrated_pages):
+        bad("ascii/page-scenes.json", f"route {page!r} has both ASCII and illustrated heroes")
     for page, scene_id in page_scenes.items():
         if scene_id not in scenes:
             bad(
@@ -128,13 +131,35 @@ def main() -> int:
                 bad(where, f"{name} light and dark grids must have equal dimensions")
 
     for page in PAGES:
-        expected_scene = page_scenes.get(page)
-        if expected_scene not in scenes:
-            continue
-        expected_fallback = "\n".join(
-            line.rstrip() for line in light_wide_lines(expected_scene)
-        )
         for _, directory, _, _ in LANGS:
+            if page in illustrated_pages:
+                path = root / directory / page / "index.html"
+                if not path.exists():
+                    continue
+                source = path.read_text(encoding="utf-8")
+                where = str(path.relative_to(root))
+                if source.count(MODULE) != 1:
+                    bad(where, "must load the ASCII module exactly once")
+                if source.count(PREPAINT) != 1:
+                    bad(where, "must install the ASCII pre-paint guard exactly once")
+                hero = re.search(r'<figure\b[^>]*data-hero="illustration".*?</figure>', source, re.S)
+                if not hero:
+                    bad(where, "illustrated route has no semantic hero figure")
+                    continue
+                images = re.findall(r'<img\b[^>]*>', hero.group(0))
+                if len(images) < 2 or any(not re.search(r'alt="[^"\s][^"]*"', image) for image in images):
+                    bad(where, "illustrated hero needs scene and close-up images with descriptive alternatives")
+                header_end = source.find("</header>")
+                first_section = source.find("<section", header_end)
+                if not (header_end < hero.start() < first_section):
+                    bad(where, "illustrated hero is not between the header and first section")
+                continue
+            expected_scene = page_scenes.get(page)
+            if expected_scene not in scenes:
+                continue
+            expected_fallback = "\n".join(
+                line.rstrip() for line in light_wide_lines(expected_scene)
+            )
             path = root / directory / page / "index.html"
             if not path.exists():
                 continue

@@ -67,13 +67,7 @@ def hero(scene_id: str, scenes: dict, *, placement: str | None = None) -> str:
     )
 
 
-def wire(
-    source: str,
-    page: str,
-    scene_id: str,
-    footer_scene_id: str,
-    scenes: dict,
-) -> str:
+def wire_load(source: str) -> str:
     # Keep the saved appearance ahead of the guard when theme.js is wired.
     # Both scripts must run before a stylesheet can permit first paint.
     source = PREPAINT_RE.sub("\n", source)
@@ -97,6 +91,18 @@ def wire(
     if "</head>" not in source:
         raise ValueError("no </head> anchor")
     source = source.replace("</head>", f"{MODULE}\n</head>", 1)
+
+    return source
+
+
+def wire(
+    source: str,
+    page: str,
+    scene_id: str,
+    footer_scene_id: str,
+    scenes: dict,
+) -> str:
+    source = wire_load(source)
 
     markup = "\n\n" + hero(scene_id, scenes) + "\n\n"
     if PRIMARY_HERO_RE.search(source):
@@ -153,10 +159,11 @@ def main() -> int:
         (root / "ascii" / "page-scenes.json").read_text(encoding="utf-8")
     )
     page_scenes = manifest.get("pages", {})
+    illustrated_pages = set(manifest.get("illustratedPages", []))
     footer_scene_id = manifest.get("homeFooter")
 
-    missing_pages = sorted(set(PAGES) - set(page_scenes))
-    extra_pages = sorted(set(page_scenes) - set(PAGES))
+    missing_pages = sorted(set(PAGES) - (set(page_scenes) | illustrated_pages))
+    extra_pages = sorted((set(page_scenes) | illustrated_pages) - set(PAGES))
     if missing_pages or extra_pages:
         raise SystemExit(
             "ascii/page-scenes.json and scripts/langs.py PAGES differ: "
@@ -176,14 +183,14 @@ def main() -> int:
     changed: list[str] = []
 
     for page in PAGES:
-        scene_id = page_scenes[page]
         for _, directory, _, _ in LANGS:
+            scene_id = page_scenes.get(page)
             path = root / directory / page / "index.html"
             if not path.exists():
                 continue
             before = path.read_text(encoding="utf-8")
             try:
-                after = wire(
+                after = wire_load(before) if page in illustrated_pages else wire(
                     before,
                     page,
                     scene_id,
