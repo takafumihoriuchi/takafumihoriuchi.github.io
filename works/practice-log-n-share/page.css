@@ -52,15 +52,15 @@ section p {
   text-wrap: balance;
 }
 
-/* Only figures about a relationship leave the text column. This is the
-   shared bleed calculation, so their edges align with the slide strip. */
-main { --figure-wide: min(92vw, var(--wide)); }
+/* Keep every figure inside the reading column, including nested notes. */
+main { --figure-wide: 100%; }
 .pl-pair,
 .pl-evolution,
 .pl-moments,
 .pl-traces {
-  width: var(--figure-wide);
-  margin-inline-start: calc(50% - var(--figure-wide) / 2);
+  width: 100%;
+  max-width: 100%;
+  margin-inline: 0;
 }
 .pl-pair,
 .pl-map,
@@ -92,13 +92,15 @@ main { --figure-wide: min(92vw, var(--wide)); }
 .pl-pair__screens {
   display: flex;
   justify-content: center;
-  gap: 4rem;
+  gap: clamp(.75rem, 4vw, 2rem);
 }
 .pl-pair__screens > .pl-phone {
-  flex: 0 0 auto;
-  width: min(18rem, 40vw);
+  flex: 1 1 0;
+  min-width: 0;
+  width: auto;
+  max-width: 18rem;
 }
-.pl-pair--appearance .pl-phone { width: min(15rem, 38vw); }
+.pl-pair--appearance .pl-phone { max-width: 15rem; }
 .pl-facts { margin-block: 2rem 1.25rem; }
 .pl-facts > div {
   display: grid;
@@ -249,7 +251,7 @@ main { --figure-wide: min(92vw, var(--wide)); }
   justify-content: center;
   gap: clamp(.25rem, 1vw, 1.5rem);
 }
-.pl-evolution__screens > div { width: min(12.25rem, 28vw); }
+.pl-evolution__screens > div { flex: 1 1 0; min-width: 0; max-width: 12.25rem; }
 .pl-evolution__screens img { width: 100%; }
 .pl-evolution__screens > div > a > img {
   border-radius: 14.1% / 6.49%;
@@ -310,8 +312,7 @@ main { --figure-wide: min(92vw, var(--wide)); }
 
 @media (max-width: 36rem) {
   .pl-pair__screens { gap: .75rem; }
-  .pl-pair__screens > .pl-phone { width: 44vw; }
-  .pl-pair--appearance .pl-phone { width: 38vw; }
+  .pl-pair__screens > .pl-phone { width: auto; }
   .pl-pair figcaption,
   .pl-evolution figcaption,
   .pl-moments figcaption,
@@ -424,3 +425,16 @@ html:not(:lang(ja)) .pl-traces__grid > div { grid-template-rows: minmax(6em, aut
   }
   html:not(:lang(ja)) .pl-map__note { grid-template-columns: minmax(0, 1fr); }
 }
+
+/* Five narrative chapters; supporting notes remain part of their chapter. */
+.pl-subtitle { font-weight: 600; text-align: start; text-wrap: balance; margin-block: 1.5rem .75rem; }
+.pl-intro { text-align: start; margin-block: .75rem 1.25rem; }
+.pl-chapter { margin-block-start: 4rem; }
+.pl-feature + .pl-feature { margin-block-start: 3rem; }
+.pl-column { margin-block: 3rem; padding-block-start: 1.5rem; border-top: 1px solid var(--rule); }
+.pl-column h4 { margin-block: 2rem .75rem; }
+.pl-resources { margin-block-start: 4rem; }
+.pl-chapter figure, .pl-overview figure, .pl-resources figure { max-width: 100%; }
+.pl-slides { width: 100%; min-width: 0; margin-inline: 0; }
+.pl-slides__strip { max-width: 100%; }
+:lang(ja) .pl-subtitle, :lang(ja) .pl-chapter h3 { word-break: keep-all; overflow-wrap: break-word; text-wrap: balance; }

@@ -132,7 +132,7 @@ def main() -> int:
 
     for page in PAGES:
         for _, directory, _, _ in LANGS:
-            if page in illustrated_pages:
+            if page in illustrated_pages or ((root / directory / page / "index.html").exists() and 'data-ascii-art="none"' in (root / directory / page / "index.html").read_text(encoding="utf-8")):
                 path = root / directory / page / "index.html"
                 if not path.exists():
                     continue

@@ -190,7 +190,7 @@ def main() -> int:
                 continue
             before = path.read_text(encoding="utf-8")
             try:
-                after = wire_load(before) if page in illustrated_pages else wire(
+                after = wire_load(before) if (page in illustrated_pages or 'data-ascii-art="none"' in before) else wire(
                     before,
                     page,
                     scene_id,
