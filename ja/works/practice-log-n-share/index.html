@@ -91,131 +91,241 @@
 <main>
 <header>
 <h1>Practice Log n Share</h1>
+<p class="pl-subtitle">日々の音楽練習を記録して共有するアプリ</p>
 <p class="dateline">2026年9月</p>
-<p class="pl-subtitle">日々の音楽練習を、記録して共有するアプリ</p>
-<p class="pl-intro">楽器を持ったまま、カテゴリをタップして練習時間を記録。前回のレッスンからの練習を一画面にまとめ、先生にそのまま見せるiPhoneアプリ。</p>
 </header>
-<div class="pl-overview" id="overview">
 <figure class="pl-pair" data-hero="illustration">
       <div class="pl-pair__screens">
         <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" fetchpriority="high"></picture>
         <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="共有画面。9月17日のレッスン日から24日までを集計し、合計4時間38分、カテゴリ別の棒グラフ、全カテゴリを横スクロールなしで見渡せる日別表を表示。" fetchpriority="high"></picture>
       </div>
-      <figcaption>左が記録、右が共有。カテゴリをタップして計測し、レッスンではその間の練習をまとめて見せる。画面は説明用の架空データ。</figcaption>
+      <figcaption>本アプリは、これら2つの画面から構成される</figcaption>
     </figure>
-    <dl class="pl-facts">
-      <div><dt>役割</dt><dd>企画、UX/UIデザイン、実装（Claude Code・Codexと協働）</dd></div>
-      <div><dt>期間</dt><dd>2026年9月</dd></div>
-      <div><dt>技術</dt><dd>React・TypeScript、Swift（WKWebView、Live Activity、StoreKit、iCloud）</dd></div>
-    </dl>
-    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Webデモで操作する</a>（2026年9月20日時点の自身の練習記録を収録）</p>
+<nav class="pl-toc" aria-label="目次">
+  <p class="pl-toc__title">目次</p>
+  <ol>
+    <li><a href="#overview">概要</a></li>
+    <li><a href="#background">背景と課題</a></li>
+    <li><a href="#design-goals">設計方針</a></li>
+    <li><a href="#features">機能と設計</a></li>
+    <li><a href="#process">制作過程</a></li>
+    <li><a href="#reflection">活用結果と今後</a></li>
+    <li><a href="#slides">（参考）説明資料</a></li>
+  </ol>
+</nav>
+<div class="pl-overview" id="overview" role="region" aria-labelledby="overview-title">
+<h2 id="overview-title">1. 概要</h2>
+<p class="pl-intro">楽器を持ったままワンタップで練習時間を記録し、レッスンで先生に見せる<span class="pl-term">iPhoneアプリ</span>。記録と共有の二つの画面で、日々の練習をレッスンの会話につなぐ。</p>
+<p>課題設定、UX/UIデザイン、実機での調整、実装、資料作成を担当。実装はAIと協働し、画面や操作の採否は自分で判断した。</p>
+<p>自身の練習とレッスンで使い、先生からは内容がひと目でわかるとの反応と、より細かな記録への要望を得た（要旨）。</p>
+<p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Webデモで操作する</a></p>
 </div>
-<section class="pl-chapter" id="background"><h2>背景と課題：練習状況を具体的に伝えたい</h2>
-<p>隔週のレッスンで「スケールを多めに」と答えても、何をどれだけ練習したかまでは伝わらない。紙の日誌は楽器を首から下げたままでは書きにくく、試した時間記録のアプリは、自分で見返すための道具だった。</p>
-    <figure class="pl-moments">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments.svg" width="960" height="285" loading="lazy" decoding="async" alt="2つのレッスン日の間に、練習した日の棒と休みの日が並ぶ。日々のカテゴリ別の時間を下の一本の棒にまとめると、合計10時間06分になる。"></picture>
-      <figcaption>上の棒が日々の練習、赤い枠がレッスン日。レッスンでは、その間の練習をまとめて見せる。日付と時間は説明用の架空データで、上下の棒の時間の合計は同じ。</figcaption>
-    </figure>
-</section>
-<section class="pl-chapter" id="design-goals"><h2>設計目標：記録を、レッスンの会話につなげる</h2>
-<p>自分の練習を振り返るだけでなく、先生と練習状況を共有するための道具として、二つの目標を置いた。</p>
-<h3>楽器を持ったまま記録できる</h3>
-<p>記録のために練習を中断する手間を減らしたい。カテゴリをタップする操作に、計測の開始・切り替え・停止をまとめる。</p>
-<h3>先生に、そのまま見せられる</h3>
-<p>レッスン前に記録を編集することなく、何をどれだけ練習したかを伝えたい。前回のレッスンからの練習を自動で集計し、カテゴリ別の時間と日ごとの内訳を一画面にまとめる。</p>
-</section>
-<section class="pl-chapter" id="features"><h2>機能と設計の工夫：記録から共有まで</h2>
-<div class="pl-feature" id="recording"><h3>記録&thinsp;——&thinsp;楽器を持ったまま、<wbr>ワンタップで</h3>
-<p>練習中に触るのは、カテゴリのカードだけ。タップで計測が始まり、別のカードで切り替わり、同じカードをもう一度タップすると止まる。</p>
-    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>実績</dt><dd>これまでの練習。開くと最初に目に入る。</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>今日</dt><dd>取り組んだ順と配分。1時間で満杯。</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>計測中</dt><dd>このカードだけ明るくし、白い輪郭で示す。</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>カード</dt><dd>タップで切り替え。今日の時間を大きく。</dd></div></dl></figure>
-</div>
-<div class="pl-feature" id="sharing"><h3>共有&thinsp;——&thinsp;レッスンの冒頭、<wbr>ひと目で伝わる一画面</h3>
-<p>前回のレッスン日から今日までを、カテゴリ別の合計と日ごとの内訳でまとめ、そのまま先生に見せる。日別の表は、文字を小さくしてでも全カテゴリを一画面に収め、横スクロールをなくした。</p>
-    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="共有画面。9月17日のレッスン日から24日までを集計し、合計4時間38分、カテゴリ別の棒グラフ、全カテゴリを横スクロールなしで見渡せる日別表を表示。" loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>期間</dt><dd>前回のレッスン日から今日まで。</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>合計</dt><dd>期間の練習時間と日数。</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>配分</dt><dd>名前、棒、時間を横一列に。</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>内訳</dt><dd>全カテゴリを一画面に。横スクロールなし。</dd></div></dl><figcaption>画像を開くと、日別の内訳まで拡大して確認できます。</figcaption></figure>
-</div>
-<div class="pl-feature" id="product"><h3>日々使うための保存と外観</h3>
-<p>外観は端末の設定に合わせて切り替わる。練習の記録は端末内に保存し、iCloudへ自動でバックアップする。</p>
-    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="ライトモードの記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="ダークモードの記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture></div><figcaption>同じ記録画面のライトモードとダークモード。</figcaption></figure>
-    <figure class="pl-icons">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="練習するものに合わせて選べる109点のテーマアイコン。楽器、運動、学習、絵画、手仕事、表現活動の順に並んでいる。"></picture>
-      <figcaption>練習するものに合わせ、アプリのヘッダーに置くアイコンを選べる。音楽47点、運動15点、語学・学習15点、美術11点、ものづくり・暮らし14点、表現7点。サックスはQlementine Icons（MIT License）を元にした。</figcaption>
-    </figure>
-</div>
-<aside class="pl-column" aria-labelledby="motivation-title"><h3 id="motivation-title">補足：練習の積み重ねを見える形に</h3>
-<p>記録と共有を支えながら、日々の練習を自分から続けるきっかけもつくりたい。今日の積み上げと、これまでの練習量を見える形にした。</p>
-<div class="pl-feature" id="day"><h4>一日&thinsp;——&thinsp;満たしたバーは、<wbr>満たされたまま</h4>
-<p>今日のバーは1時間で満杯になる。1時間を超えたら、その時点の合計を右端にして、一度満たしたバーに空白が戻らないようにした。</p>
-    <figure class="pl-dayscale" data-unit-hour="時間" data-unit-minute="分">
-      <div class="pl-dayscale__control" hidden><label for="practice-minutes">今日の練習</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1時間05分"><output for="practice-minutes">1時間05分</output></div>
-      <p class="pl-dayscale__static">今日の練習&thinsp;——&thinsp;<span data-print-value>1時間05分</span></p>
-      <div class="pl-dayscale__row" data-scale="adopted">
-        <p>採用</p>
-        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30分</span><span style="--position:100">1時間05分</span></div>
-      </div>
-      <div class="pl-dayscale__row" data-scale="rejected">
-        <p>没案</p>
-        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30分</span><span style="--position:66.6667">1時間</span><span style="--position:100">1時間30分</span></div>
-      </div>
-      <figcaption><span data-static-caption>65分練習したときの比較。</span><span data-interactive-caption hidden>スライダーで今日の練習時間を動かせる。</span>上は合計を右端にする採用案（最低1時間）、下は目盛りを60→90→120分と広げる没案。1時間を超えた瞬間、下のバーにだけ空白が戻る。</figcaption>
-    </figure>
-</div>
-<div class="pl-feature" id="history"><h4>積み重ね&thinsp;——&thinsp;始めた日から、<wbr>すべて見える</h4>
-<p>練習した日を緑の濃さで、レッスン日を赤い枠で示し、記録を始めた日まで横にたどれる。表示の軽さより、何年分でも見渡せることを優先した。</p>
-    <figure class="pl-crop">
-      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="実績の格子。6月から9月までの練習量を緑の濃さで表し、隔週のレッスン日に赤い枠が付いている。"></picture>
-      <figcaption>0分、30分未満、60分未満、90分未満、90分以上の5段階。アプリを開くと、この積み重ねが最初に目に入る。</figcaption>
-    </figure>
-</div>
-</aside>
-</section>
-<section class="pl-chapter" id="process"><h2>制作過程：触って確かめ、形にする</h2>
-<div id="evolution">
-<p>自分の練習で感じた課題を出発点に、AIとの対話でコンセプトと仕様を整理した。AIと協働して初期のWeb版を実装し、自分で画面を触って改善点を伝え、採否を決めることを繰り返した。その過程で記録と共有の形を探り、iPhoneで使うアプリとして実装した。</p>
-    <figure class="pl-evolution">
-      <div class="pl-evolution__screens">
-        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月9日の初期版。6つの小さなカテゴリカードと今日の合計40分が別の領域に置かれた記録画面。"></a><p>9月9日<br>初期版</p></div>
-        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月21日のWeb版。カテゴリと今日の時間を一つの大きなカードにまとめ、計測中の譜読み10分を明るく示した記録画面。"></a><p>9月21日<br>Web版</p></div>
-        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture><p>9月24日<br>iOS 1.0</p></div>
-      </div>
-      <figcaption>初期版とWeb版は同じ架空データ（6カテゴリ、今日の合計40分）。iOS 1.0は別の架空データ。</figcaption>
-    </figure>
-    <dl class="pl-changes">
-      <div><dt>名前と時間を、一緒に</dt><dd>カードに今日の時間を大きく置き、何をどれだけ練習したかを結びつけた。</dd></div>
-      <div><dt>今の状態を、ひと目で</dt><dd>計測中のカードだけを明るくし、ほかを沈めた。</dd></div>
-      <div><dt>操作する範囲を、画面の中に</dt><dd>カードの並びが画面に収まる位置で、スクロールが止まるようにした。</dd></div>
-    </dl>
 
+<section class="pl-chapter" id="background"><h2>2. 背景と課題</h2>
+<p>趣味でテナーサックスを吹き、隔週でレッスンに通っている。先生に「練習はどんな感じ？」と聞かれても、何をどれだけ練習したかを具体的に伝える手段がなかった。</p>
+<p>サックスはストラップでぶら下げているため、練習中に紙へ文字を書きにくい。日誌も枚数が増えると記録が散在する。</p>
+<!-- Original Keynote pixels are retained; SVG masks crop the two panels and make the paper transparent. -->
+<figure class="pl-paper-challenges">
+  <div class="pl-paper-challenges__drawings">
+      <svg class="pl-paper-challenges__drawing" viewBox="0 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-writing-title">
+        <title id="pl-writing-title">サックスをストラップで下げたまま、紙へ書こうとして苦労する様子。</title>
+        <defs>
+          <filter id="pl-writing-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-writing-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-writing-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-writing-ink)"/>
+      </svg>
+      <svg class="pl-paper-challenges__drawing" viewBox="724 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-scattered-title">
+        <title id="pl-scattered-title">練習日誌の紙が増えて散らばり、記録を探すのに苦労する様子。</title>
+        <defs>
+          <filter id="pl-scattered-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-scattered-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-scattered-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-scattered-ink)"/>
+      </svg>
+  </div>
+  <figcaption class="pl-paper-challenges__labels"><span>楽器を持ったまま書きにくい</span><span>紙が増えると記録が散在する</span></figcaption>
+</figure>
+<p>試した時間記録アプリではワンタップで計測できたが、その記録を先生がひと目で理解できる形にすることが課題だった。</p>
+</section>
+
+<section class="pl-chapter" id="design-goals"><h2>3. 設計方針</h2>
+<p>練習中の記録から、レッスンでの共有までを一続きにする。そのために、二つの要件を画面と操作を決める基準にした。</p>
+<h3>練習中に、入力を増やさない</h3>
+<p>楽器を持ったまま、カテゴリへのワンタップで時間を残せること。</p>
+<h3>先生に見せる前に、編集を増やさない</h3>
+<p>記録が自動でまとまり、何をどれだけ練習したかを、そのまま見せられること。</p>
+</section>
+
+<section class="pl-chapter" id="features"><h2>4. 機能と設計</h2>
+<div class="pl-feature" id="recording"><h3>操作と練習時間を、同じカードにまとめる</h3>
+<p>カテゴリをタップすると計測が始まり、別のカードで切り替わり、同じカードでもう一度タップすると止まる。カードには今日の時間を大きく置き、計測中だけ明るくして白い輪郭を付けた。操作する場所と、何を記録しているかを確かめる場所を揃えている。</p>
+<figure class="pl-decision"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="記録画面。上に実績の格子、その下に今日のバー（合計54分）とカテゴリのカード。「曲の練習」が27分を超えて計測中になり、明るい色と白い輪郭で示されている。" loading="lazy" decoding="async"></picture><figcaption>「曲の練習」が計測中。<br>カテゴリ名、今日の時間、計測状態を同じカードで確認できる。</figcaption></figure>
 </div>
-<aside class="pl-column" aria-labelledby="touch-title"><h3 id="touch-title">補足：手触りは、実機で選ぶ</h3>
-<div id="touch"><p>「すっと動いて、ストンと止まる」感触は、言葉で頼むだけでは作れなかった。方式と値をその場で切り替える調整ツールをAIとつくり、5つの方式を実機で触り比べて、ブラウザ標準のスナップを選んだ。</p>
-    <figure class="pl-traces">
-      <div class="pl-traces__grid">
-        <div><p>ハンプ型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="ハンプ型の実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
-        <div><p>着地点予測型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="着地点予測型の実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
-        <div class="pl-traces__adopted"><p>ブラウザ標準 proximity<br><span>採用</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="ブラウザ標準 proximityの実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
-        <div><p>ブラウザ標準 mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="ブラウザ標準 mandatoryの実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
-        <div><p>スナップなし</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="スナップなしの実機操作5本。横軸は指を離してから0–1200ミリ秒、縦軸は吸着位置からの距離。点線の0が吸着位置、各線の端の点が最後の計測位置。"></div>
-      </div>
-      <figcaption>指を離してからの位置を、同じ縮尺で比較。点線の0が吸着位置。実機ログから、直前60&nbsp;msの位置で求めた速さが0.6–1.8&nbsp;px/msの操作を、1.2&nbsp;px/msに近い順に各5本選んだ。各操作の設定・開始位置・方向は異なる。</figcaption>
-    </figure>
-    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="スクロール調整ツール。5つの吸着方式を切り替える項目とパラメータ、操作感を試すスマートフォン画面が並ぶ。"></a><figcaption>スクロールの距離と速度を記録しながら、実機で止まり方を比べた。画像を開くと拡大できます。</figcaption></figure></div>
-</aside>
-<aside class="pl-column" aria-labelledby="ai-title"><h3 id="ai-title">補足：AIとの協働と、本人の判断</h3>
-<p>AIは、リサーチと仕様の整理、実装、操作感を比較する調整ツールの制作、問題の洗い出しと修正に活用した。画面や動きをどう感じるか、どの改善を採るかは、自分で触って判断した。</p>
-<p>終盤は、Claude Codeが問題の候補を挙げ、Codexが検証して直し、自分が採否を決める工程を約15回繰り返した。</p>
-</aside>
+<div class="pl-feature" id="sharing"><h3>練習の内訳を、横スクロールせず見渡せる</h3>
+<p>共有前の編集をなくすため、前回のレッスン日からの記録を自動で集計する。日別の表は、文字を小さくしてでも全カテゴリが同時に見える配置を優先した。先生に画面を見せながら、練習の配分を話せる形を目指している。</p>
+<figure class="pl-decision"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="共有画面。9月17日のレッスン日から24日までを集計し、合計4時間38分、カテゴリ別の棒グラフ、全カテゴリを横スクロールなしで見渡せる日別表を表示。" loading="lazy" decoding="async"></picture></a><figcaption>期間・合計・カテゴリ別の配分・日別の内訳を一画面へ。<br></figcaption></figure>
+</div>
+<div class="pl-feature" id="motivation"><h3>積み上げた練習を、続けるきっかけにする</h3>
+<p>今日の達成と、月・年単位の積み重ねを見える形にした。練習した努力を先生に見てもらえることも、続ける動機につながると期待している。</p>
+<h4>1日｜1時間を目安に、バーを満たす</h4>
+<p>今日の練習を表すバーは、最初に1時間を上限として表示する。その目安を満たそうと練習に取り組むきっかけになることを期待し、カテゴリごとの時間を色で積み上げた。</p>
+<figure class="pl-practice-example" id="pl-daily-example">
+  <div class="pl-practice-day" role="img" aria-label="今日の練習は40分。0から60分のバーに、15分、10分、5分、10分の記録がカテゴリ色で積み上がり、残り20分の空白がある表示例。">
+    <div class="pl-practice-day__heading" aria-hidden="true"><span>今日の練習</span></div>
+    <div class="pl-practice-day__bar" aria-hidden="true">
+      <span style="--minutes:15; --category:#3caae0"></span><span style="--minutes:10; --category:#46b686"></span><span style="--minutes:5; --category:#bd9a32"></span><span style="--minutes:10; --category:#e17c81"></span>
+    </div>
+    <div class="pl-practice-day__ticks" aria-hidden="true"><span>0分</span><span>30分</span><span>60分（1時間）</span></div>
+  </div>
+  <figcaption>40分練習したときの表示例。色は練習カテゴリを表す。架空の記録。</figcaption>
+</figure>
+<h4>長期｜緑のマスで、日々の積み重ねを見せる</h4>
+<p>1日を1マスにし、その日の練習時間を緑の濃淡で表した。月・年単位で積み重なるマスを見渡せるようにし、日々の記録が増えていく様子を、練習を続けるきっかけにしたいと考えた。</p>
+<figure class="pl-practice-example" id="pl-calendar-example">
+  <div class="pl-practice-calendar" role="img" aria-label="2026年6月から8月の12週間を抜粋した架空の練習記録。1列が1週間、1マスが1日。練習時間に応じて緑の濃淡が変わる。赤枠は週1回のマイルストーン。表示例は8月18日時点で、右端の列は火曜日まで練習記録が入り、水曜日以降は未記録。">
+    <div class="pl-practice-calendar__months" aria-hidden="true"><span>6月</span><span>7月</span><span>8月</span></div>
+    <div class="pl-practice-calendar__grid" aria-hidden="true">
+      <span class="pl-practice-calendar__weekday">日</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/05/31：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/07：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/14：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/21：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/28：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/05：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/12：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/19：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/26：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/02：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/09：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/08/16：15分（表示例）"></span>
+      <span class="pl-practice-calendar__weekday">月</span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/06/01：20分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/08：45分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/15：30分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/22：65分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/29：40分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/06：50分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/07/13：25分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/20：70分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/27：55分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/03：45分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/10：75分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/17：60分（表示例）"></span>
+      <span class="pl-practice-calendar__weekday">火</span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/02：40分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" data-milestone title="2026/06/09：25分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/06/16：70分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/23：35分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/30：55分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/07：80分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/14：60分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/07/21：40分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" data-milestone title="2026/07/28：90分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/04：60分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/08/11：50分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/18：80分（表示例）"></span>
+      <span class="pl-practice-calendar__weekday">水</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/03：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/10：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/17：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/24：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/01：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/08：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/15：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/22：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/29：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/05：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/12：0分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/19：未記録（表示例）"></span>
+      <span class="pl-practice-calendar__weekday">木</span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/04：60分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/11：75分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/18：50分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/25：80分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/02：70分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/09：40分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/16：90分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/23：50分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/30：35分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/06：80分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/13：60分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/20：未記録（表示例）"></span>
+      <span class="pl-practice-calendar__weekday">金</span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/05：30分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/12：50分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/19：90分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/26：45分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/03：90分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/10：70分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/17：45分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/24：95分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/31：65分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/07：40分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/14：90分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/21：未記録（表示例）"></span>
+      <span class="pl-practice-calendar__weekday">土</span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/06：90分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/13：65分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/20：40分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/27：95分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/04：30分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/11：100分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/18：80分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/25：60分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/01：80分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/08：95分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/15：40分（表示例）"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/22：未記録（表示例）"></span>
+    </div>
+    <div class="pl-practice-calendar__footer" aria-hidden="true"><span>2026</span><div class="pl-practice-calendar__legend"><span>0分</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>90分＋</span></div></div>
+  </div>
+  <figcaption>1マスが1日、赤枠はマイルストーン。右端は記録の途中で、その下は未記録。架空の表示例。</figcaption>
+</figure>
+</div>
 </section>
-<section class="pl-chapter" id="reflection"><h2>使用して分かったこと</h2>
-<p>毎朝の練習で使い、レッスンで先生に画面を見せたところ、練習の中身がひと目でわかるという反応と、スケールの種類まで残せるとさらに役立つという意見をもらった（要旨）。</p>
-<h3>今後の課題：手軽さを保ちながら詳しく残す</h3>
-<p>手軽さを保ちながら詳しく残せるよう、カテゴリの下にもう一段を設けることを検討している。</p>
+
+<section class="pl-chapter" id="process"><h2>5. 制作過程</h2>
+<div class="pl-feature" id="research"><h3>調査と対話で、記録と共有の役割を定める</h3>
+<p>ChatGPTを使って既存アプリを調べ、課題とアプローチを整理した。当時の調査範囲では時間管理のアプリは見つかったが、先生とのコミュニケーションに適した共有の仕組みは見つけられなかった。対話で具体化したコンセプトを仕様書にまとめ、Codexに読み込ませて初版を実装した。</p>
+</div>
+<div class="pl-feature" id="evolution"><h3>初版を触り、操作する範囲を画面に収める</h3>
+<p>生成された初期版を自分で触り、UIとUXの改善要望を伝え、改良版へと調整した。初期版で別枠だった計測中の情報と終了操作をカードにまとめ、今日の時間を大きく表示した。操作するパネルが画面に収まる配置も探った。</p>
+<figure class="pl-evolution pl-evolution--comparison"><div class="pl-evolution__screens"><div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月9日の初期版。6つの小さなカテゴリカードと今日の合計40分が別の領域に置かれた記録画面。"></a><p>初期版</p></div><div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月21日の改良版。カテゴリと今日の時間を一つの大きなカードにまとめ、計測中の譜読み10分を明るく示した記録画面。"></a><p>改良版</p></div></div><figcaption>同じ架空データ（6カテゴリ、今日の合計40分）で比較。<br>初期版で別枠だった計測中の情報と終了操作を、改良版ではカードにまとめた。</figcaption></figure>
+<p>練習中に開き続ける画面として黒を基調にしつつ、カテゴリの色で明るい気分になることを目指した。</p>
+</div>
+<div class="pl-feature" id="touch"><h3>操作感を、自分で触り比べて選べるようにする</h3>
+<p>「すっと動いて、ストンと止まる」感触は、言葉や画像で頼むだけでは詰められなかった。そこで、方式や値を自分で変えて試せる補助ツールをAIとつくった。操作パネルが画面に収まる位置で止まることを基準に実機で比較し、ブラウザ標準のスナップを選んでアプリに反映した。</p>
+<figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="スクロール調整ツール。5つの吸着方式を切り替える項目とパラメータ、操作感を試すスマートフォン画面が並ぶ。"></a><figcaption>方式やパラメータを切り替え、実機でスクロールの止まり方を触り比べた。</figcaption></figure>
+</div>
+<div class="pl-feature" id="review"><h3>独立したレビューを使い、採否は自分で判断する</h3>
+<p>Claude Codeが挙げた問題や改善案を自分で確認し、Codexが検証して必要な修正を反映する工程を、独立した二つのAIセッションで繰り返した。提案が目指すUIやUXから離れることもあるため、アプリの目的と実際の手触りに照らして採否を決めた。<br>
+＊この工程を約15回繰り返し、AIのレビューで大きな欠陥が挙がらなくなったことを、改善を区切る一つの目安とした。</p>
+</div>
 </section>
-<aside class="pl-resources" id="slides" aria-labelledby="resources-title"><h2 id="resources-title">資料</h2>
-<p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Webデモ</a>では、記録と共有を操作できる。2026年9月20日時点の自身の練習記録を収録し、操作した結果は閲覧中のブラウザ内にだけ保存される。</p>
-    <figure class="pl-slides bleed">
-      <ol class="pl-slides__strip" tabindex="0" aria-label="制作資料のスライド" aria-describedby="slides-help">
+
+<section class="pl-chapter" id="reflection"><h2>6. 活用結果と今後</h2>
+<h3>練習の始めに、アプリを開く習慣が定着した</h3>
+<p>自分のiPhoneに入れて毎日の練習で使い、楽器を持ったままワンタップで記録できる使い勝手を確かめた。練習の始めにアプリを開くことが前向きな習慣となり、その日の順序や配分を見返すこと、次のレッスン日を意識することが、自分の練習計画に役立っている。</p>
+<h3>先生からは、より細かな記録への要望を得た</h3>
+<p>練習の中身がひと目でわかるという反応と、スケールの種類まで残せるとさらに役立つという意見をもらった（要旨）。これらは、自身の練習と先生とのレッスンでの<span class="pl-term">経験に基づく。</span></p>
+<h3>次の課題は、詳しさと入力の手軽さを両立すること</h3>
+<p>「スケール」の下に「ペンタトニックスケール」などのサブカテゴリを設けることを検討している。手軽に記録するための操作方法は引き続き検討中。共有画面も、日別の表に代えてカテゴリとサブカテゴリを階層表示する案を考えている。</p>
+</section>
+
+<aside class="pl-resources" id="slides" aria-labelledby="resources-title"><h2 id="resources-title">7. （参考）説明資料</h2>
+<figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="制作資料のスライド">
         <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="1ページ目。表紙：レッスンの先生に練習状況を共有するための記録アプリの開発。堀内貴文。"></a></li>
         <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="2ページ目。概要：練習を記録するLogと、先生に状況を共有するShare。担当範囲、制作期間、使用ツール。"></a></li>
         <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="3ページ目。背景：サックスの練習状況を先生に的確に伝えたい。紙の練習日誌と既存アプリで感じた課題。"></a></li>
@@ -227,9 +337,7 @@
         <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="9ページ目。実装の最適化：Claude Codeによる問題候補の提示と、Codexによる検証・修正を反復し、人が判断する工程。"></a></li>
         <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="10ページ目。成果と今後：自身の練習での利用、レッスンの先生からのフィードバック、より細かな記録に向けたサブカテゴリの検討。"></a></li>
       </ol>
-      <figcaption id="slides-help">横スクロールでページ送り。クリック・タップで拡大。</figcaption>
     </figure>
-    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">制作資料をPDFで開く（4.4&nbsp;MB）</a></p>
 </aside>
 
   <nav aria-label="サイト">

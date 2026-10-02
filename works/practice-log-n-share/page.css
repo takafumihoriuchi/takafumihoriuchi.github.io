@@ -438,3 +438,125 @@ html:not(:lang(ja)) .pl-traces__grid > div { grid-template-rows: minmax(6em, aut
 .pl-slides { width: 100%; min-width: 0; margin-inline: 0; }
 .pl-slides__strip { max-width: 100%; }
 :lang(ja) .pl-subtitle, :lang(ja) .pl-chapter h3 { word-break: keep-all; overflow-wrap: break-word; text-wrap: balance; }
+
+
+/* The Japanese case study uses the HRI deck geometry. Other languages retain
+   the published contact strip and reading-column layout above. */
+html:lang(ja) .pl-slides {
+  margin-block: 3.5rem calc(3.5rem - .75rem);
+  width: var(--bleed);
+  max-width: none;
+  margin-inline-start: calc(50% - var(--bleed) / 2);
+  margin-inline-end: 0;
+}
+html:lang(ja) .pl-slides__strip { scroll-snap-type: x mandatory; padding: 0 0 .75rem; }
+html:lang(ja) .pl-slides__strip > li { flex: 0 0 88%; }
+html:lang(ja) .pl-slides__strip a { display: block; }
+html:lang(ja) .pl-slides__strip img { background: #fff; }
+
+/* Focused design evidence; the Japanese reading rhythm is defined below. */
+html:lang(ja) .pl-decision { margin-block: 2.5rem; }
+html:lang(ja) .pl-decision .pl-phone { width: 100%; max-width: 17rem; margin-inline: auto; }
+html:lang(ja) .pl-evolution--comparison .pl-evolution__screens > div { max-width: 17rem; }
+
+/* Article rhythm for this Japanese case study only. The native, single-column
+   numbered contents follows the hierarchy seen in note and Qiita articles.
+   Figures retain the site's measure; the PDF deck keeps the HRI geometry. */
+html:lang(ja) main {
+  --space-para: 1.5rem;
+  --pl-section-gap: 6rem;
+  --pl-feature-gap: 4rem;
+  --pl-figure-gap: 3rem;
+  font-size: 1rem;
+  line-height: 1.85;
+}
+html:lang(ja) main > header { margin-block-end: 2.5rem; }
+html:lang(ja) main h1 { font-size: clamp(1.75rem, 5vw, 2rem); line-height: 1.35; }
+html:lang(ja) main .dateline { margin-block: .5rem 0; font-size: .8125rem; line-height: 1.7; }
+html:lang(ja) main h2 { font-size: 1.5rem; line-height: 1.45; margin-block: 0 1.5rem; }
+html:lang(ja) main h3 { font-size: 1.125rem; line-height: 1.6; margin-block: 3rem 1rem; }
+html:lang(ja) main h4 { font-size: 1rem; line-height: 1.65; margin-block: 2.5rem 1rem; text-wrap: balance; word-break: auto-phrase; overflow-wrap: break-word; }
+html:lang(ja) .pl-chapter h3 { word-break: auto-phrase; overflow-wrap: break-word; text-wrap: balance; }
+html:lang(ja) .pl-intro { margin-block: 0 1.5rem; }
+html:lang(ja) .pl-term { white-space: nowrap; }
+html:lang(ja) main .pl-links { font-size: .875rem; line-height: 1.75; text-align: start; }
+html:lang(ja) .pl-subtitle { margin-block: .5rem 0; line-height: 1.65; word-break: auto-phrase; overflow-wrap: break-word; }
+html:lang(ja) main > :is(.pl-chapter, .pl-resources) {
+  margin-block-start: calc(var(--pl-section-gap) / 2);
+  padding-block-start: calc(var(--pl-section-gap) / 2);
+  border-block-start: 1px solid var(--rule);
+}
+html:lang(ja) .pl-feature + .pl-feature { margin-block-start: var(--pl-feature-gap); }
+html:lang(ja) .pl-feature > h3:first-child { margin-block-start: 0; }
+html:lang(ja) .pl-column { margin-block: 3rem; padding-block-start: 1.75rem; }
+html:lang(ja) .pl-column > :is(h3, h4):first-child { margin-block-start: 0; }
+html:lang(ja) main figure:not(.pl-slides) { margin-block: var(--pl-figure-gap); }
+html:lang(ja) .pl-tuner { width: 100%; margin-inline: 0; }
+html:lang(ja) .pl-evolution--comparison .pl-evolution__screens { gap: clamp(1.25rem, 4vw, 3rem); }
+html:lang(ja) .pl-evolution--comparison .pl-evolution__screens > div > p { text-align: center; }
+html:lang(ja) main figcaption,
+html:lang(ja) .pl-slides__caption { font-size: .8125rem; line-height: 1.75; text-wrap: pretty; }
+html:lang(ja) main figcaption { margin-block-start: 1rem; text-align: center; text-wrap: balance; word-break: auto-phrase; overflow-wrap: break-word; }
+html:lang(ja) .pl-toc { margin-block: 2.5rem 3.5rem; padding-block: 1.5rem; border-block: 1px solid var(--rule); }
+html:lang(ja) .pl-toc__title { margin: 0 0 1rem; font-size: 1rem; font-weight: 600; line-height: 1.6; }
+html:lang(ja) .pl-toc ol { display: block; margin: 0; padding-inline-start: 1.5rem; list-style: decimal; }
+html:lang(ja) .pl-toc li { margin-block: .25rem; }
+html:lang(ja) .pl-toc li::marker { color: var(--fg-muted); font-variant-numeric: tabular-nums; }
+html:lang(ja) .pl-toc a { display: block; margin: 0; padding: .35rem .375rem; font-size: 1rem; line-height: 1.7; }
+@media (max-width: 36rem) {
+  html:lang(ja) main { --pl-section-gap: 5rem; --pl-feature-gap: 3.5rem; --pl-figure-gap: 2.5rem; }
+  html:lang(ja) main h2 { font-size: 1.375rem; }
+}
+
+/* Reuse the original paper drawings through SVG alpha masks; the pixels stay
+   unchanged while each cropped panel inherits the selected theme's ink. */
+html:lang(ja) .pl-paper-challenges { color: #000; }
+html:lang(ja) .pl-paper-challenges__drawings,
+html:lang(ja) .pl-paper-challenges__labels {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 1rem;
+}
+html:lang(ja) .pl-paper-challenges__drawing { display: block; width: 100%; height: auto; }
+html:lang(ja) .pl-paper-challenges__labels { text-align: center; text-wrap: balance; word-break: auto-phrase; overflow-wrap: break-word; }
+html:lang(ja)[data-theme="dark"] .pl-paper-challenges { color: #fff; }
+@media (prefers-color-scheme: dark) {
+  html:lang(ja):not([data-theme="light"]) .pl-paper-challenges { color: #fff; }
+}
+
+/* Static examples of the app's initial hour scale and daily practice grid.
+   Text stays at reading size while the bar and cells fit the article column. */
+html:lang(ja) .pl-practice-day__heading { display: flex; align-items: baseline; justify-content: space-between; gap: 1rem; margin-block-end: .75rem; }
+html:lang(ja) .pl-practice-day__heading strong { font-size: 1.5rem; font-weight: 600; line-height: 1.4; font-variant-numeric: tabular-nums; }
+html:lang(ja) .pl-practice-day__bar { display: flex; height: 28px; overflow: hidden; border: 1px solid var(--rule); border-radius: 5px; background: var(--rule); }
+html:lang(ja) .pl-practice-day__bar > span { flex: 0 0 calc(var(--minutes) / 60 * 100%); background: var(--category); }
+html:lang(ja) .pl-practice-day__ticks { position: relative; height: 1.75rem; margin-block-start: .375rem; color: var(--fg-muted); font-size: .8125rem; line-height: 1.75; font-variant-numeric: tabular-nums; }
+html:lang(ja) .pl-practice-day__ticks > span { position: absolute; white-space: nowrap; }
+html:lang(ja) .pl-practice-day__ticks > span:first-child { inset-inline-start: 0; }
+html:lang(ja) .pl-practice-day__ticks > span:nth-child(2) { inset-inline-start: 50%; transform: translateX(-50%); }
+html:lang(ja) .pl-practice-day__ticks > span:last-child { inset-inline-end: 0; }
+html:lang(ja) .pl-practice-calendar {
+  --pl-record-0: #e6e1d8; --pl-record-1: #b7e0bd; --pl-record-2: #7cc68b; --pl-record-3: #3fa35c; --pl-record-4: #1f7a3e; --pl-record-milestone: #b94434;
+  width: min(100%, 480px); margin-inline: auto; font-size: .8125rem; line-height: 1.75; font-variant-numeric: tabular-nums;
+}
+html:lang(ja) .pl-practice-calendar__months { display: grid; grid-template-columns: 1rem repeat(12, minmax(0, 1fr)); column-gap: 3px; margin-block-end: .5rem; color: var(--fg-muted); }
+html:lang(ja) .pl-practice-calendar__months > span:nth-child(1) { grid-column: 2 / span 4; }
+html:lang(ja) .pl-practice-calendar__months > span:nth-child(2) { grid-column: 6 / span 4; }
+html:lang(ja) .pl-practice-calendar__months > span:nth-child(3) { grid-column: 10 / span 4; }
+html:lang(ja) .pl-practice-calendar__grid { display: grid; grid-template-columns: 1rem repeat(12, minmax(0, 1fr)); gap: 3px; }
+html:lang(ja) .pl-practice-calendar__weekday { align-self: center; color: var(--fg-muted); }
+html:lang(ja) .pl-practice-calendar__cell { display: block; aspect-ratio: 1; border-radius: 2px; }
+html:lang(ja) .pl-practice-calendar__cell[data-milestone] { border: 2px solid var(--pl-record-milestone); }
+html:lang(ja) .pl-practice-calendar__cell[data-future] { background: transparent; border: 1px dashed var(--fg-muted); opacity: .45; }
+html:lang(ja) .pl-practice-calendar [data-level="0"] { background: var(--pl-record-0); }
+html:lang(ja) .pl-practice-calendar [data-level="1"] { background: var(--pl-record-1); }
+html:lang(ja) .pl-practice-calendar [data-level="2"] { background: var(--pl-record-2); }
+html:lang(ja) .pl-practice-calendar [data-level="3"] { background: var(--pl-record-3); }
+html:lang(ja) .pl-practice-calendar [data-level="4"] { background: var(--pl-record-4); }
+html:lang(ja) .pl-practice-calendar__footer { display: flex; align-items: center; justify-content: space-between; gap: .75rem; margin-block-start: .75rem; color: var(--fg-muted); }
+html:lang(ja) .pl-practice-calendar__legend { display: flex; align-items: center; gap: 4px; white-space: nowrap; }
+html:lang(ja) .pl-practice-calendar__legend > i { display: block; width: 12px; height: 12px; border-radius: 2px; }
+html:lang(ja)[data-theme="dark"] .pl-practice-calendar { --pl-record-0: #302c26; --pl-record-1: #44895b; --pl-record-2: #38a65a; --pl-record-3: #32c957; --pl-record-4: #80e68c; --pl-record-milestone: #d47668; }
+@media (prefers-color-scheme: dark) {
+  html:lang(ja):not([data-theme="light"]) .pl-practice-calendar { --pl-record-0: #302c26; --pl-record-1: #44895b; --pl-record-2: #38a65a; --pl-record-3: #32c957; --pl-record-4: #80e68c; --pl-record-milestone: #d47668; }
+}
