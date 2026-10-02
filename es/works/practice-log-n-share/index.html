@@ -77,7 +77,7 @@
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
-<body>
+<body data-ascii-art="none">
 <div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Volver al portfolio de Takafumi Horiuchi">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Apariencia" dir="ltr" hidden>
     <label title="Modo claro">
@@ -91,159 +91,257 @@
   </div>
 </div>
 <main>
-  <header>
-    <h1>Practice Log n Share</h1>
-    <p class="dateline">Septiembre de 2026</p>
-  </header>
-
-  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
-## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
-++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
-@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
-## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
-++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
-++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
-  </ascii-hero>
-
-  <section id="overview">
-    <h2>Resumen</h2>
-    <p class="lead">Registrar la práctica con un toque y mostrar la misma pantalla al profesor en clase. Ideé y diseñé esta app para iPhone para mi propia práctica de saxofón, y la implementé en colaboración con IA.</p>
-    <figure class="pl-pair">
+<header>
+<h1>Practice Log n Share</h1>
+<p class="pl-subtitle">Una aplicación para registrar y compartir la práctica musical diaria</p>
+<p class="dateline">Septiembre de 2026</p>
+</header>
+<figure class="pl-pair" data-hero="illustration">
       <div class="pl-pair__screens">
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Pantalla de registro. Una cuadrícula del historial encabeza la barra de hoy (54 minutos en total) y las tarjetas de categorías. La práctica de piezas lleva más de 27 minutos en curso, resaltada con un color más claro y un contorno blanco." fetchpriority="high"></picture>
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Pantalla para compartir. Del día de la clase, el 17 de septiembre, al 24: 4 horas y 38 minutos en total, barras por categoría y una tabla diaria con todas las categorías sin desplazamiento horizontal." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Pantalla de registro. Arriba, una cuadrícula de logros; debajo, la barra de hoy (total: 54 min) y tarjetas por categoría. «Práctica de piezas» supera los 27 minutos y aparece en curso, resaltada con un color vivo y un contorno blanco." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Pantalla para compartir. Resume el periodo del 17 al 24 de septiembre, desde el día de la clase: muestra un total de 4 h 38 min, un gráfico de barras por categoría y una tabla diaria con todas las categorías visibles sin desplazamiento horizontal." fetchpriority="high"></picture>
       </div>
-      <figcaption>Registro a la izquierda, compartir a la derecha. Un toque en una categoría inicia el cronómetro; en clase se muestra el resumen de la práctica entre clases. Las pantallas usan datos ficticios ilustrativos. Las capturas muestran la interfaz original en japonés.</figcaption>
+      <figcaption>La aplicación consta de estas dos pantallas</figcaption>
     </figure>
-    <dl class="pl-facts">
-      <div><dt>Mi papel</dt><dd>Planificación, diseño UX/UI e implementación (con Claude Code y Codex)</dd></div>
-      <div><dt>Periodo</dt><dd>Septiembre de 2026</dd></div>
-      <div><dt>Tecnología</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
-    </dl>
-    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Probar la demo web</a> (incluye mis registros de práctica hasta el 20 de septiembre de 2026)</p>
-  </section>
+<nav class="pl-toc" aria-label="Índice">
+  <p class="pl-toc__title">Índice</p>
+  <ol>
+    <li><a href="#overview">Resumen</a></li>
+    <li><a href="#background">Contexto y problema</a></li>
+    <li><a href="#design-goals">Criterios de diseño</a></li>
+    <li><a href="#features">Funciones y diseño</a></li>
+    <li><a href="#process">Proceso de creación</a></li>
+    <li><a href="#reflection">Uso y próximos pasos</a></li>
+    <li><a href="#slides">Materiales de presentación (referencia)</a></li>
+  </ol>
+</nav>
+<div class="pl-overview" id="overview" role="region" aria-labelledby="overview-title">
+<h2 id="overview-title">1. Resumen</h2>
+<p class="pl-intro">Registra el tiempo de práctica con un toque mientras sostienes el instrumento y muéstraselo a tu profesor en clase: una <span class="pl-term">app para iPhone</span>. Con sus dos pantallas, una para registrar y otra para compartir, conecta la práctica diaria con la conversación en clase.</p>
+<p>Me encargué de definir el problema, diseñar la UX/UI, ajustar la aplicación en el dispositivo, implementarla y preparar los materiales. Colaboré con IA en la implementación y decidí por mi cuenta qué pantallas y operaciones adoptar.</p>
+<p>La usé en mi práctica y en las clases; el profesor comentó que el contenido se entendía de un vistazo y pidió registros más detallados (resumen).</p>
+<p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Probar la demo web</a></p>
+</div>
 
-  <section id="background">
-    <h2>Origen — «¿Cómo va la práctica?»: <wbr>no sabía responder</h2>
-    <p>En mis clases quincenales, responder «sobre todo escalas» no explicaba qué había practicado ni cuánto. Escribir un diario en papel con el saxofón colgado del cuello resultaba incómodo, y las apps de registro de tiempo que probé estaban pensadas para revisar los datos a solas.</p>
-    <figure class="pl-moments">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-es.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-es.svg" width="960" height="285" loading="lazy" decoding="async" alt="Entre dos fechas de clase se alternan barras de días de práctica y días de descanso. Al reunir los tiempos diarios por categoría en una sola barra inferior, suman 10 horas y 06 minutos."></picture>
-      <figcaption>Las barras superiores muestran la práctica diaria; los marcos rojos señalan las clases. En clase muestro el resumen del intervalo. Las fechas y los tiempos son ficticios; las barras de arriba y abajo suman lo mismo.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="background"><h2>2. Contexto y problema</h2>
+<p>Toco el saxofón tenor como afición y tengo clase cada dos semanas. Cuando el profesor me preguntaba «¿Cómo va la práctica?», no tenía una forma concreta de contarle qué había practicado ni durante cuánto tiempo.</p>
+<p>Como llevo el saxofón colgado de una correa, me cuesta escribir en papel mientras practico. Además, cuando se acumulan las páginas del diario, los registros quedan dispersos.</p>
+<!-- Original Keynote pixels are retained; SVG masks crop the two panels and make the paper transparent. -->
+<figure class="pl-paper-challenges">
+  <div class="pl-paper-challenges__drawings">
+      <svg class="pl-paper-challenges__drawing" viewBox="0 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-writing-title">
+        <title id="pl-writing-title">Una persona intenta escribir con dificultad mientras lleva el saxofón colgado de la correa.</title>
+        <defs>
+          <filter id="pl-writing-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-writing-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-writing-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-writing-ink)"/>
+      </svg>
+      <svg class="pl-paper-challenges__drawing" viewBox="724 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-scattered-title">
+        <title id="pl-scattered-title">Las hojas del diario de práctica se acumulan y se dispersan; cuesta encontrar los registros.</title>
+        <defs>
+          <filter id="pl-scattered-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-scattered-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-scattered-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-scattered-ink)"/>
+      </svg>
+  </div>
+  <figcaption class="pl-paper-challenges__labels"><span>Cuesta escribir mientras sostienes el instrumento</span><span>Al acumularse las hojas, los registros quedan dispersos</span></figcaption>
+</figure>
+<p>Las aplicaciones de registro de tiempo que probé permitían iniciar el cronómetro con un toque, pero el reto era presentar esos registros de forma que el profesor pudiera entenderlos de un vistazo.</p>
+</section>
 
-  <section id="recording">
-    <h2>Registro — Con el instrumento en las manos, <wbr>un solo toque</h2>
-    <p>Durante la práctica solo toco las tarjetas de categorías. Un toque inicia el cronómetro, otra tarjeta cambia de categoría y un segundo toque en la misma lo detiene.</p>
-    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Pantalla de registro. Una cuadrícula del historial encabeza la barra de hoy (54 minutos en total) y las tarjetas de categorías. La práctica de piezas lleva más de 27 minutos en curso, resaltada con un color más claro y un contorno blanco." loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>Historial</dt><dd>La práctica acumulada. Lo primero que aparece al abrir la app.</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>Hoy</dt><dd>El orden y el reparto de la práctica. Se llena en una hora.</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>En curso</dt><dd>Solo esta tarjeta se ilumina, con un contorno blanco.</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>Tarjetas</dt><dd>Un toque para cambiar. El tiempo de hoy, destacado.</dd></div></dl></figure>
-  </section>
+<section class="pl-chapter" id="design-goals"><h2>3. Criterios de diseño</h2>
+<p>Conectar en un mismo flujo el registro durante la práctica y la puesta en común en clase. Para ello, tomé dos requisitos como criterios para decidir las pantallas y las interacciones.</p>
+<h3>Durante la práctica, reducir al mínimo lo que hay que introducir</h3>
+<p>Poder registrar el tiempo con un toque en una categoría mientras se sostiene el instrumento.</p>
+<h3>Antes de mostrárselo al profesor, reducir al mínimo la edición</h3>
+<p>Que los registros se agrupen automáticamente y se puedan mostrar tal cual, indicando qué se practicó y durante cuánto tiempo.</p>
+</section>
 
-  <section id="day">
-    <h2>Un día — Una vez llena, <wbr>la barra sigue llena</h2>
-    <p>La barra de hoy se llena al llegar a una hora. Después, el total actual define el extremo derecho, para que no reaparezca un hueco en una barra que ya estaba llena.</p>
-    <figure class="pl-dayscale" data-unit-hour=" h " data-unit-minute=" min">
-      <div class="pl-dayscale__control" hidden><label for="practice-minutes">Práctica de hoy</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1 h 05 min"><output for="practice-minutes">1 h 05 min</output></div>
-      <p class="pl-dayscale__static">Práctica de hoy — <span data-print-value>1 h 05 min</span></p>
-      <div class="pl-dayscale__row" data-scale="adopted">
-        <p>Elegida</p>
-        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30 min</span><span style="--position:100">1 h 05 min</span></div>
-      </div>
-      <div class="pl-dayscale__row" data-scale="rejected">
-        <p>Descartada</p>
-        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30 min</span><span style="--position:66.6667">1 h</span><span style="--position:100">1 h 30 min</span></div>
-      </div>
-      <figcaption><span data-static-caption>Comparación con 65 minutos de práctica. </span><span data-interactive-caption hidden>Mueve el control para cambiar el tiempo de práctica de hoy. </span>Arriba, el diseño elegido sitúa el total en el extremo derecho, con una escala mínima de una hora. Abajo, el descartado amplía la escala de 60 a 90 y a 120 minutos. Al superar una hora, solo la barra inferior vuelve a mostrar un hueco.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="features"><h2>4. Funciones y diseño</h2>
+<div class="pl-feature" id="recording"><h3>Unir la interacción y el tiempo de práctica en la misma tarjeta</h3>
+<p>Al tocar una categoría empieza el cronómetro; al elegir otra tarjeta, cambia de categoría, y al volver a tocar la misma, se detiene. La tarjeta muestra en grande el tiempo de hoy y solo se resalta con un color vivo y un contorno blanco mientras el cronómetro está en marcha. Así, el control y la información sobre lo que se está registrando quedan en el mismo lugar.</p>
+<figure class="pl-decision"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Pantalla de registro. Arriba, una cuadrícula de logros; debajo, la barra de hoy (total: 54 min) y tarjetas por categoría. «Práctica de piezas» supera los 27 minutos y aparece en curso, resaltada con un color vivo y un contorno blanco." loading="lazy" decoding="async"></picture><figcaption>«Práctica de piezas» está en curso.<br>En una misma tarjeta se pueden consultar la categoría, el tiempo de hoy y el estado del cronómetro.</figcaption></figure>
+</div>
+<div class="pl-feature" id="sharing"><h3>Consultar el desglose de la práctica sin desplazamiento horizontal</h3>
+<p>Para evitar editar antes de compartir, la aplicación resume automáticamente los registros desde la fecha de la clase anterior. En la tabla diaria se prioriza que todas las categorías se vean a la vez, aunque el texto tenga que ser pequeño. La idea es poder hablar del reparto de la práctica mientras se muestra la pantalla al profesor.</p>
+<figure class="pl-decision"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Pantalla para compartir. Resume el periodo del 17 al 24 de septiembre, desde el día de la clase: muestra un total de 4 h 38 min, un gráfico de barras por categoría y una tabla diaria con todas las categorías visibles sin desplazamiento horizontal." loading="lazy" decoding="async"></picture></a><figcaption>El periodo, el total, el reparto por categorías y el detalle diario, todo en una pantalla.<br></figcaption></figure>
+</div>
+<div class="pl-feature" id="motivation"><h3>Convertir la práctica acumulada en un motivo para continuar</h3>
+<p>Los logros de hoy y el progreso acumulado a lo largo del mes y del año se muestran visualmente. Espero que poder enseñar al profesor el esfuerzo dedicado a practicar también ayude a mantener la motivación.</p>
+<h4>Un día | Completar la barra con una meta de 1 hora</h4>
+<p>La barra que representa la práctica de hoy se muestra inicialmente con un máximo de 1 hora. Espero que intentar alcanzar esa meta anime a practicar; el tiempo de cada categoría se acumula en la barra con distintos colores.</p>
+<figure class="pl-practice-example" id="pl-daily-example">
+  <div class="pl-practice-day" role="img" aria-label="Ejemplo de visualización para 40 minutos de práctica hoy. En la barra de 0 a 60 minutos se acumulan, en colores por categoría, registros de 15, 10, 5 y 10 minutos; quedan 20 minutos en blanco.">
+    <div class="pl-practice-day__heading" aria-hidden="true"><span>Práctica de hoy</span></div>
+    <div class="pl-practice-day__bar" aria-hidden="true">
+      <span style="--minutes:15; --category:#3caae0"></span><span style="--minutes:10; --category:#46b686"></span><span style="--minutes:5; --category:#bd9a32"></span><span style="--minutes:10; --category:#e17c81"></span>
+    </div>
+    <div class="pl-practice-day__ticks" aria-hidden="true"><span>0 min</span><span>30 min</span><span>60 min (1 hora)</span></div>
+  </div>
+  <figcaption>Ejemplo de visualización tras practicar 40 minutos. Los colores representan las categorías de práctica. Registro ficticio.</figcaption>
+</figure>
+<h4>Largo plazo | Mostrar el progreso diario con casillas verdes</h4>
+<p>Cada día ocupa una casilla y el tiempo de práctica se representa con distintos tonos de verde. La vista permite recorrer las casillas acumuladas a lo largo de meses y años; quería que ver crecer los registros diarios animara a seguir practicando.</p>
+<figure class="pl-practice-example" id="pl-calendar-example">
+  <div class="pl-practice-calendar" role="img" aria-label="Registro ficticio de 12 semanas, de junio a agosto de 2026. Cada columna representa una semana y cada casilla, un día. El tono verde varía según el tiempo de práctica. El recuadro rojo marca un hito semanal. La vista corresponde al 18 de agosto: en la columna del extremo derecho hay registros hasta el martes; desde el miércoles no hay registros.">
+    <div class="pl-practice-calendar__months" aria-hidden="true"><span>Junio</span><span>Julio</span><span>Agosto</span></div>
+    <div class="pl-practice-calendar__grid" aria-hidden="true">
+      <span class="pl-practice-calendar__weekday">Dom</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/05/31 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/07 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/14 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/21 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/28 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/05 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/12 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/19 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/26 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/02 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/09 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/08/16 — 15 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Lun</span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/06/01 — 20 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/08 — 45 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/15 — 30 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/22 — 65 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/29 — 40 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/06 — 50 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/07/13 — 25 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/20 — 70 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/27 — 55 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/03 — 45 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/10 — 75 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/17 — 60 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Mar</span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/02 — 40 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" data-milestone title="2026/06/09 — 25 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/06/16 — 70 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/23 — 35 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/30 — 55 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/07 — 80 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/14 — 60 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/07/21 — 40 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" data-milestone title="2026/07/28 — 90 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/04 — 60 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/08/11 — 50 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/18 — 80 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Mié</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/03 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/10 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/17 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/24 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/01 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/08 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/15 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/22 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/29 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/05 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/12 — 0 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/19 — sin registrar todavía (ejemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Jue</span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/04 — 60 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/11 — 75 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/18 — 50 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/25 — 80 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/02 — 70 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/09 — 40 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/16 — 90 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/23 — 50 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/30 — 35 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/06 — 80 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/13 — 60 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/20 — sin registrar todavía (ejemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Vie</span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/05 — 30 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/12 — 50 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/19 — 90 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/26 — 45 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/03 — 90 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/10 — 70 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/17 — 45 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/24 — 95 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/31 — 65 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/07 — 40 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/14 — 90 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/21 — sin registrar todavía (ejemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Sáb</span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/06 — 90 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/13 — 65 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/20 — 40 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/27 — 95 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/04 — 30 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/11 — 100 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/18 — 80 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/25 — 60 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/01 — 80 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/08 — 95 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/15 — 40 min (ejemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/22 — sin registrar todavía (ejemplo)"></span>
+    </div>
+    <div class="pl-practice-calendar__footer" aria-hidden="true"><span>2026</span><div class="pl-practice-calendar__legend"><span>0 min</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>90 min o más</span></div></div>
+  </div>
+  <figcaption>Cada casilla representa un día; el recuadro rojo marca un hito. La columna derecha está incompleta y, debajo, no hay registros. Ejemplo ficticio.</figcaption>
+</figure>
+</div>
+</section>
 
-  <section id="history">
-    <h2>Acumulación — Todo a la vista, <wbr>desde el primer día</h2>
-    <p>La intensidad del verde indica la práctica y los marcos rojos, las clases. El desplazamiento horizontal permite volver al primer día registrado. Prioricé poder consultar años de práctica frente a aligerar el renderizado.</p>
-    <figure class="pl-crop">
-      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="Cuadrícula del historial. La intensidad del verde representa la práctica de junio a septiembre; los marcos rojos señalan las clases quincenales."></picture>
-      <figcaption>Cinco niveles: 0 minutos, menos de 30, menos de 60, menos de 90 y 90 o más. Al abrir la app, esta práctica acumulada es lo primero que se ve.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="process"><h2>5. Proceso de creación</h2>
+<div class="pl-feature" id="research"><h3>Definir las funciones de registro y puesta en común mediante investigación y diálogo</h3>
+<p>Usé ChatGPT para investigar aplicaciones existentes y ordenar el problema y el enfoque. Dentro del alcance de la investigación de entonces, encontré aplicaciones para gestionar el tiempo, pero no encontré una función para compartir adecuada para comunicarse con un profesor. Recogí en una especificación el concepto concretado mediante el diálogo y se la di a Codex para implementar la primera versión.</p>
+</div>
+<div class="pl-feature" id="evolution"><h3>Probar la primera versión y ajustar la interfaz para que los controles quepan en la pantalla</h3>
+<p>Probé por mi cuenta la primera versión generada, planteé mejoras para la UI y la UX y fui ajustándola. Reuní en una tarjeta la información del cronómetro en marcha y el control para detenerlo, que antes estaban separados, y destaqué el tiempo total de hoy. También busqué una disposición que permitiera ver el panel de controles completo en la pantalla.</p>
+<figure class="pl-evolution pl-evolution--comparison"><div class="pl-evolution__screens"><div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="Pantalla de registro de la versión inicial, del 9 de septiembre. Seis tarjetas pequeñas de categorías y el total de 40 minutos de hoy aparecen en zonas separadas."></a><p>Versión inicial</p></div><div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="Pantalla de registro de la versión mejorada, del 21 de septiembre. La categoría y el tiempo de hoy aparecen en una misma tarjeta grande; la lectura de partituras, con 10 minutos en curso, se resalta con un color vivo."></a><p>Versión mejorada</p></div></div><figcaption>Comparación con los mismos datos ficticios (6 categorías y un total de 40 minutos hoy).<br>La versión mejorada reúne en una tarjeta la información del cronómetro y el control para detenerlo, que estaban separados en la versión inicial.</figcaption></figure>
+<p>Quería una interfaz predominantemente negra, pensada para permanecer abierta durante la práctica, y que los colores de las categorías aportaran una sensación más alegre.</p>
+</div>
+<div class="pl-feature" id="touch"><h3>Comparar por cuenta propia las sensaciones de uso para elegir</h3>
+<p>La sensación de «deslizar suavemente y detenerse de golpe» no se podía afinar solo describiéndola con palabras o imágenes. Por eso, con ayuda de la IA, creé una herramienta auxiliar para cambiar y probar los métodos y sus parámetros. Comparé las opciones en el dispositivo, tomando como criterio que el panel de controles se detuviera en una posición que cupiera en la pantalla, y elegí el ajuste de desplazamiento estándar del navegador para incorporarlo a la aplicación.</p>
+<figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="Herramienta de ajuste del desplazamiento. Aparecen opciones para alternar entre cinco métodos de ajuste y sus parámetros, junto con una pantalla de móvil para probar la sensación de uso."></a><figcaption>Alterné los métodos y parámetros y comparé en el dispositivo cómo se detenía el desplazamiento.</figcaption></figure>
+</div>
+<div class="pl-feature" id="review"><h3>Usar revisiones independientes y decidir personalmente qué adoptar</h3>
+<p>Repetí el proceso en dos sesiones de IA independientes: revisé por mi cuenta los problemas y las propuestas de mejora señalados por Claude Code, y Codex los comprobó e incorporó las correcciones necesarias. Como las propuestas a veces se alejaban de la UI o UX que buscaba, decidí cuáles adoptar teniendo en cuenta el propósito de la aplicación y la sensación al usarla.<br>
+＊Repetí este proceso unas 15 veces. Tomé como una de las señales para dar por concluida la mejora que las revisiones de IA dejaran de señalar defectos importantes.</p>
+</div>
+</section>
 
-  <section id="sharing">
-    <h2>Compartir — Al empezar la clase, <wbr>una pantalla que se entiende de un vistazo</h2>
-    <p>Los totales por categoría y el desglose diario resumen desde la última clase hasta hoy, listos para mostrarlos al profesor. La tabla diaria reúne todas las categorías en una pantalla, incluso reduciendo la letra, para evitar el desplazamiento horizontal.</p>
-    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Pantalla para compartir. Del día de la clase, el 17 de septiembre, al 24: 4 horas y 38 minutos en total, barras por categoría y una tabla diaria con todas las categorías sin desplazamiento horizontal." loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>Periodo</dt><dd>Desde la última clase hasta hoy.</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>Total</dt><dd>Tiempo y días de práctica del periodo.</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>Reparto</dt><dd>Nombre, barra y tiempo en una fila.</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>Desglose</dt><dd>Todas las categorías en una pantalla, sin desplazamiento horizontal.</dd></div></dl><figcaption>Abre la imagen para ampliar el desglose diario.</figcaption></figure>
-  </section>
+<section class="pl-chapter" id="reflection"><h2>6. Uso y próximos pasos</h2>
+<h3>Se consolidó el hábito de abrir la aplicación al empezar a practicar</h3>
+<p>La instalé en mi iPhone y la usé en la práctica diaria para comprobar lo cómodo que era registrar con un toque mientras sostenía el instrumento. Abrir la aplicación al empezar se convirtió en un hábito positivo. Revisar el orden y el reparto de la práctica del día y tener presente la próxima clase me ha ayudado a planificar mis sesiones.</p>
+<h3>El profesor pidió registros más detallados</h3>
+<p>El profesor comentó que el contenido de la práctica se entendía de un vistazo y que sería aún más útil poder registrar también los tipos de escalas (resumen). Estas observaciones se basan en mi propia práctica y en la experiencia de las clases con mi profesor<span class="pl-term">.</span></p>
+<h3>El siguiente reto es combinar el detalle con la facilidad de registro</h3>
+<p>Estoy considerando añadir subcategorías bajo «Escalas», como «escala pentatónica». Sigo estudiando cómo facilitar el registro. También barajo sustituir la tabla diaria de la pantalla para compartir por una vista jerárquica de categorías y subcategorías.</p>
+</section>
 
-  <section id="evolution">
-    <h2>Evolución — Las tarjetas como <wbr>panel de control de la práctica</h2>
-    <p>Construí las pantallas a partir de una especificación elaborada conversando con IA, y repetí el proceso de probarlas y corregirlas. Exploré el registro y la puesta en común en una versión web inicial antes de implementar la app para iPhone.</p>
-    <figure class="pl-evolution">
-      <div class="pl-evolution__screens">
-        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="Versión inicial del 9 de septiembre. Seis tarjetas pequeñas y el total de hoy, 40 minutos, ocupan zonas separadas de la pantalla de registro."></a><p>9 de septiembre<br>Versión inicial</p></div>
-        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="Versión web del 21 de septiembre. Categoría y tiempo de hoy comparten una tarjeta grande; los 10 minutos de lectura de partitura en curso aparecen resaltados."></a><p>21 de septiembre<br>Versión web</p></div>
-        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="Pantalla de registro. Una cuadrícula del historial encabeza la barra de hoy (54 minutos en total) y las tarjetas de categorías. La práctica de piezas lleva más de 27 minutos en curso, resaltada con un color más claro y un contorno blanco." loading="lazy" decoding="async"></picture><p>24 de septiembre<br>iOS 1.0</p></div>
-      </div>
-      <figcaption>Las versiones inicial y web usan los mismos datos ficticios (seis categorías, 40 minutos hoy). iOS 1.0 usa otros datos ficticios.</figcaption>
-    </figure>
-    <dl class="pl-changes">
-      <div><dt>Nombre y tiempo, juntos</dt><dd>Destaqué el tiempo de hoy en cada tarjeta para vincular qué practiqué con cuánto tiempo le dediqué.</dd></div>
-      <div><dt>El estado actual, de un vistazo</dt><dd>Iluminé solo la tarjeta en curso y atenué las demás.</dd></div>
-      <div><dt>Los controles, dentro de la pantalla</dt><dd>Hice que el desplazamiento se detuviera donde una fila de tarjetas cabe en la pantalla.</dd></div>
-    </dl>
-    <p>Al final repetí unas 15 veces un ciclo: Claude Code planteaba posibles problemas, Codex los verificaba y corregía, y yo decidía qué cambios aceptar.</p>
-  </section>
-
-  <section id="touch">
-    <h2>Sensaciones — Elegir cómo se detiene <wbr>probándolo</h2>
-    <p>No conseguía que se moviera con fluidez y se asentara con precisión solo con instrucciones verbales. Creé con IA una herramienta para cambiar métodos y valores al instante, comparé cinco métodos en un dispositivo real y elegí el ajuste de desplazamiento nativo del navegador.</p>
-    <figure class="pl-traces">
-      <div class="pl-traces__grid">
-        <div><p>Modelo de joroba</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="Cinco gestos en un dispositivo real con Modelo de joroba. Eje horizontal: 0–1200 milisegundos tras levantar el dedo; eje vertical: distancia a la posición de ajuste. El cero punteado marca esa posición; el punto final de cada línea es la última posición medida."></div>
-        <div><p>Destino proyectado</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="Cinco gestos en un dispositivo real con Destino proyectado. Eje horizontal: 0–1200 milisegundos tras levantar el dedo; eje vertical: distancia a la posición de ajuste. El cero punteado marca esa posición; el punto final de cada línea es la última posición medida."></div>
-        <div class="pl-traces__adopted"><p>Nativo proximity<br><span>Elegida</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="Cinco gestos en un dispositivo real con Nativo proximity. Eje horizontal: 0–1200 milisegundos tras levantar el dedo; eje vertical: distancia a la posición de ajuste. El cero punteado marca esa posición; el punto final de cada línea es la última posición medida."></div>
-        <div><p>Nativo mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="Cinco gestos en un dispositivo real con Nativo mandatory. Eje horizontal: 0–1200 milisegundos tras levantar el dedo; eje vertical: distancia a la posición de ajuste. El cero punteado marca esa posición; el punto final de cada línea es la última posición medida."></div>
-        <div><p>Sin ajuste</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="Cinco gestos en un dispositivo real con Sin ajuste. Eje horizontal: 0–1200 milisegundos tras levantar el dedo; eje vertical: distancia a la posición de ajuste. El cero punteado marca esa posición; el punto final de cada línea es la última posición medida."></div>
-      </div>
-      <figcaption>Posiciones tras levantar el dedo, comparadas a la misma escala. El cero punteado es la posición de ajuste. De los registros del dispositivo seleccioné cinco gestos por método a velocidades de 0,6–1,8 px/ms, calculadas con las posiciones de los 60 ms anteriores, priorizando los más cercanos a 1,2 px/ms. Los ajustes, puntos de partida y direcciones varían entre gestos.</figcaption>
-    </figure>
-    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="Herramienta de ajuste del desplazamiento. Opciones para alternar entre cinco métodos y sus parámetros, junto a una pantalla de teléfono para probar la interacción."></a><figcaption>Comparé cómo se detenía el desplazamiento en un dispositivo real mientras registraba distancia y velocidad. Abre la imagen para ampliarla.</figcaption></figure>
-  </section>
-
-  <section id="product">
-    <h2>Como producto — Más allá de la práctica</h2>
-    <p>La apariencia sigue los ajustes del dispositivo. Los registros se guardan en el dispositivo y se respaldan automáticamente en iCloud.</p>
-    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Modo claro. Pantalla de registro. Una cuadrícula del historial encabeza la barra de hoy (54 minutos en total) y las tarjetas de categorías. La práctica de piezas lleva más de 27 minutos en curso, resaltada con un color más claro y un contorno blanco." loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Modo oscuro. Pantalla de registro. Una cuadrícula del historial encabeza la barra de hoy (54 minutos en total) y las tarjetas de categorías. La práctica de piezas lleva más de 27 minutos en curso, resaltada con un color más claro y un contorno blanco." loading="lazy" decoding="async"></picture></div><figcaption>La misma pantalla de registro en modo claro y oscuro.</figcaption></figure>
-    <figure class="pl-icons">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="109 iconos temáticos para elegir según la práctica, ordenados en instrumentos, ejercicio, aprendizaje, pintura, artesanía y expresión."></picture>
-      <figcaption>El icono de la cabecera se elige según la práctica: 47 de música, 15 de ejercicio, 15 de idiomas y aprendizaje, 11 de arte, 14 de creación y vida cotidiana, y 7 de expresión. El saxofón se basa en Qlementine Icons (licencia MIT).</figcaption>
-    </figure>
-  </section>
-
-  <section id="reflection">
-    <h2>Al usarla — La siguiente pregunta: <wbr>cuánto detalle registrar</h2>
-    <p>Usé la app en mi práctica matutina y enseñé la pantalla a mi profesor en clase. Su respuesta fue que el contenido se entendía de un vistazo y que registrar los tipos de escalas la haría aún más útil (paráfrasis). Estoy considerando un nivel por debajo de las categorías para añadir detalle sin perder sencillez.</p>
-  </section>
-
-  <section id="slides">
-    <h2>Materiales</h2>
-    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">La demo web</a> permite probar el registro y la puesta en común. Incluye mis registros de práctica hasta el 20 de septiembre de 2026; los cambios se guardan solo en el navegador que estás usando.</p>
-    <figure class="pl-slides bleed">
-      <ol class="pl-slides__strip" tabindex="0" aria-label="Diapositivas del proyecto" aria-describedby="slides-help">
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 1. Portada: desarrollo de una app para registrar la práctica y compartirla con el profesor. Takafumi Horiuchi."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 2. Resumen: Log para registrar y Share para mostrar la práctica al profesor. Papel, periodo y herramientas."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 3. Contexto: comunicar con precisión la práctica de saxofón al profesor. Dificultades con el diario en papel y las apps existentes."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 4. Enfoque: registro con un toque y visualización inmediata. La práctica acumulada a dos escalas: un día y meses o años."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 5. Cuatro usos de IA: investigación, implementación inicial, herramienta para ajustar la interacción y optimización."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 6. Colaboración con IA: investigar apps existentes y concretar el concepto mediante diálogo."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 7. Implementación inicial: comparación de V0 generada por IA con V1, revisada mediante comentarios sobre composición y color."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 8. Ajuste de la interacción: una herramienta creada con IA para comparar personalmente velocidad y detención del desplazamiento."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 9. Optimización: posibles problemas propuestos por Claude Code, verificación y corrección por Codex y decisiones humanas, de forma iterativa."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Diapositiva 10. Resultados y próximos pasos: uso propio, comentarios del profesor y posibles subcategorías para registros más detallados."></a></li>
+<aside class="pl-resources" id="slides" aria-labelledby="resources-title"><h2 id="resources-title">7. Materiales de presentación (referencia)</h2>
+<figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="Diapositivas del material de creación">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 1. Portada: Desarrollo de una aplicación para registrar la práctica y compartir su estado con el profesor de música. Takafumi Horiuchi."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 2. Resumen: Log para registrar la práctica y Share para compartir el estado con el profesor. Ámbito de responsabilidad, periodo de creación y herramientas utilizadas."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 3. Contexto: Quería comunicar al profesor con precisión cómo iba la práctica de saxofón. Dificultades percibidas con el diario de práctica en papel y las aplicaciones existentes."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 4. Enfoque: Registro con un toque y visualización comprensible al instante. Mostrar la práctica acumulada en dos escalas temporales: diaria y mensual/anual."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 5. Cuatro usos de la IA: investigación, implementación básica, desarrollo de una herramienta auxiliar para ajustar la sensación de uso y optimización de la implementación."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 6. Colaboración con IA: investigación de aplicaciones existentes y concreción del concepto mediante diálogo."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 7. Implementación básica: comparación entre la primera versión V0 generada por IA y la versión ajustada V1, tras varias rondas de comentarios sobre la disposición y los colores."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 8. Ajuste de la sensación de uso: desarrollo con IA de una herramienta auxiliar para comparar personalmente la velocidad y la forma de detener el desplazamiento."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 9. Optimización de la implementación: ciclo de propuestas de posibles problemas por Claude Code y comprobación y corrección por Codex, con decisiones a cargo de una persona."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Página 10. Resultados y próximos pasos: uso en la práctica personal, comentarios del profesor de música y consideración de subcategorías para registrar con más detalle."></a></li>
       </ol>
-      <figcaption id="slides-help">Desplázate horizontalmente para pasar las diapositivas. Pulsa para ampliar. Los originales están en japonés.</figcaption>
     </figure>
-    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">Abrir los materiales en PDF (japonés, 4,4 MB)</a></p>
-  </section>
+</aside>
+
   <nav aria-label="Sitio">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Volver al portfolio de Takafumi Horiuchi</span></a></li>

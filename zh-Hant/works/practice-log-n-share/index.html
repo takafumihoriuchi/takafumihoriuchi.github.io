@@ -77,7 +77,7 @@
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
-<body>
+<body data-ascii-art="none">
 <div class="home-mark"><a class="home-mark__link" href="../../" aria-label="返回堀內貴文的作品集首頁">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="外觀" dir="ltr" hidden>
     <label title="淺色模式">
@@ -91,159 +91,257 @@
   </div>
 </div>
 <main>
-  <header>
-    <h1>Practice Log n Share</h1>
-    <p class="dateline">2026年9月</p>
-  </header>
-
-  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
-## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
-++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
-@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
-## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
-++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
-++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
-  </ascii-hero>
-
-  <section id="overview">
-    <h2>概覽</h2>
-    <p class="lead">練習時輕點一下就能記錄，上課時直接把同一個畫面展示給老師。為了自己的薩克斯風學習，我規劃並設計了這款 iPhone App，並與 AI 協作完成開發。</p>
-    <figure class="pl-pair">
+<header>
+<h1>Practice Log n Share</h1>
+<p class="pl-subtitle">記錄並分享日常音樂練習的應用程式</p>
+<p class="dateline">2026年9月</p>
+</header>
+<figure class="pl-pair" data-hero="illustration">
       <div class="pl-pair__screens">
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="記錄頁。上方是練習紀錄網格，下方是今日進度條（共54分鐘）和分類卡片。「樂曲練習」已計時超過27分鐘，以亮色和白色外框標示。" fetchpriority="high"></picture>
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="分享頁。彙整9月17日上課當天至24日的練習，共4小時38分鐘，並顯示分類長條圖和不需水平捲動即可查看所有分類的每日明細表。" fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="記錄畫面。上方是練習記錄方格，下方是今日進度條（合計54分鐘）和分類卡片。「曲目練習」已超過27分鐘，仍在計時，以亮色和白色外框凸顯。" fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="分享畫面。彙整9月17日上次上課日至24日的資料，顯示總計4小時38分鐘、按類別劃分的長條圖，以及無需橫向捲動即可查看所有類別的每日表格。" fetchpriority="high"></picture>
       </div>
-      <figcaption>左側記錄，右側分享。輕點分類開始計時，上課時展示兩堂課之間的練習彙整。畫面使用說明用的虛構資料。 截圖保留原 App 的日文介面。</figcaption>
+      <figcaption>本應用程式由這兩個畫面組成</figcaption>
     </figure>
-    <dl class="pl-facts">
-      <div><dt>角色</dt><dd>規劃、UX/UI 設計、開發（與 Claude Code、Codex 協作）</dd></div>
-      <div><dt>期間</dt><dd>2026年9月</dd></div>
-      <div><dt>技術</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
-    </dl>
-    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">試用網頁示範版</a>（收錄截至2026年9月20日的本人練習紀錄）</p>
-  </section>
+<nav class="pl-toc" aria-label="目錄">
+  <p class="pl-toc__title">目錄</p>
+  <ol>
+    <li><a href="#overview">概要</a></li>
+    <li><a href="#background">背景與問題</a></li>
+    <li><a href="#design-goals">設計方針</a></li>
+    <li><a href="#features">功能與設計</a></li>
+    <li><a href="#process">製作過程</a></li>
+    <li><a href="#reflection">使用結果與後續計畫</a></li>
+    <li><a href="#slides">（參考）說明資料</a></li>
+  </ol>
+</nav>
+<div class="pl-overview" id="overview" role="region" aria-labelledby="overview-title">
+<h2 id="overview-title">1. 概要</h2>
+<p class="pl-intro">即使拿著樂器，也能輕點一下記錄練習時間，並在上課時展示給老師看的<span class="pl-term">iPhone App</span>。透過記錄和分享兩個畫面，將日常練習帶入課堂交流。</p>
+<p>負責問題定義、UX/UI設計、實機調整、實作和資料製作。實作過程與AI協作，並由我自行判斷是否採用畫面和操作方案。</p>
+<p>我在自己的練習和課程中使用了這款應用程式。老師表示內容一目了然，也提出希望記錄得更細緻的需求（大意）。</p>
+<p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">透過 Web 示範進行操作</a></p>
+</div>
 
-  <section id="background">
-    <h2>起點——面對「最近練得怎麼樣？」，<wbr>我答不上來</h2>
-    <p>每兩週上一次課，即使回答「主要練音階」，也無法說明具體練了什麼、練了多久。薩克斯風掛在脖子上時很難寫紙本日誌，而試過的計時 App 都是供自己回顧紀錄的工具。</p>
-    <figure class="pl-moments">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-zh-Hant.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-zh-Hant.svg" width="960" height="285" loading="lazy" decoding="async" alt="兩次上課日期之間，排列著練習日的長條與休息日。將每天各分類的時數彙整成下方的一根長條，總計10小時06分鐘。"></picture>
-      <figcaption>上方長條表示每日練習，紅框標記上課日期。上課時展示這段期間的練習彙整。日期與時數皆為說明用虛構資料，上下長條的總時數相同。</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="background"><h2>2. 背景與問題</h2>
+<p>我以業餘身分練習次中音薩克斯風，每兩週上一次課。老師問我「最近練得怎麼樣？」時，我卻沒有辦法具體說明練了什麼、練了多久。</p>
+<p>薩克斯風掛在背帶上，練習時很難騰出手在紙上寫字。日誌的頁數一多，記錄也會散落難找。</p>
+<!-- Original Keynote pixels are retained; SVG masks crop the two panels and make the paper transparent. -->
+<figure class="pl-paper-challenges">
+  <div class="pl-paper-challenges__drawings">
+      <svg class="pl-paper-challenges__drawing" viewBox="0 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-writing-title">
+        <title id="pl-writing-title">嘗試在薩克斯風掛在背帶上的狀態下往紙上寫字，顯得十分費力。</title>
+        <defs>
+          <filter id="pl-writing-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-writing-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-writing-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-writing-ink)"/>
+      </svg>
+      <svg class="pl-paper-challenges__drawing" viewBox="724 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-scattered-title">
+        <title id="pl-scattered-title">練習日誌的紙張越積越多、散落各處，查找記錄很費勁。</title>
+        <defs>
+          <filter id="pl-scattered-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-scattered-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-scattered-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-scattered-ink)"/>
+      </svg>
+  </div>
+  <figcaption class="pl-paper-challenges__labels"><span>很難一邊拿著樂器一邊寫字</span><span>紙張一多，記錄就會散落難找</span></figcaption>
+</figure>
+<p>我試過時間記錄 App，雖然可以一鍵計時，但如何把記錄整理成老師一眼就能看懂的形式，仍是個問題。</p>
+</section>
 
-  <section id="recording">
-    <h2>記錄——手持樂器，<wbr>輕點一下</h2>
-    <p>練習時只需操作分類卡片。輕點開始計時，點另一張切換，再點同一張停止。</p>
-    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="記錄頁。上方是練習紀錄網格，下方是今日進度條（共54分鐘）和分類卡片。「樂曲練習」已計時超過27分鐘，以亮色和白色外框標示。" loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>累積</dt><dd>至今的練習。開啟 App 最先看到的內容。</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>今日</dt><dd>練習順序與時間分配。滿一小時填滿。</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>計時中</dt><dd>僅此卡片變亮，並以白色外框標示。</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>卡片</dt><dd>輕點切換。突出顯示今日時數。</dd></div></dl></figure>
-  </section>
+<section class="pl-chapter" id="design-goals"><h2>3. 設計方針</h2>
+<p>讓練習時的記錄和上課時的分享銜接成一個完整流程。為此，我把兩項要求作為決定畫面和操作方式的標準。</p>
+<h3>練習時，盡量減少輸入</h3>
+<p>拿著樂器也能透過輕點分類卡片記錄時間。</p>
+<h3>展示給老師前，盡量減少編輯</h3>
+<p>記錄能自動彙整，可以直接展示練了什麼、練了多久。</p>
+</section>
 
-  <section id="day">
-    <h2>一天——填滿的進度條，<wbr>始終保持填滿</h2>
-    <p>今日進度條在一小時處填滿。超過一小時後，以當下總時數作為右端，避免已經填滿的長條再次出現空白。</p>
-    <figure class="pl-dayscale" data-unit-hour="小時" data-unit-minute="分鐘">
-      <div class="pl-dayscale__control" hidden><label for="practice-minutes">今日練習</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1小時05分鐘"><output for="practice-minutes">1小時05分鐘</output></div>
-      <p class="pl-dayscale__static">今日練習 — <span data-print-value>1小時05分鐘</span></p>
-      <div class="pl-dayscale__row" data-scale="adopted">
-        <p>採用</p>
-        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30分鐘</span><span style="--position:100">1小時05分鐘</span></div>
-      </div>
-      <div class="pl-dayscale__row" data-scale="rejected">
-        <p>未採用</p>
-        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30分鐘</span><span style="--position:66.6667">1小時</span><span style="--position:100">1小時30分鐘</span></div>
-      </div>
-      <figcaption><span data-static-caption>練習65分鐘時的比較。</span><span data-interactive-caption hidden>拖曳滑桿可調整今日練習時間。</span>上方為採用方案，以總時數作為右端（最少一小時）；下方為未採用方案，將刻度從60擴展到90、120分鐘。超過一小時的瞬間，只有下方長條重新出現空白。</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="features"><h2>4. 功能與設計</h2>
+<div class="pl-feature" id="recording"><h3>將操作和練習時間放在同一張卡片上</h3>
+<p>輕點類別卡片即可開始計時；輕點另一張卡片可切換；再次輕點同一張卡片則停止計時。卡片上醒目顯示今日練習時間，只有計時過程中才會高亮並加上白色外框。操作的位置和確認記錄內容的位置保持一致。</p>
+<figure class="pl-decision"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="記錄畫面。上方是練習記錄方格，下方是今日進度條（合計54分鐘）和分類卡片。「曲目練習」已超過27分鐘，仍在計時，以亮色和白色外框凸顯。" loading="lazy" decoding="async"></picture><figcaption>「曲目練習」正在計時。<br>在同一張卡片上查看類別名稱、今日用時和計時狀態。</figcaption></figure>
+</div>
+<div class="pl-feature" id="sharing"><h3>無需橫向捲動即可查看練習明細</h3>
+<p>為了免去分享前的編輯，應用程式會自動彙整上次上課日以來的記錄。每日表格優先採用能同時顯示所有類別的配置，即使文字需要縮小也如此。目標是讓使用者能一邊向老師展示畫面，一邊聊練習時間的分配。</p>
+<figure class="pl-decision"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="分享畫面。彙整9月17日上次上課日至24日的資料，顯示總計4小時38分鐘、按類別劃分的長條圖，以及無需橫向捲動即可查看所有類別的每日表格。" loading="lazy" decoding="async"></picture></a><figcaption>在一個畫面中顯示期間、總時長、各類別占比和每日明細。<br></figcaption></figure>
+</div>
+<div class="pl-feature" id="motivation"><h3>讓累積的練習成為堅持下去的動力</h3>
+<p>把今日完成情況以及按月、按年累積的練習視覺化。我希望老師能看到自己付出的努力，這也能成為持續練習的動力。</p>
+<h4>每日｜以1小時為目標，讓進度條填滿</h4>
+<p>今日練習進度條最初以1小時為上限顯示。我把各類別的練習時間用不同顏色疊加，希望嘗試達到這個目標能成為開始練習的契機。</p>
+<figure class="pl-practice-example" id="pl-daily-example">
+  <div class="pl-practice-day" role="img" aria-label="今日練習40分鐘。進度條範圍為0至60分鐘，按類別顏色依序顯示15分鐘、10分鐘、5分鐘和10分鐘的記錄，剩餘20分鐘為空白。">
+    <div class="pl-practice-day__heading" aria-hidden="true"><span>今日練習</span></div>
+    <div class="pl-practice-day__bar" aria-hidden="true">
+      <span style="--minutes:15; --category:#3caae0"></span><span style="--minutes:10; --category:#46b686"></span><span style="--minutes:5; --category:#bd9a32"></span><span style="--minutes:10; --category:#e17c81"></span>
+    </div>
+    <div class="pl-practice-day__ticks" aria-hidden="true"><span>0分鐘</span><span>30分鐘</span><span>60分鐘（1小時）</span></div>
+  </div>
+  <figcaption>練習40分鐘時的顯示範例。顏色代表練習類別。虛構記錄。</figcaption>
+</figure>
+<h4>長期｜用綠色方格呈現日積月累</h4>
+<p>每天用一個方格表示，並以綠色深淺表示當天的練習時間。設計上希望能一覽按月、按年累積的方格，並讓日常記錄逐漸增加的樣子成為堅持練習的契機。</p>
+<figure class="pl-practice-example" id="pl-calendar-example">
+  <div class="pl-practice-calendar" role="img" aria-label="截取2026年6月至8月共12週的虛構練習記錄。每欄代表一週，每格代表一天。綠色深淺隨練習時間變化。紅框表示每週一次的里程碑。此範例截至8月18日，最右欄記錄到星期二，星期三以後尚無記錄。">
+    <div class="pl-practice-calendar__months" aria-hidden="true"><span>6月</span><span>7月</span><span>8月</span></div>
+    <div class="pl-practice-calendar__grid" aria-hidden="true">
+      <span class="pl-practice-calendar__weekday">日</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/05/31 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/07 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/14 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/21 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/28 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/05 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/12 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/19 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/26 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/02 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/09 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/08/16 — 15 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__weekday">一</span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/06/01 — 20 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/08 — 45 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/15 — 30 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/22 — 65 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/29 — 40 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/06 — 50 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/07/13 — 25 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/20 — 70 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/27 — 55 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/03 — 45 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/10 — 75 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/17 — 60 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__weekday">二</span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/02 — 40 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" data-milestone title="2026/06/09 — 25 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/06/16 — 70 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/23 — 35 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/30 — 55 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/07 — 80 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/14 — 60 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/07/21 — 40 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" data-milestone title="2026/07/28 — 90 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/04 — 60 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/08/11 — 50 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/18 — 80 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__weekday">三</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/03 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/10 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/17 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/24 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/01 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/08 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/15 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/22 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/29 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/05 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/12 — 0 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/19 — 尚未記錄 (範例)"></span>
+      <span class="pl-practice-calendar__weekday">四</span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/04 — 60 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/11 — 75 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/18 — 50 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/25 — 80 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/02 — 70 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/09 — 40 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/16 — 90 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/23 — 50 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/30 — 35 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/06 — 80 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/13 — 60 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/20 — 尚未記錄 (範例)"></span>
+      <span class="pl-practice-calendar__weekday">五</span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/05 — 30 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/12 — 50 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/19 — 90 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/26 — 45 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/03 — 90 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/10 — 70 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/17 — 45 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/24 — 95 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/31 — 65 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/07 — 40 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/14 — 90 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/21 — 尚未記錄 (範例)"></span>
+      <span class="pl-practice-calendar__weekday">六</span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/06 — 90 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/13 — 65 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/20 — 40 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/27 — 95 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/04 — 30 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/11 — 100 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/18 — 80 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/25 — 60 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/01 — 80 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/08 — 95 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/15 — 40 分鐘 (範例)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/22 — 尚未記錄 (範例)"></span>
+    </div>
+    <div class="pl-practice-calendar__footer" aria-hidden="true"><span>2026</span><div class="pl-practice-calendar__legend"><span>0分鐘</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>90分鐘以上</span></div></div>
+  </div>
+  <figcaption>每格代表一天，紅框表示里程碑。最右側為尚在記錄中的一週，下方為未記錄日期。虛構範例。</figcaption>
+</figure>
+</div>
+</section>
 
-  <section id="history">
-    <h2>累積——從第一天起，<wbr>全部看得見</h2>
-    <p>以綠色深淺表示練習日，以紅框標記上課日期，水平捲動可追溯到開始記錄的那一天。比起減輕繪製負擔，我更重視能夠查看多年的練習。</p>
-    <figure class="pl-crop">
-      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="練習紀錄網格。綠色深淺表示6月至9月的練習量，紅框標記每兩週一次的上課日期。"></picture>
-      <figcaption>分為五級：0分鐘、未滿30分鐘、未滿60分鐘、未滿90分鐘、90分鐘以上。開啟 App 時，最先看到的就是這些累積。</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="process"><h2>5. 製作過程</h2>
+<div class="pl-feature" id="research"><h3>透過調查和交流，明確記錄與分享各自的作用</h3>
+<p>我使用 ChatGPT 調查了現有 App，並整理問題和解決方向。在當時的調查範圍內，我找到了時間管理 App，但沒有找到適合與老師溝通的分享機制。我透過對話逐步明確概念，整理成規格說明，再交給 Codex 讀取並實作初版。</p>
+</div>
+<div class="pl-feature" id="evolution"><h3>試用初版，將操作區域收進畫面內</h3>
+<p>我親自試用了生成的初版，提出 UI 和 UX 改進需求，並據此調整出改良版。初版中分開的計時狀態資訊和結束操作被整合進卡片，今日時長也改為醒目顯示。我還嘗試調整配置，讓操作面板能完整顯示在畫面內。</p>
+<figure class="pl-evolution pl-evolution--comparison"><div class="pl-evolution__screens"><div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月9日的初版。記錄畫面中，6張較小的類別卡片與今日總計40分鐘被放在不同區域。"></a><p>初版</p></div><div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月21日的改良版。將類別和今日時長整合進一張較大的卡片，並以亮色凸顯正在計時的10分鐘讀譜練習。"></a><p>改良版</p></div></div><figcaption>使用相同的虛構資料（6個類別、今日總計40分鐘）進行比較。<br>初版中分開的計時狀態資訊和結束操作，在改良版中整合進卡片。</figcaption></figure>
+<p>練習時需要一直開啟這個畫面，因此以黑色為主色，同時希望類別色彩能帶來明快的感覺。</p>
+</div>
+<div class="pl-feature" id="touch"><h3>親自比較操作手感，再決定採用哪種方案</h3>
+<p>僅靠文字或圖片難以準確描述「順暢滑動、穩穩停住」的手感。因此，我與AI一起製作了一個輔助工具，可以自行更改方案和參數來測試。我以操作面板能停在畫面範圍內為標準，在實機上比較後，選擇了瀏覽器原生的吸附捲動，並應用到程式中。</p>
+<figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="捲動調整工具。畫面中排列著5種吸附方式的選項和參數，以及用來試操作手感的手機畫面。"></a><figcaption>切換不同方式和參數，在實機上試著比較捲動停止的位置。</figcaption></figure>
+</div>
+<div class="pl-feature" id="review"><h3>透過獨立評審輔助檢查，由我決定是否採用</h3>
+<p>我用兩個獨立的AI工作階段反覆進行這個流程：先自行檢查 Claude Code 提出的問題和改進建議，再由 Codex 驗證並落實必要的修正。建議有時會偏離預期的 UI 或 UX，因此我會結合應用程式的目的和實際手感決定是否採用。<br>
+＊這個流程重複了約15次；當AI評審不再提出重大缺陷時，我將其作為結束改進的一個參考標準。</p>
+</div>
+</section>
 
-  <section id="sharing">
-    <h2>分享——課程開始時，<wbr>一個畫面就能說明</h2>
-    <p>把上次上課至今的練習彙整為各分類總時數與每日明細，直接展示給老師。每日表格即使縮小文字，也要在一個畫面內放下所有分類，免去水平捲動。</p>
-    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="分享頁。彙整9月17日上課當天至24日的練習，共4小時38分鐘，並顯示分類長條圖和不需水平捲動即可查看所有分類的每日明細表。" loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>期間</dt><dd>從上次上課日期到今天。</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>總計</dt><dd>這段期間的練習時數與天數。</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>分配</dt><dd>名稱、長條、時數排在同一列。</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>明細</dt><dd>一個畫面容納所有分類，無需水平捲動。</dd></div></dl><figcaption>開啟圖片，可放大查看每日明細。</figcaption></figure>
-  </section>
+<section class="pl-chapter" id="reflection"><h2>6. 使用結果與後續計畫</h2>
+<h3>練習開始時開啟應用程式已成為習慣</h3>
+<p>我把應用程式安裝在自己的 iPhone 上，在日常練習中使用，確認了拿著樂器也能輕點一下記錄的便利性。練習開始時開啟應用程式逐漸成為正向的習慣；回顧當天的練習順序與分配、留意下次上課日，也有助於規劃自己的練習。</p>
+<h3>老師提出希望記錄得更細緻</h3>
+<p>老師表示練習內容一目了然，也認為如果能記錄具體音階類型會更有幫助（大意）。這些回饋來自我自己的練習和與老師上課時的<span class="pl-term">實際體驗。</span></p>
+<h3>接下來的課題是兼顧記錄細節與輸入便利</h3>
+<p>我正在考慮在「音階」下設定「五聲音階」等子類別。如何讓記錄操作依然簡單，還在持續探討。對於分享畫面，也在考慮用類別和子類別的階層顯示取代每日表格。</p>
+</section>
 
-  <section id="evolution">
-    <h2>演變——讓卡片成為<wbr>練習的操作面板</h2>
-    <p>根據與 AI 對話整理出的規格文件建構畫面，反覆親自操作並修改。先在早期網頁版中探索記錄與分享的形式，再實作為 iPhone App。</p>
-    <figure class="pl-evolution">
-      <div class="pl-evolution__screens">
-        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月9日的初版。六張小型分類卡片與今日總計40分鐘分別放在記錄頁的不同區域。"></a><p>9月9日<br>初版</p></div>
-        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9月21日的網頁版。分類與今日時數整合為大卡片，正在計時的讀譜練習10分鐘以亮色顯示。"></a><p>9月21日<br>網頁版</p></div>
-        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="記錄頁。上方是練習紀錄網格，下方是今日進度條（共54分鐘）和分類卡片。「樂曲練習」已計時超過27分鐘，以亮色和白色外框標示。" loading="lazy" decoding="async"></picture><p>9月24日<br>iOS 1.0</p></div>
-      </div>
-      <figcaption>初版與網頁版使用相同的虛構資料（六個分類，今日共40分鐘）。iOS 1.0 使用另一組虛構資料。</figcaption>
-    </figure>
-    <dl class="pl-changes">
-      <div><dt>名稱與時數放在一起</dt><dd>在卡片上突出顯示今日時數，將練了什麼與練了多久連結起來。</dd></div>
-      <div><dt>當前狀態，一目了然</dt><dd>只讓計時中的卡片變亮，其餘卡片調暗。</dd></div>
-      <div><dt>操作範圍留在畫面內</dt><dd>讓捲動停在整排卡片能完整顯示於畫面內的位置。</dd></div>
-    </dl>
-    <p>開發後期，反覆進行了約15輪流程：Claude Code 提出潛在問題，Codex 驗證並修正，由我決定是否採納。</p>
-  </section>
-
-  <section id="touch">
-    <h2>手感——如何停下來，<wbr>親手試過再選</h2>
-    <p>僅靠文字要求，無法做出「流暢移動、俐落停穩」的手感。我與 AI 開發了可即時切換方式與數值的調整工具，在實機上比較五種方式後，選擇了瀏覽器原生的捲動吸附。</p>
-    <figure class="pl-traces">
-      <div class="pl-traces__grid">
-        <div><p>隆起曲線型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="隆起曲線型的五次實機操作。橫軸為手指放開後0–1200毫秒，縱軸為距吸附位置的距離。虛線0為吸附位置，每條線末端的點為最後量測的位置。"></div>
-        <div><p>落點預測型</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="落點預測型的五次實機操作。橫軸為手指放開後0–1200毫秒，縱軸為距吸附位置的距離。虛線0為吸附位置，每條線末端的點為最後量測的位置。"></div>
-        <div class="pl-traces__adopted"><p>瀏覽器原生 proximity<br><span>採用</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="瀏覽器原生 proximity的五次實機操作。橫軸為手指放開後0–1200毫秒，縱軸為距吸附位置的距離。虛線0為吸附位置，每條線末端的點為最後量測的位置。"></div>
-        <div><p>瀏覽器原生 mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="瀏覽器原生 mandatory的五次實機操作。橫軸為手指放開後0–1200毫秒，縱軸為距吸附位置的距離。虛線0為吸附位置，每條線末端的點為最後量測的位置。"></div>
-        <div><p>無吸附</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="無吸附的五次實機操作。橫軸為手指放開後0–1200毫秒，縱軸為距吸附位置的距離。虛線0為吸附位置，每條線末端的點為最後量測的位置。"></div>
-      </div>
-      <figcaption>以相同比例比較放手後的位置，虛線0為吸附位置。根據實機紀錄中放手前60毫秒的位置計算速度，在0.6–1.8 px/ms範圍內，按接近1.2 px/ms的順序為每種方式選取五次操作。各次操作的設定、起點與方向不同。</figcaption>
-    </figure>
-    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="捲動調整工具。切換五種吸附方式的選項與參數，旁邊是用於體驗操作手感的手機畫面。"></a><figcaption>記錄捲動距離與速度，在實機上比較停止方式。開啟圖片可放大。</figcaption></figure>
-  </section>
-
-  <section id="product">
-    <h2>作為產品——練習之外</h2>
-    <p>外觀隨裝置設定切換。練習紀錄儲存在裝置內，並自動備份至 iCloud。</p>
-    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="淺色模式。記錄頁。上方是練習紀錄網格，下方是今日進度條（共54分鐘）和分類卡片。「樂曲練習」已計時超過27分鐘，以亮色和白色外框標示。" loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="深色模式。記錄頁。上方是練習紀錄網格，下方是今日進度條（共54分鐘）和分類卡片。「樂曲練習」已計時超過27分鐘，以亮色和白色外框標示。" loading="lazy" decoding="async"></picture></div><figcaption>同一記錄頁的淺色與深色模式。</figcaption></figure>
-    <figure class="pl-icons">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="可依練習內容選擇的109個主題圖示，依序為樂器、運動、學習、繪畫、手作及表達活動。"></picture>
-      <figcaption>可依練習內容選擇 App 頁首圖示：音樂47個、運動15個、語言與學習15個、美術11個、製作與生活14個、表達7個。薩克斯風圖示以 Qlementine Icons（MIT License）為基礎。</figcaption>
-    </figure>
-  </section>
-
-  <section id="reflection">
-    <h2>實際使用——下一個問題是，<wbr>記錄要細到什麼程度</h2>
-    <p>每天早晨練習時使用，並在課上向老師展示畫面後，得到的回饋是練習內容一目了然，如果連音階種類也能記錄就更有幫助（大意）。我正在考慮在分類下再加一層，在保持便利的同時記錄更多細節。</p>
-  </section>
-
-  <section id="slides">
-    <h2>資料</h2>
-    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">網頁示範版</a>可體驗記錄與分享功能。收錄截至2026年9月20日的本人練習紀錄，操作結果僅儲存在目前使用的瀏覽器中。</p>
-    <figure class="pl-slides bleed">
-      <ol class="pl-slides__strip" tabindex="0" aria-label="專案資料投影片" aria-describedby="slides-help">
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第1頁。封面：開發一款向授課老師分享練習狀況的記錄 App。堀內貴文。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第2頁。概覽：用於記錄練習的 Log 與向老師分享狀況的 Share。角色、製作期間與工具。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第3頁。背景：希望準確地向老師說明薩克斯風練習狀況。紙本日誌與現有 App 的問題。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第4頁。方法：一鍵記錄與即時傳達資訊的視覺化。在一天和月、年兩種時間尺度上展示練習累積。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第5頁。使用 AI 的四個環節：研究、基礎開發、操作手感調整工具開發、實作最佳化。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第6頁。與 AI 協作：研究現有 App，透過對話具體化概念。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第7頁。基礎開發：比較 AI 產生的初版 V0 與反覆回饋版面、配色後調整的 V1。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第8頁。調整操作手感：與 AI 開發輔助工具，親自比較捲動速度與停止方式。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第9頁。實作最佳化：反覆由 Claude Code 提出潛在問題、Codex 驗證修正，再由人做出判斷。"></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第10頁。成果與後續：用於自己的練習、老師的回饋，以及為更細緻的記錄考慮子分類。"></a></li>
+<aside class="pl-resources" id="slides" aria-labelledby="resources-title"><h2 id="resources-title">7. （參考）說明資料</h2>
+<figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="作品資料投影片">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第1頁。封面：開發一款記錄 App，與上課老師分享練習情況。堀內貴文。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第2頁。概要：記錄練習的 Log，以及向老師分享情況的 Share。負責範圍、製作期間和使用工具。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第3頁。背景：希望準確地向老師說明薩克斯風練習情況。紙本練習日誌和現有 App 帶來的問題。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第4頁。方案：輕點一下記錄，並透過視覺化即時傳達。以日、月和年兩個時間尺度呈現練習累積。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第5頁。AI參與的四個環節：調查、基本實作、開發調整操作手感的輔助工具、最佳化實作。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第6頁。與AI協作：調查現有 App，並透過對話逐步明確概念。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第7頁。基本實作：比較AI產生的初版V0與在配置、色彩方面反覆回饋後調整的版本V1。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第8頁。調整操作手感：為了親自比較捲動速度和停止位置，與AI一起開發輔助工具。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第9頁。最佳化實作：反覆由 Claude Code 提出問題候選項、Codex 驗證和修正，並由人來判斷。"></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="第10頁。成果與後續：在自己的練習中使用、上課老師的回饋，以及為實現更細緻記錄而考慮子類別。"></a></li>
       </ol>
-      <figcaption id="slides-help">水平捲動換頁，點擊或輕點放大。原投影片為日文。</figcaption>
     </figure>
-    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">以 PDF 開啟專案資料（日文，4.4 MB）</a></p>
-  </section>
+</aside>
+
   <nav aria-label="網站">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀內貴文的作品集首頁</span></a></li>

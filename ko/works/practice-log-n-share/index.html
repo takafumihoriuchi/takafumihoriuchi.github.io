@@ -77,7 +77,7 @@
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
-<body>
+<body data-ascii-art="none">
 <div class="home-mark"><a class="home-mark__link" href="../../" aria-label="호리우치 다카후미의 포트폴리오로 돌아가기">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="화면 모드" dir="ltr" hidden>
     <label title="라이트 모드">
@@ -91,159 +91,257 @@
   </div>
 </div>
 <main>
-  <header>
-    <h1>Practice Log n Share</h1>
-    <p class="dateline">2026년 9월</p>
-  </header>
-
-  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
-## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
-++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
-@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
-## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
-++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
-++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
-  </ascii-hero>
-
-  <section id="overview">
-    <h2>개요</h2>
-    <p class="lead">연습할 때는 한 번 탭해 기록하고, 레슨에서는 그 화면을 그대로 선생님께 보여 준다. 색소폰을 배우는 나 자신을 위해 iPhone 앱을 기획·디자인하고 AI와 협업해 구현했다.</p>
-    <figure class="pl-pair">
+<header>
+<h1>Practice Log n Share</h1>
+<p class="pl-subtitle">일상적인 음악 연습을 기록하고 공유하는 앱</p>
+<p class="dateline">2026년 9월</p>
+</header>
+<figure class="pl-pair" data-hero="illustration">
       <div class="pl-pair__screens">
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." fetchpriority="high"></picture>
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="공유 화면. 9월 17일 레슨일부터 24일까지 총 4시간 38분을 집계하고, 카테고리별 막대그래프와 가로 스크롤 없이 모든 카테고리를 볼 수 있는 일별 표를 표시한다." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="기록 화면. 위쪽에는 연습 기록 격자, 아래쪽에는 오늘 진행 막대(합계 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 계속 측정 중이며, 밝은 색과 흰색 테두리로 강조되어 있다." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="공유 화면. 9월 17일 레슨일부터 24일까지의 기록을 집계해 총 4시간 38분, 카테고리별 막대그래프, 가로로 스크롤하지 않고 모든 카테고리를 볼 수 있는 일별 표를 보여 준다." fetchpriority="high"></picture>
       </div>
-      <figcaption>왼쪽은 기록, 오른쪽은 공유. 카테고리를 탭해 시간을 측정하고, 레슨에서는 그동안의 연습을 모아 보여 준다. 화면은 설명을 위한 가상 데이터다. 스크린샷은 원본 앱의 일본어 화면이다.</figcaption>
+      <figcaption>이 앱은 이 두 화면으로 구성된다</figcaption>
     </figure>
-    <dl class="pl-facts">
-      <div><dt>역할</dt><dd>기획, UX/UI 디자인, 구현(Claude Code·Codex와 협업)</dd></div>
-      <div><dt>기간</dt><dd>2026년 9월</dd></div>
-      <div><dt>기술</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
-    </dl>
-    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">웹 데모 사용해 보기</a> (2026년 9월 20일 기준 나의 실제 연습 기록 수록)</p>
-  </section>
+<nav class="pl-toc" aria-label="목차">
+  <p class="pl-toc__title">목차</p>
+  <ol>
+    <li><a href="#overview">개요</a></li>
+    <li><a href="#background">배경과 문제</a></li>
+    <li><a href="#design-goals">설계 방침</a></li>
+    <li><a href="#features">기능과 설계</a></li>
+    <li><a href="#process">제작 과정</a></li>
+    <li><a href="#reflection">사용 결과와 향후 계획</a></li>
+    <li><a href="#slides">(참고) 설명 자료</a></li>
+  </ol>
+</nav>
+<div class="pl-overview" id="overview" role="region" aria-labelledby="overview-title">
+<h2 id="overview-title">1. 개요</h2>
+<p class="pl-intro">악기를 든 채로 한 번 탭해 연습 시간을 기록하고, 레슨에서 선생님께 보여 줄 수 있는 <span class="pl-term">iPhone 앱</span>이다. 기록과 공유 두 화면으로 일상의 연습을 레슨 대화로 이어 준다.</p>
+<p>문제 정의, UX/UI 디자인, 실기기 조정, 구현, 자료 제작을 담당했다. 구현은 AI와 협업했고, 화면과 조작 방식을 채택할지는 직접 판단했다.</p>
+<p>내 연습과 레슨에서 앱을 사용했다. 선생님은 내용이 한눈에 들어온다고 했고, 더 세밀한 기록을 원한다는 의견도 주었다(요지).</p>
+<p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">웹 데모에서 조작해 보기</a></p>
+</div>
 
-  <section id="background">
-    <h2>계기 — “연습은 어때요?”라는 질문에, <wbr>답할 수 없었다</h2>
-    <p>격주 레슨에서 “스케일을 많이 했어요”라고 답해도 무엇을 얼마나 연습했는지는 전해지지 않는다. 악기를 목에 건 채 종이 일지를 쓰기는 어려웠고, 사용해 본 시간 기록 앱은 혼자 돌아보기 위한 도구였다.</p>
-    <figure class="pl-moments">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-ko.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-ko.svg" width="960" height="285" loading="lazy" decoding="async" alt="두 레슨일 사이에 연습한 날의 막대와 쉰 날이 나란히 놓여 있다. 일별 카테고리 시간을 아래의 막대 하나로 합치면 총 10시간 06분이 된다."></picture>
-      <figcaption>위쪽 막대는 매일의 연습, 빨간 테두리는 레슨일이다. 레슨에서는 그사이의 연습을 모아 보여 준다. 날짜와 시간은 설명용 가상 데이터이며 위아래 막대의 총시간은 같다.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="background"><h2>2. 배경과 문제</h2>
+<p>취미로 테너 색소폰을 연주하며 격주로 레슨을 받는다. 선생님이 “요즘 연습은 어때요?”라고 물어도 무엇을 얼마나 연습했는지 구체적으로 전할 방법이 없었다.</p>
+<p>색소폰을 스트랩에 걸고 있어 연습 중 종이에 글씨를 쓰기 어렵다. 일지도 쌓이면 기록이 여기저기 흩어진다.</p>
+<!-- Original Keynote pixels are retained; SVG masks crop the two panels and make the paper transparent. -->
+<figure class="pl-paper-challenges">
+  <div class="pl-paper-challenges__drawings">
+      <svg class="pl-paper-challenges__drawing" viewBox="0 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-writing-title">
+        <title id="pl-writing-title">색소폰을 스트랩에 건 채 종이에 쓰려고 애쓰는 모습.</title>
+        <defs>
+          <filter id="pl-writing-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-writing-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-writing-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-writing-ink)"/>
+      </svg>
+      <svg class="pl-paper-challenges__drawing" viewBox="724 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-scattered-title">
+        <title id="pl-scattered-title">연습 일지 종이가 늘어나 흩어지고 기록을 찾기 어려운 모습.</title>
+        <defs>
+          <filter id="pl-scattered-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-scattered-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-scattered-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-scattered-ink)"/>
+      </svg>
+  </div>
+  <figcaption class="pl-paper-challenges__labels"><span>악기를 든 채 글씨를 쓰기 어렵다</span><span>종이가 늘면 기록이 흩어진다</span></figcaption>
+</figure>
+<p>시간 기록 앱을 써 보니 한 번 탭해 측정할 수는 있었지만, 그 기록을 선생님이 한눈에 이해할 수 있는 형태로 만드는 것이 과제였다.</p>
+</section>
 
-  <section id="recording">
-    <h2>기록 — 악기를 든 채, <wbr>한 번의 탭으로</h2>
-    <p>연습 중에는 카테고리 카드만 만진다. 탭하면 측정이 시작되고, 다른 카드를 누르면 전환되며, 같은 카드를 다시 누르면 멈춘다.</p>
-    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>누적 기록</dt><dd>지금까지의 연습. 앱을 열면 가장 먼저 보인다.</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>오늘</dt><dd>연습 순서와 시간 배분. 한 시간이면 가득 찬다.</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>측정 중</dt><dd>이 카드만 밝게 하고 흰 테두리로 표시한다.</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>카드</dt><dd>탭으로 전환. 오늘의 시간은 크게 표시한다.</dd></div></dl></figure>
-  </section>
+<section class="pl-chapter" id="design-goals"><h2>3. 설계 방침</h2>
+<p>연습 중 기록부터 레슨에서 공유하기까지를 하나의 흐름으로 만든다. 이를 위해 두 가지 요구사항을 화면과 조작을 정하는 기준으로 삼았다.</p>
+<h3>연습 중에는 입력을 늘리지 않는다</h3>
+<p>악기를 든 채 카테고리를 한 번 탭해 시간을 기록할 수 있어야 한다.</p>
+<h3>선생님께 보여 드리기 전에 편집을 늘리지 않는다</h3>
+<p>기록이 자동으로 정리되어 무엇을 얼마나 연습했는지 그대로 보여 줄 수 있어야 한다.</p>
+</section>
 
-  <section id="day">
-    <h2>하루 — 한 번 채운 막대는, <wbr>채워진 채로</h2>
-    <p>오늘의 막대는 한 시간이면 가득 찬다. 한 시간을 넘기면 그 시점의 합계를 오른쪽 끝으로 삼아, 이미 채운 막대에 빈 공간이 다시 생기지 않도록 했다.</p>
-    <figure class="pl-dayscale" data-unit-hour="시간 " data-unit-minute="분">
-      <div class="pl-dayscale__control" hidden><label for="practice-minutes">오늘의 연습</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1시간 05분"><output for="practice-minutes">1시간 05분</output></div>
-      <p class="pl-dayscale__static">오늘의 연습 — <span data-print-value>1시간 05분</span></p>
-      <div class="pl-dayscale__row" data-scale="adopted">
-        <p>채택</p>
-        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30분</span><span style="--position:100">1시간 05분</span></div>
-      </div>
-      <div class="pl-dayscale__row" data-scale="rejected">
-        <p>미채택</p>
-        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30분</span><span style="--position:66.6667">1시간</span><span style="--position:100">1시간 30분</span></div>
-      </div>
-      <figcaption><span data-static-caption>65분 연습했을 때의 비교. </span><span data-interactive-caption hidden>슬라이더로 오늘의 연습 시간을 바꿀 수 있다. </span>위는 합계를 오른쪽 끝으로 삼는 채택안(최소 한 시간), 아래는 눈금을 60→90→120분으로 늘리는 미채택안이다. 한 시간을 넘기는 순간, 아래 막대에만 빈 공간이 다시 나타난다.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="features"><h2>4. 기능과 설계</h2>
+<div class="pl-feature" id="recording"><h3>조작과 연습 시간을 같은 카드에 담다</h3>
+<p>카테고리를 탭하면 측정이 시작되고, 다른 카드를 탭하면 전환되며, 같은 카드를 다시 탭하면 멈춘다. 카드에는 오늘 시간을 크게 표시하고, 측정 중에만 밝은 색과 흰색 테두리를 적용했다. 조작하는 곳과 기록 내용을 확인하는 곳을 일치시켰다.</p>
+<figure class="pl-decision"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="기록 화면. 위쪽에는 연습 기록 격자, 아래쪽에는 오늘 진행 막대(합계 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 계속 측정 중이며, 밝은 색과 흰색 테두리로 강조되어 있다." loading="lazy" decoding="async"></picture><figcaption>‘곡 연습’을 측정 중.<br>같은 카드에서 카테고리 이름, 오늘 시간, 측정 상태를 확인할 수 있다.</figcaption></figure>
+</div>
+<div class="pl-feature" id="sharing"><h3>가로로 스크롤하지 않고 연습 내역을 한눈에 보다</h3>
+<p>공유 전에 편집할 필요가 없도록 이전 레슨일부터의 기록을 자동으로 집계한다. 일별 표는 글자를 작게 해서라도 모든 카테고리가 동시에 보이는 배치를 우선했다. 화면을 선생님께 보여 드리면서 연습 배분을 이야기할 수 있는 형태를 목표로 했다.</p>
+<figure class="pl-decision"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="공유 화면. 9월 17일 레슨일부터 24일까지의 기록을 집계해 총 4시간 38분, 카테고리별 막대그래프, 가로로 스크롤하지 않고 모든 카테고리를 볼 수 있는 일별 표를 보여 준다." loading="lazy" decoding="async"></picture></a><figcaption>기간, 합계, 카테고리별 비중, 일별 내역을 한 화면에.<br></figcaption></figure>
+</div>
+<div class="pl-feature" id="motivation"><h3>쌓아 온 연습을 계속할 계기로 삼다</h3>
+<p>오늘의 달성과 월·연 단위로 쌓이는 기록을 보이도록 했다. 연습한 노력을 선생님께 보여 드리는 일도 계속 연습할 동기로 이어지기를 기대한다.</p>
+<h4>하루｜1시간을 목표로 막대를 채우다</h4>
+<p>오늘 연습 막대는 처음에 1시간을 상한으로 표시한다. 그 목표를 채우려 연습하는 계기가 되기를 바라며 카테고리별 시간을 색상으로 쌓아 표시했다.</p>
+<figure class="pl-practice-example" id="pl-daily-example">
+  <div class="pl-practice-day" role="img" aria-label="오늘 연습은 40분. 0~60분 막대에 15분, 10분, 5분, 10분 기록이 카테고리 색으로 쌓이고, 남은 20분은 비어 있다.">
+    <div class="pl-practice-day__heading" aria-hidden="true"><span>오늘 연습</span></div>
+    <div class="pl-practice-day__bar" aria-hidden="true">
+      <span style="--minutes:15; --category:#3caae0"></span><span style="--minutes:10; --category:#46b686"></span><span style="--minutes:5; --category:#bd9a32"></span><span style="--minutes:10; --category:#e17c81"></span>
+    </div>
+    <div class="pl-practice-day__ticks" aria-hidden="true"><span>0분</span><span>30분</span><span>60분(1시간)</span></div>
+  </div>
+  <figcaption>40분 연습했을 때의 표시 예시. 색은 연습 카테고리를 나타낸다. 가상의 기록.</figcaption>
+</figure>
+<h4>장기｜초록색 칸으로 매일의 누적을 보여 주다</h4>
+<p>하루를 한 칸으로 나타내고 그날의 연습 시간을 초록색 농도로 표시했다. 월·연 단위로 쌓인 칸을 한눈에 보고, 매일 기록이 늘어나는 모습을 연습을 이어 갈 계기로 삼고자 했다.</p>
+<figure class="pl-practice-example" id="pl-calendar-example">
+  <div class="pl-practice-calendar" role="img" aria-label="2026년 6월부터 8월까지 12주를 발췌한 가상의 연습 기록. 한 열은 1주, 한 칸은 하루를 나타낸다. 연습 시간에 따라 초록색 농도가 달라진다. 빨간 테두리는 주 1회 마일스톤이다. 예시는 8월 18일 시점으로, 맨 오른쪽 열은 화요일까지 기록되어 있고 수요일 이후는 미기록 상태다.">
+    <div class="pl-practice-calendar__months" aria-hidden="true"><span>6월</span><span>7월</span><span>8월</span></div>
+    <div class="pl-practice-calendar__grid" aria-hidden="true">
+      <span class="pl-practice-calendar__weekday">일</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/05/31 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/07 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/14 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/21 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/28 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/05 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/12 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/19 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/26 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/02 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/09 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/08/16 — 15 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__weekday">월</span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/06/01 — 20 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/08 — 45 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/15 — 30 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/22 — 65 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/29 — 40 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/06 — 50 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/07/13 — 25 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/20 — 70 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/27 — 55 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/03 — 45 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/10 — 75 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/17 — 60 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__weekday">화</span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/02 — 40 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" data-milestone title="2026/06/09 — 25 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/06/16 — 70 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/23 — 35 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/30 — 55 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/07 — 80 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/14 — 60 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/07/21 — 40 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" data-milestone title="2026/07/28 — 90 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/04 — 60 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/08/11 — 50 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/18 — 80 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__weekday">수</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/03 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/10 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/17 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/24 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/01 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/08 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/15 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/22 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/29 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/05 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/12 — 0 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/19 — 아직 기록 없음 (표시 예시)"></span>
+      <span class="pl-practice-calendar__weekday">목</span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/04 — 60 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/11 — 75 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/18 — 50 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/25 — 80 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/02 — 70 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/09 — 40 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/16 — 90 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/23 — 50 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/30 — 35 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/06 — 80 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/13 — 60 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/20 — 아직 기록 없음 (표시 예시)"></span>
+      <span class="pl-practice-calendar__weekday">금</span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/05 — 30 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/12 — 50 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/19 — 90 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/26 — 45 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/03 — 90 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/10 — 70 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/17 — 45 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/24 — 95 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/31 — 65 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/07 — 40 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/14 — 90 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/21 — 아직 기록 없음 (표시 예시)"></span>
+      <span class="pl-practice-calendar__weekday">토</span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/06 — 90 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/13 — 65 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/20 — 40 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/27 — 95 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/04 — 30 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/11 — 100 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/18 — 80 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/25 — 60 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/01 — 80 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/08 — 95 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/15 — 40 분 (표시 예시)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/22 — 아직 기록 없음 (표시 예시)"></span>
+    </div>
+    <div class="pl-practice-calendar__footer" aria-hidden="true"><span>2026</span><div class="pl-practice-calendar__legend"><span>0분</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>90분 이상</span></div></div>
+  </div>
+  <figcaption>한 칸은 하루, 빨간 테두리는 마일스톤을 나타낸다. 오른쪽 끝은 기록 중인 주이며 그 아래는 미기록이다. 가상의 표시 예시.</figcaption>
+</figure>
+</div>
+</section>
 
-  <section id="history">
-    <h2>쌓임 — 시작한 날부터, <wbr>모두 보이도록</h2>
-    <p>연습한 날은 녹색의 진하기로, 레슨일은 빨간 테두리로 표시하며, 가로로 이동해 기록을 시작한 날까지 돌아갈 수 있다. 가벼운 렌더링보다 여러 해의 연습을 모두 살펴볼 수 있는 것을 우선했다.</p>
-    <figure class="pl-crop">
-      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="연습 기록 격자. 6월부터 9월까지의 연습량을 녹색의 진하기로 나타내고 격주 레슨일에 빨간 테두리를 표시한다."></picture>
-      <figcaption>0분, 30분 미만, 60분 미만, 90분 미만, 90분 이상의 다섯 단계. 앱을 열면 이 누적 기록이 가장 먼저 보인다.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="process"><h2>5. 제작 과정</h2>
+<div class="pl-feature" id="research"><h3>조사와 대화로 기록과 공유의 역할을 정하다</h3>
+<p>ChatGPT를 사용해 기존 앱을 조사하고 문제와 접근 방법을 정리했다. 당시 조사 범위에서는 시간 관리 앱은 찾았지만 선생님과의 소통에 적합한 공유 방식은 찾지 못했다. 대화로 구체화한 콘셉트를 사양서로 정리해 Codex에 읽히고 초판을 구현했다.</p>
+</div>
+<div class="pl-feature" id="evolution"><h3>초판을 써 보고 조작 영역을 화면 안에 담다</h3>
+<p>생성된 초판을 직접 사용해 UI와 UX 개선 요청을 전하고, 수정판으로 다듬었다. 초판에서 별도 영역에 있던 측정 중 정보와 종료 조작을 카드에 합치고 오늘 시간을 크게 표시했다. 조작 패널이 화면 안에 들어오는 배치도 살펴봤다.</p>
+<figure class="pl-evolution pl-evolution--comparison"><div class="pl-evolution__screens"><div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9월 9일 초판. 작은 카테고리 카드 6개와 오늘 합계 40분이 서로 다른 영역에 놓인 기록 화면."></a><p>초판</p></div><div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9월 21일 수정판. 카테고리와 오늘 시간을 하나의 큰 카드에 합치고, 측정 중인 악보 읽기 10분을 밝게 표시한 기록 화면."></a><p>수정판</p></div></div><figcaption>같은 가상 데이터(카테고리 6개, 오늘 합계 40분)로 비교.<br>초판에서 분리되어 있던 측정 중 정보와 종료 조작을 수정판에서는 카드에 합쳤다.</figcaption></figure>
+<p>연습 중 계속 켜 두는 화면이므로 검은색을 바탕으로 하되, 카테고리 색상으로 밝은 느낌을 주고자 했다.</p>
+</div>
+<div class="pl-feature" id="touch"><h3>직접 조작감을 비교해 선택하다</h3>
+<p>‘부드럽게 움직이고 안정적으로 멈추는’ 느낌은 말이나 이미지로 요청하는 것만으로 다듬기 어려웠다. 그래서 방식과 값을 직접 바꿔 시험할 수 있는 보조 도구를 AI와 만들었다. 조작 패널이 화면 안에 들어오는 위치에서 멈추는 것을 기준으로 실기기에서 비교한 뒤 브라우저 기본 스냅 기능을 선택해 앱에 반영했다.</p>
+<figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="스크롤 조정 도구. 5가지 스냅 방식 선택 항목과 매개변수, 조작감을 시험하는 스마트폰 화면이 나란히 놓여 있다."></a><figcaption>방식과 매개변수를 바꾸며 실기기에서 스크롤이 멈추는 느낌을 비교했다.</figcaption></figure>
+</div>
+<div class="pl-feature" id="review"><h3>독립적인 검토를 활용하고 채택 여부는 직접 판단하다</h3>
+<p>Claude Code가 제시한 문제와 개선안을 직접 확인하고 Codex가 검증해 필요한 수정을 반영하는 과정을 서로 독립된 두 AI 세션으로 반복했다. 제안이 목표한 UI나 UX에서 벗어날 때도 있어 앱의 목적과 실제 조작감에 비춰 채택 여부를 결정했다.<br>
+＊이 과정을 약 15회 반복했고, AI 검토에서 큰 결함이 더 이상 나오지 않은 것을 개선을 마무리하는 한 가지 기준으로 삼았다.</p>
+</div>
+</section>
 
-  <section id="sharing">
-    <h2>공유 — 레슨을 시작하며, <wbr>한눈에 전해지는 한 화면</h2>
-    <p>지난 레슨일부터 오늘까지를 카테고리별 합계와 일별 내역으로 정리해 그대로 선생님께 보여 준다. 일별 표는 글자를 줄이더라도 모든 카테고리를 한 화면에 넣어 가로 스크롤을 없앴다.</p>
-    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="공유 화면. 9월 17일 레슨일부터 24일까지 총 4시간 38분을 집계하고, 카테고리별 막대그래프와 가로 스크롤 없이 모든 카테고리를 볼 수 있는 일별 표를 표시한다." loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>기간</dt><dd>지난 레슨일부터 오늘까지.</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>합계</dt><dd>해당 기간의 연습 시간과 일수.</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>배분</dt><dd>이름, 막대, 시간을 한 줄에.</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>내역</dt><dd>모든 카테고리를 한 화면에. 가로 스크롤 없이.</dd></div></dl><figcaption>이미지를 열면 일별 내역까지 확대해 볼 수 있다.</figcaption></figure>
-  </section>
+<section class="pl-chapter" id="reflection"><h2>6. 사용 결과와 향후 계획</h2>
+<h3>연습을 시작할 때 앱을 여는 습관이 자리 잡다</h3>
+<p>내 iPhone에 설치해 매일 연습하며 악기를 든 채 한 번 탭해 기록할 수 있는 사용성을 확인했다. 연습을 시작할 때 앱을 여는 일이 긍정적인 습관이 되었고, 그날의 순서와 배분을 돌아보고 다음 레슨 날짜를 의식하는 것이 내 연습 계획에 도움이 된다.</p>
+<h3>선생님은 더 세밀한 기록을 원했다</h3>
+<p>연습 내용이 한눈에 들어온다는 반응과, 스케일 종류까지 기록할 수 있으면 더 유용하겠다는 의견을 받았다(요지). 이는 내 연습과 선생님과의 레슨에서 얻은 <span class="pl-term">경험에 바탕을 둔다.</span></p>
+<h3>다음 과제는 세밀함과 간편한 입력을 함께 갖추는 것</h3>
+<p>‘스케일’ 아래에 ‘펜타토닉 스케일’ 등의 하위 카테고리를 두는 방안을 검토하고 있다. 간편하게 기록하는 조작 방법은 계속 살펴보는 중이다. 공유 화면도 일별 표 대신 카테고리와 하위 카테고리를 계층으로 표시하는 방안을 생각하고 있다.</p>
+</section>
 
-  <section id="evolution">
-    <h2>변화 — 카드를, <wbr>연습의 조작판으로</h2>
-    <p>AI와 대화하며 정리한 명세서로 화면을 만들고, 직접 써 보며 고치기를 반복했다. 초기 웹 버전에서 기록과 공유의 형태를 탐색한 뒤 iPhone에서 쓸 앱으로 구현했다.</p>
-    <figure class="pl-evolution">
-      <div class="pl-evolution__screens">
-        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="9월 9일의 초기 버전. 작은 카테고리 카드 여섯 개와 오늘의 합계 40분이 서로 다른 영역에 놓인 기록 화면."></a><p>9월 9일<br>초기 버전</p></div>
-        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="9월 21일의 웹 버전. 카테고리와 오늘의 시간을 큰 카드 하나로 묶고, 측정 중인 악보 읽기 10분을 밝게 표시한 기록 화면."></a><p>9월 21일<br>웹 버전</p></div>
-        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture><p>9월 24일<br>iOS 1.0</p></div>
-      </div>
-      <figcaption>초기 버전과 웹 버전은 같은 가상 데이터(카테고리 여섯 개, 오늘 총 40분)를 쓴다. iOS 1.0은 별도의 가상 데이터다.</figcaption>
-    </figure>
-    <dl class="pl-changes">
-      <div><dt>이름과 시간을 함께</dt><dd>카드에 오늘의 시간을 크게 표시해 무엇을 얼마나 연습했는지 연결했다.</dd></div>
-      <div><dt>현재 상태를 한눈에</dt><dd>측정 중인 카드만 밝게 하고 나머지는 어둡게 했다.</dd></div>
-      <div><dt>조작 범위를 화면 안에</dt><dd>카드 한 줄이 화면 안에 들어오는 위치에서 스크롤이 멈추도록 했다.</dd></div>
-    </dl>
-    <p>마지막 단계에서는 Claude Code가 잠재적 문제를 제시하고, Codex가 검증·수정하며, 내가 채택 여부를 결정하는 과정을 약 15회 반복했다.</p>
-  </section>
-
-  <section id="touch">
-    <h2>손맛 — 멈추는 방식은, <wbr>직접 써 보고 고른다</h2>
-    <p>“부드럽게 움직이다 딱 멈추는” 느낌은 말로 요청하는 것만으로는 만들 수 없었다. 방식과 값을 즉시 바꾸는 조정 도구를 AI와 만들고, 실제 기기에서 다섯 방식을 비교해 브라우저 기본 스냅을 골랐다.</p>
-    <figure class="pl-traces">
-      <div class="pl-traces__grid">
-        <div><p>험프형</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="험프형의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
-        <div><p>착지점 예측형</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="착지점 예측형의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
-        <div class="pl-traces__adopted"><p>브라우저 기본 proximity<br><span>채택</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="브라우저 기본 proximity의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
-        <div><p>브라우저 기본 mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="브라우저 기본 mandatory의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
-        <div><p>스냅 없음</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="스냅 없음의 실제 기기 조작 다섯 건. 가로축은 손가락을 뗀 뒤 0–1200밀리초, 세로축은 스냅 위치로부터의 거리다. 점선 0은 스냅 위치이고, 각 선 끝의 점은 마지막 측정 위치다."></div>
-      </div>
-      <figcaption>손가락을 뗀 뒤의 위치를 같은 축척으로 비교했다. 점선 0이 스냅 위치다. 실제 기기 로그에서 직전 60 ms의 위치로 계산한 속도가 0.6–1.8 px/ms인 조작 중 1.2 px/ms에 가까운 순서로 각 방식마다 다섯 건씩 골랐다. 각 조작의 설정·시작 위치·방향은 서로 다르다.</figcaption>
-    </figure>
-    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="스크롤 조정 도구. 다섯 스냅 방식의 전환 항목과 매개변수 옆에 조작감을 시험하는 스마트폰 화면이 놓여 있다."></a><figcaption>스크롤 거리와 속도를 기록하며 실제 기기에서 멈추는 방식을 비교했다. 이미지를 열면 확대할 수 있다.</figcaption></figure>
-  </section>
-
-  <section id="product">
-    <h2>제품으로서 — 연습 너머까지</h2>
-    <p>외관은 기기 설정에 맞춰 바뀐다. 연습 기록은 기기 안에 저장하고 iCloud에 자동으로 백업한다.</p>
-    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="라이트 모드. 기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="다크 모드. 기록 화면. 위에는 연습 기록 격자, 아래에는 오늘의 막대(총 54분)와 카테고리 카드가 있다. ‘곡 연습’은 27분을 넘겨 측정 중이며 밝은 색과 흰 테두리로 표시된다." loading="lazy" decoding="async"></picture></div><figcaption>같은 기록 화면의 라이트 모드와 다크 모드.</figcaption></figure>
-    <figure class="pl-icons">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="연습 대상에 맞춰 고를 수 있는 테마 아이콘 109개. 악기, 운동, 학습, 그림, 수공예, 표현 활동 순으로 배열되어 있다."></picture>
-      <figcaption>연습 대상에 맞춰 앱 헤더의 아이콘을 고를 수 있다. 음악 47개, 운동 15개, 언어·학습 15개, 미술 11개, 만들기·생활 14개, 표현 7개. 색소폰은 Qlementine Icons(MIT License)를 바탕으로 했다.</figcaption>
-    </figure>
-  </section>
-
-  <section id="reflection">
-    <h2>사용해 보니 — 다음 질문은, <wbr>얼마나 자세히 남길 것인가</h2>
-    <p>매일 아침 연습에 쓰고 레슨에서 선생님께 화면을 보여 드렸다. 연습 내용이 한눈에 보인다는 반응과, 스케일 종류까지 기록하면 더 유용하겠다는 의견을 받았다(요지). 간편함을 유지하면서 자세히 남길 수 있도록 카테고리 아래에 한 단계를 더 두는 것을 검토하고 있다.</p>
-  </section>
-
-  <section id="slides">
-    <h2>자료</h2>
-    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">웹 데모</a>에서 기록과 공유를 직접 사용해 볼 수 있다. 2026년 9월 20일 기준 나의 실제 연습 기록이 수록되어 있으며, 조작 결과는 현재 사용하는 브라우저에만 저장된다.</p>
-    <figure class="pl-slides bleed">
-      <ol class="pl-slides__strip" tabindex="0" aria-label="제작 자료 슬라이드" aria-describedby="slides-help">
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="1쪽. 표지: 레슨 선생님께 연습 상황을 공유하기 위한 기록 앱 개발. 호리우치 다카후미."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="2쪽. 개요: 연습을 기록하는 Log와 선생님께 상황을 공유하는 Share. 담당 범위, 제작 기간, 사용 도구."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="3쪽. 배경: 색소폰 연습 상황을 선생님께 정확히 전하고 싶은 마음. 종이 연습 일지와 기존 앱의 문제."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="4쪽. 접근: 한 번의 탭으로 기록하고 즉시 전달하는 시각화. 하루와 월·년이라는 두 시간 축으로 연습의 축적을 보여 준다."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="5쪽. AI를 활용한 네 장면: 조사, 기본 구현, 조작감 조정 보조 도구 개발, 구현 최적화."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="6쪽. AI와의 협업: 기존 앱 조사와 대화를 통한 콘셉트 구체화."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="7쪽. 기본 구현: AI가 생성한 초판 V0와 레이아웃·색상 피드백을 반복한 수정판 V1의 비교."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="8쪽. 조작감 조정: 스크롤 속도와 멈추는 방식을 직접 비교하려고 AI와 보조 도구를 개발."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="9쪽. 구현 최적화: Claude Code의 잠재적 문제 제시와 Codex의 검증·수정을 반복하고 사람이 판단하는 과정."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="10쪽. 성과와 향후: 자신의 연습에서 사용, 선생님의 피드백, 자세한 기록을 위한 하위 카테고리 검토."></a></li>
+<aside class="pl-resources" id="slides" aria-labelledby="resources-title"><h2 id="resources-title">7. (참고) 설명 자료</h2>
+<figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="제작 자료 슬라이드">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="1페이지. 표지: 레슨 선생님과 연습 상황을 공유하기 위한 기록 앱 개발. 호리우치 다카후미."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="2페이지. 개요: 연습을 기록하는 Log와 선생님께 상황을 공유하는 Share. 담당 범위, 제작 기간, 사용 도구."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="3페이지. 배경: 색소폰 연습 상황을 선생님께 정확히 전하고 싶다. 종이 연습 일지와 기존 앱에서 느낀 문제."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="4페이지. 접근 방식: 한 번 탭해 기록하고 즉시 이해되는 시각화. 하루와 월·연의 두 시간 축으로 연습의 누적을 보여 준다."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="5페이지. AI를 활용한 네 가지 장면: 조사, 기본 구현, 조작감을 조정하는 보조 도구 개발, 구현 최적화."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="6페이지. AI와의 협업: 기존 앱 조사와 대화로 콘셉트 구체화."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="7페이지. 기본 구현: AI가 생성한 초판 V0와 레이아웃 및 색상 피드백을 거쳐 조정한 버전 V1 비교."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="8페이지. 조작감 조정: 스크롤 속도와 멈추는 방식을 직접 비교하려고 AI와 보조 도구를 개발."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="9페이지. 구현 최적화: Claude Code가 문제 후보를 제시하고 Codex가 검증·수정하는 과정을 반복하며 사람이 판단."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="10페이지. 성과와 향후 계획: 직접 연습에 사용한 결과, 레슨 선생님의 피드백, 더 세밀한 기록을 위한 하위 카테고리 검토."></a></li>
       </ol>
-      <figcaption id="slides-help">가로로 스크롤해 넘기고 클릭하거나 탭해 확대할 수 있다. 원본 슬라이드는 일본어다.</figcaption>
     </figure>
-    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">제작 자료 PDF 열기(일본어, 4.4 MB)</a></p>
-  </section>
+</aside>
+
   <nav aria-label="사이트">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">호리우치 다카후미의 포트폴리오로 돌아가기</span></a></li>

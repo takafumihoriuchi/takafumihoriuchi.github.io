@@ -77,7 +77,7 @@
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
-<body>
+<body data-ascii-art="none">
 <div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Kembali ke portofolio Takafumi Horiuchi">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Tampilan" dir="ltr" hidden>
     <label title="Mode terang">
@@ -91,159 +91,257 @@
   </div>
 </div>
 <main>
-  <header>
-    <h1>Practice Log n Share</h1>
-    <p class="dateline">September 2026</p>
-  </header>
-
-  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
-## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
-++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
-@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
-## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
-++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
-++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
-  </ascii-hero>
-
-  <section id="overview">
-    <h2>Gambaran umum</h2>
-    <p class="lead">Mencatat latihan dengan satu ketukan, lalu menunjukkan layar yang sama kepada guru saat les. Saya merancang konsep dan desain aplikasi iPhone ini untuk latihan saksofon saya sendiri, lalu mengimplementasikannya bersama AI.</p>
-    <figure class="pl-pair">
+<header>
+<h1>Practice Log n Share</h1>
+<p class="pl-subtitle">Aplikasi untuk mencatat dan berbagi latihan musik sehari-hari</p>
+<p class="dateline">September 2026</p>
+</header>
+<figure class="pl-pair" data-hero="illustration">
       <div class="pl-pair__screens">
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Layar pencatatan. Kisi riwayat berada di atas batang hari ini (total 54 menit) dan kartu kategori. Latihan lagu sedang berlangsung lebih dari 27 menit, ditandai warna lebih terang dan garis tepi putih." fetchpriority="high"></picture>
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Layar berbagi. Dari tanggal les 17 September hingga 24 September: total 4 jam 38 menit, batang per kategori, dan tabel harian yang menampilkan semua kategori tanpa menggulir horizontal." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Layar pencatatan. Kisi pencapaian di atas, lalu batang hari ini (total 54 menit) dan kartu kategori. Latihan lagu sedang dihitung selama lebih dari 27 menit, ditandai warna lebih terang dan garis tepi putih." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Layar berbagi. Rekap dari tanggal les 17 September hingga 24 September: total 4 jam 38 menit, grafik batang per kategori, dan tabel harian yang menampilkan semua kategori tanpa gulir horizontal." fetchpriority="high"></picture>
       </div>
-      <figcaption>Pencatatan di kiri, berbagi di kanan. Ketuk kategori untuk menghitung waktu, lalu tunjukkan rangkuman latihan di antara les. Layar menggunakan data fiktif sebagai ilustrasi. Tangkapan layar menampilkan antarmuka asli berbahasa Jepang.</figcaption>
+      <figcaption>Aplikasi ini terdiri atas dua layar tersebut</figcaption>
     </figure>
-    <dl class="pl-facts">
-      <div><dt>Peran</dt><dd>Perencanaan, desain UX/UI, implementasi (bersama Claude Code dan Codex)</dd></div>
-      <div><dt>Periode</dt><dd>September 2026</dd></div>
-      <div><dt>Teknologi</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
-    </dl>
-    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Coba demo web</a> (memuat catatan latihan pribadi saya per 20 September 2026)</p>
-  </section>
+<nav class="pl-toc" aria-label="Daftar isi">
+  <p class="pl-toc__title">Daftar isi</p>
+  <ol>
+    <li><a href="#overview">Gambaran umum</a></li>
+    <li><a href="#background">Latar belakang dan masalah</a></li>
+    <li><a href="#design-goals">Prinsip desain</a></li>
+    <li><a href="#features">Fitur dan desain</a></li>
+    <li><a href="#process">Proses pembuatan</a></li>
+    <li><a href="#reflection">Hasil penggunaan dan langkah berikutnya</a></li>
+    <li><a href="#slides">(Referensi) Materi presentasi</a></li>
+  </ol>
+</nav>
+<div class="pl-overview" id="overview" role="region" aria-labelledby="overview-title">
+<h2 id="overview-title">1. Gambaran umum</h2>
+<p class="pl-intro">Catat waktu latihan dengan satu ketukan sambil memegang alat musik, lalu tunjukkan kepada guru saat les melalui aplikasi <span class="pl-term">iPhone</span>. Dua layar pencatatan dan berbagi menghubungkan latihan sehari-hari dengan percakapan saat les.</p>
+<p>Saya menangani perumusan masalah, desain UX/UI, penyesuaian di perangkat, implementasi, dan pembuatan materi. Implementasi dilakukan bersama AI; saya sendiri memutuskan layar dan interaksi yang dipakai.</p>
+<p>Saya menggunakan aplikasi untuk latihan dan les sendiri. Menurut inti tanggapan guru, isi latihan langsung terlihat, dan ia menginginkan catatan yang lebih rinci.</p>
+<p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Coba demo web</a></p>
+</div>
 
-  <section id="background">
-    <h2>Awal mula — “Bagaimana latihannya?”: <wbr>saya tidak bisa menjawab</h2>
-    <p>Saat les dua minggu sekali, jawaban “lebih banyak tangga nada” tidak menjelaskan apa yang saya latih dan berapa lama. Menulis jurnal kertas dengan saksofon tergantung di leher terasa sulit, sementara aplikasi pencatat waktu yang saya coba ditujukan untuk meninjau catatan sendiri.</p>
-    <figure class="pl-moments">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-id.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-id.svg" width="960" height="285" loading="lazy" decoding="async" alt="Di antara dua tanggal les, terlihat batang hari latihan dan hari istirahat. Menggabungkan waktu harian per kategori ke satu batang di bawah menghasilkan total 10 jam 06 menit."></picture>
-      <figcaption>Batang atas menunjukkan latihan harian; bingkai merah menandai tanggal les. Saat les, saya menunjukkan rangkuman latihan di antaranya. Tanggal dan durasi adalah contoh fiktif; jumlah waktu batang atas dan bawah sama.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="background"><h2>2. Latar belakang dan masalah</h2>
+<p>Saya bermain saksofon tenor sebagai hobi dan mengikuti les dua minggu sekali. Saat guru bertanya, “Bagaimana latihanmu?”, saya tidak punya cara konkret untuk menjelaskan apa yang dilatih dan berapa lama.</p>
+<p>Karena saksofon tergantung pada tali, sulit menulis di kertas saat berlatih. Catatan juga terpencar ketika halaman jurnal semakin banyak.</p>
+<!-- Original Keynote pixels are retained; SVG masks crop the two panels and make the paper transparent. -->
+<figure class="pl-paper-challenges">
+  <div class="pl-paper-challenges__drawings">
+      <svg class="pl-paper-challenges__drawing" viewBox="0 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-writing-title">
+        <title id="pl-writing-title">Sulit menulis di kertas sambil tetap menggantungkan saksofon pada tali.</title>
+        <defs>
+          <filter id="pl-writing-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-writing-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-writing-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-writing-ink)"/>
+      </svg>
+      <svg class="pl-paper-challenges__drawing" viewBox="724 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-scattered-title">
+        <title id="pl-scattered-title">Halaman jurnal latihan bertambah dan tercecer sehingga catatan sulit ditemukan.</title>
+        <defs>
+          <filter id="pl-scattered-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-scattered-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-scattered-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-scattered-ink)"/>
+      </svg>
+  </div>
+  <figcaption class="pl-paper-challenges__labels"><span>Sulit menulis sambil memegang alat musik</span><span>Catatan terpencar saat kertas bertambah</span></figcaption>
+</figure>
+<p>Aplikasi pencatat waktu yang saya coba dapat mulai mengukur dengan satu ketukan, tetapi tantangannya adalah menyajikan catatan dalam bentuk yang langsung dipahami guru.</p>
+</section>
 
-  <section id="recording">
-    <h2>Mencatat — Sambil memegang alat musik, <wbr>cukup satu ketukan</h2>
-    <p>Selama latihan, saya hanya menyentuh kartu kategori. Ketuk untuk mulai menghitung, ketuk kartu lain untuk beralih, dan ketuk kartu yang sama lagi untuk berhenti.</p>
-    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Layar pencatatan. Kisi riwayat berada di atas batang hari ini (total 54 menit) dan kartu kategori. Latihan lagu sedang berlangsung lebih dari 27 menit, ditandai warna lebih terang dan garis tepi putih." loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>Riwayat</dt><dd>Latihan sejauh ini. Yang pertama terlihat saat aplikasi dibuka.</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>Hari ini</dt><dd>Urutan dan pembagian latihan. Penuh setelah satu jam.</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>Berjalan</dt><dd>Hanya kartu ini yang terang dan berbingkai putih.</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>Kartu</dt><dd>Ketuk untuk beralih. Waktu hari ini ditampilkan besar.</dd></div></dl></figure>
-  </section>
+<section class="pl-chapter" id="design-goals"><h2>3. Prinsip desain</h2>
+<p>Menghubungkan pencatatan saat latihan dengan berbagi saat les. Saya menjadikan dua persyaratan sebagai dasar untuk menentukan layar dan interaksi.</p>
+<h3>Jangan menambah input saat berlatih</h3>
+<p>Waktu dapat dicatat dengan satu ketukan pada kategori sambil memegang alat musik.</p>
+<h3>Kurangi penyuntingan sebelum ditunjukkan kepada guru</h3>
+<p>Catatan terkumpul otomatis, sehingga apa yang dilatih dan berapa lama dapat langsung ditunjukkan.</p>
+</section>
 
-  <section id="day">
-    <h2>Satu hari — Setelah penuh, <wbr>batang tetap penuh</h2>
-    <p>Batang hari ini penuh setelah satu jam. Setelah itu, total saat ini menjadi ujung kanan, sehingga ruang kosong tidak muncul lagi pada batang yang sudah penuh.</p>
-    <figure class="pl-dayscale" data-unit-hour=" jam " data-unit-minute=" mnt">
-      <div class="pl-dayscale__control" hidden><label for="practice-minutes">Latihan hari ini</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1 jam 05 mnt"><output for="practice-minutes">1 jam 05 mnt</output></div>
-      <p class="pl-dayscale__static">Latihan hari ini — <span data-print-value>1 jam 05 mnt</span></p>
-      <div class="pl-dayscale__row" data-scale="adopted">
-        <p>Dipilih</p>
-        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30 mnt</span><span style="--position:100">1 jam 05 mnt</span></div>
-      </div>
-      <div class="pl-dayscale__row" data-scale="rejected">
-        <p>Ditolak</p>
-        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30 mnt</span><span style="--position:66.6667">1 jam</span><span style="--position:100">1 jam 30 mnt</span></div>
-      </div>
-      <figcaption><span data-static-caption>Perbandingan pada 65 menit latihan. </span><span data-interactive-caption hidden>Geser pengatur untuk mengubah waktu latihan hari ini. </span>Di atas adalah desain terpilih: total menjadi ujung kanan, dengan skala minimum satu jam. Di bawah, desain yang ditolak memperluas skala dari 60 ke 90 lalu 120 menit. Begitu melewati satu jam, ruang kosong kembali hanya pada batang bawah.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="features"><h2>4. Fitur dan desain</h2>
+<div class="pl-feature" id="recording"><h3>Satukan tindakan dan waktu latihan dalam kartu yang sama</h3>
+<p>Penghitungan dimulai saat kategori diketuk, beralih melalui kartu lain, dan berhenti saat kartu yang sama diketuk lagi. Kartu menampilkan waktu hari ini dengan ukuran besar, lalu hanya saat menghitung tampil lebih terang dengan garis tepi putih. Tempat untuk bertindak sekaligus menjadi tempat untuk memeriksa apa yang sedang dicatat.</p>
+<figure class="pl-decision"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Layar pencatatan. Kisi pencapaian di atas, lalu batang hari ini (total 54 menit) dan kartu kategori. Latihan lagu sedang dihitung selama lebih dari 27 menit, ditandai warna lebih terang dan garis tepi putih." loading="lazy" decoding="async"></picture><figcaption>“Latihan lagu” sedang dihitung.<br>Nama kategori, waktu hari ini, dan status penghitungan dapat dilihat di kartu yang sama.</figcaption></figure>
+</div>
+<div class="pl-feature" id="sharing"><h3>Lihat rincian latihan tanpa gulir horizontal</h3>
+<p>Agar tidak perlu menyunting sebelum berbagi, catatan otomatis direkap sejak tanggal les sebelumnya. Tabel harian mengutamakan agar semua kategori terlihat sekaligus, meski teks perlu diperkecil. Tujuannya agar guru dan saya dapat membicarakan pembagian latihan sambil melihat layar.</p>
+<figure class="pl-decision"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Layar berbagi. Rekap dari tanggal les 17 September hingga 24 September: total 4 jam 38 menit, grafik batang per kategori, dan tabel harian yang menampilkan semua kategori tanpa gulir horizontal." loading="lazy" decoding="async"></picture></a><figcaption>Periode, total, pembagian per kategori, dan rincian harian dalam satu layar.<br></figcaption></figure>
+</div>
+<div class="pl-feature" id="motivation"><h3>Jadikan latihan yang terkumpul sebagai dorongan untuk terus berlatih</h3>
+<p>Saya menampilkan pencapaian hari ini serta akumulasi bulanan dan tahunan. Saya berharap melihat usaha latihan oleh guru juga dapat mendorong saya untuk terus berlatih.</p>
+<h4>Sehari | Penuhi batang dengan target satu jam</h4>
+<p>Pada awalnya, batang latihan hari ini menampilkan satu jam sebagai batas maksimum. Saya menyusun waktu tiap kategori dengan warna, berharap sasaran tersebut mendorong untuk mulai berlatih demi memenuhi batang.</p>
+<figure class="pl-practice-example" id="pl-daily-example">
+  <div class="pl-practice-day" role="img" aria-label="Contoh tampilan setelah berlatih 40 menit. Batang 0–60 menit berisi segmen berwarna untuk kategori: 15, 10, 5, dan 10 menit, dengan sisa ruang kosong 20 menit.">
+    <div class="pl-practice-day__heading" aria-hidden="true"><span>Latihan hari ini</span></div>
+    <div class="pl-practice-day__bar" aria-hidden="true">
+      <span style="--minutes:15; --category:#3caae0"></span><span style="--minutes:10; --category:#46b686"></span><span style="--minutes:5; --category:#bd9a32"></span><span style="--minutes:10; --category:#e17c81"></span>
+    </div>
+    <div class="pl-practice-day__ticks" aria-hidden="true"><span>0 menit</span><span>30 menit</span><span>60 menit (1 jam)</span></div>
+  </div>
+  <figcaption>Contoh tampilan saat berlatih 40 menit. Warna menandai kategori latihan. Catatan bersifat fiktif.</figcaption>
+</figure>
+<h4>Jangka panjang | Tampilkan akumulasi harian dengan kotak hijau</h4>
+<p>Satu kotak mewakili satu hari, dan gradasi hijau menunjukkan durasi latihan hari itu. Saya ingin pengguna dapat melihat akumulasi kotak selama berbulan-bulan dan bertahun-tahun, serta menjadikan bertambahnya catatan harian sebagai dorongan untuk terus berlatih.</p>
+<figure class="pl-practice-example" id="pl-calendar-example">
+  <div class="pl-practice-calendar" role="img" aria-label="Contoh fiktif catatan latihan selama 12 minggu dari Juni hingga Agustus 2026. Satu kolom adalah satu minggu dan satu kotak satu hari. Kegelapan warna hijau berubah sesuai durasi latihan. Bingkai merah menandai pencapaian mingguan. Tampilan per 18 Agustus: kolom paling kanan mencatat latihan hingga Selasa; setelah itu belum tercatat.">
+    <div class="pl-practice-calendar__months" aria-hidden="true"><span>Jun</span><span>Jul</span><span>Agu</span></div>
+    <div class="pl-practice-calendar__grid" aria-hidden="true">
+      <span class="pl-practice-calendar__weekday">Min</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/05/31 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/07 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/14 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/21 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/28 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/05 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/12 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/19 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/26 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/02 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/09 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/08/16 — 15 menit (contoh)"></span>
+      <span class="pl-practice-calendar__weekday">Sen</span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/06/01 — 20 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/08 — 45 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/15 — 30 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/22 — 65 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/29 — 40 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/06 — 50 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/07/13 — 25 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/20 — 70 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/27 — 55 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/03 — 45 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/10 — 75 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/17 — 60 menit (contoh)"></span>
+      <span class="pl-practice-calendar__weekday">Sel</span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/02 — 40 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" data-milestone title="2026/06/09 — 25 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/06/16 — 70 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/23 — 35 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/30 — 55 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/07 — 80 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/14 — 60 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/07/21 — 40 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" data-milestone title="2026/07/28 — 90 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/04 — 60 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/08/11 — 50 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/18 — 80 menit (contoh)"></span>
+      <span class="pl-practice-calendar__weekday">Rab</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/03 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/10 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/17 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/24 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/01 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/08 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/15 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/22 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/29 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/05 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/12 — 0 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/19 — belum tercatat (contoh)"></span>
+      <span class="pl-practice-calendar__weekday">Kam</span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/04 — 60 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/11 — 75 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/18 — 50 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/25 — 80 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/02 — 70 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/09 — 40 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/16 — 90 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/23 — 50 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/30 — 35 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/06 — 80 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/13 — 60 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/20 — belum tercatat (contoh)"></span>
+      <span class="pl-practice-calendar__weekday">Jum</span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/05 — 30 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/12 — 50 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/19 — 90 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/26 — 45 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/03 — 90 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/10 — 70 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/17 — 45 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/24 — 95 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/31 — 65 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/07 — 40 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/14 — 90 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/21 — belum tercatat (contoh)"></span>
+      <span class="pl-practice-calendar__weekday">Sab</span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/06 — 90 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/13 — 65 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/20 — 40 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/27 — 95 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/04 — 30 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/11 — 100 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/18 — 80 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/25 — 60 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/01 — 80 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/08 — 95 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/15 — 40 menit (contoh)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/22 — belum tercatat (contoh)"></span>
+    </div>
+    <div class="pl-practice-calendar__footer" aria-hidden="true"><span>2026</span><div class="pl-practice-calendar__legend"><span>0 menit</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>90 menit+</span></div></div>
+  </div>
+  <figcaption>Satu kotak adalah satu hari; bingkai merah menandai pencapaian. Kolom paling kanan belum lengkap, dan bagian di bawahnya belum tercatat. Contoh fiktif.</figcaption>
+</figure>
+</div>
+</section>
 
-  <section id="history">
-    <h2>Akumulasi — Semua terlihat, <wbr>sejak hari pertama</h2>
-    <p>Kepekatan hijau menunjukkan latihan, bingkai merah menandai les, dan guliran horizontal dapat mencapai hari pertama pencatatan. Saya mengutamakan melihat latihan bertahun-tahun daripada meringankan proses tampilan.</p>
-    <figure class="pl-crop">
-      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="Kisi riwayat. Kepekatan hijau menunjukkan banyaknya latihan dari Juni hingga September; bingkai merah menandai les dua minggu sekali."></picture>
-      <figcaption>Lima tingkat: 0 menit, kurang dari 30, kurang dari 60, kurang dari 90, dan 90 atau lebih. Akumulasi ini menjadi hal pertama yang terlihat saat membuka aplikasi.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="process"><h2>5. Proses pembuatan</h2>
+<div class="pl-feature" id="research"><h3>Menetapkan peran pencatatan dan berbagi melalui riset dan dialog</h3>
+<p>Saya menggunakan ChatGPT untuk meneliti aplikasi yang ada serta merumuskan masalah dan pendekatan. Dalam cakupan riset saat itu, saya menemukan aplikasi pengelola waktu, tetapi tidak menemukan mekanisme berbagi yang cocok untuk komunikasi dengan guru. Saya merangkum konsep yang diperjelas lewat dialog menjadi spesifikasi, lalu memberikannya kepada Codex untuk membuat versi pertama.</p>
+</div>
+<div class="pl-feature" id="evolution"><h3>Mencoba versi pertama dan menjaga kontrol tetap di layar</h3>
+<p>Saya mencoba sendiri versi awal yang dibuat AI, menyampaikan kebutuhan perbaikan UI dan UX, lalu menyempurnakannya. Informasi penghitungan aktif dan tindakan berhenti yang terpisah pada versi awal disatukan ke dalam kartu, dan waktu hari ini ditampilkan besar. Saya juga mencari tata letak agar panel kontrol muat di layar.</p>
+<figure class="pl-evolution pl-evolution--comparison"><div class="pl-evolution__screens"><div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="Versi awal 9 September. Layar pencatatan dengan enam kartu kategori kecil dan total hari ini 40 menit di area terpisah."></a><p>Versi awal</p></div><div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="Versi yang disempurnakan pada 21 September. Layar pencatatan menyatukan kategori dan waktu hari ini dalam satu kartu besar, serta menandai terang pembacaan notasi yang telah berlangsung 10 menit."></a><p>Versi yang disempurnakan</p></div></div><figcaption>Perbandingan dengan data fiktif yang sama (6 kategori, total hari ini 40 menit).<br>Versi yang disempurnakan menyatukan informasi penghitungan aktif dan tindakan berhenti dalam kartu; pada versi awal keduanya terpisah.</figcaption></figure>
+<p>Saya memilih dasar warna hitam untuk layar yang terus terbuka saat latihan, dengan warna kategori yang memberi kesan cerah.</p>
+</div>
+<div class="pl-feature" id="touch"><h3>Beri kesempatan memilih rasa interaksi dengan mencoba sendiri</h3>
+<p>Rasa “bergerak mulus lalu berhenti mantap” sulit disempurnakan hanya dengan instruksi kata-kata atau gambar. Karena itu, saya membuat alat bantu bersama AI agar metode dan nilainya bisa saya ubah dan coba sendiri. Saya membandingkannya di perangkat nyata dengan posisi berhenti panel kontrol yang muat di layar sebagai patokan, lalu memilih fitur snap bawaan browser dan menerapkannya di aplikasi.</p>
+<figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="Alat penyetelan gulir. Terlihat pilihan untuk mengganti lima metode snap beserta parameternya dan layar ponsel untuk mencoba interaksi."></a><figcaption>Saya mengganti metode dan parameter, lalu mencoba dan membandingkan cara gulir berhenti di perangkat nyata.</figcaption></figure>
+</div>
+<div class="pl-feature" id="review"><h3>Gunakan tinjauan independen dan tentukan sendiri apa yang diterapkan</h3>
+<p>Saya berulang kali menggunakan dua sesi AI yang independen: saya memeriksa masalah dan usulan perbaikan dari Claude Code, lalu Codex memverifikasi dan menerapkan perbaikan yang diperlukan. Usulan terkadang menyimpang dari UI atau UX yang dituju, jadi saya memutuskan penerimaannya berdasarkan tujuan aplikasi dan rasa saat digunakan.<br>
+* Proses ini diulang sekitar 15 kali. Tidak munculnya kekurangan besar dalam tinjauan AI menjadi salah satu patokan untuk mengakhiri perbaikan.</p>
+</div>
+</section>
 
-  <section id="sharing">
-    <h2>Berbagi — Di awal les, <wbr>satu layar langsung menjelaskan</h2>
-    <p>Total per kategori dan rincian harian merangkum periode dari les terakhir hingga hari ini, siap ditunjukkan kepada guru. Tabel harian memuat semua kategori dalam satu layar, meski teks harus diperkecil, sehingga tidak perlu menggulir horizontal.</p>
-    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Layar berbagi. Dari tanggal les 17 September hingga 24 September: total 4 jam 38 menit, batang per kategori, dan tabel harian yang menampilkan semua kategori tanpa menggulir horizontal." loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>Periode</dt><dd>Dari tanggal les terakhir hingga hari ini.</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>Total</dt><dd>Waktu dan jumlah hari latihan dalam periode ini.</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>Pembagian</dt><dd>Nama, batang, dan waktu dalam satu baris.</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>Rincian</dt><dd>Semua kategori dalam satu layar, tanpa guliran horizontal.</dd></div></dl><figcaption>Buka gambar untuk memperbesar rincian harian.</figcaption></figure>
-  </section>
+<section class="pl-chapter" id="reflection"><h2>6. Hasil penggunaan dan langkah berikutnya</h2>
+<h3>Kebiasaan membuka aplikasi sebelum latihan mulai terbentuk</h3>
+<p>Saya memasang aplikasi di iPhone sendiri dan menggunakannya dalam latihan harian untuk memastikan kemudahan mencatat dengan satu ketukan sambil memegang alat musik. Membuka aplikasi pada awal latihan menjadi kebiasaan positif. Meninjau urutan dan pembagian latihan hari itu serta mengingat tanggal les berikutnya membantu perencanaan latihan saya.</p>
+<h3>Guru meminta catatan yang lebih rinci</h3>
+<p>Menurut inti tanggapannya, guru mengatakan isi latihan mudah dipahami sekilas dan pencatatan jenis tangga nada akan lebih bermanfaat. Hal-hal ini berdasarkan latihan saya sendiri dan pengalaman les dengan guru, yakni <span class="pl-term">pengalaman pribadi.</span></p>
+<h3>Tantangan berikutnya: memadukan rincian dan kemudahan input</h3>
+<p>Saya mempertimbangkan subkategori di bawah “tangga nada”, seperti “tangga nada pentatonik”. Cara pencatatan yang tetap mudah masih saya pikirkan. Untuk layar berbagi, saya juga mempertimbangkan tampilan kategori dan subkategori yang bertingkat sebagai pengganti tabel harian.</p>
+</section>
 
-  <section id="evolution">
-    <h2>Perkembangan — Kartu menjadi <wbr>panel kendali latihan</h2>
-    <p>Saya membangun layar dari spesifikasi yang disusun lewat dialog dengan AI, lalu berulang kali mencoba dan memperbaikinya sendiri. Saya mengeksplorasi pencatatan dan berbagi dalam versi web awal sebelum membuat aplikasi untuk iPhone.</p>
-    <figure class="pl-evolution">
-      <div class="pl-evolution__screens">
-        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="Versi awal 9 September. Enam kartu kategori kecil dan total hari ini, 40 menit, berada di area terpisah pada layar pencatatan."></a><p>9 September<br>Versi awal</p></div>
-        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="Versi web 21 September. Kategori dan waktu hari ini disatukan dalam kartu besar; pembacaan partitur selama 10 menit yang sedang berjalan ditampilkan terang."></a><p>21 September<br>Versi web</p></div>
-        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="Layar pencatatan. Kisi riwayat berada di atas batang hari ini (total 54 menit) dan kartu kategori. Latihan lagu sedang berlangsung lebih dari 27 menit, ditandai warna lebih terang dan garis tepi putih." loading="lazy" decoding="async"></picture><p>24 September<br>iOS 1.0</p></div>
-      </div>
-      <figcaption>Versi awal dan web memakai data fiktif yang sama (enam kategori, total 40 menit hari ini). iOS 1.0 memakai data fiktif yang berbeda.</figcaption>
-    </figure>
-    <dl class="pl-changes">
-      <div><dt>Nama dan waktu, bersama</dt><dd>Saya menampilkan waktu hari ini secara besar pada kartu, menghubungkan apa yang dilatih dengan durasinya.</dd></div>
-      <div><dt>Status saat ini, sekilas</dt><dd>Saya hanya menerangkan kartu yang sedang dihitung waktunya dan meredupkan yang lain.</dd></div>
-      <div><dt>Kendali tetap di dalam layar</dt><dd>Guliran berhenti pada posisi saat satu baris kartu muat di layar.</dd></div>
-    </dl>
-    <p>Menjelang akhir, saya mengulangi siklus sekitar 15 kali: Claude Code mengajukan kemungkinan masalah, Codex memeriksa dan memperbaiki, lalu saya memutuskan perubahan yang diterima.</p>
-  </section>
-
-  <section id="touch">
-    <h2>Rasa interaksi — Memilih cara berhenti <wbr>dengan mencobanya</h2>
-    <p>Instruksi kata-kata saja tidak menghasilkan rasa “bergerak mulus lalu berhenti tepat”. Bersama AI, saya membuat alat untuk mengganti metode dan nilai seketika, mencoba lima metode pada perangkat nyata, lalu memilih mekanisme snap bawaan peramban.</p>
-    <figure class="pl-traces">
-      <div class="pl-traces__grid">
-        <div><p>Model gundukan</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="Lima gestur pada perangkat nyata dengan Model gundukan. Sumbu horizontal: 0–1200 milidetik setelah jari dilepas; vertikal: jarak dari posisi snap. Garis nol putus-putus menandai posisi snap, dan titik akhir setiap garis adalah posisi terakhir yang diukur."></div>
-        <div><p>Proyeksi titik akhir</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="Lima gestur pada perangkat nyata dengan Proyeksi titik akhir. Sumbu horizontal: 0–1200 milidetik setelah jari dilepas; vertikal: jarak dari posisi snap. Garis nol putus-putus menandai posisi snap, dan titik akhir setiap garis adalah posisi terakhir yang diukur."></div>
-        <div class="pl-traces__adopted"><p>Bawaan proximity<br><span>Dipilih</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="Lima gestur pada perangkat nyata dengan Bawaan proximity. Sumbu horizontal: 0–1200 milidetik setelah jari dilepas; vertikal: jarak dari posisi snap. Garis nol putus-putus menandai posisi snap, dan titik akhir setiap garis adalah posisi terakhir yang diukur."></div>
-        <div><p>Bawaan mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="Lima gestur pada perangkat nyata dengan Bawaan mandatory. Sumbu horizontal: 0–1200 milidetik setelah jari dilepas; vertikal: jarak dari posisi snap. Garis nol putus-putus menandai posisi snap, dan titik akhir setiap garis adalah posisi terakhir yang diukur."></div>
-        <div><p>Tanpa snap</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="Lima gestur pada perangkat nyata dengan Tanpa snap. Sumbu horizontal: 0–1200 milidetik setelah jari dilepas; vertikal: jarak dari posisi snap. Garis nol putus-putus menandai posisi snap, dan titik akhir setiap garis adalah posisi terakhir yang diukur."></div>
-      </div>
-      <figcaption>Posisi setelah jari dilepas dibandingkan pada skala yang sama. Garis nol putus-putus menandai snap. Dari log perangkat, saya memilih lima gestur per metode dengan kecepatan 0,6–1,8 px/ms, dihitung dari posisi selama 60 ms sebelumnya, dimulai dari yang paling dekat dengan 1,2 px/ms. Pengaturan, posisi awal, dan arah tiap gestur berbeda.</figcaption>
-    </figure>
-    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="Alat penyetelan guliran. Pilihan lima metode snap dan parameternya berdampingan dengan layar ponsel untuk mencoba interaksi."></a><figcaption>Saya membandingkan cara guliran berhenti pada perangkat nyata sambil mencatat jarak dan kecepatan. Buka gambar untuk memperbesar.</figcaption></figure>
-  </section>
-
-  <section id="product">
-    <h2>Sebagai produk — Di luar latihan</h2>
-    <p>Tampilan mengikuti pengaturan perangkat. Catatan latihan disimpan di perangkat dan dicadangkan otomatis ke iCloud.</p>
-    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Mode terang. Layar pencatatan. Kisi riwayat berada di atas batang hari ini (total 54 menit) dan kartu kategori. Latihan lagu sedang berlangsung lebih dari 27 menit, ditandai warna lebih terang dan garis tepi putih." loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Mode gelap. Layar pencatatan. Kisi riwayat berada di atas batang hari ini (total 54 menit) dan kartu kategori. Latihan lagu sedang berlangsung lebih dari 27 menit, ditandai warna lebih terang dan garis tepi putih." loading="lazy" decoding="async"></picture></div><figcaption>Layar pencatatan yang sama dalam mode terang dan gelap.</figcaption></figure>
-    <figure class="pl-icons">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="109 ikon tema sesuai kegiatan latihan, disusun sebagai alat musik, olahraga, belajar, melukis, kerajinan, dan ekspresi."></picture>
-      <figcaption>Ikon pada kepala aplikasi dapat dipilih sesuai latihan: 47 musik, 15 olahraga, 15 bahasa dan belajar, 11 seni, 14 kreasi dan keseharian, serta 7 ekspresi. Saksofon diadaptasi dari Qlementine Icons (Lisensi MIT).</figcaption>
-    </figure>
-  </section>
-
-  <section id="reflection">
-    <h2>Saat digunakan — Pertanyaan berikutnya: <wbr>seberapa rinci harus dicatat</h2>
-    <p>Saya menggunakan aplikasi saat latihan pagi dan menunjukkan layarnya kepada guru saat les. Tanggapannya: isi latihan langsung terlihat, dan mencatat jenis tangga nada akan lebih bermanfaat lagi (parafrasa). Saya mempertimbangkan satu tingkat di bawah kategori agar catatan lebih rinci tanpa mengorbankan kemudahan.</p>
-  </section>
-
-  <section id="slides">
-    <h2>Materi</h2>
-    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Demo web</a> memungkinkan Anda mencoba pencatatan dan berbagi. Demo memuat catatan latihan pribadi saya per 20 September 2026; perubahan hanya disimpan dalam peramban yang sedang digunakan.</p>
-    <figure class="pl-slides bleed">
-      <ol class="pl-slides__strip" tabindex="0" aria-label="Slide proyek" aria-describedby="slides-help">
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 1. Sampul: pengembangan aplikasi untuk mencatat latihan dan membagikannya kepada guru les. Takafumi Horiuchi."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 2. Ringkasan: Log untuk mencatat dan Share untuk menunjukkan latihan kepada guru. Peran, periode, dan alat."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 3. Latar belakang: ingin menyampaikan latihan saksofon secara akurat kepada guru. Kendala jurnal kertas dan aplikasi yang ada."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 4. Pendekatan: pencatatan satu ketukan dan visualisasi yang langsung dipahami. Akumulasi latihan dalam dua skala: satu hari serta bulan dan tahun."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 5. Empat penggunaan AI: riset, implementasi awal, alat penyetelan interaksi, dan optimasi implementasi."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 6. Kolaborasi dengan AI: riset aplikasi yang ada dan perumusan konsep melalui dialog."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 7. Implementasi awal: membandingkan V0 buatan AI dengan V1 yang direvisi lewat masukan berulang tentang tata letak dan warna."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 8. Penyetelan interaksi: membuat alat bersama AI untuk membandingkan sendiri kecepatan guliran dan cara berhentinya."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 9. Optimasi: pengajuan kemungkinan masalah oleh Claude Code, pemeriksaan dan perbaikan oleh Codex, serta keputusan manusia secara berulang."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Slide 10. Hasil dan langkah berikutnya: penggunaan pribadi, masukan guru, dan pertimbangan subkategori untuk catatan lebih rinci."></a></li>
+<aside class="pl-resources" id="slides" aria-labelledby="resources-title"><h2 id="resources-title">7. (Referensi) Materi presentasi</h2>
+<figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="Slide materi proyek">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 1. Sampul: pengembangan aplikasi pencatatan latihan untuk berbagi kondisi latihan dengan guru les. Takafumi Horiuchi."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 2. Gambaran umum: Log untuk mencatat latihan dan Share untuk berbagi kondisi dengan guru. Tanggung jawab, periode pembuatan, dan alat yang digunakan."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 3. Latar belakang: ingin menyampaikan kondisi latihan saksofon dengan tepat kepada guru. Masalah yang dirasakan pada jurnal kertas dan aplikasi yang ada."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 4. Pendekatan: pencatatan satu ketukan dan visualisasi yang langsung dipahami. Akumulasi latihan ditampilkan pada dua skala waktu: harian dan bulanan/tahunan."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 5. Empat penggunaan AI: riset, implementasi dasar, pembuatan alat bantu untuk menyetel rasa interaksi, dan optimalisasi implementasi."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 6. Kolaborasi dengan AI: riset aplikasi yang ada dan memperjelas konsep melalui dialog."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 7. Implementasi dasar: perbandingan versi awal V0 yang dibuat AI dengan versi penyempurnaan V1 setelah umpan balik berulang tentang tata letak dan warna."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 8. Penyesuaian rasa interaksi: membuat alat bantu bersama AI untuk membandingkan kecepatan gulir dan cara berhentinya sendiri."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 9. Optimalisasi implementasi: Claude Code menyampaikan kemungkinan masalah, lalu Codex memeriksa dan memperbaikinya berulang kali; manusia tetap mengambil keputusan."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Halaman 10. Hasil dan langkah berikutnya: penggunaan untuk latihan sendiri, masukan guru les, dan pertimbangan subkategori untuk pencatatan yang lebih rinci."></a></li>
       </ol>
-      <figcaption id="slides-help">Gulir horizontal untuk berpindah slide. Klik atau ketuk untuk memperbesar. Materi asli berbahasa Jepang.</figcaption>
     </figure>
-    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">Buka materi proyek dalam PDF (bahasa Jepang, 4,4 MB)</a></p>
-  </section>
+</aside>
+
   <nav aria-label="Situs">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Kembali ke portofolio Takafumi Horiuchi</span></a></li>

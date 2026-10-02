@@ -77,7 +77,7 @@
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
-<body>
+<body data-ascii-art="none">
 <div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Reen al la verkaro de Takafumi Horiuchi">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Aspekto" dir="ltr" hidden>
     <label title="Hela reĝimo">
@@ -91,159 +91,257 @@
   </div>
 </div>
 <main>
-  <header>
-    <h1>Practice Log n Share</h1>
-    <p class="dateline">Septembro 2026</p>
-  </header>
-
-  <ascii-hero data-scene="practice-grid" dir="ltr" translate="no" aria-hidden="true">
-    <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">@@ ++ [] [] @@ [] ++ [] ++ ++ ++ ++ @@ ++ ## ## ## [] [] [] [] [] [] [] [] []
-## @@ [] [] @@ ++ [] ## @@ ++ ## [] ++ @@ ++ ++ @@ [] [] [] [] [] [] [] [] []
-++ @@ ## [] ++ ## ## ## @@ ## ++ ## ## ## ++ @@ ## [] [] [] [] [] [] [] [] []
-@@ ++ ## [] @@ ## @@ @@ ## ++ ++ ++ ++ ## [] ## ## [] [] [] [] [] [] [] [] []
-## [] ++ @@ [] @@ @@ @@ @@ [] ## ++ ## ## @@ ++ [] [] [] [] [] [] [] [] [] []
-++ [] ## ## @@ ## @@ @@ ## @@ [] ## ++ @@ @@ ++ [] [] [] [] [] [] [] [] [] []
-++ ++ @@ @@ ++ ++ [] ## ## @@ [] [] @@ [] @@ ++ [] [] [] [] [] [] [] [] [] []</pre>
-  </ascii-hero>
-
-  <section id="overview">
-    <h2>Superrigardo</h2>
-    <p class="lead">Registri ekzercadon per unu tuŝo, poste montri la saman ekranon al la instruisto dum leciono. Mi planis kaj desegnis ĉi tiun iPhone-aplikaĵon por mia propra saksofonludado kaj realigis ĝin kunlabore kun AI.</p>
-    <figure class="pl-pair">
+<header>
+<h1>Practice Log n Share</h1>
+<p class="pl-subtitle">Aplikaĵo por registri kaj kunhavigi ĉiutagan muzikpraktikadon</p>
+<p class="dateline">Septembro 2026</p>
+</header>
+<figure class="pl-pair" data-hero="illustration">
       <div class="pl-pair__screens">
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Registra ekrano. Historikrastro troviĝas super la hodiaŭa stango (entute 54 minutoj) kaj la kategoriaj kartoj. La ekzercado de muzikpecoj daŭras jam pli ol 27 minutojn, markita per pli hela koloro kaj blanka konturo." fetchpriority="high"></picture>
-        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Kundivida ekrano. De la leciono de la 17-a ĝis la 24-a de septembro: entute 4 horoj 38 minutoj, stangoj laŭ kategorio kaj taga tabelo kun ĉiuj kategorioj sen horizontala rulumado." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Registra ekrano. Supre estas krado de atingoj, sub ĝi la hodiaŭa strio (entute 54 minutoj) kaj kategorikartoj. “Ekzercado de pecoj” estas tempomezurata dum pli ol 27 minutoj, indikite per pli hela koloro kaj blanka konturo." fetchpriority="high"></picture>
+        <picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 44vw, 18rem" width="864" height="1877" alt="Kunhaviga ekrano. Resumo de la leciona dato, la 17-an de septembro, ĝis la 24-a: entute 4 horoj 38 minutoj, stangdiagramo laŭ kategorio, kaj ĉiutaga tabelo montranta ĉiujn kategoriojn sen horizontala rulumado." fetchpriority="high"></picture>
       </div>
-      <figcaption>Registrado maldekstre, kundivido dekstre. Tuŝu kategorion por ekmezuri tempon, poste montru resumon de la ekzercado inter lecionoj. La ekranoj uzas fikciajn datumojn por klarigo. La ekrankopioj montras la originalan japanlingvan interfacon.</figcaption>
+      <figcaption>La aplikaĵo konsistas el ĉi tiuj du ekranoj</figcaption>
     </figure>
-    <dl class="pl-facts">
-      <div><dt>Rolo</dt><dd>Planado, UX/UI-dezajno kaj realigo (kun Claude Code kaj Codex)</dd></div>
-      <div><dt>Periodo</dt><dd>Septembro 2026</dd></div>
-      <div><dt>Teknologioj</dt><dd>React · TypeScript; Swift (WKWebView, Live Activity, StoreKit, iCloud)</dd></div>
-    </dl>
-    <p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Provu la retan demonstraĵon</a> (enhavas miajn proprajn ekzercregistrojn ĝis la 20-a de septembro 2026)</p>
-  </section>
+<nav class="pl-toc" aria-label="Enhavo">
+  <p class="pl-toc__title">Enhavo</p>
+  <ol>
+    <li><a href="#overview">Superrigardo</a></li>
+    <li><a href="#background">Fono kaj problemo</a></li>
+    <li><a href="#design-goals">Dezajnaj principoj</a></li>
+    <li><a href="#features">Trajtoj kaj dezajno</a></li>
+    <li><a href="#process">Evoluiga procezo</a></li>
+    <li><a href="#reflection">Rezultoj kaj venontaj paŝoj</a></li>
+    <li><a href="#slides">(Referenco) Prezentaj lumbildoj</a></li>
+  </ol>
+</nav>
+<div class="pl-overview" id="overview" role="region" aria-labelledby="overview-title">
+<h2 id="overview-title">1. Superrigardo</h2>
+<p class="pl-intro">Registru la praktiktempon per unu tuŝo tenante la instrumenton, kaj montru ĝin al la instruisto dum leciono per aplikaĵo por <span class="pl-term">iPhone</span>. La du ekranoj, por registrado kaj kunhavigo, ligas ĉiutagan praktikon al konversacio dum lecionoj.</p>
+<p>Mi respondecis pri difino de la problemo, UX/UI-dezajno, agordado ĉe la aparato, realigo kaj preparado de materialoj. Mi kunlaboris kun AI por la realigo, sed mem decidis kiujn ekranojn kaj interagojn adopti.</p>
+<p>Mi uzis la aplikaĵon por mia propra praktikado kaj lecionoj. Laŭ la esenco de la instruista reago, la enhavo estas tuj komprenebla, kaj li petis pli detalajn registrojn.</p>
+<p class="pl-links"><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">Provu la retan demonstraĵon</a></p>
+</div>
 
-  <section id="background">
-    <h2>Deveno — «Kiel iras la ekzercado?»: <wbr>mi ne povis respondi</h2>
-    <p>Dum miaj lecionoj ĉiun duan semajnon, respondi «ĉefe gamojn» ne klarigis, kion mi ekzercis nek dum kiom da tempo. Estis malfacile skribi en papera taglibro kun saksofono pendanta ĉe la kolo, kaj la provitaj tempregistraj aplikaĵoj servis por propra retrorigardo.</p>
-    <figure class="pl-moments">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/two-moments-narrow-eo.svg" width="420" height="240"><img src="../../../works/practice-log-n-share/assets/two-moments-eo.svg" width="960" height="285" loading="lazy" decoding="async" alt="Inter du leciondatoj aperas stangoj por ekzercotagoj kaj liberaj tagoj. Kunigi la ĉiutagan tempon laŭ kategorio en la malsupran stangon donas 10 horojn 06 minutojn."></picture>
-      <figcaption>La supraj stangoj montras ĉiutagan ekzercadon; ruĝaj kadroj markas lecionojn. Dum leciono mi montras resumon de la intertempo. Datoj kaj daŭroj estas fikciaj; la supraj kaj malsupra stangoj havas la saman totalon.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="background"><h2>2. Fono kaj problemo</h2>
+<p>Mi ludas tenor-saksofonon kiel ŝatokupo kaj lecionas ĉiun duan semajnon. Eĉ kiam la instruisto demandas “Kiel iras la praktikado?”, mi ne havis konkretan manieron diri, kion kaj kiom longe mi ekzercis.</p>
+<p>Ĉar la saksofono pendas de rimeno, estas malfacile skribi sur papero dum praktikado. Kiam la taglibro kreskas, la registroj ankaŭ disiĝas.</p>
+<!-- Original Keynote pixels are retained; SVG masks crop the two panels and make the paper transparent. -->
+<figure class="pl-paper-challenges">
+  <div class="pl-paper-challenges__drawings">
+      <svg class="pl-paper-challenges__drawing" viewBox="0 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-writing-title">
+        <title id="pl-writing-title">Provi skribi sur papero tenante la saksofonon pendanta de rimeno.</title>
+        <defs>
+          <filter id="pl-writing-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-writing-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-writing-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-writing-ink)"/>
+      </svg>
+      <svg class="pl-paper-challenges__drawing" viewBox="724 0 724 724" width="724" height="724" role="img" aria-labelledby="pl-scattered-title">
+        <title id="pl-scattered-title">La paperoj de la praktiktaglibro kreskas kaj disiĝas, malfaciligante trovi registron.</title>
+        <defs>
+          <filter id="pl-scattered-alpha" x="0" y="0" width="2172" height="724" filterUnits="userSpaceOnUse" color-interpolation-filters="sRGB">
+            <feColorMatrix type="matrix" values="0 0 0 0 1  0 0 0 0 1  0 0 0 0 1  -.2126 -.7152 -.0722 0 1"/>
+            <feComponentTransfer><feFuncA type="linear" slope="1.25" intercept="-.05"/></feComponentTransfer>
+          </filter>
+          <mask id="pl-scattered-ink" x="0" y="0" width="2172" height="724" maskUnits="userSpaceOnUse" style="mask-type: alpha">
+            <image href="../../../works/practice-log-n-share/assets/paper-challenges-original.png" width="2172" height="724" filter="url(#pl-scattered-alpha)"/>
+          </mask>
+        </defs>
+        <rect x="0" y="0" width="2172" height="724" fill="currentColor" mask="url(#pl-scattered-ink)"/>
+      </svg>
+  </div>
+  <figcaption class="pl-paper-challenges__labels"><span>Malfacile skribi tenante instrumenton</span><span>Registroj disiĝas kiam paperoj multiĝas</span></figcaption>
+</figure>
+<p>La tempomezuraj aplikaĵoj, kiujn mi provis, povis mezuri per unu tuŝo, sed la defio estis montri la registrojn tiel, ke la instruisto tuj komprenu ilin.</p>
+</section>
 
-  <section id="recording">
-    <h2>Registrado — Kun la instrumento enmane, <wbr>per unu tuŝo</h2>
-    <p>Dum ekzercado mi tuŝas nur la kategoriajn kartojn. Tuŝo ekigas la mezuradon, alia karto ŝanĝas la kategorion, kaj dua tuŝo de la sama karto haltigas ĝin.</p>
-    <figure class="pl-map pl-map--log"><div class="pl-map__screen"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Registra ekrano. Historikrastro troviĝas super la hodiaŭa stango (entute 54 minutoj) kaj la kategoriaj kartoj. La ekzercado de muzikpecoj daŭras jam pli ol 27 minutojn, markita per pli hela koloro kaj blanka konturo." loading="lazy" decoding="async"></picture><span class="pl-map__pin pl-map__point--log-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--log-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--log-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--log-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--log-1"><dt><span class="pl-map__number">1 </span>Historio</dt><dd>La ĝisnuna ekzercado. La unua vidaĵo ĉe malfermo.</dd></div><div class="pl-map__note pl-map__point--log-2"><dt><span class="pl-map__number">2 </span>Hodiaŭ</dt><dd>Ordo kaj divido de la ekzercado. Plena post unu horo.</dd></div><div class="pl-map__note pl-map__point--log-3"><dt><span class="pl-map__number">3 </span>Mezurado</dt><dd>Nur ĉi tiu karto estas hela, kun blanka konturo.</dd></div><div class="pl-map__note pl-map__point--log-4"><dt><span class="pl-map__number">4 </span>Kartoj</dt><dd>Tuŝu por ŝanĝi. La hodiaŭa tempo estas granda.</dd></div></dl></figure>
-  </section>
+<section class="pl-chapter" id="design-goals"><h2>3. Dezajnaj principoj</h2>
+<p>Ligi registradon dum praktikado al kunhavigo dum leciono. Mi uzis du postulojn kiel bazon por decidi la ekranojn kaj interagojn.</p>
+<h3>Ne aldonu enigon dum praktikado</h3>
+<p>Ebligi registri tempon per unu tuŝo sur kategorio tenante la instrumenton.</p>
+<h3>Limigu redaktadon antaŭ montri al la instruisto</h3>
+<p>La registroj aŭtomate organiziĝu, por montri kion kaj kiom longe mi ekzercis sen plia redaktado.</p>
+</section>
 
-  <section id="day">
-    <h2>Unu tago — Plenigita stango <wbr>restas plena</h2>
-    <p>La hodiaŭa stango pleniĝas post unu horo. Poste la nuna totalo difinas la dekstran randon, por ke malpleno ne reaperu en jam plena stango.</p>
-    <figure class="pl-dayscale" data-unit-hour=" h " data-unit-minute=" min">
-      <div class="pl-dayscale__control" hidden><label for="practice-minutes">Hodiaŭa ekzercado</label><input type="range" id="practice-minutes" min="0" max="120" step="1" value="65" aria-valuetext="1 h 05 min"><output for="practice-minutes">1 h 05 min</output></div>
-      <p class="pl-dayscale__static">Hodiaŭa ekzercado — <span data-print-value>1 h 05 min</span></p>
-      <div class="pl-dayscale__row" data-scale="adopted">
-        <p>Elektita</p>
-        <div class="pl-dayscale__bar" style="--maximum:65" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:46.1538">30 min</span><span style="--position:100">1 h 05 min</span></div>
-      </div>
-      <div class="pl-dayscale__row" data-scale="rejected">
-        <p>Forlasita</p>
-        <div class="pl-dayscale__bar" style="--maximum:90" aria-hidden="true"><span data-duration="8" style="--minutes:8; --category:#3caae0"></span><span data-duration="12" style="--minutes:12; --category:#46b686"></span><span data-duration="23" style="--minutes:23; --category:#bd9a32"></span><span data-duration="7" style="--minutes:7; --category:#b289dc"></span><span data-duration="10" style="--minutes:10; --category:#e17c81"></span><span data-duration="30" style="--minutes:5; --category:#46b686"></span><span data-duration="30" style="--minutes:0; --category:#bd9a32" hidden></span></div>
-        <div class="pl-dayscale__ticks" aria-hidden="true"><span style="--position:0">0</span><span style="--position:33.3333">30 min</span><span style="--position:66.6667">1 h</span><span style="--position:100">1 h 30 min</span></div>
-      </div>
-      <figcaption><span data-static-caption>Komparo ĉe 65 minutoj da ekzercado. </span><span data-interactive-caption hidden>Movu la ŝovilon por ŝanĝi la hodiaŭan ekzercotempon. </span>Supre estas la elektita solvo: la totalo difinas la dekstran randon, kun minimuma skalo de unu horo. Malsupre la forlasita solvo plivastigas la skalon de 60 al 90 kaj 120 minutoj. Tuj post unu horo, malpleno revenas nur en la malsupra stango.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="features"><h2>4. Trajtoj kaj dezajno</h2>
+<div class="pl-feature" id="recording"><h3>Kunigi agon kaj praktiktempon en la sama karto</h3>
+<p>Tempomezurado komenciĝas tuŝante kategorion, ŝanĝiĝas al alia karto, kaj haltas per dua tuŝo de la sama karto. La karto montras hodiaŭan tempon grandlitere, kaj heliĝas kun blanka konturo nur dum mezurado. Tiel la loko por ago estas ankaŭ la loko por kontroli, kio estas registrata.</p>
+<figure class="pl-decision"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Registra ekrano. Supre estas krado de atingoj, sub ĝi la hodiaŭa strio (entute 54 minutoj) kaj kategorikartoj. “Ekzercado de pecoj” estas tempomezurata dum pli ol 27 minutoj, indikite per pli hela koloro kaj blanka konturo." loading="lazy" decoding="async"></picture><figcaption>“Ekzercado de pecoj” estas mezurata.<br>La kategorionomo, hodiaŭa tempo kaj mezurstatuso estas videblaj en la sama karto.</figcaption></figure>
+</div>
+<div class="pl-feature" id="sharing"><h3>Vidi la praktikajn detalojn sen horizontala rulumado</h3>
+<p>Por eviti redaktadon antaŭ kunhavigo, la registroj aŭtomate sumiĝas ekde la antaŭa leciona dato. La ĉiutaga tabelo prioritatigas samtempan videblon de ĉiuj kategorioj, eĉ se la teksto devas esti pli malgranda. La celo estas diskuti la distribuon de praktikado kune kun la instruisto, rigardante la ekranon.</p>
+<figure class="pl-decision"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Kunhaviga ekrano. Resumo de la leciona dato, la 17-an de septembro, ĝis la 24-a: entute 4 horoj 38 minutoj, stangdiagramo laŭ kategorio, kaj ĉiutaga tabelo montranta ĉiujn kategoriojn sen horizontala rulumado." loading="lazy" decoding="async"></picture></a><figcaption>Periodo, sumo, distribuo laŭ kategorio kaj ĉiutagaj detaloj sur unu ekrano.<br></figcaption></figure>
+</div>
+<div class="pl-feature" id="motivation"><h3>Uzi akumulitan praktikadon kiel instigon daŭrigi</h3>
+<p>Mi videbligis la hodiaŭan atingon kaj la akumuladon dum monatoj kaj jaroj. Mi esperas, ke montri al la instruisto la penon de praktikado ankaŭ instigos daŭrigi.</p>
+<h4>Unu tago | Plenigu la stangon laŭ unuhora celo</h4>
+<p>La stango por hodiaŭa praktikado komence montras unu horon kiel maksimumon. Mi stakigis la tempon de ĉiu kategorio per koloro, esperante ke la celo instigos ekzerci por plenigi la stangon.</p>
+<figure class="pl-practice-example" id="pl-daily-example">
+  <div class="pl-practice-day" role="img" aria-label="Ekzemplo de 40 minutoj da praktikado. La stango de 0 ĝis 60 minutoj enhavas kolorajn kategorio-segmentojn de 15, 10, 5 kaj 10 minutoj; restas 20 minutoj da malplena spaco.">
+    <div class="pl-practice-day__heading" aria-hidden="true"><span>Hodiaŭa praktikado</span></div>
+    <div class="pl-practice-day__bar" aria-hidden="true">
+      <span style="--minutes:15; --category:#3caae0"></span><span style="--minutes:10; --category:#46b686"></span><span style="--minutes:5; --category:#bd9a32"></span><span style="--minutes:10; --category:#e17c81"></span>
+    </div>
+    <div class="pl-practice-day__ticks" aria-hidden="true"><span>0 min</span><span>30 min</span><span>60 min (1 h)</span></div>
+  </div>
+  <figcaption>Ekzemplo de la stango post 40 minutoj da praktikado. Koloroj reprezentas praktikajn kategoriojn. Fikciaj datumoj.</figcaption>
+</figure>
+<h4>Longtempe | Montri ĉiutagan akumuliĝon per verdaj ĉeloj</h4>
+<p>Unu ĉelo reprezentas unu tagon; nuancoj de verdo montras la praktiktempon de tiu tago. Mi volis ebligi vidi la ĉelojn akumuliĝantajn dum monatoj kaj jaroj kaj uzi kreskantajn ĉiutagajn registrojn kiel instigon daŭrigi.</p>
+<figure class="pl-practice-example" id="pl-calendar-example">
+  <div class="pl-practice-calendar" role="img" aria-label="Fikcia eltiraĵo de 12 semajnoj da praktikregistroj, de junio ĝis aŭgusto 2026. Unu kolumno estas semajno kaj unu ĉelo estas tago; la verda nuanco varias laŭ praktiktempo. Ruĝa kadro markas semajnan mejloŝtonon. La ekzemplo estas je la 18-a de aŭgusto: la dekstra kolumno havas registrojn ĝis mardo; ekde merkredo mankas registroj.">
+    <div class="pl-practice-calendar__months" aria-hidden="true"><span>Junio</span><span>Julio</span><span>Aŭgusto</span></div>
+    <div class="pl-practice-calendar__grid" aria-hidden="true">
+      <span class="pl-practice-calendar__weekday">Dim</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/05/31 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/07 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/14 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/21 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/28 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/05 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/12 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/19 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/26 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/02 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/09 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/08/16 — 15 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Lun</span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/06/01 — 20 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/08 — 45 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/15 — 30 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/22 — 65 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/29 — 40 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/06 — 50 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" title="2026/07/13 — 25 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/20 — 70 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/27 — 55 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/03 — 45 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/10 — 75 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/17 — 60 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Mar</span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/02 — 40 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="1" data-milestone title="2026/06/09 — 25 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/06/16 — 70 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/23 — 35 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/06/30 — 55 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/07 — 80 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/07/14 — 60 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/07/21 — 40 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" data-milestone title="2026/07/28 — 90 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/04 — 60 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" data-milestone title="2026/08/11 — 50 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" data-milestone title="2026/08/18 — 80 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Mer</span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/03 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/10 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/17 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/06/24 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/01 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/08 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/15 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/22 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/07/29 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/05 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="0" title="2026/08/12 — 0 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/19 — ankoraŭ ne registrita (ekzemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Ĵaŭ</span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/04 — 60 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/11 — 75 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/18 — 50 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/25 — 80 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/02 — 70 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/09 — 40 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/16 — 90 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/23 — 50 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/30 — 35 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/06 — 80 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/13 — 60 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/20 — ankoraŭ ne registrita (ekzemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Ven</span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/05 — 30 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/12 — 50 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/19 — 90 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/26 — 45 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/03 — 90 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/10 — 70 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/17 — 45 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/24 — 95 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/31 — 65 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/07 — 40 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/14 — 90 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/21 — ankoraŭ ne registrita (ekzemplo)"></span>
+      <span class="pl-practice-calendar__weekday">Sab</span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/06 — 90 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/06/13 — 65 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/06/20 — 40 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/06/27 — 95 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/07/04 — 30 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/07/11 — 100 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/18 — 80 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/07/25 — 60 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="3" title="2026/08/01 — 80 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="4" title="2026/08/08 — 95 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-level="2" title="2026/08/15 — 40 min (ekzemplo)"></span>
+      <span class="pl-practice-calendar__cell" data-future title="2026/08/22 — ankoraŭ ne registrita (ekzemplo)"></span>
+    </div>
+    <div class="pl-practice-calendar__footer" aria-hidden="true"><span>2026</span><div class="pl-practice-calendar__legend"><span>0 min</span><i data-level="0"></i><i data-level="1"></i><i data-level="2"></i><i data-level="3"></i><i data-level="4"></i><span>90 minutoj+</span></div></div>
+  </div>
+  <figcaption>Unu ĉelo estas tago; ruĝa kadro estas mejloŝtono. La dekstra kolumno ne estas kompleta, kaj sub ĝi mankas registroj. Fikcia ekzemplo.</figcaption>
+</figure>
+</div>
+</section>
 
-  <section id="history">
-    <h2>Akumuliĝo — Ĉio videbla, <wbr>ekde la unua tago</h2>
-    <p>Verdaj nuancoj montras ekzercadon, ruĝaj kadroj lecionojn, kaj horizontala rulumado atingas la unuan registritan tagon. Mi prioritatis superrigardon pri plurjara ekzercado anstataŭ pli malpeza bildigo.</p>
-    <figure class="pl-crop">
-      <picture><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/achievements-dark-1280.webp"><img src="../../../works/practice-log-n-share/assets/achievements-light-1280.webp" width="1280" height="661" loading="lazy" decoding="async" alt="Historikrastro. Verdaj nuancoj montras ekzercokvanton de junio ĝis septembro, ruĝaj kadroj la lecionojn ĉiun duan semajnon."></picture>
-      <figcaption>Kvin niveloj: 0 minutoj, malpli ol 30, malpli ol 60, malpli ol 90, kaj 90 aŭ pli. Tiu akumuliĝo estas la unua afero videbla ĉe malfermo de la aplikaĵo.</figcaption>
-    </figure>
-  </section>
+<section class="pl-chapter" id="process"><h2>5. Evoluiga procezo</h2>
+<div class="pl-feature" id="research"><h3>Difini la rolojn de registrado kaj kunhavigo per esploro kaj dialogo</h3>
+<p>Mi uzis ChatGPT por esplori ekzistantajn aplikaĵojn kaj ordigi la problemon kaj aliron. En la tiama esplorkampo mi trovis tempadministrajn aplikaĵojn, sed ne trovis kunhavigan mekanismon taŭgan por komunikado kun instruisto. Mi kunigis la koncepton konkretigitan per dialogo en specifon kaj donis ĝin al Codex por realigi la unuan version.</p>
+</div>
+<div class="pl-feature" id="evolution"><h3>Provi la unuan version kaj teni la kontrolojn ene de la ekrano</h3>
+<p>Mi mem provis la komencan version generitan de AI, proponis plibonigojn al UI kaj UX, kaj poste adaptis ĝin. Mi kunigis en karto la aktivan mezuradon kaj haltigan agon, kiuj estis apartaj en la unua versio, kaj grandigis la hodiaŭan tempon. Mi ankaŭ serĉis aranĝon, en kiu la kontrolpanelo konvenas al la ekrano.</p>
+<figure class="pl-evolution pl-evolution--comparison"><div class="pl-evolution__screens"><div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="La unua versio de la 9-a de septembro. Registrada ekrano kun ses malgrandaj kategorikartoj kaj hodiaŭa sumo de 40 minutoj en aparta areo."></a><p>Unua versio</p></div><div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="La plibonigita versio de la 21-a de septembro. La registra ekrano kunigas kategorion kaj hodiaŭan tempon en unu granda karto kaj hele montras 10 minutojn da aktuala partiturolegado."></a><p>Plibonigita versio</p></div></div><figcaption>Komparo kun la samaj fikciaj datumoj (6 kategorioj, hodiaŭa sumo 40 minutoj).<br>La plibonigita versio kunigis en karto la aktivan mezuradon kaj haltigon, kiuj estis apartaj en la unua versio.</figcaption></figure>
+<p>Mi elektis malhelan bazon por ekrano restanta malfermita dum praktikado, kun kategoriokoloroj por krei pli helan senton.</p>
+</div>
+<div class="pl-feature" id="touch"><h3>Ebligi elekti la senton de interago per propra tuŝa komparo</h3>
+<p>La senton “glate moviĝas kaj firme haltas” ne eblis precizigi nur per vortoj aŭ bildoj. Tial mi kreis kun AI helpilon, en kiu mi povis mem ŝanĝi kaj provi metodojn kaj valorojn. Mi komparis ilin ĉe vera aparato, uzante kiel kriterion haltpozicion kie la kontrolpanelo konvenas al la ekrano, poste elektis la norman snap-funkcion de la retumilo kaj aplikis ĝin.</p>
+<figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="Ruluma agorda ilo. Kune aperas elektoj kaj parametroj por kvin snap-metodoj kaj telefona ekrano por provi la interagon."></a><figcaption>Mi ŝanĝis metodojn kaj parametrojn kaj tuŝe komparis ĉe vera aparato kiel la rulumado haltas.</figcaption></figure>
+</div>
+<div class="pl-feature" id="review"><h3>Uzi sendependan revizion kaj mem decidi kion adopti</h3>
+<p>En du sendependaj AI-sesioj mi ripetis laborfluon: mi mem kontrolis la problemojn kaj plibonigajn proponojn de Claude Code, poste Codex kontrolis ilin kaj aplikis necesajn korektojn. Proponoj foje malproksimiĝas de la celita UI aŭ UX, do mi decidis ĉu adopti ilin laŭ la celo de la aplikaĵo kaj la reala sento dum uzo.<br>
+* Mi ripetis ĉi tiun procezon ĉirkaŭ 15 fojojn; la fakto, ke la AI-revizioj ne plu montris gravajn mankojn, estis unu el la kriterioj por ĉesigi plibonigojn.</p>
+</div>
+</section>
 
-  <section id="sharing">
-    <h2>Kundivido — Komence de leciono, <wbr>unu ekrano klarigas ĉion</h2>
-    <p>Totaloj laŭ kategorio kaj ĉiutagaj detaloj resumas la tempon de la lasta leciono ĝis hodiaŭ, pretaj por montri al la instruisto. La taga tabelo enhavas ĉiujn kategoriojn sur unu ekrano, eĉ koste de pli malgranda teksto, sen horizontala rulumado.</p>
-    <figure class="pl-map pl-map--share"><div class="pl-map__screen"><a class="pl-enlarge" href="../../../works/practice-log-n-share/assets/share-light-1320.webp" data-dark-href="../../../works/practice-log-n-share/assets/share-dark-1320.webp"><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/share-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/share-dark-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem"><img src="../../../works/practice-log-n-share/assets/share-light-864.webp" srcset="../../../works/practice-log-n-share/assets/share-light-576.webp 576w, ../../../works/practice-log-n-share/assets/share-light-864.webp 864w" sizes="(max-width: 36rem) 68vw, 17rem" width="864" height="1877" alt="Kundivida ekrano. De la leciono de la 17-a ĝis la 24-a de septembro: entute 4 horoj 38 minutoj, stangoj laŭ kategorio kaj taga tabelo kun ĉiuj kategorioj sen horizontala rulumado." loading="lazy" decoding="async"></picture></a><span class="pl-map__pin pl-map__point--share-1" aria-hidden="true">1</span><span class="pl-map__pin pl-map__point--share-2" aria-hidden="true">2</span><span class="pl-map__pin pl-map__point--share-3" aria-hidden="true">3</span><span class="pl-map__pin pl-map__point--share-4" aria-hidden="true">4</span></div><dl class="pl-map__notes"><div class="pl-map__note pl-map__point--share-1"><dt><span class="pl-map__number">1 </span>Periodo</dt><dd>De la lasta leciondato ĝis hodiaŭ.</dd></div><div class="pl-map__note pl-map__point--share-2"><dt><span class="pl-map__number">2 </span>Totalo</dt><dd>Ekzercotempo kaj nombro de tagoj en la periodo.</dd></div><div class="pl-map__note pl-map__point--share-3"><dt><span class="pl-map__number">3 </span>Divido</dt><dd>Nomo, stango kaj tempo en unu vico.</dd></div><div class="pl-map__note pl-map__point--share-4"><dt><span class="pl-map__number">4 </span>Detaloj</dt><dd>Ĉiuj kategorioj sur unu ekrano, sen horizontala rulumado.</dd></div></dl><figcaption>Malfermu la bildon por pligrandigi la ĉiutagajn detalojn.</figcaption></figure>
-  </section>
+<section class="pl-chapter" id="reflection"><h2>6. Rezultoj kaj venontaj paŝoj</h2>
+<h3>Kutimiĝis malfermi la aplikaĵon ĉe la komenco de praktikado</h3>
+<p>Mi instalis la aplikaĵon en mia iPhone kaj uzis ĝin en ĉiutaga praktikado, konfirmante la facilecon registri per unu tuŝo tenante instrumenton. Malfermi la aplikaĵon komence de praktikado fariĝis pozitiva kutimo. Revizii la ordon kaj distribuon de la tagaj ekzercoj kaj memori la venontan lecionan daton helpas mian praktikplanadon.</p>
+<h3>La instruisto petis pli detalajn registrojn</h3>
+<p>Laŭ la esenco de la reago, la instruisto diris, ke la praktikenhavo estas tuj komprenebla, kaj ke estus pli utile registri ankaŭ la tipon de gamo. Ĉi tiuj konkludoj baziĝas sur mia propra praktikado kaj lecionoj kun la instruisto, do ili estas <span class="pl-term">persona sperto.</span></p>
+<h3>La venonta defio estas ekvilibrigi detalojn kaj facilan enigon</h3>
+<p>Mi konsideras aldoni subkategoriojn sub “gamoj”, ekzemple “pentatona gamo”. La maniero facile registri ankoraŭ estas esplorata. Por la kunhaviga ekrano mi ankaŭ pripensas hierarkian montradon de kategorioj kaj subkategorioj anstataŭ la ĉiutaga tabelo.</p>
+</section>
 
-  <section id="evolution">
-    <h2>Evoluo — Kartoj fariĝas <wbr>la regpanelo de ekzercado</h2>
-    <p>Mi konstruis la ekranojn laŭ specifo ellaborita per dialogo kun AI, poste mem ripete provis kaj reviziis ilin. En frua reta versio mi esploris registradon kaj kundividon, antaŭ ol realigi la aplikaĵon por iPhone.</p>
-    <figure class="pl-evolution">
-      <div class="pl-evolution__screens">
-        <div><a href="../../../works/practice-log-n-share/assets/initial-log.webp"><img src="../../../works/practice-log-n-share/assets/initial-log.webp" width="393" height="852" loading="lazy" decoding="async" alt="Unua versio de la 9-a de septembro. Ses malgrandaj kategoriaj kartoj kaj la hodiaŭa totalo de 40 minutoj troviĝas en apartaj partoj de la registra ekrano."></a><p>9-a de septembro<br>Unua versio</p></div>
-        <div><a href="../../../works/practice-log-n-share/assets/log-40min.webp"><img src="../../../works/practice-log-n-share/assets/log-40min.webp" width="393" height="852" loading="lazy" decoding="async" alt="Reta versio de la 21-a de septembro. Kategorio kaj hodiaŭa tempo kunestas en grandaj kartoj; la nunaj 10 minutoj da notlegado estas heligitaj."></a><p>21-a de septembro<br>Reta versio</p></div>
-        <div><picture class="pl-phone"><source media="(prefers-color-scheme: dark)" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 28vw, 12.25rem" width="864" height="1877" alt="Registra ekrano. Historikrastro troviĝas super la hodiaŭa stango (entute 54 minutoj) kaj la kategoriaj kartoj. La ekzercado de muzikpecoj daŭras jam pli ol 27 minutojn, markita per pli hela koloro kaj blanka konturo." loading="lazy" decoding="async"></picture><p>24-a de septembro<br>iOS 1.0</p></div>
-      </div>
-      <figcaption>La unua kaj reta versioj uzas la samajn fikciajn datumojn (ses kategorioj, entute 40 minutoj hodiaŭ). iOS 1.0 uzas aliajn fikciajn datumojn.</figcaption>
-    </figure>
-    <dl class="pl-changes">
-      <div><dt>Nomo kaj tempo kune</dt><dd>Mi montris la hodiaŭan tempon grande sur ĉiu karto, ligante la ekzercatan enhavon kun ĝia daŭro.</dd></div>
-      <div><dt>La nuna stato je unu rigardo</dt><dd>Mi heligis nur la karton kun aktiva mezurado kaj malheligis la ceterajn.</dd></div>
-      <div><dt>Regiloj ene de la ekrano</dt><dd>Mi igis la rulumadon halti tie, kie tuta vico de kartoj eniĝas en la ekranon.</dd></div>
-    </dl>
-    <p>Fine mi ripetis ciklon ĉirkaŭ 15 fojojn: Claude Code proponis eblajn problemojn, Codex kontrolis kaj korektis ilin, kaj mi decidis kiujn ŝanĝojn akcepti.</p>
-  </section>
-
-  <section id="touch">
-    <h2>Sentumo — Elekti la haltmanieron <wbr>per propra provo</h2>
-    <p>Nur vortaj instrukcioj ne donis la senton «glate moviĝi kaj precize halti». Kun AI mi kreis agordilon por tuj ŝanĝi metodojn kaj valorojn, komparis kvin metodojn sur vera aparato kaj elektis la denaskan rulumfiksadon de la retumilo.</p>
-    <figure class="pl-traces">
-      <div class="pl-traces__grid">
-        <div><p>Ĝiba modelo</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-hump.svg" width="180" height="195" loading="lazy" decoding="async" alt="Kvin gestoj sur vera aparato kun Ĝiba modelo. Horizontala akso: 0–1200 milisekundoj post forlevo de la fingro; vertikala: distanco de la fiksopozicio. La streketa nulo markas tiun pozicion; la punkto ĉe ĉiu linifino estas la lasta mezurita pozicio."></div>
-        <div><p>Antaŭvidita finpunkto</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-projection.svg" width="180" height="195" loading="lazy" decoding="async" alt="Kvin gestoj sur vera aparato kun Antaŭvidita finpunkto. Horizontala akso: 0–1200 milisekundoj post forlevo de la fingro; vertikala: distanco de la fiksopozicio. La streketa nulo markas tiun pozicion; la punkto ĉe ĉiu linifino estas la lasta mezurita pozicio."></div>
-        <div class="pl-traces__adopted"><p>Denaska proximity<br><span>Elektita</span></p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-proximity.svg" width="180" height="195" loading="lazy" decoding="async" alt="Kvin gestoj sur vera aparato kun Denaska proximity. Horizontala akso: 0–1200 milisekundoj post forlevo de la fingro; vertikala: distanco de la fiksopozicio. La streketa nulo markas tiun pozicion; la punkto ĉe ĉiu linifino estas la lasta mezurita pozicio."></div>
-        <div><p>Denaska mandatory</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-css-mandatory.svg" width="180" height="195" loading="lazy" decoding="async" alt="Kvin gestoj sur vera aparato kun Denaska mandatory. Horizontala akso: 0–1200 milisekundoj post forlevo de la fingro; vertikala: distanco de la fiksopozicio. La streketa nulo markas tiun pozicion; la punkto ĉe ĉiu linifino estas la lasta mezurita pozicio."></div>
-        <div><p>Sen fiksado</p><img src="../../../works/practice-log-n-share/assets/scroll-traces-off.svg" width="180" height="195" loading="lazy" decoding="async" alt="Kvin gestoj sur vera aparato kun Sen fiksado. Horizontala akso: 0–1200 milisekundoj post forlevo de la fingro; vertikala: distanco de la fiksopozicio. La streketa nulo markas tiun pozicion; la punkto ĉe ĉiu linifino estas la lasta mezurita pozicio."></div>
-      </div>
-      <figcaption>Pozicioj post forlevo de la fingro, komparitaj laŭ la sama skalo. La streketa nulo estas la fiksopozicio. El la aparataj protokoloj mi elektis po kvin gestojn por metodo kun rapidoj de 0,6–1,8 px/ms, kalkulitaj el la pozicioj dum la antaŭaj 60 ms, prioritate la plej proksimajn al 1,2 px/ms. Agordoj, komencaj pozicioj kaj direktoj varias inter gestoj.</figcaption>
-    </figure>
-    <figure class="pl-tuner"><a href="../../../works/practice-log-n-share/assets/scroll-tuner.webp"><img src="../../../works/practice-log-n-share/assets/scroll-tuner.webp" width="1005" height="602" loading="lazy" decoding="async" alt="Rulumagordilo. Elektiloj por kvin fiksmetodoj kaj iliaj parametroj apud telefona ekrano por provi la interagon."></a><figcaption>Mi komparis la haltadon sur vera aparato, registrante rulumdistancon kaj rapidon. Malfermu la bildon por pligrandigi ĝin.</figcaption></figure>
-  </section>
-
-  <section id="product">
-    <h2>Kiel produkto — Preter ekzercado</h2>
-    <p>La aspekto sekvas la aparatajn agordojn. Ekzercregistroj konserviĝas sur la aparato kaj aŭtomate savkopiiĝas al iCloud.</p>
-    <figure class="pl-pair pl-pair--appearance"><div class="pl-pair__screens"><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-light-864.webp" srcset="../../../works/practice-log-n-share/assets/log-light-576.webp 576w, ../../../works/practice-log-n-share/assets/log-light-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Hela reĝimo. Registra ekrano. Historikrastro troviĝas super la hodiaŭa stango (entute 54 minutoj) kaj la kategoriaj kartoj. La ekzercado de muzikpecoj daŭras jam pli ol 27 minutojn, markita per pli hela koloro kaj blanka konturo." loading="lazy" decoding="async"></picture><picture class="pl-phone"><img src="../../../works/practice-log-n-share/assets/log-dark-864.webp" srcset="../../../works/practice-log-n-share/assets/log-dark-576.webp 576w, ../../../works/practice-log-n-share/assets/log-dark-864.webp 864w" sizes="(max-width: 36rem) 38vw, 15rem" width="864" height="1877" alt="Malhela reĝimo. Registra ekrano. Historikrastro troviĝas super la hodiaŭa stango (entute 54 minutoj) kaj la kategoriaj kartoj. La ekzercado de muzikpecoj daŭras jam pli ol 27 minutojn, markita per pli hela koloro kaj blanka konturo." loading="lazy" decoding="async"></picture></div><figcaption>La sama registra ekrano en hela kaj malhela reĝimoj.</figcaption></figure>
-    <figure class="pl-icons">
-      <picture><source media="(max-width: 36rem)" srcset="../../../works/practice-log-n-share/assets/theme-icons-narrow.svg" width="360" height="432"><img src="../../../works/practice-log-n-share/assets/theme-icons.svg" width="640" height="192" loading="lazy" decoding="async" alt="109 temaj piktogramoj laŭ la ekzercata agado, ordigitaj kiel instrumentoj, sporto, lernado, pentrado, manlaboro kaj esprimaj agadoj."></picture>
-      <figcaption>Eblas elekti piktogramon por la aplikaĵa kapo laŭ la ekzercado: 47 por muziko, 15 por sporto, 15 por lingvoj kaj lernado, 11 por arto, 14 por kreado kaj ĉiutaga vivo, kaj 7 por esprimo. La saksofono baziĝas sur Qlementine Icons (MIT-licenco).</figcaption>
-    </figure>
-  </section>
-
-  <section id="reflection">
-    <h2>Dum uzado — La sekva demando: <wbr>kiom detale registri</h2>
-    <p>Mi uzis la aplikaĵon dum matena ekzercado kaj montris la ekranon al mia instruisto dum leciono. La respondo estis, ke la enhavo tuj kompreneblas kaj ke registri la gamtipojn estus ankoraŭ pli utile (parafrazo). Mi pripensas plian nivelon sub la kategorioj por pli da detaloj sen perdi simplecon.</p>
-  </section>
-
-  <section id="slides">
-    <h2>Materialoj</h2>
-    <p><a href="https://practice-log-n-share-demo-2026.tkfmh.chatgpt.site/" target="_blank" rel="noopener">La reta demonstraĵo</a> ebligas provi registradon kaj kundividon. Ĝi enhavas miajn proprajn ekzercregistrojn ĝis la 20-a de septembro 2026; viaj ŝanĝoj konserviĝas nur en la uzata retumilo.</p>
-    <figure class="pl-slides bleed">
-      <ol class="pl-slides__strip" tabindex="0" aria-label="Projektaj lumbildoj" aria-describedby="slides-help">
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 1. Kovrilo: evoluigo de aplikaĵo por registri ekzercadon kaj montri ĝin al la instruisto. Takafumi Horiuchi."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 2. Superrigardo: Log por registri kaj Share por montri ekzercadon al la instruisto. Rolo, periodo kaj iloj."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 3. Fono: precize komuniki la saksofonan ekzercadon al la instruisto. Problemoj de papera taglibro kaj ekzistantaj aplikaĵoj."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 4. Aliro: registrado per unu tuŝo kaj tuj komprenebla bildigo. Akumuliĝo laŭ du temposkaloj: tago kaj monatoj aŭ jaroj."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 5. Kvar uzoj de AI: esplorado, baza realigo, ilo por agordi interagon kaj optimumigo."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 6. Kunlaboro kun AI: esplori ekzistantajn aplikaĵojn kaj konkretigi la koncepton per dialogo."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 7. Baza realigo: komparo de AI-generita V0 kaj V1 reviziita per ripetaj komentoj pri aranĝo kaj koloroj."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 8. Agordi interagon: ilo kreita kun AI por mem kompari rulumrapidon kaj haltadon."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 9. Optimumigo: ripetaj problemproponoj de Claude Code, kontroloj kaj korektoj de Codex, kaj homaj decidoj."></a></li>
-        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Lumbildo 10. Rezultoj kaj sekvaj paŝoj: propra uzo, instruistaj komentoj kaj pripenso de subkategorioj por pli detalaj registroj."></a></li>
+<aside class="pl-resources" id="slides" aria-labelledby="resources-title"><h2 id="resources-title">7. (Referenco) Prezentaj lumbildoj</h2>
+<figure class="pl-slides bleed">
+      <ol class="pl-slides__strip" tabindex="0" aria-label="Lumbildoj de la projekto">
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-01.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-01.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 1. Kovrilo: evoluigo de registra aplikaĵo por kunhavigi praktikadon kun leciona instruisto. Takafumi Horiuchi."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-02.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-02.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 2. Superrigardo: Log por registri praktikadon kaj Share por kunhavigi la staton kun instruisto. respondecoj, periodo kaj uzitaj iloj."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-03.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-03.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 3. Fono: deziro precize komuniki saksofonan praktikadon al instruisto. Malfacilaĵoj pri papera praktiktaglibro kaj ekzistantaj aplikaĵoj."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-04.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-04.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 4. Aliro: registrado per unu tuŝo kaj tuj komprenebla bildigo. Akumuliĝo de praktikado montrata laŭ du tempaj skaloj: tago kaj monato/jaro."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-05.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-05.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 5. Kvar uzokazoj de AI: esploro, baza realigo, kreado de helpilo por agordi interagan senton, kaj optimumigo de realigo."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-06.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-06.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 2. Superrigardo: Log por registri praktikadon kaj Share por kunhavigi la staton kun instruisto. Respondecoj, periodo kaj uzitaj iloj."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-07.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-07.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 7. Baza realigo: komparo inter AI-generita unua versio V0 kaj plibonigita versio V1 post ripetaj komentoj pri aranĝo kaj koloroj."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-08.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-08.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 8. Agordi interagan senton: krei helpilon kun AI por mem kompari rulumrapidecon kaj la manieron halti."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-09.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-09.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 9. Optimumigo de realigo: Claude Code prezentas eblajn problemojn; Codex plurfoje kontrolas kaj korektas, dum homo decidas."></a></li>
+        <li><a href="../../../works/practice-log-n-share/assets/slides/slide-10.webp"><img src="../../../works/practice-log-n-share/assets/slides/slide-10.webp" width="2000" height="1500" loading="lazy" decoding="async" alt="Paĝo 10. Rezultoj kaj venontaj paŝoj: uzo por propra praktikado, reagoj de la leciona instruisto, kaj konsidero de subkategorioj por pli detalaj registroj."></a></li>
       </ol>
-      <figcaption id="slides-help">Rulumu horizontale tra la lumbildoj. Klaku aŭ tuŝu por pligrandigi. La originaloj estas japanlingvaj.</figcaption>
     </figure>
-    <p><a href="../../../works/practice-log-n-share/assets/practice-log-n-share-slides.pdf" type="application/pdf" target="_blank" rel="noopener">Malfermi la projektajn materialojn kiel PDF (japane, 4,4 MB)</a></p>
-  </section>
+</aside>
+
   <nav aria-label="Retejo">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Reen al la verkaro de Takafumi Horiuchi</span></a></li>
