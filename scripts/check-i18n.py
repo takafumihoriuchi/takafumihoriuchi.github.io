@@ -20,7 +20,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from langs import LANGS, PAGES, DEFAULT_LANG, page_url  # noqa: E402
+from langs import LANGS, PAGES, page_url  # noqa: E402
 
 
 def attr(tag: str, name: str):
@@ -40,9 +40,18 @@ def check(langs=None) -> list:
         expected_alts = {code: page_url(d, page) for code, d, _, _ in langs}
         expected_alts["x-default"] = page_url("", page)
 
-        # Section shape is compared against the default language, which is the
-        # source the translations are made from.
+        # Japanese is the default source (owner instruction, 2026-10-06).
+        # A completed Japanese write-up can precede its other translations.
         reference_h2 = None
+        reference_code = None
+        japanese_dir = next((d for code, d, _, _ in langs if code == "ja"), None)
+        if japanese_dir is not None:
+            japanese_path = root / japanese_dir / page / "index.html"
+            if japanese_path.exists():
+                japanese_src = japanese_path.read_text(encoding="utf-8")
+                if '"creativeWorkStatus"' not in japanese_src:
+                    reference_h2 = len(re.findall(r"<h2\b", japanese_src))
+                    reference_code = "ja"
 
         for code, d, endonym, direction in langs:
             path = root / d / page / "index.html"
@@ -105,12 +114,17 @@ def check(langs=None) -> list:
             if f'lang="{code}" translate="no" aria-current' not in src:
                 bad(where, "language switcher does not mark the current language")
 
-            # Shape: same number of headings as the source language.
+            # Scaffolds declare creativeWorkStatus; compare completed versions
+            # only. Fall back to the first completed language if Japanese is
+            # still a draft or is not included in this check.
+            if '"creativeWorkStatus"' in src:
+                continue
             h2 = len(re.findall(r"<h2\b", src))
-            if code == DEFAULT_LANG:
+            if reference_h2 is None:
                 reference_h2 = h2
+                reference_code = code
             elif reference_h2 is not None and h2 != reference_h2:
-                bad(where, f"{h2} <h2> headings, source has {reference_h2} "
+                bad(where, f"{h2} <h2> headings, {reference_code} source has {reference_h2} "
                            "— a section is missing or extra")
 
     return problems

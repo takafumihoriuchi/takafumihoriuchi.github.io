@@ -578,3 +578,15 @@ html:lang(ar) .pl-practice-calendar__legend { direction: rtl; unicode-bidi: isol
 
 /* German compounds in section titles exceed the 320px reading column. */
 html:lang(de) main h2 { -webkit-hyphens: auto; hyphens: auto; overflow-wrap: break-word; }
+
+/* Translations follow the Japanese source with compact weekday labels. */
+html:not(:lang(ja)) .pl-practice-calendar { --pl-weekday-width: 1rem; }
+
+/* Use each language's natural word boundaries, with a narrow-screen fallback. */
+html[lang]:not(:lang(ja)) .pl-subtitle,
+html[lang]:not(:lang(ja)) main :is(h2, h3, h4, figcaption) { word-break: normal; }
+html[lang]:not(:lang(ja)) main :is(h2, h3, h4) {
+  -webkit-hyphens: auto;
+  hyphens: auto;
+  overflow-wrap: break-word;
+}
