@@ -21,6 +21,7 @@ from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from langs import LANGS, PAGES, page_url  # noqa: E402
+from langs import PARTIAL_PAGES, page_languages  # noqa: E402
 
 
 def attr(tag: str, name: str):
@@ -36,9 +37,13 @@ def check(langs=None) -> list:
     def bad(where, msg):
         problems.append(f"{where}: {msg}")
 
-    for page in PAGES:
-        expected_alts = {code: page_url(d, page) for code, d, _, _ in langs}
-        expected_alts["x-default"] = page_url("", page)
+    for page in [*PAGES, *PARTIAL_PAGES]:
+        available = page_languages(page, langs)
+        if not available:
+            continue
+        expected_alts = {code: page_url(d, page) for code, d, _, _ in available}
+        default_dir = available[0][1] if page in PARTIAL_PAGES else ""
+        expected_alts["x-default"] = page_url(default_dir, page)
 
         # Japanese is the default source (owner instruction, 2026-10-06).
         # A completed Japanese write-up can precede its other translations.
@@ -53,7 +58,7 @@ def check(langs=None) -> list:
                     reference_h2 = len(re.findall(r"<h2\b", japanese_src))
                     reference_code = "ja"
 
-        for code, d, endonym, direction in langs:
+        for code, d, endonym, direction in available:
             path = root / d / page / "index.html"
             where = str(path.relative_to(root))
 
@@ -106,7 +111,7 @@ def check(langs=None) -> list:
                 bad(where, f"hreflang {k} is not a language of this site")
 
             # Switcher: every language present, the current one not a link.
-            for c2, _, endo2, _ in langs:
+            for c2, _, endo2, _ in available:
                 if c2 == code:
                     continue
                 if f'lang="{c2}" hreflang="{c2}"' not in src:
@@ -137,4 +142,4 @@ if __name__ == "__main__":
         for p in found:
             print("  " + p)
         sys.exit(1)
-    print(f"OK — {len(LANGS)} languages x {len(PAGES)} pages line up")
+    print(f"OK — {len(LANGS)} languages x {len(PAGES)} pages and {len(PARTIAL_PAGES)} partial-language page(s) line up")

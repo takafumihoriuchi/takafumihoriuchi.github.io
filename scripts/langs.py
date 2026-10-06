@@ -52,6 +52,18 @@ PAGES = [
 # rank: every version is an alternate of every other.
 DEFAULT_LANG = "en"
 
+# Pages intentionally published in a subset of languages. Keep these out of
+# PAGES until translated; they do not inherit the full site's ASCII scaffolds.
+PARTIAL_PAGES = {
+    "works/arpeggicho/": ("ja",),
+}
+
+
+def page_languages(page, langs=None):
+    """Only link to translations that are intended to exist for this page."""
+    return [lang for lang in (LANGS if langs is None else langs)
+            if page not in PARTIAL_PAGES or lang[0] in PARTIAL_PAGES[page]]
+
 
 def page_url(lang_dir: str, page: str) -> str:
     """Absolute URL of `page` in the language living in `lang_dir`."""
