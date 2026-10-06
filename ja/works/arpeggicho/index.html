@@ -63,14 +63,63 @@
 <main>
   <header>
     <h1>Arpeggicho</h1>
-    <p class="arpeggicho-subtitle">演奏された<wbr>アルペジオ（分散和音）を<wbr>コード（和音）として<wbr>リアルタイム再生するアプリ</p>
+    <p class="arpeggicho-subtitle">演奏された<wbr>アルペジオ（分散和音）を<wbr>コード（和音）として<wbr>リアルタイム再生するシステム</p>
     <p class="dateline">2026年10月</p>
   </header>
 
-  <!-- 本文は後日追加。現時点ではライブデモのみを掲載する。 -->
-  <figure class="video-embed">
-    <iframe src="https://www.youtube-nocookie.com/embed/JM0M0jAgjAU" title="Arpeggichoのライブデモ" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-  </figure>
+  <section class="arpeggicho-overview" id="overview" aria-labelledby="overview-title">
+    <h2 id="overview-title">1. 概要</h2>
+    <p>自分が演奏した音を一音ずつ録音して重ね、アルペジオ（分散和音）をコード（和音）として聴くためのシステム。単音で演奏する楽器でも、自分の音を和音の響きとしてリアルタイムに確かめられる。</p>
+    <figure class="video-embed">
+      <iframe src="https://www.youtube-nocookie.com/embed/JM0M0jAgjAU" title="Arpeggichoのライブデモ" width="560" height="315" loading="lazy" referrerpolicy="strict-origin-when-cross-origin" allow="accelerometer; autoplay; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>開発中のプロトタイプを使ったデモの様子</figcaption>
+    </figure>
+  </section>
+
+  <section class="arpeggicho-chapter" id="background" aria-labelledby="background-title">
+    <h2 id="background-title">2. 背景と課題</h2>
+    <p>サックスでアルペジオを練習するうちに、指を動かす順番や運指の形として覚えてしまい、一音ずつ吹いている音が、どのような和音の響きになるのかを頭の中で結びつけにくいと感じた。</p>
+    <p>そこで、演奏した音を実際に重ねて聴くことで、アルペジオとコードの関係を耳でつかむための道具を考えた。</p>
+  </section>
+
+  <section class="arpeggicho-chapter" id="approach" aria-labelledby="approach-title">
+    <h2 id="approach-title">3. アプローチ</h2>
+    <figure class="arpeggicho-pair">
+      <div class="arpeggicho-pair__screens">
+        <a href="../../../works/arpeggicho/assets/portrait-c-e.webp" aria-label="CとEの2音を表示した画面を拡大">
+          <img src="../../../works/arpeggicho/assets/portrait-c-e.webp" width="786" height="1704" loading="lazy" alt="CとEの2音を表示したArpeggichoの縦画面。コード名はまだ表示されていない。">
+        </a>
+        <a href="../../../works/arpeggicho/assets/portrait-c-e-g.webp" aria-label="C・E・Gの3音を表示した画面を拡大">
+          <img src="../../../works/arpeggicho/assets/portrait-c-e-g.webp" width="786" height="1704" loading="lazy" alt="C・E・Gの3音と、Cメジャーを示すコード名Cを表示したArpeggichoの縦画面。">
+        </a>
+      </div>
+      <figcaption>左：CとEの2音を鳴らした段階。右：Gが加わり、Cメジャーの三和音が完成した段階</figcaption>
+    </figure>
+    <div class="arpeggicho-experience">
+      <h3>体験① 演奏中に和音をつくる</h3>
+      <p>一つ前までに吹いた音をシステムが鳴らし続ける。その響きを聴きながら次の音を吹くと、保持された音と今の演奏音が重なり、音程の関係や和音の響きを演奏中に確かめられる。</p>
+    </div>
+    <div class="arpeggicho-experience">
+      <h3>体験② 演奏後に響きを聴き返す</h3>
+      <p>吹き終えた後も、自分が演奏した音が和音として鳴り続ける。楽器を吹く動作から離れ、自分のアルペジオがつくった響きを客観的に聴き返せる。</p>
+    </div>
+    <div class="arpeggicho-experience">
+      <h3>ポイント：自分の演奏音を使う</h3>
+      <p>再生するのは、あらかじめ用意された楽器音ではなく、その場で録音した自分の演奏音。自分の音色や音程を含む響きを使うことで、演奏中に音を重ねる体験と、演奏後に聴き返す体験の両方を、自分の演奏に結びつける。</p>
+    </div>
+  </section>
+
+  <section class="arpeggicho-chapter" id="making" aria-labelledby="making-title">
+    <h2 id="making-title">4. 制作における工夫</h2>
+    <p>物理世界を扱うシステムとして、使う場所や音の入出力の条件も設計の対象になる。まず、開始時に約1秒間の環境音を測るキャリブレーションを行い、その音量を基準に、演奏音を検出するためのしきい値を調整する。</p>
+    <p>次に、同じ空間でスピーカーの再生と、新しい演奏音の収音が同時に起きる。マイクには両方の音が入るため、再生された音と新しく吹いた音をどう区別するかも、制作上の課題となった。</p>
+    <p>音程や音量が不安定な区間は採用せず、録音のうち安定した150〜300ミリ秒を選び、つなぎ目をなめらかにしたループとして再生する。音を重ねたときの出力ピークも抑え、音量が過大にならないようにしている。</p>
+  </section>
+
+  <section class="arpeggicho-chapter" id="next" aria-labelledby="next-title">
+    <h2 id="next-title">5. 今後の課題</h2>
+    <p>現在は開発中のシステムで、一般公開は未実施。音の認識の品質向上と、練習中に扱いやすいUI/UXへの改善を進めたい。学習効果も未検証のため、実際の練習を通じて、アルペジオとコードの関係を耳でつかむ助けになるかを確かめたい。</p>
+  </section>
 
   <nav class="back" aria-label="ナビゲーション">
     <ul>

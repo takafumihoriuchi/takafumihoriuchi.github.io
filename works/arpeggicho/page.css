@@ -1,12 +1,37 @@
+/* Match the reading rhythm of the Japanese Practice Log n Share page. */
+html[lang] main {
+  --space-para: 1.5rem;
+  --arpeggicho-section-gap: var(--space-section);
+  font-size: 1rem;
+  line-height: 1.85;
+}
+html[lang] main > header { margin-block-end: 2.5rem; }
+html[lang] main h1 { font-size: clamp(1.75rem, 5vw, 2rem); line-height: 1.35; }
+html[lang] main .dateline { margin-block: .5rem 0; font-size: .8125rem; line-height: 1.7; }
+html[lang] main h2 { font-size: 1.5rem; line-height: 1.45; margin-block: 0 1.5rem; }
+html[lang] main h3 { font-size: 1.125rem; line-height: 1.6; margin-block: 0 1rem; }
+html[lang] main :is(h2, h3) {
+  word-break: auto-phrase;
+  overflow-wrap: break-word;
+  text-wrap: balance;
+}
 .arpeggicho-subtitle {
-  margin: 0.65rem 0 0;
+  margin-block: .5rem 0;
+  line-height: 1.65;
   text-wrap: pretty;
   word-break: keep-all;
   overflow-wrap: break-word;
 }
-
-.video-embed { margin: var(--space-section) 0; }
-
+.arpeggicho-overview { margin-block-start: 0; }
+.arpeggicho-chapter {
+  margin-block-start: calc(var(--arpeggicho-section-gap) / 2);
+  padding-block-start: calc(var(--arpeggicho-section-gap) / 2);
+  border-block-start: 1px solid var(--rule);
+}
+.arpeggicho-experience + .arpeggicho-experience { margin-block-start: 3rem; }
+section p { text-align: justify; }
+html[lang] main .arpeggicho-status { font-size: .875rem; line-height: 1.75; text-align: start; }
+.video-embed { margin-block: 3rem 1.5rem; }
 .video-embed iframe {
   display: block;
   width: 100%;
@@ -14,3 +39,34 @@
   aspect-ratio: 16 / 9;
   border: 0;
 }
+html[lang] main figcaption {
+  margin-block-start: 1rem;
+  font-size: .8125rem;
+  line-height: 1.75;
+  text-align: center;
+  text-wrap: balance;
+}
+@media (max-width: 36rem) {
+  html[lang] main { --arpeggicho-section-gap: 5rem; }
+  html[lang] main h2 { font-size: 1.375rem; }
+  .video-embed { margin-block-start: 2.5rem; }
+}
+
+/* Two complete simulator UI reproductions; no device frame or diagram overlay. */
+.arpeggicho-pair { margin-block: 3rem; }
+.arpeggicho-pair__screens {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: clamp(.75rem, 4vw, 2rem);
+  max-width: 32rem;
+  margin-inline: auto;
+}
+.arpeggicho-pair__screens a { display: block; cursor: zoom-in; }
+.arpeggicho-pair__screens img {
+  display: block;
+  width: 100%;
+  height: auto;
+  border-radius: .5rem;
+  box-shadow: 0 0 0 1px var(--rule);
+}
+.arpeggicho-pair__provenance { display: block; margin-block-start: .5rem; }
