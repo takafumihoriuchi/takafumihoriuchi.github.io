@@ -160,10 +160,11 @@ def main() -> int:
     )
     page_scenes = manifest.get("pages", {})
     illustrated_pages = set(manifest.get("illustratedPages", []))
+    plain_pages = set(manifest.get("plainPages", []))
     footer_scene_id = manifest.get("homeFooter")
 
-    missing_pages = sorted(set(PAGES) - (set(page_scenes) | illustrated_pages))
-    extra_pages = sorted((set(page_scenes) | illustrated_pages) - set(PAGES))
+    missing_pages = sorted(set(PAGES) - (set(page_scenes) | illustrated_pages | plain_pages))
+    extra_pages = sorted((set(page_scenes) | illustrated_pages | plain_pages) - set(PAGES))
     if missing_pages or extra_pages:
         raise SystemExit(
             "ascii/page-scenes.json and scripts/langs.py PAGES differ: "
@@ -183,6 +184,8 @@ def main() -> int:
     changed: list[str] = []
 
     for page in PAGES:
+        if page in plain_pages:
+            continue
         for _, directory, _, _ in LANGS:
             scene_id = page_scenes.get(page)
             path = root / directory / page / "index.html"
