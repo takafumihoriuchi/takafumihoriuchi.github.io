@@ -22,6 +22,7 @@ def main() -> int:
     )
     page_scenes = manifest.get("pages", {})
     illustrated_pages = set(manifest.get("illustratedPages", []))
+    plain_pages = set(manifest.get("plainPages", []))
     footer_scene_id = manifest.get("homeFooter")
     problems: list[str] = []
 
@@ -32,12 +33,14 @@ def main() -> int:
         variant = scenes[scene_id]["variants"]["wide"]
         return variant.get("themes", {}).get("light", variant)["lines"]
 
-    for page in sorted(set(PAGES) - (set(page_scenes) | illustrated_pages)):
+    for page in sorted(set(PAGES) - (set(page_scenes) | illustrated_pages | plain_pages)):
         bad("ascii/page-scenes.json", f"missing page route {page!r}")
-    for page in sorted((set(page_scenes) | illustrated_pages) - set(PAGES)):
+    for page in sorted((set(page_scenes) | illustrated_pages | plain_pages) - set(PAGES)):
         bad("ascii/page-scenes.json", f"unknown page route {page!r}")
     for page in sorted(set(page_scenes) & illustrated_pages):
         bad("ascii/page-scenes.json", f"route {page!r} has both ASCII and illustrated heroes")
+    for page in sorted(plain_pages & (set(page_scenes) | illustrated_pages)):
+        bad("ascii/page-scenes.json", f"plain route {page!r} also declares a hero")
     for page, scene_id in page_scenes.items():
         if scene_id not in scenes:
             bad(
@@ -131,6 +134,8 @@ def main() -> int:
                 bad(where, f"{name} light and dark grids must have equal dimensions")
 
     for page in PAGES:
+        if page in plain_pages:
+            continue
         for _, directory, _, _ in LANGS:
             if page in illustrated_pages or ((root / directory / page / "index.html").exists() and 'data-ascii-art="none"' in (root / directory / page / "index.html").read_text(encoding="utf-8")):
                 path = root / directory / page / "index.html"

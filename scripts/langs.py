@@ -45,6 +45,7 @@ PAGES = [
     "works/practice-log-n-share/",
     "works/no-ads-simplest-metronome/",
     "works/foot-furniture-interaction/",
+    "works/arpeggicho/",
 ]
 
 # Occupies the site root and the x-default slot. That is a statement about
@@ -54,9 +55,7 @@ DEFAULT_LANG = "en"
 
 # Pages intentionally published in a subset of languages. Keep these out of
 # PAGES until translated; they do not inherit the full site's ASCII scaffolds.
-PARTIAL_PAGES = {
-    "works/arpeggicho/": ("ja",),
-}
+PARTIAL_PAGES = {}
 
 
 def page_languages(page, langs=None):
