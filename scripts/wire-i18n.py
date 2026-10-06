@@ -21,7 +21,7 @@ import sys
 from pathlib import Path
 
 sys.path.insert(0, str(Path(__file__).resolve().parent))
-from langs import LANGS, PAGES, DEFAULT_LANG, page_url, rel_path  # noqa: E402
+from langs import LANGS, PAGES, PARTIAL_PAGES, DEFAULT_LANG, page_url, rel_path, page_languages  # noqa: E402
 
 ALT_RE = re.compile(
     r'[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n(?:[ \t]*<link rel="alternate" hreflang="[^"]*" href="[^"]*">\n)*'
@@ -32,15 +32,16 @@ COPYRIGHT_RE = re.compile(r'([ \t]*)<p>(?:<span dir="ltr">)?© ')
 
 
 def alternates(page: str) -> str:
-    lines = [f'<link rel="alternate" hreflang="x-default" href="{page_url("", page)}">']
-    for code, d, _, _ in LANGS:
+    available = page_languages(page)
+    lines = [f'<link rel="alternate" hreflang="x-default" href="{page_url(available[0][1], page)}">']
+    for code, d, _, _ in available:
         lines.append(f'<link rel="alternate" hreflang="{code}" href="{page_url(d, page)}">')
     return "".join(line + "\n" for line in lines)
 
 
 def switcher(current: str, page: str, indent: str) -> str:
     out = [f'{indent}<ul class="langs">']
-    for code, d, endonym, _ in LANGS:
+    for code, d, endonym, _ in page_languages(page):
         if code == current:
             out.append(
                 f'{indent}  <li><span lang="{code}" translate="no" aria-current="true">{endonym}</span></li>'
@@ -82,8 +83,8 @@ def main() -> int:
     root = Path(__file__).resolve().parent.parent
     changed, missing = [], []
 
-    for page in PAGES:
-        for code, d, _, _ in LANGS:
+    for page in [*PAGES, *PARTIAL_PAGES]:
+        for code, d, _, _ in page_languages(page):
             path = root / d / page / "index.html"
             if not path.exists():
                 missing.append(str(path.relative_to(root)))
