@@ -112,6 +112,45 @@ main { --figure-wide: 100%; }
 .pl-facts dd { margin: 0; }
 .pl-links { color: var(--fg-muted); }
 
+/* Keep the download invitation secondary to the case study. Apple's badge
+   requires at least 40px height and clear space of one-quarter its height:
+   the unmodified artwork is 44px high with 12px clear space, or 40px high
+   with 10px clear space on narrow screens. */
+.pl-download { margin-block: var(--space-para); }
+.pl-download__message {
+  margin-block-end: .75rem;
+  color: var(--fg-muted);
+  font-size: .875rem;
+  line-height: 1.75;
+}
+.pl-download__actions {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.pl-download__badge,
+.pl-download__qr { flex: none; cursor: pointer; }
+.pl-download__badge { padding: 12px; }
+.pl-download__badge img { width: auto; height: 44px; }
+.pl-download__qr {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+  color: var(--fg-muted);
+  font-size: .8125rem;
+  line-height: 1.75;
+}
+/* The PNG includes an opaque white four-module quiet zone in both themes. */
+.pl-download__qr img { width: 123px; height: 123px; }
+html[lang] footer .pl-apple-credit { margin-block-start: 1rem; }
+@media (max-width: 36rem) {
+  .pl-download__actions { gap: .75rem; }
+  .pl-download__badge { padding: 10px; }
+  .pl-download__badge img { height: 40px; }
+}
+
 /* Coordinates measured on the 1320 × 2868 captures. Y is the element
    centre: Log grid 874, bar 1377, active card 2379, inactive card 1767;
    Share dates 600, total 771, allocation 1120, daily table 1840.
