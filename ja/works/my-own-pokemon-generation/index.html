@@ -5,7 +5,7 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>世界で自分だけのポケモンの生成 — 堀内 貴文</title>
+<title>自分だけのポケモンをゲーム内で生成する研究プロトタイプ — 堀内 貴文</title>
 <meta name="description" content="ゲームの途中で、プレイヤーの言葉から新種のポケモンを生成し、出会い・捕獲までをつないだ研究プロトタイプ。ゲームバランスを守る制約と、生成物への愛着を左右する条件を検討した。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
@@ -30,8 +30,8 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
-<meta property="og:title" content="世界で自分だけのポケモンの生成">
-<meta property="og:description" content="AIに何を作らせるかではなく、何を守らせるか。新種の生成をゲーム体験に統合した研究プロトタイプ。">
+<meta property="og:title" content="自分だけのポケモンをゲーム内で生成する研究プロトタイプ">
+<meta property="og:description" content="人間が定義した制約でゲームバランスと見た目の整合性を守り、AIによる新種の生成をゲーム体験に統合した研究プロトタイプ。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/my-own-pokemon-generation/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -49,7 +49,7 @@
       "name": "Takafumi Horiuchi",
       "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工学 × AI × デザイン",
+      "description": "Design engineer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -58,7 +58,7 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ja/works/my-own-pokemon-generation/#work",
-      "name": "世界で自分だけのポケモン",
+      "name": "自分だけのポケモンをゲーム内で生成する研究プロトタイプ",
       "url": "https://takafumihoriuchi.github.io/ja/works/my-own-pokemon-generation/",
       "description": "ゲームの途中で、プレイヤーの言葉から新種のポケモンを生成し、出会い・捕獲までをつないだ研究プロトタイプ。ゲームバランスを守る制約と、生成物への愛着を左右する条件を検討した。",
       "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
@@ -92,7 +92,7 @@
 <main>
 
   <header>
-    <h1>世界で<wbr>自分だけの<wbr>ポケモンの<wbr>生成</h1>
+    <h1>自分だけの<wbr>ポケモンを<wbr>ゲーム内で生成する<wbr>研究プロトタイプ</h1>
     <p class="dateline">2026年7月</p>
   </header>
 
@@ -126,7 +126,7 @@
 
     <div class="shots">
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp"><img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="トウカの森に立つ老夫婦。会話ウィンドウに「どんな 生きものを 思いうかべて いるんだい？」と表示されている。"></a>
+        <a href="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp"><img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="トウカの森でプレイヤーの前に立つ老夫婦。会話ウィンドウに「どんな 生きものを 思いうかべて いるんだい？」と表示されている。"></a>
         <figcaption>おばあさんに話しかけると始まる。</figcaption>
       </figure>
       <figure>
@@ -164,7 +164,7 @@
     <h2>設計課題&thinsp;——&thinsp;自由に生成すると、ゲームが壊れる</h2>
     <p>AIが新しいキャラクターを考えられることと、そのキャラクターがゲームの中で成立することは別の問題である。能力が高すぎれば難易度が崩れ、タイプと技が噛み合わなければ育てにくい。見た目が複雑すぎれば、64×64ピクセルのスプライトに変換したときに形を読み取れなくなる。</p>
     <p>一方、すべてを固定してしまえば、実行するたびに異なるものが生まれる意味がない。必要なのは、AIの自由をなくすことではなく、遊びとして守るべき部分と、変化を許す部分を分けることだった。</p>
-    <p>そこで、デザインの対象を一匹のポケモンではなく、ポケモンを生成できる空間へ移した。人間が目的、制約、禁止事項、検証方法を定義し、AIはその内側で候補を具体化する。これは、<a href="../../">私のデザイン哲学</a>である制約型デザインを、動くプロトタイプとして試したものである。</p>
+    <p>そこで、デザインの対象を一匹のポケモンではなく、ポケモンを生成できる空間へ移した。人間が目的、制約、禁止事項、検証方法を定義し、AIはその内側で候補を具体化する。これは、私が用いている制約型デザインを、動くプロトタイプとして試したものである。</p>
   </section>
 
   <section>
@@ -190,7 +190,7 @@
       <li><strong>ゲーム用データへ変換する。</strong> 画像を15色に減色し、GBAが扱えるスプライトとパレットへ変換・圧縮する。</li>
       <li><strong>実行中のゲームへ反映する。</strong> 予約しておいた領域へデータを書き込み、ゲームを再起動せずに新種を登場させる。</li>
     </ol>
-    <p>同じデータをディスクにも書くため、反映した種族はゲームを読み込み直しても残る。生成は一度きりで、取り消せない。遭遇から逃げたり負けたりした場合は世界に残るが、倒してしまえば二度と現れない。この不可逆性も、「世界に一匹だけ」という意味を体験に持たせるための設計である。</p>
+    <p>同じデータをディスクにも書くため、反映した種族はゲームを読み込み直しても残る。生成は一度きりで、取り消せない。遭遇から逃げたり負けたりした場合は世界に残るが、倒してしまえば二度と現れない。この不可逆性も、「そのプレイで一匹だけ」という意味を体験に持たせるための設計である。</p>
   </section>
 
   <section>
@@ -209,7 +209,7 @@
     <p>自分でプロトタイプをプレイした限りでは、生成されたポケモンへ強い愛着は生まれなかった。これは実装者本人一人の所感であり、一般化できる実験結果ではない。ただし、次に何を変えて比較すべきかを考える手がかりにはなった。</p>
     <p>愛着を左右しそうな条件は、二つある。</p>
     <ul class="plain">
-      <li><strong>生成物のクオリティ。</strong> 見た目や設定に魅力を感じられる水準を超えなければ、「世界に一匹だけ」という希少性だけでは愛着を支えられない。</li>
+      <li><strong>生成物のクオリティ。</strong> 見た目や設定に魅力を感じられる水準を超えなければ、「そのプレイで一匹だけ」という希少性だけでは愛着を支えられない。</li>
       <li><strong>関与の深さ。</strong> 六つの言葉を選ぶだけでは、結果を「自分で作った」より「届けられた」と感じた。関与感を生むのは入力の量ではなく、選び直す、比較する、手直しする、結果へ責任を持つといった制作過程の質だと考えられる。</li>
     </ul>
     <p>対照になったのが、ゲーム用の自動生成とは別に、複数の生成AIとの対話と手作業を重ねて作った「ハナギツネ」である。候補を見比べ、直し、納得できる形まで作り込んだこのキャラクターには愛着がある。十分なクオリティと、試行錯誤を含む関与の両方があったためだと考えている。</p>
@@ -234,7 +234,7 @@
     <p>生成パイプライン、制約と検証の枠組み、GBA向けのデータ変換、ゲーム側の変更内容は、<a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">GitHubリポジトリ</a>で公開している。</p>
   </section>
 
-  <p class="colophon"><a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> のデコンパイルを土台に、個人研究として制作した。ROM、ROMパッチ、ゲーム内アセットのいずれも配布していない。ここに掲載したスプライトはすべてAIが生成したオリジナルである。ポケモンは任天堂・株式会社クリーチャーズ・株式会社ゲームフリークの商標であり、本プロジェクトはこれらの企業と関係がなく、承認も受けていない。</p>
+  <p class="colophon"><a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> のデコンパイルを土台に、個人研究として制作した。ROM、ROMパッチ、ゲーム内アセットのいずれも配布していない。ポケモンは任天堂・株式会社クリーチャーズ・株式会社ゲームフリークの商標であり、本プロジェクトはこれらの企業と関係がなく、承認も受けていない。</p>
 
   <nav aria-label="サイト">
     <ul>

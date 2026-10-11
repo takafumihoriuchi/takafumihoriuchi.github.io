@@ -55,7 +55,7 @@
       "name": "Takafumi Horiuchi",
       "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工学 × AI × デザイン",
+      "description": "Design engineer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -110,7 +110,7 @@
 
   <section>
     <h2>概要</h2>
-    <p class="lead">認知特性についての個人情報を入力し、UIの基本的な設計原則や安全性・アクセシビリティの条件と、人の特性に関する研究知見を参照して、その人に合わせたUIを生成する仕組みを提案した。</p>
+    <p class="lead">UIの利用に関係する認知特性の情報を入力し、UIの基本的な設計原則や安全性・アクセシビリティの条件と、人の特性に関する研究知見を参照して、その人に合わせたUIを生成する仕組みを提案した。</p>
     <p>人間が守る条件と適用範囲を設計し、その内側で生成AIが具体的な案をつくる「制約型デザイン」の考え方を用いた。カーナビを題材に、感覚・身体特性も含む13種類の架空ペルソナからUIを生成し、別工程で条件への適合を検査するPoCを実装した。</p>
     <p>比較では、身体特性による明確な画面構成の変化を一例で確認した一方、多くの生成物に大きな視覚的変化は見られなかった。実際の使いやすさや安全性は未検証だが、生成AIに判断を任せられる範囲と、個別化の余地を狭めていた設計条件を明らかにした。</p>
   </section>
@@ -127,13 +127,13 @@
 
   <section>
     <h2>提案&thinsp;——&thinsp;個人の情報と、二種類の設計知識をつなぐ</h2>
-    <p>入力するのは、そのユーザーの認知特性についての情報。AIはそれを、あらかじめ整理した二種類の知識と照合する。一つはUIの基本的な設計ルール、もう一つは人の特性に応じた推奨UIにつながる知識である。</p>
+    <p>入力するのは、UIの利用に関係する認知特性の情報である。今回のPoCでは、感覚・身体特性も含む架空ペルソナを使った。AIはそれを、あらかじめ整理した二種類の知識と照合する。一つはUIの基本的な設計ルール、もう一つは人の特性に応じた推奨UIにつながる知識である。</p>
     <p>これらをもとに、AIが許容される範囲でUIを具体化し、条件への適合を検査する。出力は、その人に合わせたUIと、どこを、なぜ変えたかの説明である。</p>
 
     <figure class="concept-figure line-art">
       <a class="concept-figure__desktop" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg" width="1400" height="815" loading="lazy" decoding="async" alt="個人の認知特性を入力し、UIの基本ルールと、特性に応じた推奨UIの知識を参照して生成する構想。生成AIが案を具体化し、別工程で条件を検査して、その人に合わせたUIと変更理由を出力する。"></a>
       <a class="concept-figure__mobile" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg" width="480" height="1414" loading="lazy" decoding="async" alt="個人の認知特性を入力し、UIの基本ルールと、特性に応じた推奨UIの知識を参照して生成する構想。生成AIが案を具体化し、別工程で条件を検査して、その人に合わせたUIと変更理由を出力する。"></a>
-      <figcaption><strong>図1｜個人の情報を入力し、設計知識を参照してUIを生成する構想。</strong> 個人ごとに変わる入力と、設計者が事前に整備する知識を分けている。PoCの入力には、認知特性に加えて感覚・身体特性も含めた。</figcaption>
+      <figcaption><strong>図1｜個人の情報を入力し、設計知識を参照してUIを生成する構想。</strong> 個人ごとに変わる入力と、設計者が事前に整備する知識を分けている。PoCの入力には架空ペルソナを使い、認知特性に加えて感覚・身体特性も含めた。</figcaption>
     </figure>
 
     <h3>入力：その人についての情報</h3>
@@ -154,7 +154,7 @@
 
     <figure class="journey-figure line-art">
       <a href="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg" width="1200" height="1030" loading="lazy" decoding="async" alt="初回乗車時の将来のユーザージャーニー。停車中に開始を選び、AIの聞き取りに答え、AIの理解を訂正し、生成されたUIを試し、確認したUIで利用を始める。"></a>
-      <figcaption><strong>図2｜初回乗車から利用開始までのユーザージャーニー。</strong> 聞き取り、理解の確認、UIの生成、停車中の試用を経て、その人の初期UIを用意する。</figcaption>
+      <figcaption><strong>図2｜初回乗車から利用開始までのユーザージャーニー。</strong> 聞き取り、理解の確認・訂正、UIの生成、停車中の試用を経て、その人の初期UIを用意する。</figcaption>
     </figure>
 
     <ol class="journey-steps">
@@ -292,7 +292,7 @@
     <p>次は、二つの問いを分けて検証したい。</p>
     <p>一つは、自分で設定しなくても使い始めのUIが整う体験に、どれだけ価値があるか。会話による聞き取り、理解の訂正、試用までを実装し、入力情報の確かさと、利用者にとっての負担を確かめる。</p>
     <p>もう一つは、どのような設計対象なら、生成AIによって得られる案の違いが体験の改善につながるか。必要な条件を保ちながら、情報構成や操作の流れに複数の妥当な案が残る対象へ広げたい。</p>
-    <p>実ユーザーによる評価では、共通の既定UI、個人情報からルールベースで調整したUI、生成AIで具体化したUIを、同じタスクで比較する。操作時間、誤操作、視線、主観的な負担などから、個人に合わせたことの効果と、生成AIを使ったことの効果を分けて調べる。</p>
+    <p>実ユーザーによる評価では、共通の既定UI、個人の特性情報からルールベースで調整したUI、生成AIで具体化したUIを、同じタスクで比較する。操作時間、誤操作、視線、主観的な負担などから、個人に合わせたことの効果と、生成AIを使ったことの効果を分けて調べる。</p>
     <p>また、関連規格の確認を進め、研究で確かめられたことと設計判断の境界を更新する。条件を検査できることに加えて、その内側に、利用者にとって意味のある選択肢を残すことを次の課題とする。</p>
   </section>
 

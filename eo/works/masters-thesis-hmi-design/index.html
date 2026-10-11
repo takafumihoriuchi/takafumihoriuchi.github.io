@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Magistraturo pri interagado-dezajno inter homoj kaj robotoj — Takafumi Horiuchi</title>
-<meta name="description" content="La maŝino tradukas la gamon vide de la operatoro al la kondiĉoj kie la roboto povas tuŝi. Mastera esploro proponis kaj efektivigis sistemon kiu enmetas la homan perceptan staton en sekuran kontrolon kaj malhelpas koliziojn sen antaŭa celo-registrado.">
+<title>Magistra disertaĵo pri la dezajno de homa–robota interago — Takafumi Horiuchi</title>
+<meta name="description" content="Magistra esploro pri prototipo por preventi robotajn koliziojn, kiu taksas la vidkampon de la funkciigisto laŭ kaporientiĝo por helpi preventi neintencan tuŝon sen antaŭa objektklasifiko. Ĝia celita konduto estis kontrolita en kvin demonstraj provoj.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/eo/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -30,14 +30,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="eo">
-<meta property="og:title" content="Magistraturo pri interagado-dezajno inter homoj kaj robotoj">
-<meta property="og:description" content="Oni konvertas la gamon observatan de homoj al kondiĉoj, kiujn roboto povas tuŝi.">
+<meta property="og:title" content="Magistra disertaĵo pri la dezajno de homa–robota interago">
+<meta property="og:description" content="Magistra esploro pri prototipo por preventi robotajn koliziojn, kiu taksas la vidkampon de la funkciigisto laŭ kaporientiĝo por helpi preventi neintencan tuŝon sen antaŭa objektklasifiko. Ĝia celita konduto estis kontrolita en kvin demonstraj provoj.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/eo/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Virtuala laborospaco kun flavaj vokselaj skanitaj de roboto. La vidkampo de la operacianto estas montrata per kolora konuso.">
+<meta property="og:image:alt" content="Virtuala laborspaco rekonstruita el robotskanadoj kiel flavaj vokseloj, kun koloraj vidvolumenoj markantaj la taksitan vidkampon de la funkciigisto.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Kogna inĝenierado × AI × Dezajno",
+      "description": "Dezajninĝeniero",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -58,9 +59,9 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/eo/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "Magistraturo pri interagado-dezajno inter homoj kaj robotoj",
+      "headline": "Magistra disertaĵo pri la dezajno de homa–robota interago",
       "url": "https://takafumihoriuchi.github.io/eo/works/masters-thesis-hmi-design/",
-      "description": "La maŝino tradukas la gamon vide de la operatoro al la kondiĉoj kie la roboto povas tuŝi. Mastera esploro proponis kaj efektivigis sistemon kiu enmetas la homan perceptan staton en sekuran kontrolon kaj malhelpas koliziojn sen antaŭa celo-registrado.",
+      "description": "Magistra esploro pri prototipo por preventi robotajn koliziojn, kiu taksas la vidkampon de la funkciigisto laŭ kaporientiĝo por helpi preventi neintencan tuŝon sen antaŭa objektklasifiko. Ĝia celita konduto estis kontrolita en kvin demonstraj provoj.",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "eo",
@@ -103,7 +104,7 @@
 <main>
 
   <header>
-    <h1>Magistraturo pri interagado-dezajno inter homoj kaj robotoj</h1>
+    <h1>Magistra disertaĵo pri la dezajno de homa–robota interago</h1>
     <p class="dateline">julio 2021</p>
   </header>
 
@@ -117,10 +118,10 @@
   </ascii-hero>
 
   <section>
-    <h2>Resumo</h2>
-    <p class="lead">En grandaj robotoj kontrolataj de homoj, estas malfacile distingi per nur la ĉirkaŭaj sensiloj inter moviĝo al la laborobjekto kaj moviĝo al malatentita obstrukco. Tial ni desegnis kolizio-evitan sistemon, kiu uzas la areon vidatan de la funkciulo kiel indikilon de la intenco „toki estas permesite“ kaj malrapidigas aŭ haltigas la brakon kiam ĝi alproksimiĝas al vidata nevidata objekto.</p>
-    <p>Ne estas necese antaŭe registri la celon kiel "operaci-ebla" aŭ "protekta celo". La distingo estas ĝisdatigita laŭ la rigardo de la operatoro dum la laboro. Ĝi estis implementita en homaforman pezmaŝinon-roboton de 1,9 m alta, kaj dum kvin demo-provoj oni konfirmis, ke la difinita konduto realiĝas. La reala ago povas esti vidita ĉe <a class="ext" href="https://youtu.be/-DvWxzJvK3I">Manifestacia video</a>.</p>
-    <p>Kiel magistra tezo ĉe la Universitato de Teknologio de Milano en Design &amp; Engineering, ĝi estis prenita dum esplora stagio ĉe Ninki Ittai Co., Ltd., kaj prezentita ĉe <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">La 39-a Japo-Robota Socia Akademia Konferenco (RSJ2021)</a>.</p>
+    <h2>Superrigardo</h2>
+    <p class="lead">Ĉe grandaj robotoj regataj de homoj, nur mediaj sensiloj povas malfacile distingi intencan alproksimiĝon al laborobjekto de neintenca alproksimiĝo al pretervidita obstaklo. Mi dezajnis sistemon por preventi koliziojn, kiu uzas la taksitan vidkampon de la funkciigisto kiel indikon de intencita tuŝo, malrapidigante aŭ haltigante la brakon kiam ĝi alproksimiĝas al objektoj ekster tiu kampo.</p>
+    <p>Objektoj ne bezonas esti klasifikitaj anticipe kiel «manipuleblaj» aŭ «protektendaj»; la klasifiko ĝisdatiĝas kiam la funkciigisto ĉirkaŭrigardas. En la prototipo mi uzis la orientiĝon de kapaparato kiel proksimuman indikilon de rigardodirekto. Mi realigis la sistemon sur pezlaboranta humanoida roboto alta je 1,9 metroj kaj konfirmis la celitan konduton en kvin demonstraj provoj. La <a class="ext" href="https://youtu.be/-DvWxzJvK3I">demonstra filmeto</a> montras la sistemon funkcianta.</p>
+    <p>Mi faris ĉi tiun esploron dum staĝo ĉe Jinki Ittai Co., Ltd. por mia magistra disertaĵo en Design &amp; Engineering ĉe Politecnico di Milano. Mi prezentis ĝin ĉe la <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">39-a Jara Konferenco de la Robotika Societo de Japanio (RSJ2021)</a>.</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -137,22 +138,22 @@
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Titola glitilo. Konscio-Bazita Kolizio-Preventado por Homkontrolita Robota Manipulado, Magistra Programo pri Dezajno &amp; Inĝenierado, Universitato de Teknologio de Milano, Kursaro 2020–2021"></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Fono.La temo de la eseo estis decidita dum esplora internado ĉe la kompanio Hanki Ittai, kiu evoluigas humanoidajn maŝinojn kaj operacias ilin per master-slave metodo."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komparo inter aŭtonomaj robotoj kaj hom-administritaj robotoj. La unuaj laboras efike en dezajnita spaco ene de barilo, dum la lastaj laboras kun homoj en necerte pokapa spaco."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistikoj de Eŭropo, Usono kaj Japanio montras, ke kontakto kun moviĝanta objekto konsistigas signifivan parton de akcidentoj ĉe konstruaj lokoj."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Antaŭaj studoj pri kolizio-prevencio. Sentiva haŭto kovranta manipulilon kaj profundo-sensilo virtuale reproduktanta la ĉirkaŭaĵon."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Nunaj defioj. La ekzistanta sistemo postulas antaŭdifini la celon kiel "protekta" aŭ "manipulebla" per portebla etikedilo, bildanalizo kaj lernita klasigilo."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Propono. La tradicia sistemo uzas nur pasivajn sensilajn informojn, sed en hom-administrata roboto estas homo en la regula kontrola buklo, kaj lia aŭ ŝia rigardo povas esti uzata kiel aktiva parametro."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Regulo de klasifiko. Objektoj ene de la centra vida kampo de la operacianto estas manipuleblaj, dum objektoj ekstere estas protektendaj."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Tuta bildo de la prototipo. Kombinante la realan roboton kaj la virtualan kalkulan spacon, tri teknikaj elementoj sekvas."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemento ①. Ekspresu la centran vidkampo kiel konuso de 60°×55° kaj proksimumigu ĝian orientiĝon kun la fronta direkto de la VR-kapelaro."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemento ② La LIDAR sur la kapo de la roboto skanas la ĉirkaŭaĵon kiel punktojn, kiuj estas reprezentataj kiel vokseloj kun propraj koliziaj objektoj."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemento 3. La cifereca ĝemelo de la robo moviĝas same kiel la reala maŝino, kaj proksimeco-averto ekas kiam ĝia brako tuŝas vokselon ekster la videbla kampo."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Demonstracio de koncepta pruvaro. Stills de video montranta roboton etendantan ĝian manon al pilko sur stango, kaj voxela reprezentado en virtuala spaco."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Estontaj taskoj. Detekto de homoj en la laborejo, konfirmado de aliaj metodoj por mezuri la rigardon, kaj kvanta takso en la kampo."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Resumo de la konkludo. La esplortemo, la valoro de la metodaro, la noveco, kaj kiel la sistemo estis kontrolita."></a></li>
+      <ol class="deck" tabindex="0" role="group" aria-label="Prezentaj lumbildoj en la angla. Rulumu horizontale.">
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Titola lumbildo. «Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation», magistra programo Design &amp; Engineering ĉe Politecnico di Milano, 2020–2021."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Fono: la disertaĵa temo ekestis dum esplora staĝo ĉe Jinki Ittai Co., Ltd., kiu evoluigas pezlaborantajn humanoidajn robotojn regatajn per ĉef–sekvanta kontrolsistemo."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komparo inter aŭtonomaj robotoj kaj robotoj regataj de homoj: aŭtonomaj robotoj efike laboras en speciale aranĝitaj, baritaj medioj; robotoj regataj de homoj laboras apud homoj en malpli antaŭvideblaj medioj."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistikoj el Eŭropo, Usono kaj Japanio indikas, ke kontakto kun moviĝantaj objektoj kaŭzas signifan parton de akcidentoj ĉe konstruejoj."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Antaŭa esplorado pri evitado de kolizioj: tuŝsenta haŭto ĉirkaŭ manipulilo kaj profundsensilo uzata por virtuale rekonstrui la ĉirkaŭaĵon."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Problemo: ekzistantaj sistemoj anticipe klasifikas objektojn kiel «protektendajn» aŭ «manipuleblajn», uzante fiksitajn etikedojn, bildanalizon aŭ trejnitajn klasifikilojn."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Propono: la antaŭaj sistemoj dependas nur de pasivaj sensildatumoj. Ĉe roboto regata de homo, homo jam partoprenas en la kontrolbuklo, kaj ties rigardo povas servi kiel aktiva parametro."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Klasifikaj reguloj: objektoj ene de la centra vidkampo de la funkciigisto estas manipuleblaj; objektoj ekster ĝi estas protektendaj."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Superrigardo de la prototipo: fizika roboto estas ligita al virtuala medio. La sekvaj lumbildoj klarigas ĝiajn tri teknikajn komponantojn."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komponanto 1: reprezenti la centran vidkampon per vidvolumeno de 60° × 55° kaj proksimumigi ĝian orientiĝon per la antaŭa direkto de la VR-kapaparato."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komponanto 2: kapmuntita lidara sensilo kaptas punktonubon de la ĉirkaŭaĵo, reprezentatan per vokseloj kun kolizidetekto."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komponanto 3: la cifereca ĝemelo sekvas la movojn de la fizika roboto; alproksimiĝo al vokseloj ekster la vidregiono ekigas avertojn."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Konceptpruva demonstro: videokadro montras roboton etendantan la manon al pilko sur stango, apud voksela reprezento de ĝia ĉirkaŭaĵo."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Sekvaj paŝoj: detekti homojn en la laborspaco, esplori aliajn manierojn taksi rigardodirekton kaj fari kvantajn taksojn en realaj laborkondiĉoj."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Konkludo: la esplortemo, la kontribuo kaj noveco de la metodo, kaj la taksado de la prototipo."></a></li>
       </ol>
     </figure>
   </section>
@@ -160,88 +161,88 @@
   <hr class="section-break">
 
   <section>
-    <h2>Defio — Antaŭdifinoj por sekureco limigas la lokon</h2>
-    <p>Homaj kontrolitaj robotoj estas necesaj en lokoj ne ekipitaj por aŭtonomaj robotoj. Kiel ĉe konstruaj ejoj aŭ katastrofejoj, la lokigo de homoj kaj ekipaĵoj ŝanĝiĝas, kaj tio, kion oni povas tuŝi, ankaŭ ŝanĝiĝas kun ĉiu tasko. Por uzi la forton de maŝinoj, oni devas povi tuŝi la necesajn objektojn dum evitante neintencitajn kontaktojn.</p>
-    <p>Ekzistantaj kolizio-evitaj metodoj inkluzivas kovri roboton per proksim-sensiloj aŭ reprodukti la ĉirkaŭan medion en virtualan spacon per profund-sensiloj. Tamen, ambaŭ metodoj postulas antaŭan klasifikon de objektoj kiel 'manipuleblaj' aŭ 'protekteblaj'. Se nenio estas registrita, oni ne povas tuŝi ion ajn pro sekureca kialo, kaj registri ĉion postulas agordadon kaj kalibradon por ĉiu loko. Ĉi tiu preparlabora ŝarĝo malpliigis la praktikadon de robotoj uzataj en diversaj lokoj.</p>
+    <h2>Problemo: sekureca agordado povas limigi laboron surloke</h2>
+    <p>Robotoj regataj de homoj estas bezonataj en medioj ne preparitaj por aŭtonoma funkciado. Ĉe konstruejoj kaj katastrofejoj ŝanĝiĝas la lokoj de homoj kaj ekipaĵoj, same kiel la objektoj, kiujn la roboto devas tuŝi. Por utiligi la forton de maŝino, funkciigistoj devas povi labori kun tiuj objektoj evitante neintencan tuŝon.</p>
+    <p>Ekzistantaj aliroj por eviti koliziojn inkluzivas kovri roboton per proksimecsensiloj kaj rekonstrui ĝian ĉirkaŭaĵon en virtuala spaco per profundsensiloj. En la aliroj ekzamenitaj ĉi tie, objektoj devis esti klasifikitaj anticipe kiel «manipuleblaj» aŭ «protektendaj». Sen tiu klasifiko la roboto evitus ĉian tuŝon; klasifiki ĉiun objekton postulis lokspecifan agordadon kaj kalibradon. Tiu preparado igis la robotojn malpli praktikaj por uzo en diversaj lokoj.</p>
   </section>
 
   <section>
-    <h2>Ideo — ŝanĝi la rigardon al «kondiĉoj, kiujn oni povas tuŝi»</h2>
-    <p>En la kontrolciklo de hom-administrata roboto jam estas persono kiu juĝas la situacion. Oni pensis, ke se oni povas transdoni al la maŝino al kion homoj atento direktas, eble eblas diveni la intencojn de kontakto dum la laboro anstataŭ antaŭenregistri la celon.</p>
-    <p>Do oni uzas la centran vidkampon de la operacianto kiel limon. La objektoj ene de la vidkampo konsideriĝas kiel la „operaci-eblaj objektoj“ kiujn la operacianto kontrolas. La objektoj ekstere de la vidkampo konsideriĝas kiel la „protektaĵaj objektoj“ kiuj eble estas neviditaj. Homoj ĉiam konsideriĝas protektaĵaj objektoj sendepende de la pozicio de ilia rigardo.</p>
-    <p>Ĉi tio ne estas mekanismo por sendi ordonojn al roboto per rigardo. Ĝi estas mekanismo, kiu konvertas la perceptan staton de la operatoro al kondiĉoj per kiuj la roboto povas moviĝi.</p>
+    <h2>Ideo: uzi rigardodirekton por difini, kiam tuŝo estas permesata</h2>
+    <p>Roboto regata de homo jam havas en sia regbuklo iun, kiu taksas la situacion. Mi demandis min, ĉu doni al la maŝino indikon pri la atento de tiu homo povus helpi ĝin dedukti intencitan tuŝon dum tasko, sen antaŭa registrado de objektoj.</p>
+    <p>Mi uzis la centran vidkampon de la funkciigisto kiel limon. Objektoj ene de ĝi estas klasifikataj kiel «manipuleblaj», surbaze de la supozo, ke la funkciigisto konscias pri ili. Objektoj ekster ĝi estas klasifikataj kiel «protektendaj», ĉar ili eble estis preterviditaj. La dezajno postulas ĉiam protekti homojn, sendepende de rigardodirekto.</p>
+    <p>La sistemo ne uzas rigardodirekton por rekte doni ordonojn. Ĝi transformas la regionon, en kiu oni supozas ke la funkciigisto konscias pri objektoj, en kondiĉojn pri la moviĝo de la roboto.</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Skizo vidita de supre. Antaŭ la roboto, la centra vida kampo de la operacianto estas desegnita kiel konuso. Objekto A ene de la konuso estas montrita kiel blanka cirklo, dum objektoj B, C kaj D ekstere estas montritaj kiel malhelaj kvadratoj, kun du homoj starantaj ene kaj ekster de la konuso."></a>
-      <figcaption>La celo A interne de la centra vida kampo de la funkcianto povas esti manipulita, dum la celoj B, C kaj D ekstere estas protektataj. Homoj estas protektataj kien ajn ili staras.</figcaption>
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Supra vido de la roboto kaj la centra vidkampo de la funkciigisto. Celo A, ene de la taksita vidregiono, estas blanka cirklo. Celoj B, C kaj D, ekster ĝi, estas malhelaj kvadratoj. Unu homo staras ene de la regiono kaj alia ekster ĝi."></a>
+      <figcaption>Laŭ la proponitaj reguloj, celo A estas manipulebla, ĉar ĝi troviĝas ene de la centra vidkampo de la funkciigisto. Celoj B, C kaj D troviĝas ekstere kaj estas protektendaj. Homoj ĉiam estas klasifikataj kiel protektendaj, sendepende de sia pozicio aŭ la rigardodirekto de la funkciigisto. Tamen homdetekto ne estis realigita en ĉi tiu prototipo.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Dezajno de interagado</h2>
-    <p>La sistemo ne faras la rigardon lokon simpla ŝaltilo de sur/malto. Kiam ĝi proksimiĝas al objekto sen rigardo, la brako malrapidigas laŭ la distanco kaj haltas antaŭ kontakto. Post halto, kiam la operacianto rigardas la objekton, la limigoj estas malrapide liberigitaj. Oni evitas subitajn haltojn kaj subitajn movojn, tiel ke la operacianto povas antaŭvidi ŝanĝojn.</p>
-    <p>Aliflanke, eĉ se oni momenteme forrigas la rigardon de la jam kontakta objekto, la aktuala laboro ne ĉesas. Se tenado aŭ manipulado haltus nur pro forigo de la rigardo, tio fakte igus ĝin malstabila. La proksimiĝo al homoj estas traktata aparte, kaj ĝi estas limigita ĉu la manipulatoro rigardas ĝin aŭ ne.</p>
-    <p>La celo ne estis malrapidigi laboron ĝenerale por sekureco. Ĝi estas konservi la kapablon de la roboto laŭ la gamo kontrolata de la operacianto kaj nur protekti la areojn ne atingeblaj de atento, tiel kongrui sekurecon kaj laborefikecon.</p>
+    <p>La sistemo traktas rigardodirekton kiel pli ol nur ŝaltilon. Kiam la brako alproksimiĝas al objekto ekster la vidkampo de la funkciigisto, ĝi iom post iom malrapidiĝas laŭ la distanco kaj haltas antaŭ tuŝo. Rigardi al la objekto tiam iom post iom nuligas la limigon. Mi dezajnis tiujn transirojn por eviti abruptajn haltojn kaj ekmovojn kaj faciligi antaŭvidon de ŝanĝoj.</p>
+    <p>Mallonge forrigardi de objekto jam tuŝata de la roboto ne interrompas la taskon. Haltigi tenadon aŭ manipuladon nur ĉar la funkciigisto forrigardas povus igi la operacion malpli stabila. La dezajno aparte traktas alproksimiĝon al homoj: ĝi devas resti limigita sendepende de la rigardodirekto. Homdetekto ne estis realigita en ĉi tiu prototipo.</p>
+    <p>La celo estis konservi la kapablojn de la roboto tie, kie la funkciigisto konscias pri la ĉirkaŭaĵo, kaj limigi moviĝon tie, kien ties atento eble ne atingas. Tio celis ekvilibrigi sekurecon kaj facilecon de funkciigo sen malrapidigi ĉiun agon.</p>
 
     <figure class="paper-figure line-art figure-2">
-      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Fluodiagramo komenciĝanta de stato de libera movado. Ĝi disbranĉiĝas laŭ ĉu la objekto estas proksima, ĉu ĝi estas homa, ĉu la manipulilo situas en la direkto al la homo, aŭ ĉu la objekto estas en la rigarda regiono, kaj kondukas al preciza movado, paŝa haltado aŭ al ŝlosado."></a>
-      <figcaption>En la procezo de juĝado, la nodo kiu legas la aktivajn parametrojn de la operatoro estas nur unu: ĉu la objekto estas en la observata regiono. Ĉiuj aliaj branĉoj funkcias laŭ pasiva sensora informo.</figcaption>
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Kontrola fludiagramo komenciĝanta per senlima moviĝo. Decidoj kontrolas, ĉu objekto estas proksima, ĉu ĝi estas homo, ĉu la manipulilo moviĝas al la homo kaj ĉu la objekto estas ene de la vidregiono. La rezultoj kondukas al preciza moviĝo, laŭgrada haltado aŭ ŝlosado."></a>
+      <figcaption>Nur unu decido en la fludiagramo uzas aktivan enigon de la funkciigisto: ĉu la celo troviĝas en la vidregiono. Ĉiuj aliaj branĉoj baziĝas sur pasivaj sensildatumoj.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Anticipitaj uzo-scenoj</h2>
-    <p>La celo estis lokoj kie oni manipulas grandajn fortojn proksime al homoj, kiel konstruaj lokoj aŭ katastrofejoj. En tiaj lokoj estas malfacile tute ĉirkaŭi la ĉirkaŭaĵon per baroj aŭ antaŭe registri ĉiujn objektojn. Sistemo kiu postulas refari la sekurecajn agordojn ĉiufoje kiam la aranĝo ŝanĝiĝas perdus tujecon kaj ĝeneralecan uzeblon.</p>
-    <p>Distingo bazita sur rigardo uzas la situacioscion de persono en tiu momento anstataŭ fiksaĵan medion-modelon. Ĝi eble reduktas la ŝarĝon de prepari la lokon dum samtempe malhelpante alproksimiĝon al preterviditaj objektoj. Tamen, ĉi tiu studo nur konfirmis ke la sistemo funkcias laŭ difino, kaj la efiko sur akcident-reduktado ne estis taksita surloke.</p>
+    <h2>Celataj aplikoj</h2>
+    <p>La celataj lokoj estis konstruejoj kaj katastrofejoj, kie maŝinoj aplikas grandajn fortojn proksime al homoj. Tiujn mediojn estas malfacile tute ĉirkaŭbari, kaj registri ĉiun objekton anticipe estas nepraktike. Refari la sekurecajn agordojn post ĉiu ŝanĝo de aranĝo malpliigus la adapteblecon de la sistemo kaj malrapidigus ĝian ekuzon en urĝaj situacioj.</p>
+    <p>Klasifiko laŭ rigardodirekto uzas la konscion de la funkciigisto en ĉiu momento anstataŭ fiksan klasifikon de la medio. Ĝi povus redukti preparadon de la loko, samtempe limigante alproksimiĝon al preterviditaj objektoj. Tamen ĉi tiu studo konfirmis nur, ke la sistemo kondutis laŭ la specifo; ĝi ne taksis, ĉu la aliro reduktis akcidentojn en reala uzo.</p>
   </section>
 
   <section>
-    <h2>Prototipo kaj antaŭtaksado</h2>
+    <h2>Prototipo kaj prepara taksado</h2>
 
-    <h3>Integriĝo</h3>
-    <p>La sistemo estis realigita sur roboto de 1,9 m alteco, 600 kg pezo kaj 30 libergradoj, kiu similas al supera korpo de homo. La operacianto portas VR-kapmaskon kaj kontrolas la roboton sinkronigante la vidkampo kaj kapmovojn de la roboto kun sia propra movado.</p>
-    <p>La laborospaco estis kaptita kiel punkta nubo per LIDAR sur la roboto kaj en la virtuala spaco esprimita kiel vokseloj kun kolizi-testo. Digitala ĝemelo sinkronigita kun la reala maŝino funkcias en tiu spaco. La centra vida kampo de la operacianto estis reprezentita kiel konuso de 60°×55°, kun orientiĝo aproksimata laŭ la fronta direkto de la kapuĉo. Kiam la brako proksimiĝas al vokseloj ekster la vida kampo, averto estas sendita al la reala maŝino, kiu bremsas aŭ haltigas la movadon.</p>
+    <h3>Realigo</h3>
+    <p>Mi realigis la sistemon sur roboto kun la formo de homa supra korpo, alta je 1,9 metroj, pezanta 600 kg kaj havanta 30 gradojn de libereco. La funkciigisto portas VR-kapaparaton, kiu sinkronigas la vidon kaj kapan orientiĝon de la roboto kun la movoj de la funkciigisto.</p>
+    <p>Lidara sensilo sur la roboto kaptis la laborspacon kiel punktonubon, kiu estis reprezentita en la virtuala medio per vokseloj kun koliziodetekto. Cifereca ĝemelo sinkronigis la virtualan roboton kun la fizika maŝino. Mi reprezentis la centran vidkampon de la funkciigisto kiel vidvolumenon de 60° × 55°, uzante la antaŭenan direkton de la kapaparato por proksimumi ĝian orientiĝon. Kiam la brako alproksimiĝis al vokselo ekster tiu regiono, la sistemo sendis averton al la fizika roboto por malrapidigi aŭ haltigi ĝian moviĝon.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Sceno en virtuala spaco. Flavaj voxeloj rekonstruas la ĉirkaŭaĵon, tra kiuj pasas duontrankvila ruĝa areo markita kiel 'centra vida kampo de la operacianto', dum blanka cifereca ĝemela roboto etendas sian manon al obstakloj situantaj ekster tiu areo.">
-      <figcaption>Virtuala spaco kun roboto kaj skanitaj punktoj. Ĉi tie la roboto tuŝas obstaklojn, kiuj estas ekster la centra vida kampo de la operatoro.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Virtuala laborspaco rekonstruita per flavaj vokseloj. Duontravidebla ruĝa regiono markas la centran vidkampon de la funkciigisto, kaj la blanka cifereca ĝemelo etendiĝas al obstaklo ekster tiu regiono.">
+      <figcaption>La virtuala medio enhavas la ciferecan ĝemelon de la roboto kaj la skanitan punktonubon. La sceno montras obstaklojn ekster la taksita centra vidkampo de la funkciigisto.</figcaption>
     </figure>
 
-    <h3>Antaŭtaksado</h3>
-    <p>Ni provis serion de operacioj en kiu la funkciulo proksimigis la brakon al la objekto sen rigardi ĝin, poste revenigis la rigardon al la objekto por liberigi la limon, kaj fine kaptis la pilkon. El 5 provoj, 4 estis faritaj de sperta funkciulo kaj 1 de la dua fojo funkcianto surŝipe. En ĉiuj provoj, la operacio haltis kiam la rigardo estis for de la objekto kaj daŭris kiam oni direktis la rigardon al ĝi. Ĉi tio ne estas uzanteksperimento por mezuri efikecon, sed antaŭtaksado por konfirmi ke la dizajnita konduto funkcias sur la reala aparato.</p>
+    <h3>Prepara taksado</h3>
+    <p>Ĉiu provo sekvis la saman sinsekvon: alproksimiĝi al celo ekster la taksita vidkampo de la funkciigisto, post la halto de la brako turni la kapaparaton al ĝi por nuligi la limigon, kaj poste kapti la pilkon. Sperta funkciigisto faris kvar el la kvin provoj; la restan faris funkciigisto, kiu uzis la pilotejon nur la duan fojon. En ĉiu provo la brako haltis dum la celo estis ekster la taksita vidkampo kaj povis rekomenci kiam ĝi eniris tiun regionon. Tiuj provoj kontrolis, ĉu la celita konduto funkcias sur la fizika roboto. Ili ne taksis ĝian efikecon per studo kun uzantoj.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="Foto de roboto. La operatoro sidas en la supra kadro kaj rigardas alflanke. La robothando haltas antaŭ la blua kaj flava pilko sur la flava stango kaj la restanta distanco estas montrita.">
-      <figcaption>La rigardo de la operacianto estis for de la celo, kaj la brako haltis tien distancigita de la objekto.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="La funkciigisto sidas en la supra kadro de la roboto kaj rigardas flanken. La robota mano haltis antaŭ blua kaj flava pilko sur flava stango; la restanta distanco estas markita.">
+      <figcaption>La celo troviĝas ekster la taksita vidkampo de la funkciigisto, kaj la brako haltas antaŭ ol atingi ĝin.</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Foto de malsupre. La operacianto rigardas la pilkon, kaj la robothando kaptas la bluan kaj flavajn pilkojn sur la flava polo.">
-      <figcaption>Se la rigardo estas direktita al la celo, la sama ago progresas sen limigoj.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Vido de malsupre: la funkciigisto rigardas la bluan kaj flavan pilkon, dum la robota mano kaptas ĝin supre sur la flava stango.">
+      <figcaption>Kiam la celo eniras la taksitan vidkampon de la funkciigisto, la sama moviĝo povas daŭri sen limigo.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Limoj kaj la sekva konfirmo</h2>
-    <p>La prototipo ne inkluzivas homan detekton. Ni starigis regulon protekti homojn ĉiam sendepende de rigardo, sed en reala medio estos necesa mekanismo por certe identigi homojn. Krome, ĉar ni uzis la frontan direkton de la kapmasko kiel anstataŭan valoron anstataŭ la rigardon mem, ĝi ne povas detekti se nur la okuloj moviĝas.</p>
-    <p>Uzante starigitajn kameraojn kaj inteligentajn okulvitrojn kun riglometro, la kondiĉoj de la portebla ekipaĵo kaj taksa precizeco ŝanĝiĝos.Kiam oni disvolvas al moviĝanta roboto, ankaŭ punktajn procesado kapablon por sekvi la pozician ŝanĝon de la roboto mem estos bezonata.</p>
-    <p>La takso limiĝas al kvalitativa konfirmo per kvin demonstraj provoj. Por taksi sekurecon, laborrapidecon kaj la ŝarĝon sur la operacianto, necesas kvanta komparo kun la tradicia metodo en realaj laborcirkonstancoj.</p>
+    <h2>Limigoj kaj sekvaj paŝoj</h2>
+    <p>La prototipo ne inkluzivis homdetekton. Kvankam la dezajno postulas ĉiam protekti homojn, sistemo por reala uzo bezonus fidindan manieron identigi ilin. La prototipo ankaŭ uzis la antaŭenan direkton de la kapaparato kiel proksimuman indikilon de rigardodirekto, do ĝi ne povis detekti okulmovojn sendependajn de kapmovoj.</p>
+    <p>Fiksa kamerao aŭ inteligentaj okulvitroj kun okulspurado ŝanĝus la postulojn pri portata ekipaĵo kaj la precizecon de rigardotakso. Etendi la sistemon al movebla roboto ankaŭ postulus prilaboradon de punktonuboj, kiu enkalkulas ŝanĝojn de la propra pozicio de la roboto.</p>
+    <p>La taksado limiĝis al kvalitaj kontroloj en kvin demonstraj provoj. Taksi sekurecon, taskorapidon kaj la laborŝarĝon de la funkciigisto postulus kvantajn komparojn kun konvenciaj metodoj en realaj laborkondiĉoj.</p>
   </section>
 
   <section>
-    <h2>Perspektivoj akiritaj de ĉi tiu esploro</h2>
-    <p>En ĉi tiu esploro, oni traktis la kondiĉojn por permesi agadon de maŝino anstataŭ uzi homan rigardon kiel enigan aparaton. La konduto de la roboto rilate al la sama objekto ŝanĝiĝas depende de tio, kion la homo aktuale perceptas. La projektado celis ne individuajn agojn, sed la rilaton inter la homa percepta stato kaj la aŭtoritato de la maŝino.</p>
-    <p>Ĉi tiu pensado ankaŭ kondukas al la nuna <a href="../../">Mia desegnfilozofio</a>. Ĝi komprenas la staton de homoj, transformas ĝin en la limigojn kiujn la sistemo devas observi, kaj ene de tio la maŝinoj aŭ AI montras siajn kapablojn. La magistrstudado estis la startpunkto por tio.</p>
+    <h2>Kion mi lernis</h2>
+    <p>Ĉi tiu esploro uzis la taksitan vidkampon de la funkciigisto por difini, kiujn maŝinajn agojn permesi. La konduto de la roboto rilate al la sama objekto ŝanĝiĝis laŭ la ŝajna konscio de la funkciigisto pri ĝi. Mi koncentriĝis pri la rilato inter tiu ŝajna konscio kaj la amplekso de maŝinaj agoj, pli ol pri unuopaj movoj.</p>
+    <p>Tiu perspektivo ankoraŭ formas la laborojn en <a href="../../">mia verkaro</a>: kompreni la staton de homo, transformi ĝin en limigojn respektendajn de la sistemo, kaj lasi maŝinojn aŭ AI labori ene de tiuj limoj. Mia magistra esploro estis la deirpunkto de tiu aliro.</p>
   </section>
 
   <section>
     <h2>Dankoj</h2>
-    <p>Ĉi tiu esploro estis farita dum interndeĵoro ĉe la kompanio Ningen Ittai, kiel parto de la magistra programo Design &amp; Engineering ĉe la Politekniko de Milano. Mi profunde dankas ambaŭ organizojn pro doni al mi ĉi tiun eblon.</p>
+    <p>Mi faris ĉi tiun esploron dum staĝo ĉe Jinki Ittai Co., Ltd., kiel parto de la magistra programo Design &amp; Engineering ĉe Politecnico di Milano. Mi dankas ambaŭ organizojn pro tio, ke ili ebligis ĝin.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a></p>
+  <p class="citation publication-citation">Takafumi Horiuchi kaj Katsuya Kanaoka. “Gaze-based Unintended Contact Prevention for Human-Operated Robots.” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Konferenca programo</a></p>
 
-  <nav aria-label="Site">
+  <nav aria-label="Navigado de la verkaro">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Reen al la verkaro de Takafumi Horiuchi</span></a></li>
     </ul>

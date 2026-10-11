@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Mémoire de fin d&#x27;études sur la programmation par contraintes — Takafumi Horiuchi</title>
-<meta name="description" content="Pendant la simulation, identifier les conditions qui ne se réaliseront plus jamais et les exclure de la recherche. Réduire la complexité de calcul sans changer les résultats, et mener des recherches sur la programmation par contraintes qui a réduit de moitié le temps d&#x27;exécution du modèle d&#x27;évaluation.">
+<title>Mémoire de licence sur la programmation par contraintes — Takafumi Horiuchi</title>
+<meta name="description" content="Recherche en programmation par contraintes supprimant pendant la simulation les conditions dont l’inutilité définitive est prouvée : un temps d’exécution approximativement divisé par deux dans le modèle d’évaluation, sans modification des résultats.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -30,14 +30,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Mémoire de fin d&#x27;études sur la programmation par contraintes">
-<meta property="og:description" content="Supprimer en toute sécurité les conditions qui ne se réaliseront jamais et accélérer la simulation.">
+<meta property="og:title" content="Mémoire de licence sur la programmation par contraintes">
+<meta property="og:description" content="Accélérer une simulation en supprimant sans risque les conditions qui ne pourront plus devenir vraies.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Simulation d&#x27;une balle descendant les escaliers en sautant. Cela montre à quel point les contraintes dépassées deviennent sans rapport.">
+<meta property="og:image:alt" content="Une balle rebondit dans un escalier, illustrant comment les contraintes associées aux marches dépassées deviennent inutiles.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Ingénierie cognitive × IA × Design",
+      "description": "Ingénieur designer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -58,10 +59,10 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
       "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
-      "headline": "Mémoire de fin d'études sur la programmation par contraintes",
+      "headline": "Mémoire de licence sur la programmation par contraintes",
       "url": "https://takafumihoriuchi.github.io/fr/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "Pendant la simulation, identifier les conditions qui ne se réaliseront plus jamais et les exclure de la recherche. Réduire la complexité de calcul sans changer les résultats, et mener des recherches sur la programmation par contraintes qui a réduit de moitié le temps d'exécution du modèle d'évaluation.",
+      "description": "Recherche en programmation par contraintes supprimant pendant la simulation les conditions dont l’inutilité définitive est prouvée : un temps d’exécution approximativement divisé par deux dans le modèle d’évaluation, sans modification des résultats.",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "fr",
@@ -104,7 +105,7 @@
 <main>
 
   <header>
-    <h1>Mémoire de fin d&#x27;études sur la programmation par contraintes</h1>
+    <h1>Mémoire de licence sur la programmation par contraintes</h1>
     <p class="dateline">juin 2019</p>
   </header>
 
@@ -120,92 +121,92 @@ o-|\
   </ascii-hero>
 
   <section>
-    <h2>Résumé</h2>
-    <p class="lead">Plus les événements possibles augmentent, plus le simulateur examine de conditions de manière répétée. Alors, si l'on peut déterminer à partir de l'avancement que « cette condition ne se réalisera plus jamais », ne serait-il pas possible d'arrêter cette vérification en toute sécurité ? Nous avons conçu et implémenté pour le langage de modélisation de systèmes hybrides HydLa une méthode qui utilise la direction du changement des valeurs comme indice pour exclure des conditions devenues inutiles de l'exploration en cours.</p>
-    <p>Dans le modèle d'évaluation, le temps d'exécution a été réduit à environ la moitié de celui des méthodes traditionnelles, sans modifier les résultats de la simulation. L'important n'est pas d'avoir accéléré tous les calculs de manière uniforme. C'est d'avoir utilisé la structure du problème pour réduire le nombre même de possibilités à considérer.</p>
-    <p>La manière de penser de la programmation par contraintes que j'ai apprise dans cette recherche constitue la base de l'actuel <a href="../../">Ma philosophie de design</a>. Il ne s'agit pas de spécifier directement chaque résultat, mais de définir des règles, des priorités et des limites, et de déduire les solutions valides à partir de celles-ci.</p>
+    <h2>Présentation</h2>
+    <p class="lead">Plus une simulation comprend d’événements possibles, plus elle doit réévaluer de conditions. Mais si son évolution établit qu’une condition ne pourra plus jamais devenir vraie, peut-on cesser de la vérifier sans compromettre le résultat ? J’ai conçu et implémenté une méthode pour HydLa, un langage de modélisation de systèmes hybrides, qui utilise le sens de variation des variables pour supprimer les conditions devenues inutiles.</p>
+    <p>Dans le modèle d’évaluation, la méthode a ramené le temps d’exécution à environ la moitié de celui de l’algorithme d’origine, sans changer les résultats de la simulation. Ce gain provenait de l’exploitation de la structure du problème pour réduire les possibilités à examiner.</p>
+    <p>La perspective de la programmation par contraintes, acquise au cours de ces recherches, sous-tend aujourd’hui mon approche des projets de <a href="../../">mon portfolio</a> : définir les règles, les priorités et les limites, puis en déduire des solutions qui les respectent, plutôt que de spécifier directement chaque résultat.</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Problème — Plus les possibilités augmentent, plus le calcul devient lent</h2>
-    <p>HydLa est un langage destiné à décrire les « systèmes hybrides », qui combinent des changements continus et des événements discrets, sous forme de contraintes mathématiques et logiques. Sans avoir à écrire toutes les séquences de procédures, il est possible de simuler un comportement satisfaisant les conditions en déclarant simplement ce qui doit être établi.</p>
-    <p>D'autre part, dans les modèles où de nombreuses règles deviennent effectives en fonction des conditions, le simulateur vérifie de manière répétée un grand nombre de candidats. Les conditions qui ont déjà été dépassées et qui ne se réaliseront pas à l'avenir restent parmi les candidats, de sorte que plus le modèle est grand, plus les calculs inutiles s'accumulent.</p>
+    <h2>Problème : davantage de possibilités allongent les temps d’exécution</h2>
+    <p>HydLa décrit les systèmes hybrides, qui combinent des variations continues et des événements discrets, au moyen de contraintes mathématiques et logiques. Le modèle déclare les conditions à respecter sans détailler chaque étape d’une procédure ; le simulateur recherche ensuite des comportements qui les satisfont.</p>
+    <p>Dans les modèles comportant de nombreuses règles conditionnelles, le simulateur vérifie à plusieurs reprises un grand ensemble de candidats. Même les conditions qui ne peuvent plus devenir vraies y restent présentes. À mesure que le modèle s’agrandit, ces vérifications inutiles alourdissent les calculs.</p>
   </section>
 
   <section>
-    <h2>Sujet — un système où le continu et le discret se mêlent</h2>
-    <p>Une balle qui rebondit est un exemple clair d'un système hybride. Dans les airs, sa position et sa vitesse changent de manière continue, et au moment où elle touche le sol, un événement discret de rebondissement se produit. Les thermostats, les voitures et les robots possèdent également ces deux types de changements en leur sein, même si à des échelles différentes.</p>
-    <p>Pour l'évaluation, nous avons utilisé un modèle où une balle se déplaçant horizontalement rebondit sur une surface divisée en plusieurs sections. Pour chaque section de la surface, il existe une règle conditionnelle « la balle rebondit si elle atteint cette zone ». En augmentant le nombre de sections, on peut représenter un plus grand nombre de cibles, mais le simulateur doit également examiner davantage de conditions.</p>
+    <h2>Modèle : combiner changements continus et discrets</h2>
+    <p>Une balle qui rebondit est un exemple simple de système hybride. Sa position et sa vitesse varient continûment lorsqu’elle est en l’air, puis le contact avec le sol déclenche un événement discret : le rebond. Les thermostats, les voitures et les robots combinent eux aussi ces deux types de changement, à différentes échelles.</p>
+    <p>L’évaluation utilisait un modèle de balle se déplaçant horizontalement et rebondissant sur une surface divisée en segments. Chaque segment possède une règle conditionnelle qui fait rebondir la balle lorsqu’elle atteint cette zone. Ajouter des segments permet de représenter davantage d’objets, mais augmente aussi le nombre de conditions à vérifier par le simulateur.</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Code source HydLa définissant le comportement d'une balle se déplaçant horizontalement et rebondissant sur l'une des sections de N faces adjacentes."></a>
-      <figcaption>Un court modèle HydLa décrit une surface divisée en une balle et <em>N</em> sections avec des gardes.</figcaption>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Code source HydLa définissant une balle qui se déplace horizontalement et rebondit sur une surface divisée en N segments adjacents."></a>
+      <figcaption>Un court modèle HydLa décrit une balle et une surface divisée en N segments, chacun associé à une contrainte gardée.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Goulot d'étranglement — le nombre de conditions augmente la complexité de calcul</h2>
-    <p>Une règle qui ne devient effective que lorsque certaines conditions sont remplies est appelée « contrainte avec garde ». Dans le modèle d'évaluation, la règle de rebond d'une section n'est effective que lorsque la balle atteint le sol et que sa position horizontale se trouve dans cette section.</p>
-    <p>Lorsque le nombre de parcelles est augmenté de 10 à 200, le simulateur traditionnel devenait environ proportionnel au carré du nombre de parcelles. Dans les modèles de grande taille, le même problème devient plus important car le nombre d'objets, de zones de contact et d'événements possibles augmente.</p>
+    <h2>Goulot d’étranglement : le nombre de conditions accroît le temps d’exécution</h2>
+    <p>Une règle qui ne s’active que lorsqu’une condition est satisfaite s’appelle une contrainte gardée. Dans le modèle d’évaluation, la règle de rebond d’un segment ne s’active que lorsque la balle atteint le sol et que sa position horizontale se situe dans ce segment.</p>
+    <p>Lorsque le nombre de segments passait de 10 à 200, le temps d’exécution du simulateur d’origine augmentait approximativement comme le carré de ce nombre. Les modèles plus grands peuvent amplifier ce problème en comprenant davantage d’objets, de zones de contact et d’événements possibles.</p>
   </section>
 
   <section>
-    <h2>Enquête — Où se trouvait 96 % du temps de traitement</h2>
-    <p>Lors de la mesure du temps de traitement, dans le modèle de 100 sections, 96 % du temps total était utilisé pour <code>FindMinTime</code>. Il s'agit du traitement qui consiste à rechercher « le prochain événement le plus rapide » parmi les candidats. Par conséquent, toutes les conditions de garde étaient évaluées de manière répétée.</p>
-    <p>Les points à améliorer sont devenus clairs. Il n'est pas nécessaire de reconstruire l'ensemble de la méthode de calcul, il suffit de réduire en toute sécurité les candidats à transmettre à <code>FindMinTime</code>. L'objectif était de ne retirer que les possibilités inutiles à examiner, sans changer les résultats de la simulation.</p>
+    <h2>Analyse : où passaient 96 % du temps d’exécution ?</h2>
+    <p>Le profilage du modèle à 100 segments a montré que <code>FindMinTime</code> représentait 96 % du temps d’exécution total. Cette routine recherche le prochain événement possible le plus proche en réévaluant toutes les conditions de garde candidates.</p>
+    <p>Ce résultat a permis de cibler une amélioration : réduire sans risque les candidats transmis à <code>FindMinTime</code>. L’objectif était d’écarter uniquement les possibilités devenues inutiles, tout en préservant les résultats de la simulation.</p>
   </section>
 
   <section>
-    <h2>Approche — Retirer en toute sécurité des conditions qui ne se réaliseront plus jamais</h2>
-    <p>Imaginez une balle descendant les escaliers en rebondissant. Si la balle passe un degré et continue à avancer, ce degré n'a plus d'effet sur la balle. Une personne regardant le schéma ignore immédiatement les degrés derrière la balle. L'algorithme original continuait à vérifier chacun d'entre eux.</p>
+    <h2>Approche : supprimer les conditions qui ne pourront plus devenir vraies</h2>
+    <p>Imaginons une balle qui descend un escalier en rebondissant. Une fois une marche dépassée, si la balle continue d’avancer, cette marche ne peut plus agir sur elle. Une personne observant le schéma ignore immédiatement les marches derrière la balle ; l’algorithme d’origine continuait à toutes les examiner.</p>
 
     <figure class="paper-figure line-art keeps-colour">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La trajectoire rouge montre la balle qui descend en rebondissant sur les marches noires. La zone hachurée représente les marches déjà dépassées et qui ne sont plus pertinentes."></a>
-      <figcaption>À mesure que la balle avance vers la droite, il est possible de passer la garde du niveau avec le treillis situé derrière.</figcaption>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="Une trajectoire rouge suit une balle rebondissant sur des marches noires. Les marches hachurées ont déjà été dépassées et ne peuvent plus agir sur la balle."></a>
+      <figcaption>Lorsque la balle se déplace vers la droite, la garde associée à une marche hachurée située derrière elle peut être écartée.</figcaption>
     </figure>
 
-    <p>La difficulté réside dans le fait de montrer que la garde supprimée ne sera pas nécessaire par la suite. Si l'on la supprime simplement parce qu'elle est fausse pour le moment, elle pourrait silencieusement renvoyer un résultat incorrect lorsque cela redeviendra vrai. C'est pourquoi la méthode proposée utilise la monotonie — il s'agit de déterminer si l'on peut garantir qu'une certaine variable continue d'augmenter ou de diminuer sur un certain intervalle de temps.</p>
+    <p>La difficulté consiste à prouver qu’une garde supprimée ne sera pas nécessaire par la suite. L’écarter simplement parce qu’elle est fausse à l’instant présent pourrait produire silencieusement un résultat incorrect si elle redevient vraie. La méthode proposée utilise donc la monotonie : peut-on garantir qu’une variable continuera à augmenter ou à diminuer sur un intervalle donné ?</p>
 
-    <h3>Lorsque le sens du changement ne change pas</h3>
-    <p>La première mesure s'applique lorsque la variable évolue dans une seule direction tout au long de la simulation. Dans un modèle où la surface est divisée, la position horizontale de la balle ne cesse d'augmenter. Une fois qu'elle a dépassé une section, les conditions de cette section ne seront plus jamais remplies. Cette propriété peut être vérifiée avant la simulation grâce aux techniques de vérification de modèle, ce qui permet de supprimer en toute sécurité les gardes devenus inutiles à mesure que l'exécution progresse.</p>
+    <h3>Lorsque le sens de variation reste le même</h3>
+    <p>La première approche s’applique lorsqu’une variable évolue dans un seul sens pendant toute la simulation. Dans le modèle de surface segmentée, la position horizontale de la balle augmente toujours. Dès qu’elle dépasse un segment, la garde de ce segment ne peut plus redevenir vraie. Des techniques de vérification de modèles peuvent établir cette propriété avant la simulation, ce qui permet de supprimer les gardes sans risque lorsqu’elles deviennent inutiles pendant l’exécution.</p>
 
     <figure class="paper-figure line-art keeps-colour figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="La ligne rouge qui monte de α à l'heure 0 jusqu'à β au temps maximal représente une variable qui continue d'augmenter tout au long de la simulation.">
-      <figcaption>La monotonie uniforme signifie que la direction du changement est maintenue sur l'ensemble de l'intervalle simulé.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Une ligne rouge monte de α à l’instant 0 à β à la fin de la simulation : elle représente une variable croissante sur tout l’intervalle simulé.">
+      <figcaption>La monotonie uniforme signifie que le sens de variation est maintenu pendant tout l’intervalle simulé.<details class="figure-translation"><summary>Lire les indications de la figure en français</summary><p>L’axe <em>t</em> représente le temps, de 0 à <em>MaxT</em>, la fin de la simulation. La variable passe de α à β en conservant le même sens de variation.</p></details></figcaption>
     </figure>
 
-    <h3>Lorsque la direction du changement change en cours de route</h3>
-    <p>De nombreux systèmes réels ne fonctionnent pas toujours dans une seule direction. Les variables peuvent augmenter, changer de direction, puis diminuer. L'article a donc présenté une deuxième approche. D'abord, on suppose une direction, on surveille cette hypothèse par une assertion, et lorsqu'un changement de direction se produit, le processus de réduction est recommencé depuis ce point. Les gardes retirés pour un intervalle monotone sont rétablis au début du prochain intervalle.</p>
+    <h3>Lorsque le sens de variation s’inverse</h3>
+    <p>De nombreux systèmes n’évoluent pas indéfiniment dans un seul sens : une variable peut augmenter, changer de sens, puis diminuer. Le mémoire proposait donc une seconde approche. Elle suppose un sens de variation et surveille cette hypothèse à l’aide d’assertions. Lorsqu’il change, le processus de réduction redémarre et rétablit les gardes supprimées pendant l’intervalle monotone précédent. Cette approche a été conçue, mais ni implémentée ni évaluée dans ce projet.</p>
 
     <figure class="paper-figure line-art keeps-colour figure-5">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Les cinq graphiques montrent comment les intervalles supposés en augmentation, l’échec d’assertion, le nouvel intervalle en diminution, le deuxième échec et l’intervalle monotone se confirment successivement.">
-      <figcaption>L'échec d'assertion divise le comportement changeant en intervalles pouvant chacun être traités comme monotone.</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Cinq schémas présentent un intervalle initialement supposé croissant, un échec d’assertion, un nouvel intervalle décroissant, un second échec et l’identification successive d’intervalles monotones.">
+      <figcaption>Les échecs d’assertion divisent le comportement en intervalles qui peuvent chacun être considérés comme monotones.<details class="figure-translation"><summary>Lire les indications de la figure en français</summary><p>L’axe <em>t</em> représente le temps ; <em>MaxT</em> indique la fin de la simulation. Les pointillés prolongent le sens de variation supposé ; les croix marquent les échecs d’assertion. Chaque échec conduit à définir un nouvel intervalle, repéré successivement par α₀–β₀, α₁–β₁, puis α₂–β₂.</p></details></figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Résultat — le temps d'exécution du modèle d'évaluation a été réduit de moitié environ</h2>
-    <p>Nous avons mis en œuvre la gestion de la monotonie uniforme et évalué le modèle avec les surfaces divisées. Tant l'algorithme original que la méthode proposée voient le temps requis augmenter avec le nombre de segments. Cependant, la méthode proposée nécessitait systématiquement moins de travail. En comparant les courbes ajustées, le coefficient du terme le plus élevé est passé de 1,1463 à 0,6083, ce qui a réduit d'environ moitié le temps total de simulation pour ce benchmark.</p>
-    <p>Il ne s'agit pas d'une affirmation selon laquelle tous les modèles HydLa deviennent deux fois plus rapides. Ce qui est montré, c'est où cette méthode fonctionne — dans les modèles où il y a beaucoup d'objets avec des gardes, où la direction des changements peut être prouvée, et où les gardes deviennent définitivement sans rapport pendant l'exécution.</p>
+    <h2>Résultat : un temps d’exécution presque divisé par deux dans le modèle d’évaluation</h2>
+    <p>J’ai implémenté l’approche fondée sur la monotonie uniforme et l’ai évaluée avec le modèle de surface segmentée. Pour les deux algorithmes, le temps d’exécution augmentait avec le nombre de segments, mais la méthode proposée était systématiquement plus rapide. Dans les courbes ajustées, le coefficient du terme de plus haut degré est passé de 1,1463 à 0,6083. Le temps total de simulation sur ce cas de référence a été approximativement divisé par deux.</p>
+    <p>Ce résultat est propre au cas de référence étudié. La méthode est utile lorsqu’un modèle contient de nombreux objets associés à des gardes, que le sens de variation peut être prouvé et que certaines gardes deviennent définitivement inutiles pendant l’exécution. Elle ne signifie pas que tous les modèles HydLa s’exécuteront deux fois plus vite.</p>
 
     <figure class="paper-figure line-art result-figure">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Graphique du temps de simulation en fonction de N. Sur toute la plage de 10 à 200 sections de surface, la méthode proposée est inférieure à la méthode originale, et pour N = 200, elle se situe à environ 250 secondes contre environ 470 secondes."></a>
-      <figcaption>Dans le modèle évalué, la méthode proposée (carré) prend environ la moitié du temps de l'algorithme original (cercle).</figcaption>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Temps de simulation en fonction de N, le nombre de segments de la surface. De 10 à 200 segments, la méthode proposée est systématiquement plus rapide. Pour N = 200, elle prend environ 250 secondes, contre environ 470 secondes pour l’algorithme d’origine."></a>
+      <figcaption>Dans les modèles évalués, la méthode proposée (carrés) prend environ deux fois moins de temps que l’algorithme d’origine (cercles).<details class="figure-translation"><summary>Lire les indications de la figure en français</summary><p>Axe horizontal : <em>N</em>, nombre de segments de la surface. Axe vertical : temps de simulation, en secondes. « Original » désigne l’algorithme d’origine, représenté par des cercles ; « proposed » désigne la méthode proposée, représentée par des carrés.</p></details></figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Les perspectives obtenues à partir de cette recherche</h2>
-    <p>Ce que nous avons fait dans cette recherche n'était pas d'accélérer légèrement chaque calcul individuel. Il s'agissait d'utiliser ce que nous savons sur le comportement du système pour réduire l'ensemble des possibilités à considérer. L'idée de restreindre l'espace de recherche sans changer le résultat est la force de la programmation par contraintes.</p>
-    <p>Ce qui a été mis en œuvre et évalué est le cas où les variables continuent de se déplacer dans une seule direction. Lorsque la direction du changement change en cours de route, cela reste au stade de la conception, l'évaluation étant laissée comme un sujet pour l'avenir. Il y a également une marge pour utiliser des propriétés autres que la monotonie et trouver d'autres contraintes inutiles.</p>
-    <p>Le fait que je cherche aujourd'hui à concevoir les conditions et les limites que l'IA peut explorer, plutôt que de concevoir directement les sorties de l'IA, est également lié à cette expérience. Lorsqu'on traite des résultats complexes, il est aussi important de définir ce qu'il n'est pas nécessaire de considérer que ce que l'on doit calculer.</p>
+    <h2>Ce que j’en ai retenu</h2>
+    <p>Ces recherches exploitaient des propriétés connues du comportement d’un système pour réduire l’ensemble des possibilités à examiner par le simulateur. Réduire l’espace de recherche tout en préservant les résultats est l’un des atouts de la programmation par contraintes.</p>
+    <p>L’implémentation et l’évaluation portaient sur les variables continuant d’évoluer dans un seul sens. La gestion des inversions restait au stade de la conception et devait encore être évaluée. D’autres propriétés que la monotonie pourraient également aider à repérer les contraintes inutiles.</p>
+    <p>Cette expérience nourrit mon intérêt actuel pour la conception des conditions et des limites à l’intérieur desquelles l’IA peut rechercher des solutions. Face à des résultats complexes, définir ce qui peut être ignoré sans risque compte autant que définir ce qu’il faut calculer.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
+  <p class="citation publication-citation">Takafumi Horiuchi et Kazunori Ueda. « Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa ». Proceedings of the 33rd Annual Conference of the Japanese Society for Artificial Intelligence, 2019. DOI : <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
-  <nav aria-label="Site">
+  <nav aria-label="Navigation du portfolio">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Retour au portfolio de Takafumi Horiuchi</span></a></li>
     </ul>
@@ -237,8 +238,8 @@ o-|\
      document rather than being built by works/figures.js so that the two
      strings it needs are written in this page's language, like the rest of
      the page. -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Figure agrandie" hidden>
-  <button class="lightbox__close" type="button" aria-label="Fermer l’agrandissement"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fermer l’image agrandie"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

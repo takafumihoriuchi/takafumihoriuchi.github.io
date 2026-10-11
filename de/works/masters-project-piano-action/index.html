@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Bewegungsanalyse der Klaviermechanik — Takafumi Horiuchi</title>
-<meta name="description" content="Die Spielmechanik eines Flügels als 3D-Modell in SolidWorks nachgebaut. Ein Projekt aus dem Masterstudium, das mit theoretischer Rechnung und Bewegungsanalyse vergleicht, wie der Anschlag an der Taste zu Hammergeschwindigkeit und Reaktionskraft an der Saite wird.">
+<title>Bewegungsanalyse einer Klaviermechanik — Takafumi Horiuchi</title>
+<meta name="description" content="Ein Masterprojekt, in dem die Mechanik eines Flügels als 3D-Modell in SolidWorks rekonstruiert wurde. Mithilfe theoretischer Berechnungen und Bewegungsanalysen wurde untersucht, wie die Tastenbetätigung in Hammergeschwindigkeit und Reaktionskraft an der Saite umgesetzt wird.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/de/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -33,14 +33,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="de_DE">
-<meta property="og:title" content="Bewegungsanalyse der Klaviermechanik">
-<meta property="og:description" content="Wie wird der Anschlag an der Taste auf dem Weg durch das Hebelwerk zur Geschwindigkeit des Hammers und zur Reaktionskraft an der Saite?">
+<meta property="og:title" content="Bewegungsanalyse einer Klaviermechanik">
+<meta property="og:description" content="Wie wandelt das komplexe Gestänge einer Klaviermechanik die Tastenbetätigung in Hammergeschwindigkeit und Reaktionskraft an der Saite um?">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/de/works/masters-project-piano-action/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="SolidWorks-3D-Modell einer hölzernen Klaviermechanik in Explosionsdarstellung.">
+<meta property="og:image:alt" content="Explosionsdarstellung eines hölzernen Klaviermechanik-Modells in SolidWorks.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -50,8 +50,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Cognitive Engineering × KI × Design",
+      "description": "Designingenieur",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -60,13 +61,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/de/works/masters-project-piano-action/#work",
-      "name": "Bewegungsanalyse der Klaviermechanik",
+      "name": "Bewegungsanalyse einer Klaviermechanik",
+      "headline": "Bewegungsanalyse einer Klaviermechanik",
       "url": "https://takafumihoriuchi.github.io/de/works/masters-project-piano-action/",
-      "description": "Die Spielmechanik eines Flügels als 3D-Modell in SolidWorks nachgebaut; die Übertragung vom Anschlag an der Taste bis zu Hammergeschwindigkeit und Reaktionskraft an der Saite wird zwischen theoretischer Rechnung und Bewegungsanalyse verglichen. Ein Projekt aus dem Masterstudium.",
+      "description": "Ein Masterprojekt, in dem die Mechanik eines Flügels als 3D-Modell in SolidWorks rekonstruiert wurde. Mithilfe theoretischer Berechnungen und Bewegungsanalysen wurde untersucht, wie die Tastenbetätigung in Hammergeschwindigkeit und Reaktionskraft an der Saite umgesetzt wird.",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
       "datePublished": "2020-01",
       "inLanguage": "de",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -90,7 +94,7 @@
 <main>
 
   <header>
-    <h1>Bewegungsanalyse der Klaviermechanik</h1>
+    <h1>Bewegungsanalyse einer Klaviermechanik</h1>
     <p class="dateline">Januar 2020</p>
   </header>
 
@@ -112,160 +116,161 @@
 
   <section>
     <h2>Überblick</h2>
-    <p class="lead">Im Inneren eines Flügels läuft die Bewegung einer angeschlagenen Taste durch eine Kette von Gliedern, bis der Hammer nach oben geschleudert wird und diese Bewegung zur Schwingung einer Saite wird. Jenes Hebelsystem — das, welches eine gedrückte Taste einen Hammer bewegen und eine Saite anschlagen lässt — heißt Klaviermechanik. Dieses Projekt hat die Klaviermechanik als 3D-Modell in SolidWorks* nachgebaut und mit Bewegungsanalyse untersucht, wie der Anschlag an der Taste in die Geschwindigkeit des Hammers und in die Reaktionskraft an der Saite umgesetzt wird.</p>
-    <p>Für die Analyse wurde die Tastenmechanik anhand von Referenzbildern von Grund auf in 3D modelliert, und an diesem Modell wurden zwei Bewegungsanalysen durchgeführt: eine zum Verhältnis zwischen der Geschwindigkeit der niedergehenden Taste und der des aufsteigenden Hammers, eine zum Verhältnis zwischen der auf die Taste aufgebrachten Kraft und der an der Saite ankommenden Kraft. Die Werte aus der Simulation wurden mit theoretischen Werten abgeglichen, die aus den Abmessungen und den Lagen der Drehpunkte hergeleitet sind, um festzustellen, wie Bewegung und Kraft im Inneren des Modells übertragen werden.</p>
-    <p class="citation">* SolidWorks: ein 3D-CAD-System. Es erlaubt bereits im Entwurf eine Strukturanalyse zur Festigkeit eines Bauteils und eine Bewegungsanalyse zur Prüfung seines Laufs.</p>
+    <p class="lead">Die Mechanik eines Flügels ist ein Hebelsystem, das einen Tastenanschlag auf einen Hammer überträgt. Dieser bewegt sich nach oben, schlägt eine Saite an und versetzt sie in Schwingung. In diesem Projekt wurde die Mechanik als 3D-Modell in SolidWorks* nachgebildet. Mithilfe einer Bewegungsanalyse wurde untersucht, wie die Betätigung der Taste in Hammergeschwindigkeit und Reaktionskraft an der Saite umgesetzt wird.</p>
+    <p>Die Mechanik wurde anhand von Referenzbildern von Grund auf modelliert und anschließend in zwei Analysen untersucht: zum Verhältnis zwischen der Abwärtsgeschwindigkeit der Taste und der Aufwärtsgeschwindigkeit des Hammers sowie zum Verhältnis zwischen der auf die Taste ausgeübten Kraft und der Reaktionskraft an der Saite. Die Simulationsergebnisse wurden mit theoretischen Werten verglichen, die aus den Abmessungen und Drehpunkten des Modells berechnet wurden, um die Übertragung von Bewegung und Kraft zu prüfen.</p>
+    <p class="citation">* SolidWorks ist ein 3D-CAD-System mit Werkzeugen für die Strukturanalyse von Bauteilen und die Bewegungsanalyse von Mechanismen.</p>
 
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Alle 17 Seiten von Motion Analysis of the Piano Action. Waagerecht scrollbar">
+      <ol class="deck" tabindex="0" role="group" aria-label="Bewegungsanalyse einer Klaviermechanik: 17 englischsprachige Originalfolien. Horizontal scrollen.">
         <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Titelfolie: „Motion Analysis of the Piano Action“."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Foto vom Inneren eines Flügels, das die Reihe der Mechaniken hinter den Tasten zeigt."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="3D-Modell, das zeigt, wie sich die Teile der Mechanik beim Anschlag einer Taste gemeinsam bewegen."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Schnittmodell der Klaviermechanik, das zeigt, wie das Drücken einer Taste den Hammer bis zum Anschlag an die Saite hebt."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Der Arbeitsgang, die Umrisse einer Schnittvorlage nachzuzeichnen und jedes Bauteil in SolidWorks von Grund auf zu modellieren."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die fertige 3D-Baugruppe der Klaviermechanik in SolidWorks."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die Bauteilnamen des Modells und die Freiheitsgradrechnung, die nach Anwendung der Bindungen 7 ergibt."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die beiden Analysethemen: die Bahngeschwindigkeiten von Taste und Hammer sowie das Verhältnis zwischen Tastenanschlag und Reaktionskraft an der Saite."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die Messpunkte der Analyse 1: die Abwärtsgeschwindigkeit am Tastenende und die Aufwärtsgeschwindigkeit des Hammers."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagramm, das die Klaviermechanik auf drei Drehglieder vereinfacht."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagramm, das aus dem Radienverhältnis der drei Drehglieder die Beziehung zwischen Tasten- und Hammergeschwindigkeit herleitet."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die Analysebedingungen: 5 Newton von 1 bis 2 Sekunden nach unten am Tastenende aufgebracht."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagramme der Bahngeschwindigkeiten von Taste und Hammer. Die Spitzenwerte betragen 1.027 und 4.284 Millimeter pro Sekunde."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Vergleich der aus den gemessenen Radien errechneten Hammergeschwindigkeit von 4.614 Millimetern pro Sekunde mit dem analysierten Wert von 4.284 Millimetern pro Sekunde."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die Bedingungen der Analyse 2: 15 Newton nach unten auf die Taste, bei Beobachtung der Reaktionskraft auf der Saitenseite."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Vergleich der maximalen Reaktionskraft an der Saite von 31 Newton mit dem theoretischen Wert von 31,1 Newton nach dem Hebelgesetz."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Foto des Inneren eines Flügels mit der Reihe der Mechaniken hinter den Tasten."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Ein 3D-Modell zeigt, wie sich die Bauteile der Mechanik beim Drücken einer Taste gemeinsam bewegen."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Schnittmodell der Klaviermechanik: Beim Drücken einer Taste hebt sich der Hammer und schlägt die Saite an."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Nachzeichnen einer Schnittzeichnung, um jedes Bauteil in SolidWorks von Grund auf zu modellieren."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die fertiggestellte 3D-Baugruppe der Klaviermechanik in SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Bauteilnamen und Berechnung der Freiheitsgrade des Modells: Nach Anwendung der Bindungen verbleiben 7 Freiheitsgrade."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Die beiden Analysethemen: lineare Geschwindigkeiten von Taste und Hammer sowie der Zusammenhang zwischen Tastenkraft und Reaktionskraft an der Saite."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Beobachtungspunkte für Analyse 1: die Abwärtsgeschwindigkeit am Tastenende und die Aufwärtsgeschwindigkeit des Hammers."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagramm zur Vereinfachung der Klaviermechanik in drei rotierende Elemente."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Herleitung des Verhältnisses zwischen Tasten- und Hammergeschwindigkeit aus den Verhältnissen von Ausgangs- zu Eingangsradius dreier rotierender Elemente."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Analysebedingungen: Von 1 bis 2 Sekunden wirken 5 Newton am Tastenende nach unten."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagramme der Tasten- und Hammergeschwindigkeit mit Spitzenwerten von 1.027 beziehungsweise 4.284 Millimetern pro Sekunde."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Vergleich der aus den gemessenen Radien berechneten theoretischen Hammergeschwindigkeit von 4.614 Millimetern pro Sekunde mit der simulierten Geschwindigkeit von 4.284 Millimetern pro Sekunde."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Bedingungen für Analyse 2: Eine nach unten gerichtete Kraft von 15 Newton wirkt auf die Taste; beobachtet wird die Reaktionskraft auf der Saitenseite."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Vergleich zwischen der maximalen Reaktionskraft an der Saite von 31 Newton und dem theoretischen Wert von 31,1 Newton nach dem Hebelgesetz."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Literaturverzeichnis zu mechanischen Modellen der Klaviermechanik."></a></li>
       </ol>
+      <figcaption>Originalfolien auf Englisch.</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Von der Klaviermechanik zu einem analysierbaren Modell</h2>
-    <h3>Der Mechanismus, der einen Anschlag zur angeschlagenen Saite macht</h3>
-    <p>Die Klaviermechanik ist der Mechanismus, der die Abwärtsbewegung einer Taste in die Aufwärtsbewegung eines Hammers umsetzt. Beim Drücken der Taste setzen sich Pilote, Hebeglied, Stoßzunge und Repetierschenkel gemeinsam in Bewegung und heben den Hammer, bis er die Saite trifft. Was der Spieler sieht, ist ein einziger Anschlag; in seinem Inneren drehen sich mehrere Teile um unterschiedliche Drehpunkte und reichen die Bewegung im Kontakt aneinander weiter.</p>
-    <p>Das 3D-Modell umfasst Taste, Hammer, Stoßzunge, Hebeglied, Repetierschenkel, Pilote, Dämpfer, Dämpferhebel und Draht samt dem tragenden Rahmen. Die Bewegung zu verstehen verlangte mehr, als die fertige Form zu betrachten: Es galt festzulegen, welches Teil sich um welchen Drehpunkt dreht und an welcher Stelle es das nächste berührt.</p>
+    <h2>Ein Modell der Klaviermechanik für die Analyse aufbauen</h2>
+    <h3>Wie ein Tastenanschlag den Hammer bewegt</h3>
+    <p>Die Klaviermechanik wandelt die Abwärtsbewegung einer Taste in die Aufwärtsbewegung eines Hammers um. Beim Drücken der Taste bewegen sich Pilote, Hebeglied, Stoßzunge und Repetierschenkel gemeinsam und heben den Hammer, bis er die Saite anschlägt. Die spielende Person führt nur einen Tastenanschlag aus; im Inneren drehen sich jedoch mehrere Bauteile um unterschiedliche Drehpunkte und übertragen die Bewegung durch Kontakt.</p>
+    <p>Das 3D-Modell umfasst Taste, Hammer, Stoßzunge, Hebeglied, Repetierschenkel, Pilote, Dämpfer, Dämpferhebel und Draht sowie den tragenden Rahmen. Um die Bewegung zu modellieren, mussten für jedes Bauteil der Drehpunkt und die Kontaktstellen zu anderen Bauteilen festgelegt werden.</p>
 
-    <h3>Ein 3D-Modell aus einer Schnittzeichnung aufbauen</h3>
-    <p>Statt fertige CAD-Daten zu verwenden, wurde der Umriss jedes Bauteils über einer Schnittvorlage der Klaviermechanik nachgezeichnet und einzeln in 3D modelliert. Anschließend wurden die Teile zu einer Baugruppe zusammengeführt, mit den Fest- und Drehbeziehungen des wirklichen Mechanismus zwischen ihnen. Dieser Schritt machte aus einem Modell zum Ansehen einer Form ein Modell, das man belasten und bewegen kann.</p>
+    <h3>Das 3D-Modell aus einer Schnittzeichnung erstellen</h3>
+    <p>Jedes Bauteil wurde von Grund auf in 3D modelliert, indem sein Umriss anhand einer Schnittzeichnung der Klaviermechanik nachgezeichnet wurde. Anschließend wurden die Teile mit festen Verbindungen und Drehgelenken entsprechend der realen Mechanik zusammengesetzt. Durch die Definition dieser Beziehungen entstand aus der Geometrie ein Analysemodell, das sich unter einwirkenden Kräften bewegen konnte.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Im SolidWorks-Fenster dient eine Schnittzeichnung einer Klaviermechanik als halbtransparente Unterlage, über deren Umrissen das 3D-Modell aufgebaut wird. Links sind die Windows-Taskleiste und der Bauteilbaum zu sehen."></a>
-      <figcaption>Die Schnittvorlage wurde als halbtransparente Unterlage nach hinten gelegt, und das 3D-Modell wurde in SolidWorks entlang ihrer Umrisse aufgebaut.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="SolidWorks-Bildschirmansicht mit einer halbtransparenten Schnittzeichnung der Klaviermechanik, über deren Umrissen die 3D-Bauteile modelliert wurden. Links sind die Windows-Taskleiste und der Komponentenbaum zu sehen."></a>
+      <figcaption>Eine Schnittzeichnung diente als halbtransparente Vorlage zum Nachzeichnen und Modellieren der Bauteile in SolidWorks.</figcaption>
     </figure>
 
     <figure class="paper-figure model-figure">
-      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="Das SolidWorks-Fenster unter Windows. Links die Windows-Taskleiste und der Bauteilbaum, in der Mitte das 3D-Modell der Klaviermechanik."></a>
-      <figcaption>Das 3D-Modell der Klaviermechanik, wie es in SolidWorks tatsächlich aufgebaut wurde.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="SolidWorks unter Windows mit Taskleiste und Komponentenbaum links sowie dem 3D-Modell der Klaviermechanik in der Mitte."></a>
+      <figcaption>Das fertiggestellte 3D-Modell der Klaviermechanik in SolidWorks.</figcaption>
     </figure>
 
-    <h3>Die Bindungen als Freiheitsgrade prüfen</h3>
-    <p>Ohne den festen Rahmen sind neun Bauteile beweglich, was ohne Bindungen insgesamt 54 Freiheitsgrade ergibt. Das Festsetzen von Pilote und Draht an anderen Bauteilen nimmt 12 weg, und die Bindung der übrigen sieben Bauteile durch Drehgelenke weitere 35. Die CAD-Baugruppe hat damit 7 Freiheitsgrade, wie folgt.</p>
-    <p class="formula" role="math" aria-label="54 minus 12 minus 35 gleich 7">54 − 12 − 35 = 7</p>
-    <p>Auch die Bindungsdiagnose von SolidWorks meldete dasselbe: geschätzte und tatsächliche Freiheitsgrade jeweils 7, redundante Bindungen 0. Das ist keine Aussage über die Freiheitsgrade von Klaviermechaniken überhaupt — es bestätigt, dass der in diesem Projekt festgelegte Satz von Bauteilen und Bindungen so zusammengesetzt ist wie beabsichtigt.</p>
+    <h3>Die Freiheitsgrade der Baugruppe überprüfen</h3>
+    <p>Ohne den festen Rahmen enthält die Baugruppe neun bewegliche Bauteile mit insgesamt 54 ungebundenen Freiheitsgraden. Das Fixieren von Pilote und Draht an anderen Bauteilen entfernt 12 Freiheitsgrade. Drehgelenke an den übrigen sieben Bauteilen entfernen weitere 35. Damit verbleiben der CAD-Baugruppe 7 Freiheitsgrade:</p>
+    <p class="formula" role="math" aria-label="54 minus 12 minus 35 ergibt 7">54 − 12 − 35 = 7</p>
+    <p>Auch die Bindungsdiagnose von SolidWorks meldete 7 geschätzte und 7 tatsächliche Freiheitsgrade sowie 0 redundante Bindungen. Damit war bestätigt, dass die für dieses Projekt definierten Bauteile und Bindungen wie vorgesehen zusammengesetzt waren. Die Zahl der Freiheitsgrade jeder realen Klaviermechanik ist damit nicht bestimmt.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Das Modell der Klaviermechanik mit beschrifteten Bauteilen und die Rechnung, die von 54 Freiheitsgraden 12 Festbindungen und 35 Drehbindungen abzieht und 7 ergibt."></a>
-      <figcaption>Bauteilnamen und Bindungen. Auch die Diagnose in SolidWorks gab dem Modell 7 Freiheitsgrade und 0 redundante Bindungen.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Beschriftetes Modell der Klaviermechanik mit Berechnung der Freiheitsgrade: Von 54 entfallen 12 durch feste Verbindungen und 35 durch Drehgelenke; 7 bleiben übrig."></a>
+      <figcaption>Bauteilnamen und Bindungen der Baugruppe. Die Diagnose von SolidWorks meldete 7 Freiheitsgrade und 0 redundante Bindungen.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Zwei Analysen — wie der Tastenanschlag umgesetzt wird</h2>
-    <p>Das Verhalten des Modells wurde in zwei getrennten Analysen untersucht. Analyse 1 fragt, wie die Geschwindigkeit, mit der sich die Taste bewegt, in die Geschwindigkeit des Hammers umgesetzt wird; Analyse 2, wie die auf die Taste aufgebrachte Kraft als Reaktionskraft auf der Saitenseite erscheint. Indem jeweils ein Paar aus Eingang und Ausgang herausgelöst wird, lässt sich das Verhalten eines verwickelten Hebelwerks über ein geometrisches Geschwindigkeitsverhältnis und das Kräftegleichgewicht eines Hebels erklären.</p>
-    <p>Als Vergleichsmaßstab diente eine theoretische Rechnung, in der der Mechanismus durch einfache Drehglieder ersetzt wird. Liegen theoretischer und simulierter Wert nahe beieinander, so folgt zumindest die Bewegung im Inneren des Modells der Beziehung, die aus den festgelegten Abmessungen und Bindungen zu erwarten ist.</p>
+    <h2>Zwei Analysen der Tastenbetätigung</h2>
+    <p>Das Modell wurde in zwei getrennten Analysen untersucht. Analyse 1 verglich die Tastengeschwindigkeit mit der Hammergeschwindigkeit. Analyse 2 verglich die auf die Taste ausgeübte Kraft mit der Reaktionskraft an der Saite. Durch die Trennung dieser Eingangs- und Ausgangsgrößen ließ sich das komplexe Gestänge mithilfe geometrischer Geschwindigkeitsverhältnisse und des Hebelgesetzes leichter analysieren.</p>
+    <p>Zum Vergleich wurde die Mechanik auf rotierende Elemente vereinfacht und theoretisch untersucht. Eine Übereinstimmung von Theorie und Simulation würde darauf hinweisen, dass die Bewegung des Modells mit seinen festgelegten Abmessungen und Bindungen vereinbar ist.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Zwei Diagramme, die zeigen, dass Analyse 1 die Bahngeschwindigkeiten von Taste und Hammer einander zuordnet und Analyse 2 die auf die Taste aufgebrachte Kraft und die Reaktionskraft an der Saite."></a>
-      <figcaption>Ein- und Ausgänge der beiden Analysen. Analyse 1 vergleicht die Bahngeschwindigkeiten von Taste und Hammer, Analyse 2 die auf die Taste aufgebrachte Kraft mit der Reaktionskraft an der Saite.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Zwei Diagramme stellen Tasten- und Hammergeschwindigkeit in Analyse 1 sowie die auf die Taste ausgeübte Kraft und die Reaktionskraft an der Saite in Analyse 2 gegenüber."></a>
+      <figcaption>Die beiden Vergleiche von Eingangs- und Ausgangsgrößen: Tasten- und Hammergeschwindigkeit in Analyse 1 sowie Kraft auf die Taste und Reaktionskraft an der Saite in Analyse 2.</figcaption>
     </figure>
 
-    <h3>Analyse 1 — um wie viel die Tastengeschwindigkeit am Hammer verstärkt wird</h3>
-    <p>Für die Geschwindigkeitsanalyse wurde die verwickelte Klaviermechanik auf drei starre Körper vereinfacht, die die Bewegung im Kontakt weitergeben: die Taste, das um das Hebeglied zentrierte Zwischengetriebe und der Hammer. Liest man die Bewegung als von ① nach ③ in der Abbildung weitergereicht, so lässt sich ein Mechanismus aus vielen Teilen als drei Drehstufen berechnen.</p>
+    <h3>Analyse 1: Von der Tasten- zur Hammergeschwindigkeit</h3>
+    <p>Für die Geschwindigkeitsberechnung wurde die Mechanik auf drei starre Körper vereinfacht: die Taste, einen Zwischenmechanismus um das Hebeglied und den Hammer. Indem die Bewegung als Folge von Kontakten von ① bis ③ betrachtet wurde, ließ sich das Gestänge als drei aufeinanderfolgende Drehstufen analysieren.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Diagramm, das die Klaviermechanik farblich in drei starre Körper gliedert: ① die Taste, ② das um das Hebeglied zentrierte Zwischengetriebe und ③ den Hammer."></a>
-      <figcaption>Für die Analyse wurde der Mechanismus auf drei starre Körper vereinfacht: ① die Taste, ② das Zwischengetriebe und ③ den Hammer.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Die Klaviermechanik ist farblich in drei starre Körper unterteilt: ① die Taste, ② der Zwischenmechanismus um das Hebeglied und ③ der Hammer."></a>
+      <figcaption>Das vereinfachte Modell besteht aus drei starren Körpern: ① der Taste, ② dem Zwischenmechanismus und ③ dem Hammer.</figcaption>
     </figure>
 
-    <p>Innerhalb eines starren Körpers ist die Winkelgeschwindigkeit gemeinsam; bezeichnet <em>r</em> den Abstand vom Drehpunkt und <em>v</em> die Bahngeschwindigkeit an diesem Punkt, so gilt <em>v</em> = <em>ωr</em>. Nimmt man an, dass die Geschwindigkeit am Berührpunkt verlustfrei auf den nächsten Körper übergeht, so ergibt sich die Hammergeschwindigkeit aus dem Produkt der Verhältnisse von Eingangs- zu Ausgangsradius über alle Stufen.</p>
-    <p class="formula formula-long" role="math" aria-label="Hammergeschwindigkeit gleich r eins Strich mal r zwei Strich mal r drei Strich, geteilt durch r eins mal r zwei mal r drei, mal Tastengeschwindigkeit">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+    <p>Alle Punkte eines starren Körpers haben dieselbe Winkelgeschwindigkeit. Bezeichnet <em>r</em> den Abstand vom Drehpunkt und <em>v</em> die lineare Geschwindigkeit an diesem Punkt, gilt <em>v</em> = <em>ωr</em>. Unter der Annahme, dass die Geschwindigkeit an jeder Kontaktstelle verlustfrei zwischen den Körpern übertragen wird, lässt sich die Hammergeschwindigkeit berechnen: Die Verhältnisse von Ausgangs- zu Eingangsradius der drei Stufen werden miteinander und anschließend mit der Tastengeschwindigkeit multipliziert.</p>
+    <p class="formula formula-long" role="math" aria-label="Die Hammergeschwindigkeit ist gleich r eins Strich mal r zwei Strich mal r drei Strich, geteilt durch r eins mal r zwei mal r drei, multipliziert mit der Tastengeschwindigkeit">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Diagramm, das für die drei starren Körper die Abstände von jedem Drehpunkt zu Eingangs- und Ausgangspunkt als r1, r1 Strich, r2, r2 Strich, r3 und r3 Strich bezeichnet."></a>
-      <figcaption>Die Abstände vom Drehpunkt jedes starren Körpers zu seinen Eingangs- und Ausgangspunkten werden als Radien behandelt, und ihre Verhältnisse werden über die drei Stufen multipliziert, um das Geschwindigkeitsverhältnis zu erhalten.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Diagramm der Abstände von jedem der drei Drehpunkte zu seinen Eingangs- und Ausgangspunkten, bezeichnet mit r1, r1 Strich, r2, r2 Strich, r3 und r3 Strich."></a>
+      <figcaption>Die Abstände vom jeweiligen Drehpunkt zu den Eingangs- und Ausgangspunkten definieren die Radien. Das Produkt der drei Verhältnisse von Ausgangs- zu Eingangsradius ergibt das gesamte Geschwindigkeitsverhältnis.</figcaption>
     </figure>
 
-    <h4>Eingangsbedingungen und Beobachtungsergebnisse</h4>
-    <p>In SolidWorks Motion Analysis wurden 5 N nach unten am Tastenende aufgebracht und die Bahngeschwindigkeiten von Tastenende und Hammer aufgezeichnet. Unmittelbar nach Beginn der Krafteinleitung betrugen die Spitzengeschwindigkeiten 1.027 mm/s an der Taste und 4.284 mm/s am Hammer. In der Simulation bewegte sich der Hammer damit rund 4,17-mal so schnell wie die Taste.</p>
+    <h4>Eingangsbedingungen und Ergebnisse</h4>
+    <p>In SolidWorks Motion Analysis wurde am Ende der Taste eine nach unten gerichtete Kraft von 5 N angesetzt. Aufgezeichnet wurden die linearen Geschwindigkeiten von Tastenende und Hammer. Unmittelbar nach Einsetzen der Kraft erreichten sie Höchstwerte von 1.027 mm/s beziehungsweise 4.284 mm/s. Daraus ergibt sich in der Simulation ein Verhältnis von Hammer- zu Tastengeschwindigkeit von etwa 4,17.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Zwei Diagramme der Tasten- und Hammergeschwindigkeit über der Zeit, mit den Spitzen unmittelbar nach Beginn des Eingangs bei 1.027 und 4.284 Millimetern pro Sekunde."></a>
-      <figcaption>Die Bahngeschwindigkeiten von Taste und Hammer. Beide erreichen ihr Maximum unmittelbar nach Beginn des Eingangs, wobei die Geschwindigkeit auf der Hammerseite verstärkt ist.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Tasten- und Hammergeschwindigkeit über der Zeit, mit Spitzenwerten kurz nach Einsetzen der Kraft von 1.027 beziehungsweise 4.284 Millimetern pro Sekunde."></a>
+      <figcaption>Tasten- und Hammergeschwindigkeit erreichen ihre Höchstwerte kurz nach Einsetzen der Kraft. Der Hammer erreicht die höhere Geschwindigkeit.</figcaption>
     </figure>
 
     <table class="results-table">
-      <caption>Spitzengeschwindigkeiten der Analyse 1</caption>
+      <caption>Höchstgeschwindigkeiten in Analyse 1</caption>
       <thead>
-        <tr><th scope="col">Messung bzw. Rechnung</th><th scope="col">Geschwindigkeit</th></tr>
+        <tr><th scope="col">Größe und Methode</th><th scope="col">Geschwindigkeit</th></tr>
       </thead>
       <tbody>
         <tr><th scope="row">Taste (Simulation)</th><td>1.027 mm/s</td></tr>
-        <tr><th scope="row">Hammer (theoretische Rechnung)</th><td>4.614 mm/s</td></tr>
+        <tr><th scope="row">Hammer (Theorie)</th><td>4.614 mm/s</td></tr>
         <tr><th scope="row">Hammer (Simulation)</th><td>4.284 mm/s</td></tr>
       </tbody>
     </table>
 
-    <h4>Vergleich mit dem theoretischen Wert</h4>
-    <p>Die am Modell gemessenen Radien sind <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm und <em>r</em><sub>3</sub>′ = 111 mm. In die Gleichung eingesetzt ergibt sich ein idealisiertes Geschwindigkeitsverhältnis von etwa 4,49, womit für eine Tastengeschwindigkeit von 1.027 mm/s eine Hammergeschwindigkeit von 4.614 mm/s vorhergesagt wird.</p>
+    <h4>Vergleich mit der Theorie</h4>
+    <p>Die gemessenen Radien betrugen <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm und <em>r</em><sub>3</sub>′ = 111 mm. Eingesetzt ergeben diese Werte ein idealisiertes Geschwindigkeitsverhältnis von etwa 4,49. Bei einer Tastengeschwindigkeit von 1.027 mm/s beträgt die berechnete Hammergeschwindigkeit 4.614 mm/s.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Diagramm, das am SolidWorks-3D-Modell die sechs gemessenen Radien der Geschwindigkeitsverhältnis-Rechnung markiert."></a>
-      <figcaption>Die sechs am 3D-Modell gemessenen Radien. Aus diesen Werten wurde die theoretische Hammergeschwindigkeit von 4.614 mm/s berechnet.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Die sechs für die Berechnung des Geschwindigkeitsverhältnisses verwendeten Radien, am 3D-Modell in SolidWorks markiert."></a>
+      <figcaption>Die sechs am 3D-Modell gemessenen Radien, aus denen die theoretische Hammergeschwindigkeit von 4.614 mm/s berechnet wurde.</figcaption>
     </figure>
 
-    <p>Der simulierte Wert von 4.284 mm/s liegt rund 7 % unter dem theoretischen, doch das Ausmaß der Verstärkung ist ähnlich. Der Unterschied entsteht, wie unten ausgeführt, weil die theoretische Rechnung die Mechanik als drei starre Körper idealisiert, während die 3D-Simulation auch Verluste zwischen den Bauteilen und die Verformung des Materials erfasst.</p>
+    <p>Die simulierte Hammergeschwindigkeit von 4.284 mm/s lag etwa 7 % unter dem theoretischen Wert und zeigte dabei eine ähnliche Geschwindigkeitsverstärkung. Die theoretische Berechnung verwendet drei idealisierte starre Körper, während die Simulation die einzelnen Bauteile abbildet. Aus der numerischen Abweichung allein lässt sich ihre Ursache nicht ableiten.</p>
 
-    <h3>Analyse 2 — wie die Kraft an der Taste an der Saite erscheint</h3>
-    <p>Die zweite Analyse brachte 15 N nach unten auf die Tastenoberfläche auf und zeichnete die Reaktionskraft auf, die im Augenblick des Anschlags auf der Saitenseite auftritt. Der Eingang an der Taste, <em>F</em><sub>key</sub>, steigt ab 1,0 Sekunden auf 15 N an, und im Augenblick des Anschlags zeigt die Reaktionskraft <em>V</em><sub>string</sub> eine Spitze von 31 N.</p>
+    <h3>Analyse 2: Von der Tastenkraft zur Reaktionskraft an der Saite</h3>
+    <p>In der zweiten Analyse wurde auf die Tastenoberfläche eine nach unten gerichtete Kraft von 15 N aufgebracht und die Reaktionskraft an der Saite beim Aufprall aufgezeichnet. Die Tastenkraft <em>F</em><sub>key</sub> begann bei 1,0 Sekunden anzusteigen und erreichte 15 N. Die Reaktionskraft <em>V</em><sub>string</sub> erreichte beim Auftreffen des Hammers einen Spitzenwert von 31 N.</p>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Erläuterungsdiagramm des Tasteneingangs F key über der Zeit. Er steigt ab 1 Sekunde an, hält 15 Newton und kehrt auf 0 Newton zurück."></a>
-      <figcaption>Der Eingang an der Taste, <em>F</em><sub>key</sub>. Ab 1,0 Sekunden wurde Kraft aufgebracht, mit einem Eingang von 15 N.</figcaption>
+      <a href="assets/force-key-graph-de.svg"><img src="assets/force-key-graph-de.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Schematisches Diagramm der Tastenkraft F key über der Zeit. Sie beginnt bei 1 Sekunde anzusteigen, bleibt bei 15 Newton und kehrt anschließend auf null zurück."></a>
+      <figcaption>Die auf die Taste ausgeübte Kraft <em>F</em><sub>key</sub> setzt bei 1,0 Sekunden ein und erreicht 15 N.</figcaption>
     </figure>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Erläuterungsdiagramm der saitenseitigen Reaktionskraft V string über der Zeit, mit einer scharfen Spitze von 31 Newton im Augenblick des Anschlags."></a>
-      <figcaption>Die Reaktionskraft an der Saite, <em>V</em><sub>string</sub>. Sie erreichte im Augenblick des Anschlags ein Maximum von 31 N.</figcaption>
+      <a href="assets/force-string-graph-de.svg"><img src="assets/force-string-graph-de.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Schematisches Diagramm der Reaktionskraft V string an der Saite über der Zeit, mit einem Spitzenwert von 31 Newton beim Aufprall."></a>
+      <figcaption>Die Reaktionskraft an der Saite <em>V</em><sub>string</sub> erreicht beim Aufprall einen Spitzenwert von 31 N.</figcaption>
     </figure>
 
-    <p>Dieser Wert lässt sich über das Gleichgewicht eines Hebels erklären, mit den Hebelarmlängen auf der Tasten- und auf der Hammerseite.</p>
-    <p class="formula formula-long" role="math" aria-label="Reaktionskraft an der Saite gleich 15 mal 195 geteilt durch 94, also 31,1 Newton">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
-    <p>Rechnet man mit 195 mm vom Eingangspunkt zum Drehpunkt und 94 mm bis zum Angriffspunkt auf der Saitenseite, ergibt sich ein theoretischer Wert von 31,1 N. Der Abstand zum simulierten Maximum von 31 N beträgt 0,1 N; auch in dieser Analyse stimmt das Ergebnis also nahezu mit der Kraftübertragung überein, die aus den festgelegten Abmessungen zu erwarten ist.</p>
+    <p>Zum Vergleich wurde mit den Hebelarmen auf Tasten- und Hammerseite eine vereinfachte Berechnung nach dem Hebelgesetz durchgeführt.</p>
+    <p class="formula formula-long" role="math" aria-label="Der Vergleichswert nach dem Hebelgesetz ist gleich 15 mal 195 geteilt durch 94, also 31,1 Newton">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>Mit Hebelarmen von 195 mm auf der Eingangsseite und 94 mm auf der Saitenseite ergibt die statische Vergleichsrechnung nach dem Hebelgesetz 31,1 N. Das sind 0,1 N mehr als der simulierte Spitzenwert von 31 N. Unter welchen Bedingungen diese statische Rechnung auf die kurzzeitige Kraftspitze beim Aufprall übertragbar ist, muss noch bestätigt werden.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Kräftegleichgewichts-Diagramm mit dem Abstand von 195 Millimetern vom Drehpunkt der Taste zum Eingangspunkt und von 94 Millimetern zum Angriffspunkt auf der Saitenseite."></a>
-      <figcaption>Aus dem Eingang von 15 N an der Taste ergibt das Hebelgleichgewicht eine Reaktionskraft von 31,1 N an der Saite — nahezu deckungsgleich mit dem simulierten Maximum von 31 N.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Kräftegleichgewichtsdiagramm mit dem 195 Millimeter langen Hebelarm auf der Tastenseite und dem 94 Millimeter langen Hebelarm auf der Saitenseite."></a>
+      <figcaption>Eine statische Vergleichsrechnung nach dem Hebelgesetz ergibt bei einer Tastenkraft von 15 N und den angegebenen Hebelarmen 31,1 N, nahe dem simulierten Spitzenwert von 31 N.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Simulation und theoretische Werte im Abgleich</h2>
-    <h3>Zwei Analysen mit nahe beieinanderliegenden Ergebnissen</h3>
-    <p>In Analyse 1, die die Geschwindigkeiten von Taste und Hammer vergleicht, stand der theoretischen Hammergeschwindigkeit von 4.614 mm/s ein simulierter Wert von 4.284 mm/s gegenüber. In Analyse 2, die den Tasteneingang mit der Reaktionskraft an der Saite vergleicht, stand dem theoretischen Wert von 31,1 N ein simuliertes Maximum von 31 N gegenüber. In beiden Analysen lagen die am aufgebauten 3D-Modell simulierten Ergebnisse nahe an den aus den Gleichungen gewonnenen theoretischen Werten.</p>
+    <h2>Simulation und Theorie vergleichen</h2>
+    <h3>Ergebnisse der beiden Vergleiche</h3>
+    <p>In Analyse 1 betrug die theoretische Hammergeschwindigkeit 4.614 mm/s, gegenüber 4.284 mm/s in der Simulation. In Analyse 2 lag der statische Vergleichswert nach dem Hebelgesetz bei 31,1 N, gegenüber einem simulierten Spitzenwert von 31 N. Beide Vergleiche zeigten eine gute Übereinstimmung zwischen dem 3D-Modell und den theoretischen Berechnungen.</p>
 
-    <h3>Warum eine geringe Abweichung bleibt</h3>
-    <p>Die theoretische Rechnung vereinfacht die Klaviermechanik zu einem Mechanismus aus drei starren Körpern und rechnet damit, dass Bewegung und Kraft an den Berührpunkten verlustfrei übergehen. Die Simulation am 3D-Modell behandelt dagegen jedes einzelne Bauteil der Mechanik, sodass auch die zwischen den Teilen verlorene Energie und die Verformung des Materials ins Ergebnis eingehen. Dieser Unterschied in den Voraussetzungen zeigt sich als die geringe Abweichung zwischen theoretischem und simuliertem Wert.</p>
+    <h3>Die Unterschiede einordnen</h3>
+    <p>Die theoretische Berechnung reduziert die Mechanik auf drei starre Körper und nimmt an, dass Bewegung und Kraft an deren Kontaktstellen verlustfrei übertragen werden. Die Simulation bildet dagegen die einzelnen Bauteile ab. Diese unterschiedlichen Darstellungen sind für die Interpretation der Ergebnisse wichtig. Um die verbleibende Abweichung auf Energieverlust oder Materialverformung zurückzuführen, müssten jedoch die Simulationseinstellungen überprüft werden.</p>
 
     <h3>Fazit</h3>
-    <p>Es ließ sich bestätigen, dass die Ergebnisse der 3D-Simulation nahezu den theoretischen Werten entsprechen. Das aus einer Schnittzeichnung aufgebaute 3D-Modell gab die Bewegung der Klaviermechanik — die den Anschlag an der Taste zur Geschwindigkeit des Hammers verstärkt und diese Kraft an die Saite weitergibt — in einer Form wieder, die mit der theoretischen Rechnung übereinstimmt.</p>
-    <p>In diesem Projekt ging es nicht nur darum, eine Form nachzubilden. Die Struktur aus einer Schnittvorlage herauszulesen, die Beziehungen zwischen den Bauteilen in Bindungen im CAD zu übersetzen und das Ganze zu einem mechanischen Modell zu vereinfachen, das zur jeweiligen Frage passt, gehörte zu ein und demselben Modellierungsvorgang.</p>
+    <p>Die 3D-Simulation stimmte bei Hammergeschwindigkeit und Reaktionskraft an der Saite weitgehend mit den theoretischen Vergleichswerten überein. Im Rahmen dieser Vergleiche bildete das aus einer Schnittzeichnung erstellte Modell die Übertragung von Bewegung und Kraft so ab, wie es aus der vorgegebenen Geometrie und den Bindungen zu erwarten war.</p>
+    <p>Das Projekt verband mehrere Modellierungsschritte: eine Schnittzeichnung interpretieren, Beziehungen zwischen Bauteilen in CAD-Bindungen übersetzen und die Baugruppe zu einem mechanischen Modell vereinfachen, das zur jeweiligen Analyse passt.</p>
   </section>
 
-  <nav aria-label="Website">
+  <nav aria-label="Portfolio-Navigation">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Zurück zum Portfolio von Takafumi Horiuchi</span></a></li>
     </ul>
@@ -293,8 +298,8 @@
 
 </main>
 
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Abbildung" hidden>
-  <button class="lightbox__close" type="button" aria-label="Vergrößerung schließen"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößertes Bild" hidden>
+  <button class="lightbox__close" type="button" aria-label="Vergrößertes Bild schließen"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

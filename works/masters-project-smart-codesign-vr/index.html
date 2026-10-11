@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Developing an Interactive Object Prototyping VR System for Children — Takafumi Horiuchi</title>
-<meta name="description" content="Building and running, in VR, the smart objects children invent in the SNaP board game. A collaborative master’s project implemented on Oculus Quest 2 in Unity: pick three cards — environment, input, output — and define the condition and the behaviour yourself.">
+<title>Developing a VR system for children to prototype interactive objects — Takafumi Horiuchi</title>
+<meta name="description" content="A team project in a master’s course at Politecnico di Milano, implemented in Unity for Oculus Quest 2. Children can assemble and run the smart objects imagined in the SNaP board game by choosing environment, input, and output cards and defining conditions and behaviors through physical movements.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -33,14 +33,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="en_US">
-<meta property="og:title" content="Developing an Interactive Object Prototyping VR System for Children">
-<meta property="og:description" content="Assemble a smart object in VR out of three cards: environment, input, output.">
+<meta property="og:title" content="Developing a VR system for children to prototype interactive objects">
+<meta property="og:description" content="A VR prototype for assembling smart objects from three cards: environment, input, and output.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="The card-selection screen in VR. Three translucent boxes labelled input, environment and output stand in front of a board of cards.">
+<meta property="og:image:alt" content="VR card selection with three translucent boxes labeled “input,” “environment” and “output” in front of a board of cards.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -50,8 +50,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Cognitive Engineering × AI × Design",
+      "description": "Design engineer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -60,9 +61,9 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/#work",
-      "name": "Developing an Interactive Object Prototyping VR System for Children",
+      "name": "Developing a VR system for children to prototype interactive objects",
       "url": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/",
-      "description": "A prototyping environment in which the smart objects children invent in the SNaP board game are assembled and run in VR. Three cards — environment, input, output — are chosen, and the condition and the behaviour are defined by the player. A collaborative master’s project implemented on Oculus Quest 2 in Unity.",
+      "description": "A team project in a master’s course at Politecnico di Milano, implemented in Unity for Oculus Quest 2. Children can assemble and run the smart objects imagined in the SNaP board game by choosing environment, input, and output cards and defining conditions and behaviors through physical movements.",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
       "datePublished": "2021-02",
       "inLanguage": "en",
@@ -80,7 +81,7 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Go Back to Takafumi Horiuchi&#x27;s Portfolio">Takafumi Horiuchi</a>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Back to Takafumi Horiuchi’s portfolio">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Appearance" dir="ltr" hidden>
     <label title="Light mode">
       <input type="radio" name="theme" value="light" aria-label="Light mode">
@@ -95,7 +96,7 @@
 <main>
 
   <header>
-    <h1>Developing an Interactive Object Prototyping VR System for Children</h1>
+    <h1>Developing a VR system for children to prototype interactive objects</h1>
     <p class="dateline">February 2021</p>
   </header>
 
@@ -111,126 +112,126 @@
 
   <section>
     <h2>Overview</h2>
-    <p class="lead">Smart Codesign VR is a platform for assembling interactive things — “smart objects” — in virtual reality and touching them on the spot to see what they do. The player picks three cards, one each for environment, input and output, and defines by hand what happens and when. The finished object is placed in a virtual park, where it can actually be operated and tried out.</p>
-    <p>It builds on SNaP (The Smart Nature Protagonists), a board game developed by the i3Lab at the Politecnico di Milano. In SNaP, children combine cards to invent smart objects — but what they invent stays a single sentence on paper. This project set out to give that sentence a body in VR: something you assemble with your own movements and can then touch.</p>
-    <p>It was designed and implemented by a team of four as the final project for the course Advanced User Interfaces (A.Y. 2020–21) at the Politecnico di Milano. The intended users are children aged 11 to 13, with children with neurodevelopmental disorders (NDD) particularly in mind. It was implemented for the Oculus Quest 2 in Unity and C#, and reached a prototype that runs end to end, from choosing cards to operating the object in the park.</p>
+    <p class="lead">Smart Codesign VR is a prototype platform for building and testing interactive “smart objects” in virtual reality. Players choose three cards, one each for environment, input and output, then use physical movements to define when an object responds and what it does. They can place the completed virtual object in a park and test its behavior.</p>
+    <p>The project builds on SNaP (The Smart Nature Protagonists), a board game developed by i3Lab at Politecnico di Milano. In SNaP, children combine cards to invent smart objects and describe them in a sentence on paper. This project aimed to turn those descriptions into virtual objects that children could assemble and interact with through their own movements.</p>
+    <p>Our four-person team designed and implemented the system for the final project in Advanced User Interfaces at Politecnico di Milano in the 2020–21 academic year. We designed it for children aged 11–13, with particular attention to children with neurodevelopmental disorders (NDD). Built in Unity and C# for Oculus Quest 2, the prototype supports the complete sequence from card selection to interaction in the virtual park.</p>
 
     <figure class="video-embed">
-      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Demonstration video for Smart Codesign VR" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
-      <figcaption>The demonstration video: choosing the cards, setting the input condition and the output behaviour, and running the finished smart object in the virtual park.</figcaption>
+      <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Smart Codesign VR demo video" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
+      <figcaption>Demo: selecting cards, defining an input condition and an output behavior, and testing the resulting smart object in the virtual park.</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>SNaP the board game, and the premises of the design</h2>
-    <h3>A game in which children are the designers</h3>
-    <p>SNaP is a board game in which two to four children act as “designers” while an adult facilitator plays the “mayor”. The mayor sets a mission at the start, and the children talk it over and combine cards into a smart object that solves it. The aim is to build creativity, and the ability to work with others and put one’s own thinking into words. The game is also described as usable with children with neurodevelopmental disorders for therapeutic purposes.</p>
+    <h2>SNaP and the design context</h2>
+    <h3>A game that puts children in the designer’s role</h3>
+    <p>In SNaP, two to four children act as “designers,” while an adult facilitator plays the “mayor.” The mayor introduces a mission, and the children discuss ideas and combine cards to design a smart object that addresses it. The game aims to develop creativity, collaboration and the ability to express ideas. Use by children with neurodevelopmental disorders was also considered, but this project did not evaluate therapeutic or educational effects.</p>
 
-    <h3>Environment, input, output — three kinds of card</h3>
+    <h3>Three card types: environment, input and output</h3>
     <p>SNaP has three kinds of card, each with a different role.</p>
-    <p><strong>Environment cards</strong> are the thing being made smart. Tree, bench, swing, water, stone, streetlamp, bin, bicycle, bridge, stairs, school bag — ordinary things found in a park or a street. Not a sensor and not a function, but the object the other two are built into.</p>
-    <p><strong>Input cards</strong> decide what that object senses: button, motion, touch, distance, temperature, humidity, brightness, colour, sound, fire, water level, weather forecast — the sensors, in other words.</p>
-    <p><strong>Output cards</strong> decide what that object does: light up, make sound, vibrate, move, display, record, send — the actuators.</p>
-    <p>The environment card is needed because the same pair of input and output means something entirely different depending on where it lives. “Make a sound when motion is detected” on a bin becomes “missing the bin makes a sound”; on a streetlamp it becomes “a light that announces someone approaching”. Input and output alone give only a device specification; only with the environment added does it become a sentence about something in the world around you.</p>
+    <p><strong>Environment cards</strong> represent the object to be made smart: a tree, bench, swing, body of water, stone, streetlamp, bin, bicycle, bridge, stairs or school bag. These are familiar objects and features of parks and streets. The environment card identifies the object that will contain the input and output functions.</p>
+    <p><strong>Input cards</strong> define what the object detects or responds to, such as a button, motion, touch, distance, temperature, humidity, brightness, color, sound, fire, water level or a weather forecast. They represent the smart object’s inputs, analogous to sensors.</p>
+    <p><strong>Output cards</strong> define the object’s response: lighting up, making a sound, vibrating, moving, displaying, recording or sending information. They represent its output functions, analogous to actuators.</p>
+    <p>The environment card gives an input–output pair its context. With motion as the input and sound as the output, a bin could make a sound when someone misses it, while a streetlamp could announce someone approaching. The input and output specify how a device behaves; adding the environment connects that behavior to a situation in everyday life.</p>
 
     <figure class="paper-figure">
-      <a href="assets/card-combination.webp"><img src="assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="The environment card “Trash can”, the input card “Motion” and the output card “Make sound” joined by ampersands, with an arrow leading to the sentence “Missing the trash bin creates a sound.”"></a>
-      <figcaption>A combination of three cards becomes the description of one smart object. The colour of a card’s border gives its kind: green for environment, light blue for input, yellow for output.</figcaption>
+      <a href="assets/card-combination.webp"><img src="assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="“Trash can” (environment), “Motion” (input) and “Make sound” (output) cards are joined by ampersands, with an arrow leading to the sentence “Missing the trash bin creates a sound.”"></a>
+      <figcaption>Combining three cards produces a description of one smart object. Border colors identify the card types: green for environment, light blue for input and yellow for output.</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <a href="assets/snap-cards.webp"><img src="assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="A table laying out all 49 SNaP cards. The top two rows are the 20 green-bordered environment cards, the middle two rows and the left of the bottom row the 21 light-blue input cards, and the rest of the bottom row the 8 yellow output cards."></a>
-      <figcaption>All 49 SNaP cards: 20 environment, 21 input and 8 output. The product of that vocabulary is the game’s design space.</figcaption>
+      <a href="assets/snap-cards.webp"><img src="assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="All 49 SNaP cards: 20 green-bordered environment cards in the top two rows, 21 light-blue input cards in the middle rows and bottom-left area, and 8 yellow output cards in the remaining bottom row."></a>
+      <figcaption>The complete set of 49 SNaP cards: 20 environment, 21 input and 8 output cards. Their possible combinations define the game’s design space.</figcaption>
     </figure>
 
-    <h3>Turning a sentence on paper into something you can touch</h3>
-    <p>Until now a SNaP session ended once the smart object the children had thought up was written down as a sentence. At the i3Lab a “physical board” combining a tablet with Arduino was being developed in parallel to build that sentence physically. Smart Codesign VR is another answer to the same problem, with VR as the medium — a direction the research team had not yet tried.</p>
-    <p>Choosing VR changes two things. One is that children can prototype with the movement of their whole body: grasping, carrying, shining a light, painting with a brush become, directly, the acts of “setting a condition” and “deciding a behaviour”. The other is that what they thought up rises visually in front of them and can be touched on the spot. An abstract sentence becomes a thing with a size and a shape.</p>
-    <h3>Who it was designed for</h3>
-    <p>The main audience is children aged 11 to 13, with an emphasis on children with neurodevelopmental disorders. Conceiving a smart object takes a degree of logical reasoning, so SNaP and this VR version alike assume a certain age.</p>
-    <p>In therapy for children with NDD, a common goal is building the ability to voice one’s thinking to another person. Difficulty handling abstractions and a limited span of attention are also known. On the other hand, games you can touch, activities done together with others, and activities supported by adults or by technology are effective, and it is known that engagement changes when the experience itself is interesting. Plenty of children find conventional therapy boring and tense.</p>
+    <h3>Turning written ideas into interactive virtual objects</h3>
+    <p>At the time of this project, a SNaP session ended with a written description of the smart object the children had designed. In parallel, i3Lab was developing a “physical board” that combined a tablet with Arduino to turn these descriptions into physical prototypes. Smart Codesign VR explored another approach using virtual reality, a medium the research team had not yet investigated for this purpose.</p>
+    <p>VR offered two opportunities. First, children could prototype through full-body movement: grasping, carrying, shining a light and painting with a brush became ways to set conditions and define behaviors. Second, their ideas could take visible form as virtual objects they could interact with immediately. A written description could become an object with a size and shape in front of them.</p>
+    <h3>Intended users</h3>
+    <p>The intended users were children aged 11–13, with particular attention to children with neurodevelopmental disorders. Designing a smart object requires some logical reasoning, so both SNaP and the VR version were designed for children in this age range.</p>
+    <p>The project aimed to help children express their ideas through hands-on prototyping and interaction. These were design goals, not demonstrated therapeutic or educational outcomes; the prototype was not evaluated with children.</p>
 
-    <h3>Care for the space itself</h3>
-    <p>According to the prior findings drawn on, four things matter in making a space comfortable for children with NDD. Sound (for sensitive hearing: insulation and adjustable volume, with quiet, uniform sound preferred); light and colour (bright, saturated colours kept to small areas, over a calm ground of low saturation); spatial organisation (ordered space with clear boundaries is easier to process); and materials (simple, legible, arranged so as not to obstruct movement). A virtual space is also a place where all four are the designer’s to decide.</p>
+    <h3>Designing a comfortable space</h3>
+    <p>Drawing on the materials consulted for the project, we used four areas to guide the spatial design: sound, light and color, spatial organization, and materials. For sound, we considered noise isolation, adjustable volume, and quiet, consistent audio to accommodate auditory sensitivities. For light and color, we considered a calm, low-saturation background with bright, saturated colors confined to small areas. Clear spatial boundaries, an orderly layout, simple and readable forms, and unobstructed movement were also design considerations. A virtual environment lets designers control these aspects. This project did not evaluate their effects on users’ comfort.</p>
 
-    <h3>The constraints of VR as a medium</h3>
-    <p>At the same time VR carries constraints that cannot be ignored: the cost of the hardware, motion sickness, the load on head and neck from the weight of the headset, accidents caused by a blocked field of view, eye strain from long use, and dependency from over-immersion in the virtual world. For children with NDD there is a further concern of their own — that the boundary between real and virtual can blur more easily.</p>
-    <p>These fed directly into design decisions. Keep the interaction simple while leaving enough resistance for it to teach something. Keep sight and sound clear without making the stimulus too strong. And give the experience a definite end — once the prototyping and the operation in the park are over, the activity is complete. That is also a decision not to design something that keeps you in the virtual world.</p>
+    <h3>Constraints and risks of VR</h3>
+    <p>The project also considered the constraints and risks of VR: hardware cost, motion sickness, head and neck strain from the headset’s weight, accidents when the headset obscures the physical surroundings, eye strain during prolonged use, and concerns about dependency associated with excessive immersion.</p>
+    <p>These considerations informed three design decisions: keep interactions simple while providing enough challenge to support learning; make visuals and audio clear without excessive stimulation; and give the experience a definite endpoint. Once prototyping and testing in the park are complete, the activity ends, rather than encouraging users to remain in VR indefinitely.</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>What was built — the flow of the experience and its implementation</h2>
-    <h3>The four scenes of the experience</h3>
-    <p>The application is made of four scenes: the standby screen, card selection, prototyping, and operation in the park.</p>
+    <h2>The prototype: experience and implementation</h2>
+    <h3>Four stages of the experience</h3>
+    <p>The application has four stages: a standby screen, card selection, prototyping and interaction in the virtual park.</p>
 
     <h4>1. Standby screen</h4>
-    <p>On launch a title screen appears and goes no further until a controller button is pressed. It is a deliberate hold, so the main part does not begin before the headset is on and the player settled.</p>
+    <p>The application opens on a title screen and waits for a controller button press before continuing. This deliberate pause gives the player time to put on the headset and get into position before the main experience begins.</p>
 
-    <h4>2. Card selection — grasp it, put it in the box</h4>
-    <p>In the next scene one card each is chosen for environment, input and output. The way to choose is to grasp the object standing for the card, carry it to the matching box, and put it in. Grasping and carrying rather than clicking is what makes use of the three dimensions VR has. When all three boxes are detected as filled, a spoken prompt sends the player on to the prototyping scene. The order does not matter, but all three must be filled before anything moves on.</p>
+    <h4>2. Card selection: grasp and place</h4>
+    <p>The player selects one environment card, one input card and one output card by grasping each card’s corresponding object and placing it in the matching box. This grasp-and-place interaction makes use of VR’s three-dimensional space. Once all three boxes are filled, an audio prompt guides the player to the prototyping stage. Cards can be selected in any order, but all three are required to continue.</p>
 
     <figure class="paper-figure shot-figure">
-      <a href="assets/card-selection.webp"><img src="assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="The card-selection screen in VR. In front of a board of cards stand three translucent boxes labelled input, environment and output, and a hand is grasping a loudspeaker object."></a>
-      <figcaption>The card-selection scene. The three boxes in front correspond to environment, input and output; putting a grasped object in confirms the choice. Cards that cannot be handled at this stage are shown faded.</figcaption>
+      <a href="assets/card-selection.webp"><img src="assets/card-selection.webp" width="1200" height="1200" loading="lazy" decoding="async" alt="VR card selection with three translucent boxes labeled “input,” “environment” and “output” in front of a card board. A virtual hand holds a loudspeaker object."></a>
+      <figcaption>Card selection. The three boxes correspond to environment, input and output. Placing an object in a box confirms the selection; unavailable cards appear faded.</figcaption>
     </figure>
 
-    <h4>3. Prototyping — deciding condition and behaviour with the body</h4>
-    <p>This is the heart of the system. For the chosen input card the player defines “when”, and for the output card “what it does”. The way each is operated is built separately per card, and each is given a movement that only six-degrees-of-freedom tracking makes possible.</p>
-    <p>Choose “weather forecast” as the input, for instance, and objects standing for sunny, cloudy, rain, thunder and snow appear at hand. Grasp one of them and point the ray extending from it at the target object, and the condition is set. Choose “light up” as the output, and the player grasps a brush, dips its tip in the paint can for a colour, and rubs it on the target to decide the colour it glows. To remove a colour already applied, dip the brush in the “water” can and rub again.</p>
-    <p>The larger implementation decision was to allow <strong>several</strong> input-output pairs to be defined side by side. The original plan had only one: “glow red when sunny” and that was the end of it. Making it several means one object can answer several situations differently — “red when sunny, blue in rain, white in snow”. A pair, once defined, can be run and tried before it is confirmed, and if the player does not like it they can go back and change it.</p>
+    <h4>3. Prototyping: defining conditions and behaviors through movement</h4>
+    <p>Prototyping is the core of the system. Players define the trigger condition for the selected input card and the response for the selected output card. Each card has its own interaction, using movements that require six-degree-of-freedom tracking.</p>
+    <p>For example, selecting “weather forecast” displays objects representing sun, clouds, rain, thunder and snow within reach. The player grasps one and points its ray at the target object to set the condition. With “light up” selected as the output, the player picks up a brush, dips it into a paint can and paints the target object to choose its glow color. To erase an applied color, the player dips the brush into the “water” can and brushes over the object again.</p>
+    <p>A key implementation decision was to support multiple input–output pairs for a single object. The original plan allowed only one rule, such as “glow red when sunny.” Supporting multiple pairs allowed the object to respond differently to different conditions: red in sunshine, blue in rain and white in snow. Players can test each pair before confirming it and return to edit it if needed.</p>
 
     <figure class="paper-figure shot-figure">
       <div class="figure-pair">
-        <a href="assets/statement-weather.webp"><img src="assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="The prototyping screen. On the left, the instruction panel for the input card “Weather”; in the centre, three speech bubbles reading “When it is about to be sunny / rain / snow”; on the right, the output bubbles; and in the foreground a tree object and paint cans."></a>
-        <a href="assets/statement-lightup.webp"><img src="assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="The same screen seen from the right. To either side of a streetlamp object painted yellow, the input and output bubbles stand in pairs, and at the right edge is the instruction panel for the output card “Light up”."></a>
+        <a href="assets/statement-weather.webp"><img src="assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="Prototyping screen with the “Weather” input instructions on the left, three condition bubbles reading “When it is about to be sunny / rain / snow” in the center, and output bubbles on the right. A tree object and paint cans are in the foreground."></a>
+        <a href="assets/statement-lightup.webp"><img src="assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="Prototyping screen viewed from the right. Paired input and output bubbles appear beside a yellow streetlamp object, with instructions for the “Light up” output card on the right."></a>
       </div>
-      <figcaption>The prototyping scene. The bubbles to either side are the input conditions and the output behaviours, matched by number. The plus button adds a pair, the minus button removes one. The input panel shows “Max instances: 5”.</figcaption>
+      <figcaption>Prototype screenshots from 2021. Numbered speech bubbles pair input conditions with output behaviors. The plus button adds a pair and the minus button removes one. The input panel reads “Maximum number of instances: 5”.</figcaption>
     </figure>
 
-    <h4>4. The park — touching what you made</h4>
-    <p>Confirm the object and the scene moves to a virtual park. Here the player places the smart object they assembled, brings about the input condition they defined, and sees the output behaviour for themselves. Once the object has worked, a celebration plays and the experience ends.</p>
+    <h4>4. The park: testing the object</h4>
+    <p>After confirming the object, the player enters a virtual park, places the object, triggers the defined input condition and observes its response. A celebration marks the object’s successful operation and ends the experience.</p>
 
-    <h4>The flow as a whole</h4>
-    <p>The figure below gathers all of this into UML activity diagrams. The upper one is the overall flow; the two below expand the operation of the “weather forecast” card and the “light up” card in detail. Being able to go back and re-choose after the card selection, once instructed, and to return to editing after confirming and trying, are each written in as a branch.</p>
+    <h4>Overall flow</h4>
+    <p>The UML activity diagrams below summarize the experience. The upper diagram shows the overall flow; the two below detail the “weather forecast” and “light up” interactions. Branches show how players can return to card selection after receiving instructions and return to editing after confirming and testing their object.</p>
 
     <figure class="paper-figure line-art">
-      <a href="assets/activity-diagram.webp"><img src="assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="UML activity diagrams. The upper “Overall Activity” runs from the standby screen through choosing three cards, the instructions, defining the input conditions and output behaviours, confirming, checking the behaviour, and operating in the park. Below left expands the operation of the weather-forecast card, below right that of the light-up card."></a>
-      <figcaption>UML activity diagrams of the user’s actions. Because the operation differs by kind of card, the shared flow and the per-card detail are written separately.</figcaption>
+      <a href="assets/activity-diagram.webp"><img src="assets/activity-diagram.webp" width="1277" height="775" loading="lazy" decoding="async" alt="UML activity diagrams. The upper “Overall Activity” diagram shows the standby screen, card selection, instructions, condition and behavior definition, confirmation, testing and interaction in the park. The lower-left diagram details the weather-forecast interaction, and the lower-right diagram the light-up interaction."></a>
+      <figcaption>UML activity diagrams of the user flow. The overall sequence and card-specific interactions are shown separately because each card uses a different interaction.</figcaption>
     </figure>
 
     <h3>Hardware and tools</h3>
-    <p>The target device is the Oculus Quest 2. It has six-degrees-of-freedom tracking, so turning, walking and grasping become input directly. Since handling virtual objects with the hands, over and over, is the centre of the experience, a three-degrees-of-freedom device with a phone slotted into it was judged not to work.</p>
-    <p>The game engine is Unity and the language C#; the Oculus Integration package provides the connection to the Quest 2, supplying a common API for VR camera behaviour, rendering and controller input.</p>
+    <p>The prototype was built for Oculus Quest 2. Its six-degree-of-freedom tracking supports turning, moving and manipulating virtual objects. Because repeated hands-on interaction was central to the experience, the team ruled out phone-based headsets limited to three-degree-of-freedom tracking.</p>
+    <p>The application was developed in Unity and C#. The Oculus Integration package connected it to Quest 2 and provided APIs for VR camera behavior, rendering and controller input.</p>
 
-    <h3>Four scenes and thirteen classes</h3>
-    <p>The system is divided into four Unity scenes, corresponding directly to the four scenes of the experience. There are thirteen classes in all, three of them abstract.</p>
-    <p><strong>The title scene</strong> holds only <code>TitleSceneCore</code>, which moves on to the next scene when a button is pressed.</p>
-    <p><strong>The card-selection scene</strong> consists of <code>CardSelectionSceneCore</code> and <code>CardSelectionDetector</code>. The former creates three of the latter and assigns them to the selection boxes for environment, input and output. Each box shares the same behaviour: when an object standing for a card comes near, draw it in and mark that category “selected”. Once all three are filled, the selections are written into the <code>SmartObject</code> class and the scene advances. <code>SmartObject</code> is a static class, so its data is not discarded across scenes. That single point is what ties four scenes into one experience.</p>
-    <p><strong>The prototyping scene</strong> is the centre. <code>PrototypingSceneCore</code> manages the whole procedure centrally, and the behaviour of the cards is expressed as an inheritance hierarchy headed by <code>Card</code>. Below <code>Card</code> sit <code>InputCard</code> and <code>OutputCard</code>, and below those the concrete card classes — <code>Weather</code>, <code>Fire</code>, <code>MakeSound</code>, <code>LightUp</code>. Only the concrete leaves actually carry out the prototyping operations, so the three above them are abstract.</p>
-    <p><code>PrototypingSceneCore</code> holds a list of input-condition instances and a list of output-behaviour instances. If the cards chosen were “weather forecast” and “light up”, the first list holds only <code>Weather</code> instances and the second only <code>LightUp</code> instances. One of each is created automatically at the start, and thereafter each press of the add button in the UI creates another. Every frame, all the input conditions in the list are evaluated and the matching output behaviours are called. When the user confirms, <code>isConfirmed</code> becomes true and the assembled behaviour data is written into the static properties of <code>SmartObject</code>.</p>
-    <p><strong>The interaction scene</strong> holds only <code>InteractionSceneCore</code>, which takes care of placing the object in the park, running the input conditions and observing the outputs, and the closing celebration.</p>
+    <h3>Four scenes and 13 classes</h3>
+    <p>The system uses four Unity scenes, one for each stage of the experience. It contains 13 classes, including three abstract classes.</p>
+    <p><strong>The title scene</strong> contains a single class, <code>TitleSceneCore</code>, which advances to the next scene when the player presses a button.</p>
+    <p><strong>The card-selection scene</strong> uses <code>CardSelectionSceneCore</code> and <code>CardSelectionDetector</code>. CardSelectionSceneCore creates three detector instances, one for each environment, input and output box. Each box draws in a nearby card object and marks its category as selected. Once all three selections are complete, the scene writes them to the static <code>SmartObject</code> class and advances. <code>SmartObject</code> retains this data between scene changes, connecting the four scenes into a continuous experience.</p>
+    <p>In the prototyping scene, <code>PrototypingSceneCore</code> coordinates the workflow. <code>Card</code> behavior is represented by an inheritance hierarchy: <code>Card</code> is the base class, <code>InputCard</code> and <code>OutputCard</code> derive from it, and concrete classes such as <code>Weather</code>, <code>Fire</code>, <code>MakeSound</code> and <code>LightUp</code> implement the individual interactions. Card, InputCard and OutputCard are abstract because only the concrete subclasses perform prototyping operations.</p>
+    <p><code>PrototypingSceneCore</code> maintains one list of input-condition instances and another of output-behavior instances. If the selected cards are “weather forecast” and “light up,” the lists contain <code>Weather</code> and <code>LightUp</code> instances, respectively. One instance of each is created at the start; pressing the add button creates another pair. Each frame, the system evaluates the input conditions and invokes the corresponding output behaviors. When the user confirms the object, <code>isConfirmed</code> is set to true and the assembled behavior data is written to <code>SmartObject</code>’s static properties.</p>
+    <p><strong>The interaction scene</strong> contains a single class, <code>InteractionSceneCore</code>. It handles object placement in the park, testing the defined conditions and responses, and the final celebration.</p>
 
     <figure class="paper-figure line-art">
-      <a href="assets/class-diagram.webp"><img src="assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="A UML class diagram. Four packages — Title Scene, Card Selection Scene, Prototyping Scene and Interaction Scene — are drawn along with the static class Smart Object they all refer to. Inside Prototyping Scene, the abstract class Card is inherited by Input Card and Output Card, and those in turn by Weather Card, Fire Card, Make Sound Card and Light Up Card."></a>
-      <figcaption>The system’s UML class diagram. The four packages correspond to the Unity scenes, and only <code>Smart Object</code>, at the bottom centre, holds data across scenes. Attributes and methods in the diagram are simplified for readability.</figcaption>
+      <a href="assets/class-diagram.webp"><img src="assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="UML class diagram with four scene packages: Title Scene, Card Selection Scene, Prototyping Scene and Interaction Scene. Each references the static Smart Object class. Within Prototyping Scene, Input Card and Output Card derive from the abstract Card class; Weather Card, Fire Card, Make Sound Card and Light Up Card are their concrete subclasses."></a>
+      <figcaption>UML class diagram of the system. The four packages correspond to Unity scenes. The static class labeled “<code>Smart Object</code>” at the bottom center retains data between scenes. Attributes and methods are simplified for readability.</figcaption>
     </figure>
 
-    <p class="source-link">The source code can be read at the following link:<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
+    <p class="source-link">Source code:<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
   </section>
 
   <section>
-    <h2>What was reached, and what was left</h2>
-    <h3>Nine of forty-nine cards made it to implementation</h3>
-    <p>Nine cards were implemented in the prototype. The groundwork — choosing cards, defining conditions and behaviours, managing multiple instances, passing data between scenes — was built to a working state, so adding the remaining cards is in principle a matter of time. Six more cards were designed but did not make it into the implementation.</p>
+    <h2>Results and remaining work</h2>
+    <h3>Nine of 49 cards implemented</h3>
+    <p>The prototype implements nine cards. Its core functionality is working: card selection, definition of conditions and behaviors, management of multiple instances, and transfer of data between scenes. This provides a foundation for adding more cards, although that implementation work remains. Six additional cards were designed but not implemented; the other 34 still require interaction design as well as implementation.</p>
 
     <table class="results-table">
-      <caption>State of implementation in the prototype</caption>
+      <caption>Prototype implementation status</caption>
       <thead>
-        <tr><th scope="col">State</th><th scope="col">Cards</th></tr>
+        <tr><th scope="col">Status</th><th scope="col">Cards</th></tr>
       </thead>
       <tbody>
         <tr><th scope="row">Implemented (9)</th><td>Environment: tree, streetlamp, road sign, bin, bridge<br>Input: fire, weather forecast<br>Output: make sound, light up</td></tr>
@@ -239,23 +240,23 @@
       </tbody>
     </table>
 
-    <h3>No evaluation was carried out</h3>
-    <p>No evaluation with actual users was carried out. The development period coincided with remote participation under COVID-19, and neither an in-person workshop built around VR headsets nor a remote substitute could be arranged. What this project can show, therefore, reaches as far as the designed experience holding together in a working form; whether it is easy for children to use, or meaningful in a therapeutic setting, has not been established.</p>
-    <p>An evaluation, were one to be run, would put the question as: how intuitive is this UI/UX for the work of prototyping? Time to completion, how closely the finished smart object matches the one imagined beforehand, and the number of unintended button presses would serve as measures, and a post-session questionnaire based on the SUS (System Usability Scale) would add quantitative data. Because a headset blocks the user’s view, unselfconscious bodily reactions come out more readily in VR, which makes video recording of the session especially useful. As for age, 13 is the realistic line — where SNaP’s intended range overlaps with Oculus’ safety guidance, which does not assume use below 13.</p>
+    <h3>User evaluation was not conducted</h3>
+    <p>The prototype was not evaluated with users. Development coincided with remote participation during the COVID-19 pandemic. Neither an in-person workshop with VR headsets nor a remote alternative could be arranged. The project demonstrates that the designed experience can be implemented as a working prototype. Its usability for children and its value in a therapeutic setting remain untested.</p>
+    <p>A future evaluation would ask how intuitive the interface is for prototyping. Possible measures include completion time, how closely the final smart object matches the participant’s initial idea, and the number of unintended button presses. A post-session questionnaire based on the System Usability Scale (SUS) would provide additional quantitative data. A future evaluation would consider recording sessions to observe participants’ movements, with their consent and appropriate procedures. For the 2021 project, the proposed evaluation age was 13, chosen to align SNaP’s intended age range with the Oculus guidance referenced at the time. Any future study would need to reassess eligibility using the applicable guidance and research protocol.</p>
 
-    <h3>The work that lies ahead</h3>
-    <p>Among the work that time and skill did not stretch to, the first is remaking the UI/UX. Making the card combinations work took the time, and the visual, auditory and tactile expression could not be worked through. In particular, how far text should be used in a VR UI is worth rethinking. Writing was born to record information on a two-dimensional surface, and a three-dimensional space holds many elements that would be better redesigned as a spatial user interface (SUI). For an audience of children with NDD, interaction by voice is a promising direction.</p>
-    <p>Academically, three paths were named. One is a comparison with the physical board being developed at the same i3Lab. Prior work has found that the same collaborative game, played in a real setting and in a virtual environment, produced more talk on the virtual side; the same kind of comparison could hold between these two. The second is support for several people taking part at once. Given a name with “codesign” in it, being able to build alongside others inside the virtual space is worth having. The third is standardising the description format for smart objects so they can be carried across platforms.</p>
+    <h3>Future work</h3>
+    <p>The first priority for further development is refining the UI and UX. Time and experience constraints meant that most effort went into making the card combinations work, leaving the visual, audio and haptic design less developed. The role of text in VR also needs reconsideration: information designed for a flat surface may be better presented through a spatial user interface (SUI). Voice interaction is another direction to investigate for the intended users.</p>
+    <p>The project identified three research directions. The first is a comparison with the physical board being developed at i3Lab. Prior research reported more conversation when participants played the same collaborative game in a virtual environment than in a physical setting, suggesting a useful comparison for these two platforms. The second is simultaneous multi-user participation: in keeping with the name “Codesign,” children could build objects together in VR. The third is a standardized format for describing smart objects, allowing designs to be transferred between platforms.</p>
 
-    <h3>In closing</h3>
-    <p>What this project built is not a sample of a finished smart object but a place for making one. The three cards — environment, input, output — are carried straight across into the units of assembly: the object, the condition, the behaviour. Grasping, pointing and painting are the bodily actions that tie them together. The sentence born in a board game becomes here something you can move with your own hands, and data that remains after the workshop is over.</p>
+    <h3>Summary</h3>
+    <p>This project created an environment for prototyping smart objects. It translated the three SNaP card types into building blocks: the object, its trigger conditions and its behaviors. Players connect them through grasping, pointing and painting. The working prototype turns a written idea into an interactive virtual object, with its behavior represented as data that can be passed between scenes.</p>
   </section>
 
   <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva, and Olivia Ludkiewicz, “Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD,” Advanced User Interfaces (A.Y. 2020–21) Final Exam Project, Politecnico di Milano, February 2021.</p>
 
-  <nav aria-label="Site">
+  <nav aria-label="Portfolio navigation">
     <ul>
-      <li><a class="home-button" href="../../"><span class="home-button__box">Go Back to Takafumi Horiuchi&#x27;s Portfolio</span></a></li>
+      <li><a class="home-button" href="../../"><span class="home-button__box">Back to Takafumi Horiuchi’s portfolio</span></a></li>
     </ul>
   </nav>
 
@@ -284,8 +285,8 @@
 <!-- The enlargement overlay, empty until a figure is clicked. It lives in the
      document rather than being built by works/figures.js so that the two strings it
      needs are written in this page's language, like the rest of the page. -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden>
-  <button class="lightbox__close" type="button" aria-label="Close the enlargement"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+  <button class="lightbox__close" type="button" aria-label="Close enlarged image"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

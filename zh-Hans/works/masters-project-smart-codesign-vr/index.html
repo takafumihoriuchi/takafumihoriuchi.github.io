@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>面向儿童的交互式物件原型设计VR系统的开发 — 堀内贵文</title>
-<meta name="description" content="把孩子们在SNaP桌游中构思的智能物件，放到VR空间里组装并运行起来。选择环境、输入、输出三张卡片，自己定义条件与行为——这是一个用Oculus Quest 2与Unity实现的硕士阶段合作项目。">
+<title>供儿童制作交互物件原型的 VR 系统 — 堀内贵文</title>
+<meta name="description" content="米兰理工大学硕士课程的团队项目，以 Unity 开发，面向 Oculus Quest 2。儿童可以选择环境、输入、输出卡片，通过身体动作定义条件与行为，在 VR 中组装并运行 SNaP 桌游里构思的智能物件。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/">
@@ -33,8 +33,8 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="面向儿童的交互式物件原型设计VR系统的开发">
-<meta property="og:description" content="用环境、输入、输出三张卡片，在VR空间中组装出一个智能物件。">
+<meta property="og:title" content="供儿童制作交互物件原型的 VR 系统">
+<meta property="og:description" content="一个 VR 原型：通过环境、输入、输出三类卡片组装智能物件。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/masters-project-smart-codesign-vr/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -52,7 +52,7 @@
       "name": "Takafumi Horiuchi",
       "alternateName": "堀内贵文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "认知工程 × AI × 设计",
+      "description": "设计工程师",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -61,17 +61,28 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/masters-project-smart-codesign-vr/#work",
-      "name": "面向儿童的交互式物件原型设计VR系统的开发",
+      "name": "供儿童制作交互物件原型的 VR 系统",
       "url": "https://takafumihoriuchi.github.io/zh-Hans/works/masters-project-smart-codesign-vr/",
-      "description": "把孩子们在SNaP桌游中构思的智能物件放到VR空间中组装并运行的原型设计环境。选择环境、输入、输出三张卡片，由玩家自己定义条件与行为。这是一个用Oculus Quest 2与Unity实现的硕士阶段合作项目。",
+      "description": "米兰理工大学硕士课程的团队项目，以 Unity 开发，面向 Oculus Quest 2。儿童可以选择环境、输入、输出卡片，通过身体动作定义条件与行为，在 VR 中组装并运行 SNaP 桌游里构思的智能物件。",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-smart-codesign-vr/assets/og.jpg",
       "datePublished": "2021-02",
       "inLanguage": "zh-Hans",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Paul Cozma-Ivan" },
-        { "@type": "Person", "name": "Elmira Katsajeva" },
-        { "@type": "Person", "name": "Olivia Ludkiewicz" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Paul Cozma-Ivan"
+        },
+        {
+          "@type": "Person",
+          "name": "Elmira Katsajeva"
+        },
+        {
+          "@type": "Person",
+          "name": "Olivia Ludkiewicz"
+        }
       ]
     }
   ]
@@ -96,7 +107,7 @@
 <main>
 
   <header>
-    <h1>面向儿童的交互式物件原型设计VR系统的开发</h1>
+    <h1>供儿童制作交互物件原型的 VR 系统</h1>
     <p class="dateline">2021年2月</p>
   </header>
 
@@ -112,9 +123,9 @@
 
   <section>
     <h2>概述</h2>
-    <p class="lead">Smart Codesign VR是一个平台，让人可以在VR空间中组装交互式的物件——「智能物件」——并当场触碰、确认它们的行为。玩家从环境、输入、输出中各选一张卡片，亲手定义「在什么时候」「会发生什么」。做好的物件被放进虚拟公园，可以真的动起来加以验证。</p>
-    <p>它的基础，是米兰理工大学i3Lab开发的桌游「SNaP（The Smart Nature Protagonists）」。在SNaP中，孩子们组合卡片来构思智能物件；只是所构思出来的，止步于纸面上的一句话。本项目要做的，就是让这句话在VR空间中获得实体，成为可以用自己的身体组装、可以触碰的东西。</p>
-    <p>本项目由四人团队设计与实现，是米兰理工大学「Advanced User Interfaces」课程（2020–21学年）的期末课题。设定的使用者是11至13岁的儿童，尤其着眼于有神经发育障碍（NDD）的孩子。项目面向Oculus Quest 2，以Unity和C#实现，做到了从选卡到在公园中操作可以整体跑通的原型。</p>
+    <p class="lead">Smart Codesign VR 是一个在虚拟现实中搭建并测试交互式“智能物件”的原型平台。玩家从环境、输入和输出中各选一张卡片，再通过身体动作定义物件何时响应、如何响应。完成的虚拟物件可以放进公园，测试它的行为。</p>
+    <p>项目以米兰理工大学 i3Lab 开发的桌游 SNaP（The Smart Nature Protagonists）为基础。在 SNaP 中，孩子们组合卡片来构思智能物件，并用一句话把它写在纸上。本项目希望把这些文字描述转化为虚拟物件，让孩子们通过自己的动作组装它们并与之互动。</p>
+    <p>我们的四人团队为米兰理工大学 2020–21 学年 Advanced User Interfaces 课程的期末项目设计并实现了这一系统。预期使用者为 11 至 13 岁儿童，尤其关注有神经发育障碍（NDD）的儿童。原型面向 Oculus Quest 2，以 Unity 和 C# 开发，支持从卡片选择到虚拟公园中交互的完整流程。</p>
 
     <figure class="video-embed">
       <iframe src="https://www.youtube-nocookie.com/embed/iU2oaV-T-zE" title="Smart Codesign VR 的演示视频" loading="lazy" allow="accelerometer; encrypted-media; gyroscope; picture-in-picture; web-share" allowfullscreen></iframe>
@@ -127,14 +138,14 @@
   <section>
     <h2>SNaP这款桌游，以及设计的前提</h2>
     <h3>让孩子成为设计主角的游戏</h3>
-    <p>SNaP是一款桌游，由2至4名儿童担任「设计师」，成年主持人担任「市长」。市长在开局时给出任务，孩子们一边讨论一边组合卡片，构思能解决这项任务的智能物件。其用意在于培养创造力，以及与他人协作、把自己的想法说出来的能力。同时，这款游戏也被认为可以用于对有神经发育障碍的儿童的疗育目的。</p>
+    <p>在 SNaP 中，2 至 4 名儿童扮演“设计师”，一名成年主持人扮演“市长”。市长提出任务，孩子们讨论想法、组合卡片，设计能回应任务的智能物件。游戏旨在培养创造力、协作能力和表达想法的能力，也考虑了有神经发育障碍的儿童的使用需求。不过，本项目没有评估治疗或教育效果。</p>
 
     <h3>环境、输入、输出——三种卡片</h3>
     <p>SNaP的卡片有三种，各自承担不同的角色。</p>
-    <p><strong>环境（Environment）卡</strong>就是被赋予智能的对象本身。树、长椅、秋千、水边、石头、路灯、垃圾桶、自行车、桥、台阶、书包——都是公园或街道中随处可见的东西。它既不是传感器也不是功能，而是把二者嵌入其中的「对象物」。</p>
-    <p><strong>输入（Input）卡</strong>决定这个对象物感知什么。按钮、动作、接触、距离、温度、湿度、亮度、颜色、声音、火、水位、天气预报等，相当于传感器。</p>
-    <p><strong>输出（Output）卡</strong>决定这个对象物做什么。发光、发声、振动、移动、显示、记录、发送——相当于执行器。</p>
-    <p>之所以需要环境卡，是因为同样一组输入与输出，寄宿在哪里，意义就完全不同。把「检测到动作就发出声音」装在垃圾桶上，就成了「没扔进垃圾桶会响」；装在路灯上，就成了「有人靠近时会提示的灯」。只有输入和输出，充其量只是一份装置规格；加上环境，才第一次成为关于身边某件事的一句话。</p>
+    <p><strong>环境（Environment）卡</strong>表示将被赋予智能的物件：树、长椅、秋千、水域、石头、路灯、垃圾桶、自行车、桥、台阶或书包。这些都是公园和街道中常见的物件或设施。环境卡决定了由哪个物件承载输入与输出功能。</p>
+    <p><strong>输入（Input）卡</strong>定义物件检测什么，或对什么作出响应，例如按钮、动作、接触、距离、温度、湿度、亮度、颜色、声音、火、水位或天气预报。它们表示智能物件的输入功能，作用类似于传感器。</p>
+    <p><strong>输出（Output）卡</strong>定义物件如何响应，例如发光、发声、振动、移动、显示、记录或发送信息。它们表示物件的输出功能，作用类似于执行器。</p>
+    <p>环境卡为一组输入与输出提供具体情境。例如，输入为动作、输出为声音时，垃圾桶可以在垃圾未投中时发声，路灯则可以提示有人靠近。输入与输出定义设备如何响应，而环境卡把这种行为与日常生活中的情境联系起来。</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/card-combination.webp" width="1600" height="431" loading="lazy" decoding="async" alt="环境卡「Trash can（垃圾桶）」、输入卡「Motion（动作）」、输出卡「Make sound（发出声音）」三张以「&」相连，箭头指向一句话「Missing the trash bin creates a sound.（没扔进垃圾桶就会响）」。"></a>
@@ -143,33 +154,33 @@
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/snap-cards.webp" width="1600" height="1113" loading="lazy" decoding="async" alt="把SNaP的49张卡片排开的一览表。上两行是20张绿框环境卡，中间两行与最下一行的左端是21张浅蓝框输入卡，最下一行的其余部分是8张黄框输出卡。"></a>
-      <figcaption>SNaP全部49张卡片。环境20张、输入21张、输出8张，这套词汇的相乘构成了游戏的设计空间。</figcaption>
+      <figcaption>完整的 49 张 SNaP 卡片：20 张环境卡、21 张输入卡、8 张输出卡。它们可能形成的组合，界定了游戏的设计空间。</figcaption>
     </figure>
 
-    <h3>把纸上的一句话，变成可以触碰的东西</h3>
+    <h3>将文字构想转化为可交互的虚拟物件</h3>
     <p>此前，SNaP的每一场活动都在把构思出的智能物件写成一句话时结束。在i3Lab，还并行开发着把它实际搭建出来的「实体板」，把平板与Arduino结合起来。Smart Codesign VR是对同一个问题的另一个回答，选择了VR作为媒介——这是研究团队当时还没有尝试过的方向。</p>
-    <p>选择VR会改变两件事。其一，孩子可以用全身的动作来做原型：抓取、搬运、照光、用画笔涂抹这些行为，本身就成了「决定条件」「决定行为」的操作。其二，构思出的东西会在视觉上立起来，当场就能触碰。抽象的一句话，变成了眼前有大小、有形状的东西。</p>
+    <p>VR 带来了两种可能。首先，孩子们可以通过全身动作制作原型：抓取、搬运、照光和用画笔涂抹，都可以成为设定条件与定义行为的方式。其次，想法可以呈现为可见的虚拟物件，并立即与之互动。纸上的描述由此变成了眼前具有大小与形状的物件。</p>
     <h3>为谁而设计</h3>
-    <p>主要对象是11至13岁的儿童，其中特别侧重有神经发育障碍的孩子。构思智能物件需要一定的逻辑思考，因此无论SNaP还是这个VR版本，都以一定的年龄为前提。</p>
-    <p>在对有神经发育障碍的儿童的疗育中，培养把想法说出口、传达给他人的能力常常是目标之一。人们也知道，他们不擅长处理抽象事物，能够维持注意的时间也有限。另一方面，可以用手触碰的游戏、与他人协作的活动、有成人或技术支持的活动都有成效；而且当体验本身足够有趣时，投入的方式也会改变。觉得传统疗育「无聊又紧张」的孩子并不在少数。</p>
+    <p>预期使用者为 11 至 13 岁的儿童，尤其关注有神经发育障碍的儿童。设计智能物件需要一定的逻辑推理能力，因此 SNaP 及其 VR 版本都面向这一年龄段。</p>
+    <p>项目希望通过动手制作原型与交互，帮助孩子表达想法。这些是设计目标，并非已经证实的治疗或教育效果；原型尚未经过儿童用户评估。</p>
 
     <h3>对空间本身的考量</h3>
-    <p>根据所参考的既有研究，要为有神经发育障碍的儿童营造舒适的空间，有四点是有效的。声音（因听觉敏感，需要能隔音并调节音量，以单调而安静的声音为宜）；光与颜色（明亮高饱和的颜色只用于小面积，底色采用沉稳的低饱和色）；空间构成（有秩序、边界清晰的空间更容易处理）；以及材质（简单易读，布局不妨碍动线）。而VR空间，正是这四点全都可以由设计者一方决定的地方。</p>
+    <p>根据项目参考的资料，我们从四个方面指导空间设计：声音、光与颜色、空间组织，以及材料。声音方面考虑了隔离噪声、调节音量，以及安静、稳定的音频，以照顾听觉敏感的使用者。光与颜色方面考虑以平静的低饱和色为背景，将明亮、高饱和色限制在小范围内。清晰的空间边界、有序的布局、简单易辨的形态，以及顺畅的通行空间，也都是设计考量。虚拟环境允许设计者控制这些因素，但本项目未评估它们对使用者舒适度的影响。</p>
 
     <h3>VR这一媒介本身带有的限制</h3>
-    <p>与此同时，VR也有不容忽视的限制：设备成本、眩晕、头显重量对头颈的负担、视野被遮挡导致的意外、长时间使用造成的眼睛负担，以及过度沉浸于虚拟世界所带来的依赖。对有神经发育障碍的儿童而言，还多了一层特有的担忧——现实与虚拟的界线更容易变得模糊。</p>
-    <p>这些都直接影响了设计上的判断。交互要保持简单，同时留下足以带来学习的手感；视觉与听觉要明快，又不能把刺激做得过强；并且要为体验准备一个明确的结束——原型制作与公园中的操作一旦结束，活动就完结。这同时也是一个判断：不去设计让人一直留在虚拟世界里的东西。</p>
+    <p>项目也考虑了 VR 的限制与风险：硬件成本、晕动不适、头显重量给头颈带来的负担、设备遮挡现实环境可能导致的意外、长时间使用造成的眼疲劳，以及过度沉浸带来的依赖方面的担忧。</p>
+    <p>这些考量形成了三项设计决定：保持交互简单，同时提供足以支持学习的挑战；让视听信息清晰，避免过度刺激；为体验设置明确终点。完成原型制作与公园中的测试后，活动即结束，而非鼓励使用者无限期地停留在 VR 中。</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>做出来的东西——体验的流程与实现</h2>
+    <h2>原型：体验流程与实现</h2>
     <h3>体验的四个场景</h3>
     <p>应用由四个场景构成：待机画面、卡片选择、原型制作，以及在公园中的操作。</p>
 
     <h4>1. 待机画面</h4>
-    <p>启动后首先出现标题画面，不按下手柄按钮就不会往下走。这是有意设置的停顿，为的是不让正片在戴好设备、调整好姿势之前就开始。</p>
+    <p>应用启动后先显示标题画面，等待玩家按下手柄按钮再继续。这一有意设置的停顿，让玩家有时间戴好头显、调整姿势，再进入主要体验。</p>
 
     <h4>2. 卡片选择——抓起来，放进箱子</h4>
     <p>在下一个场景中，从环境、输入、输出各选一张卡片。选择的方式，是抓起代表卡片的物体，搬到对应的箱子里放进去。之所以不用点击而用「抓取并搬运」，是为了利用VR所拥有的三维空间。当检测到三个箱子都有了内容，就会伴随语音提示进入原型制作场景。顺序不限，但三个不填满就无法继续。</p>
@@ -189,10 +200,10 @@
         <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-weather.webp" width="1200" height="1199" loading="lazy" decoding="async" alt="原型制作界面。左侧是输入卡「Weather」的操作说明面板，中央是写着「When it is about to be sunny／rain／snow」的三个对话框，右侧排着输出的对话框，前方有树的物体和颜料罐。"></a>
         <a href="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/statement-lightup.webp" width="1200" height="1202" loading="lazy" decoding="async" alt="同一画面从右侧看去。在涂成黄色的路灯物体左右，输入与输出的对话框成对排列，最右端是输出卡「Light up」的操作说明面板。"></a>
       </div>
-      <figcaption>原型制作的场景。左右的对话框分别是输入的条件与输出的行为，以编号相互对应。「＋」按钮增加组数，「−」按钮减少。输入一侧的面板上显示着「最大实例数：5」。</figcaption>
+      <figcaption>2021 年原型的截图（英语界面）。带编号的对话框将输入条件与输出行为配对。“＋”按钮增加一组，“−”按钮删除一组。输入面板写有“Maximum number of instances: 5”（最大实例数：5）。</figcaption>
     </figure>
 
-    <h4>4. 公园——触碰做好的东西</h4>
+    <h4>4. 公园：测试物件</h4>
     <p>确定物件之后，便移动到虚拟公园。在这里放下自己组装的智能物件，触发所定义的输入条件，实际确认输出的行为。物件成功动作之后，会出现庆祝的演出，体验就此结束。</p>
 
     <h4>整体流程</h4>
@@ -204,29 +215,29 @@
     </figure>
 
     <h3>设备与工具</h3>
-    <p>目标设备是Oculus Quest 2。它具备六自由度追踪，转身、行走、抓取都能直接成为输入。既然反复用手摆弄虚拟物体正是体验的核心，那么把智能手机插入其中的三自由度设备就被判断为无法成立。</p>
+    <p>原型面向 Oculus Quest 2 开发。其六自由度追踪支持转身、移动和操控虚拟物件。由于反复动手交互是体验的核心，团队没有采用仅支持三自由度追踪的手机式头显。</p>
     <p>游戏引擎为Unity，语言为C#；与Quest 2的连接使用Oculus Integration包，VR摄像机的行为、渲染与手柄输入的通用API都来自于它。</p>
 
     <h3>四个场景与13个类</h3>
     <p>系统按Unity的场景分为四个，正好对应体验的四个场景。类共13个，其中3个是抽象类。</p>
     <p><strong>标题场景</strong>只有<code>TitleSceneCore</code>，按下按钮即切换到下一场景。</p>
-    <p><strong>卡片选择场景</strong>由<code>CardSelectionSceneCore</code>与<code>CardSelectionDetector</code>构成。前者生成三个后者，分别分配给环境、输入、输出的选择箱。各个箱子都具有共同的行为：当代表卡片的物体靠近时把它吸入，并把该类别标记为「已选择」。三者齐备后，就把选择的内容写入<code>SmartObject</code>类并推进场景。<code>SmartObject</code>是静态类，即使跨越场景数据也不会被销毁。正是这一点，把四个场景连成了一次完整的体验。</p>
+    <p><strong>卡片选择场景</strong>使用 <code>CardSelectionSceneCore</code> 和 <code>CardSelectionDetector</code>。<code>CardSelectionSceneCore</code> 创建三个 <code>CardSelectionDetector</code> 实例，分别对应环境、输入和输出选择箱。每个箱子会吸入附近的卡片物件，并将相应类别标记为已选择。三项选择完成后，场景将结果写入静态类 <code>SmartObject</code>，再切换到下一场景。<code>SmartObject</code> 在场景切换时保留这些数据，使四个场景构成连续的体验。</p>
     <p><strong>原型制作场景</strong>是核心。<code>PrototypingSceneCore</code>集中管理整个流程，卡片的行为则用以<code>Card</code>为顶点的继承层次来表示。<code>Card</code>之下是<code>InputCard</code>与<code>OutputCard</code>，再往下则排列着<code>Weather</code>、<code>Fire</code>、<code>MakeSound</code>、<code>LightUp</code>等具体卡片的类。真正承担原型制作操作的只有末端的具体类，因此上面这三个都做成了抽象类。</p>
-    <p><code>PrototypingSceneCore</code>持有输入条件实例的列表和输出行为实例的列表。若所选卡片是「天气预报」与「发光」，前者就只由<code>Weather</code>的实例填满，后者只由<code>LightUp</code>的实例填满。开始时各自动生成一个，此后每按一次界面上的添加按钮就增加一个。每一帧都会评估列表中所有的输入条件，并调用对应的输出行为。使用者确定后，<code>isConfirmed</code>变为真，组装好的行为数据被写入<code>SmartObject</code>的静态属性。</p>
-    <p><strong>交互场景</strong>只有<code>InteractionSceneCore</code>，负责在公园中放置物件、执行输入条件并观察输出，以及最后的庆祝演出。</p>
+    <p><code>PrototypingSceneCore</code> 分别维护输入条件实例列表和输出行为实例列表。如果选中“天气预报”和“发光”卡片，两个列表中分别保存 <code>Weather</code> 和 <code>LightUp</code> 实例。开始时各创建一个实例，之后每按一次添加按钮，就新增一对实例。系统每帧评估输入条件，并调用对应的输出行为。用户确认物件后，<code>isConfirmed</code> 被设为 <code>true</code>，组装好的行为数据会写入 <code>SmartObject</code> 的静态属性。</p>
+    <p><strong>交互场景</strong>只包含 <code>InteractionSceneCore</code> 一个类，负责在公园中放置物件、测试已定义的条件与响应，以及最后的庆祝效果。</p>
 
     <figure class="paper-figure line-art">
       <a href="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp"><img src="../../../works/masters-project-smart-codesign-vr/assets/class-diagram.webp" width="1800" height="1219" loading="lazy" decoding="async" alt="UML类图。画出了Title Scene、Card Selection Scene、Prototyping Scene、Interaction Scene四个包，以及它们所引用的静态类Smart Object。在Prototyping Scene内，抽象类Card之下有Input Card与Output Card，再由Weather Card、Fire Card、Make Sound Card、Light Up Card继承。"></a>
-      <figcaption>系统的UML类图。四个包对应Unity的场景，只有中央下方的<code>Smart Object</code>跨场景保持数据。图中的属性与方法为便于阅读作了简化。</figcaption>
+      <figcaption>系统的 UML 类图。四个包分别对应 Unity 场景。下方中央标为“Smart Object”的静态类负责在场景切换时保留数据。为便于阅读，图中属性与方法做了简化。</figcaption>
     </figure>
 
-    <p class="source-link">源代码可以从以下链接查看：<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/takafumihoriuchi/SmartCodesignVR — Assets/myScripts</a></p>
+    <p class="source-link">源代码可以从以下链接查看：<br><a class="ext" href="https://github.com/takafumihoriuchi/SmartCodesignVR/tree/develop/Assets/myScripts">github.com/<wbr>takafumihoriuchi/<wbr>SmartCodesignVR — Assets/<wbr>myScripts</a></p>
   </section>
 
   <section>
-    <h2>做成的部分，与留下的部分</h2>
-    <h3>49张中，做进实现的是9张</h3>
-    <p>在原型中实现的卡片共9张。作为基础的处理——卡片的选择、条件与行为的定义、多实例的管理、场景间的数据传递——都做到了可以运行的状态，因此把剩余卡片补上，原则上只是时间问题。此外，还有6张卡片完成了设计，却没能赶上实现。</p>
+    <h2>成果与待完成的工作</h2>
+    <h3>已实现 49 张卡片中的 9 张</h3>
+    <p>原型实现了 9 张卡片。核心功能已经能够运行：选择卡片、定义条件与行为、管理多个实例，以及在场景间传递数据。这为增加更多卡片提供了基础，但相关实现仍待完成。此外，6 张卡片已设计但未实现；其余 34 张还需要完成交互设计与实现。</p>
 
     <table class="results-table">
       <caption>原型中的实现状况</caption>
@@ -240,21 +251,21 @@
       </tbody>
     </table>
 
-    <h3>没有进行评估</h3>
-    <p>没有实施由真实使用者参与的评估。开发期正值COVID-19下的远程参与，既无法组织以VR头显为前提的线下工作坊，也无法安排远程的替代方案。因此这个项目所能证明的，止于「所设计的体验能够以可运行的形式成立」这一步；至于它对孩子是否好用、在疗育场景中是否有意义，都还没有得到验证。</p>
-    <p>今后若要进行评估，问题应当设定为：「对于原型制作这项工作而言，这套UI/UX有多直观？」完成所需的时间、事先构想的智能物件与做出来的东西之间的吻合度、非本意的按键次数等都可作为指标，再辅以基于SUS（System Usability Scale）的事后问卷，就能取得量化数据。在VR中，使用者的视野被头显遮住，因而更容易出现自己意识不到的身体反应，所以录像尤其有效。至于年龄，SNaP设定的年龄与Oculus的安全指引（不设想13岁以下使用）相重叠的13岁，是较为现实的一条线。</p>
+    <h3>尚未开展用户评估</h3>
+    <p>原型尚未经过用户评估。开发期间正值 COVID-19 疫情，团队以远程方式参与，既未能组织使用 VR 头显的线下工作坊，也未能安排远程替代方案。项目证明了所设计的体验能够实现为可运行原型，但儿童使用时的可用性，以及它在治疗场景中的价值，仍未经过检验。</p>
+    <p>未来评估将考察界面是否便于直观地制作原型。可能采用的指标包括完成时间、最终智能物件与参与者初始想法的吻合程度，以及误按按钮的次数。活动结束后，可用基于系统可用性量表（SUS）的问卷补充量化数据。后续评估也可在取得同意、遵循适当程序的前提下，录制活动以观察参与者的动作。2021 年项目曾将评估年龄设想为 13 岁，以兼顾 SNaP 的目标年龄与当时参考的 Oculus 指引。未来研究需要依据适用指引和研究方案，重新确定参与资格。</p>
 
     <h3>再往前的工作</h3>
-    <p>因时间与技艺所限而未能顾及的工作，首先是重做UI/UX。让卡片组合得以成立的实现占去了时间，视觉、听觉、触觉的表现未能打磨到位。尤其是，在VR的UI中该用多少文字，还有重新思考的余地。文字原本是为了把信息记录在二维平面上而诞生的，三维空间中有许多要素，更适合作为空间用户界面（SUI）重新设计。若以有神经发育障碍的儿童为对象，通过语音进行交互是一个有力的方向。</p>
-    <p>在学术上的延展，列出了三条路径。其一，是与同在i3Lab推进开发的实体板作比较。既有研究发现，在现实场所与虚拟环境中进行同一款协作游戏时，虚拟环境一侧的对话量有所增加；同类的比较在这两者之间也可能成立。其二，是支持多人同时参与。既然名字里带着「Codesign」，能在虚拟空间中与他人一同组装，本身就是有意义的。其三，是把智能物件的描述形式标准化，使其可以跨平台带走。</p>
+    <p>进一步开发的首要任务是完善界面与使用体验。由于时间和经验有限，大部分精力投入了卡片组合功能，视觉、听觉与触觉设计仍不够完善。VR 中的文字使用也需要重新考虑：原本针对平面设计的信息，可能更适合通过空间用户界面（SUI）呈现。针对预期使用者，语音交互也是值得探索的方向。</p>
+    <p>项目提出了三个研究方向。第一，与 i3Lab 正在开发的实体板进行比较。既有研究报告称，参与者在虚拟环境中玩同一款协作游戏时，对话多于在实体环境中；这为比较两个平台提供了研究思路。第二，支持多名用户同时参与，让儿童能够像“Codesign”这一名称所表达的那样，在 VR 中共同搭建物件。第三，建立描述智能物件的标准化格式，使设计可以在不同平台之间迁移。</p>
 
     <h3>小结</h3>
-    <p>这个项目做出来的，不是一件完成品智能物件的样本，而是制作它的场所。环境、输入、输出这三张卡片，被原样置换为「对象物」「条件」「行为」这三个组装单位，并让抓取、照射、涂抹这些身体动作把它们联结起来。诞生于桌游中的那一句话，在这里成了可以用自己的手驱动的东西，也成了工作坊结束之后仍然留存的数据。</p>
+    <p>本项目创建了制作智能物件原型的环境，将 SNaP 的三类卡片转化为组装单元：物件、触发条件和行为。玩家通过抓取、指向和涂抹把它们联系起来。这个可运行原型将文字构想转化为可交互的虚拟物件，其行为以数据形式表达，并可在场景间传递。</p>
   </section>
 
   <p class="citation publication-citation">Takafumi Horiuchi, Paul Cozma-Ivan, Elmira Katsajeva, and Olivia Ludkiewicz，“Design and Implementation of a Smart Object Prototyping Platform in Virtual Reality for Children with NDD,” Advanced User Interfaces (A.Y. 2020–21) Final Exam Project，米兰理工大学，2021年2月。</p>
 
-  <nav aria-label="站点">
+  <nav aria-label="作品集导航">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀内贵文的作品集首页</span></a></li>
     </ul>

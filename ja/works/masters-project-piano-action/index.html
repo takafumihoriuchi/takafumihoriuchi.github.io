@@ -52,7 +52,7 @@
       "name": "Takafumi Horiuchi",
       "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工学 × AI × デザイン",
+      "description": "Design engineer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -132,7 +132,7 @@
         <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="二つの解析テーマ。鍵盤とハンマーの線速度、および鍵盤入力と弦反力の関係。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="解析1の観測点。鍵盤端の下向き速度とハンマーの上向き速度。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="ピアノ機構を三つの回転要素へ簡略化した図。"></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="三つの回転要素の半径比から、鍵盤速度とハンマー速度の関係式を導く図。"></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="三つの回転要素の出力半径と入力半径の比から、鍵盤速度とハンマー速度の関係式を導く図。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤端へ1秒から2秒まで下向きに5ニュートンを加える解析条件。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="鍵盤とハンマーの線速度グラフ。ピーク速度はそれぞれ毎秒1027ミリメートルと4284ミリメートル。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="半径の実測値から求めたハンマー速度4614ミリメートル毎秒と、解析値4284ミリメートル毎秒の比較。"></a></li>
@@ -193,12 +193,12 @@
       <figcaption>解析のため、機構を①鍵盤、②中間機構、③ハンマーの三つの剛体に単純化した。</figcaption>
     </figure>
 
-    <p>同じ剛体上では角速度が共通であり、支点からの距離を<em>r</em>、その点の線速度を<em>v</em>とすると、<em>v</em> = <em>ωr</em>となる。接触点で速度が損失なく次の剛体へ伝わると仮定すれば、各段の入力半径と出力半径の比を掛け合わせて、ハンマー速度を求められる。</p>
+    <p>同じ剛体上では角速度が共通であり、支点からの距離を<em>r</em>、その点の線速度を<em>v</em>とすると、<em>v</em> = <em>ωr</em>となる。接触点で速度が損失なく次の剛体へ伝わると仮定すれば、各段の「出力点までの半径 ÷ 入力点までの半径」を三段分掛け合わせ、鍵盤速度に乗じると、ハンマー速度を求められる。</p>
     <p class="formula formula-long" role="math" aria-label="ハンマー速度は、r1プライム、r2プライム、r3プライムの積を、r1、r2、r3の積で割り、鍵盤速度を掛けた値">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="三つの剛体について、各支点から入力点と出力点までの距離をr1、r1プライム、r2、r2プライム、r3、r3プライムとして示した図。"></a>
-      <figcaption>各剛体の支点から入力点・出力点までを半径として表し、その比を三段分掛け合わせて速度比を求める。</figcaption>
+      <figcaption>各剛体の支点から入力点・出力点までを半径として表す。「出力半径÷入力半径」を三段分掛け合わせて速度比を求める。</figcaption>
     </figure>
 
     <h4>入力条件と観測結果</h4>
@@ -229,7 +229,7 @@
       <figcaption>3Dモデル上で測った六つの半径。これらの値から、ハンマーの理論速度4,614 mm/sを算出した。</figcaption>
     </figure>
 
-    <p>シミュレーション値4,284 mm/sは理論値より約7%低いものの、速度が増幅される大きさは近い値となった。この差が生じた理由は、後述するように、三つの剛体として理想化した理論計算と、部品間の損失や材料の変形まで扱う3Dシミュレーションとで前提が異なるためである。</p>
+    <p>シミュレーション値4,284 mm/sは理論値より約7%低く、速度が増幅される大きさは近い値となった。理論計算では三つの理想化した剛体を用い、シミュレーションでは個々の部品を表現している。ただし、この差の原因は数値の比較だけでは特定できない。</p>
 
     <h3>解析2&thinsp;——&thinsp;鍵盤の力は、弦側でどのように現れるか</h3>
     <p>二つ目の解析では、鍵盤表面へ下向きに15 Nを加え、打弦時に弦側へ現れる反力を観測した。鍵盤側の入力<em>F</em><sub>key</sub>は1.0秒から立ち上がって15 Nに達し、打弦の瞬間、弦側の反力<em>V</em><sub>string</sub>には最大31 Nのピークが現れた。</p>
@@ -244,26 +244,26 @@
       <figcaption>弦側の反力 <em>V</em><sub>string</sub>。打弦の瞬間に最大31 Nを記録した。</figcaption>
     </figure>
 
-    <p>この値は、鍵盤側とハンマー側の腕の長さを使った、てこのつり合いから説明できる。</p>
-    <p class="formula formula-long" role="math" aria-label="弦反力は、15掛ける195を94で割って、31.1ニュートン">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
-    <p>入力点から支点までの距離を195 mm、弦側の作用点までを94 mmとして計算すると、理論値は31.1 Nになる。シミュレーションの最大値31 Nとの差は0.1 Nであり、この解析でも、設定した寸法から期待される力の伝達とほぼ一致した。</p>
+    <p>比較のため、鍵盤側とハンマー側の腕の長さを使った単純なてこのつり合い計算を行った。</p>
+    <p class="formula formula-long" role="math" aria-label="てこのつり合いによる比較値は、15掛ける195を94で割って、31.1ニュートン">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>入力点から支点までの距離を195 mm、弦側の作用点までを94 mmとして計算すると、比較値は31.1 Nになる。シミュレーションの最大値31 Nとの差は0.1 Nだった。ただし、この静的なつり合い計算を、打弦時の瞬間的な反力ピークへ適用できる条件は別に確認する必要がある。</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="鍵盤の支点から入力点までの距離195ミリメートルと、弦側の作用点までの距離94ミリメートルを示した、力のつり合いの図。"></a>
-      <figcaption>鍵盤側の入力15 Nに対し、てこのつり合いから弦側の反力31.1 Nを導いた。シミュレーションの最大値31 Nとほぼ一致した。</figcaption>
+      <figcaption>鍵盤側の入力15 Nと腕の長さによる、静的なてこのつり合いの比較計算。31.1 Nという比較値は、シミュレーションの最大値31 Nに近かった。</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>シミュレーションと理論値の照合</h2>
     <h3>近い値となった二つの解析結果</h3>
-    <p>鍵盤とハンマーの速度を比較した解析1では、ハンマー速度の理論値4,614 mm/sに対して、3Dシミュレーションでは4,284 mm/sとなった。鍵盤の入力と弦の反力を比較した解析2では、理論値31.1 Nに対して、シミュレーションの最大値は31 Nだった。どちらの解析でも、作成した3Dモデルによるシミュレーション結果は、数式から求めた理論値と近い値になった。</p>
+    <p>鍵盤とハンマーの速度を比較した解析1では、ハンマー速度の理論値4,614 mm/sに対して、3Dシミュレーションでは4,284 mm/sとなった。鍵盤の入力と弦の反力を比較した解析2では、静的なてこのつり合いによる比較値31.1 Nに対して、シミュレーションの最大値は31 Nだった。二つの解析で、シミュレーションと計算による値が近いことを確認した。</p>
 
-    <h3>わずかな差が生じた理由</h3>
-    <p>理論計算では、ピアノ・アクションを三つの剛体からなる機構として単純化し、接触点で運動や力が損失なく伝わるものとして計算した。一方、3Dモデルによるシミュレーションでは、ピアノ・アクションを構成する一つひとつの部品を扱うため、部品間で生じるエネルギーの損失や材料の変形も結果に反映される。この前提の違いが、理論値とシミュレーション値の間に生じたわずかな差として現れた。</p>
+    <h3>差の解釈</h3>
+    <p>理論計算では、ピアノ・アクションを三つの剛体からなる機構として単純化し、接触点で運動や力が損失なく伝わるものとして計算した。一方、3Dシミュレーションでは、機構を構成する部品を個別にモデル化した。ただし、残った差をエネルギー損失や材料変形に帰属するには、解析設定の確認が必要である。</p>
 
     <h3>結論</h3>
-    <p>3Dシミュレーションの結果が理論値とほぼ等しいことを確認できた。断面図をもとに構築した3Dモデルは、鍵盤の入力をハンマーの速度へ増幅し、その力を弦へ伝えるピアノ・アクションの運動を、理論計算と整合する形で再現した。</p>
+    <p>ハンマー速度と弦側反力の二つの比較で、シミュレーションは理論計算に近い値を示した。この範囲で、断面図から作成したモデルにおいて、設定した寸法と拘束から期待される運動と力の伝達を確認した。</p>
     <p>このプロジェクトでは、形状を再現するだけでなく、断面資料から構造を読み取り、部品同士の関係をCAD上の拘束へ置き換え、解析する問いに応じて力学モデルへ単純化するまでを一つのモデリング過程として行った。</p>
   </section>
 

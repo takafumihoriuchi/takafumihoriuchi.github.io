@@ -9,8 +9,8 @@
      and every other language is translated from it (owner's instruction,
      2026-08-23). The mock renders live under the English tree, one file per
      language, and are referenced from here rather than copied. -->
-<title>以約束型設計實現介面的個別最佳化 — 堀內貴文</title>
-<meta name="description" content="把從個人的認知、感官與身體特質及設計知識生成介面的機制，在車用導航上做成原型。透過約束型設計的實作與比較，探討個別化的可能性，以及留給生成式 AI 的裁量空間。">
+<title>以約束驅動設計實現個人化介面 — 堀內貴文</title>
+<meta name="description" content="一項車用導航概念驗證，根據認知、感官與身體特質及設計知識生成介面。透過約束驅動設計的實作與比較，探索個人化的潛力，以及可交由生成式 AI 決定的範圍。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -38,14 +38,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="以約束型設計實現介面的個別最佳化">
-<meta property="og:description" content="把從個人特質與設計知識生成介面的機制在車用導航上做成原型，探討個別化的可能性與留給生成式 AI 的裁量空間。">
+<meta property="og:title" content="以約束驅動設計實現個人化介面">
+<meta property="og:description" content="一項車用導航概念驗證，根據個人特質與設計知識生成介面，探索個人化的潛力，以及可交由生成式 AI 決定的範圍。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="顯示目的地與導航選單的 Personal Fit UI 統一介面。">
+<meta property="og:image:alt" content="Personal Fit UI 的通用預設畫面，顯示目的地與導航選項。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -55,9 +55,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
-      "alternateName": "堀內貴文",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工程 × AI × 設計",
+      "description": "設計工程師",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -66,13 +66,15 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/#work",
-      "name": "以約束型設計實現介面的個別最佳化",
+      "name": "以約束驅動設計實現個人化介面",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/personal-fit-ui/",
-      "description": "把從個人的認知、感官與身體特質及設計知識生成介面的機制，在車用導航上做成原型。透過約束型設計的實作與比較，探討個別化的可能性，以及留給生成式 AI 的裁量空間。",
+      "description": "一項車用導航概念驗證，根據認知、感官與身體特質及設計知識生成介面。透過約束驅動設計的實作與比較，探索個人化的潛力，以及可交由生成式 AI 決定的範圍。",
       "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
       "datePublished": "2026-08",
       "inLanguage": "zh-Hant",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -95,7 +97,7 @@
 <main>
 
   <header>
-    <h1>以約束型設計實現介面的個別最佳化</h1>
+    <h1>以約束驅動設計實現個人化介面</h1>
     <p class="dateline">2026年8月</p>
   </header>
 
@@ -103,7 +105,7 @@
     <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">    o        [*] [.] [+]          .----------------.       +-------+  +-----+
    /|\  ------------------------&gt; |   &lt;=  x  &lt;=    | ----&gt; | A [ ] |  | A A |
    / \                            |   []  ()  {}   |       | [===] |  | [ ] |
-                                  &#x27;----------------&#x27;       +-------+  +-----+
+                                  '----------------'       +-------+  +-----+
                                                                   \  /
                                                                &lt;+-------+&gt;
                                                                 | A [=] |
@@ -112,69 +114,69 @@
 
   <section>
     <h2>概述</h2>
-    <p class="lead">提出一套機制：輸入關於認知特質的個人資訊，參照介面的基本設計原則、安全與無障礙條件，以及關於人的特質的研究知識，生成貼合這個人的介面。</p>
-    <p>其中採用了「約束型設計」的思路——由人設計必須守住的條件與適用範圍，在這個範圍之內由生成式 AI 提出具體方案。以車用導航為題材，從包含感官與身體特質在內的十三種虛構人物誌生成介面，並在另一道工序中檢查是否符合條件，實作了一個 PoC。</p>
-    <p>比較之中，有一個案例確認到由身體特質帶來的明顯畫面結構變化；而多數生成結果並未出現大的視覺變化。實際的易用性與安全性尚未驗證，但這項工作釐清了可以交給生成式 AI 判斷的範圍，以及那些收窄了個別化餘地的設計條件。</p>
+    <p class="lead">本專案提出一套系統，輸入與介面使用相關的認知特質資訊，便能生成適合該人的介面。它結合介面設計原則、安全與無障礙需求，以及對人類特質的研究。</p>
+    <p>我採用稱為「約束驅動設計」的方法：由人定義需求及適用條件，再讓生成式 AI 在界限內提出具體方案。以車用導航為案例，我建立一個概念驗證（PoC），根據 13 個虛構人物誌生成介面；人物誌也包含感官與身體特質。生成後，再以獨立步驟檢查輸出是否符合需求。</p>
+    <p>比較結果中，有一個輸出因身體特質而出現明顯的版面變化，多數輸出的視覺變化則很小。易用性與安全性尚未由使用者參與測試。這項工作有助於釐清哪些決定可交給生成式 AI，以及哪些需求限制了個人化的範圍。</p>
   </section>
 
   <section>
-    <h2>背景 —— 一套介面究竟能涵蓋到哪裡</h2>
+    <h2>背景：一套介面能滿足多少不同需求？</h2>
     <p>多數產品會設計並提供一套盡可能多人可用的通用介面。然而，一次能掌握的資訊量、注意力投放的難易、語言表述的理解難度、精細操作的順手程度，都因人而異。通用介面照顧到了很多人，卻未必貼合其中的某一個人。</p>
     <p>以群體為單位的評估同樣有其侷限。例如美國 NHTSA 於 2013 年公布的自願性指引中，關於視線的各項接受標準要求 24 人中至少 21 人達標。這並不是一個意味著所有人都能同樣使用的條件。<a class="citation-marker" href="#ref-nhtsa" aria-label="跳至參考資料 1">[1]</a></p>
     <p>即便產品可以更改字級或顯示資訊量，使用者也必須先注意到設定的存在，把它和自己的不便連結起來，再選出合適的調整。設定功能是不是沒有被充分利用，人們就這樣在不合適的狀態下繼續使用？這個疑問是本專案的起點。</p>
     <p>在車用導航中，看螢幕與做操作會與駕駛所需的注意力相競爭。<a class="citation-marker" href="#ref-nhtsa" aria-label="跳至參考資料 1">[1]</a> 如果與介面的不匹配可能加重這份負擔，那麼在開始使用時就準備好貼合這個人的狀態，從易用性與安全兩方面都值得探討。</p>
-    <p>藉助生成式 AI，已經可以把「由個人資訊與設計知識具體化出介面」的工序做成原型。於是我思考：如何在減輕逐人手工設計畫面負擔的同時，把貼合個人的介面交到他們手中。</p>
-    <p class="note">設定功能的使用率，以及與介面的不匹配對事故的影響，本專案並未驗證。</p>
+    <p>生成式 AI 讓我能將個人資訊與設計知識轉化為介面的流程做成原型。我探索這是否能減少逐人手動設計獨立介面的工作。</p>
+    <p class="note">本專案未研究人們使用這些設定的頻率，也未檢驗不合適的介面如何影響事故風險。</p>
   </section>
 
   <section>
-    <h2>提案 —— 把個人資訊與兩類設計知識連接起來</h2>
-    <p>輸入的是關於該使用者認知特質的資訊。AI 將其與事先整理好的兩類知識對照：一類是介面的基本設計規則，另一類是由人的特質通往建議介面的知識。</p>
-    <p>在此基礎上，AI 在允許的範圍內把介面具體化，並檢查其是否符合條件。輸出的是貼合這個人的介面，以及改了哪裡、為什麼改的說明。</p>
+    <h2>提案：結合個人資訊與兩類設計知識</h2>
+    <p>系統輸入與介面使用相關的認知特質資訊。本次概念驗證使用的虛構人物誌，也包含感官與身體特質。AI 將這些資訊與預先準備的兩類知識一併考量：介面的基本設計規則，以及將人類特質連結到介面建議的知識。</p>
+    <p>AI 在允許的界限內生成介面，再由獨立檢查步驟驗證是否符合需求。輸出包含個人化介面，以及修改了什麼、為什麼修改的說明。</p>
 
     <figure class="concept-figure line-art">
-      <a class="concept-figure__desktop" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg" width="1400" height="815" loading="lazy" decoding="async" alt="輸入個人的認知特質，參照介面的基本規則與「依特質建議介面」的知識來生成的構想。生成式 AI 把方案具體化，另一道工序檢查條件，輸出貼合這個人的介面與變更理由。"></a>
-      <a class="concept-figure__mobile" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg" width="480" height="1414" loading="lazy" decoding="async" alt="輸入個人的認知特質，參照介面的基本規則與「依特質建議介面」的知識來生成的構想。生成式 AI 把方案具體化，另一道工序檢查條件，輸出貼合這個人的介面與變更理由。"></a>
-      <figcaption><strong>圖1｜輸入個人資訊、參照設計知識生成介面的構想。</strong> 因人而異的輸入，與設計者事先整備的知識被分開。PoC 的輸入除認知特質外，還包含感官與身體特質。</figcaption>
+      <a class="concept-figure__desktop" href="assets/personal-fit-ui-structure-zh-Hant.svg"><img src="assets/personal-fit-ui-structure-zh-Hant.svg" width="1400" height="1080" loading="lazy" decoding="async" alt="概念圖：以個人的認知特質為輸入，結合介面基本規則與依個人特質提出的介面建議。生成式 AI 提出具體方案，再以獨立步驟檢查需求，輸出適合該使用者的介面與變更理由。"></a>
+      <a class="concept-figure__mobile" href="assets/personal-fit-ui-structure-mobile-zh-Hant.svg"><img src="assets/personal-fit-ui-structure-mobile-zh-Hant.svg" width="480" height="1641" loading="lazy" decoding="async" alt="概念圖：以個人的認知特質為輸入，結合介面基本規則與依個人特質提出的介面建議。生成式 AI 提出具體方案，再以獨立步驟檢查需求，輸出適合該使用者的介面與變更理由。"></a>
+      <figcaption><strong>圖 1｜根據個人資訊與設計知識生成介面。</strong>因人而異的資訊，與設計者預先準備的知識分開處理。概念驗證使用虛構人物誌，除認知特質外，也涵蓋感官與身體特質。</figcaption>
     </figure>
 
     <h3>輸入：關於這個人的資訊</h3>
-    <p>例如，一次記住並處理資訊是否得心應手，是否容易被其他刺激吸走注意力，哪一類說明更容易理解。實作中還把視覺表現與手指操作特質納入對象。畫面不是由診斷名稱決定的，處理的是與介面使用相關的個人資訊。</p>
+    <p>輸入包括：記住並運用資訊的難易程度、是否容易被其他刺激分心，以及哪種說明方式最容易理解。實作也涵蓋視覺與手部靈巧度。系統使用與介面互動相關的資訊，而非僅憑診斷名稱決定畫面。</p>
 
-    <h3>參照知識 A：介面得以成立的規則</h3>
+    <h3>知識 A：介面的基本需求</h3>
     <p>整理介面的基本設計原則：一致性、對操作的回饋、資訊的分組、文字與操作對象是否易見等。在此之上，把車用介面的操作限制與無障礙條件，連同其適用情境一併定義。</p>
 
-    <h3>參照知識 B：由特質通往建議介面的知識</h3>
-    <p>把研究中確認的人的特質，連接到資訊呈現的原則，再連接到介面設計。例如針對「一邊記住資訊一邊操作會有負擔」這一特徵，考慮「減少需要記住的內容」這個方向，進而落到把必要資訊留在畫面上的設計。</p>
-    <p>不過，關於特質的研究未必能直接給出車用導航的設計取值。<strong>研究已經釐清的事，與本專案由此得出的設計判斷，要加以區分。</strong> 對所有人都同樣有效的改進歸入基本規則，不計入個別化的成果。</p>
+    <h3>知識 B：將人的特質連結到介面建議</h3>
+    <p>這類知識將人類特質研究連結到資訊呈現原則，再轉化為介面設計。例如，一邊記住資訊一邊完成任務有困難，便可考慮減少記憶需求，進而讓必要資訊持續顯示在畫面上。</p>
+    <p>研究結果未必能直接給出車用導航介面的具體設計數值。我將研究已確立的知識，與據此做出的設計判斷分開處理。對所有人都有幫助的改善，納入基本規則，而不計為個人化的成果。</p>
   </section>
 
   <section>
-    <h2>理想的體驗 —— 在第一次乘車時，一起確認怎樣才好用</h2>
-    <p class="note"><strong>面向未來的構想。</strong> 透過對話完成初始設定，在本次 PoC 中並未實作。</p>
-    <p>買下車、第一次坐進駕駛座時。在停車狀態下，AI 代理詢問平時的使用方式。使用者不必去挑選專業的設定項目，而是談談平時的困擾，以及自己覺得好用的方式。</p>
+    <h2>體驗構想：首次駕駛前找到合適的介面</h2>
+    <p class="note"><strong>未來構想：</strong>本次概念驗證尚未實作對話式初始設定。</p>
+    <p>想像第一次坐進新車的駕駛座。車輛靜止時，AI 代理會詢問你平常的使用經驗。你不必操作複雜的技術設定，只需描述哪些地方讓你感到困難，以及怎樣的方式比較順手。</p>
 
     <figure class="journey-figure line-art">
-      <a href="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg" width="1200" height="1030" loading="lazy" decoding="async" alt="首次乘車時的未來使用者旅程。停車時選擇開始，回答 AI 的詢問，糾正 AI 的理解，試用生成的介面，並以確認過的介面開始使用。"></a>
-      <figcaption><strong>圖2｜從首次乘車到開始使用的使用者旅程。</strong> 經過詢問、確認理解、生成介面、停車時試用，為這個人準備好初始介面。</figcaption>
+      <a href="assets/personal-fit-ui-journey-zh-Hant.svg"><img src="assets/personal-fit-ui-journey-zh-Hant.svg" width="1200" height="1220" loading="lazy" decoding="async" alt="首次駕駛前的設定流程構想。車輛靜止時，使用者選擇開始，回答 AI 的問題，修正 AI 的理解，試用生成的介面，並開始使用確認過的設計。"></a>
+      <figcaption><strong>圖 2｜從首次上車到開始使用介面的旅程構想。</strong>使用者回答問題、確認或修正 AI 的理解、接收生成的介面，並在停車時試用。</figcaption>
     </figure>
 
     <ol class="journey-steps">
       <li>
-        <h3>首次乘車：開始對話</h3>
-        <p class="dialogue"><span>AI</span>「為了把畫面調整到您用著順手，能否告訴我幾點您平時的使用方式？也可以稍後再開始。」</p>
+        <h3>首次駕駛前：開始對話</h3>
+        <p class="dialogue"><span class="speaker">AI</span>：「為了讓畫面更適合您，可以請您說說平常使用介面的習慣嗎？如果願意，也可以稍後再開始。」</p>
         <p>使用者理解其目的，選擇現在開始還是稍後再說。</p>
       </li>
       <li>
         <h3>訪談：談談困擾</h3>
         <p class="dialogue"><span>AI</span>「當導航提示接連出現時，通常在哪些地方會變得不好理解？」</p>
         <p class="dialogue"><span>使用者</span>「下一條說明一來，我有時就忘了剛才那條的內容。」</p>
-        <p>AI 詢問具體情境，整理出與資訊保持、注意力投放相關的使用困難。</p>
+        <p>AI 詢問具體情境，找出與記憶及注意力相關的使用困難。</p>
       </li>
       <li>
         <h3>確認理解：可以糾正 AI 的理解</h3>
         <p class="dialogue"><span>AI</span>「比起記住步驟再往下走，讓需要的資訊留在畫面上會更好用——我這樣理解對嗎？」</p>
-        <p>使用者確認並糾正這一理解。對話中獲得的自述，與認知功能的測量值或診斷分開處理。對需要測量的項目，另行準備確認的方法。</p>
+        <p>使用者確認或修正 AI 的理解。對話中的自述資訊，與認知測量值及診斷分開處理；需要測量的資訊則另行評估。</p>
       </li>
       <li>
         <h3>提案與試用：聽過理由，再試畫面</h3>
@@ -183,87 +185,87 @@
       </li>
       <li>
         <h3>開始使用：使用確認過的介面</h3>
-        <p>把使用者確認過的介面儲存為初始狀態。行駛中維持使用者已經記住的基本結構。想重新調整時，可以在停車時再作調整。</p>
+        <p>確認過的介面儲存為初始設定。車輛行進時，基本結構維持一致，讓使用者能沿用已學會的操作方式；車輛靜止時，則可以再次檢視與調整。</p>
       </li>
     </ol>
-    <p>對話的目的不是把使用者一次性歸類，而是透過一段他本人能夠說明、能夠糾正的往來，把開始使用時的狀態整備好。</p>
+    <p>這段對話透過使用者能說明需求、糾正誤解的往來，建立合適的初始設定，而非一次就替使用者定型分類。</p>
   </section>
 
   <section>
-    <h2>實作 —— 把須守住的條件與交給 AI 的判斷分開</h2>
-    <p>本次實作的是這樣一套機制：接收個人的特質資訊，生成介面，再檢查、繪製並比較。作為替代對話詢問的輸入，定義了十三種特質各異的虛構人物誌。</p>
-    <p>選擇車用導航作為驗證題材，是因為畫面面積、操作對象的大小、可顯示的資訊量、行駛中的操作等條件都能被具體地處理。</p>
+    <h2>實作：區分固定需求與交由 AI 決定的項目</h2>
+    <p>我實作了從接收個人特質資訊，到生成、驗證、繪製與比較介面的整套流程。本次沒有採用對話訪談，而是以 13 個特質不同的虛構人物誌作為輸入。</p>
+    <p>我選擇車用導航，因為它有可具體處理的需求：畫面面積、觸控目標大小、顯示資訊量，以及駕駛中允許的操作。</p>
 
-    <h3>名為約束型設計的推進方式</h3>
-    <p>本專案所說的約束型設計，是<strong>由人來設計須守住的條件與適用範圍，並在其內部由 AI 提出具體解的方法</strong>。</p>
+    <h3>約束驅動設計的方法</h3>
+    <p>本專案所稱的約束驅動設計，是由人定義需求與適用條件，再由 AI 在這些界限內提出方案。</p>
     <p>在基於規則的參數化變更中，輸入與取值或選項的對應是事先定好的。本次構想不去填滿全部對應，而是定下允許的範圍與判斷依據，把尚未確定的具體取值與表述留給生成式 AI 裁量。實作上把由計算決定的部分與由生成式 AI 決定的部分組合起來。</p>
 
-    <div class="table-wrap" tabindex="0" role="region" aria-label="依據確鑿程度不同，在實作中的處理方式">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="研究依據如何影響實作">
       <table class="method-table">
         <thead>
           <tr><th scope="col">依據能說明什麼</th><th scope="col">在實作中的處理</th></tr>
         </thead>
         <tbody>
-          <tr><td>連取值或關係式都能確定</td><td>在已確認的條件與適用範圍內計算</td></tr>
-          <tr><td>知道調整方向，但程度無法確定</td><td>在守住方向與約束的範圍內具體化，並留下「這是未經驗證的設計判斷」的紀錄</td></tr>
+          <tr><td>已確立具體數值或數學關係</td><td>在已確認的條件與適用範圍內計算</td></tr>
+          <tr><td>知道調整方向，但程度無法確定</td><td>在符合調整方向與約束的範圍內選擇數值，並記錄為尚未驗證的設計判斷</td></tr>
           <tr><td>僅憑依據無法確定妥當的選擇</td><td>作為探索性提案處理，並標記為需要評估</td></tr>
         </tbody>
       </table>
     </div>
     <p>把研究知識落到介面上時，記錄了出處、適用條件與設計判斷。透過與介面一併輸出變更理由，使「為什麼對這個人是這樣的畫面」可以被追溯。</p>
 
-    <h3>在另一道工序中檢查生成的介面</h3>
-    <p>介面以帶有畫面元素與版面配置的結構化資料生成，再由這些資料繪製。數值與結構方面的條件由程式碼檢查，少數需要解釋語意的條件由 LLM 的另一道檢查確認。自動判定之外的項目，以及材料不足而無法確認的項目，也一併記錄。</p>
+    <h3>以獨立步驟檢查生成的介面</h3>
+    <p>介面以結構化資料生成，描述畫面元素與配置，再依資料繪製。程式碼檢查數值與結構需求；另一項獨立的大型語言模型（LLM）檢查，評估部分需要語意解讀的需求。系統也記錄不在自動檢查範圍內的項目，以及因資訊不足而無法驗證的項目。</p>
     <p>檢查所確認的是「是否符合已定義的條件」。實際是否好用、安全性是否提升，則需要由使用者來評估。</p>
-    <p>設計階段若發現條件之間存在矛盾，由 AI 指出相應位置，再由人來判斷並修訂條件。不做成每次生成時 AI 都按自己方便更動條件的機制。</p>
+    <p>設計時若發現需求互相衝突，由 AI 指出，再由人決定如何修訂。AI 不會在每次生成介面時自行更改需求。</p>
   </section>
 
   <section>
-    <h2>介面比較 —— 變化很大的例子與幾乎沒變的例子</h2>
+    <h2>介面比較：明顯改變與大致不變的版面</h2>
     <p>比較基準是不輸入個人特質、以通用預設值生成的介面。在功能集合相同的前提下，比較輸入個人特質後的輸出。</p>
     <p class="note"><strong>以下圖像是原型的輸出，並非市售車用導航改造前後的對比。</strong> 人物誌也不是對真實使用者的再現，而是為確認特質影響而設的虛構輸入。</p>
 
-    <h3>操作對象變大的例子</h3>
-    <h4>PS-12｜帶有「精細觸控操作困難」這一身體特質的人物誌</h4>
+    <h3>較大的觸控目標</h3>
+    <h4>PS-12：難以精確觸控的人物誌</h4>
     <p>與作為基準的 PS-01 在年齡、認知、感官特質上保持一致，只改變手指操作特質。在所示圖像中，各操作對象變大，畫面中央排列的項目由 7 項減為 4 項。底部的固定按鈕不計入這一數量。</p>
     <figure class="compare line-art">
       <div>
         <p class="compare-label">通用預設介面</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-12-before-zh-Hant.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-before-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="通用預設介面。目的地設定畫面中央排列著 7 個項目，底部有 4 個固定按鈕。"></a>
+        <a href="assets/ps-12-before-zh-Hant.svg"><img src="assets/ps-12-before-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="通用預設介面。目的地設定畫面中央排列著 7 個項目，底部有 4 個固定按鈕。"></a>
       </div>
       <div>
         <p class="compare-label">輸入個人特質後生成的介面</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-12-after-zh-Hant.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-after-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="輸入手指操作特質後的生成結果。中央項目變為 4 個，各觸控區域更大。底部的固定按鈕為 4 個。"></a>
+        <a href="assets/ps-12-after-zh-Hant.svg"><img src="assets/ps-12-after-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="輸入手指操作特質後的生成結果。中央項目變為 4 個，各觸控區域更大。底部的固定按鈕為 4 個。"></a>
       </div>
-      <figcaption><strong>圖3｜重新分配操作對象大小與單一畫面顯示量的例子。</strong> 「畫面會隨個人輸入而變化」這一點得到了展示。不過這一變化源自身體特質，並不能說明貼合認知特質的介面是有效的。</figcaption>
+      <figcaption><strong>圖 3｜重新平衡觸控目標大小與單一畫面顯示的項目數量。</strong>輸出會隨個人特質改變。但這個例子反映的是身體特質，不能證明依認知特質調整介面是有效的。</figcaption>
     </figure>
-    <p>把操作對象放大是有代價的：同一畫面上一次能選擇的項目變少了。設計上功能集合得以保留，但僅憑這一畫面，無法評估通往後續畫面是否依然順暢。</p>
+    <p>觸控目標變大，代表一個畫面中可選的項目變少。設計旨在保留相同的功能集合，但單憑這張截圖，無法判斷前往後續畫面的操作是否容易。</p>
 
-    <h3>結構幾乎沒有變化的例子</h3>
+    <h3>大致不變的版面</h3>
     <h4>PS-01｜設為基準的人物誌</h4>
     <p>字級上雖有細微差別，但項目數量、版面配置、觸控區域的大小幾乎相同。在本次的規則與輸入組合下，並未得到相對通用預設介面大幅改變結構的結果。</p>
     <figure class="compare line-art">
       <div>
         <p class="compare-label">通用預設介面</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-01-before-zh-Hant.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-before-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="通用預設介面。目的地設定畫面中央排列著 7 個項目。"></a>
+        <a href="assets/ps-01-before-zh-Hant.svg"><img src="assets/ps-01-before-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="通用預設介面。目的地設定畫面中央排列著 7 個項目。"></a>
       </div>
       <div>
         <p class="compare-label">輸入個人特質後生成的介面</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-01-after-zh-Hant.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-after-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="輸入基準人物誌資訊後的生成結果。中央的 7 個項目與版面配置幾乎相同，文字略大一些。"></a>
+        <a href="assets/ps-01-after-zh-Hant.svg"><img src="assets/ps-01-after-zh-Hant.svg" width="772" height="434" loading="lazy" decoding="async" alt="輸入基準人物誌資訊後的生成結果。中央的 7 個項目與版面配置幾乎相同，文字略大一些。"></a>
       </div>
-      <figcaption><strong>圖4｜即便輸入個人資訊，結構也幾乎沒有變化的例子。</strong> 僅憑變化之小，無法判斷它對這個人是否更好用。</figcaption>
+      <figcaption><strong>圖 4｜個人資訊僅帶來微小版面變化的例子。</strong>僅憑視覺變化的大小，無法判斷介面對該人是否更容易使用。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>結果與討論 —— 生成的自由度留在了哪裡</h2>
+    <h2>結果與討論：還有多少生成自由？</h2>
 
-    <h3>生成式 AI 特有的價值未能充分展示</h3>
-    <p>以作者的目視比較，能被認作畫面結構明顯變化的是 PS-12。其他輸出雖在措辭與設定上有差異，但從畫面外觀上難以辨識出價值上的顯著不同。</p>
+    <h3>生成式 AI 的額外價值仍未獲證實</h3>
+    <p>在我的目視比較中，PS-12 是唯一出現明顯版面變化的輸出。其他輸出雖有措辭與設定差異，但外觀未呈現明顯的價值差異。</p>
     <p>PS-12 的更動也在「調整顯示尺寸與顯示量」的設定所能實現的範圍之內。不必自己去找設定、初始狀態就已整備好——這種體驗是有潛力的。但這種體驗的價值，與「生成介面是否需要生成式 AI」，必須分開驗證。</p>
     <p>本次 PoC 並未證明貼合認知特質能改善操作成績，也未證明生成式 AI 做出的介面優於基於規則的方式。</p>
 
-    <h3>本次建構的設計空間過窄</h3>
+    <h3>本次實作的設計空間有限</h3>
     <p>在確保文字與操作對象所需尺寸、並套用畫面面積與顯示量的條件之後，可選的結構就越來越有限。實作上由計算或固定結構決定的部分也不少，AI 在多個妥當方案之間挑選的餘地很小。</p>
     <p>措辭的改寫上還留有自由度，但這類差異不像畫面結構那樣顯眼，本次目視評估難以充分捕捉其價值。我認為，要確認生成式 AI 的價值，需要<strong>可選方案本身具有幅度，且這些差異對使用者的體驗具有意義</strong>。</p>
     <p>這一結果只針對本次收集的規則、採用的介面參數與實作的表現範圍，不能說是車用導航整體或個別化介面整體的極限。</p>
@@ -272,10 +274,10 @@
     <h3>與 AI 的協作，帶來了規則本身的改進</h3>
     <p>成果同樣出現在「設計用於生成的條件、並使其可被檢查」的過程之中。</p>
 
-    <div class="table-wrap" tabindex="0" role="region" aria-label="發現的問題與在設計上的反映">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="發現的問題與設計回應">
       <table class="method-table">
         <thead>
-          <tr><th scope="col">發現的問題</th><th scope="col">在設計上的反映</th></tr>
+          <tr><th scope="col">發現的問題</th><th scope="col">設計回應</th></tr>
         </thead>
         <tbody>
           <tr><td>同一元素存在多個下限，組合方式含糊不清</td><td>明確了適用關係，使任一下限都不會被突破</td></tr>
@@ -286,26 +288,26 @@
         </tbody>
       </table>
     </div>
-    <p>AI 指出問題，人來判斷，再反映到設計中。經由這樣的往返，<strong>哪些要共同守住、哪些可以貼合個人</strong>變得清晰了。</p>
+    <p>AI 指出問題，我加以評估，再將決定反映到設計。這個反覆過程釐清了哪些需求適用於所有人，以及介面在哪些方面可以個人化。</p>
   </section>
 
   <section>
-    <h2>今後 —— 確認體驗的價值與生成式 AI 的價值</h2>
+    <h2>後續工作：評估個人化與生成式 AI 的角色</h2>
     <p>接下來想把兩個問題分開驗證。</p>
     <p>其一，不必自己設定、開始使用時介面就已整備好，這樣的體驗究竟有多大價值。為此要實作對話詢問、糾正理解直至試用的全過程，確認輸入資訊的可靠程度與帶給使用者的負擔。</p>
     <p>其二，在什麼樣的設計對象上，生成式 AI 帶來的方案差異才會轉化為體驗的改善。希望拓展到這樣的對象：在守住必要條件的同時，資訊結構與操作流程上仍留有多個妥當方案。</p>
-    <p>在真實使用者的評估中，把通用預設介面、由個人資訊按規則調整的介面、由生成式 AI 具體化的介面放在同一任務下比較。透過操作時間、誤操作、視線、主觀負擔等指標，分別考察「貼合個人」的效果與「使用生成式 AI」的效果。</p>
+    <p>未來將以真實使用者在相同任務中比較三種介面：通用預設介面、根據個人特質以規則調整的介面，以及 AI 生成的介面。完成時間、錯誤、視線停留與主觀負荷等指標，有助於區分個人化的影響與使用生成式 AI 的影響。</p>
     <p>同時推進對相關標準的查證，更新「研究已確認之事」與「設計判斷」之間的界線。除了條件可被檢查之外，把「在條件之內為使用者留下有意義的選項」作為下一個課題。</p>
   </section>
 
   <details class="references">
     <summary>參考資料</summary>
     <ol>
-      <li id="ref-nhtsa">NHTSA，<cite>Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices</cite>（2013 年公布）。自願性指引。關於視線的接受標準見 VI.E，關於注意力偏離與風險的說明見正文 I.C 等處。這並不意味著本 PoC 已取得符合該測試的認證。<a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">Federal Register 上的資料</a></li>
+      <li id="ref-nhtsa">NHTSA，<cite>Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices</cite>（2013 年公布）。自願性指引。關於視線的接受標準見 VI.E，關於注意力偏離與風險的說明見正文 I.C 等處。這並不意味著本 PoC 已取得符合該測試的認證。<a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">閱讀 Federal Register 原始文件</a></li>
     </ol>
   </details>
 
-  <nav aria-label="網站">
+  <nav aria-label="作品集導覽">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀內貴文的作品集首頁</span></a></li>
     </ul>

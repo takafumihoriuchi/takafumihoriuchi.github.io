@@ -6,7 +6,7 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Analisis gerak mekanisme aksi piano — Takafumi Horiuchi</title>
-<meta name="description" content="Mekanisme aksi piano grand dibangun ulang sebagai model 3D di SolidWorks. Proyek program magister yang membandingkan, lewat perhitungan teoretis dan analisis gerak, bagaimana masukan pada tuts menjadi kecepatan palu dan gaya reaksi pada dawai.">
+<meta name="description" content="Proyek magister yang membangun ulang mekanisme aksi piano grand sebagai model 3D SolidWorks dan membandingkan bagaimana masukan pada tuts diteruskan menjadi kecepatan palu serta gaya reaksi pada dawai melalui perhitungan teoretis dan analisis gerak.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -34,7 +34,7 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="id_ID">
 <meta property="og:title" content="Analisis gerak mekanisme aksi piano">
-<meta property="og:description" content="Bagaimana masukan pada tuts berubah menjadi kecepatan palu dan gaya reaksi pada dawai setelah melewati rangkaian tuas?">
+<meta property="og:description" content="Bagaimana rangkaian tuas yang kompleks pada mekanisme aksi piano meneruskan masukan pada tuts menjadi kecepatan palu dan gaya reaksi pada dawai?">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/masters-project-piano-action/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -50,8 +50,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Rekayasa Kognitif × AI × Desain",
+      "description": "Insinyur desain",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -61,12 +62,15 @@
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/id/works/masters-project-piano-action/#work",
       "name": "Analisis gerak mekanisme aksi piano",
+      "headline": "Analisis gerak mekanisme aksi piano",
       "url": "https://takafumihoriuchi.github.io/id/works/masters-project-piano-action/",
-      "description": "Mekanisme aksi piano grand dibangun ulang sebagai model 3D di SolidWorks, dengan perpindahan dari masukan pada tuts ke kecepatan palu dan gaya reaksi pada dawai dibandingkan antara perhitungan teoretis dan analisis gerak. Sebuah proyek program magister.",
+      "description": "Proyek magister yang membangun ulang mekanisme aksi piano grand sebagai model 3D SolidWorks dan membandingkan bagaimana masukan pada tuts diteruskan menjadi kecepatan palu serta gaya reaksi pada dawai melalui perhitungan teoretis dan analisis gerak.",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
       "datePublished": "2020-01",
       "inLanguage": "id",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -112,14 +116,14 @@
 
   <section>
     <h2>Ringkasan</h2>
-    <p class="lead">Di dalam piano grand, gerakan menekan tuts merambat melalui rangkaian tuas hingga palu terlempar ke atas dan gerakan itu berubah menjadi getaran dawai. Sistem tuas itu — yang membuat tuts yang ditekan dapat menggerakkan palu dan memukul dawai — disebut mekanisme aksi piano. Proyek ini membangun ulang mekanisme tersebut sebagai model 3D di SolidWorks* dan memakai analisis gerak untuk melihat bagaimana masukan pada tuts diubah menjadi kecepatan palu dan gaya reaksi pada dawai.</p>
-    <p>Untuk analisis ini, mekanisme tuts dimodelkan dalam 3D dari nol berdasarkan gambar rujukan, lalu dua analisis gerak dijalankan pada model tersebut: satu tentang hubungan antara kecepatan tuts yang turun dan palu yang naik, satu lagi tentang hubungan antara gaya yang diberikan pada tuts dan gaya yang sampai ke dawai. Nilai dari simulasi dicocokkan dengan nilai teoretis yang diturunkan dari dimensi dan letak titik tumpu, untuk memastikan bagaimana gerak dan gaya diteruskan di dalam model.</p>
-    <p class="citation">* SolidWorks: sistem CAD 3D. Pada tahap perancangan, sistem ini dapat menjalankan analisis struktur untuk memeriksa kekuatan komponen dan analisis gerak untuk memeriksa cara komponen bergerak.</p>
+    <p class="lead">Mekanisme aksi pada piano grand adalah rangkaian tuas yang meneruskan tekanan tuts ke palu. Palu terangkat, memukul dawai, dan membuatnya bergetar. Proyek ini membangun ulang mekanisme tersebut sebagai model 3D di SolidWorks* dan menggunakan analisis gerak untuk menelaah bagaimana masukan pada tuts diteruskan menjadi kecepatan palu dan gaya reaksi pada dawai.</p>
+    <p>Mekanisme dimodelkan dari nol berdasarkan gambar rujukan, lalu ditelaah melalui dua analisis: hubungan antara kecepatan turun tuts dan kecepatan naik palu, serta hubungan antara gaya pada tuts dan gaya reaksi pada dawai. Hasil simulasi dibandingkan dengan nilai teoretis yang dihitung dari dimensi model dan posisi titik tumpu untuk memeriksa bagaimana model meneruskan gerak serta gaya.</p>
+    <p class="citation">* SolidWorks adalah sistem CAD 3D dengan alat untuk analisis struktur komponen dan analisis gerak mekanisme.</p>
 
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Seluruh 17 halaman Motion Analysis of the Piano Action. Dapat digulir mendatar">
+      <ol class="deck" tabindex="0" role="group" aria-label="17 salindia asli Motion Analysis of the Piano Action dalam bahasa Inggris. Gulir secara horizontal.">
         <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Salindia judul: “Motion Analysis of the Piano Action”."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Foto bagian dalam piano grand yang memperkenalkan deretan mekanisme aksi di belakang tuts."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Model 3D yang menunjukkan bagaimana bagian-bagian mekanisme bergerak bersama ketika sebuah tuts ditekan."></a></li>
@@ -138,6 +142,7 @@
         <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Perbandingan gaya reaksi maksimum pada dawai sebesar 31 newton dengan nilai teoretis 31,1 newton dari prinsip tuas."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Daftar rujukan pustaka tentang model mekanika dari mekanisme aksi piano."></a></li>
       </ol>
+      <figcaption>Salindia asli proyek (bahasa Inggris).</figcaption>
     </figure>
   </section>
 
@@ -146,29 +151,29 @@
   <section>
     <h2>Dari mekanisme aksi piano ke model yang dapat dianalisis</h2>
     <h3>Mekanisme yang mengubah satu tekanan tuts menjadi pukulan pada dawai</h3>
-    <p>Mekanisme aksi piano adalah mekanisme yang mengubah gerak turun sebuah tuts menjadi gerak naik sebuah palu. Ketika tuts ditekan, capstan, wippen, jack, dan tuas repetisi bergerak bersama, lalu palu terangkat dan memukul dawai. Yang terlihat oleh pemain adalah satu tekanan tuts; di dalamnya, beberapa komponen berputar pada titik tumpu yang berbeda-beda dan saling menyerahkan gerak melalui sentuhan.</p>
-    <p>Model 3D mencakup tuts, palu, jack, wippen, tuas repetisi, capstan, peredam, tuas peredam, dan kawat, bersama rangka yang menopangnya. Memahami geraknya menuntut lebih dari sekadar memandang bentuk jadinya: perlu ditetapkan komponen mana yang berputar pada titik tumpu yang mana, dan pada bagian mana ia menyentuh komponen berikutnya.</p>
+    <p>Mekanisme aksi piano adalah mekanisme yang mengubah gerak turun sebuah tuts menjadi gerak naik sebuah palu. Ketika tuts ditekan, capstan, wippen, jack, dan tuas repetisi bergerak bersama, lalu palu terangkat dan memukul dawai. Yang terlihat oleh pemain adalah satu tekanan tuts; di dalamnya, beberapa komponen berputar pada titik tumpu yang berbeda-beda dan meneruskan gerak melalui kontak.</p>
+    <p>Model 3D mencakup tuts, palu, jack, wippen, tuas repetisi, capstan, peredam, tuas peredam, dan kawat, beserta rangka penopangnya. Untuk memodelkan gerakan, titik tumpu setiap komponen dan titik kontaknya dengan komponen lain harus ditentukan.</p>
 
     <h3>Membuat model 3D dari gambar potongan</h3>
-    <p>Alih-alih memakai data CAD jadi, kontur tiap komponen dijiplak di atas potongan rujukan mekanisme aksi piano lalu dimodelkan dalam 3D satu per satu. Komponen-komponen itu kemudian disatukan sebagai rakitan, dengan hubungan tetap dan hubungan putar dari mekanisme sebenarnya ditetapkan di antaranya. Langkah ini mengubah model untuk memandang bentuk menjadi model analisis yang dapat diberi gaya dan digerakkan.</p>
+    <p>Setiap komponen dimodelkan dari nol dalam 3D dengan menjiplak konturnya pada gambar potongan mekanisme aksi piano. Komponen kemudian dirakit dengan sambungan tetap dan sambungan putar yang sesuai dengan mekanisme fisiknya. Hubungan ini mengubah model geometri menjadi model analisis yang dapat bergerak saat diberi gaya.</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Di jendela SolidWorks, gambar potongan sebuah mekanisme aksi piano dipakai sebagai alas semitransparan, dan model 3D dibangun mengikuti konturnya. Di sebelah kiri tampak bilah tugas Windows dan pohon komponen."></a>
-      <figcaption>Potongan rujukan ditempatkan di belakang sebagai alas semitransparan, dan model 3D dibangun di SolidWorks dengan menyusuri konturnya.</figcaption>
+      <figcaption>Gambar potongan acuan digunakan sebagai lapisan dasar semitransparan untuk menjiplak dan memodelkan komponen di SolidWorks.</figcaption>
     </figure>
 
     <figure class="paper-figure model-figure">
       <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="Jendela SolidWorks yang berjalan di Windows. Di sebelah kiri terdapat bilah tugas Windows dan pohon komponen, dan di tengah model 3D mekanisme aksi piano."></a>
-      <figcaption>Model 3D mekanisme aksi piano sebagaimana benar-benar dibangun di SolidWorks.</figcaption>
+      <figcaption>Model 3D mekanisme aksi piano yang telah selesai dibuat di SolidWorks.</figcaption>
     </figure>
 
-    <h3>Memeriksa kekangan sebagai derajat kebebasan</h3>
+    <h3>Memverifikasi derajat kebebasan rakitan</h3>
     <p>Tanpa menghitung rangka yang terpasang tetap, ada sembilan komponen yang dapat bergerak, yang tanpa kekangan memberikan total 54 derajat kebebasan. Menetapkan capstan dan kawat pada komponen lain mengurangi 12, dan mengekang tujuh komponen sisanya dengan sambungan putar mengurangi 35 lagi. Dengan demikian rakitan CAD ini memiliki 7 derajat kebebasan, sebagai berikut.</p>
     <p class="formula" role="math" aria-label="54 dikurangi 12 dikurangi 35 sama dengan 7">54 − 12 − 35 = 7</p>
-    <p>Diagnostik kekangan SolidWorks pun menunjukkan hal yang sama: derajat kebebasan perkiraan dan sebenarnya sama-sama 7, kekangan berlebih 0. Ini bukan angka yang memastikan derajat kebebasan mekanisme aksi piano pada umumnya — ini memastikan bahwa susunan komponen dan kekangan yang ditetapkan dalam proyek ini terpasang sebagaimana dimaksudkan.</p>
+    <p>Diagnostik kekangan SolidWorks juga melaporkan 7 derajat kebebasan yang diperkirakan dan 7 yang sebenarnya, tanpa kekangan berlebih. Hasil ini mengonfirmasi bahwa komponen dan kekangan yang ditetapkan dalam proyek telah dirakit sesuai rancangan; hasil tersebut tidak menetapkan derajat kebebasan semua mekanisme aksi piano fisik.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Model mekanisme aksi piano dengan tiap komponen diberi nama, dan perhitungan yang mengurangi 12 kekangan tetap dan 35 kekangan putar dari 54 derajat kebebasan sehingga menjadi 7."></a>
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Model mekanisme aksi piano dengan nama komponennya dan perhitungan derajat kebebasan: dari 54, sambungan tetap mengurangi 12 dan sambungan putar mengurangi 35, sehingga tersisa 7."></a>
       <figcaption>Nama komponen dan kekangan. Diagnostik SolidWorks sendiri juga memberi model ini 7 derajat kebebasan dan 0 kekangan berlebih.</figcaption>
     </figure>
   </section>
@@ -183,20 +188,20 @@
       <figcaption>Masukan dan keluaran kedua analisis. Analisis 1 membandingkan kecepatan linier tuts dan palu; analisis 2 membandingkan gaya pada tuts dengan gaya reaksi pada dawai.</figcaption>
     </figure>
 
-    <h3>Analisis 1 — seberapa besar kecepatan tuts diperkuat di palu</h3>
-    <p>Untuk analisis kecepatan, mekanisme aksi piano yang rumit disederhanakan menjadi tiga benda tegar yang meneruskan gerak lewat sentuhan: tuts, mekanisme perantara yang berpusat pada wippen, dan palu. Dengan membaca gerak sebagai berpindah berurutan dari ① ke ③ pada gambar, mekanisme yang terdiri atas banyak komponen dapat dihitung sebagai tiga tahap putaran.</p>
+    <h3>Analisis 1: Dari kecepatan tuts ke kecepatan palu</h3>
+    <p>Untuk perhitungan kecepatan, mekanisme disederhanakan menjadi tiga benda tegar: tuts, mekanisme perantara yang berpusat pada <em>wippen</em>, dan palu. Dengan memandang gerakan sebagai rangkaian kontak dari ① hingga ③, rangkaian tuas dapat dianalisis sebagai tiga tahap rotasi.</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Diagram yang membedakan mekanisme aksi piano dengan warna menjadi tiga benda tegar: ① tuts, ② mekanisme perantara yang berpusat pada wippen, dan ③ palu."></a>
       <figcaption>Untuk analisis, mekanisme disederhanakan menjadi tiga benda tegar: ① tuts, ② mekanisme perantara, dan ③ palu.</figcaption>
     </figure>
 
-    <p>Pada satu benda tegar kecepatan sudutnya sama, sehingga jika <em>r</em> adalah jarak dari titik tumpu dan <em>v</em> kecepatan linier di titik itu, maka <em>v</em> = <em>ωr</em>. Bila diandaikan kecepatan berpindah ke benda tegar berikutnya di titik sentuh tanpa kehilangan, kecepatan palu diperoleh dengan mengalikan perbandingan jari-jari masukan dan jari-jari keluaran pada tiap tahap.</p>
+    <p>Semua titik pada benda tegar memiliki kecepatan sudut yang sama. Jika <em>r</em> adalah jarak dari titik tumpu dan <em>v</em> adalah kecepatan linier pada titik tersebut, maka <em>v</em> = <em>ωr</em>. Dengan mengasumsikan bahwa kecepatan diteruskan tanpa kehilangan pada setiap titik kontak, kecepatan palu dapat dihitung dengan mengalikan rasio jari-jari keluaran terhadap masukan pada ketiga tahap, lalu mengalikan hasilnya dengan kecepatan tuts.</p>
     <p class="formula formula-long" role="math" aria-label="Kecepatan palu sama dengan hasil kali r satu aksen, r dua aksen, dan r tiga aksen, dibagi hasil kali r satu, r dua, dan r tiga, dikalikan kecepatan tuts">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Diagram yang menandai, untuk ketiga benda tegar, jarak dari tiap titik tumpu ke titik masukan dan titik keluaran sebagai r1, r1 aksen, r2, r2 aksen, r3, dan r3 aksen."></a>
-      <figcaption>Jarak dari titik tumpu tiap benda tegar ke titik masukan dan keluarannya diperlakukan sebagai jari-jari, dan perbandingannya dikalikan sepanjang tiga tahap untuk memperoleh perbandingan kecepatan.</figcaption>
+      <figcaption>Jarak dari setiap titik tumpu ke titik masukan dan keluaran menentukan jari-jarinya. Hasil kali ketiga rasio jari-jari keluaran terhadap masukan memberikan rasio kecepatan keseluruhan.</figcaption>
     </figure>
 
     <h4>Kondisi masukan dan hasil pengamatan</h4>
@@ -204,7 +209,7 @@
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Dua grafik kecepatan tuts dan palu terhadap waktu, dengan puncak tepat setelah masukan dimulai ditandai pada 1.027 dan 4.284 milimeter per detik."></a>
-      <figcaption>Kecepatan linier tuts dan palu. Keduanya mencapai puncak tepat setelah masukan dimulai, dan di sisi palu kecepatannya diperkuat.</figcaption>
+      <figcaption>Kecepatan tuts dan palu sama-sama mencapai puncak tepat setelah gaya diberikan. Palu mencapai kecepatan yang lebih tinggi.</figcaption>
     </figure>
 
     <table class="results-table">
@@ -220,52 +225,52 @@
     </table>
 
     <h4>Perbandingan dengan nilai teoretis</h4>
-    <p>Jari-jari yang diukur dari model adalah <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm, dan <em>r</em><sub>3</sub>′ = 111 mm. Dimasukkan ke dalam rumus, perbandingan kecepatan yang diidealkan menjadi sekitar 4,49 kali, yang memperkirakan kecepatan palu 4.614 mm/s terhadap kecepatan tuts 1.027 mm/s.</p>
+    <p>Jari-jari yang diukur dari model adalah <i>r</i><sub>1</sub> = 200 mm, <i>r</i><sub>1</sub>′ = 88 mm, <i>r</i><sub>2</sub> = 53 mm, <i>r</i><sub>2</sub>′ = 78 mm, <i>r</i><sub>3</sub> = 16 mm, dan <i>r</i><sub>3</sub>′ = 111 mm. Memasukkan nilai-nilai ini ke dalam rumus menghasilkan rasio kecepatan ideal sekitar 4,49. Dengan kecepatan tuts 1.027 mm/s, kecepatan palu yang diperkirakan adalah 4.614 mm/s.</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Diagram yang menandai, pada model 3D SolidWorks, enam jari-jari terukur yang dipakai dalam perhitungan perbandingan kecepatan."></a>
       <figcaption>Enam jari-jari yang diukur pada model 3D. Dari nilai-nilai inilah kecepatan teoretis palu 4.614 mm/s dihitung.</figcaption>
     </figure>
 
-    <p>Nilai simulasi 4.284 mm/s memang sekitar 7% lebih rendah daripada nilai teoretis, tetapi besarnya penguatan kecepatan berdekatan. Selisih itu muncul, seperti diuraikan di bawah, karena perhitungan teoretis mengidealkan mekanisme sebagai tiga benda tegar, sementara simulasi 3D juga menanggung kehilangan antarkomponen dan perubahan bentuk bahan.</p>
+    <p>Kecepatan palu pada simulasi, 4.284 mm/s, sekitar 7% lebih rendah daripada nilai teoretis, tetapi menunjukkan tingkat penguatan kecepatan yang serupa. Perhitungan teoretis menggunakan tiga benda tegar yang diidealkan, sedangkan simulasi merepresentasikan setiap komponen secara terpisah. Selisih numeriknya saja tidak cukup untuk memastikan penyebab perbedaan tersebut.</p>
 
-    <h3>Analisis 2 — bagaimana gaya pada tuts muncul di sisi dawai</h3>
+    <h3>Analisis 2: Dari gaya pada tuts ke gaya reaksi pada dawai</h3>
     <p>Analisis kedua memberikan gaya 15 N ke bawah pada permukaan tuts dan mengamati gaya reaksi yang muncul di sisi dawai pada saat pukulan. Masukan di sisi tuts, <em>F</em><sub>key</sub>, naik mulai detik 1,0 hingga mencapai 15 N, dan pada saat dawai dipukul gaya reaksi <em>V</em><sub>string</sub> memuncak pada 31 N.</p>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik penjelas masukan pada tuts F key terhadap waktu. Naik mulai detik 1, bertahan pada 15 newton, lalu kembali ke 0 newton."></a>
+      <a href="assets/force-key-graph-id.svg"><img src="assets/force-key-graph-id.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik penjelas masukan pada tuts F key terhadap waktu. Naik mulai detik 1, bertahan pada 15 newton, lalu kembali ke 0 newton."></a>
       <figcaption>Masukan di sisi tuts, <em>F</em><sub>key</sub>. Gaya diberikan mulai detik 1,0, dengan masukan 15 N.</figcaption>
     </figure>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik penjelas gaya reaksi di sisi dawai V string terhadap waktu, dengan puncak tajam 31 newton pada saat pukulan."></a>
+      <a href="assets/force-string-graph-id.svg"><img src="assets/force-string-graph-id.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Grafik penjelas gaya reaksi di sisi dawai V string terhadap waktu, dengan puncak tajam 31 newton pada saat pukulan."></a>
       <figcaption>Gaya reaksi di sisi dawai, <em>V</em><sub>string</sub>. Nilainya mencapai maksimum 31 N pada saat pukulan.</figcaption>
     </figure>
 
-    <p>Nilai ini dapat dijelaskan lewat keseimbangan tuas, memakai panjang lengan di sisi tuts dan di sisi palu.</p>
-    <p class="formula formula-long" role="math" aria-label="Gaya reaksi pada dawai sama dengan 15 dikali 195 dibagi 94, yaitu 31,1 newton">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
-    <p>Dengan mengambil 195 mm dari titik masukan ke titik tumpu dan 94 mm ke titik kerja di sisi dawai, nilai teoretisnya menjadi 31,1 N. Selisihnya dengan nilai maksimum simulasi 31 N hanya 0,1 N, sehingga pada analisis ini pun hasilnya hampir sama dengan perpindahan gaya yang diharapkan dari dimensi yang ditetapkan.</p>
+    <p>Sebagai pembanding, dilakukan perhitungan keseimbangan tuas sederhana menggunakan panjang lengan di sisi tuts dan sisi palu.</p>
+    <p class="formula formula-long" role="math" aria-label="Nilai pembanding keseimbangan tuas sama dengan 15 dikali 195 dibagi 94, yaitu 31,1 newton">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>Dengan panjang lengan 195 mm di sisi masukan dan 94 mm di sisi dawai, diperoleh nilai pembanding keseimbangan tuas statis sebesar 31,1 N. Nilai ini 0,1 N lebih tinggi daripada puncak simulasi sebesar 31 N. Kondisi yang memungkinkan perhitungan statis ini diterapkan pada puncak gaya reaksi sesaat ketika terjadi tumbukan masih perlu dikonfirmasi.</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Diagram keseimbangan gaya yang menunjukkan jarak 195 milimeter dari titik tumpu tuts ke titik masukan dan 94 milimeter ke titik kerja di sisi dawai."></a>
-      <figcaption>Dari masukan 15 N pada tuts, keseimbangan tuas memberikan gaya reaksi 31,1 N pada dawai — hampir sama dengan nilai maksimum simulasi 31 N.</figcaption>
+      <figcaption>Perhitungan pembanding keseimbangan tuas statis dengan masukan 15 N pada tuts dan panjang lengan yang ditentukan menghasilkan 31,1 N, mendekati puncak simulasi sebesar 31 N.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Mencocokkan simulasi dengan nilai teoretis</h2>
-    <h3>Dua hasil analisis yang berdekatan</h3>
-    <p>Pada analisis 1, yang membandingkan kecepatan tuts dan palu, terhadap kecepatan teoretis palu 4.614 mm/s simulasi 3D memberikan 4.284 mm/s. Pada analisis 2, yang membandingkan masukan pada tuts dengan gaya reaksi pada dawai, terhadap nilai teoretis 31,1 N nilai maksimum simulasi adalah 31 N. Pada kedua analisis, hasil simulasi dengan model 3D yang dibangun berdekatan dengan nilai teoretis yang diperoleh dari rumus.</p>
+    <h3>Hasil kedua perbandingan</h3>
+    <p>Pada analisis 1, kecepatan palu teoretis adalah 4.614 mm/s, dibandingkan dengan 4.284 mm/s dalam simulasi. Pada analisis 2, nilai pembanding keseimbangan tuas statis adalah 31,1 N, dibandingkan dengan puncak simulasi sebesar 31 N. Kedua perbandingan menunjukkan kedekatan hasil antara model 3D dan perhitungan teoretis.</p>
 
-    <h3>Mengapa muncul selisih kecil</h3>
-    <p>Perhitungan teoretis menyederhanakan mekanisme aksi piano menjadi mekanisme yang terdiri atas tiga benda tegar, dan menghitungnya dengan anggapan bahwa gerak dan gaya berpindah di titik sentuh tanpa kehilangan. Sementara itu, simulasi dengan model 3D menangani tiap komponen penyusun mekanisme, sehingga energi yang hilang di antara komponen dan perubahan bentuk bahan juga tecermin dalam hasilnya. Perbedaan anggapan inilah yang muncul sebagai selisih kecil antara nilai teoretis dan nilai simulasi.</p>
+    <h3>Menafsirkan perbedaan</h3>
+    <p>Perhitungan teoretis menyederhanakan mekanisme menjadi tiga benda tegar dan mengasumsikan gerak serta gaya diteruskan tanpa kehilangan melalui titik kontaknya. Simulasi merepresentasikan komponen-komponennya secara terpisah. Perbedaan representasi ini penting untuk menafsirkan hasil, tetapi mengaitkan selisih yang tersisa dengan kehilangan energi atau deformasi material memerlukan konfirmasi pengaturan simulasi.</p>
 
     <h3>Kesimpulan</h3>
-    <p>Dapat dipastikan bahwa hasil simulasi 3D hampir sama dengan nilai teoretisnya. Model 3D yang dibangun dari gambar potongan berhasil menghadirkan kembali gerak mekanisme aksi piano — yang memperkuat masukan pada tuts menjadi kecepatan palu dan meneruskan gaya itu ke dawai — dalam bentuk yang selaras dengan perhitungan teoretis.</p>
-    <p>Dalam proyek ini, yang dikerjakan bukan hanya menghadirkan kembali sebuah bentuk. Membaca struktur dari potongan rujukan, mengalihkan hubungan antarkomponen menjadi kekangan di dalam CAD, lalu menyederhanakannya menjadi model mekanika yang sesuai dengan pertanyaan yang dianalisis — semuanya berjalan sebagai satu proses pemodelan.</p>
+    <p>Hasil simulasi 3D mendekati nilai pembanding teoretis untuk kecepatan palu dan gaya reaksi pada dawai. Dalam lingkup perbandingan ini, model yang dibangun dari gambar potongan mereproduksi penerusan gerak dan gaya yang diharapkan dari geometri serta kekangan yang ditentukan.</p>
+    <p>Proyek ini menghubungkan beberapa tahap pemodelan: menafsirkan gambar potongan, menerjemahkan hubungan antarkomponen menjadi kekangan CAD, lalu menyederhanakan rakitan menjadi model mekanika yang sesuai untuk setiap analisis.</p>
   </section>
 
-  <nav aria-label="Situs">
+  <nav aria-label="Navigasi portofolio">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Kembali ke portofolio Takafumi Horiuchi</span></a></li>
     </ul>

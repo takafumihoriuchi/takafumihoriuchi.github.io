@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Pembuatan Pokémon yang unik untuk diri sendiri di dunia — Takafumi Horiuchi</title>
-<meta name="description" content="Sebuah prototipe penelitian yang menghasilkan jenis Pokémon baru dari kata-kata pemain selama permainan, dan menghubungkan dari pertemuan hingga penangkapannya. Kami memeriksa batasan yang menjaga keseimbangan permainan dan kondisi yang memengaruhi keterikatan terhadap hasil yang dihasilkan.">
+<title>Menghasilkan Pokémon milik sendiri: Prototipe penelitian di dalam permainan — Takafumi Horiuchi</title>
+<meta name="description" content="Prototipe penelitian yang menghasilkan spesies Pokémon baru dari kata-kata pemain selama bermain dan mengintegrasikannya ke dalam pertemuan serta penangkapan, untuk mengeksplorasi batasan keseimbangan permainan dan keterikatan terhadap karakter yang dihasilkan.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
@@ -34,14 +34,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="id_ID">
-<meta property="og:title" content="Pembuatan Pokémon yang unik untuk diri sendiri di dunia">
-<meta property="og:description" content="Bukan tentang apa yang dibuat oleh AI, tetapi apa yang dijaga olehnya. Prototipe penelitian yang mengintegrasikan penciptaan jenis baru ke dalam pengalaman permainan.">
+<meta property="og:title" content="Menghasilkan Pokémon milik sendiri: Prototipe penelitian di dalam permainan">
+<meta property="og:description" content="Prototipe penelitian yang mengintegrasikan Pokémon hasil AI ke dalam permainan, menggunakan batasan yang ditentukan manusia untuk menjaga keseimbangan permainan dan konsistensi visual.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/my-own-pokemon-generation/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Di Hutan Touka, seorang nenek bertanya kepada pemain, &quot;Makhluk apa yang sedang kau bayangkan?&quot;">
+<meta property="og:image:alt" content="Di kawasan hutan dalam permainan (Petalburg Woods), seorang perempuan tua menanyakan jenis makhluk yang dibayangkan pemain.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -51,8 +51,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Rekayasa Kognitif × AI × Desain",
+      "description": "Insinyur desain",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -61,9 +62,9 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/id/works/my-own-pokemon-generation/#work",
-      "name": "Pokémon yang unik untuk diri sendiri di dunia",
+      "name": "Menghasilkan Pokémon milik sendiri: Prototipe penelitian di dalam permainan",
       "url": "https://takafumihoriuchi.github.io/id/works/my-own-pokemon-generation/",
-      "description": "Sebuah prototipe penelitian yang menghasilkan jenis Pokémon baru dari kata-kata pemain selama permainan, dan menghubungkan dari pertemuan hingga penangkapannya. Kami memeriksa batasan yang menjaga keseimbangan permainan dan kondisi yang memengaruhi keterikatan terhadap hasil yang dihasilkan.",
+      "description": "Prototipe penelitian yang menghasilkan spesies Pokémon baru dari kata-kata pemain selama bermain dan mengintegrasikannya ke dalam pertemuan serta penangkapan, untuk mengeksplorasi batasan keseimbangan permainan dan keterikatan terhadap karakter yang dihasilkan.",
       "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
       "datePublished": "2026-07",
       "inLanguage": "id",
@@ -93,7 +94,7 @@
 <main>
 
   <header>
-    <h1>Pembuatan Pokémon yang unik untuk diri sendiri di dunia</h1>
+    <h1>Menghasilkan Pokémon milik sendiri: Prototipe penelitian di dalam permainan</h1>
     <p class="dateline">Juli 2026</p>
   </header>
 
@@ -109,135 +110,135 @@
 
   <section>
     <h2>Gambaran umum</h2>
-    <p class="lead">Dari enam kata yang dimasukkan di tengah permainan, AI akan menghasilkan spesies Pokémon baru. Beberapa menit kemudian, spesies baru itu muncul di semak-semak, dan pemain dapat bertemu, menangkap, serta memberi nama panggilan. Saya membuat prototipe penelitian yang menyusun secara langsung bukan hanya penampilan dan nama, tetapi juga tipe, nilai ras, teknik, dan data yang digunakan dalam permainan.</p>
-    <p>Dalam prototipe, percakapan, input kata, generasi di latar belakang, pertemuan di alam liar, penangkapan, hingga penamaan dihubungkan sebagai satu pengalaman tanpa menghentikan permainan. Spesies baru didaftarkan sebagai ras yang dapat ditangani oleh sistem permainan yang ada, bukan hanya sebagai gambar biasa.</p>
-    <p>Fokus utama dari inisiatif ini bukanlah model generatif itu sendiri. Manusia merancang kondisi untuk menjaga keseimbangan permainan dan konsistensi tampilan, dan hanya membiarkan AI mengeksplorasi dalam cakupan tersebut, yang disebut sebagai 'kerangka generatif'. Selain itu, saya juga secara awal mempertimbangkan sendiri apakah ketertarikan sejati bisa muncul jika hasil genereasi itu hanya milik saya, dengan memainkannya sendiri.</p>
+    <p class="lead">Saya membangun prototipe penelitian yang menghasilkan spesies Pokémon baru dari enam kata yang dipilih saat bermain. Beberapa menit kemudian, Pokémon tersebut muncul di rerumputan tinggi, tempat pemain dapat menjumpai, menangkap, dan memberinya nama panggilan. Prototipe ini menghasilkan penampilan, nama, tipe, statistik dasar, jurus, serta data yang diperlukan untuk memasukkannya ke dalam permainan.</p>
+    <p>Prototipe ini menghubungkan percakapan di dalam permainan, pemilihan kata, proses pembuatan di latar belakang, pertemuan di alam liar, penangkapan, dan pemberian nama tanpa menghentikan permainan. Setiap spesies yang dihasilkan didaftarkan dalam format yang dapat digunakan oleh sistem permainan yang sudah ada.</p>
+    <p>Fokus saya adalah kerangka pembuatan, bukan modelnya sendiri: menentukan persyaratan yang mempertahankan keseimbangan permainan dan konsistensi visual, lalu membiarkan AI mengeksplorasi di dalam batas tersebut. Saya juga memainkan prototipe ini sendiri untuk menilai secara awal apakah karakter yang unik saja sudah cukup untuk menimbulkan keterikatan.</p>
   </section>
 
   <section>
     <h2>Pertanyaan — Jika sesuatu benar-benar unik, apakah keterikatan akan muncul?</h2>
-    <p>Dalam permainan, ada kesenangan dalam memilih, mengembangkan, dan memberi nama karakter sehingga menjadi "keberadaan yang hanya dimiliki diri sendiri". Namun, titik awalnya berada di dalam pilihan yang disediakan oleh pengembang. Dengan AI generatif, jika keberadaan khusus pemain bisa dibuat dari titik awal itu sendiri, apakah keterikatan akan menjadi lebih kuat lagi?</p>
-    <p>Untuk memeriksa pertanyaan ini, hanya membuat satu gambar tidaklah cukup. Yang dihasilkan harus dapat masuk ke dunia permainan, bertemu, ditangkap, dan tetap dapat digunakan setelah itu. Oleh karena itu, dua pintu masuk dengan keterlibatan pemain yang berbeda disiapkan. Jika berbicara dengan kakek, itu dihasilkan tanpa input; jika berbicara dengan nenek, pemain memilih enam kata. Cara pembuatan permainan ditentukan oleh pihak yang pertama kali diajak bicara.</p>
-    <p>Tujuan dari prototipe ini bukan untuk menyimpulkan tentang keterikatan. Tujuannya adalah untuk membangun dasar untuk mengintegrasikan produk yang dihasilkan ke dalam pengalaman bermain game biasa, dan menemukan kondisi yang bisa dibandingkan di masa depan.</p>
+    <p>Permainan memungkinkan pemain memilih, membesarkan, dan memberi nama karakter hingga terasa benar-benar milik mereka sendiri. Namun, titik awalnya tetap berupa pilihan yang telah disiapkan pengembang. Jika AI generatif memungkinkan pemain membentuk karakter sejak awal, apakah keterikatan mereka akan lebih kuat?</p>
+    <p>Gambar yang dihasilkan saja tidak cukup untuk menelaah pertanyaan ini. Karakter perlu masuk ke dunia permainan, dijumpai dan ditangkap, lalu tetap dapat dimainkan sesudahnya. Saya membuat dua jalur dengan tingkat keterlibatan pemain yang berbeda: berbicara dengan lelaki tua memicu pembuatan tanpa masukan, sedangkan berbicara dengan perempuan tua memungkinkan pemain memilih enam kata. Tokoh yang diajak bicara pertama kali menentukan metode pembuatan untuk permainan tersebut.</p>
+    <p>Prototipe ini belum menghasilkan kesimpulan tentang keterikatan. Tujuannya adalah mengintegrasikan konten yang dihasilkan ke dalam pengalaman bermain biasa dan mengidentifikasi kondisi untuk perbandingan mendatang.</p>
   </section>
 
   <section>
     <h2>Alur permainan</h2>
-    <p>Berikut adalah alur 'generasi keterlibatan' di mana pemain memilih kata-kata. Pemain berbicara dengan seorang nenek di Hutan Touka, lalu memilih enam kata melalui 'percakapan mudah' yang sudah ada dalam permainan. Saat bermain terus, proses generasi berlangsung, dan ketika persiapan selesai, suara hewan terdengar. Masuk ke rerumputan, spesies baru muncul dan bisa ditangkap dengan cara yang sama seperti Pokémon liar biasa. Nama, tipe, nilai ras, gerakan, sprite pertarungan depan &amp; belakang, dan ikon yang dibawa akan dihasilkan setiap kali dijalankan. Rangkaian aksi ini juga dapat dikonfirmasi di <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">Video demo</a>.</p>
+    <p>Urutan berikut menunjukkan jalur dengan arahan pemain. Di kawasan hutan dalam permainan (<em>Petalburg Woods</em>), pemain berbicara dengan perempuan tua dan memilih enam kata dari kosakata <em>Easy Chat</em> yang sudah tersedia. Proses pembuatan berlanjut di latar belakang sementara pemain terus bermain. Suara Pokémon menandakan bahwa spesies baru sudah siap; memasuki rerumputan tinggi memicu pertemuan, dan pemain dapat menangkapnya dengan kendali yang biasa digunakan. Setiap proses menghasilkan nama, tipe, statistik dasar, jurus, sprite pertarungan tampak depan dan belakang, serta ikon tim. Video demonstrasi memperlihatkan seluruh urutannya.</p>
 
     <div class="shots">
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp"><img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="Seorang pasangan lansia berdiri di Hutan Touka. Di jendela percakapan tertulis 'Makhluk seperti apa yang sedang kamu pikirkan?'"></a>
-        <figcaption>Ketika berbicara dengan nenek, itu dimulai.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp"><img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="Sepasang lansia berdiri di depan pemain di kawasan hutan dalam permainan (Petalburg Woods). Percakapan menanyakan jenis makhluk yang dibayangkan pemain."></a>
+        <figcaption>Pemain memulai dengan berbicara kepada perempuan tua.</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp"><img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="Layar input percakapan sederhana berjudul 'Makhluk yang Terlintas dalam Pikiran'. Kata-kata BEAUTIFUL, ATTACK, FIRE telah dimasukkan."></a>
-        <figcaption>Dengan 'percakapan mudah' yang sudah ada di Emerald, sampaikan enam kata.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp"><img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="Layar Easy Chat dengan judul “Picture the creature:”, berisi kata BEAUTIFUL, ATTACK, dan FIRE."></a>
+        <figcaption>Pemain menjelaskan idenya melalui enam kata dari kosakata Easy Chat yang sudah tersedia dalam Pokémon Emerald.</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp"><img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="Pemain berdiri di dekat semak di hutan. Di jendela percakapan tertulis 'Semak bergoyang... ada sesuatu di sana!'"></a>
-        <figcaption>Pembuatan memerlukan beberapa menit di sisi PC. Suara hewan menandai selesainya persiapan.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp"><img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="Pemain berdiri di samping rerumputan tinggi di hutan. Kotak percakapan bertuliskan “The tall grass is rustling... Something is in there!”"></a>
+        <figcaption>Proses pembuatan di PC memerlukan beberapa menit. Suara Pokémon menandakan bahwa spesies baru telah siap.</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp"><img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar pertarungan. Seekor kadal merah dengan api di kepalanya menghadap pemain. Tertulis, "FLAMEREL liar muncul!""></a>
-        <figcaption>Kadal tipe api FLAMEREL muncul dari rumput yang bergoyang.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp"><img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar pertarungan dengan kadal merah berkepala berapi menghadap pemain. Teksnya berbunyi “Wild FLAMEREL appeared!”"></a>
+        <figcaption>FLAMEREL, kadal bertipe Fire, muncul dari rerumputan yang bergoyang.</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/05-capture.webp"><img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="Selama pertarungan, bola monster dilemparkan ke arah FLAMEREL."></a>
-        <figcaption>Sama seperti ras lain, bisa ditangkap dengan Poké Ball.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/05-capture.webp"><img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="Sebuah Poké Ball dilemparkan ke FLAMEREL selama pertarungan."></a>
+        <figcaption>Seperti spesies lain, Pokémon ini dapat ditangkap dengan Poké Ball.</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/06-nickname.webp"><img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar penamaan yang menanyakan julukan FLAMEREL. Tertulis GGG."></a>
-        <figcaption>Seperti spesies lain, mereka bisa diberi julukan.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/06-nickname.webp"><img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar nama panggilan untuk FLAMEREL, dengan masukan “GGG”."></a>
+        <figcaption>Seperti Pokémon lain, spesies baru ini dapat diberi nama panggilan.</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/07-party.webp"><img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar genggam. Ras yang dihasilkan memiliki ikon khusus dan berada berdampingan dengan tiga Pokémon biasa."></a>
-        <figcaption>Seperti ras lain, mereka memiliki ikon khusus dan ditampilkan di depan tangan.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/07-party.webp"><img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar tim. Spesies yang dihasilkan memiliki ikon sendiri dan muncul bersama tiga Pokémon yang sudah ada."></a>
+        <figcaption>Spesies baru mendapat ikon khusus dan muncul dalam tim pemain.</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/08-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar informasi Pokémon FLAMEREL. Menampilkan tipe api, kemampuan 'Mouka', sifat nakal, dan ditemui di Hutan Touka pada level 7."></a>
-        <figcaption>Sama seperti ras lain, layar status juga berfungsi dengan baik.</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/08-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar ringkasan FLAMEREL: tipe Fire, kemampuan Blaze, sifat Naughty, dan pertemuan pada level 7 di Petalburg Woods."></a>
+        <figcaption>Data yang dihasilkan berfungsi pada layar ringkasan yang sudah tersedia dalam permainan.</figcaption>
       </figure>
     </div>
   </section>
 
   <section>
-    <h2>Masalah desain — Jika dibuat secara bebas, permainan akan rusak</h2>
-    <p>Kemampuan AI untuk menciptakan karakter baru dan kenyataan bahwa karakter tersebut berfungsi dalam permainan adalah masalah yang berbeda. Jika kemampuannya terlalu tinggi, tingkat kesulitan akan terganggu, dan jika tipe dan tekniknya tidak cocok, akan sulit untuk melatihnya. Jika penampilannya terlalu kompleks, bentuknya tidak akan bisa dikenali ketika diubah menjadi sprite 64×64 piksel.</p>
-    <p>Di sisi lain, jika semuanya dikunci, tidak ada artinya jika setiap kali dijalankan menghasilkan sesuatu yang berbeda. Yang dibutuhkan bukanlah menghilangkan kebebasan AI, melainkan membedakan bagian yang harus dijaga sebagai permainan dan bagian yang diperbolehkan mengalami perubahan.</p>
-    <p>Oleh karena itu, objek desain dipindahkan dari seekor Pokémon tunggal ke ruang yang dapat menghasilkan Pokémon. Manusia mendefinisikan tujuan, batasan, larangan, dan metode verifikasi, sementara AI mewujudkan kandidat di dalam batasan tersebut. Ini adalah percobaan desain berbasis batasan <a href="../../">Filosofi desain saya</a> sebagai prototipe yang bergerak.</p>
+    <h2>Tantangan desain: Menjaga agar karakter yang dihasilkan tetap dapat dimainkan</h2>
+    <p>Menghasilkan karakter baru dan membuatnya berfungsi dalam permainan merupakan dua tantangan berbeda. Statistik yang terlalu tinggi dapat mengganggu keseimbangan tingkat kesulitan, sedangkan tipe dan jurus yang tidak cocok dapat menyulitkan pengembangan karakter. Desain yang terlalu rumit dapat menjadi sulit dikenali saat diperkecil menjadi sprite 64 × 64 piksel.</p>
+    <p>Menetapkan setiap detail secara kaku akan menghilangkan alasan untuk menghasilkan sesuatu yang berbeda setiap kali. Saya perlu membedakan unsur yang penting bagi permainan dari unsur yang boleh bervariasi.</p>
+    <p>Karena itu, saya berfokus pada perancangan ruang kemungkinan Pokémon, bukan satu karakter tertentu. Manusia menentukan tujuan, batasan, konten yang dilarang, dan metode validasi; AI mengembangkan kandidat dalam kerangka tersebut. Prototipe yang berfungsi ini menerapkan pendekatan desain berbasis batasan saya.</p>
   </section>
 
   <section>
-    <h2>Pendekatan — merancang kondisi pembuatan, bukan hasil yang dihasilkan</h2>
-    <p>Jangan biarkan LLM menulis teks bebas, melainkan hanya mengisi item yang telah ditentukan seperti nama, tipe, nilai ras, gerakan, ukuran tubuh, dan warna. Hasil keluaran tidak langsung digunakan, tetapi diperiksa dengan validator. Jika ada pelanggaran, kembalikan ke model aturan mana yang dilanggar, dan buat ulang sampai memenuhi kondisi.</p>
+    <h2>Pendekatan: Menentukan kondisi pembuatan</h2>
+    <p>Sistem meminta model bahasa besar (LLM) mengisi bidang yang telah ditentukan, seperti nama, tipe, statistik dasar, jurus, bentuk tubuh, dan warna, alih-alih menulis prosa bebas. Validator memeriksa setiap respons sebelum diterima. Ketika respons melanggar aturan, sistem mengembalikan rincian pelanggarannya dan meminta model membuat ulang hingga persyaratan terpenuhi.</p>
     <ol>
-      <li><strong>Manusia yang menentukan batas.</strong> Menjadikan keseimbangan permainan, bentuk yang dapat dibaca di layar, dan ekspresi yang harus dihindari menjadi aturan yang dapat diperiksa.</li>
-      <li><strong>AI mewujudkan kandidat.</strong> Berdasarkan kata-kata pemain, usulkan nilai dari item yang diizinkan.</li>
-      <li><strong>Mesin memverifikasi aturan.</strong> Menilai secara otomatis kombinasi angka, teknik, dan ekspresi yang dilarang.</li>
+      <li><strong>Manusia menentukan batas.</strong> Persyaratan keseimbangan permainan, sprite yang mudah dikenali, dan konten yang diperbolehkan menjadi aturan eksplisit yang dapat diperiksa.</li>
+      <li><strong>AI mengembangkan kandidat.</strong> Model menggunakan kata-kata pemain untuk mengusulkan nilai pada bidang yang diizinkan.</li>
+      <li><strong>Sistem memeriksa keluaran berdasarkan aturan.</strong> Rentang angka, kombinasi jurus, dan konten yang dilarang diperiksa secara otomatis.</li>
       <li><strong>Memberikan umpan balik hanya pada pelanggaran.</strong> Kandidat yang tidak memenuhi syarat dikembalikan dengan alasan dan dibuat ulang.</li>
     </ol>
-    <p><strong>Keterbatasan yang melindungi permainan.</strong> Jumlah total nilai ras ditetapkan dalam rentang 280 hingga 360, dan batas atas serta bawah juga diterapkan pada setiap kemampuan. Gerakan diambil dari sumber game, dan dibatasi pada tipe ras tersebut atau tipe normal. Selain itu, gerakan one-hit KO, meledak sendiri, kerusakan tetap, dan gerakan yang terlalu kuat dikecualikan, serta jumlah gerakan serangan dan keberadaan gerakan yang sesuai tipe juga diperiksa. Tingkat penangkapan dan kecepatan pertumbuhan ditetapkan, sehingga perbedaan yang dihasilkan berada dalam rentang yang dapat dibandingkan.</p>
-    <p><strong>Batasan untuk menjaga penampilan.</strong> Pilih bentuk tubuh dari kandidat yang mudah mempertahankan kontur bahkan untuk sprite kecil, dan batasi kosakata warna serta fitur. Fitur manusiawi, darah, senjata, dan huruf dikecualikan. Terakhir, selalu tambahkan kondisi pencegahan kerusakan seperti 'hanya satu tubuh', 'seluruh badan', dan 'jangan membuat anggota tubuh tambahan' ke instruksi pembuatan gambar.</p>
-    <p>Menurut sebuah catatan, model awalnya mengusulkan total nilai ras sebesar 380. Kerangka kerja mendeteksi pelanggaran dan mendorong pembuatan ulang, akhirnya menyatu pada spesifikasi 320. Yang penting bukanlah hasil yang baik muncul secara kebetulan, tetapi merancang proses yang tidak mengadopsi hasil yang keluar dari kerangka.</p>
+    <p><strong>Batasan yang melindungi permainan.</strong> Saya menetapkan total statistik dasar pada rentang 280–360, dengan batas atas dan bawah untuk setiap statistik. Jurus diambil dari kode sumber permainan dan dibatasi pada jurus yang sesuai dengan tipe spesies atau jurus bertipe Normal. Jurus sekali serang KO, penghancuran diri, kerusakan tetap, dan jurus yang terlalu kuat dikecualikan. Validator juga memeriksa jumlah jurus serangan dan keberadaan jurus yang sesuai dengan tipe spesies. Tingkat penangkapan, laju pertumbuhan, dan faktor lain ditetapkan agar perbedaan hasil tetap berada dalam rentang yang layak dibandingkan.</p>
+    <p><strong>Batasan yang menjaga kejelasan visual.</strong> Bentuk tubuh dipilih dari pilihan dengan siluet yang tetap mudah dikenali pada ukuran sprite kecil. Kosakata untuk warna dan ciri fisik juga dibatasi. Ciri menyerupai manusia, darah, senjata, dan teks dikecualikan. Instruksi pembuatan gambar selalu memuat ketentuan pencegahan kesalahan seperti “hanya satu makhluk”, “tampilkan seluruh tubuh”, dan “tanpa anggota tubuh tambahan”.</p>
+    <p>Dalam satu proses yang tercatat, model awalnya mengusulkan total statistik dasar sebesar 380. Validator mendeteksi pelanggaran dan meminta pembuatan ulang, hingga akhirnya menghasilkan spesifikasi dengan total 320. Kontribusinya adalah proses yang menolak keluaran di luar batasan yang telah ditetapkan, alih-alih mengandalkan hasil yang kebetulan berhasil.</p>
   </section>
 
   <section>
     <h2>Menyelesaikan pengalaman di dalam permainan</h2>
-    <p>Yang disentuh oleh pemain hanyalah percakapan dalam game, pilihan kata, dan pertemuan di semak-semak. Tidak perlu membuka layar lain untuk generasi. Sementara itu, proses dengan beban komputasi besar ditangani oleh proses Python di PC, yang berinteraksi dengan game melalui berkas. Dengan skrip Lua di mGBA yang menjembatani keduanya, sensasi memainkan game yang sudah ada dan pemrosesan AI eksternal dipisahkan.</p>
+    <p>Pemain hanya menggunakan percakapan di dalam permainan, pemilihan kata, dan pertemuan di rerumputan; tidak ada layar pembuatan terpisah. Pekerjaan komputasi yang berat dijalankan oleh proses Python di PC, yang bertukar data dengan permainan melalui berkas. Skrip Lua dalam emulator mGBA menghubungkan keduanya, sehingga kendali permainan yang akrab tetap terjaga sementara pemrosesan AI berlangsung di luar permainan.</p>
     <ol>
-      <li><strong>Membuat spesifikasi.</strong> Model bahasa lokal mengubah enam kata menjadi data ras yang telah diverifikasi.</li>
-      <li><strong>Membentuk sosok.</strong> Model gambar menggambar ilustrasi referensi, dan dari situ menghasilkan tampilan depan, belakang, dan ikon yang dipegang dengan konsisten.</li>
-      <li><strong>Mengonversi ke data untuk permainan.</strong> Mengurangi warna gambar menjadi 15 warna, lalu mengonversi dan mengompresnya menjadi sprite dan palet yang dapat digunakan oleh GBA.</li>
-      <li><strong>Menerapkannya ke permainan yang sedang berjalan.</strong> Menulis data ke wilayah yang telah dipesan sebelumnya, dan menghadirkan jenis baru tanpa me-restart game.</li>
+      <li><strong>Menghasilkan spesifikasi.</strong> Model bahasa yang dijalankan secara lokal mengubah enam kata menjadi data spesies, yang divalidasi sebelum digunakan.</li>
+      <li><strong>Menghasilkan visual.</strong> Model gambar membuat ilustrasi acuan, lalu sprite tampak depan dan belakang serta ikon tim dengan tampilan yang konsisten.</li>
+      <li><strong>Mengonversi menjadi data permainan.</strong> Warna gambar dikurangi menjadi 15, lalu gambar dikonversi dan dikompresi menjadi sprite serta palet yang kompatibel dengan Game Boy Advance (GBA).</li>
+      <li><strong>Memasukkan ke permainan yang sedang berjalan.</strong> Data ditulis ke area yang telah dicadangkan, sehingga spesies baru hadir tanpa memulai ulang permainan.</li>
     </ol>
-    <p>Karena data yang sama ditulis juga ke disk, ras yang tercermin akan tetap ada bahkan setelah game dimuat ulang. Penciptaannya hanya sekali dan tidak dapat dibatalkan. Jika melarikan diri atau kalah saat bertemu, ras tersebut akan tetap ada di dunia, tetapi jika dikalahkan, ras itu tidak akan muncul lagi. Ketidakbalikan ini juga dirancang untuk memberi pengalaman makna 'hanya satu di dunia'.</p>
+    <p>Data yang sama juga ditulis ke disk, sehingga spesies yang dihasilkan tetap tersimpan ketika permainan dimuat ulang. Pembuatan hanya terjadi sekali dan tidak dapat dibatalkan. Jika pemain melarikan diri atau kalah dalam pertemuan, Pokémon tetap berada di dunia permainan. Jika pemain mengalahkannya, Pokémon itu tidak muncul lagi. Sifat yang tidak dapat dibatalkan ini menjadikan “hanya satu dalam permainan tersebut” bagian dari pengalaman.</p>
   </section>
 
   <section>
     <h2>Hal-hal yang dapat dikonfirmasi dengan prototipe</h2>
-    <p>Ini adalah verifikasi kelayakan yang dibuat sendiri, bukan permainan yang selesai atau eksperimen pengguna. Titik pencapaian dan ruang yang belum diverifikasi dibagi seperti berikut.</p>
+    <p>Saya membangun prototipe ini sendiri untuk menguji kelayakan teknis. Prototipe ini bukan permainan yang sudah selesai maupun studi pengguna. Berikut adalah pemisahan antara hal yang telah saya verifikasi, yang telah saya implementasikan, dan yang masih belum diuji.</p>
     <ul class="plain">
-      <li><strong>Rentang di mana operasi dikonfirmasi.</strong> Kami memeriksa secara menyeluruh dalam mGBA mulai dari percakapan dalam game, memasukkan enam kata, pembuatan latar belakang, penerapan pada permainan yang sedang berjalan, pertemuan di alam liar, penangkapan, hingga memasukkan nama panggilan.</li>
-      <li><strong>Ini diimplementasikan untuk perbandingan.</strong> Disiapkan dua pintu masuk, yaitu 'generasi pasif' tanpa input dan 'generasi keterlibatan' yang memilih kata-kata, sehingga percakapan, pertemuan, dan penangkapan dapat direkam.</li>
-      <li><strong>Ada dasar, tetapi belum diverifikasi secara menyeluruh.</strong> Peningkatan level setelah penangkapan, pembelajaran teknik, pertarungan, penyimpanan ke kotak, dan penggunaan lanjutan setelah menyimpan terhubung dengan sistem yang ada, tetapi verifikasi melalui permainan dalam waktu lama belum dilakukan.</li>
-      <li><strong>Rentang yang belum diimplementasikan.</strong> Fungsi untuk menghasilkan evolusi berikutnya di tempat dan eksperimen perbandingan keterikatan oleh beberapa peserta tetap menjadi tugas di masa depan.</li>
+      <li><strong>Diverifikasi dari awal hingga akhir.</strong> Dalam mGBA, saya mengonfirmasi seluruh urutan, mulai dari percakapan di dalam permainan dan masukan enam kata, pembuatan di latar belakang, integrasi ke permainan yang sedang berjalan, pertemuan di alam liar, penangkapan, hingga pemberian nama panggilan.</li>
+      <li><strong>Diimplementasikan untuk perbandingan mendatang.</strong> Saya menambahkan dua titik awal: pembuatan pasif tanpa masukan dan pembuatan dengan arahan pemain melalui pemilihan kata. Percakapan, pertemuan, dan penangkapan dapat dicatat untuk dibandingkan.</li>
+      <li><strong>Terhubung ke sistem yang ada, tetapi belum diuji melalui permainan berkepanjangan.</strong> Peningkatan level setelah penangkapan, pembelajaran jurus, pertarungan, penyimpanan Pokémon dalam kotak, dan penggunaan lanjutan setelah penyimpanan sudah terintegrasi dengan sistem permainan. Saya belum mengujinya melalui sesi bermain yang panjang.</li>
+      <li><strong>Pekerjaan mendatang.</strong> Pembuatan bentuk evolusi selama bermain belum diimplementasikan, dan studi perbandingan keterikatan dengan beberapa peserta belum dilakukan.</li>
     </ul>
   </section>
 
   <section>
-    <h2>Hasil mencoba sendiri — hanya menjadi satu-satunya tidak menimbulkan keterikatan</h2>
-    <p>Sejauh saya bermain dengan prototipe sendiri, saya tidak merasakan keterikatan yang kuat terhadap Pokémon yang dihasilkan. Ini adalah kesan pribadi dari pembuat implementasinya saja, dan bukan hasil eksperimen yang dapat digeneralisasikan. Namun, hal ini menjadi petunjuk untuk memikirkan apa yang harus diubah selanjutnya untuk dibandingkan.</p>
-    <p>Ada dua kondisi yang tampaknya memengaruhi keterikatan.</p>
+    <h2>Pelajaran dari pengalaman bermain saya: Keunikan saja belum membuat saya merasa terikat</h2>
+    <p>Saat memainkan prototipe ini sendiri, saya tidak merasakan keterikatan yang kuat terhadap Pokémon yang dihasilkan. Ini merupakan kesan pribadi saya sebagai pengembang, bukan hasil yang dapat digeneralisasikan kepada pemain lain. Namun, pengalaman tersebut memberi petunjuk tentang faktor yang dapat diubah dalam perbandingan mendatang.</p>
+    <p>Ada dua faktor yang tampaknya layak diteliti.</p>
     <ul class="plain">
-      <li><strong>Kualitas produk.</strong> Jika tidak melewati tingkat yang membuat penampilan dan pengaturannya menarik, hanya keunikan 'satu-satunya di dunia' tidak dapat menopang rasa keterikatan.</li>
-      <li><strong>Tingkat keterlibatan.</strong> Hanya dengan memilih enam kata, saya merasa hasilnya lebih terasa 'diberikan' daripada 'dibuat sendiri'. Yang menimbulkan rasa keterlibatan bukanlah jumlah input, tetapi kualitas proses pembuatan seperti memilih ulang, membandingkan, memperbaiki, dan bertanggung jawab atas hasilnya.</li>
+      <li><strong>Kualitas keluaran.</strong> Jika penampilan dan konsep karakter kurang menarik, menjadi “satu-satunya dalam permainan tersebut” mungkin belum cukup untuk mempertahankan keterikatan.</li>
+      <li><strong>Kedalaman keterlibatan.</strong> Memilih enam kata membuat hasilnya lebih terasa sebagai sesuatu yang diberikan kepada saya daripada sesuatu yang saya ciptakan. Saya menduga keterlibatan bergantung pada kualitas proses kreatif: mempertimbangkan ulang pilihan, membandingkan alternatif, menyempurnakan detail, dan bertanggung jawab atas hasil, bukan sekadar memberi lebih banyak masukan.</li>
     </ul>
-    <p>Yang menjadi kontras adalah 'Hanagitsune', yang dibuat melalui interaksi dengan beberapa AI generatif selain generasi otomatis untuk game, serta pengerjaan manual. Saya merasa memiliki kedekatan dengan karakter ini karena membandingkan kandidat, memperbaiki, dan mengembangkannya hingga bentuk yang memuaskan. Saya berpikir ini karena ada baik kualitas yang cukup maupun keterlibatan melalui percobaan dan kesalahan.</p>
+    <p>Sebaliknya, saya merasa terikat dengan Hanagitsune, karakter yang saya buat di luar alur otomatis permainan melalui percakapan berulang dengan beberapa alat AI generatif dan penyempurnaan manual. Saya membandingkan kandidat, memperbaiki detail, dan melanjutkan hingga puas. Menurut saya, kualitas hasil dan keterlibatan dalam proses berulang tersebut sama-sama berkontribusi pada keterikatan itu.</p>
 
     <figure class="pair">
-      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="Tampilan depan Hanagitsune. Seekor rubah berwarna hijau muda, dengan ekor yang tampak seperti sulur yang meneteskan bunga.">
-      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="Punggung rubah hanagitsune. Seluruh panjang ekor yang mekar terlihat.">
-      <figcaption>Hanagitsune — pemelihara hutan yang memiliki ekor berbunga. Di jejak larinya, tumbuh tunas bunga dan tanaman, dan bahkan tanah yang gersang akan dipenuhi kehidupan baru. Sosoknya dianggap sebagai simbol hutan yang berkembang menuju masa depan.</figcaption>
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="Tampak depan Hanagitsune, rubah hijau pucat dengan ekor menyerupai sulur menjuntai yang dipenuhi bunga.">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="Tampak belakang Hanagitsune, memperlihatkan seluruh panjang ekornya yang berbunga.">
+      <figcaption>Hanagitsune, penjaga hutan dengan ekor berbunga. Rumput dan bunga bertunas di setiap tempat yang dilaluinya, membawa kehidupan baru bahkan ke tanah gersang. Ia dipandang sebagai simbol pertumbuhan hutan yang terus berlanjut.</figcaption>
     </figure>
 
     <figure class="pair">
-      <a href="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar informasi Pokémon Hanagi2ne. Menampilkan tipe rumput, kemampuan Chlorophyll, sifat Berani, serta pertemuan di Hutan Touka pada level 7. Sprite adalah rubah hijau pucat dengan ekor berbunga."></a>
-      <a href="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp"><img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar pertarungan. Hanagi2ne dilihat dari belakang sedang menghadapi Poochyena liar. Tertulis 'Hanagi2ne menyerap!'"></a>
-      <figcaption>Kami mengimplementasikan 'Hanagitsune', yang didesain melalui dialog dan kerja tangan, sebagai ras dalam game.</figcaption>
+      <a href="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar ringkasan Hanagi2ne: tipe Grass, kemampuan Overgrow, sifat Brave, dan pertemuan pada level 7 di Petalburg Woods. Sprite-nya berupa rubah hijau pucat dengan ekor berbunga."></a>
+      <a href="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp"><img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="Layar pertarungan yang memperlihatkan Hanagi2ne dari belakang, menghadapi Poochyena liar. Teksnya berbunyi “Hanagi2ne used ABSORB!”"></a>
+      <figcaption>Hanagitsune, yang dirancang melalui dialog berulang dan penyempurnaan manual, diimplementasikan sebagai spesies dalam permainan.</figcaption>
     </figure>
 
-    <p>Prototipe ini tidak menjawab pertanyaan, 'Apakah konten yang dihasilkan menimbulkan keterikatan?'. Pertanyaan yang ambigu itu dibagi menjadi dua elemen yang dapat sengaja diubah, yaitu kualitas hasil dan kedalaman keterlibatan. Dalam verifikasi selanjutnya, perlu menyertakan pemilihan, perbandingan, dan perbaikan dalam proses pembuatan, menyamakan kualitas hasil hingga tingkat tertentu, dan melakukan perbandingan oleh beberapa peserta.</p>
+    <p>Prototipe ini belum menjawab apakah konten yang dihasilkan dapat menimbulkan keterikatan. Proyek ini menguraikan pertanyaan luas tersebut menjadi dua faktor yang dapat diubah secara sengaja: kualitas keluaran dan kedalaman keterlibatan. Studi mendatang akan menambahkan kesempatan untuk memilih, membandingkan, dan memperbaiki selama proses pembuatan, menyetarakan kualitas keluaran, serta membandingkan pengalaman beberapa peserta.</p>
   </section>
 
   <section>
     <h2>Implementasi</h2>
-    <p>Pipeline generasi, kerangka kerja pembatasan dan verifikasi, konversi data untuk GBA, serta perubahan pada sisi game telah dipublikasikan di <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">Repositori GitHub</a>.</p>
+    <p>Alur pembuatan, kerangka batasan dan validasi, konversi data GBA, serta modifikasi pada sisi permainan dipublikasikan dalam <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">repositori GitHub</a>.</p>
   </section>
 
-  <p class="colophon"><a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> Berdasarkan dekompilasi, ini dibuat sebagai penelitian pribadi. Tidak ada ROM, patch ROM, atau aset dalam game yang dibagikan. Semua sprite yang ditampilkan di sini adalah asli dan dibuat oleh AI. Pokémon adalah merek dagang Nintendo, Creatures Inc., dan Game Freak Inc., dan proyek ini tidak memiliki hubungan dengan perusahaan-perusahaan tersebut serta tidak mendapat persetujuan dari mereka.</p>
+  <p class="colophon">Proyek penelitian mandiri ini dibangun berdasarkan dekompilasi <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a>. Proyek ini tidak mendistribusikan ROM, tambalan ROM, atau aset permainan. Pokémon adalah merek dagang Nintendo, Creatures Inc., dan Game Freak Inc.; proyek ini tidak berafiliasi dengan atau didukung oleh perusahaan-perusahaan tersebut.</p>
 
-  <nav aria-label="Situs">
+  <nav aria-label="Navigasi portofolio">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Kembali ke portofolio Takafumi Horiuchi</span></a></li>
     </ul>

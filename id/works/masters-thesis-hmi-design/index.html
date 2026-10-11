@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Tesis magister tentang desain interaksi antara manusia dan robot — Takafumi Horiuchi</title>
-<meta name="description" content="Mengubah area yang dilihat operator menjadi kondisi di mana robot diperbolehkan menyentuh. Penelitian master ini mengusulkan dan mengimplementasikan sistem yang menggabungkan kondisi kognitif manusia ke dalam kontrol keselamatan, mencegah tabrakan tanpa pendaftaran objek sebelumnya.">
+<title>Tesis magister tentang desain interaksi manusia–robot — Takafumi Horiuchi</title>
+<meta name="description" content="Penelitian magister tentang prototipe pencegahan tabrakan robot yang memperkirakan bidang pandang operator dari orientasi kepala untuk membantu mencegah kontak yang tidak disengaja tanpa klasifikasi objek sebelumnya. Perilaku yang diharapkan diperiksa melalui lima uji demonstrasi.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/id/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -30,14 +30,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="id_ID">
-<meta property="og:title" content="Tesis magister tentang desain interaksi antara manusia dan robot">
-<meta property="og:description" content="Mengubah jangkauan yang dilihat manusia menjadi kondisi yang boleh disentuh oleh robot.">
+<meta property="og:title" content="Tesis magister tentang desain interaksi manusia–robot">
+<meta property="og:description" content="Penelitian magister tentang prototipe pencegahan tabrakan robot yang memperkirakan bidang pandang operator dari orientasi kepala untuk membantu mencegah kontak yang tidak disengaja tanpa klasifikasi objek sebelumnya. Perilaku yang diharapkan diperiksa melalui lima uji demonstrasi.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/id/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Ruang kerja virtual dengan voxel kuning yang dipindai oleh robot. Pandangan operator digambarkan dengan piramida berwarna.">
+<meta property="og:image:alt" content="Ruang kerja virtual yang direkonstruksi dari pemindaian robot sebagai voxel kuning, dengan volume pandang berwarna yang menandai perkiraan bidang pandang operator.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Rekayasa Kognitif × AI × Desain",
+      "description": "Insinyur desain",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -58,9 +59,9 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/id/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "Tesis magister tentang desain interaksi antara manusia dan robot",
+      "headline": "Tesis magister tentang desain interaksi manusia–robot",
       "url": "https://takafumihoriuchi.github.io/id/works/masters-thesis-hmi-design/",
-      "description": "Mengubah area yang dilihat operator menjadi kondisi di mana robot diperbolehkan menyentuh. Penelitian master ini mengusulkan dan mengimplementasikan sistem yang menggabungkan kondisi kognitif manusia ke dalam kontrol keselamatan, mencegah tabrakan tanpa pendaftaran objek sebelumnya.",
+      "description": "Penelitian magister tentang prototipe pencegahan tabrakan robot yang memperkirakan bidang pandang operator dari orientasi kepala untuk membantu mencegah kontak yang tidak disengaja tanpa klasifikasi objek sebelumnya. Perilaku yang diharapkan diperiksa melalui lima uji demonstrasi.",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "id",
@@ -103,7 +104,7 @@
 <main>
 
   <header>
-    <h1>Tesis magister tentang desain interaksi antara manusia dan robot</h1>
+    <h1>Tesis magister tentang desain interaksi manusia–robot</h1>
     <p class="dateline">Juli 2021</p>
   </header>
 
@@ -118,9 +119,9 @@
 
   <section>
     <h2>Gambaran umum</h2>
-    <p class="lead">Dalam robot besar yang dikendalikan oleh manusia, sulit untuk membedakan antara gerakan mendekati objek kerja dan gerakan menuju hambatan yang terlewat hanya dengan sensor di sekitarnya. Oleh karena itu, kami merancang sistem penghindaran tabrakan yang menggunakan area yang dilihat operator sebagai petunjuk niat 'boleh disentuh' dan memperlambat atau menghentikan lengan ketika mendekati objek yang tidak terlihat.</p>
-    <p>Tidak perlu mendaftarkan objek sebagai "dapat dioperasikan" atau "objek yang dilindungi" sebelumnya. Perbedaan tersebut diperbarui sesuai dengan pandangan operator selama bekerja. Diterapkan pada robot humanoid tinggi 1,9 m, dan melalui lima percobaan demo, dipastikan bahwa perilaku yang telah didefinisikan dapat terjadi. Perilaku aktual dapat dilihat di <a class="ext" href="https://youtu.be/-DvWxzJvK3I">Video demo</a>.</p>
-    <p>Sebagai tesis master di Design &amp; Engineering Universitas Teknologi Milano, saya mengerjakannya selama magang penelitian di perusahaan Jinki Ittai Co., Ltd., dan mempresentasikannya di <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Konferensi Presentasi Akademik Ke-39 Masyarakat Robot Jepang (RSJ2021)</a>.</p>
+    <p class="lead">Pada robot besar yang dioperasikan manusia, sensor lingkungan saja dapat kesulitan membedakan gerakan yang sengaja mendekati objek kerja dari gerakan yang tidak sengaja mendekati hambatan yang luput dari perhatian. Saya merancang sistem pencegahan tabrakan yang menggunakan perkiraan bidang pandang operator sebagai petunjuk niat untuk melakukan kontak, lalu memperlambat atau menghentikan lengan saat mendekati objek di luar bidang tersebut.</p>
+    <p>Objek tidak perlu diklasifikasikan terlebih dahulu sebagai “dapat dioperasikan” atau “dilindungi”; klasifikasinya diperbarui saat operator melihat sekeliling. Dalam prototipe ini, saya menggunakan orientasi headset sebagai perkiraan arah pandangan. Saya mengimplementasikan sistem pada robot humanoid untuk pekerjaan berat setinggi 1,9 meter dan mengonfirmasi perilaku yang diharapkan dalam lima uji demonstrasi. Video demonstrasi memperlihatkan sistem saat bekerja.</p>
+    <p>Saya melakukan penelitian ini selama magang di Jinki Ittai Co., Ltd. untuk tesis magister Design &amp; Engineering di Politecnico di Milano. Penelitian ini saya presentasikan pada Konferensi Tahunan ke-39 Robotics Society of Japan (RSJ2021).</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -137,62 +138,63 @@
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Slide judul. Pencegahan Tabrakan Berbasis Kesadaran untuk Manipulasi Robot yang Dikendalikan Manusia, Program Magister Desain &amp; Rekayasa, Universitas Teknik Milan, Tahun Ajaran 2020–2021."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Latar belakang. Tema skripsi ditentukan selama magang penelitian di perusahaan Kabushiki Gaisha Jinki Ittai, sebuah perusahaan yang mengembangkan mesin humanoid dan mengoperasikannya dengan metode master-slave."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Perbandingan antara robot otonom dan robot yang dioperasikan manusia. Yang pertama bekerja secara efisien di ruang yang dirancang di dalam pagar, sedangkan yang kedua bekerja bersama manusia di ruang yang tidak pasti."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistik dari Eropa, Amerika Serikat, dan Jepang. Kontak dengan benda yang bergerak menunjukkan proporsi yang cukup besar dari kecelakaan di lokasi konstruksi."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Penelitian sebelumnya mengenai penghindaran tabrakan. Kulit sensorik yang menutupi manipulator, dan sensor kedalaman yang secara virtual mereproduksi lingkungan sekitarnya."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Tantangan saat ini. Sistem yang ada mengharuskan untuk mendefinisikan sebelumnya apakah objek termasuk 'dilindungi' atau 'dapat dioperasikan' berdasarkan tag yang dipasang, analisis gambar, dan pengenal yang telah dipelajari."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Usulan. Sistem konvensional hanya menggunakan informasi sensor pasif, tetapi pada robot yang dikendalikan manusia, manusia sudah berada dalam loop kontrol, dan pandangan mata mereka dapat digunakan sebagai parameter aktif."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Aturan klasifikasi. Objek yang berada di dalam bidang pandang pusat operator dapat dioperasikan, sedangkan objek yang berada di luar menjadi objek yang dilindungi."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Gambaran keseluruhan prototipe. Menggabungkan robot fisik dengan ruang perhitungan virtual, tiga elemen teknologi berikutnya."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemen ①. Representasikan bidang pandangan pusat sebagai kerucut berukuran 60°×55°, dan mendekati arahnya ke arah depan headset VR."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemen ②. LIDAR yang dipasang di kepala robot memindai sekitarnya sebagai kumpulan titik, yang masing-masing direpresentasikan sebagai voxel yang memiliki collider."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Elemen ③. Kembaran digital robot bergerak sama seperti mesin nyata, dan ketika lengannya menyentuh voxel yang berada di luar bidang pandang, peringatan kedekatan muncul."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Demo bukti konsep. Gambar diam dari robot yang meraih bola di atas tiang, dan tampilan voxel dari ruang virtual."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Tugas ke depan. Deteksi orang dalam ruang kerja, pemeriksaan metode lain untuk mengukur arah pandangan, dan evaluasi kuantitatif di lapangan."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Ringkasan kesimpulan. Tema penelitian, nilai metode, kebaruan, dan bagaimana sistem diuji."></a></li>
+      <ol class="deck" tabindex="0" role="group" aria-label="Salindia presentasi asli dalam bahasa Inggris. Gulir secara horizontal.">
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="Salindia judul: “Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation”, program magister Design &amp; Engineering di Politecnico di Milano, 2020–2021."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Latar belakang: topik tesis muncul selama magang penelitian di Jinki Ittai Co., Ltd., yang mengembangkan robot humanoid untuk pekerjaan berat dengan sistem kendali master–slave."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Perbandingan robot otonom dan robot yang dioperasikan manusia: robot otonom bekerja secara efisien di lingkungan khusus berpagar, sedangkan robot yang dioperasikan manusia bekerja bersama orang di lingkungan yang lebih sulit diprediksi."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistik dari Eropa, Amerika Serikat, dan Jepang menunjukkan bahwa kontak dengan benda bergerak merupakan bagian yang cukup besar dari kecelakaan di lokasi konstruksi."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Penelitian terdahulu tentang penghindaran tabrakan: lapisan sensor sentuh di sekeliling manipulator dan sensor kedalaman untuk merekonstruksi lingkungan secara virtual."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Masalah: sistem yang ada mengklasifikasikan objek terlebih dahulu sebagai “dilindungi” atau “dapat dioperasikan”, menggunakan tag yang dipasang, analisis citra, atau pengklasifikasi yang telah dilatih."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Usulan: sistem sebelumnya hanya mengandalkan data sensor pasif. Robot yang dioperasikan manusia sudah memiliki seseorang di dalam loop kendalinya, dan pandangan orang tersebut dapat digunakan sebagai parameter aktif."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Aturan klasifikasi: objek dalam bidang pandang pusat operator dapat dioperasikan; objek di luarnya dilindungi."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Gambaran umum prototipe: robot fisik dihubungkan dengan lingkungan virtual. Salindia berikut menjelaskan tiga komponen teknisnya."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komponen 1: bidang pandang pusat direpresentasikan sebagai volume pandang 60° × 55°, dengan orientasi yang diperkirakan dari arah depan headset VR."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komponen 2: sensor lidar yang dipasang di kepala robot merekam awan titik lingkungan sekitar, yang direpresentasikan sebagai voxel dengan deteksi tabrakan."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Komponen 3: kembaran digital mengikuti gerakan robot fisik, dengan peringatan yang dipicu ketika robot mendekati voxel di luar area pandang."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Demonstrasi pembuktian konsep: gambar diam memperlihatkan robot meraih bola di atas tiang, di samping representasi voxel lingkungan sekitarnya."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Langkah berikutnya: mendeteksi manusia di ruang kerja, meneliti cara lain untuk memperkirakan arah pandangan, dan melakukan evaluasi kuantitatif di lapangan."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Kesimpulan: topik penelitian, kontribusi dan kebaruan metode, serta evaluasi prototipe."></a></li>
       </ol>
+      <figcaption>Salindia asli proyek (bahasa Inggris).</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Masalah — Pengaturan sebelumnya demi keselamatan membatasi lapangan</h2>
-    <p>Robot yang dikendalikan manusia dibutuhkan di tempat-tempat yang tidak dirancang untuk robot otonom. Seperti di lokasi konstruksi atau lokasi bencana, di mana penempatan orang dan peralatan berubah, dan apa yang boleh disentuh juga berbeda untuk setiap tugas. Untuk menggunakan kekuatan besar dari mesin, harus bisa menyentuh objek yang diperlukan sambil mencegah kontak yang tidak diinginkan.</p>
-    <p>Untuk penghindaran tabrakan yang sudah ada, ada metode menutupi robot dengan sensor jarak dekat atau mereproduksi sekeliling ke ruang virtual menggunakan sensor kedalaman. Namun, kedua metode tersebut memerlukan pengklasifikasian sebelumnya apakah objek adalah 'dapat dioperasikan' atau 'objek yang harus dilindungi'. Jika tidak ada yang didaftarkan, robot tidak bisa menyentuh apa pun demi keamanan, dan jika ingin mendaftarkan semuanya, diperlukan pengaturan dan kalibrasi untuk setiap lokasi. Beban persiapan ini menurunkan kepraktisan robot yang dipindahkan untuk digunakan di berbagai tempat.</p>
+    <h2>Masalah: Penyiapan keselamatan dapat membatasi pekerjaan lapangan</h2>
+    <p>Robot yang dioperasikan manusia dibutuhkan di lingkungan yang belum disiapkan untuk operasi otonom. Di lokasi konstruksi dan daerah bencana, posisi orang dan peralatan serta objek yang perlu disentuh robot berubah-ubah. Agar kekuatan mesin dapat dimanfaatkan, operator harus dapat bekerja dengan objek tersebut sambil menghindari kontak yang tidak disengaja.</p>
+    <p>Pendekatan penghindaran tabrakan yang sudah ada mencakup pemasangan sensor jarak dekat di seluruh robot dan rekonstruksi lingkungan dalam ruang virtual menggunakan sensor kedalaman. Pada pendekatan yang ditelaah di sini, objek harus diklasifikasikan terlebih dahulu sebagai “dapat dioperasikan” atau “dilindungi”. Tanpa klasifikasi tersebut, robot akan menghindari semua kontak; mengklasifikasikan setiap objek memerlukan penyiapan dan kalibrasi khusus untuk tiap lokasi. Persiapan ini mengurangi kepraktisan penggunaan robot di berbagai lokasi.</p>
   </section>
 
   <section>
-    <h2>Ide — Mengubah pandangan menjadi 'kondisi yang boleh disentuh'</h2>
+    <h2>Gagasan: Menggunakan pandangan untuk menentukan kapan kontak diizinkan</h2>
     <p>Dalam loop kontrol robot yang dikendalikan manusia, sudah ada orang yang menilai situasinya. Saya berpikir jika kita bisa menyampaikan ke mana perhatian manusia tertuju kepada mesin, maka alih-alih mendaftarkan target sebelumnya, mungkin kita bisa memperkirakan niat untuk melakukan kontak selama pekerjaan berlangsung.</p>
-    <p>Di sana, gunakan pandangan sentral operator sebagai batas. Objek di dalam bidang pandang dianggap sebagai 'objek yang dapat dioperasikan' yang dipahami oleh operator. Objek di luar dianggap sebagai 'objek yang dilindungi' yang mungkin terlewat. Orang selalu dianggap sebagai objek yang dilindungi, terlepas dari posisi pandangannya.</p>
-    <p>Ini bukanlah mekanisme untuk mengirim perintah ke robot dengan pandangan. Ini adalah mekanisme untuk mengubah keadaan kognitif operator menjadi kondisi di mana robot boleh bergerak.</p>
+    <p>Saya menggunakan bidang pandang pusat operator sebagai batas. Objek di dalamnya diklasifikasikan sebagai “dapat dioperasikan”, dengan asumsi bahwa operator menyadari keberadaannya. Objek di luarnya diklasifikasikan sebagai “dilindungi” karena mungkin luput dari perhatian. Desain menetapkan bahwa manusia harus selalu dilindungi, terlepas dari arah pandangan.</p>
+    <p>Sistem tidak menggunakan pandangan untuk memberikan perintah secara langsung. Sebaliknya, area tempat operator diasumsikan menyadari keberadaan objek diterjemahkan menjadi kondisi yang membatasi gerakan robot.</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Gambar dari atas. Di depan robot, bidang pandang pusat operator digambarkan sebagai kerucut. Objek A yang berada di dalam kerucut ditunjukkan dengan lingkaran putih, sedangkan objek B, C, dan D yang berada di luar ditunjukkan dengan kotak gelap, dengan dua orang berdiri di dalam dan di luar kerucut."></a>
-      <figcaption>Objek A yang berada di dalam bidang penglihatan pusat operator dapat dioperasikan, sedangkan objek B, C, dan D yang berada di luar menjadi objek yang dilindungi. Seseorang akan terlindungi di mana pun mereka berdiri.</figcaption>
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Gambar dari atas. Di depan robot, bidang pandang pusat operator digambarkan sebagai kerucut. Objek A yang berada di dalam kerucut ditunjukkan dengan penanda putih, sedangkan objek B, C, dan D yang berada di luar ditunjukkan dengan kotak gelap, dengan dua orang berdiri di dalam dan di luar kerucut."></a>
+      <figcaption>Diagram asli berbahasa Inggris. Menurut aturan yang diusulkan, objek A dapat dioperasikan karena berada dalam bidang pandang pusat operator. Objek B, C, dan D berada di luarnya dan dilindungi. Manusia selalu diklasifikasikan sebagai dilindungi, terlepas dari posisi maupun arah pandangan operator. Namun, deteksi manusia belum diimplementasikan dalam prototipe ini.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Desain interaksi</h2>
-    <p>Sistem tidak menjadikan posisi pandangan sebagai saklar sederhana hidup-mati. Ketika mendekati objek yang tidak dilihat, lengan akan perlahan melambat sesuai jarak dan berhenti sebelum menyentuhnya. Setelah berhenti, bila operator mengarahkan pandangannya ke objek, pembatasan juga secara bertahap dicabut. Hal ini menghindari perilaku berhenti tiba-tiba atau mulai bergerak secara mendadak, sehingga operator dapat memprediksi perubahan tersebut.</p>
-    <p>Di sisi lain, meskipun mata sesaat berpaling dari objek yang sudah disentuh, pekerjaan yang sedang berlangsung tidak dihentikan. Hal ini karena jika pegangan atau operasi terhenti hanya karena pandangan dialihkan, hal itu justru menjadi tidak stabil. Pendekatan terhadap manusia diperlakukan secara terpisah, dan dibatasi baik operator melihat atau tidak.</p>
-    <p>Yang dituju bukanlah memperlambat pekerjaan secara seragam demi keselamatan. Tujuannya adalah mempertahankan kemampuan robot di area yang diketahui operator, dan melindungi hanya area yang tidak terjangkau perhatiannya, sehingga keselamatan dan kemudahan kerja dapat dicapai secara bersamaan.</p>
+    <p>Sistem memperlakukan pandangan lebih dari sekadar sakelar hidup/mati. Saat lengan mendekati objek di luar bidang pandang operator, gerakannya melambat secara bertahap sesuai jarak dan berhenti sebelum terjadi kontak. Mengarahkan pandangan ke objek kemudian melepaskan pembatasan secara bertahap. Saya merancang transisi ini agar lengan tidak berhenti atau mulai bergerak secara mendadak dan agar perubahan gerak lebih mudah diperkirakan.</p>
+    <p>Mengalihkan pandangan sejenak dari objek yang sudah bersentuhan dengan robot tidak menghentikan pekerjaan. Menghentikan genggaman atau manipulasi hanya karena operator berpaling dapat membuat operasi kurang stabil. Desain memperlakukan gerakan mendekati manusia secara terpisah: gerakan ini harus tetap dibatasi terlepas dari arah pandangan operator. Deteksi manusia belum diimplementasikan dalam prototipe ini.</p>
+    <p>Tujuannya adalah mempertahankan kemampuan robot di area yang disadari operator dan membatasi gerakan di area yang mungkin luput dari perhatiannya. Pendekatan ini dimaksudkan untuk menyeimbangkan keselamatan dan kemudahan operasi tanpa memperlambat semua tindakan.</p>
 
     <figure class="paper-figure line-art figure-2">
-      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Diagram alir yang dimulai dari keadaan gerakan bebas. Cabang berdasarkan apakah objek berada di dekat, apakah objek itu manusia, apakah manipulator berada di arah mendekati manusia, atau apakah objek berada di area pandangan, dan berakhir pada gerakan presisi, penghentian bertahap, atau penguncian."></a>
-      <figcaption>Node yang membaca parameter aktif operator dalam proses pengambilan keputusan hanyalah satu, yaitu 'apakah objek berada di area fokus'. Semua cabang lain bekerja dengan informasi sensor pasif.</figcaption>
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Diagram alur kendali yang dimulai dari gerakan bebas. Keputusan memeriksa apakah ada objek di dekat robot, apakah objek tersebut manusia, apakah manipulator bergerak mendekati manusia itu, dan apakah objek berada dalam area pandang. Cabangnya mengarah ke gerakan presisi, penghentian bertahap, atau penguncian gerakan."></a>
+      <figcaption>Diagram asli berbahasa Inggris. Hanya satu keputusan dalam diagram alur yang menggunakan masukan aktif operator: apakah objek berada dalam area pandang. Semua percabangan lain menggunakan data sensor pasif. Label keputusan menanyakan apakah ada objek di dekat robot, apakah objek itu manusia, apakah manipulator bergerak mendekatinya, dan apakah objek berada dalam area pandang. Label tindakannya berarti gerakan bebas, gerakan presisi, penghentian bertahap, dan gerakan terkunci; “yes” dan “no” berarti “ya” dan “tidak”.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Skenario penggunaan yang diharapkan</h2>
-    <p>Yang menjadi sasaran adalah tempat-tempat di mana kekuatan besar digunakan dekat dengan manusia, seperti di lokasi konstruksi atau lokasi bencana. Di tempat-tempat semacam ini, sulit untuk memisahkan lingkungan sepenuhnya dengan pagar atau mendaftarkan semua objek sebelumnya. Sistem yang mengharuskan pengaturan keselamatan diubah setiap kali penempatan berubah akan kehilangan urgensi dan serbaguna.</p>
-    <p>Diskriminasi berdasarkan pandangan memanfaatkan kesadaran situasi seseorang saat itu, bukannya model lingkungan yang tetap. Hal ini berpotensi mengurangi beban persiapan di lapangan sekaligus menekan pendekatan terhadap objek yang terlewat. Namun, yang dikonfirmasi dalam penelitian ini hanya bahwa sistem bekerja sesuai definisi, dan efek pengurangan kecelakaan belum dievaluasi secara lapangan.</p>
+    <p>Konteks yang dituju adalah lokasi konstruksi dan daerah bencana, tempat mesin mengerahkan gaya besar di dekat manusia. Lingkungan semacam ini sulit dipagari sepenuhnya, dan mendaftarkan setiap objek terlebih dahulu tidak praktis. Mengatur ulang keselamatan setiap kali tata letak berubah akan mengurangi kemampuan adaptasi sistem dan memperlambat penggunaannya dalam situasi mendesak.</p>
+    <p>Klasifikasi berdasarkan pandangan memanfaatkan kesadaran operator dari saat ke saat, alih-alih klasifikasi lingkungan yang tetap. Pendekatan ini berpotensi mengurangi persiapan lokasi sambil membatasi gerakan mendekati objek yang luput dari perhatian. Namun, penelitian ini hanya mengonfirmasi bahwa sistem berperilaku sesuai spesifikasi; dampaknya terhadap pengurangan kecelakaan dalam penggunaan nyata belum dievaluasi.</p>
   </section>
 
   <section>
@@ -200,48 +202,48 @@
 
     <h3>Implementasi</h3>
     <p>Sistem ini diimplementasikan pada robot setinggi 1,9 m dengan berat 600 kg dan 30 derajat kebebasan, yang memiliki bentuk mirip dengan bagian atas tubuh manusia. Operator menggunakan headset VR dan mengoperasikan robot dengan menyelaraskan pandangan dan arah kepala robot dengan gerakan mereka sendiri.</p>
-    <p>Menggunakan LIDAR di atas robot, ruang kerja diperoleh sebagai kumpulan titik, dan dalam ruang virtual direpresentasikan sebagai voxel dengan deteksi tabrakan. Digital twin yang menyinkronkan ruang itu dengan perangkat nyata dijalankan. Bidang pandang pusat operator diwakili sebagai kerucut 60°×55°, dan arahannya diperkirakan menggunakan arah depan headset. Ketika lengan mendekati voxel di luar bidang pandang, peringatan dikirim ke perangkat nyata untuk memperlambat atau menghentikannya.</p>
+    <p>Sensor lidar pada robot merekam ruang kerja sebagai awan titik, yang direpresentasikan di lingkungan virtual sebagai voxel dengan deteksi tabrakan. Kembaran digital menyinkronkan robot virtual dengan mesin fisik. Saya merepresentasikan bidang pandang pusat operator sebagai volume pandang 60° × 55°, menggunakan arah depan headset untuk memperkirakan orientasinya. Ketika lengan mendekati voxel di luar area tersebut, sistem mengirim peringatan ke robot fisik untuk memperlambat atau menghentikan gerakan.</p>
 
     <figure class="paper-figure">
       <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Pemandangan dalam ruang virtual. Voxel kuning merekonstruksi sekeliling, dan area merah transparan bertuliskan 'bidang pandang tengah operator' menembusnya, sementara robot kembaran digital putih merentangkan tangan ke arah rintangan yang berada di luar area tersebut.">
-      <figcaption>Ruang virtual yang berisi robot dan kumpulan titik yang dipindai. Di sini, robot menyentuh hambatan yang berada di luar pandangan pusat operator.</figcaption>
+      <figcaption>Lingkungan virtual berisi kembaran digital robot dan awan titik hasil pemindaian. Adegan ini memperlihatkan hambatan di luar perkiraan bidang pandang pusat operator.</figcaption>
     </figure>
 
-    <h3>Penilaian awal</h3>
-    <p>Kami mencoba serangkaian operasi di mana operator mendekatkan lengan saat pandangan mereka menjauh dari objek, kemudian setelah berhenti, mengembalikan pandangan ke objek untuk membuka batasan, dan akhirnya menangkap bola. Dari lima percobaan, empat dilakukan oleh operator yang sudah berpengalaman, dan satu dilakukan oleh operator pada penerbangan kedua mereka. Dalam semua percobaan, lengan berhenti saat pandangan tidak diarahkan, dan operasi dapat dilanjutkan ketika pandangan diarahkan. Ini bukanlah eksperimen pengguna untuk mengukur efektivitas, melainkan evaluasi pendahuluan untuk memeriksa apakah perilaku yang dirancang dapat berjalan pada peralatan nyata.</p>
+    <h3>Evaluasi awal</h3>
+    <p>Setiap uji mengikuti urutan yang sama: mendekati objek di luar perkiraan bidang pandang operator, mengarahkan headset ke objek setelah lengan berhenti untuk melepaskan pembatasan, lalu menggenggam bola. Operator berpengalaman melakukan empat dari lima uji; satu uji lainnya dilakukan oleh operator yang baru menggunakan kokpit untuk kedua kalinya. Dalam setiap uji, lengan berhenti saat objek berada di luar perkiraan bidang pandang dan dapat melanjutkan gerakan ketika objek masuk ke area tersebut. Uji ini memeriksa apakah perilaku yang diharapkan berfungsi pada robot fisik. Efektivitasnya belum dievaluasi melalui studi pengguna.</p>
 
     <figure class="paper-figure">
       <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="Foto robot. Di bingkai atasnya, operator menaikinya dan menghadap ke samping. Tangan robot berhenti di depan bola biru dan kuning di atas tiang kuning, dan jarak yang tersisa ditunjukkan.">
-      <figcaption>Pandangan operator teralihkan, dan lengan berhenti menjauh dari target.</figcaption>
+      <figcaption>Objek berada di luar perkiraan bidang pandang operator, dan lengan berhenti sebelum mencapainya.</figcaption>
     </figure>
 
     <figure class="paper-figure">
       <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Foto dari sudut bawah. Operator melihat ke arah bola, dan tangan robot menangkap bola biru dan kuning di atas tiang kuning.">
-      <figcaption>Jika pandangan tertuju pada objek, gerakan yang sama akan berlangsung tanpa batasan.</figcaption>
+      <figcaption>Ketika objek masuk ke perkiraan bidang pandang operator, gerakan yang sama dapat dilanjutkan tanpa pembatasan.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Batas dan verifikasi berikutnya</h2>
-    <p>Prototipe belum menerapkan deteksi manusia. Kami menetapkan aturan bahwa manusia selalu dilindungi terlepas dari arah pandangan, tetapi di lingkungan nyata diperlukan mekanisme untuk mengenali manusia secara andal. Selain itu, karena yang digunakan adalah arah depan headset sebagai nilai pengganti, bukan arah pandangan itu sendiri, gerakan hanya mata tidak dapat ditangkap.</p>
-    <p>Jika menggunakan kamera tetap atau kacamata pintar dengan pengukuran pandangan mata, kondisi perangkat yang dikenakan dan akurasi estimasi akan berubah. Ketika diterapkan pada robot bergerak, diperlukan juga pemrosesan titik awan yang dapat mengikuti perubahan posisi robot itu sendiri.</p>
+    <h2>Keterbatasan dan langkah berikutnya</h2>
+    <p>Prototipe belum mencakup deteksi manusia. Meskipun desain menetapkan bahwa manusia harus selalu dilindungi, sistem untuk penggunaan nyata memerlukan cara yang andal untuk mengenali mereka. Prototipe juga menggunakan arah depan headset sebagai perkiraan arah pandangan, sehingga gerakan mata yang terpisah dari gerakan kepala tidak dapat dideteksi.</p>
+    <p>Kamera tetap atau kacamata pintar dengan pelacakan mata akan mengubah kebutuhan perangkat yang dikenakan dan ketepatan perkiraan pandangan. Memperluas sistem ke robot bergerak juga memerlukan pemrosesan awan titik yang memperhitungkan perubahan posisi robot itu sendiri.</p>
     <p>Evaluasi terbatas pada konfirmasi kualitatif melalui lima percobaan demonstrasi. Untuk menilai keamanan, kecepatan kerja, dan beban operator, diperlukan perbandingan kuantitatif dengan metode konvensional dalam kondisi kerja yang sebenarnya.</p>
   </section>
 
   <section>
-    <h2>Perspektif yang diperoleh dari penelitian ini</h2>
-    <p>Dalam penelitian ini, alih-alih menggunakan pandangan manusia sebagai perangkat input, pandangan tersebut diperlakukan sebagai kondisi yang memungkinkan tindakan mesin. Perilaku robot terhadap objek yang sama berubah tergantung pada apa yang sedang dipahami manusia saat itu. Yang dirancang bukanlah tindakan individu, melainkan hubungan antara keadaan kognitif manusia dan wewenang mesin.</p>
-    <p>Cara berpikir ini juga terhubung dengan <a href="../../">Filosofi desain saya</a> saat ini. Memahami kondisi manusia, mengubahnya menjadi batasan yang harus dijaga oleh sistem, dan di dalamnya mesin atau AI menunjukkan kemampuannya. Penelitian master menjadi titik awalnya.</p>
+    <h2>Pelajaran yang saya peroleh</h2>
+    <p>Penelitian ini menggunakan perkiraan bidang pandang operator untuk menentukan tindakan mesin yang diizinkan. Perilaku robot terhadap objek yang sama berubah sesuai perkiraan kesadaran operator akan objek tersebut. Fokus saya adalah hubungan antara perkiraan kesadaran operator dan ruang lingkup tindakan mesin, bukan gerakan satu per satu.</p>
+    <p>Cara pandang ini terus membentuk karya-karya dalam portofolio saya: memahami kondisi seseorang, menerjemahkannya menjadi batasan yang harus dipatuhi sistem, lalu membiarkan mesin atau AI bekerja di dalam batas tersebut. Penelitian magister saya menjadi titik awal pendekatan ini.</p>
   </section>
 
   <section>
     <h2>Ucapan terima kasih</h2>
-    <p>Penelitian ini dilakukan sebagai bagian dari program magister Design &amp; Engineering di Universitas Teknik Milan, selama masa magang di Human-Computer Integration Co., Ltd. Saya sangat berterima kasih kepada kedua organisasi yang telah mewujudkan kesempatan ini.</p>
+    <p>Saya melakukan penelitian ini selama magang di Jinki Ittai Co., Ltd. sebagai bagian dari program magister Design &amp; Engineering di Politecnico di Milano. Saya berterima kasih kepada kedua organisasi yang telah memungkinkan penelitian ini terlaksana.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a></p>
+  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Program konferensi</a></p>
 
-  <nav aria-label="Site">
+  <nav aria-label="Navigasi portofolio">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Kembali ke portofolio Takafumi Horiuchi</span></a></li>
     </ul>

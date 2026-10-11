@@ -4,8 +4,8 @@
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
-<title>Arpeggicho — 将琶音转化为和弦的应用（2026年10月） — 堀内贵文</title>
-<meta name="description" content="逐个录下演奏中的琶音音符，并实时叠加播放，让琶音以和弦的形式呈现。">
+<title>Arpeggicho：将琶音转化为和弦（2026年10月） — 堀内贵文</title>
+<meta name="description" content="Arpeggicho 目前仍在开发中。它逐个录下演奏的音符，再将录音叠加，让演奏者实时听到琶音合成的和弦。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/arpeggicho/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/arpeggicho/">
@@ -31,8 +31,8 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="Arpeggicho — 将琶音转化为和弦的应用（2026年10月）">
-<meta property="og:description" content="逐个录下演奏中的琶音音符，并实时叠加播放，让琶音以和弦的形式呈现。">
+<meta property="og:title" content="Arpeggicho：将琶音转化为和弦（2026年10月）">
+<meta property="og:description" content="Arpeggicho 目前仍在开发中。它逐个录下演奏的音符，再将录音叠加，让演奏者实时听到琶音合成的和弦。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp">
 <meta property="og:image:type" content="image/webp">
@@ -47,7 +47,7 @@
   "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/#work",
   "name": "Arpeggicho",
   "url": "https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/",
-  "description": "逐个录下演奏中的琶音音符，并实时叠加播放，让琶音以和弦的形式呈现。",
+  "description": "Arpeggicho 目前仍在开发中。它逐个录下演奏的音符，再将录音叠加，让演奏者实时听到琶音合成的和弦。",
   "dateCreated": "2026-10",
   "inLanguage": "zh-Hans",
   "image": "https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp",
@@ -114,7 +114,7 @@
     </div>
     <div class="arpeggicho-experience">
       <h3>体验② 演奏后重新聆听</h3>
-      <p>停止吹奏后，自己演奏的音仍会以和弦的形式持续响起。暂时脱离吹奏动作，便能更客观地聆听自己的琶音所形成的和声。</p>
+      <p>停止演奏后，录下的各个音仍会共同组成和弦，持续响起。这样，无需同时演奏，也能重新聆听自己的琶音所形成的和声。</p>
     </div>
     <div class="arpeggicho-experience">
       <h3>关键：使用自己的演奏声音</h3>
@@ -123,7 +123,7 @@
   </section>
 
   <section class="arpeggicho-chapter" id="making" aria-labelledby="making-title">
-    <h2 id="making-title">4. 制作中的考量</h2>
+    <h2 id="making-title">4. 设计与实现</h2>
     <p>作为在现实环境中处理声音的系统，使用场所与声音输入、输出条件也需要纳入设计。启动时，系统先测量约1秒的环境声音，再以其音量为基准，调整检测演奏声音的阈值。</p>
     <p>此外，扬声器播放录音与麦克风采集新演奏的音会在同一空间内同时发生。麦克风会收录两者，因此，如何区分回放声音与新吹出的音也是制作中的一个难点。</p>
     <p>系统会排除音高或音量不稳定的片段，从录音中选取稳定的150至300毫秒，并将衔接处处理平滑后循环播放。同时限制多个音叠加时的输出峰值，避免音量过大。</p>
@@ -131,10 +131,10 @@
 
   <section class="arpeggicho-chapter" id="next" aria-labelledby="next-title">
     <h2 id="next-title">5. 后续计划</h2>
-    <p>系统目前仍在开发中，尚未向公众发布。接下来希望提升声音识别质量，并改善UI/UX，让它在练习时更易使用。学习效果也尚未验证，今后将通过实际练习，确认它能否帮助演奏者通过听觉理解琶音与和弦的关系。</p>
+    <p>系统目前仍在开发中，尚未向公众发布。接下来，我希望改善声音识别，并让界面更便于练习时使用。其学习效果尚未经过评估；我计划通过实际练习，考察它能否帮助演奏者听出琶音与和弦之间的关系。</p>
   </section>
 
-  <nav class="back" aria-label="网站">
+  <nav class="back" aria-label="作品集导航">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回 Takafumi Horiuchi 的作品集首页</span></a></li>
     </ul>

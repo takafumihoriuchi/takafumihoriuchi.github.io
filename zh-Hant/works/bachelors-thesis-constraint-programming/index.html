@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>關於約束型程式設計的畢業論文 — Takafumi Horiuchi</title>
-<meta name="description" content="在模擬過程中，識別出永遠不會成立的條件並將其排除在搜索之外。在不改變結果的情況下減少計算量，使約束型程式設計的評估模型執行時間減半的研究。">
+<title>約束程式設計學士論文 — Takafumi Horiuchi</title>
+<meta name="description" content="一項約束程式設計研究：在模擬過程中移除經證明已永久不再相關的條件，使評估模型的執行時間約減半，且不改變模擬結果。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -30,14 +30,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="關於約束型程式設計的畢業論文">
-<meta property="og:description" content="安全地移除永遠不會成立的條件，加快模擬速度。">
+<meta property="og:title" content="約束程式設計學士論文">
+<meta property="og:description" content="安全地移除不可能再次成立的條件，加快模擬速度。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="模擬球沿著階梯跳下的情況。顯示了已經越過的限制從何處變得無關。">
+<meta property="og:image:alt" content="球沿階梯向下彈跳，示意與已越過階梯相關的約束如何不再影響後續模擬。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,9 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
-      "alternateName": "堀內貴文",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工程 × AI × 設計",
+      "description": "設計工程師",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -59,10 +59,10 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
       "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
-      "headline": "關於約束型程式設計的畢業論文",
+      "headline": "約束程式設計學士論文",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "在模擬過程中，識別出永遠不會成立的條件並將其排除在搜索之外。在不改變結果的情況下減少計算量，使約束型程式設計的評估模型執行時間減半的研究。",
+      "description": "一項約束程式設計研究：在模擬過程中移除經證明已永久不再相關的條件，使評估模型的執行時間約減半，且不改變模擬結果。",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "zh-Hant",
@@ -105,7 +105,7 @@
 <main>
 
   <header>
-    <h1>關於約束型程式設計的畢業論文</h1>
+    <h1>約束程式設計學士論文</h1>
     <p class="dateline">2019年6月</p>
   </header>
 
@@ -122,91 +122,91 @@ o-|\
 
   <section>
     <h2>概要</h2>
-    <p class="lead">模擬器會隨著可能發生的事件增加，而重複檢查更多的條件。那麼，如果可以從進度判斷「這個條件不會再成立」，是否可以安全地停止該檢查呢？我們設計並實現了一種方法，利用值變化的方向作為線索，將不再需要的條件從正在進行的探索中排除，針對混合系統的建模語言 HydLa 進行了實作。</p>
-    <p>在評價模型中，在不改變模擬結果的情況下，執行時間縮短到約傳統方法的一半。重要的不是將所有計算一律加快，而是利用問題的結構，減少了需要考慮的可能性本身。</p>
-    <p>在這項研究中學到的限制型程式設計的思維方式，正是目前<a href="../../">我的設計哲學</a>的基礎。這種態度不是逐一直接指定結果，而是定義規則、優先順序和界限，並從其範圍內導出成立的解答。</p>
+    <p class="lead">模擬中可能發生的事件越多，就越需要反覆檢查大量條件。但如果隨著模擬進行，能確定某個條件不可能再次成立，是否就能安全地略過它？我為混合系統建模語言 HydLa 設計並實作了一種方法，利用變數的變化方向，移除不再需要檢查的條件。</p>
+    <p>在評估模型中，這個方法使執行時間縮短至原始演算法的約一半，且不改變模擬結果。效能改善來自運用問題本身的結構，減少需要考慮的可能性。</p>
+    <p>透過這項研究建立的約束程式設計觀點，至今仍是我處理<a href="../../">作品集</a>中各項專案的基礎：不逐一指定結果，而是定義規則、優先順序與界限，再推導出符合條件的解。</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>課題——可能性越多，計算就越慢</h2>
-    <p>HydLa是一種用來將連續變化與離散事件相結合的「混合系統」作為數學和邏輯約束來描述的語言。即使不寫出所有程序的順序，也可以通過宣告應該成立的條件來模擬滿足條件的行為。</p>
-    <p>另一方面，在根據條件才會生效的規則較多的模型中，模擬器會反覆檢查大量候選項。因為已經不再適用、未來也不會成立的條件仍然留在候選中，所以隨著模型的增大，不必要的計算會不斷累積。</p>
+    <h2>問題：可能性越多，執行時間越長</h2>
+    <p>HydLa 以數學與邏輯約束描述混合系統，也就是結合連續變化與離散事件的系統。模型不必逐步指定執行程序，而是宣告必須成立的條件，再由模擬器找出符合條件的行為。</p>
+    <p>當模型包含許多條件式規則時，模擬器會反覆檢查大量候選條件。即使某些條件已不可能再次成立，仍會留在候選集合中。模型越大，這些不必要的檢查就帶來越多計算負擔。</p>
   </section>
 
   <section>
-    <h2>題材——連續與離散混合的系統</h2>
-    <p>彈跳的球是混合系統的容易理解的例子。在空中時，位置和速度持續變化，而在接觸地板的瞬間，會發生彈回這種離散的事件。恆溫器、汽車、機器人也不論規模大小，都內含相同的兩種變化。</p>
-    <p>評估時，使用了讓水平運動的球在被分成多個區塊的面上反彈的模型。每個區塊都有「球如果來到這個範圍就反彈」的條件規則。增加區塊數量雖然可以表達的對象更多，但模擬器需要檢查的條件也會增加。</p>
+    <h2>模型：結合連續與離散變化</h2>
+    <p>彈跳的球是混合系統的一個簡單例子。球在空中時，位置與速度持續變化；碰到地面則觸發離散的反彈事件。恆溫器、汽車與機器人，也在不同尺度上結合了這兩種變化。</p>
+    <p>評估使用的模型，是一顆水平移動的球，在分成多個區段的表面上彈跳。每個區段都有一項條件式規則，讓球到達該範圍時反彈。增加區段數量可讓模型表達更多物件，同時也增加模擬器必須檢查的條件。</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="定義了一個在水平面上移動的球，並且在相鄰N個面區塊的任一處反彈行為的HydLa源代碼。"></a>
-      <figcaption>簡短的HydLa模型描述了一個球體和被分割成<em>N</em>個帶護欄的區域的面。</figcaption>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="HydLa 原始碼，定義一顆水平移動的球，在由 N 個相鄰區段構成的表面上反彈。"></a>
+      <figcaption>簡短的 HydLa 模型描述一顆球，以及由 N 個區段組成的表面；每個區段各有一項帶有守衛條件的約束。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>瓶頸——條件的數量推高計算量</h2>
-    <p>只有在滿足條件時才會生效的規則稱為「帶守護的約束」。在評估模型中，只有當球到達地板且其水平位置位於特定區段內時，該區段的反彈規則才會生效。</p>
-    <p>將區畫數從10增加到200時，傳統的模擬器大約會隨著區畫數的平方而變慢。對於規模較大的模型，由於物體、接觸區域以及可能發生的事件增加，同樣的問題會變得更大。</p>
+    <h2>瓶頸：條件越多，執行時間越長</h2>
+    <p>只有在特定條件成立時才啟用的規則，稱為「帶有守衛條件的約束」（guarded constraint）。在評估模型中，只有當球到達地面，且水平位置落在某個區段內，該區段的反彈規則才會啟用。</p>
+    <p>區段數量從 10 增加到 200 時，原始模擬器的執行時間大致隨區段數量的平方成長。較大的模型包含更多物件、接觸區域與可能發生的事件，可能使這個問題更加嚴重。</p>
   </section>
 
   <section>
-    <h2>調查——處理時間的96%集中在哪裡</h2>
-    <p>測量處理時間時，在區塊數為100的模型中，整體有96%用於<code>FindMinTime</code>。這是從候選項中尋找「下一個發生的最早事件」的處理。因此，所有的守護條件都被反覆評估。</p>
-    <p>需要改進的地方已經明確。不需要重做整個計算方法，只要安全地減少傳遞給<code>FindMinTime</code>的候選項即可。目標是在不改變模擬結果的前提下，只排除不需要調查的可能性。</p>
+    <h2>調查：96% 的執行時間花在哪裡？</h2>
+    <p>對 100 個區段的模型進行效能分析後發現，<code>FindMinTime</code> 占了總執行時間的 96%。這個程序反覆評估所有候選守衛條件，找出下一個最早可能發生的事件。</p>
+    <p>這項結果指出了明確的改善方向：安全地減少傳給 <code>FindMinTime</code> 的候選條件。目標是在維持模擬結果不變的前提下，只略過已不需要評估的可能性。</p>
   </section>
 
   <section>
-    <h2>方法——安全地解除永遠無法成立的條件</h2>
-    <p>請想像一個沿著階梯彈跳下去的球。如果球越過某一階，並且繼續向前，那麼那一階就無法再影響球。看到圖的人會立即忽略球後面的階。原本的演算法則是一直檢查每一個階。</p>
+    <h2>方法：移除不可能再次成立的條件</h2>
+    <p>想像一顆球沿階梯向下彈跳。一旦越過某一階並繼續向前，那一階就不會再影響球。看圖的人會立刻忽略球後方的階梯，原始演算法卻仍逐一檢查。</p>
 
     <figure class="paper-figure line-art keeps-colour">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="紅色的軌跡顯示著球在黑色階梯的階段上彈跳下落。網狀區域表示已經過去、不再相關的階段。"></a>
-      <figcaption>隨著球向右移動，後方有網格的階層護欄可以省略。</figcaption>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="紅色軌跡表示球沿黑色階梯向下彈跳。斜線標示的階梯已被越過，不會再影響球。"></a>
+      <figcaption>隨著球向右移動，便能略過後方陰影階梯所對應的守衛條件。</figcaption>
     </figure>
 
-    <p>困難之處在於，證明已被移除的防護之後不會再變得必要的一方。如果只是因為現在是假的就將其移除，那麼當它再次變成真的時候，可能會默默地返回錯誤的結果。因此，提出的方法使用單調性——也就是判斷某個變數在某一時間區間內是否可以保證持續增加或持續減少。</p>
+    <p>困難之處是證明被移除的守衛條件之後不會再用到。若只因為條件目前不成立就移除它，一旦日後再次成立，模擬就可能在沒有警告的情況下產生錯誤結果。因此，提出的方法利用單調性，也就是判斷變數在某段時間內是否能保證持續增加或持續減少。</p>
 
-    <h3>變化的方向沒有改變的情況</h3>
-    <p>第一種對應方法適用於變數在整個模擬過程中單向變動的情況。在將平面分割的模型中，球的水平位置總是增加。一旦越過某個區段，就不會再滿足該區段的條件。由於這種特性可以通過模型檢測技術在模擬之前確認，因此可以在執行過程中安全地移除不再需要的守護條件。</p>
+    <h3>變化方向保持不變時</h3>
+    <p>第一種方法適用於變數在整個模擬期間都朝同一方向變化的情況。在表面分段模型中，球的水平位置始終增加。一旦越過某個區段，該區段的守衛條件就不可能再次成立。模型檢查技術可以在模擬前驗證這項性質，因此執行時能安全地移除已不再相關的守衛條件。</p>
 
     <figure class="paper-figure line-art keeps-colour figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="從時刻0的α上升到最大時刻的β的紅線，表示在整個模擬過程中持續增加的變數。">
-      <figcaption>一致的單調性是指變化的方向在整個被模擬的區間內保持不變。</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="紅線從時間 0 的 α 上升至模擬結束時的 β，代表在整個模擬區間內持續增加的變數。">
+      <figcaption>一致單調性表示變化方向在整個模擬區間內保持不變。</figcaption>
     </figure>
 
-    <h3>變化的方向在途中改變的情況</h3>
-    <p>現實中的許多系統並不是永遠朝單一方向運行的。變數可能會增加、改變方向，然後減少。因此論文提出了第二種對應方法。首先假設方向，利用斷言來監控這個假設，當方向改變時，從那個時間點重新進行減少的處理。為一個單調區間移除的保護措施，會在下一個區間開始時恢復。</p>
+    <h3>變化方向反轉時</h3>
+    <p>許多系統不會永遠朝單一方向變化：變數可能先增加，再反轉方向而減少。因此，論文提出第二種方法：先假設變化方向，再以斷言監測這個假設。方向改變時，重新啟動約束縮減程序，並恢復上一個單調區間中移除的守衛條件。這個方法在本專案中僅完成設計，尚未實作或評估。</p>
 
     <figure class="paper-figure line-art keeps-colour figure-5">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五個圖顯示了假設增加的區間、斷言失敗、新的減少區間、第二次失敗以及單調區間依次確定的情況。">
-      <figcaption>斷言失敗將變化的行為，分割成可以各自作為單調處理的區間。</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五張圖依序呈現最初假設的遞增區間、斷言失敗、新的遞減區間、第二次斷言失敗，以及逐步辨識單調區間的過程。">
+      <figcaption>斷言失敗將變數的行為分成數個區間，每個區間都可視為單調。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>結果——評估模型的執行時間約減半</h2>
-    <p>實現了對均一單調性的應對，並在分割面模型上進行了評估。無論是原始演算法還是提案方法，區域數量增加時所需時間都會增加。然而，提案方法的工作量始終較少。比較擬合的曲線後發現，最高次項的係數從1.1463下降到0.6083，在這個基準測試中，整體模擬所需時間大約減半。</p>
-    <p>這並不是說所有的 HydLa 模型都會變成兩倍快。所示的是，這種方法有效的地方——擁有許多守護條件的對象，可以證明變化方向，且在執行中守護條件逐漸變得無關的模型。</p>
+    <h2>結果：評估模型的執行時間約減半</h2>
+    <p>我實作了一致單調性的方法，並以表面分段模型評估。兩種演算法的執行時間都隨區段數量增加，但所提方法始終較快。擬合曲線的最高次項係數由 1.1463 降至 0.6083；在這項基準測試中，整體模擬時間約減半。</p>
+    <p>這項結果僅適用於本次基準測試。當模型包含大量帶有守衛條件的物件、能證明變化方向，而且執行過程中有守衛條件永久不再相關時，這個方法才有用。這不代表所有 HydLa 模型都能以兩倍速度執行。</p>
 
     <figure class="paper-figure line-art result-figure">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="針對N的模擬時間圖。從面區劃數10到200的全範圍，提議的方法均低於原始方法，當N=200時，大約從470秒縮短至約250秒。"></a>
-      <figcaption>在評估的模型中，所提方法（方形）比原始算法（圓形）大約用了一半的時間。</figcaption>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="模擬時間與表面區段數量 N 的關係圖。N 從 10 到 200 時，所提方法始終較快。N = 200 時，所提方法約需 250 秒，原始演算法則約需 470 秒。"></a>
+      <figcaption>在評估模型中，所提方法（方形）的執行時間約為原始演算法（圓形）的一半。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>從這項研究中獲得的視角</h2>
-    <p>在這項研究中所做的不是讓個別的計算一點一點變快。而是利用對系統行為的了解，縮小應該考慮的可能性集合。縮小搜索空間而不改變結果的這種想法，是約束型程式設計的強項。</p>
-    <p>實現與評估的是，變數持續朝一個方向變動的情況。若變化的方向在途中改變，則僅停留在設計階段，評估則留作今後的課題。還有利用單調性以外的性質，進一步發現不必要的限制的空間。</p>
-    <p>現在的我，並不是直接設計 AI 的輸出，而是試圖設計 AI 可以探索的條件和邊界，這也是連結到這個經驗的原因。處理複雜結果時，定義什麼不需要考慮，和計算什麼一樣重要。</p>
+    <h2>研究心得</h2>
+    <p>這項研究運用系統行為的已知性質，縮小模擬器需要考慮的可能性集合。在維持結果不變的前提下縮小搜尋空間，是約束程式設計的優勢。</p>
+    <p>本次實作與評估涵蓋變數持續朝單一方向變化的情況。處理方向反轉的方法仍停留在設計階段，尚待評估。除了單調性，其他性質也可能有助於辨識不必要的約束。</p>
+    <p>這段經驗影響了我目前的設計方向：定義 AI 可以搜尋解答的條件與界限。面對複雜結果時，界定哪些因素可以安全地略過，與決定要計算什麼同樣重要。</p>
   </section>
 
   <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
-  <nav aria-label="網站">
+  <nav aria-label="作品集導覽">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀內貴文的作品集首頁</span></a></li>
     </ul>

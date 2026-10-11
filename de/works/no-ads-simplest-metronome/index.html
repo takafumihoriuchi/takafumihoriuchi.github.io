@@ -6,7 +6,7 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Ein Metronom mit Puls — Takafumi Horiuchi</title>
-<meta name="description" content="Ein iPhone-Metronom, dessen Kreis im selben Moment und mit derselben Stärke wie jeder Klick pulsiert. Konzept, Gestaltung und Umsetzung stammen von mir: ein Werkzeug auf einem Bildschirm, ohne Werbung oder Einstellungsseite.">
+<meta name="description" content="Ein iPhone-Metronom, dessen Kreis im Takt jedes Klicks pulsiert und dessen Stärke widerspiegelt. Ich habe es selbst als Werkzeug mit einer einzigen Bildschirmansicht ohne Werbung oder Einstellungsseite konzipiert, gestaltet und entwickelt.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/de/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
@@ -31,13 +31,13 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="de_DE">
 <meta property="og:title" content="Ein Metronom mit Puls">
-<meta property="og:description" content="Ein Kreis pulsiert im selben Moment und mit derselben Stärke wie jeder Klick. Ein iPhone-Metronom ohne Werbung oder Einstellungsseite.">
+<meta property="og:description" content="Ein Kreis pulsiert im Takt jedes Klicks und spiegelt dessen Stärke wider. Ein iPhone-Metronom ohne Werbung oder Einstellungsseite.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/de/works/no-ads-simplest-metronome/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Die Anzeige des Metronoms: ein weißer Kreis auf schwarzem Grund, vier Schlagpunkte darüber und die Tempoanzeige 120 BPM darunter.">
+<meta property="og:image:alt" content="Metronomansicht: ein weißer Kreis in der Mitte eines schwarzen Hintergrunds, darüber vier Taktpunkte und darunter ein Tempo von 120 BPM.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Cognitive Engineering × KI × Design",
+      "description": "Designingenieur",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -60,7 +61,7 @@
       "name": "Ein Metronom mit Puls",
       "alternateName": "No Ads Simplest Metronome",
       "url": "https://takafumihoriuchi.github.io/de/works/no-ads-simplest-metronome/",
-      "description": "Ein iPhone-Metronom, dessen Kreis im selben Moment und mit derselben Stärke wie jeder Klick pulsiert. Konzept, Gestaltung und Umsetzung stammen von mir: ein Werkzeug auf einem Bildschirm, ohne Werbung oder Einstellungsseite.",
+      "description": "Ein iPhone-Metronom, dessen Kreis im Takt jedes Klicks pulsiert und dessen Stärke widerspiegelt. Ich habe es selbst als Werkzeug mit einer einzigen Bildschirmansicht ohne Werbung oder Einstellungsseite konzipiert, gestaltet und entwickelt.",
       "image": "https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg",
       "datePublished": "2026-09",
       "inLanguage": "de",
@@ -112,7 +113,7 @@
 
   <section>
     <h2>Überblick</h2>
-    <p class="lead">Der Kreis in der Bildschirmmitte pulsiert im selben Moment und mit derselben Stärke wie jeder Klick. Ich habe ein Metronom für das iPhone entwickelt – ohne Werbung, Konten oder Einstellungsseite.</p>
+    <p class="lead">Der Kreis in der Bildschirmmitte pulsiert im Takt jedes Klicks und spiegelt dessen Stärke wider. Ich habe ein iPhone-Metronom ohne Werbung, Benutzerkonten oder Einstellungsseite entwickelt.</p>
 
     <!-- A running copy of the screen, not a picture of it: see page.css. The
          checkbox is the circle's start/stop, as in the app, and works without
@@ -120,132 +121,133 @@
     <figure class="device">
       <input class="device__toggle" type="checkbox" id="device-stop" autocomplete="off" aria-label="Pulsieren anhalten">
       <div class="device__screen">
-        <img src="../../../works/no-ads-simplest-metronome/assets/screen-playing.webp" width="880" height="1912" alt="Die Anzeige des Metronoms. Ein weißer Kreis in der Mitte eines schwarzen Bildschirms, vier Schlagpunkte darüber und 120 BPM sowie −/+ darunter. Der Kreis wird mit jedem Schlag größer und kehrt wieder zurück.">
+        <img src="../../../works/no-ads-simplest-metronome/assets/screen-playing.webp" width="880" height="1912" alt="Metronomansicht. In der Mitte des schwarzen Hintergrunds liegt ein weißer Kreis, darüber vier Taktpunkte und darunter 120 BPM sowie die Tasten −/+. Mit jedem Schlag dehnt sich der Kreis aus und kehrt zu seiner Ruhegröße zurück.">
         <span class="device__circle" aria-hidden="true"></span>
         <span class="device__dots" aria-hidden="true"><span></span><span></span><span></span><span></span></span>
         <span class="device__stopped" aria-hidden="true"></span>
         <label class="device__button" for="device-stop"></label>
       </div>
-      <figcaption>Diese Anzeige läuft innerhalb der Seite mit denselben Gleichungen wie die App (120&nbsp;BPM, vier Schläge pro Takt). Antippen des Kreises hält sie an.</figcaption>
+      <figcaption>Diese interaktive Ansicht verwendet dieselben Gleichungen wie die App und läuft mit 120 BPM und vier Schlägen pro Takt. Durch Antippen des Kreises lässt sie sich anhalten.</figcaption>
       <p class="device__sound" hidden><button class="sound-toggle" type="button"><span class="sound-toggle__box"><span class="sound-toggle__on">Ton einschalten</span><span class="sound-toggle__off">Ton ausschalten</span></span></button></p>
     </figure>
 
-    <p>Ich habe es für mein eigenes Üben auf dem Tenorsaxofon gebaut. Öffnen und sofort loslegen; auch wenn der Ton schlecht zu hören ist, bleibt der Schlag sichtbar. Vom Konzept über die Gestaltung bis zur Umsetzung in SwiftUI und zur Synthese der Klicks habe ich alles selbst gemacht.</p>
+    <p>Ich habe die App für mein eigenes Üben auf dem Tenorsaxofon entwickelt. Man öffnet sie und kann sofort beginnen; der Puls bleibt sichtbar, selbst wenn die Klicks schwer zu hören sind. Planung, Gestaltung, Implementierung in SwiftUI und Klangsynthese habe ich selbst übernommen.</p>
   </section>
 
   <section>
-    <h2>Bedienung — berühren, was sich ändern soll</h2>
-    <p>Auf dem Bildschirm stehen nur Schlagpunkte, ein Kreis und die Tempozahl. Keine Menüs, keine Anleitungstexte: Man berührt direkt das, was man ändern möchte.</p>
+    <h2>Bedienung: Berühren, was sich ändern soll</h2>
+    <p>Die Bedienelemente sind Taktpunkte, ein Kreis und ein Tempowert. Es gibt weder Menüs noch schriftliche Anweisungen: Man berührt, was man ändern möchte.</p>
 
     <figure class="touch-map">
-      <img class="touch-map__screen" src="../../../works/no-ads-simplest-metronome/assets/screen-stopped.webp" width="880" height="1912" loading="lazy" decoding="async" alt="Die angehaltene Anzeige. Ein hellgrauer Kreis mit einem Wiedergabedreieck, vier Punkte darüber, 120 BPM und −/+ darunter sowie ein kleines ⓘ oben links.">
+      <img class="touch-map__screen" src="../../../works/no-ads-simplest-metronome/assets/screen-stopped.webp" width="880" height="1912" loading="lazy" decoding="async" alt="Die angehaltene App. Ein hellgrauer Kreis mit einem Wiedergabedreieck in der Mitte, darüber vier Taktpunkte, darunter 120 BPM und die Tasten −/+ sowie ein kleines Informationssymbol oben links.">
       <dl class="touch-map__notes">
         <div class="touch-map__note touch-map__note--info">
           <dt>ⓘ</dt>
-          <dd>Öffnet die Hilfeseite.</dd>
+          <dd>Die Supportseite öffnen.</dd>
         </div>
         <div class="touch-map__note touch-map__note--dots">
-          <dt>Punkte</dt>
-          <dd>Antippen fügt einen Schlag hinzu (1–7). Durch Streichen lassen sich Schläge hinzufügen oder entfernen.</dd>
+          <dt>Taktpunkte</dt>
+          <dd>Antippen fügt einen Schlag hinzu, von einem bis zu sieben Schlägen pro Takt. Durch Wischen lassen sich Schläge hinzufügen oder entfernen.</dd>
         </div>
         <div class="touch-map__note touch-map__note--circle">
           <dt>Kreis</dt>
-          <dd>Antippen startet oder stoppt. Gedrückt halten, dann im Takt eines Liedes tippen, um das Tempo festzulegen.</dd>
+          <dd>Antippen startet oder stoppt das Metronom. Gedrückt halten und anschließend zu einem Lied mittippen, um das Tempo festzulegen.</dd>
         </div>
         <div class="touch-map__note touch-map__note--tempo">
-          <dt>Zahlen</dt>
-          <dd>Ziehen macht schneller oder langsamer. Langsame Bewegungen ermöglichen feine Anpassungen. −/+ ändert den Wert um eins.</dd>
+          <dt>Tempo</dt>
+          <dd>Ziehen erhöht oder verringert das Tempo. Langsame Bewegungen ermöglichen feinere Anpassungen. Antippen von − oder + ändert es um 1 BPM.</dd>
         </div>
       </dl>
-      <figcaption>Die angehaltene Anzeige. Die einzigen Schriftzeichen auf dem Bildschirm sind Zahlen und „BPM“.</figcaption>
+      <figcaption>Die angehaltene App. Ihr Text beschränkt sich auf Zahlen und „BPM“.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Puls — derselbe Moment, dieselbe Stärke</h2>
-    <p>Der Kreis wächst, wenn der Ton das Ohr erreicht, nicht wenn er ausgegeben wird. Die etwa 0.1–0.3 Sekunden Verzögerung von Bluetooth-Kopfhörern gleicht die App anhand der von iOS gemeldeten Ausgabelatenz aus. Die Ausdehnung ist proportional zur Klicklautstärke: Zum höheren, lauteren ersten Schlag wächst der Kreis deutlich stärker.</p>
+    <h2>Pulsieren: Zeitpunkt und Stärke jedes Klicks sichtbar machen</h2>
+    <p>Das Pulsieren des Kreises wird anhand der von iOS gemeldeten Ausgabelatenz auf den Klick abgestimmt. Bluetooth-Kopfhörer können eine Verzögerung von etwa 0,1–0,3 Sekunden verursachen. Die Ausdehnung ist proportional zur Lautstärke des Klicks: Der erste Schlag hat einen höheren, lauteren Klick und einen deutlich größeren Puls.</p>
 
     <figure class="diagram">
       <picture>
         <source media="(max-width: 36rem)" srcset="../../../works/no-ads-simplest-metronome/assets/pulse-narrow.svg" width="420" height="188">
-        <img src="../../../works/no-ads-simplest-metronome/assets/pulse.svg" width="720" height="231" loading="lazy" decoding="async" alt="Klicks und Kreisgröße über einen Takt mit vier Schlägen. Die Größenkurve steigt bei jedem Klick sofort an: auf das 1.25-Fache beim ersten Schlag und das 1.15-Fache bei den Schlägen 2–4. Danach sinkt sie kurz unter 1 und kehrt zurück.">
+        <img src="../../../works/no-ads-simplest-metronome/assets/pulse.svg" width="720" height="231" loading="lazy" decoding="async" alt="Diagramm der Klicks und der Kreisgröße über einen Takt mit vier Schlägen. Der Kreis dehnt sich mit jedem Klick aus: beim ersten Schlag auf das 1,25-Fache seiner Ruhegröße, bei den Schlägen 2–4 auf das 1,15-Fache. Anschließend wird er kurz kleiner als seine Ruhegröße, bevor er sich stabilisiert.">
       </picture>
-      <figcaption>Klicks (Flächen) und Kreisgröße (Linie) über einen Takt bei 120&nbsp;BPM mit vier Schlägen. Der Kreis erreicht 0.02 Sekunden nach dem Ton seine größte Ausdehnung, zieht sich wie Wackelpudding etwas zu weit zusammen und kommt zur Ruhe.</figcaption>
+      <figcaption>Klicks (gefüllte Flächen) und Kreisgröße (Linie) über einen Takt bei 120 BPM mit vier Schlägen. Der Kreis erreicht seine maximale Größe 0,02 Sekunden nach Beginn des Klicks, zieht sich anschließend kurz unter seine Ruhegröße zusammen und kommt wie Wackelpudding zur Ruhe.</figcaption>
     </figure>
 
-    <p>Der Audio-Thread legt die Schlagzeitpunkte auf Sample-Ebene fest. Die Berechnung vermeidet sich aufsummierende Fehler: Auch nach einer Stunde ununterbrochener Wiedergabe bleibt die Abweichung innerhalb von 0.5 Samples.</p>
+    <p>Der Audio-Thread plant jeden Schlag mit samplegenauer Präzision. Die Zeitberechnung vermeidet kumulative Fehler und hält die Abweichung selbst nach einer Stunde kontinuierlicher Wiedergabe innerhalb von 0,5 Samples.</p>
+    <p class="note">Der Geltungsbereich und die Berechnungsbedingungen der Angabe von 0,5 Samples müssen noch bestätigt werden. Sie ist weder als Maß dafür zu verstehen, wann der Schall die hörende Person erreicht, noch als Maß für die Synchronisation mit der Anzeige.</p>
   </section>
 
   <section>
-    <h2>Tap-Tempo — Stille beim Eintippen</h2>
-    <p>Hält man den Kreis gedrückt, beginnt er wie Wackelpudding zu zittern. Tippt man zum Lied oder zum Tempo im Kopf, gibt er an der berührten Stelle nach, wackelt und springt zurück. Vibration macht das Tempo spürbar.</p>
+    <h2>Tap-Tempo: Ruhe während des Tippens</h2>
+    <p>Hält man den Kreis gedrückt, beginnt er wie Wackelpudding zu schwingen. Man tippt zu einem Lied oder zum Tempo im Kopf mit: Der Kreis wird an der Berührungsstelle eingedrückt, schwingt und federt zurück. Haptisches Feedback macht das Tempo fühlbar.</p>
 
     <figure class="diagram">
       <picture>
         <source media="(max-width: 36rem)" srcset="../../../works/no-ads-simplest-metronome/assets/jelly-narrow.svg" width="420" height="334">
-        <img src="../../../works/no-ads-simplest-metronome/assets/jelly.svg" width="720" height="146" loading="lazy" decoding="async" alt="Sechs Bilder der Kontur nach einem Tipp auf den oberen Rand. Bei 0.03 Sekunden entsteht eine Delle, bei 0.08 beginnt die Rückkehr, bei 0.17 und 0.3 verformt sich der Kreis leicht senkrecht und waagerecht. Bei 1.3 Sekunden ist er wieder rund.">
+        <img src="../../../works/no-ads-simplest-metronome/assets/jelly.svg" width="720" height="146" loading="lazy" decoding="async" alt="Sechs Bilder der Kreiskontur nach einmaligem Antippen am oberen Rand. Bei 0,03 Sekunden wird die Oberseite eingedrückt, bei 0,08 Sekunden beginnt sie zurückzufedern, bei 0,17 und 0,3 Sekunden verformt sich der Kreis leicht vertikal und horizontal, und bei 1,3 Sekunden ist er wieder rund.">
       </picture>
-      <figcaption>Die Kontur nach einem Tipp auf den oberen Rand, mit denselben Gleichungen wie in der App gezeichnet. Die gepunktete Linie zeigt einen perfekten Kreis.</figcaption>
+      <figcaption>Die Kontur des Kreises nach einmaligem Antippen am oberen Rand, gezeichnet mit denselben Gleichungen wie in der App. Die gepunktete Kontur ist ein idealer Kreis.</figcaption>
     </figure>
 
     <figure class="tuning">
-      <a href="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp"><img class="tuning__screen" src="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp" width="880" height="1912" loading="lazy" decoding="async" alt="Eine Entwicklungsversion der App. Der Kreis ist im Tap-Tempo-Modus grau. Darunter zeigt ein japanisches Bedienfeld zur „Gelee-Abstimmung“ Regler mit Erklärungen, darunter „Elastizität (Schwingungsgeschwindigkeit): 3.6 Schwingungen/Sekunde“ und „Zähigkeit (Abklingen): 0.10“."></a>
-      <figcaption>Ich habe das Wackeln mit einem Bedienfeld abgestimmt, das nur in der Entwicklungsversion vorhanden ist. Zehn Werte, darunter Elastizität und Zähigkeit, veränderte ich per Regler und prüfte sie durch Antippen des Kreises. Nach Vergleichen mit „Pudding“, „Warabi-Mochi“ und „flüssiger“ wählte ich „Gelee“ als Standard: ein lebhaftes Zurückfedern, das nach etwa 0.9 Sekunden abklingt.</figcaption>
+      <a href="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp"><img class="tuning__screen" src="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp" width="880" height="1912" loading="lazy" decoding="async" alt="Eine Entwicklungsversion der App. Im Tap-Tempo-Modus ist der Kreis grau. Darunter befindet sich ein japanischsprachiges Bedienfeld zur Abstimmung des Nachschwingens mit Schiebereglern und Erklärungen, darunter „Elastizität (Schwingungsgeschwindigkeit): 3,6 Schwingungen pro Sekunde“ und „Viskosität (Abklingen der Schwingungen): 0,10“."></a>
+      <figcaption>Das Nachschwingen habe ich über ein Bedienfeld abgestimmt, das nur in der Entwicklungsversion verfügbar ist. Mit Schiebereglern passte ich zehn Parameter an, darunter Elastizität und Viskosität, und tippte dabei auf den Kreis, um die Wirkung zu spüren. Ich verglich Voreinstellungen namens „Pudding“, „Warabi-Mochi“ und „flüssiger“ und wählte schließlich „Wackelpudding“ als Standard: ein lebhaftes Federn, das nach etwa 0,9 Sekunden abklingt.</figcaption>
     </figure>
 
-    <p>Während des Tippens bleibt die App bewusst stumm. Ein unmittelbarer Antwortton käme über Bluetooth verspätet an und würde sich mit den Metronomklicks überlagern. Sobald man aufhört zu tippen, beginnen die Klicks im erfassten Tempo fast unhörbar und erreichen innerhalb von sechs Sekunden ihre normale Lautstärke.</p>
+    <p>Während des Tippens bleibt die App bewusst stumm. Ein Ton als Reaktion auf jedes Tippen wäre über Bluetooth hörbar verzögert und würde sich mit den Metronomklicks überlagern. Sobald man aufhört zu tippen, setzen die Klicks im gewählten Tempo fast unhörbar ein und werden über sechs Sekunden bis zur üblichen Lautstärke eingeblendet.</p>
 
     <figure class="diagram">
       <picture>
         <source media="(max-width: 36rem)" srcset="../../../works/no-ads-simplest-metronome/assets/handover-narrow.svg" width="420" height="194">
-        <img src="../../../works/no-ads-simplest-metronome/assets/handover.svg" width="720" height="217" loading="lazy" decoding="async" alt="Nach fünf Tipps werden die Vibrationspunkte allmählich kleiner, während die Klickbalken innerhalb von sechs Sekunden von einem fast unhörbaren Pegel aus wachsen.">
+        <img src="../../../works/no-ads-simplest-metronome/assets/handover.svg" width="720" height="217" loading="lazy" decoding="async" alt="Nach fünf Tippereignissen werden die Vibrationspunkte allmählich kleiner, während die Klickbalken über sechs Sekunden von einem fast unhörbaren Pegel aus anwachsen.">
       </picture>
-      <figcaption>Fünf Tipps bei 120&nbsp;BPM, dann eine Pause. Von unten nach oben: Tipps, Vibration (kleiner heißt schwächer), Klicks (höher heißt lauter). Die Lautstärke steigt gleichmäßig in Dezibel, damit aus einem leisen Ton kein plötzlicher Lautstärkesprung wird.</figcaption>
+      <figcaption>Fünfmaliges Tippen bei 120 BPM, gefolgt von einer Pause. Von unten nach oben: Tippereignisse, Vibration (kleinere Markierungen bedeuten schwächere Vibration) und Klicks (höhere Markierungen bedeuten lautere Klicks). Der Pegel steigt in Dezibel gleichmäßig an, sodass kein abrupter Sprung von einem leisen Ton entsteht.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Klang — nach Gehör eine Tonhöhe wählen, die neben dem Saxofon hörbar bleibt</h2>
-    <p>Die Klicks werden aus Sinuswellen synthetisiert, ohne Audiodateien. Ich erstellte eine Vergleichsseite und führte beim Tenorsaxofonspielen drei Hörvergleiche über den iPhone-Lautsprecher durch. Ich entschied mich für 1875&nbsp;Hz und 1250&nbsp;Hz, das 1.25-Fache der ursprünglichen Frequenzen: oberhalb des stärksten Saxofonbereichs und unterhalb des leicht schrill klingenden Bereichs.</p>
+    <h2>Klang: Eine Tonhöhe wählen, die sich gegen das Saxofon durchsetzt</h2>
+    <p>Die Klicks werden aus Sinuswellen synthetisiert, ohne aufgezeichnete Audiodateien. Ich erstellte eine Vergleichsseite und verglich die Klänge dreimal über den iPhone-Lautsprecher, während ich Tenorsaxofon spielte. Ich wählte 1875 Hz und 1250 Hz, das 1,25-Fache der ursprünglichen Frequenzen. Sie liegen oberhalb des Bereichs, in dem die Energie des Saxofons am stärksten ist, und unterhalb des Bereichs, der häufig schrill klingt.</p>
 
     <figure class="diagram">
       <picture>
         <source media="(max-width: 36rem)" srcset="../../../works/no-ads-simplest-metronome/assets/spectrum-narrow.svg" width="420" height="215">
-        <img src="../../../works/no-ads-simplest-metronome/assets/spectrum.svg" width="720" height="245" loading="lazy" decoding="async" alt="Eine Frequenzachse von 100 Hz bis 10 kHz. Der Tenorsaxofonbereich liegt am unteren Ende; der schrille Bereich bei 2.5–4 kHz. Die Klicks bei 1250 Hz und 1875 Hz liegen dazwischen. Die ursprünglichen 1000 Hz und 1500 Hz sind gepunktet eingezeichnet.">
+        <img src="../../../works/no-ads-simplest-metronome/assets/spectrum.svg" width="720" height="245" loading="lazy" decoding="async" alt="Frequenzachse von 100 Hz bis 10 kHz. Die Energie des Tenorsaxofons konzentriert sich im unteren Bereich; häufig schrill klingt der Bereich von 2,5–4 kHz. Klicks bei 1250 Hz und 1875 Hz liegen zwischen beiden Bändern. Die ursprünglichen 1000 Hz und 1500 Hz sind als gepunktete Linien dargestellt.">
       </picture>
-      <figcaption>Das schattierte Band zeigt die Energiekonzentration des Tenorsaxofons (nach rechts schwächer), die Schraffur den schrillen Bereich von 2.5–4&nbsp;kHz. Gepunktet sind die ursprünglichen Klänge (1000/1500&nbsp;Hz), durchgezogen die gewählten. Die Linienhöhe steht für die Lautstärke.</figcaption>
+      <figcaption>Das schattierte Band zeigt, wo sich die Energie des Tenorsaxofons konzentriert; sie nimmt nach rechts ab. Das schraffierte Band markiert den Bereich von 2,5–4 kHz, der häufig schrill klingt. Gepunktete Linien zeigen die ursprünglichen Frequenzen (1000 und 1500 Hz), durchgezogene Linien die gewählten Frequenzen. Die Linienhöhe stellt die Lautstärke dar.</figcaption>
     </figure>
 
-    <p>Höhere, längere Klänge und Varianten mit zusätzlichen Obertönen waren besser hörbar. Trotzdem blieb ich in dem Bereich, der einen weichen, neutralen elektronischen Klang bewahrte.</p>
+    <p>Höhere, längere Klänge sowie Varianten mit zusätzlichen Obertönen waren leichter zu hören. Dennoch entschied ich mich für Klänge, die einen weichen, neutralen elektronischen Charakter bewahrten.</p>
   </section>
 
   <section>
-    <h2>Weglassen — was nicht hineinkam</h2>
-    <p>Nichts, was bei der Auswahl zögern lässt. Ich prüfte für jedes Element, ob die App ohne es auskommt, und ließ es weg.</p>
+    <h2>Einfach halten: Was ich weggelassen habe</h2>
+    <p>Ich ließ Optionen weg, die Menschen bei der Bedienung zögern lassen könnten. Bei jeder Funktion prüfte ich vor dem Entfernen, ob die App auch ohne sie funktionieren würde.</p>
 
     <dl class="omitted">
-      <dt>Werbung, Tracking und Konten</dt>
-      <dd>Von Anfang an entschieden. Die App baut von sich aus keine Netzwerkverbindungen auf.</dd>
+      <dt>Werbung, Tracking und Benutzerkonten</dt>
+      <dd>Diese schloss ich von Anfang an aus. Die App initiiert keine Netzwerkanfragen.</dd>
       <dt>Einstellungsseite</dt>
-      <dd>Alles geschieht auf einem Bildschirm.</dd>
-      <dt>Klangauswahl</dt>
-      <dd>Zwei Klänge für betonte und unbetonte Schläge reichen. Auswahlmöglichkeiten führen zu Unentschlossenheit.</dd>
+      <dd>Alles geschieht auf einer einzigen Bildschirmansicht.</dd>
+      <dt>Klangwahl</dt>
+      <dd>Zwei Klänge reichen aus: einer für betonte und einer für unbetonte Schläge. Mehr Optionen erschweren die Entscheidung.</dd>
       <dt>Lautstärkeregler</dt>
-      <dd>Die Lautstärketasten des Geräts reichen.</dd>
+      <dd>Die Lautstärketasten des Geräts reichen aus.</dd>
       <dt>Heller Modus</dt>
-      <dd>Nur eine schwarze Anzeige.</dd>
-      <dt>Acht oder mehr Schläge</dt>
-      <dd>12/8 zählt man in vier Schlägen, 9/8 in drei.</dd>
+      <dd>Eine einzige Bildschirmansicht mit schwarzem Hintergrund.</dd>
+      <dt>Acht oder mehr Schläge pro Takt</dt>
+      <dd>12/8 lässt sich in vier und 9/8 in drei Schlägen zählen.</dd>
       <dt>Unterteilungen (Achtel, Triolen, Sechzehntel)</dt>
-      <dd>Nicht unverzichtbar. Sie bleiben der erste Kandidat für eine spätere Ergänzung.</dd>
-      <dt>Numerische Tempoeingabe</dt>
-      <dd>−/+ und Ziehen reichen.</dd>
+      <dd>Sie sind für die Kernfunktion der App nicht unerlässlich, wären aber die erste Erweiterung, die ich in Betracht ziehen würde.</dd>
+      <dt>Tempo per Tastatur eingeben</dt>
+      <dd>Die Tasten −/+ und das Ziehen reichen aus.</dd>
     </dl>
   </section>
 
-  <p class="colophon">In SwiftUI umgesetzt, ohne externe Bibliotheken. Läuft auf dem iPhone ab iOS&nbsp;17. Der englische Name lautet No Ads Simplest Metronome. Die Veröffentlichung im App Store ist in Vorbereitung (September 2026). Die vollständige Anleitung und die Datenschutzerklärung stehen auf der <a class="ext" href="https://simplest-metronome.pages.dev/en/" hreflang="en">Hilfeseite (auf Englisch)</a>.</p>
+  <p class="colophon">Die App wurde in SwiftUI ohne externe Bibliotheken entwickelt und läuft auf iPhones ab iOS 17. Ihr englischer Name lautet No Ads Simplest Metronome. Im September 2026 bereitete ich ihre Veröffentlichung im App Store vor. Eine vollständige Anleitung und die Datenschutzerklärung stehen auf der <a class="ext" href="https://simplest-metronome.pages.dev/en/" hreflang="en">englischsprachigen Supportseite</a>.</p>
 
-  <nav aria-label="Website">
+  <nav aria-label="Portfolio-Navigation">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Zurück zum Portfolio von Takafumi Horiuchi</span></a></li>
     </ul>
@@ -277,8 +279,8 @@
      document rather than being built by works/figures.js so that the two
      strings it needs are written in this page's language, like the rest of
      the page. -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößerte Abbildung" hidden>
-  <button class="lightbox__close" type="button" aria-label="Vergrößerte Ansicht schließen"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Vergrößertes Bild" hidden>
+  <button class="lightbox__close" type="button" aria-label="Vergrößertes Bild schließen"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

@@ -6,7 +6,7 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Анализ движения фортепианной механики — Такафуми Хориучи</title>
-<meta name="description" content="Механика рояля, восстановленная как 3D-модель в SolidWorks. Проект магистратуры, в котором передача от нажатия клавиши к скорости молоточка и силе реакции на струне сопоставлена в теоретическом расчёте и в анализе движения.">
+<meta name="description" content="Магистерский проект: воссоздание механики рояля в виде 3D-модели SolidWorks и сопоставление того, как воздействие на клавишу преобразуется в скорость молоточка и силу реакции струны, с помощью теоретических расчётов и анализа движения.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ru/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -34,13 +34,13 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ru_RU">
 <meta property="og:title" content="Анализ движения фортепианной механики">
-<meta property="og:description" content="Как нажатие на клавишу, проходя через сложную рычажную систему, превращается в скорость молоточка и силу реакции на струне?">
+<meta property="og:description" content="Как сложная система рычагов фортепианной механики преобразует воздействие на клавишу в скорость молоточка и силу реакции струны?">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ru/works/masters-project-piano-action/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="3D-модель деревянной фортепианной механики в SolidWorks, показанная в разнесённом виде.">
+<meta property="og:image:alt" content="Разнесённая 3D-модель деревянной фортепианной механики в SolidWorks.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -50,9 +50,12 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
-      "alternateName": "Такафуми Хориучи",
+      "alternateName": [
+        "堀内 貴文",
+        "Такафуми Хориучи"
+      ],
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Когнитивная инженерия × ИИ × Дизайн",
+      "description": "Дизайн-инженер",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -62,12 +65,15 @@
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/ru/works/masters-project-piano-action/#work",
       "name": "Анализ движения фортепианной механики",
+      "headline": "Анализ движения фортепианной механики",
       "url": "https://takafumihoriuchi.github.io/ru/works/masters-project-piano-action/",
-      "description": "Механика рояля, восстановленная как 3D-модель в SolidWorks; передача от нажатия клавиши к скорости молоточка и силе реакции на струне сопоставлена в теоретическом расчёте и в анализе движения. Проект магистратуры.",
+      "description": "Магистерский проект: воссоздание механики рояля в виде 3D-модели SolidWorks и сопоставление того, как воздействие на клавишу преобразуется в скорость молоточка и силу реакции струны, с помощью теоретических расчётов и анализа движения.",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
       "datePublished": "2020-01",
       "inLanguage": "ru",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -113,32 +119,33 @@
 
   <section>
     <h2>Обзор</h2>
-    <p class="lead">Внутри рояля движение нажатой клавиши передаётся по цепи рычагов, пока молоточек не взлетает вверх и это движение не превращается в колебание струны. Ту систему рычагов, которая позволяет нажатой клавише привести в движение молоточек и ударить по струне, называют фортепианной механикой. В этом проекте механика была воссоздана как 3D-модель в SolidWorks*, и с помощью анализа движения было прослежено, как нажатие на клавишу преобразуется в скорость молоточка и в силу реакции на струне.</p>
-    <p>Для анализа механика клавиши была смоделирована в 3D с нуля по опорным изображениям, и на этой модели были проведены два анализа движения: один — о соотношении скорости опускающейся клавиши и поднимающегося молоточка, другой — о соотношении силы, приложенной к клавише, и силы, доходящей до струны. Значения, полученные в симуляции, были сопоставлены с теоретическими, выведенными из размеров и положения опорных точек, чтобы установить, как движение и сила передаются внутри модели.</p>
-    <p class="citation">* SolidWorks: система 3D-САПР. Уже на этапе проектирования она позволяет выполнить структурный анализ прочности детали и анализ движения для проверки её хода.</p>
+    <p class="lead">Механика рояля — это система рычагов, которая передаёт нажатие клавиши молоточку: он поднимается, ударяет по струне и приводит её в колебание. В этом проекте механика была воссоздана как 3D-модель в SolidWorks*. Анализ движения позволил исследовать, как воздействие на клавишу связано со скоростью молоточка и силой реакции струны.</p>
+    <p>Механизм был смоделирован с нуля по изображениям, а затем исследован в двух анализах: зависимости скорости молоточка, движущегося вверх, от скорости опускающейся клавиши и зависимости силы реакции струны от силы, приложенной к клавише. Результаты моделирования сравнили с теоретическими значениями, рассчитанными по размерам модели и расположению осей вращения, чтобы проверить передачу движения и силы.</p>
+    <p class="citation">* SolidWorks — система 3D-САПР с инструментами для расчёта конструкций деталей и анализа движения механизмов.</p>
 
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Все 17 страниц Motion Analysis of the Piano Action. Прокручивается по горизонтали">
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Титульный слайд: «Motion Analysis of the Piano Action»."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Фотография внутренней части рояля, показывающая ряд механик за клавишами."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="3D-модель, показывающая, как части механики движутся вместе при нажатии клавиши."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Модель фортепианной механики в разрезе: нажатие клавиши поднимает молоточек до удара по струне."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Ход работы: обводка контуров опорного разреза и моделирование каждой детали с нуля в SolidWorks."></a></li>
+      <ol class="deck" tabindex="0" role="group" aria-label="Анализ движения фортепианной механики: 17 слайдов на английском языке. Прокручивайте по горизонтали.">
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Титульный слайд: Motion Analysis of the Piano Action."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Фотография внутренней части рояля с рядом механизмов за клавишами."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="3D-модель показывает совместное движение деталей механики при нажатии клавиши."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Модель механики в разрезе: нажатие клавиши поднимает молоточек, который ударяет по струне."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Обведение опорного чертежа в разрезе для моделирования каждой детали с нуля в SolidWorks."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Готовая 3D-сборка фортепианной механики в SolidWorks."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Названия деталей модели и расчёт степеней свободы, дающий 7 после наложения связей."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Две темы анализа: линейные скорости клавиши и молоточка и соотношение нажатия на клавишу с силой реакции на струне."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Точки наблюдения в анализе 1: скорость движения вниз на конце клавиши и скорость движения вверх молоточка."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Схема, сводящая фортепианный механизм к трём вращающимся звеньям."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Схема вывода соотношения скоростей клавиши и молоточка из отношения радиусов трёх вращающихся звеньев."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Условия анализа: 5 ньютонов вниз на конце клавиши с 1-й по 2-ю секунду."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Графики линейных скоростей клавиши и молоточка. Пиковые значения — 1027 и 4284 миллиметра в секунду."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Сравнение скорости молоточка 4614 миллиметров в секунду, полученной из измеренных радиусов, со значением 4284 миллиметра в секунду из анализа."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Условия анализа 2: 15 ньютонов вниз на клавишу с наблюдением силы реакции со стороны струны."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Сравнение максимальной силы реакции на струне 31 ньютон с теоретическим значением 31,1 ньютона по правилу рычага."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Список литературы о механических моделях фортепианной механики."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Названия деталей и расчёт степеней свободы модели: после наложения связей остаётся 7 степеней свободы."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Две темы анализа: линейные скорости клавиши и молоточка и связь воздействия на клавишу с силой реакции струны."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Точки наблюдения в анализе 1: скорость конца клавиши вниз и скорость молоточка вверх."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Схема, упрощающая фортепианный механизм до трёх вращающихся звеньев."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Вывод связи скоростей клавиши и молоточка через отношения выходных радиусов к входным у трёх вращающихся звеньев."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Условия анализа: сила 5 ньютонов направлена вниз на конец клавиши с 1-й по 2-ю секунду."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Графики скоростей клавиши и молоточка с пиками 1027 и 4284 миллиметра в секунду соответственно."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Сравнение теоретической скорости молоточка 4614 миллиметров в секунду, рассчитанной по измеренным радиусам, со скоростью в моделировании 4284 миллиметра в секунду."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Условия анализа 2: сила 15 ньютонов направлена вниз на клавишу, наблюдается сила реакции со стороны струны."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Сравнение максимальной силы реакции струны 31 ньютон с теоретическим значением 31,1 ньютона по правилу рычага."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Список источников о механических моделях фортепианной механики."></a></li>
       </ol>
+      <figcaption>Слайды исходной презентации на английском языке.</figcaption>
     </figure>
   </section>
 
@@ -147,56 +154,56 @@
   <section>
     <h2>От фортепианной механики к модели, пригодной для анализа</h2>
     <h3>Механизм, превращающий одно нажатие в удар по струне</h3>
-    <p>Фортепианная механика — это механизм, превращающий движение клавиши вниз в движение молоточка вверх. При нажатии клавиши капстан, вспомогательный рычаг, шультер и рычаг репетиции приходят в движение вместе, и молоточек поднимается до удара по струне. Исполнитель видит одно нажатие; внутри него несколько деталей вращаются вокруг разных опор и передают движение друг другу через соприкосновение.</p>
-    <p>В 3D-модель вошли клавиша, молоточек, шультер, вспомогательный рычаг, рычаг репетиции, капстан, демпфер, рычаг демпфера и проволока вместе с несущей рамой. Чтобы понять движение, мало было рассматривать готовую форму: требовалось определить, какая деталь вращается вокруг какой опоры и в какой точке касается следующей.</p>
+    <p>Фортепианная механика преобразует движение клавиши вниз в движение молоточка вверх. При нажатии клавиши совместно движутся регулировочный винт (capstan), промежуточный рычаг (wippen), толкатель (jack) и репетиционный рычаг, поднимая молоточек до удара по струне. Исполнитель делает одно нажатие, но внутри механизма несколько деталей вращаются вокруг разных осей и передают движение через контакт.</p>
+    <p>В 3D-модель входят клавиша, молоточек, толкатель, промежуточный рычаг, репетиционный рычаг, регулировочный винт, демпфер, рычаг демпфера и проволока, а также несущая рама. Для моделирования движения необходимо было определить ось вращения каждой детали и точки её контакта с другими деталями.</p>
 
-    <h3>Построить 3D-модель по чертежу в разрезе</h3>
-    <p>Вместо готовых данных САПР контур каждой детали был обведён поверх опорного разреза фортепианной механики и смоделирован в 3D поочерёдно. Затем детали были собраны в сборку, и между ними были заданы неподвижные и вращательные связи реального механизма. Этот шаг превратил модель, служившую для разглядывания формы, в модель, к которой можно приложить силу и привести её в движение.</p>
+    <h3>Построение 3D-модели по чертежу в разрезе</h3>
+    <p>Каждая деталь была смоделирована с нуля в 3D путём обведения её контура на чертеже механики в разрезе. Затем детали собрали, задав неподвижные соединения и вращательные шарниры в соответствии с физическим механизмом. Эти связи превратили геометрию в расчётную модель, способную двигаться под действием приложенных сил.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="В окне SolidWorks чертёж фортепианной механики в разрезе служит полупрозрачной подложкой, поверх контуров которой строится 3D-модель. Слева видны панель задач Windows и дерево деталей."></a>
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Снимок SolidWorks: полупрозрачный чертёж механики в разрезе и 3D-детали, построенные по его контурам. Слева видны панель задач Windows и дерево компонентов."></a>
       <figcaption>Опорный разрез помещён позади как полупрозрачная подложка, и по его контурам в SolidWorks была построена 3D-модель.</figcaption>
     </figure>
 
     <figure class="paper-figure model-figure">
-      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="Окно SolidWorks, работающего под Windows. Слева панель задач Windows и дерево деталей, в центре — 3D-модель фортепианной механики."></a>
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="SolidWorks в Windows: слева панель задач и дерево компонентов, в центре 3D-модель фортепианной механики."></a>
       <figcaption>3D-модель фортепианной механики в том виде, в каком она была построена в SolidWorks.</figcaption>
     </figure>
 
-    <h3>Проверить связи как степени свободы</h3>
-    <p>Не считая неподвижной рамы, подвижных деталей девять, что без связей даёт в сумме 54 степени свободы. Закрепление капстана и проволоки на других деталях убирает 12, а наложение вращательных шарниров на остальные семь деталей — ещё 35. Таким образом, у этой сборки САПР 7 степеней свободы, как показано ниже.</p>
+    <h3>Проверка степеней свободы сборки</h3>
+    <p>Сборка содержит девять подвижных деталей, не считая неподвижной рамы, — всего 54 степени свободы до наложения связей. Закрепление регулировочного винта и проволоки на других деталях убирает 12 степеней свободы. Вращательные шарниры остальных семи деталей убирают ещё 35, оставляя сборке САПР 7 степеней свободы:</p>
     <p class="formula" role="math" aria-label="54 минус 12 минус 35 равно 7">54 − 12 − 35 = 7</p>
     <p>Диагностика связей в SolidWorks показала то же самое: расчётное и фактическое число степеней свободы — по 7, избыточных связей — 0. Это не утверждение о степенях свободы фортепианных механик вообще: это подтверждение того, что заданный в проекте набор деталей и связей собран так, как было задумано.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Модель фортепианной механики с подписанными деталями и расчёт, вычитающий из 54 степеней свободы 12 неподвижных связей и 35 вращательных и дающий 7."></a>
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Модель механики с подписями и расчёт степеней свободы: из 54 вычитаются 12, исключённые неподвижными соединениями, и 35, исключённые вращательными шарнирами; остаётся 7."></a>
       <figcaption>Названия деталей и связи. Собственная диагностика SolidWorks также дала модели 7 степеней свободы и 0 избыточных связей.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Два анализа — как преобразуется нажатие на клавишу</h2>
-    <p>Поведение модели исследовалось в двух отдельных анализах. Анализ 1 спрашивает, как скорость движения клавиши преобразуется в скорость молоточка; анализ 2 — как приложенная к клавише сила проявляется в виде силы реакции со стороны струны. Выделяя по одной паре «вход — выход», поведение сложной рычажной системы удаётся объяснить через геометрическое отношение скоростей и равновесие сил на рычаге.</p>
-    <p>Основой сравнения служил теоретический расчёт, в котором механизм заменён простыми вращающимися звеньями. Если теоретическое и расчётное значения близки, можно заключить, что по крайней мере движение внутри модели следует тому соотношению, которого следует ожидать от заданных размеров и связей.</p>
+    <p>Модель исследовалась в двух отдельных анализах. В первом сравнивались скорости клавиши и молоточка, во втором — сила, приложенная к клавише, и сила реакции струны. Раздельное рассмотрение этих зависимостей между входом и выходом упростило анализ сложной системы рычагов с помощью геометрических отношений скоростей и условия равновесия рычага.</p>
+    <p>Для сравнения механизм был упрощён до вращающихся звеньев и исследован теоретически. Близость теоретических значений и результатов моделирования указывала бы на то, что движение модели соответствует заданным размерам и связям.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Две схемы, показывающие, что анализ 1 сопоставляет линейные скорости клавиши и молоточка, а анализ 2 — приложенную к клавише силу и силу реакции на струне."></a>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Две схемы сопоставляют скорости клавиши и молоточка в анализе 1 и силу на клавише и силу реакции струны в анализе 2."></a>
       <figcaption>Входы и выходы двух анализов. Анализ 1 сравнивает линейные скорости клавиши и молоточка, анализ 2 — приложенную к клавише силу с силой реакции на струне.</figcaption>
     </figure>
 
     <h3>Анализ 1 — насколько скорость клавиши усиливается на молоточке</h3>
-    <p>Для анализа скоростей сложная фортепианная механика была сведена к трём твёрдым телам, передающим движение через соприкосновение: клавише, промежуточному механизму с центром на вспомогательном рычаге и молоточку. Если читать движение как последовательно переходящее от ① к ③ на рисунке, механизм из множества деталей можно рассчитать как три ступени вращения.</p>
+    <p>Для расчёта скоростей механизм был упрощён до трёх твёрдых тел: клавиши, промежуточного механизма на основе промежуточного рычага и молоточка. Рассматривая передачу движения через последовательные контакты от ① к ③, можно анализировать систему как три ступени вращения.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Схема, где фортепианная механика цветом разделена на три твёрдых тела: ① клавиша, ② промежуточный механизм с центром на вспомогательном рычаге и ③ молоточек."></a>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Фортепианная механика разделена цветом на три твёрдых тела: ① клавиша, ② механизм на основе промежуточного рычага, ③ молоточек."></a>
       <figcaption>Для анализа механизм был сведён к трём твёрдым телам: ① клавише, ② промежуточному механизму и ③ молоточку.</figcaption>
     </figure>
 
-    <p>В пределах одного твёрдого тела угловая скорость общая, поэтому, обозначив через <em>r</em> расстояние от опоры, а через <em>v</em> — линейную скорость в этой точке, получаем <em>v</em> = <em>ωr</em>. Если считать, что в точке контакта скорость переходит к следующему телу без потерь, скорость молоточка находится перемножением отношений входного и выходного радиусов на каждой ступени.</p>
-    <p class="formula formula-long" role="math" aria-label="Скорость молоточка равна произведению r один штрих, r два штрих и r три штрих, делённому на произведение r один, r два и r три, умноженному на скорость клавиши">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+    <p>Все точки одного твёрдого тела имеют одинаковую угловую скорость. Если <em>r</em> — расстояние от оси вращения, а <em>v</em> — линейная скорость точки, то <em>v</em> = <em>ωr</em>. Если предположить, что скорость передаётся между телами без потерь в каждой точке контакта, скорость молоточка можно вычислить, перемножив отношения выходного радиуса к входному для трёх ступеней и умножив результат на скорость клавиши.</p>
+    <p class="formula formula-long" role="math" aria-label="Скорость молоточка равна произведению r один со штрихом, r два со штрихом и r три со штрихом, делённому на произведение r один, r два и r три, умноженному на скорость клавиши">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Схема, где для трёх твёрдых тел расстояния от каждой опоры до точек входа и выхода обозначены как r1, r1 штрих, r2, r2 штрих, r3 и r3 штрих."></a>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Схема расстояний от каждой из трёх осей вращения до точек входа и выхода: r1, r1 со штрихом, r2, r2 со штрихом, r3 и r3 со штрихом."></a>
       <figcaption>Расстояния от опоры каждого твёрдого тела до его точек входа и выхода приняты за радиусы, и их отношения перемножаются по трём ступеням, давая отношение скоростей.</figcaption>
     </figure>
 
@@ -204,7 +211,7 @@
     <p>В SolidWorks Motion Analysis к концу клавиши была приложена сила 5 Н, направленная вниз, и записаны линейные скорости конца клавиши и молоточка. Сразу после начала приложения силы пиковые скорости составили 1027 мм/с у клавиши и 4284 мм/с у молоточка. Таким образом, в симуляции молоточек двигался примерно в 4,17 раза быстрее клавиши.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Два графика скорости клавиши и молоточка по времени, где пики сразу после начала воздействия отмечены как 1027 и 4284 миллиметра в секунду."></a>
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Скорости клавиши и молоточка во времени: пики сразу после приложения силы составляют 1027 и 4284 миллиметра в секунду соответственно."></a>
       <figcaption>Линейные скорости клавиши и молоточка. Обе достигают максимума сразу после начала воздействия, причём на стороне молоточка скорость усилена.</figcaption>
     </figure>
 
@@ -224,49 +231,49 @@
     <p>Измеренные на модели радиусы: <em>r</em><sub>1</sub> = 200 мм, <em>r</em><sub>1</sub>′ = 88 мм, <em>r</em><sub>2</sub> = 53 мм, <em>r</em><sub>2</sub>′ = 78 мм, <em>r</em><sub>3</sub> = 16 мм и <em>r</em><sub>3</sub>′ = 111 мм. Подстановка их в формулу даёт идеализированное отношение скоростей около 4,49, что предсказывает скорость молоточка 4614 мм/с при скорости клавиши 1027 мм/с.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Схема, где на 3D-модели SolidWorks отмечены шесть измеренных радиусов, использованных в расчёте отношения скоростей."></a>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Шесть радиусов для расчёта отношения скоростей отмечены на 3D-модели SolidWorks."></a>
       <figcaption>Шесть радиусов, измеренных на 3D-модели. По этим значениям была рассчитана теоретическая скорость молоточка 4614 мм/с.</figcaption>
     </figure>
 
-    <p>Расчётное значение 4284 мм/с примерно на 7 % ниже теоретического, но величина усиления близка. Расхождение возникает, как поясняется ниже, оттого что теоретический расчёт идеализирует механику как три твёрдых тела, тогда как 3D-симуляция учитывает ещё и потери между деталями и деформацию материала.</p>
+    <p>Скорость молоточка в моделировании — 4284 мм/с — оказалась примерно на 7% ниже теоретической, при этом степень увеличения скорости была близкой. Теоретический расчёт использует три идеализированных твёрдых тела, тогда как моделирование представляет отдельные детали. Само численное расхождение не позволяет установить его причину.</p>
 
     <h3>Анализ 2 — как сила на клавише проявляется на струне</h3>
     <p>Во втором анализе к поверхности клавиши была приложена сила 15 Н, направленная вниз, и наблюдалась сила реакции, возникающая со стороны струны в момент удара. Воздействие на клавише <em>F</em><sub>key</sub> нарастало с 1,0 секунды до 15 Н, а в момент удара сила реакции <em>V</em><sub>string</sub> дала пик в 31 Н.</p>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Пояснительный график воздействия на клавишу F key по времени. Оно нарастает с 1 секунды, держится на 15 ньютонах и возвращается к 0 ньютонам."></a>
+      <a href="assets/force-key-graph-ru.svg"><img src="assets/force-key-graph-ru.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Иллюстративный график усилия на клавише F key во времени. Оно начинает расти на 1-й секунде, удерживается на 15 ньютонах и возвращается к нулю."></a>
       <figcaption>Воздействие на клавише <em>F</em><sub>key</sub>. Сила прикладывалась с 1,0 секунды, вход составлял 15 Н.</figcaption>
     </figure>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Пояснительный график силы реакции со стороны струны V string по времени с острым пиком в 31 ньютон в момент удара."></a>
+      <a href="assets/force-string-graph-ru.svg"><img src="assets/force-string-graph-ru.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Иллюстративный график силы реакции струны V string во времени с пиком 31 ньютон при ударе."></a>
       <figcaption>Сила реакции со стороны струны <em>V</em><sub>string</sub>. В момент удара она достигла максимума 31 Н.</figcaption>
     </figure>
 
-    <p>Это значение объясняется равновесием рычага с плечами со стороны клавиши и со стороны молоточка.</p>
-    <p class="formula formula-long" role="math" aria-label="Сила реакции на струне равна 15 умножить на 195 и разделить на 94, то есть 31,1 ньютона">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
-    <p>Если принять расстояние от точки приложения до опоры равным 195 мм, а до точки действия со стороны струны — 94 мм, теоретическое значение составит 31,1 Н. Разница с расчётным максимумом 31 Н — 0,1 Н, так что и в этом анализе результат почти совпал с той передачей силы, которой следует ожидать от заданных размеров.</p>
+    <p>Для сравнения был выполнен упрощённый расчёт равновесия рычага с использованием длин плеч со стороны клавиши и молоточка.</p>
+    <p class="formula formula-long" role="math" aria-label="Расчётное значение для сравнения по условию равновесия рычага равно 15 умножить на 195 и разделить на 94, то есть 31,1 ньютона">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>При длинах плеч 195 мм со стороны входного воздействия и 94 мм со стороны струны статический расчёт равновесия рычага даёт сравнительное значение 31,1 Н. Это на 0,1 Н больше пика 31 Н, полученного в моделировании. Условия, при которых такой статический расчёт применим к мгновенному пику силы реакции при ударе, ещё требуют подтверждения.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Схема равновесия сил с расстоянием 195 миллиметров от опоры клавиши до точки приложения и 94 миллиметра до точки действия со стороны струны."></a>
-      <figcaption>При воздействии 15 Н на клавишу равновесие рычага даёт силу реакции 31,1 Н на струне — почти совпадающую с расчётным максимумом 31 Н.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Схема равновесия сил: плечо 195 миллиметров со стороны воздействия на клавишу и 94 миллиметра со стороны струны."></a>
+      <figcaption>Статический расчёт равновесия рычага при усилии на клавише 15 Н и заданных длинах плеч даёт сравнительное значение 31,1 Н, близкое к пику 31 Н в моделировании.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Сопоставление симуляции с теоретическими значениями</h2>
-    <h3>Два анализа с близкими результатами</h3>
-    <p>В анализе 1, сравнивающем скорости клавиши и молоточка, теоретической скорости молоточка 4614 мм/с 3D-симуляция противопоставила 4284 мм/с. В анализе 2, сравнивающем воздействие на клавише с силой реакции на струне, теоретическому значению 31,1 Н — расчётный максимум 31 Н. В обоих анализах результаты симуляции на построенной 3D-модели оказались близки к теоретическим значениям, полученным из формул.</p>
+    <h3>Результаты двух сравнений</h3>
+    <p>В анализе 1 теоретическая скорость молоточка составила 4614 мм/с, а в моделировании — 4284 мм/с. В анализе 2 статический расчёт равновесия рычага дал сравнительное значение 31,1 Н, а моделирование — пик 31 Н. Оба сравнения показали близкое соответствие 3D-модели теоретическим расчётам.</p>
 
-    <h3>Почему возникает небольшое расхождение</h3>
-    <p>Теоретический расчёт сводит фортепианную механику к механизму из трёх твёрдых тел и считает, что движение и сила передаются в точках контакта без потерь. Симуляция на 3D-модели, напротив, работает с каждой отдельной деталью механики, так что в результат входят и энергия, теряемая между деталями, и деформация материала. Именно это различие в исходных допущениях и проявляется как небольшое расхождение между теоретическим и расчётным значениями.</p>
+    <h3>Интерпретация расхождений</h3>
+    <p>Теоретический расчёт сводит механику к трём твёрдым телам и предполагает передачу движения и силы через точки контакта без потерь. Моделирование, в свою очередь, представляет отдельные компоненты. Эти различия важны для интерпретации результатов, но прежде чем связывать оставшееся расхождение с потерями энергии или деформацией материала, необходимо подтвердить настройки моделирования.</p>
 
     <h3>Заключение</h3>
-    <p>Удалось подтвердить, что результаты 3D-симуляции почти равны теоретическим значениям. 3D-модель, построенная по чертежу в разрезе, воспроизвела движение фортепианной механики — усиливающей нажатие на клавише до скорости молоточка и передающей эту силу струне — в согласии с теоретическим расчётом.</p>
-    <p>В этом проекте дело не сводилось к воспроизведению формы. Прочитать структуру по опорному разрезу, перевести отношения между деталями в связи внутри САПР и упростить полученное до механической модели, отвечающей поставленному вопросу, — всё это было частями одного процесса моделирования.</p>
+    <p>Результаты 3D-моделирования близко совпали с теоретическими сравнительными значениями скорости молоточка и силы реакции струны. В рамках этих сравнений модель, построенная по чертежу в разрезе, воспроизвела передачу движения и силы, ожидаемую при заданных геометрии и связях.</p>
+    <p>Проект связал несколько этапов моделирования: чтение чертежа в разрезе, перевод отношений между деталями в связи САПР и упрощение сборки до механической модели, подходящей для каждого анализа.</p>
   </section>
 
-  <nav aria-label="Сайт">
+  <nav aria-label="Навигация по портфолио">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Вернуться к портфолио Такафуми Хориучи</span></a></li>
     </ul>
@@ -294,8 +301,8 @@
 
 </main>
 
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Увеличенный рисунок" hidden>
-  <button class="lightbox__close" type="button" aria-label="Закрыть увеличение"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Увеличенное изображение" hidden>
+  <button class="lightbox__close" type="button" aria-label="Закрыть увеличенное изображение"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

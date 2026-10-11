@@ -6,7 +6,7 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>会搏动的节拍器 — 堀内贵文</title>
-<meta name="description" content="一款 iPhone 节拍器：屏幕上的圆与咔哒声在同一瞬间、以相同强度搏动。我独立完成了策划、设计与实现，将它做成没有广告、没有设置页面的单屏工具。">
+<meta name="description" content="一款 iPhone 节拍器：圆形随每次节拍声同步搏动，并反映声音的强弱。我独立策划、设计并开发了这款工具，所有操作集中在同一页面，没有广告或单独的设置页面。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_CN">
 <meta property="og:title" content="会搏动的节拍器">
-<meta property="og:description" content="圆与咔哒声在同一瞬间、以相同强度搏动。一款没有广告、没有设置页面的 iPhone 节拍器。">
+<meta property="og:description" content="圆形随节拍声同步搏动，并反映声音的强弱。这是一款没有广告、没有单独设置页面的 iPhone 节拍器。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/no-ads-simplest-metronome/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -47,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内贵文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "认知工程 × AI × 设计",
+      "description": "设计工程师",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -60,7 +61,7 @@
       "name": "会搏动的节拍器",
       "alternateName": "No Ads Simplest Metronome",
       "url": "https://takafumihoriuchi.github.io/zh-Hans/works/no-ads-simplest-metronome/",
-      "description": "一款 iPhone 节拍器：屏幕上的圆与咔哒声在同一瞬间、以相同强度搏动。我独立完成了策划、设计与实现，将它做成没有广告、没有设置页面的单屏工具。",
+      "description": "一款 iPhone 节拍器：圆形随每次节拍声同步搏动，并反映声音的强弱。我独立策划、设计并开发了这款工具，所有操作集中在同一页面，没有广告或单独的设置页面。",
       "image": "https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg",
       "datePublished": "2026-09",
       "inLanguage": "zh-Hans",
@@ -112,7 +113,7 @@
 
   <section>
     <h2>概述</h2>
-    <p class="lead">屏幕中央的圆与咔哒声在同一瞬间、以相同强度搏动。我制作了一款没有广告、没有账号、没有设置页面的 iPhone 节拍器。</p>
+    <p class="lead">屏幕中央的圆随节拍声同步搏动，并反映声音的强弱。我制作了这款 iPhone 节拍器，没有广告、账号或单独的设置页面。</p>
 
     <!-- A running copy of the screen, not a picture of it: see page.css. The
          checkbox is the circle's start/stop, as in the app, and works without
@@ -145,16 +146,16 @@
           <dd>打开支持页面。</dd>
         </div>
         <div class="touch-map__note touch-map__note--dots">
-          <dt>点</dt>
-          <dd>轻点增加一拍（1–7拍），也可以滑动增减。</dd>
+          <dt>节拍圆点</dt>
+          <dd>轻点增加一拍，每小节可设为 1 至 7 拍；也可以滑动增减拍数。</dd>
         </div>
         <div class="touch-map__note touch-map__note--circle">
           <dt>圆</dt>
           <dd>轻点开始或停止。长按后，可跟着歌曲敲击来设定速度。</dd>
         </div>
         <div class="touch-map__note touch-map__note--tempo">
-          <dt>数字</dt>
-          <dd>拖动调快或调慢；慢慢移动可精细调整。−/＋每次调整1。</dd>
+          <dt>速度</dt>
+          <dd>拖动可调快或调慢速度，缓慢移动可精细调整。轻点 − 或 ＋，每次调整 1 BPM。</dd>
         </div>
       </dl>
       <figcaption>停止时的画面。屏幕上的文字只有数字和“BPM”。</figcaption>
@@ -162,8 +163,8 @@
   </section>
 
   <section>
-    <h2>搏动——同一瞬间，相同强度</h2>
-    <p>圆在声音传到耳朵的瞬间膨胀，而不是在声音发出的瞬间。蓝牙耳机会产生约0.1–0.3秒延迟，应用利用 iOS 报告的输出延迟加以补偿。膨胀幅度与点击音的音量成正比：第一拍音调更高、音量更大，圆也明显膨胀得更大。</p>
+    <h2>搏动：对应每次节拍声的时刻与强弱</h2>
+    <p>应用利用 iOS 报告的音频输出延迟，调整圆形搏动的时机，使其与节拍声对齐。蓝牙耳机可能带来约 0.1–0.3 秒的延迟。圆形的膨胀幅度与节拍声的音量成正比：第一拍的音调更高、声音更响，搏动幅度也明显更大。</p>
 
     <figure class="diagram">
       <picture>
@@ -174,10 +175,11 @@
     </figure>
 
     <p>每一拍的时刻由音频线程以采样为单位确定。计算方式不会累积误差，即使连续播放一小时，偏差也保持在0.5个采样以内。</p>
+    <p>上述 0.5 个采样这一数值的适用范围与计算条件仍需确认，不能将其理解为声音到达听者的时刻，或声音与屏幕同步程度的测量结果。</p>
   </section>
 
   <section>
-    <h2>敲击测速——敲击时保持安静</h2>
+    <h2>敲击定速：敲击时保持安静</h2>
     <p>长按圆，它就会像果冻一样颤动。跟着歌曲或脑海中的速度敲击，触碰的位置会凹下去，晃动后弹回。速度通过振动反馈给你。</p>
 
     <figure class="diagram">
@@ -189,7 +191,7 @@
     </figure>
 
     <figure class="tuning">
-      <a href="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp"><img class="tuning__screen" src="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp" width="880" height="1912" loading="lazy" decoding="async" alt="开发中的应用画面。敲击测速模式下，圆为灰色，下方打开了日文的“果冻调整”面板，列有“弹性（摆动速度）3.6次/秒”“黏性（摆动的收敛方式）0.10”等滑块及说明。"></a>
+      <a href="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp"><img class="tuning__screen" src="../../../works/no-ads-simplest-metronome/assets/screen-jelly-tuning.webp" width="880" height="1912" loading="lazy" decoding="async" alt="开发中的应用画面。敲击定速模式下，圆为灰色，下方打开了日文的“果冻调整”面板，列有“弹性（摆动速度）3.6次/秒”“黏性（摆动的收敛方式）0.10”等滑块及说明。"></a>
       <figcaption>我用仅在开发版本中提供的面板调整晃动方式。一边拖动滑块改变弹性、黏性等10个数值，一边实际敲击圆来确认手感。也对比了“布丁”“蕨饼”和“偏液体”的效果，最终选用回弹明显、约0.9秒平息的“果冻”作为默认值。</figcaption>
     </figure>
 
@@ -243,9 +245,9 @@
     </dl>
   </section>
 
-  <p class="colophon">使用 SwiftUI 实现，无外部库。支持运行 iOS&nbsp;17及以上版本的 iPhone。英文名为 No Ads Simplest Metronome，正在准备于 App Store 发布（2026年9月）。完整使用说明与隐私政策见<a class="ext" href="https://simplest-metronome.pages.dev/en/" hreflang="en">支持页面（英语）</a>。</p>
+  <p class="colophon">应用以 SwiftUI 开发，不使用外部库，可在搭载 iOS&nbsp;17 或更高版本的 iPhone 上运行。英文名称为 No Ads Simplest Metronome。截至 2026 年 9 月，我正在为 App Store 发布做准备。完整使用说明与隐私政策见<a class="ext" href="https://simplest-metronome.pages.dev/en/" hreflang="en">支持页面（英语）</a>。</p>
 
-  <nav aria-label="网站">
+  <nav aria-label="作品集导航">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回 Takafumi Horiuchi 的作品集首页</span></a></li>
     </ul>

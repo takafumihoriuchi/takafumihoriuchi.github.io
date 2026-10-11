@@ -5,9 +5,18 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Takafumi Horiuchi — Design Engineer</title>
-<meta name="description" content="Diseñamos lo que diseña la IA.">
+<title>Takafumi Horiuchi | Ingeniero de diseño</title>
+<meta name="description" content="Portafolio de Takafumi Horiuchi: proyectos personales y académicos de diseño de interacción, prototipado e ingeniería de diseño.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/es/">
+<!-- Every language version lists every other, itself included. The set has to
+     be identical on all of them: a search engine that finds one link missing
+     discards the whole cluster rather than repairing it. scripts/check-i18n.py
+     verifies this.
+
+     x-default is the version shown when none of the languages match the
+     reader. English holds that slot as the source language, which is a
+     statement about fallback, not about rank — every version is an alternate
+     of every other, none is above the rest. -->
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/">
 <link rel="alternate" hreflang="zh-Hans" href="https://takafumihoriuchi.github.io/zh-Hans/">
@@ -26,32 +35,50 @@
 <link rel="icon" href="../favicon.ico" sizes="any">
 <link rel="icon" href="../favicon-32x32.png" type="image/png" sizes="32x32">
 <link rel="apple-touch-icon" href="../apple-touch-icon.png">
-<link rel="stylesheet" href="../style.css">
+<link rel="stylesheet" href="../style.css?v=20261011-identity">
 <script src="../works/home-mark.js" defer></script>
 <!-- It measures the open works panel so that it ends on a card edge, and does
      nothing else: no text, no markup, no behaviour the panel does not already
      have without it. -->
 <script type="module" src="../works-panel.js?v=20260930-2"></script>
+<!-- Share-card metadata. The URLs here are absolute on purpose: unlike the
+     stylesheet and the internal links above, these are never fetched by the
+     browser rendering this page, only by crawlers that will not resolve a
+     relative path. Declaring the dimensions lets a crawler reserve the large
+     card before the image itself arrives. -->
 <meta property="og:type" content="website">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="Takafumi Horiuchi — Design Engineer">
-<meta property="og:description" content="Diseñamos lo que diseña la IA.">
+<meta property="og:title" content="Takafumi Horiuchi | Ingeniero de diseño">
+<meta property="og:description" content="Portafolio de Takafumi Horiuchi: proyectos personales y académicos de diseño de interacción, prototipado e ingeniería de diseño.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/es/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Takafumi Horiuchi (Design Engineer) — We design what AI designs.">
+<meta property="og:image:alt" content="Takafumi Horiuchi (ingeniero de diseño). Diseñamos lo que diseña la IA.">
 <meta name="twitter:card" content="summary_large_image">
+<!-- Machine-readable identity. `sameAs` is the working part: it states that
+     this page, the LinkedIn profile and the GitHub account are one entity, so
+     a search or answering engine resolves them together instead of guessing —
+     and does not confuse them with a different person of the same name.
+
+     Deliberately minimal. Every field here is already visible on the page, and
+     nothing is claimed that the page does not say; structured data asserting
+     more than the page shows is both against the engines' own guidelines and a
+     statement this site has chosen not to make yet.
+
+     The @id is a stable handle other pages point back to. It is a name, not an
+     address — nothing is served at that URL fragment. -->
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
   "@type": "Person",
   "@id": "https://takafumihoriuchi.github.io/#person",
   "name": "Takafumi Horiuchi",
+  "alternateName": "堀内 貴文",
   "url": "https://takafumihoriuchi.github.io/",
-  "description": "Design Engineer",
+  "description": "Ingeniero de diseño",
   "sameAs": [
     "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
     "https://github.com/takafumihoriuchi"
@@ -61,7 +88,7 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
 <body class="home">
-<div class="home-mark"><a class="home-mark__link" href="./" aria-label="Volver al portfolio de Takafumi Horiuchi">Takafumi Horiuchi</a>
+<div class="home-mark"><a class="home-mark__link" href="./" aria-label="Volver al portafolio de Takafumi Horiuchi">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Apariencia" dir="ltr" hidden>
     <label title="Modo claro">
       <input type="radio" name="theme" value="light" aria-label="Modo claro">
@@ -77,8 +104,8 @@
 
   <header>
     <div class="identity home-identity" dir="ltr">
-      <h1>Takafumi Horiuchi <span class="role">como ingeniero de diseño</span></h1>
-      <nav aria-label="Perfiles en otros sitios">
+      <h1>Takafumi Horiuchi<span class="role-group"><span class="identity-separator">  |  </span><span class="role">Ingeniero de diseño</span></span></h1>
+      <nav aria-label="Perfiles externos">
         <ul>
           <li><a class="ext" rel="me" href="https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/">LinkedIn</a></li>
           <li><a class="ext" rel="me" href="https://github.com/takafumihoriuchi">GitHub</a></li>
@@ -100,7 +127,10 @@
   </ascii-hero>
 
   <section>
-    <h2>Trabajos recientes por iniciativa propia</h2>
+    <h2>Proyectos personales recientes</h2>
+    <!-- Keep the date inside every card title in the form “Title (Month Year)”.
+         For work that is not yet complete, the month is when the work began;
+         its status belongs in the description, not in place of the date. -->
     <!-- This list takes the same control the section
          below it does: the same checkbox, panel and label, and every rule and
          measurement that governs them. Only the id differs — two labels cannot
@@ -111,19 +141,10 @@
       <ul class="works">
         <li>
           <a class="work" href="works/arpeggicho/">
-            <picture><source media="(prefers-color-scheme: dark)" srcset="../works/arpeggicho/assets/thumb-dark.webp"><img src="../works/arpeggicho/assets/thumb.webp" width="360" height="239" alt="Dos pantallas verticales de Arpeggicho: a la izquierda, C y E; a la derecha, C, E y G con el nombre de acorde C."></picture>
+            <picture><source media="(prefers-color-scheme: dark)" srcset="../works/arpeggicho/assets/thumb-dark.webp"><img src="../works/arpeggicho/assets/thumb.webp" width="360" height="239" alt="Dos pantallas de Arpeggicho: C y E a la izquierda; C, E y G, identificadas como un acorde de do mayor, a la derecha."></picture>
             <span>
-              <span class="work-title">Arpeggicho — Un sistema que convierte arpegios en acordes (octubre de 2026)</span>
-              <span class="work-desc">Desarrollé un sistema que graba las notas de un arpegio y las reproduce juntas como un acorde en tiempo real.</span>
-            </span>
-          </a>
-        </li>
-        <li>
-          <a class="work" href="works/foot-furniture-interaction/">
-            <picture><source media="(prefers-color-scheme: dark)" srcset="../works/foot-furniture-interaction/assets/thumb.svg#dark"><img src="../works/foot-furniture-interaction/assets/thumb.svg#light" width="360" height="239" alt=""></picture>
-            <span>
-              <span class="work-title">Foot-Furniture Interaction ※Concepto de diseño (octubre de 2026)</span>
-              <span class="work-desc">Aunque sabemos que el mueble está ahí, nos golpeamos el dedo meñique del pie. Un concepto que parte de esa experiencia cotidiana para conectar la ingeniería cognitiva con el diseño y la fabricación de muebles.</span>
+              <span class="work-title">Arpeggicho: convertir arpegios en acordes (octubre de 2026)</span>
+              <span class="work-desc">Desarrollé un sistema que graba las notas de un arpegio mientras las toco y las superpone para formar un acorde en tiempo real.</span>
             </span>
           </a>
         </li>
@@ -132,7 +153,7 @@
             <picture><source media="(prefers-color-scheme: dark)" srcset="../works/practice-log-n-share/assets/thumb-dark.webp"><img src="../works/practice-log-n-share/assets/thumb.webp" width="360" height="239" alt=""></picture>
             <span>
               <span class="work-title">Practice Log n Share (septiembre de 2026)</span>
-              <span class="work-desc">Registrar la práctica con un toque y mostrar la misma pantalla al profesor en clase. Ideé y diseñé esta app para iPhone para mi propia práctica de saxofón, y la implementé en colaboración con IA.</span>
+              <span class="work-desc">Registra tu práctica con un toque y muestra los registros a tu profesor durante la clase. Concebí, diseñé e implementé esta app para iPhone para mi propia práctica del saxofón.</span>
             </span>
           </a>
         </li>
@@ -140,17 +161,26 @@
           <a class="work" href="works/no-ads-simplest-metronome/">
             <picture><source media="(prefers-color-scheme: dark)" srcset="../works/no-ads-simplest-metronome/assets/thumb-dark.webp"><img src="../works/no-ads-simplest-metronome/assets/thumb.webp" width="360" height="239" alt=""></picture>
             <span>
-              <span class="work-title">Un metrónomo que late (septiembre de 2026)</span>
-              <span class="work-desc">Un círculo late al mismo tiempo y con la misma intensidad que cada clic. Un metrónomo para iPhone sin anuncios ni pantalla de ajustes.</span>
+              <span class="work-title">Un metrónomo con pulso (septiembre de 2026)</span>
+              <span class="work-desc">Diseñé e implementé un metrónomo para iPhone con una sola pantalla, sin anuncios ni pantalla de ajustes. Un círculo pulsa al ritmo de cada clic y refleja su intensidad.</span>
+            </span>
+          </a>
+        </li>
+        <li>
+          <a class="work" href="works/foot-furniture-interaction/">
+            <picture><source media="(prefers-color-scheme: dark)" srcset="../works/foot-furniture-interaction/assets/thumb.svg#dark"><img src="../works/foot-furniture-interaction/assets/thumb.svg#light" width="360" height="239" alt=""></picture>
+            <span>
+              <span class="work-title">Foot-Furniture Interaction (octubre de 2026)</span>
+              <span class="work-desc">Un proyecto en fase conceptual inspirado en los golpes del dedo meñique del pie contra los muebles, incluso cuando sabemos que están ahí. Exploro cómo la ingeniería cognitiva puede orientar el diseño y la fabricación de mobiliario.</span>
             </span>
           </a>
         </li>
         <li>
           <a class="work" href="works/personal-fit-ui/">
-            <img src="../works/personal-fit-ui/assets/thumb.svg" width="360" height="239" alt="">
+            <img src="works/personal-fit-ui/assets/thumb-es.svg" width="360" height="239" alt="">
             <span>
-              <span class="work-title">Optimización individual de la interfaz mediante diseño por restricciones (agosto de 2026)</span>
-              <span class="work-desc">Generar una interfaz de usuario adaptada a las características cognitivas, sensoriales y físicas dentro de las bases científicas y las limitaciones de diseño. Se verificaron sus posibilidades y limitaciones con un navegador GPS.</span>
+              <span class="work-title">Personalizar interfaces mediante un diseño guiado por restricciones (agosto de 2026)</span>
+              <span class="work-desc">Exploré cómo generar interfaces adaptadas a las características cognitivas, sensoriales y físicas, dentro de los límites de la evidencia científica y las restricciones de diseño. Utilicé una prueba de concepto de navegación para automóviles para generar interfaces y comprobar si cumplían los requisitos, y así explorar el potencial y las limitaciones del enfoque. La usabilidad y la seguridad no se han evaluado con usuarios.</span>
             </span>
           </a>
         </li>
@@ -158,18 +188,18 @@
           <a class="work" href="works/my-own-pokemon-generation/">
             <img src="../works/my-own-pokemon-generation/assets/thumb.webp" width="360" height="239" alt="">
             <span>
-              <span class="work-title">Generación de tu propio Pokémon en el mundo(julio de 2026)</span>
-              <span class="work-desc">Durante el juego, se generaba una nueva especie a partir de las palabras del jugador, integrando el encuentro y la captura en una sola experiencia. Es un prototipo de investigación diseñado no para decidir qué hacer crear a la IA, sino qué proteger.</span>
+              <span class="work-title">Generar un Pokémon único (julio de 2026)</span>
+              <span class="work-desc">Un prototipo de investigación que genera una nueva especie de Pokémon a partir de las palabras del jugador durante la partida y le permite encontrarla y capturarla. Diseñé las restricciones que la IA debe respetar a lo largo de esa experiencia.</span>
             </span>
           </a>
         </li>
       </ul>
     </div>
-    <label class="works-more" for="more-recent-work"><span class="works-more__box">ver más</span></label>
+    <label class="works-more" for="more-recent-work"><span class="works-more__box">Ver más</span></label>
   </section>
 
   <section>
-    <h2>Trabajos académicos anteriores</h2>
+    <h2>Proyectos académicos anteriores</h2>
     <!-- The list opens with three entries and holds the rest behind the control
          below it. The mechanism is the checkbox and its label: no script decides
          what is shown, so the panel opens with JavaScript switched off, and with
@@ -188,8 +218,8 @@
           <a class="work" href="works/masters-thesis-hmi-design/">
             <img src="../works/masters-thesis-hmi-design/assets/thumb.webp" width="360" height="239" alt="">
             <span>
-              <span class="work-title">Tesis de maestría sobre el diseño de interacción entre humanos y robots(julio de 2021)</span>
-              <span class="work-desc">Se convierte el estado de &quot;si el operador está mirando&quot; en una condición para que el robot pueda moverse. Se propuso e implementó un mecanismo que incorpora el estado cognitivo de la persona en el control de seguridad y previene colisiones sin necesidad de registrar previamente los objetos.</span>
+              <span class="work-title">Tesis de máster sobre diseño de interacción entre personas y robots (julio de 2021)</span>
+              <span class="work-desc">Propuse e implementé un mecanismo de prevención de colisiones que utiliza el campo de visión del operador, estimado a partir de la orientación de su cabeza, para ayudar a determinar por dónde puede moverse un robot, sin necesidad de registrar previamente los objetos. Confirmé el comportamiento previsto en cinco pruebas de demostración.</span>
             </span>
           </a>
         </li>
@@ -197,8 +227,8 @@
           <a class="work" href="works/masters-project-smart-codesign-vr/">
             <img src="../works/masters-project-smart-codesign-vr/assets/thumb.webp" width="360" height="239" alt="">
             <span>
-              <span class="work-title">Desarrollo de un sistema VR de prototipado de objetos interactivos para niños (febrero de 2021)</span>
-              <span class="work-desc">Los objetos inteligentes que los niños idean con el juego SNaP, montados y en marcha en VR: tres cartas —entorno, entrada y salida— se vuelven la condición y el comportamiento.</span>
+              <span class="work-title">Un sistema de realidad virtual para que los niños creen prototipos de objetos interactivos (febrero de 2021)</span>
+              <span class="work-desc">Un entorno de prototipado en realidad virtual en el que los niños pueden construir y hacer funcionar los objetos inteligentes que imaginan en el juego de mesa SNaP. Definen las condiciones y el comportamiento de cada objeto mediante tres tarjetas: entorno, entrada y salida.</span>
             </span>
           </a>
         </li>
@@ -206,8 +236,8 @@
           <a class="work" href="works/masters-project-piano-action/">
             <img src="../works/masters-project-piano-action/assets/thumb.webp" width="360" height="239" alt="">
             <span>
-              <span class="work-title">Análisis del movimiento de la mecánica del piano (enero de 2020)</span>
-              <span class="work-desc">La mecánica de un piano modelada en 3D a partir de un dibujo en sección, para ver cómo la entrada en la tecla se vuelve velocidad del martillo y fuerza de reacción en la cuerda.</span>
+              <span class="work-title">Análisis del movimiento del mecanismo de un piano (enero de 2020)</span>
+              <span class="work-desc">Este proyecto reconstruyó en 3D el mecanismo de un piano a partir de un dibujo en sección y utilizó cálculos teóricos y análisis en SolidWorks para examinar cómo la acción sobre la tecla se traduce en velocidad del macillo y fuerza de reacción de la cuerda.</span>
             </span>
           </a>
         </li>
@@ -215,8 +245,8 @@
           <a class="work" href="works/masters-project-design-studio/">
             <img src="../works/masters-project-design-studio/assets/thumb.webp" width="360" height="239" alt="">
             <span>
-              <span class="work-title">Tres proyectos de Design Studio (2019–2020)</span>
-              <span class="work-desc">Una cafetera para espacios compartidos, un PAPR para soldadores y una unidad de cribado sin contacto: tres proyectos grupales de diseño de producto del Politécnico de Milán.</span>
+              <span class="work-title">Tres proyectos de estudio de diseño (2019–2020)</span>
+              <span class="work-desc">Tres proyectos grupales de diseño de productos realizados a lo largo de tres semestres en el Politecnico di Milano: una cafetera para espacios compartidos, un respirador purificador de aire motorizado (PAPR) para soldadores y un dispositivo de evaluación previa a la donación de sangre sin contacto.</span>
             </span>
           </a>
         </li>
@@ -224,14 +254,14 @@
           <a class="work" href="works/bachelors-thesis-constraint-programming/">
             <img src="../works/bachelors-thesis-constraint-programming/assets/thumb.webp" width="360" height="239" alt="">
             <span>
-              <span class="work-title">Tesis de graduación sobre programación basada en restricciones(junio de 2019)</span>
-              <span class="work-desc">Durante la simulación, se identifican las condiciones que nunca se cumplirán y se excluyen de la búsqueda. Se redujo la cantidad de cálculos sin cambiar los resultados, y se redujo a la mitad el tiempo de ejecución del modelo de evaluación.</span>
+              <span class="work-title">Tesis de grado sobre programación por restricciones (junio de 2019)</span>
+              <span class="work-desc">Desarrollé un método que identifica las condiciones que ya no pueden volver a cumplirse durante una simulación y las elimina de la búsqueda. En el modelo de evaluación, redujo el tiempo de ejecución aproximadamente a la mitad sin alterar el resultado de la simulación.</span>
             </span>
           </a>
         </li>
       </ul>
     </div>
-    <label class="works-more" for="more-earlier-work"><span class="works-more__box">ver más</span></label>
+    <label class="works-more" for="more-earlier-work"><span class="works-more__box">Ver más</span></label>
   </section>
 
   <!-- Hidden for now, not deleted: the asterism and the closing thought are
@@ -242,19 +272,19 @@
   <p class="asterism" aria-hidden="true" translate="no">＊　＊　＊</p>
 
   <section>
-    <h2>Cómo entiendo el diseño</h2>
-    <p>La IA puede generar una gran variedad de contenidos dentro de las condiciones que se le dan. Lo que decide qué es posible, sin embargo, es el espacio de diseño que se le ha entregado. Objetivos, valores, prioridades, restricciones, prohibiciones, los criterios con los que se juzga un resultado: eso traza el límite, y la IA busca dentro de él. Lo que diseñamos es ese espacio, y no una pieza concreta; a este enfoque lo llamo «diseño por restricciones». Una restricción existe para mantener abiertas las posibilidades, no para cerrarlas, y qué forma sale finalmente al mundo sigue siendo decisión nuestra: una decisión que exige ojo para la forma que debe tomar. Diseñamos el espacio y después elegimos una forma dentro de él y la llevamos hasta el final. Asumir las dos cosas es, tal como yo lo entiendo, el trabajo del diseñador ahora que la IA sabe generar.</p>
+    <h2>How I Think About Design</h2>
+    <p>AI can generate a wide range of content within the conditions it is given. What decides what is possible in the first place, though, is the design space it was handed. Objectives, values, priorities, constraints, prohibitions, the criteria a result is judged by — these set the boundary, and AI searches inside it. What we design is that space rather than any one output; I call this approach &#x201C;constraint-driven design&#x201D;. A constraint is there to keep possibilities open rather than to close them off, and which form finally goes out into the world is still our decision — one that takes an eye for the form it should take. We design the space, and then we choose one form from inside it and commit to it. Taking on both is what I understand the designer&#x2019;s work to be now that AI can generate.</p>
   </section>
   -->
 
   <ascii-hero data-scene="footer-rest" data-placement="footer" dir="ltr" translate="no" aria-hidden="true">
     <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">   _.---._                    .---.                                                   _____-
- .&#x27;       &#x27;.               .-.     .-.                                          o   -&#x27;
- &#x27;-._____.-&#x27;               &#x27;-._____.-&#x27;      _.---._                          __/|      .&#x27;
-                                          .-&#x27;     &#x27;-.                       /
-                                          &#x27;-._____.-&#x27;                   -        &#x27;
-                                                                      .&#x27;              &#x27;&#x27;
-                                                                     -   &#x27;      ..</pre>
+ .'       '.               .-.     .-.                                          o   -'
+ '-._____.-'               '-._____.-'      _.---._                          __/|      .'
+                                          .-'     '-.                       /
+                                          '-._____.-'                   -        '
+                                                                      .'              ''
+                                                                     -   '      ..</pre>
   </ascii-hero>
 
   <footer>

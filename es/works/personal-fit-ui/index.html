@@ -6,11 +6,12 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <!-- This work alone is written in Japanese first: /ja/ is the source of record
-     and every other language is translated from it (owner's instruction,
-     2026-08-23). The mock renders live under the English tree, one file per
-     language, and are referenced from here rather than copied. -->
-<title>Optimización individual de la interfaz mediante diseño por restricciones — Takafumi Horiuchi</title>
-<meta name="description" content="Un mecanismo que genera una interfaz a partir de las características cognitivas, sensoriales y físicas de una persona y del conocimiento de diseño, prototipado en un sistema de navegación para automóvil. Implementación y comparación del diseño por restricciones, para examinar qué puede aportar la individualización y cuánto margen le queda a la IA generativa.">
+     and every other language, this one included, is translated from it (owner's
+     instruction, 2026-08-23). The mock renders live in this directory's assets
+     and are referenced by all fourteen languages, one file per language, never
+     copied into a language tree. -->
+<title>Personalizar interfaces mediante un diseño guiado por restricciones — Takafumi Horiuchi</title>
+<meta name="description" content="Una prueba de concepto de navegación para automóviles que genera interfaces a partir de características cognitivas, sensoriales y físicas y conocimientos de diseño. La implementación y la comparación de diseños guiados por restricciones permitieron explorar el potencial de la personalización y el margen de decisión de la IA generativa.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/es/works/personal-fit-ui/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/personal-fit-ui/">
@@ -38,14 +39,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="es_ES">
-<meta property="og:title" content="Optimización individual de la interfaz mediante diseño por restricciones">
-<meta property="og:description" content="Un mecanismo que genera una interfaz a partir de las características de una persona y del conocimiento de diseño, prototipado en un sistema de navegación para automóvil, para examinar qué puede aportar la individualización y cuánto margen le queda a la IA generativa.">
+<meta property="og:title" content="Personalizar interfaces mediante un diseño guiado por restricciones">
+<meta property="og:description" content="Una prueba de concepto de navegación para automóviles que genera interfaces a partir de características personales y conocimientos de diseño para explorar el potencial de la personalización y el margen de decisión de la IA generativa.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/es/works/personal-fit-ui/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png">
 <meta property="og:image:type" content="image/png">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="La interfaz uniforme de Personal Fit UI, con un menú de destino y navegación.">
+<meta property="og:image:alt" content="Pantalla predeterminada común de Personal Fit UI, con opciones de destino y navegación.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -55,8 +56,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Ingeniería Cognitiva × IA × Diseño",
+      "description": "Ingeniero de diseño",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -65,13 +67,15 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/es/works/personal-fit-ui/#work",
-      "name": "Optimización individual de la interfaz mediante diseño por restricciones",
+      "name": "Personalizar interfaces mediante un diseño guiado por restricciones",
       "url": "https://takafumihoriuchi.github.io/es/works/personal-fit-ui/",
-      "description": "Un mecanismo que genera una interfaz a partir de las características cognitivas, sensoriales y físicas de una persona y del conocimiento de diseño, prototipado en un sistema de navegación para automóvil. Implementación y comparación del diseño por restricciones, para examinar qué puede aportar la individualización y cuánto margen le queda a la IA generativa.",
+      "description": "Una prueba de concepto de navegación para automóviles que genera interfaces a partir de características cognitivas, sensoriales y físicas y conocimientos de diseño. La implementación y la comparación de diseños guiados por restricciones permitieron explorar el potencial de la personalización y el margen de decisión de la IA generativa.",
       "image": "https://takafumihoriuchi.github.io/works/personal-fit-ui/assets/og.png",
       "datePublished": "2026-08",
       "inLanguage": "es",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -79,7 +83,7 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Volver al portfolio de Takafumi Horiuchi">Takafumi Horiuchi</a>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Volver al portafolio de Takafumi Horiuchi">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Apariencia" dir="ltr" hidden>
     <label title="Modo claro">
       <input type="radio" name="theme" value="light" aria-label="Modo claro">
@@ -94,15 +98,15 @@
 <main>
 
   <header>
-    <h1>Optimización individual de la interfaz mediante diseño por restricciones</h1>
-    <p class="dateline">Agosto de 2026</p>
+    <h1>Personalizar interfaces mediante un diseño guiado por restricciones</h1>
+    <p class="dateline">agosto de 2026</p>
   </header>
 
   <ascii-hero data-scene="personal-fit-ui" dir="ltr" translate="no" aria-hidden="true">
     <pre class="ascii-hero__canvas" aria-hidden="true" translate="no">    o        [*] [.] [+]          .----------------.       +-------+  +-----+
    /|\  ------------------------&gt; |   &lt;=  x  &lt;=    | ----&gt; | A [ ] |  | A A |
    / \                            |   []  ()  {}   |       | [===] |  | [ ] |
-                                  &#x27;----------------&#x27;       +-------+  +-----+
+                                  '----------------'       +-------+  +-----+
                                                                   \  /
                                                                &lt;+-------+&gt;
                                                                 | A [=] |
@@ -110,203 +114,203 @@
   </ascii-hero>
 
   <section>
-    <h2>Resumen</h2>
-    <p class="lead">Este trabajo propone un mecanismo que recibe información personal sobre las características cognitivas de alguien y genera una interfaz ajustada a esa persona, recurriendo a los principios básicos del diseño de interfaces, a los requisitos de seguridad y accesibilidad, y a los hallazgos de la investigación sobre características humanas.</p>
-    <p>Aplica la idea que llamo diseño por restricciones: una persona diseña las condiciones que deben cumplirse y su ámbito de aplicación, y dentro de ese marco la IA generativa elabora la propuesta concreta. Tomando como tema un sistema de navegación para automóvil, implementé una prueba de concepto que genera interfaces a partir de trece personas ficticias —incluidas características sensoriales y físicas— y comprueba el cumplimiento de las condiciones en un paso aparte.</p>
-    <p>En la comparación, un caso mostró un cambio claro en la composición de la pantalla debido a una característica física, mientras que en la mayoría de las salidas no se apreció un cambio visual grande. La usabilidad y la seguridad reales quedan sin verificar, pero el trabajo dejó claro hasta dónde puede confiarse el juicio a la IA generativa y qué condiciones de diseño estaban estrechando el margen de individualización.</p>
+    <h2>Visión general</h2>
+    <p class="lead">Este proyecto propone un sistema que recibe información sobre características cognitivas relevantes para el uso de interfaces y genera una interfaz adaptada a esa persona. Combina principios de diseño de interfaces, requisitos de seguridad y accesibilidad e investigación sobre las características humanas.</p>
+    <p>Utilicé un enfoque que denomino diseño guiado por restricciones: las personas definen los requisitos y cuándo se aplican, y la IA generativa desarrolla propuestas concretas dentro de esos límites. Tomando la navegación para automóviles como caso de prueba, construí una prueba de concepto que genera interfaces para 13 perfiles ficticios, incluidas características sensoriales y físicas, y valida el cumplimiento de los requisitos en una etapa independiente.</p>
+    <p>La comparación reveló un cambio claro en la distribución de la pantalla en respuesta a una característica física, mientras que la mayoría de los resultados mostraron pocos cambios visuales. La usabilidad y la seguridad no se han probado con usuarios. El trabajo ayudó a identificar qué decisiones podían dejarse a la IA generativa y qué requisitos limitaban el margen de personalización.</p>
   </section>
 
   <section>
-    <h2>Contexto — ¿hasta dónde alcanza una sola interfaz?</h2>
-    <p>La mayoría de los productos diseñan y entregan una interfaz común, pensada para que la use el mayor número posible de personas. Pero la cantidad de información que se capta de una vez, la facilidad para dirigir la atención, lo comprensible que resulta el lenguaje y la precisión de los gestos finos varían de una persona a otra. Que una interfaz común atienda a mucha gente no significa que se ajuste a alguien en concreto.</p>
-    <p>La evaluación a nivel de grupo también tiene límites. En las directrices voluntarias que la NHTSA estadounidense publicó en 2013, por ejemplo, cada criterio de aceptación sobre la mirada exige que lo cumplan al menos 21 de 24 participantes. No es una condición que signifique que todo el mundo pueda usarlo igual. <a class="citation-marker" href="#ref-nhtsa" aria-label="Ir a la referencia 1">[1]</a></p>
-    <p>Incluso en productos donde se puede cambiar el tamaño del texto o la cantidad mostrada, la persona ha de advertir que el ajuste existe, relacionarlo con su propia dificultad y elegir la modificación adecuada. ¿No estarán esos ajustes infrautilizados, dejando a la gente con una interfaz que no le encaja? Esa pregunta fue el punto de partida.</p>
-    <p>En un navegador de automóvil, mirar la pantalla y manejarla compiten con la atención que exige la conducción. <a class="citation-marker" href="#ref-nhtsa" aria-label="Ir a la referencia 1">[1]</a> Si un mal ajuste con la interfaz puede aumentar esa carga, entonces preparar desde el inicio un estado que le convenga a la persona merece estudiarse, tanto por usabilidad como por seguridad.</p>
-    <p>La IA generativa permite ya prototipar un paso que elabora una interfaz a partir de información personal y conocimiento de diseño. De ahí la idea de entregar interfaces ajustadas a cada persona reduciendo a la vez la carga de diseñar cada pantalla a mano, una por una.</p>
-    <p class="note">El grado de uso real de estos ajustes, y el efecto que un mal ajuste con la interfaz tiene sobre los accidentes, no se examinaron en este proyecto.</p>
+    <h2>Contexto: ¿cuántas necesidades distintas puede atender una sola interfaz?</h2>
+    <p>La mayoría de los productos ofrece una interfaz común diseñada para el mayor número posible de personas. Pero las personas difieren en cuánta información pueden procesar a la vez, la facilidad con la que dirigen su atención, comprenden los textos u operan controles pequeños con precisión. Una interfaz diseñada para muchas personas puede seguir siendo poco adecuada para un individuo.</p>
+    <p>La evaluación a escala de grupo también tiene límites. Por ejemplo, las directrices voluntarias publicadas por la NHTSA en 2013 requieren que al menos 21 de 24 participantes cumplan cada criterio de aceptación de las miradas. Esto no significa que todas las personas puedan usar la interfaz con la misma facilidad. <a class="citation-marker" href="#ref-nhtsa" aria-label="Ir a la referencia 1">[1]</a></p>
+    <p>Aunque un producto permita cambiar el tamaño del texto o la cantidad de información mostrada, el usuario primero debe descubrir esos ajustes, reconocer su relación con las dificultades que encuentra y elegir una modificación adecuada. Comencé preguntándome si estas opciones se utilizaban poco y dejaban a las personas con interfaces que no se ajustaban a sus necesidades.</p>
+    <p>En la navegación para automóviles, mirar y manejar la pantalla compite con la atención necesaria para conducir. <a class="citation-marker" href="#ref-nhtsa" aria-label="Ir a la referencia 1">[1]</a> Si una interfaz poco adecuada añade carga, merece la pena explorar si una interfaz adaptada desde el principio podría favorecer tanto la usabilidad como la seguridad.</p>
+    <p>La IA generativa hizo posible crear un prototipo de un proceso que transforma información personal y conocimientos de diseño en una interfaz. Exploré si esto podía reducir el trabajo de diseñar manualmente una interfaz distinta para cada persona.</p>
+    <p class="note">Este proyecto no examinó con qué frecuencia se utilizan esos ajustes ni cómo influye una interfaz poco adecuada en el riesgo de accidentes.</p>
   </section>
 
   <section>
-    <h2>Propuesta — enlazar la información personal con dos clases de conocimiento de diseño</h2>
-    <p>Lo que se introduce es información sobre las características cognitivas de esa persona usuaria. La IA la coteja con dos cuerpos de conocimiento preparados de antemano: uno con las reglas básicas de diseño de una interfaz, otro que enlaza las características humanas con las interfaces que estas requieren.</p>
-    <p>A partir de ahí, la IA concreta la interfaz dentro de lo permitido y se comprueba el cumplimiento de las condiciones. La salida es la interfaz ajustada a esa persona junto con la explicación de qué se cambió y por qué.</p>
+    <h2>Propuesta: combinar información personal con dos tipos de conocimiento de diseño</h2>
+    <p>El sistema recibe información sobre características cognitivas relevantes para el uso de interfaces. Esta prueba de concepto utilizó perfiles ficticios que también incluían características sensoriales y físicas. La IA considera esa información junto con dos conjuntos de conocimientos preparados de antemano: reglas básicas de diseño de interfaces y conocimientos que relacionan las características humanas con diseños de interfaz recomendados.</p>
+    <p>La IA genera una interfaz dentro de los límites permitidos y una comprobación independiente valida su cumplimiento de los requisitos. El resultado incluye la interfaz adaptada y una explicación de qué cambió y por qué.</p>
 
     <figure class="concept-figure line-art">
-      <a class="concept-figure__desktop" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure.svg" width="1400" height="815" loading="lazy" decoding="async" alt="El concepto: entran las características cognitivas personales y la interfaz se genera consultando las reglas básicas del diseño de interfaces y el conocimiento sobre las interfaces que requiere cada característica. La IA generativa concreta la propuesta, un paso aparte comprueba las condiciones, y la salida es una interfaz ajustada a la persona junto con las razones de cada cambio."></a>
-      <a class="concept-figure__mobile" href="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-structure-mobile.svg" width="480" height="1414" loading="lazy" decoding="async" alt="El concepto: entran las características cognitivas personales y la interfaz se genera consultando las reglas básicas del diseño de interfaces y el conocimiento sobre las interfaces que requiere cada característica. La IA generativa concreta la propuesta, un paso aparte comprueba las condiciones, y la salida es una interfaz ajustada a la persona junto con las razones de cada cambio."></a>
-      <figcaption><strong>Figura 1 | El concepto: entra la información personal y la interfaz se genera consultando el conocimiento de diseño.</strong> La entrada, que cambia de una persona a otra, se mantiene separada del conocimiento que quien diseña prepara de antemano. En la prueba de concepto, la entrada incluyó, además de las características cognitivas, las sensoriales y físicas.</figcaption>
+      <a class="concept-figure__desktop" href="assets/personal-fit-ui-structure-es.svg"><img src="assets/personal-fit-ui-structure-es.svg" width="1400" height="1080" loading="lazy" decoding="async" alt="Diagrama conceptual: las características cognitivas se combinan con reglas básicas de interfaz y recomendaciones basadas en investigación. La IA generativa propone una interfaz, una etapa independiente comprueba los requisitos y el resultado incluye la interfaz adaptada y los motivos de los cambios."></a>
+      <a class="concept-figure__mobile" href="assets/personal-fit-ui-structure-mobile-es.svg"><img src="assets/personal-fit-ui-structure-mobile-es.svg" width="480" height="1641" loading="lazy" decoding="async" alt="Diagrama conceptual: las características cognitivas se combinan con reglas básicas de interfaz y recomendaciones basadas en investigación. La IA generativa propone una interfaz, una etapa independiente comprueba los requisitos y el resultado incluye la interfaz adaptada y los motivos de los cambios."></a>
+      <figcaption><strong>Figura 1 | Generar una interfaz a partir de información personal y conocimientos de diseño.</strong> La información que varía según la persona se separa de los conocimientos preparados por el diseñador. La prueba de concepto utilizó perfiles ficticios con características sensoriales y físicas, además de cognitivas.</figcaption>
     </figure>
 
     <h3>Entrada: información sobre la persona</h3>
-    <p>Por ejemplo: la facilidad para retener y manejar varias informaciones a la vez, la propensión a que otros estímulos desvíen la atención, y qué tipo de explicación resulta más fácil de seguir. La implementación incluyó también la visión y la motricidad fina de los dedos. La pantalla no se decide a partir de un diagnóstico; lo que se maneja es información personal relacionada con el uso de la interfaz.</p>
+    <p>Las entradas incluyen la facilidad para retener y utilizar información, la susceptibilidad a distraerse con otros estímulos y los tipos de explicación que resultan más fáciles de comprender. La implementación también abarca la visión y la destreza manual. Utiliza información relevante para interactuar con una interfaz, en lugar de determinar la pantalla únicamente a partir de un diagnóstico.</p>
 
-    <h3>Conocimiento A: las reglas para que una interfaz se sostenga</h3>
-    <p>Se ordenan los principios básicos de diseño: coherencia, retroalimentación de las acciones, agrupación de la información, legibilidad del texto y de los elementos de manejo. A ello se suman las restricciones de manejo de las interfaces embarcadas y los requisitos de accesibilidad, definidos junto con las situaciones en que se aplican.</p>
+    <h3>Conocimiento A: requisitos básicos de la interfaz</h3>
+    <p>Este conjunto abarca principios básicos de diseño de interfaces: coherencia, respuesta a las acciones, agrupación de la información y visibilidad del texto y los controles. También define restricciones de interacción en el vehículo y requisitos de accesibilidad, junto con las situaciones en las que se aplican.</p>
 
-    <h3>Conocimiento B: de las características a la interfaz que requieren</h3>
-    <p>Las características humanas establecidas por la investigación se enlazan con principios de presentación de la información y, desde ahí, con el diseño de la interfaz. A una característica como «retener información mientras se opera supone una carga» le corresponde la dirección «reducir lo que hay que recordar», que lleva a diseños que mantienen en pantalla la información necesaria.</p>
-    <p>Ahora bien, la investigación sobre una característica no entrega sin más un valor de diseño para un navegador de automóvil. <strong>Lo que la investigación establece se distingue de las decisiones de diseño que este proyecto derivó de ello.</strong> Las mejoras que benefician por igual a todo el mundo pertenecen a las reglas básicas y no cuentan como resultado de la individualización.</p>
+    <h3>Conocimiento B: relacionar características humanas con interfaces recomendadas</h3>
+    <p>Este conjunto conecta la investigación sobre características humanas con principios de presentación de información y, a partir de ellos, con el diseño de interfaces. Por ejemplo, la dificultad para retener información mentalmente mientras se realiza una tarea sugiere reducir las exigencias de memoria, lo que puede llevar a mantener la información necesaria en pantalla.</p>
+    <p>Los resultados de investigación no siempre proporcionan valores de diseño concretos para una interfaz de navegación. Distingo lo que establece la investigación de las decisiones de diseño que derivo de ella. Las mejoras que benefician a todos se incluyen en las reglas básicas, en lugar de contarse como resultados de la personalización.</p>
   </section>
 
   <section>
-    <h2>La experiencia buscada — comprobar juntos lo que encaja, en el primer trayecto</h2>
-    <p class="note"><strong>Concepto de futuro.</strong> La configuración inicial mediante conversación no está implementada en esta prueba de concepto.</p>
-    <p>Se compra un coche y se sienta uno por primera vez al volante. Con el coche detenido, un agente de IA pregunta por la forma de usarlo. En lugar de recorrer ajustes técnicos, la persona cuenta qué suele costarle y qué le resulta fácil de usar.</p>
+    <h2>Experiencia propuesta: encontrar una interfaz adecuada antes del primer trayecto</h2>
+    <p class="note">Concepto futuro: la configuración mediante conversación no se ha implementado en esta prueba de concepto.</p>
+    <p>Imagina que te sientas por primera vez al volante de un coche nuevo. Con el vehículo detenido, un agente de IA te pregunta por tus experiencias habituales. En lugar de navegar por ajustes técnicos, describes qué te resulta difícil y qué te funciona bien.</p>
 
     <figure class="journey-figure line-art">
-      <a href="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg"><img src="../../../works/personal-fit-ui/assets/personal-fit-ui-journey.svg" width="1200" height="1030" loading="lazy" decoding="async" alt="El recorrido de usuario previsto en el primer trayecto: con el coche detenido, la persona elige comenzar, responde a las preguntas de la IA, corrige lo que la IA ha entendido, prueba la interfaz generada y empieza a usar la interfaz que ha confirmado."></a>
-      <figcaption><strong>Figura 2 | El recorrido de usuario desde el primer trayecto hasta el inicio del uso.</strong> La entrevista, la confirmación de lo entendido, la generación de la interfaz y la prueba con el coche detenido preparan la interfaz inicial de esa persona.</figcaption>
+      <a href="assets/personal-fit-ui-journey-es.svg"><img src="assets/personal-fit-ui-journey-es.svg" width="1200" height="1220" loading="lazy" decoding="async" alt="Recorrido propuesto de configuración antes del primer trayecto. Con el vehículo detenido, el usuario decide empezar, responde preguntas, corrige la interpretación de la IA, prueba la interfaz generada y comienza a utilizar el diseño confirmado."></a>
+      <figcaption><strong>Figura 2 | Recorrido propuesto desde que se entra por primera vez en el coche hasta que se empieza a utilizar la interfaz.</strong> El usuario responde preguntas, confirma o corrige la interpretación de la IA, recibe una interfaz generada y la prueba con el vehículo detenido.</figcaption>
     </figure>
 
     <ol class="journey-steps">
       <li>
-        <h3>Primer trayecto: iniciar la conversación</h3>
-        <p class="dialogue"><span>IA</span>«Para ajustar la pantalla a usted, ¿podría contarme algunas cosas sobre cómo suele utilizarla? También podemos hacerlo más tarde.»</p>
-        <p>La persona entiende el propósito y elige si empezar ahora o más tarde.</p>
+        <h3>Antes del primer trayecto: iniciar la conversación</h3>
+        <p class="dialogue"><span>IA</span>: «Para adaptar la pantalla a ti, ¿podrías contarme un poco cómo sueles usar las interfaces? Podemos hacerlo más tarde si lo prefieres».</p>
+        <p>El usuario comprende la finalidad y decide si quiere empezar ahora o más tarde.</p>
       </li>
       <li>
-        <h3>Entrevista: hablar de las dificultades</h3>
-        <p class="dialogue"><span>IA</span>«Cuando las indicaciones se suceden, ¿en qué momentos se hace difícil de seguir?»</p>
-        <p class="dialogue"><span>Usuario</span>«Cuando llega la siguiente indicación, a veces olvido lo que acababa de decirse.»</p>
-        <p>La IA pregunta por situaciones concretas y ordena las dificultades que tienen que ver con retener información y con dirigir la atención.</p>
+        <h3>Entrevista: describir las dificultades</h3>
+        <p class="dialogue"><span>IA</span>: «Cuando las indicaciones de navegación llegan una tras otra, ¿qué te cuesta seguir?».</p>
+        <p class="dialogue"><span>Usuario</span>: «Cuando llega la siguiente indicación, a veces olvido lo que decía la anterior».</p>
+        <p>La IA pregunta por situaciones concretas e identifica dificultades relacionadas con la memoria y la atención.</p>
       </li>
       <li>
-        <h3>Confirmación: la persona puede corregir lo que la IA ha entendido</h3>
-        <p class="dialogue"><span>IA</span>«Entonces le vendría mejor que la información necesaria permanezca en pantalla, en lugar de tener que recordar los pasos, ¿lo he entendido bien?»</p>
-        <p>La persona confirma o corrige esa lectura. Lo que declara en la conversación se mantiene separado de las mediciones de funciones cognitivas y de los diagnósticos; donde hace falta medir, se prevé otra vía para comprobarlo.</p>
+        <h3>Comprobar la interpretación: permitir que el usuario corrija a la IA</h3>
+        <p class="dialogue"><span>IA</span>: «Por lo que dices, te resultaría más fácil mantener la información en pantalla que recordar los pasos. ¿Lo he entendido bien?».</p>
+        <p>El usuario confirma o corrige la interpretación de la IA. La información que aporta en la conversación se mantiene separada de las mediciones cognitivas y los diagnósticos. Cualquier información que requiera medición se evaluaría por separado.</p>
       </li>
       <li>
-        <h3>Propuesta y prueba: oír la razón y probar la pantalla</h3>
-        <p class="dialogue"><span>IA</span>«Para reducir lo que tiene que recordar, le propongo una pantalla donde se vean a la vez la acción actual y el paso siguiente.»</p>
-        <p>Con el coche detenido, la persona prueba cosas como elegir un destino. Puede decir «antes se entendía mejor» o «aquí cambiaría las palabras», y la propuesta puede ajustarse o restaurarse la interfaz original.</p>
+        <h3>Propuesta y prueba: explicar los cambios y probar la interfaz</h3>
+        <p class="dialogue"><span>IA</span>: «Para reducir lo que necesitas recordar, propongo una pantalla que muestre tanto la acción actual como el siguiente paso».</p>
+        <p>Con el vehículo detenido, el usuario prueba tareas como elegir un destino. Puede decir «La versión anterior era más clara» o «Cambiaría este texto». La propuesta puede ajustarse o puede restaurarse la interfaz original.</p>
       </li>
       <li>
-        <h3>Inicio del uso: usar la interfaz confirmada</h3>
-        <p>La interfaz que la persona ha confirmado se guarda como estado inicial. En marcha se mantiene la estructura básica que ya ha aprendido. Si desea revisarla, puede reajustarla con el coche detenido.</p>
+        <h3>Comenzar a utilizar la interfaz confirmada</h3>
+        <p>La interfaz confirmada se guarda como configuración inicial. Su estructura básica se mantiene estable mientras el coche está en movimiento, de modo que el usuario puede apoyarse en lo aprendido. Puede volver a revisarla y ajustarla con el vehículo detenido.</p>
       </li>
     </ol>
-    <p>El propósito de la conversación no es clasificar a la persona de una vez por todas. Es preparar el estado del que parte, mediante un intercambio en el que puede explicarse y corregir lo que se ha entendido.</p>
+    <p>La conversación busca establecer una configuración inicial adecuada mediante un intercambio en el que el usuario pueda explicar sus necesidades y corregir malentendidos. No consiste en clasificarlo de una vez para siempre.</p>
   </section>
 
   <section>
-    <h2>Implementación — separar las condiciones que deben cumplirse de los juicios que se dejan a la IA</h2>
-    <p>Lo implementado es el mecanismo que recibe las características de una persona, genera una interfaz y después la comprueba, la dibuja y la compara. En lugar de la entrevista conversacional, se definieron como entrada trece personas ficticias con características distintas.</p>
-    <p>El navegador de automóvil se eligió como tema porque permite tratar condiciones de forma concreta: superficie de pantalla, tamaño de los elementos de manejo, cantidad de información mostrable y qué puede manejarse en marcha.</p>
+    <h2>Implementación: separar los requisitos fijos de las decisiones confiadas a la IA</h2>
+    <p>Implementé el proceso completo, desde recibir información sobre las características de una persona hasta generar, validar, representar y comparar interfaces. En lugar de una entrevista conversacional, utilicé como entrada 13 perfiles ficticios con distintas características.</p>
+    <p>Elegí la navegación para automóviles porque ofrece requisitos concretos con los que trabajar: superficie de pantalla, tamaño de las zonas táctiles, cantidad de información mostrada e interacciones permitidas durante la conducción.</p>
 
-    <h3>El diseño por restricciones como forma de trabajo</h3>
-    <p>El diseño por restricciones, en el sentido de este proyecto, es <strong>un método en el que una persona diseña las condiciones que deben cumplirse y su ámbito de aplicación, y la IA propone soluciones concretas dentro de ese marco</strong>.</p>
-    <p>Una variación paramétrica basada en reglas fija de antemano qué valor u opción corresponde a cada entrada. Este planteamiento, en lugar de rellenar todas las correspondencias, fija el rango permitido y los fundamentos del juicio, y deja al criterio de la IA generativa los valores y las formulaciones aún indeterminados. La implementación combina lo que se decide por cálculo con lo que decide la IA generativa.</p>
+    <h3>El enfoque de diseño guiado por restricciones</h3>
+    <p>En este proyecto, el diseño guiado por restricciones significa que las personas definen los requisitos y cuándo se aplican, y la IA propone soluciones dentro de esos límites.</p>
+    <p>Un enfoque paramétrico basado en reglas define de antemano qué valor u opción corresponde a cada entrada. Aquí definí los rangos permitidos y la evidencia que respalda cada decisión, dejando a la IA generativa la elección de valores y textos que no estaban fijados. La implementación combina valores calculados con decisiones generadas por IA.</p>
 
-    <div class="table-wrap" tabindex="0" role="region" aria-label="Tratamiento en la implementación según la solidez de la evidencia">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Cómo orienta la evidencia la implementación">
       <table class="method-table">
         <thead>
-          <tr><th scope="col">Lo que la evidencia establece</th><th scope="col">Tratamiento en la implementación</th></tr>
+          <tr><th scope="col">Lo que establece la evidencia</th><th scope="col">Cómo se implementa</th></tr>
         </thead>
         <tbody>
-          <tr><td>Queda determinado un valor o una relación</td><td>Se calcula, dentro de las condiciones y el ámbito que pudieron verificarse</td></tr>
-          <tr><td>Se conoce la dirección del ajuste, pero no su magnitud</td><td>Se concreta respetando la dirección y las restricciones, y se deja constancia de que es una decisión de diseño no verificada</td></tr>
-          <tr><td>La evidencia por sí sola no determina una elección válida</td><td>Se trata como propuesta exploratoria y se distingue como pendiente de evaluación</td></tr>
+          <tr><td>Se ha establecido un valor concreto o una relación matemática</td><td>Calcular el valor dentro de las condiciones verificadas y del ámbito de aplicación</td></tr>
+          <tr><td>Se conoce la dirección del ajuste, pero no su magnitud</td><td>Elegir un valor coherente con esa dirección y con las restricciones, y registrarlo como una decisión de diseño no comprobada</td></tr>
+          <tr><td>La evidencia no determina una elección adecuada</td><td>Tratar el resultado como una propuesta exploratoria que requiere evaluación</td></tr>
         </tbody>
       </table>
     </div>
-    <p>Cada vez que un hallazgo de investigación se llevó a la interfaz, se registraron la fuente, las condiciones de aplicación y la decisión de diseño. Al emitir las razones junto con la interfaz, puede rastrearse por qué esa persona acabó con esa pantalla.</p>
+    <p>Al trasladar los resultados de investigación a decisiones de interfaz, registré las fuentes, las condiciones de aplicación y las decisiones de diseño. La interfaz generada incluye los motivos de los cambios, lo que permite rastrear por qué se propuso un diseño concreto para una persona determinada.</p>
 
-    <h3>Comprobar la interfaz generada en un paso aparte</h3>
-    <p>La interfaz se genera como datos estructurados con sus elementos y su disposición, y se dibuja a partir de esos datos. Las condiciones numéricas y estructurales se comprueban con código; algunas condiciones que exigen interpretar el sentido se comprueban aparte mediante un LLM. También se registran los puntos fuera del juicio automático y los que no pudieron comprobarse por falta de material.</p>
-    <p>Lo que la comprobación confirma es el cumplimiento de las condiciones tal como se definieron. Saber si la interfaz es realmente más fácil de usar, o más segura, exige una evaluación por parte de las personas usuarias.</p>
-    <p>Si en la fase de diseño aparece una contradicción entre condiciones, la IA señala dónde está y una persona decide cómo revisarlas. No es un mecanismo en el que la IA modifique las condiciones a su conveniencia en cada generación.</p>
+    <h3>Validar la interfaz generada en una etapa independiente</h3>
+    <p>La interfaz se genera como datos estructurados que describen los elementos de pantalla y su disposición, y después se representa a partir de esos datos. El código comprueba los requisitos numéricos y estructurales. Una comprobación independiente mediante un modelo de lenguaje de gran tamaño (LLM) evalúa algunos requisitos que implican interpretar el significado. El sistema también registra los aspectos fuera del alcance de las comprobaciones automáticas y los que no pueden verificarse por falta de información.</p>
+    <p>Estas comprobaciones establecen si el resultado cumple los requisitos definidos. Sigue siendo necesaria una evaluación con usuarios para determinar si resulta más fácil de usar o más seguro.</p>
+    <p>Si durante el diseño se encuentran requisitos contradictorios, la IA los identifica y una persona decide cómo revisarlos. La IA no cambia los requisitos por su cuenta cada vez que genera una interfaz.</p>
   </section>
 
   <section>
-    <h2>Comparación de interfaces — un caso que cambió mucho y otro que apenas cambió</h2>
-    <p>La referencia de comparación es la interfaz construida con valores por defecto comunes, sin introducir características personales. Con el mismo conjunto de funciones, se comparó con ella la salida obtenida al introducir las características personales.</p>
-    <p class="note"><strong>Las imágenes siguientes son salidas del prototipo, no un navegador comercial antes y después de una reforma.</strong> Las personas ficticias tampoco reproducen a usuarios reales; son entradas inventadas para comprobar el efecto de cada característica.</p>
+    <h2>Comparación de interfaces: un cambio claro de distribución y una distribución casi sin cambios</h2>
+    <p>La comparación utiliza una interfaz predeterminada común generada sin características personales como entrada. La comparé con interfaces generadas a partir de características personales, utilizando el mismo conjunto de funciones.</p>
+    <p class="note">Las imágenes siguientes son resultados del prototipo, no versiones anteriores y posteriores del rediseño de un sistema comercial de navegación. Los perfiles ficticios se utilizaron como entradas para examinar el efecto de determinadas características; no representan a usuarios reales.</p>
 
-    <h3>Un caso en el que los elementos de manejo se hicieron más grandes</h3>
-    <h4>PS-12 — una persona ficticia con una característica física que dificulta el manejo táctil fino</h4>
-    <p>La edad y las características cognitivas y sensoriales coinciden con la referencia PS-01; solo cambia la motricidad fina de los dedos. En las imágenes mostradas, cada elemento de manejo se ha agrandado y los elementos alineados en el centro de la pantalla pasan de siete a cuatro. Los botones fijos de la parte inferior no se cuentan en esa cifra.</p>
+    <h3>Zonas táctiles más grandes</h3>
+    <h4>PS-12: un perfil con dificultad para realizar pulsaciones precisas</h4>
+    <p>PS-12 tiene la misma edad y las mismas características cognitivas y sensoriales que el perfil de referencia PS-01; solo cambia la destreza manual. En las imágenes, las zonas táctiles son mayores y la cantidad de elementos en el centro de la pantalla se reduce de siete a cuatro. Este recuento excluye los botones fijos de la parte inferior.</p>
     <figure class="compare line-art">
       <div>
-        <p class="compare-label">Interfaz por defecto común</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-12-before-es.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-before-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="La interfaz por defecto común. En el centro de la pantalla de destino se alinean siete elementos, con cuatro botones fijos en la parte inferior."></a>
+        <p class="compare-label">Interfaz predeterminada común</p>
+        <a href="assets/ps-12-before-es.svg"><img src="assets/ps-12-before-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="Interfaz predeterminada común: siete elementos en el centro de la pantalla de destino y cuatro botones fijos en la parte inferior."></a>
       </div>
       <div>
-        <p class="compare-label">Interfaz generada a partir de las características personales</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-12-after-es.svg"><img src="../../../works/personal-fit-ui/assets/ps-12-after-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="La salida generada con la motricidad fina como entrada. En el centro hay cuatro elementos, cada uno con un área táctil mayor. Abajo siguen los cuatro botones fijos."></a>
+        <p class="compare-label">Interfaz generada a partir de características personales</p>
+        <a href="assets/ps-12-after-es.svg"><img src="assets/ps-12-after-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="Interfaz generada con información sobre la destreza manual: cuatro elementos centrales, cada uno con una zona táctil mayor, y los mismos cuatro botones fijos en la parte inferior."></a>
       </div>
-      <figcaption><strong>Figura 3 | Tamaño de los elementos de manejo y cantidad mostrada por pantalla, redistribuidos.</strong> Pudo mostrarse que la pantalla cambia según la entrada personal. Pero este cambio se debe a una característica física; no es un resultado que demuestre la eficacia de una interfaz ajustada a las características cognitivas.</figcaption>
+      <figcaption><strong>Figura 3 | Reequilibrar el tamaño de las zonas táctiles y la cantidad de elementos mostrados en una pantalla.</strong> El resultado cambia en respuesta a las características personales. Sin embargo, este ejemplo refleja una característica física y no demuestra la eficacia de las interfaces adaptadas a características cognitivas.</figcaption>
     </figure>
-    <p>Agrandar los elementos de manejo tiene un coste: pueden elegirse menos elementos a la vez en la misma pantalla. El conjunto de funciones se diseña para mantenerse, pero esta sola pantalla no permite evaluar lo fácil que resulta llegar a las pantallas siguientes.</p>
+    <p>Unas zonas táctiles mayores permiten seleccionar menos elementos en una misma pantalla. El diseño busca mantener las mismas funciones, pero esta captura por sí sola no permite determinar la facilidad para navegar a las pantallas siguientes.</p>
 
-    <h3>Un caso en el que la composición apenas cambió</h3>
-    <h4>PS-01 — la persona ficticia fijada como referencia</h4>
-    <p>El tamaño del texto presenta pequeñas diferencias, pero el número de elementos, la disposición y el tamaño de las áreas táctiles son prácticamente iguales. Con esta combinación de reglas y entradas no salió nada que alterara mucho la composición respecto de la interfaz por defecto común.</p>
+    <h3>Una distribución casi sin cambios</h3>
+    <h4>PS-01: el perfil de referencia</h4>
+    <p>El tamaño del texto varía ligeramente, pero la cantidad de elementos, su disposición y el tamaño de las zonas táctiles se mantienen prácticamente iguales. Con esta combinación de reglas y entradas, la distribución generada no difirió sustancialmente de la interfaz predeterminada común.</p>
     <figure class="compare line-art">
       <div>
-        <p class="compare-label">Interfaz por defecto común</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-01-before-es.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-before-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="La interfaz por defecto común. En el centro de la pantalla de destino se alinean siete elementos."></a>
+        <p class="compare-label">Interfaz predeterminada común</p>
+        <a href="assets/ps-01-before-es.svg"><img src="assets/ps-01-before-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="Interfaz predeterminada común: siete elementos en el centro de la pantalla de destino."></a>
       </div>
       <div>
-        <p class="compare-label">Interfaz generada a partir de las características personales</p>
-        <a href="../../../works/personal-fit-ui/assets/ps-01-after-es.svg"><img src="../../../works/personal-fit-ui/assets/ps-01-after-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="La salida generada con la información de la persona ficticia de referencia. Los siete elementos del centro y su disposición son prácticamente iguales; el texto es algo mayor."></a>
+        <p class="compare-label">Interfaz generada a partir de características personales</p>
+        <a href="assets/ps-01-after-es.svg"><img src="assets/ps-01-after-es.svg" width="772" height="434" loading="lazy" decoding="async" alt="Interfaz generada para el perfil de referencia: los mismos siete elementos centrales con una disposición muy similar y un texto ligeramente mayor."></a>
       </div>
-      <figcaption><strong>Figura 4 | Un caso en el que, pese a introducir información personal, la composición apenas cambió.</strong> Lo pequeño del cambio no permite juzgar si la interfaz le resulta más cómoda a esa persona.</figcaption>
+      <figcaption><strong>Figura 4 | Un ejemplo en el que la información personal apenas modifica la distribución.</strong> La magnitud del cambio visual, por sí sola, no indica si la interfaz resulta más fácil de usar para esa persona.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Resultados y discusión — ¿dónde quedó la libertad de generación?</h2>
+    <h2>Resultados y análisis: ¿cuánta libertad quedaba para la generación?</h2>
 
-    <h3>No pudo mostrarse suficientemente el valor propio de la IA generativa</h3>
-    <p>En mi propia comparación visual, PS-12 fue el caso que pude reconocer como un cambio claro en la composición de la pantalla. Otras salidas diferían en vocabulario y en ajustes, pero el aspecto de la pantalla no permitía reconocer una gran diferencia de valor.</p>
-    <p>También el cambio de PS-12 estaba al alcance de ajustes de tamaño y cantidad de información en pantalla. La experiencia de que el estado inicial ya encaje sin tener que buscar los ajustes uno mismo tiene potencial. Pero el valor de esa experiencia y la necesidad de IA generativa para producir la interfaz son dos cosas que han de comprobarse por separado.</p>
-    <p>Esta prueba de concepto no muestra que ajustarse a las características cognitivas mejore el rendimiento de manejo, ni que la IA generativa produjera una interfaz mejor que un enfoque basado en reglas.</p>
+    <h3>El valor añadido de la IA generativa sigue sin demostrarse</h3>
+    <p>En mi comparación visual, PS-12 fue el único resultado con una distribución de pantalla claramente distinta. Los demás diferían en textos y ajustes, pero su apariencia no revelaba una diferencia sustancial de valor.</p>
+    <p>Los cambios de PS-12 también podrían conseguirse mediante ajustes del tamaño de visualización y de la cantidad de información mostrada. Puede haber valor en empezar con una interfaz adecuada sin tener que encontrar esos ajustes por cuenta propia. Esa experiencia debe evaluarse por separado de la necesidad de utilizar IA generativa para producir la interfaz.</p>
+    <p>Esta prueba de concepto no demostró que adaptar una interfaz a las características cognitivas mejorara el rendimiento en las tareas ni que la IA generativa produjera una interfaz mejor que un enfoque basado en reglas.</p>
 
-    <h3>El espacio de diseño construido aquí era estrecho</h3>
-    <p>Una vez asegurados los tamaños necesarios para el texto y los elementos de manejo, y aplicadas las condiciones de superficie de pantalla y cantidad mostrada, las composiciones posibles se fueron reduciendo. En la implementación, además, mucho quedaba fijado por cálculo o por estructuras fijas, de modo que a la IA le quedaba poco margen para elegir entre varias propuestas válidas.</p>
-    <p>En el vocabulario quedaba libertad, pero esas diferencias se ven menos que un cambio de composición, y la evaluación visual empleada aquí no pudo captar su valor. Para comprobar el valor de la IA generativa hace falta, concluí, <strong>que haya un abanico de propuestas posibles y que sus diferencias signifiquen algo para la experiencia de quien usa el producto</strong>.</p>
-    <p>Este resultado se refiere a las reglas reunidas aquí, a los parámetros de interfaz adoptados y al margen de expresión implementado. No es un límite de la navegación en automóvil en general, ni de las interfaces individualizadas en general.</p>
-    <p>Además, no consulté directamente el texto completo de todas las normas pertinentes de JIS, ISO y otras. El conocimiento de diseño se compuso con el material accesible: artículos, guías oficiales, datos públicos y el texto o la vista previa de algunas normas. El alcance de lo consultado pudo influir en qué opciones de diseño estuvieron disponibles. Queda por comprobar si una lectura detenida del texto de las normas ampliaría esa libertad o la restringiría aún más con condiciones adicionales.</p>
+    <h3>El espacio de diseño implementado era reducido</h3>
+    <p>Una vez aplicados los tamaños mínimos de texto y zonas táctiles, la superficie de pantalla y los límites de información mostrada, quedaban pocas opciones de distribución. Muchas partes de la implementación también estaban determinadas por cálculos o estructuras fijas, dejando poco margen a la IA para elegir entre alternativas válidas.</p>
+    <p>Los textos seguían ofreciendo flexibilidad, pero esas diferencias eran menos visibles que los cambios de distribución y la valoración visual no podía captar todo su valor. Concluí que evaluar la IA generativa requiere un conjunto de propuestas válidas cuyas diferencias sean relevantes para la experiencia del usuario.</p>
+    <p>Este hallazgo se aplica a las reglas que recopilé, los parámetros de interfaz que seleccioné y el conjunto de diseños que admite esta implementación. No establece un límite general de la navegación para automóviles ni de las interfaces personalizadas.</p>
+    <p>No revisé directamente el texto íntegro de todas las normas JIS, ISO u otras pertinentes. Reuní los conocimientos de diseño a partir de artículos disponibles, orientaciones oficiales, datos públicos y el texto íntegro o vistas previas de algunas normas. El alcance de estas fuentes pudo influir en las opciones de diseño disponibles. Se necesita una revisión adicional para determinar si las normas abrirían más opciones o impondrían restricciones adicionales.</p>
 
-    <h3>Trabajar con la IA mejoró las propias reglas</h3>
-    <p>Donde sí aparecieron resultados fue en el proceso de diseñar las condiciones de generación y hacerlas comprobables.</p>
+    <h3>Trabajar con IA mejoró las propias reglas</h3>
+    <p>Otro resultado fue el proceso de definir requisitos para la generación y hacerlos verificables.</p>
 
-    <div class="table-wrap" tabindex="0" role="region" aria-label="Problemas encontrados y su traslado al diseño">
+    <div class="table-wrap" tabindex="0" role="region" aria-label="Problemas identificados y respuestas de diseño">
       <table class="method-table">
         <thead>
-          <tr><th scope="col">Problema encontrado</th><th scope="col">Traslado al diseño</th></tr>
+          <tr><th scope="col">Problema identificado</th><th scope="col">Respuesta de diseño</th></tr>
         </thead>
         <tbody>
-          <tr><td>Un mismo elemento tenía varios límites inferiores y no estaba claro cómo combinarlos</td><td>Se aclararon las relaciones de aplicación para no quedar nunca por debajo de ningún límite</td></tr>
-          <tr><td>Una condición que solo debía aplicarse en marcha se aplicaba también con el coche detenido</td><td>Se explicitó el estado de conducción en el que se aplica cada condición</td></tr>
-          <tr><td>La claridad del vocabulario y la presencia de iconos estaban reunidas en un solo eje</td><td>Se separaron como ejes de diseño independientes, recuperando opciones que habían desaparecido sin necesidad</td></tr>
-          <tr><td>La IA usaba como fundamento condiciones que no se aplican a la salida en cuestión</td><td>Se explicitó qué condiciones consultar para cada salida</td></tr>
-          <tr><td>Juicios que debían dejarse a la IA estaban fijados del lado de la implementación</td><td>Se revisó el reparto de papeles entre especificación e implementación</td></tr>
+          <tr><td>Se aplicaban varios límites inferiores al mismo elemento, pero no estaba clara su combinación</td><td>Se aclaró cómo se aplican conjuntamente para no incumplir ninguno</td></tr>
+          <tr><td>Un requisito previsto solo para la conducción también se aplicaba con el vehículo detenido</td><td>Se especificó el estado de conducción en el que se aplica cada requisito</td></tr>
+          <tr><td>La complejidad del texto y la presencia de iconos se combinaban en una sola dimensión de diseño</td><td>Se separaron en dimensiones independientes, recuperando opciones excluidas innecesariamente</td></tr>
+          <tr><td>La IA utilizaba requisitos que no correspondían al resultado que estaba generando</td><td>Se especificó qué requisitos debían consultarse para cada resultado</td></tr>
+          <tr><td>Decisiones destinadas a la IA habían quedado fijadas en la implementación</td><td>Se revisó el reparto de responsabilidades entre la especificación y la implementación</td></tr>
         </tbody>
       </table>
     </div>
-    <p>La IA señala un problema, una persona decide y el diseño lo recoge. En ese ir y venir quedó claro <strong>qué debe cumplirse para todos y dónde cabe ajustar la interfaz a cada cual</strong>.</p>
+    <p>La IA identificó problemas, yo los evalué y las decisiones se reflejaron en el diseño. Este proceso iterativo aclaró qué requisitos debían aplicarse a todos y en qué aspectos podía personalizarse la interfaz.</p>
   </section>
 
   <section>
-    <h2>Próximos pasos — comprobar el valor de la experiencia y el valor de la IA generativa</h2>
-    <p>Lo siguiente es examinar por separado dos preguntas.</p>
-    <p>Una: cuánto valor tiene una experiencia en la que la interfaz de partida ya encaja sin que uno tenga que configurarla. Eso supone implementar la entrevista conversacional, la corrección de lo entendido y la prueba, y luego comprobar la fiabilidad de la información recogida y la carga que supone para quien la usa.</p>
-    <p>La otra: en qué clase de objeto de diseño las diferencias entre las propuestas de la IA generativa se traducen en una experiencia mejor. Quiero extenderlo a objetos donde, manteniendo las condiciones necesarias, queden abiertas varias propuestas válidas en la organización de la información y en el flujo de interacción.</p>
-    <p>Una evaluación con usuarios reales compararía, en la misma tarea, la interfaz por defecto común, una interfaz ajustada por reglas a partir de información personal y otra concretada por IA generativa. Tiempo de operación, errores, mirada y carga subjetiva permitirían separar el efecto de ajustar la interfaz a la persona del efecto de haber usado IA generativa.</p>
-    <p>También seguirá avanzando la consulta de las normas pertinentes, para actualizar la frontera entre lo que la investigación establece y lo que es decisión de diseño. Más allá de poder comprobar las condiciones, la siguiente tarea es dejar dentro de ellas opciones que signifiquen algo para quien usa el producto.</p>
+    <h2>Próximos pasos: evaluar la personalización y el papel de la IA generativa</h2>
+    <p>El siguiente paso es investigar dos preguntas por separado.</p>
+    <p>Primero, ¿qué valor tiene una experiencia que proporciona una interfaz inicial adecuada sin exigir al usuario que la configure? Esto implicaría implementar la entrevista conversacional, las oportunidades para corregir la interpretación de la IA y una prueba de la interfaz, y después evaluar la fiabilidad de la información de entrada y la carga para el usuario.</p>
+    <p>Segundo, ¿en qué contextos de diseño podrían las diferencias entre propuestas generadas por IA mejorar la experiencia? Quiero explorar contextos donde los requisitos aún dejen varias opciones válidas para organizar la información y los flujos de interacción.</p>
+    <p>Un estudio con usuarios reales compararía tres interfaces en la misma tarea: la predeterminada común, una basada en reglas y ajustada con información sobre características personales, y una generada por IA. El tiempo de realización, los errores, las miradas y la carga de trabajo subjetiva ayudarían a distinguir los efectos de la personalización de los del uso de IA generativa.</p>
+    <p>También me propongo revisar más a fondo las normas pertinentes y afinar la distinción entre evidencia de investigación y criterio de diseño. Además de hacer verificables los requisitos, el siguiente reto es conservar dentro de ellos opciones que ofrezcan diferencias significativas para los usuarios.</p>
   </section>
 
   <details class="references">
     <summary>Referencias</summary>
     <ol>
-      <li id="ref-nhtsa">NHTSA, <cite>Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices</cite> (publicado en 2013). Directrices voluntarias. Para los criterios de aceptación sobre la mirada, véase VI.E; para la exposición sobre desvío de la atención y riesgo, véase I.C y otros pasajes del texto principal. Esto no significa que esta prueba de concepto haya sido certificada como conforme a ese ensayo. <a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">El documento en el Federal Register</a></li>
+      <li id="ref-nhtsa">NHTSA, Visual-Manual NHTSA Driver Distraction Guidelines for In-Vehicle Electronic Devices (2013). Son directrices voluntarias. Véase VI.E para los criterios de aceptación de las miradas, e I.C y otras secciones para el análisis de la atención y el riesgo. Esto no implica que la prueba de concepto haya sido certificada como conforme a esa prueba. <a class="ext" href="https://www.federalregister.gov/documents/2013/04/26/2013-09883/visual-manual-nhtsa-driver-distraction-guidelines-for-in-vehicle-electronic-devices">Leer el documento en el Federal Register</a></li>
     </ol>
   </details>
 
-  <nav aria-label="Sitio">
+  <nav aria-label="Navegación del portafolio">
     <ul>
-      <li><a class="home-button" href="../../"><span class="home-button__box">Volver al portfolio de Takafumi Horiuchi</span></a></li>
+      <li><a class="home-button" href="../../"><span class="home-button__box">Volver al portafolio de Takafumi Horiuchi</span></a></li>
     </ul>
   </nav>
 
@@ -336,8 +340,8 @@
      document rather than being built by works/figures.js so that the two
      strings it needs are written in this page's language, like the rest of
      the page. -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Figura ampliada" hidden>
-  <button class="lightbox__close" type="button" aria-label="Cerrar la figura ampliada"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Imagen ampliada" hidden>
+  <button class="lightbox__close" type="button" aria-label="Cerrar la imagen ampliada"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

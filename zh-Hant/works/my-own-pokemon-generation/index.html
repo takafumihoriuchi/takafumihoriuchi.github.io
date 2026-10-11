@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>生成世界上只有自己的寶可夢 — Takafumi Horiuchi</title>
-<meta name="description" content="在遊戲過程中，從玩家的言語生成新種寶可夢，並連接到遇見與捕捉的研究原型。考慮了保持遊戲平衡的限制，以及影響對生成物喜愛程度的條件。">
+<title>生成專屬寶可夢：遊戲內的研究原型 — Takafumi Horiuchi</title>
+<meta name="description" content="根據玩家在遊戲中選擇的詞語生成新寶可夢物種，並串接遭遇與捕捉流程的研究原型，探索遊戲平衡約束與對生成角色的情感依附。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/">
@@ -34,14 +34,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
-<meta property="og:title" content="生成世界上只有自己的寶可夢">
-<meta property="og:description" content="不是讓 AI 製作什麼，而是讓它守護什麼。一個將新物種生成整合到遊戲體驗中的研究原型。">
+<meta property="og:title" content="生成專屬寶可夢：遊戲內的研究原型">
+<meta property="og:description" content="將 AI 生成的寶可夢融入遊戲的研究原型，以人所定義的約束維持遊戲平衡與視覺一致性。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="在桃花森林裡，奶奶向玩家提問：「你在想像什麼樣的生物呢？」">
+<meta property="og:image:alt" content="在 Petalburg Woods 森林中，一名老婦人詢問玩家想像的是什麼樣的生物。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -51,9 +51,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
-      "alternateName": "堀內貴文",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工程 × AI × 設計",
+      "description": "設計工程師",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -62,9 +62,9 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/#work",
-      "name": "世界上只有自己的寶可夢",
+      "name": "生成專屬寶可夢：遊戲內的研究原型",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/my-own-pokemon-generation/",
-      "description": "在遊戲過程中，從玩家的言語生成新種寶可夢，並連接到遇見與捕捉的研究原型。考慮了保持遊戲平衡的限制，以及影響對生成物喜愛程度的條件。",
+      "description": "根據玩家在遊戲中選擇的詞語生成新寶可夢物種，並串接遭遇與捕捉流程的研究原型，探索遊戲平衡約束與對生成角色的情感依附。",
       "image": "https://takafumihoriuchi.github.io/works/my-own-pokemon-generation/assets/og.jpg",
       "datePublished": "2026-07",
       "inLanguage": "zh-Hant",
@@ -94,14 +94,14 @@
 <main>
 
   <header>
-    <h1>生成世界上只有自己的寶可夢</h1>
+    <h1>生成專屬寶可夢：遊戲內的研究原型</h1>
     <p class="dateline">2026年7月</p>
   </header>
 
   <ascii-hero data-scene="pokemon-generation" dir="ltr" translate="no" aria-hidden="true">
     <pre class="ascii-hero__canvas" aria-hidden="true" translate="no"> [ ] [ ] [ ]      .----------------.
  [ ] [ ] [ ] ---&gt; |  &lt;=  []  =&gt;   |
-                   &#x27;----------------&#x27;
+                   '----------------'
                                           ^^  ^^^  ^^ ^^^  ^^^ ^^^
                                        ^^^^ ^^ ^^^^ ^^ ^^^^ ^^ ^^^
                                     ^^^ ^^ ^^^^ ^^ ^^^^ ^^ ^^^^ ^^^
@@ -110,30 +110,30 @@
 
   <section>
     <h2>概要</h2>
-    <p class="lead">在遊戲過程中輸入的六個詞語中，AI會生成新種的寶可夢。幾分鐘後，這種新種會出現在草叢中，玩家可以遇見、捕捉並給它取綽號。不僅外觀和名字，甚至類型、種族值、招式以及遊戲內操作的數據，都是現場組裝的研究原型。</p>
-    <p>在原型中，將對話、文字輸入、背景生成、野外遭遇、捕捉以及命名串聯成一個不中斷遊戲的一體化體驗。新物種不只是單純的圖片，而是作為現有遊戲系統可以處理的種族被註冊。</p>
-    <p>在這項努力中，重點並不在於生成模型本身。而是由人類設計出維護遊戲平衡和外觀一致性的條件，並讓 AI 僅在這些範圍內進行探索的「生成框架」。此外，我還親自遊玩並初步考察了，僅屬於自己的生成物是否真的會產生情感依附。</p>
+    <p class="lead">我製作了一個研究原型，根據玩家在遊戲中選擇的六個詞語，生成新的寶可夢物種。幾分鐘後，牠就會出現在草叢中，玩家可以遇見、捕捉並替牠取暱稱。原型會生成外觀、名稱、屬性、種族值、招式，以及將牠整合進遊戲所需的資料。</p>
+    <p>原型在不中斷遊戲的情況下，串起遊戲內對話、詞語選擇、背景生成、野外遭遇、捕捉與命名。每個生成物種都以既有遊戲系統可使用的形式登錄。</p>
+    <p>我的重點在生成框架，而非模型本身：先定義維持遊戲平衡與視覺一致性的需求，再讓 AI 在這些界限內探索。我也親自遊玩原型，初步思考僅有「獨一無二」是否就足以讓我對角色產生情感依附。</p>
   </section>
 
   <section>
-    <h2>問題——如果是獨一無二的，會產生依戀嗎</h2>
-    <p>遊戲中有透過選擇角色、培養角色、並為角色命名，將其變成「只有自己的存在」的樂趣。然而，其出發點仍是在開發者所準備的選項之中。當透過生成AI，能夠從出發點本身就創造出玩家專屬的存在時，依附感是否會變得更強呢。</p>
-    <p>要確認這個問題，一張圖片的生成是不夠的。生成的存在需要能進入遊戲世界，遭遇、捕捉，並且之後還能使用。因此，準備了兩個玩家參與程度不同的入口。與爺爺對話時，無需輸入即可生成；與奶奶對話時，玩家需要選擇六個詞。首次對話的對象決定了該次遊玩的生成方式。</p>
-    <p>這個原型的目的是不是要對依附作出結論。而是建立將生成物整合到一般遊戲體驗中的基礎，並找到今後可以比較的條件。</p>
+    <h2>問題：獨一無二，是否就能產生情感依附？</h2>
+    <p>遊戲讓玩家選擇、培養並命名角色，逐漸將牠視為專屬於自己的存在。但起點仍是開發者準備好的選項。若生成式 AI 讓玩家能從一開始就塑造角色，會產生更強的情感依附嗎？</p>
+    <p>僅生成一張圖片，不足以探索這個問題。角色必須進入遊戲世界、能被遇見與捕捉，之後還能繼續使用。我設計了兩條玩家參與程度不同的路線：與老先生對話，會在沒有玩家輸入的情況下觸發生成；與老婦人對話，則由玩家選擇六個詞語。第一次交談的對象，決定這次遊玩採用的生成方式。</p>
+    <p>這個原型並未對情感依附得出結論。它的目的，是將生成內容融入一般遊玩流程，並找出未來可比較的條件。</p>
   </section>
 
   <section>
     <h2>遊戲流程</h2>
-    <p>以下是玩家選擇詞語進行「關與生成」的流程。在杜卡森林與老太太交談，並在遊戲內原本的「簡單對話」中選擇六個詞語。遊戲進行中生成會持續進行，準備就緒時可以聽到叫聲。進入草叢會出現新種，可以用與捕獵普通野生寶可夢相同的操作捕獲。名稱、屬性、種族值、技能、正面與背面的戰鬥精靈圖標、持有圖示，每次執行都會生成。一連串的動作也可以在 <a class="ext" href="https://youtu.be/dEn8V8TpS5Y">示範影片</a> 中確認。</p>
+    <p>以下呈現由玩家引導生成的路線。在 Petalburg Woods 森林中，玩家與老婦人交談，從遊戲既有的 Easy Chat 詞彙中選擇六個詞語。玩家繼續遊玩時，生成工作在背景執行。叫聲提示新物種已準備好；進入草叢便會觸發遭遇，並可用一般操作捕捉。每次生成都包含名稱、屬性、種族值、招式、正反面戰鬥角色圖，以及隊伍圖示。<a class="ext" href="https://youtu.be/dEn8V8TpS5Y">示範影片</a>呈現完整流程。</p>
 
     <div class="shots">
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp"><img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="站在桃花森林的老夫婦。對話視窗中顯示「你正在想著什麼樣的生物呢？」。"></a>
-        <figcaption>和奶奶說話的時候開始。</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp"><img src="../../../works/my-own-pokemon-generation/assets/01-npc-conversation.webp" width="560" height="373" alt="Petalburg Woods 森林中，一對年長夫婦站在玩家面前。對話詢問玩家想像的是什麼樣的生物。"></a>
+        <figcaption>玩家先與老婦人交談。</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp"><img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="標題為「想像的生物：」的簡單對話輸入畫面。輸入了 BEAUTIFUL、ATTACK、FIRE 這些詞語。"></a>
-        <figcaption>用翠綠原本就有的「簡單對話」，傳達六個詞語。</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp"><img src="../../../works/my-own-pokemon-generation/assets/02-easy-chat-input.webp" width="560" height="373" alt="Easy Chat 詞語選擇畫面，標題為「Picture the creature:」，已輸入 BEAUTIFUL、ATTACK 與 FIRE。"></a>
+        <figcaption>玩家從《Pokémon Emerald》既有的 Easy Chat 詞彙中選擇六個詞，描述自己的構想。</figcaption>
       </figure>
       <figure>
         <a href="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp"><img src="../../../works/my-own-pokemon-generation/assets/03-generation-ready.webp" width="560" height="373" loading="lazy" decoding="async" alt="站在森林草叢旁的玩家。對話窗口顯示「草叢在搖動……有東西在裡面！」。"></a>
@@ -141,104 +141,104 @@
       </figure>
       <figure>
         <a href="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp"><img src="../../../works/my-own-pokemon-generation/assets/04-wild-encounter.webp" width="560" height="373" loading="lazy" decoding="async" alt="戰鬥畫面。頭上燃著火焰的紅色蜥蜴正面對玩家。畫面上顯示「野生的 FLAMEREL 出現了！」"></a>
-        <figcaption>火焰屬性的蜥蜴 FLAMEREL 從搖曳的草叢中現身。</figcaption>
+        <figcaption>火屬性蜥蜴 FLAMEREL 從搖動的草叢中出現。</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/05-capture.webp"><img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="在戰鬥中，怪獸球正被投向 FLAMEREL。"></a>
-        <figcaption>和其他種族一樣，可以用怪獸球捕捉。</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/05-capture.webp"><img src="../../../works/my-own-pokemon-generation/assets/05-capture.webp" width="560" height="373" loading="lazy" decoding="async" alt="戰鬥中，一顆精靈球被投向 FLAMEREL。"></a>
+        <figcaption>與其他物種一樣，可以用精靈球捕捉牠。</figcaption>
       </figure>
       <figure>
         <a href="../../../works/my-own-pokemon-generation/assets/06-nickname.webp"><img src="../../../works/my-own-pokemon-generation/assets/06-nickname.webp" width="560" height="373" loading="lazy" decoding="async" alt="詢問 FLAMEREL 暱稱的命名畫面。已輸入 GGG。"></a>
-        <figcaption>像其他種族一樣，可以取暱稱。</figcaption>
+        <figcaption>與其他寶可夢一樣，可以為新物種取暱稱。</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/07-party.webp"><img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="手持畫面。生成的種族擁有專用圖示，與普通的三隻寶可夢並排顯示。"></a>
-        <figcaption>和其他種族一樣，擁有專屬的圖示並排列在手持物中。</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/07-party.webp"><img src="../../../works/my-own-pokemon-generation/assets/07-party.webp" width="560" height="373" loading="lazy" decoding="async" alt="隊伍畫面。生成物種有自己的圖示，與三隻既有寶可夢一起顯示。"></a>
+        <figcaption>新物種有專屬圖示，並出現在玩家的隊伍中。</figcaption>
       </figure>
       <figure>
-        <a href="../../../works/my-own-pokemon-generation/assets/08-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="FLAMEREL 的寶可夢資訊畫面。顯示了火屬性、特性為猛火、性格是頑皮、在斗火森林以等級7遇到的紀錄。"></a>
-        <figcaption>和其他種族一樣，狀態畫面也能正常運作。</figcaption>
+        <a href="../../../works/my-own-pokemon-generation/assets/08-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/08-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="FLAMEREL 的資訊畫面：火屬性、Blaze 特性、Naughty 性格，以及在 Petalburg Woods 森林以等級 7 相遇的紀錄。"></a>
+        <figcaption>生成的資料可以用於遊戲既有的資訊畫面。</figcaption>
       </figure>
     </div>
   </section>
 
   <section>
-    <h2>設計課題——自由創作會破壞遊戲</h2>
-    <p>AI能夠創造出新的角色，與這個角色能否在遊戲中成立，是兩碼事。如果能力過高，難度會崩壞；如果屬性和技能搭配不佳，就很難培養。如果外觀過於複雜，轉換成64×64像素的精靈時就無法辨認形狀。</p>
-    <p>另一方面，如果把一切都固定下來，就沒有每次執行時會產生不同東西的意義。必要的不是消除 AI 的自由，而是要將作為遊戲應當保護的部分與可以允許變化的部分分開。</p>
-    <p>因此，將設計的對象從單一的寶可夢轉移到能生成寶可夢的空間。人類定義目的、限制、禁止事項和驗證方法，AI則在其內部具體化候選方案。這是在動態原型中嘗試<a href="../../">我的設計哲學</a>的限制型設計。</p>
+    <h2>設計挑戰：讓生成角色能融入遊戲</h2>
+    <p>生成新角色，與讓角色能在遊戲中運作，是不同的挑戰。能力值過高會破壞難度平衡，屬性與招式搭配不當會讓角色難以培養。過度複雜的設計，縮小為 64 × 64 像素的角色圖時，也可能難以辨識。</p>
+    <p>若固定所有細節，就失去每次生成不同結果的意義。我需要區分哪些元素是遊戲成立的必要條件，哪些則可以變動。</p>
+    <p>因此，我著重設計可能生成哪些寶可夢的範圍，而非單一角色。由人定義目標、約束、禁止內容與驗證方法，AI 再在框架內提出候選方案。這個可運作的原型，將我以約束驅動的設計方法付諸實作。</p>
   </section>
 
   <section>
-    <h2>方法——設計的不是生成物，而是生成條件</h2>
-    <p>不讓LLM寫自由文，只讓它填寫姓名、類型、種族值、招式、體型、顏色等既定項目。輸出結果不要直接採用，要用驗證器檢查。如果有違規，就將違反了哪些規則返回給模型，並在滿足條件之前重新生成。</p>
+    <h2>方法：定義生成條件</h2>
+    <p>系統要求大型語言模型（LLM）填寫名稱、屬性、種族值、招式、體型與顏色等預定欄位，而非撰寫自由文字。每次回覆都先經驗證器檢查，才會採用。若違反規則，系統會指出具體問題，要求模型重新生成，直到符合需求。</p>
     <ol>
-      <li><strong>人類決定界線。</strong>將遊戲平衡、在畫面上可讀的形式、應避免的表現，轉化為可檢查的規則。</li>
-      <li><strong>AI 將候選項具體化。</strong>根據玩家的言語提示，建議允許的項目值。</li>
-      <li><strong>機械檢驗規則。</strong>自動判定數值、技能組合、禁止表現等。</li>
-      <li><strong>只反饋違反的部分。</strong>不符合條件的候選者會連同理由一併退回，重新生成。</li>
+      <li><strong>人定義界限。</strong>將遊戲平衡、角色圖的清晰度與可接受內容等需求，轉化為明確且可檢查的規則。</li>
+      <li><strong>AI 提出候選方案。</strong>模型根據玩家選擇的詞語，為允許的欄位提出數值與內容。</li>
+      <li><strong>系統依規則檢查輸出。</strong>自動檢查數值範圍、招式組合與禁止內容。</li>
+      <li><strong>只針對違規項目提供回饋。</strong>不符合規則的候選方案，會附上原因退回並重新生成。</li>
     </ol>
-    <p><strong>保護遊戲的限制。</strong>種族值總和設在280〜360的範圍內，各能力也設定了上下限。技能從遊戲的來源中提取，並限制在該種族的屬性或一般屬性。此外，排除了必殺技、自爆、固定傷害、過於強力的技能，也檢查了攻擊技能的數量及是否有屬性相符的技能。捕獲率及成長速度等固定，以便生成的差異能在可比較的範圍內。</p>
-    <p><strong>保護外觀的限制。</strong>體型從即使是小型精靈也容易保持輪廓的候選中選擇，並限制色彩和特徵的詞彙。排除人類特徵、流血、武器、文字等。最後，必須在圖像生成的指示中加入「只生成一個」「全身」「不要生成多餘的手腳」等防止破綻的條件。</p>
-    <p>在某份記錄中，模型最初提出了種族值總和為380的方案。框架會檢測違規並促使重新生成，最終收斂到320的規格。重要的是，重點不在於偶然出現好結果，而是設計了不採用超出框架結果的流程。</p>
+    <p><strong>維持遊戲性的約束。</strong>我將種族值總和限制在 280–360，並為各項能力設定上下限。招式從遊戲原始碼中擷取，只允許與物種屬性相同或一般屬性的招式，並排除一擊必殺、自爆、固定傷害與過於強力的招式。驗證器也檢查攻擊招式的數量，以及是否有與自身屬性相符的招式。捕獲率、成長速度等因素固定，以便讓生成差異維持在適合比較的範圍內。</p>
+    <p><strong>維持視覺清晰度的約束。</strong>體型從縮小成角色圖後仍容易辨識輪廓的選項中挑選，顏色與特徵的詞彙也受到限制。排除類人特徵、血液、武器與文字。影像生成指令始終包含「只畫一隻生物」「呈現全身」「不要多餘肢體」等條件，以減少生成錯誤。</p>
+    <p>在一次有記錄的執行中，模型最初提出種族值總和為 380 的方案。驗證器發現違規並要求重新生成，最後得到總和 320 的規格。貢獻在於建立排除超出約束輸出的流程，而不是仰賴偶然成功的結果。</p>
   </section>
 
   <section>
     <h2>將體驗在遊戲內部完成</h2>
-    <p>玩家接觸到的只是遊戲內的對話、詞語選擇，以及草叢中的遭遇。無需為生成打開另一個畫面。另一方面，計算量大的處理由 PC 上的 Python 進程負責，並通過檔案與遊戲進行聯繫。通過 mGBA 上的 Lua 腳本橋接雙方，將既有遊戲的操作感與外部 AI 的處理分離。</p>
+    <p>玩家只需要遊戲內的對話、詞語選擇與草叢遭遇，不必開啟另一個生成畫面。運算量大的工作由電腦上的 Python 程序執行，透過檔案與遊戲交換資料。mGBA 模擬器中的 Lua 腳本連接兩者，在 AI 處理留在遊戲外部的同時，維持熟悉的操作方式。</p>
     <ol>
-      <li><strong>製作規格。</strong>本地的語言模型將六種語言轉換為經過驗證的種族數據。</li>
-      <li><strong>擺出姿勢。</strong>圖片模型繪製參考插圖，並從中生成正面、背面、手持圖示，保持一致的姿態。</li>
-      <li><strong>轉換為遊戲用資料。</strong>將圖像減色為15色，並轉換、壓縮為GBA可處理的精靈圖和調色盤。</li>
-      <li><strong>反映到正在執行的遊戲中。</strong>將資料寫入已預約的區域，在不重新啟動遊戲的情況下讓新種類出現。</li>
+      <li><strong>生成規格。</strong>本機語言模型將六個詞語轉化為物種資料，驗證通過後才使用。</li>
+      <li><strong>生成視覺素材。</strong>影像模型先製作參考插畫，再生成視覺一致的正面與背面角色圖，以及隊伍圖示。</li>
+      <li><strong>轉換為遊戲資料。</strong>影像減色至 15 色，再轉換並壓縮為相容 Game Boy Advance（GBA）的角色圖與調色盤。</li>
+      <li><strong>整合至正在執行的遊戲。</strong>資料寫入預留區域，無須重新啟動遊戲，即可加入新物種。</li>
     </ol>
-    <p>為了將相同的數據也寫入磁碟，反映出的種族即使重新載入遊戲也會保留。生成只發生一次，無法撤銷。若從遇到的狀況逃跑或失敗，種族會留在世界中，但若擊敗它，將不會再出現。這種不可逆性也是設計上為了讓體驗中感受到“世界中只有一隻”的意義。</p>
+    <p>相同資料也會寫入磁碟，因此重新載入遊戲後，生成物種仍會保留。生成只發生一次，而且無法撤銷。玩家逃跑或戰敗時，寶可夢仍留在世界中；若玩家擊敗牠，牠就不再出現。這種不可逆性，讓「這次遊玩只有一隻」成為體驗的一部分。</p>
   </section>
 
   <section>
     <h2>在原型中可以確認的事項</h2>
-    <p>這是由一個人製作的可行性驗證，並不是完成的遊戲或用戶實驗。將達到的點和未驗證的範圍，分成如下幾類。</p>
+    <p>我獨立製作這個原型，以檢查技術可行性。它不是完整遊戲，也不是使用者研究。以下區分已驗證、已實作與尚未測試的範圍。</p>
     <ul class="plain">
-      <li><strong>確認過的動作範圍。</strong>在遊戲內的對話、輸入六個字、背景生成、反映到正在運行的遊戲、野外遭遇、捕捉、到輸入暱稱，都在 mGBA 上一次性確認了。</li>
-      <li><strong>為了比較而實作的東西。</strong>準備了兩種入口：無需輸入的「被動生成」和選擇語詞的「介入生成」，可以記錄對話、遭遇、捕捉等。</li>
-      <li><strong>有基礎，但整體尚未驗證的範圍。</strong>捕獲後的等級提升、技能的習得、戰鬥、存入箱子、存檔後的持續使用是連接到既有系統的，但尚未進行長時間遊玩的檢證。</li>
-      <li><strong>未實裝的範圍。</strong>將進化先現場生成的功能以及多位參與者進行依戀比較的實驗，作為今後的課題保留了。</li>
+      <li><strong>已驗證完整流程。</strong>我在 mGBA 中確認了遊戲內對話、六詞輸入、背景生成、整合至執行中的遊戲、野外遭遇、捕捉與暱稱輸入的完整流程。</li>
+      <li><strong>已為未來比較實作。</strong>我加入兩種入口：無須輸入的被動生成，以及透過詞語選擇引導的生成。對話、遭遇與捕捉都可記錄，供後續比較。</li>
+      <li><strong>已連接既有系統，但尚未長時間遊玩測試。</strong>捕捉後升級、學習招式、對戰、存入盒子與存檔後繼續使用，都已整合至既有遊戲系統；但我尚未在長時間遊玩中測試這些功能。</li>
+      <li><strong>後續工作。</strong>遊戲中即時生成進化型態的功能尚未實作，也尚未進行多位參與者的情感依附比較研究。</li>
     </ul>
   </section>
 
   <section>
-    <h2>自己親自嘗試的結果——僅僅是獨一無二，並不會產生依戀</h2>
-    <p>就我自己玩過原型來看，對生成的寶可夢並沒有產生強烈的喜愛。這只是實作者本人一人的感想，無法作為一般化的實驗結果。不過，這確實提供了一個線索，讓我思考下一步應該改變什麼來進行比較。</p>
-    <p>可能左右依附的條件，有兩個。</p>
+    <h2>遊玩心得：獨一無二，並未讓我自然產生依附</h2>
+    <p>親自遊玩原型後，我對生成的寶可夢並沒有很強的情感依附。這是我身為開發者的個人感受，不能推廣到其他玩家。不過，它提供了未來比較中值得改變的條件。</p>
+    <p>有兩個因素值得進一步研究。</p>
     <ul class="plain">
-      <li><strong>生成物的品質。</strong>如果外觀和設定的魅力未達到一定水準，僅憑“世界上唯一一隻”的稀有性無法支撐情感依附。</li>
-      <li><strong>參與的深度。</strong>僅僅選擇六個詞語，就會覺得結果是「被傳達的」而不是「自己創造的」。能產生參與感的不是輸入的量，而是重新選擇、比較、修改、對結果負責等製作過程的質量。</li>
+      <li><strong>輸出品質。</strong>若外觀與角色設定不夠有吸引力，僅憑「這次遊玩中唯一的一隻」，可能不足以維持情感依附。</li>
+      <li><strong>參與深度。</strong>只選擇六個詞語，讓我覺得成果比較像是別人交付給我的，而非我親手創造的。我推測參與感取決於創作過程的品質，例如重新考慮選擇、比較方案、修改細節，以及對結果負責，而非單純增加輸入量。</li>
     </ul>
-    <p>形成對比的是，不同於遊戲用的自動生成，我們透過與多個生成型人工智慧的對話以及手工操作反覆製作出來的「花狐狸」。對於這個角色，我非常有感情，因為我們比較候選方案、修改，並一直做細緻調整到令人滿意的形態。我認為這是因為既具備足夠的品質，也包含了多次試錯的參與過程。</p>
+    <p>相比之下，我對 Hanagitsune（花狐狸）很有感情。這個角色是在遊戲自動生成流程之外，經過與多個生成式 AI 工具反覆對話及手動修整而創作的。我比較候選方案、修正細節，持續調整直到滿意。我認為成果品質與反覆創作過程中的投入，都有助於形成這份情感。</p>
 
     <figure class="pair">
-      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="花狐狸的正面。是一隻淡綠色的狐狸，尾巴像花蔓般垂下。">
-      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="花狐狸的背面。可以看到整條盛開花朵的尾巴的長度。">
-      <figcaption>花狐——擁有花開尾巴的森林守護者。牠奔跑過的痕跡上草木開始萌芽，也為荒蕪的土地帶來新的生命。牠的身影被視為森林向未來成長的象徵。</figcaption>
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-front.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune（花狐狸）的正面：一隻淡綠色狐狸，尾巴如垂落的藤蔓，長滿花朵。">
+      <img src="../../../works/my-own-pokemon-generation/assets/hanagitsune-back.webp" width="560" height="560" loading="lazy" decoding="async" alt="Hanagitsune（花狐狸）的背面，呈現整條開花尾巴。">
+      <figcaption>Hanagitsune（花狐狸）是尾巴盛開花朵的森林守護者。牠奔跑過的地方長出花草，即使荒蕪土地也萌生新生命，因此被視為森林持續生長的象徵。</figcaption>
     </figure>
 
     <figure class="pair">
-      <a href="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Hanagi2ne 的寶可夢資訊畫面。顯示了草屬性、特性是綠色之癒、性格勇敢，以及在桃花森林遇到時等級為7。精靈圖像是一隻擁有綻放尾巴的淡綠色狐狸。"></a>
-      <a href="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp"><img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="戰鬥畫面。從背面看到 Hanagi2ne 正面對野生的波加希納。畫面上顯示「Hanagi2ne 的 吸取！」。"></a>
-      <figcaption>經過不斷對話與手工設計的「花狐」，已作為遊戲內的種族實裝。</figcaption>
+      <a href="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp"><img src="../../../works/my-own-pokemon-generation/assets/09-hanagitsune-status.webp" width="560" height="373" loading="lazy" decoding="async" alt="Hanagi2ne 的資訊畫面：草屬性、Overgrow 特性、Brave 性格，以及在 Petalburg Woods 森林以等級 7 相遇的紀錄。角色圖是一隻淡綠色、尾巴開花的狐狸。"></a>
+      <a href="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp"><img src="../../../works/my-own-pokemon-generation/assets/10-hanagitsune-battle.webp" width="560" height="373" loading="lazy" decoding="async" alt="戰鬥畫面，從背面呈現 Hanagi2ne 面對野生 Poochyena。文字顯示「Hanagi2ne used ABSORB!」。"></a>
+      <figcaption>透過反覆對話與手動修整設計的 Hanagitsune（花狐狸），已作為遊戲中的物種實作。</figcaption>
     </figure>
 
-    <p>這個原型並沒有回答「生成內容會產生依戀嗎」這個問題。它將曖昧的問題，拆分為生成物的品質與參與的深度這兩個可以有意控制的元素。在接下來的驗證中，需要將選擇、比較、修改納入創作過程，並在將生成物的品質保持在一定水準後，由多位參與者進行比較。</p>
+    <p>這個原型並未回答生成內容是否會產生情感依附，而是將這個廣泛問題轉化為兩個可刻意調整的因素：輸出品質與參與深度。未來研究會在創作中增加選擇、比較與修改的機會，讓輸出達到一致的品質，再比較多位參與者的體驗。</p>
   </section>
 
   <section>
-    <h2>實裝</h2>
+    <h2>實作</h2>
     <p>生成管線、限制與驗證框架、針對 GBA 的資料轉換、遊戲端的變更內容，都在 <a class="ext" href="https://github.com/takafumihoriuchi/my-own-pokemon-generation">GitHub 儲存庫</a> 公開。</p>
   </section>
 
-  <p class="colophon"><a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a>以反編譯為基礎，作為個人研究製作。未分發任何ROM、ROM補丁或遊戲內資產。此處刊登的所有精靈貼圖均為AI生成的原創作品。寶可夢是任天堂、株式会社Creatures、株式会社Game Freak的商標，本項目與這些公司無關，亦未獲得其批准。</p>
+  <p class="colophon">這項獨立研究以 <a class="ext" href="https://github.com/pret/pokeemerald">pret/pokeemerald</a> 反編譯專案為基礎，不散布 ROM、ROM 修補檔或遊戲素材。Pokémon 為 Nintendo、Creatures Inc. 與 Game Freak Inc. 的商標；本專案與上述公司無關，也未獲其認可。</p>
 
-  <nav aria-label="網站">
+  <nav aria-label="作品集導覽">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀內貴文的作品集首頁</span></a></li>
     </ul>

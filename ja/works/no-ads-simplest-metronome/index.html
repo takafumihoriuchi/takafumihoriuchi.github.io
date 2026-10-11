@@ -6,7 +6,7 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>鼓動するメトロノーム — 堀内 貴文</title>
-<meta name="description" content="画面の円が、クリック音と同じ瞬間に、同じ強さで鼓動するiPhone用メトロノーム。広告も設定画面もない一画面の道具として、企画・デザイン・実装を一人で行った。">
+<meta name="description" content="画面の円が、クリック音のタイミングと強さに合わせて鼓動するiPhone用メトロノーム。広告も設定画面もない一画面の道具として、企画・デザイン・実装を一人で行った。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ja/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ja_JP">
 <meta property="og:title" content="鼓動するメトロノーム">
-<meta property="og:description" content="円が、クリック音と同じ瞬間に、同じ強さで鼓動する。広告も設定画面もない、iPhoneのためのメトロノーム。">
+<meta property="og:description" content="円が、クリック音のタイミングと強さに合わせて鼓動する。広告も設定画面もない、iPhoneのためのメトロノーム。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ja/works/no-ads-simplest-metronome/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -49,7 +49,7 @@
       "name": "Takafumi Horiuchi",
       "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工学 × AI × デザイン",
+      "description": "Design engineer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -61,7 +61,7 @@
       "name": "鼓動するメトロノーム",
       "alternateName": "No Ads Simplest Metronome",
       "url": "https://takafumihoriuchi.github.io/ja/works/no-ads-simplest-metronome/",
-      "description": "画面の円が、クリック音と同じ瞬間に、同じ強さで鼓動するiPhone用メトロノーム。広告も設定画面もない一画面の道具として、企画・デザイン・実装を一人で行った。",
+      "description": "画面の円が、クリック音のタイミングと強さに合わせて鼓動するiPhone用メトロノーム。広告も設定画面もない一画面の道具として、企画・デザイン・実装を一人で行った。",
       "image": "https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg",
       "datePublished": "2026-09",
       "inLanguage": "ja",
@@ -111,7 +111,7 @@
 
   <section>
     <h2>概要</h2>
-    <p class="lead">画面の真ん中の円が、クリック音と同じ瞬間に、同じ強さで鼓動する。広告も、アカウントも、設定画面もない、iPhoneのためのメトロノームを制作した。</p>
+    <p class="lead">画面の真ん中の円が、クリック音のタイミングと強さに合わせて鼓動する。広告も、アカウントも、設定画面もない、iPhoneのためのメトロノームを制作した。</p>
 
     <!-- A running copy of the screen, not a picture of it: see page.css. The
          checkbox is the circle's start/stop, as in the app, and works without
@@ -161,8 +161,8 @@
   </section>
 
   <section>
-    <h2>鼓動&thinsp;——&thinsp;同じ瞬間に、<wbr>同じ強さで</h2>
-    <p>円は、音が鳴らされた瞬間ではなく、耳に届く瞬間に膨らむ。Bluetoothイヤホンで生じる0.1–0.3秒ほどの遅れも、iOSが報告する出力の遅れを使って補正している。膨らむ大きさはクリックの音量に比例させ、1拍目は高く大きな音とともに、ひときわ大きく膨らむ。</p>
+    <h2>鼓動&thinsp;——&thinsp;クリックのタイミングと<wbr>強さに合わせる</h2>
+    <p>円の表示は、iOSが報告する音声出力の遅延を使い、クリックが聞こえる時刻に合うよう調整している。Bluetoothイヤホンでは、0.1–0.3秒ほどの遅れが生じることがある。膨らむ大きさはクリックの音量に比例させ、1拍目は高く大きな音とともに、ひときわ大きく膨らむ。</p>
 
     <figure class="diagram">
       <picture>
@@ -173,6 +173,7 @@
     </figure>
 
     <p>拍の時刻は、音声を出すスレッドがサンプル単位で決めている。誤差を積み重ねない計算にしたので、1時間鳴らし続けても、ずれは0.5サンプル以内に収まる。</p>
+    <p class="note">※ 0.5サンプルという値の対象範囲と算出条件は要確認。音が耳に届く時刻や、画面との同期精度を示す値としては扱わない。</p>
   </section>
 
   <section>
@@ -242,7 +243,7 @@
     </dl>
   </section>
 
-  <p class="colophon">SwiftUIで実装し、外部のライブラリは使っていない。iOS&nbsp;17以降のiPhoneで動く。英語名はNo Ads Simplest Metronome。App Storeでの公開を準備している（2026年9月）。使い方の全体とプライバシーポリシーは、<a class="ext" href="https://simplest-metronome.pages.dev/ja/">サポートページ</a>に載せている。</p>
+  <p class="colophon">SwiftUIで実装し、外部のライブラリは使っていない。iOS&nbsp;17以降のiPhoneで動く。英語名はNo Ads Simplest Metronome。2026年9月時点では、App Storeでの公開を準備していた。使い方の全体とプライバシーポリシーは、<a class="ext" href="https://simplest-metronome.pages.dev/ja/">サポートページ</a>に載せている。</p>
 
   <nav aria-label="サイト">
     <ul>

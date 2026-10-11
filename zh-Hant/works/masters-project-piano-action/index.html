@@ -6,7 +6,7 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>鋼琴擊弦機的運動分析 — 堀內貴文</title>
-<meta name="description" content="以SolidWorks將平台鋼琴的擊弦機構重建為3D模型。這是一個碩士階段的專題，以理論計算與運動分析相互對照，考察琴鍵輸入如何轉化為琴槌速度與琴弦反作用力。">
+<meta name="description" content="一項碩士課程專案：以 SolidWorks 重建平台鋼琴擊弦機的 3D 模型，透過理論計算與運動分析，比較琴鍵輸入如何轉化為琴槌速度與琴弦反作用力。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -34,7 +34,7 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_TW">
 <meta property="og:title" content="鋼琴擊弦機的運動分析">
-<meta property="og:description" content="琴鍵上的輸入，在穿過複雜的連桿機構之後，是怎樣變成琴槌的速度與琴弦的反作用力的？">
+<meta property="og:description" content="鋼琴擊弦機的複雜連桿，如何將琴鍵輸入傳遞為琴槌速度與琴弦反作用力？">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -50,9 +50,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
-      "alternateName": "堀內貴文",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "認知工程 × AI × 設計",
+      "description": "設計工程師",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -63,11 +63,14 @@
       "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/#work",
       "name": "鋼琴擊弦機的運動分析",
       "url": "https://takafumihoriuchi.github.io/zh-Hant/works/masters-project-piano-action/",
-      "description": "以SolidWorks將平台鋼琴的擊弦機構重建為3D模型，並以理論計算與運動分析相互對照，考察從琴鍵輸入到琴槌速度與琴弦反作用力的傳遞。這是一個碩士階段的專題。",
+      "description": "一項碩士課程專案：以 SolidWorks 重建平台鋼琴擊弦機的 3D 模型，透過理論計算與運動分析，比較琴鍵輸入如何轉化為琴槌速度與琴弦反作用力。",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
       "datePublished": "2020-01",
       "inLanguage": "zh-Hant",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      },
+      "headline": "鋼琴擊弦機的運動分析"
     }
   ]
 }
@@ -113,14 +116,14 @@
 
   <section>
     <h2>概述</h2>
-    <p class="lead">在平台鋼琴的內部，按下琴鍵的動作經由多重連桿逐級傳遞，最終使琴槌向上彈起，轉化為琴弦的振動。這套讓琴鍵被按下時能夠帶動琴槌擊弦的槓桿系統，稱為「擊弦機」。本專題在SolidWorks*上把這套擊弦機重建為3D模型，並以運動分析考察琴鍵上的輸入如何轉化為琴槌的速度與琴弦的反作用力。</p>
-    <p>分析之前，先依據參考圖片從零開始對琴鍵機構進行3D建模，再以這個模型執行了兩項運動分析：一項是下沉的琴鍵與彈起的琴槌之間的速度關係，另一項是施加於琴鍵的力與作用到琴弦的力之間的關係。3D模型上得到的模擬數值，與依尺寸和支點位置推算出的理論值相互對照，藉此確認運動與力在模型內部是如何傳遞的。</p>
-    <p class="citation">* SolidWorks：3D CAD系統。在設計階段即可進行考察零件強度的結構分析，以及確認運動狀況的運動分析。</p>
+    <p class="lead">平台鋼琴的擊弦機是一套槓桿系統，將按鍵動作傳至琴槌，使琴槌抬起擊打琴弦，令其振動。本專案以 SolidWorks* 重建擊弦機的 3D 模型，並透過運動分析，探討琴鍵輸入如何轉化為琴槌速度與琴弦反作用力。</p>
+    <p>我們依參考圖片從零建立機構模型，再分別進行兩項分析：琴鍵向下速度與琴槌向上速度的關係，以及琴鍵施力與琴弦反作用力的關係。模擬結果與依模型尺寸、支點位置計算的理論值比較，以檢查模型如何傳遞運動與力量。</p>
+    <p class="citation">* SolidWorks 是 3D CAD 系統，包含零件結構分析與機構運動分析工具。</p>
 
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Motion Analysis of the Piano Action 全17頁。可橫向捲動">
+      <ol class="deck" tabindex="0" role="group" aria-label="鋼琴擊弦機運動分析的原始英文簡報，共 17 張投影片，可水平捲動。">
         <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="標題頁：「Motion Analysis of the Piano Action」。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="平台鋼琴內部的照片，介紹排列在琴鍵後方的擊弦機構。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="3D模型，呈現按下琴鍵時擊弦機各部分如何連動。"></a></li>
@@ -139,7 +142,7 @@
         <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="琴弦反作用力最大值31牛頓，與依槓桿原理求得的理論值31.1牛頓的比較。"></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="有關擊弦機力學模型的參考文獻一覽。"></a></li>
       </ol>
-    </figure>
+    <figcaption>原始英文簡報投影片（歷史資料，內容維持原樣）。</figcaption></figure>
   </section>
 
   <hr class="section-break">
@@ -148,10 +151,10 @@
     <h2>把擊弦機做成可供分析的3D模型</h2>
     <h3>把一次觸鍵變成一次擊弦的機構</h3>
     <p>擊弦機是把琴鍵的向下運動轉換為琴槌向上運動的機構。按下琴鍵後，頂桿螺絲、連動桿、擊弦機頂桿、複振槓桿等隨之連動，琴槌被抬起並擊打琴弦。演奏者看到的只是一次觸鍵，而在其內部，多個零件分別繞著不同的支點轉動，在彼此接觸之中把運動傳遞下去。</p>
-    <p>3D建模涵蓋了琴鍵、琴槌、頂桿、連動桿、複振槓桿、頂桿螺絲、制音器、制音槓桿、金屬線，以及支撐它們的框架。要理解其運動，僅僅端詳成品的形狀並不足夠，還必須界定哪個零件以何處為支點轉動、又觸及下一個零件的哪個部位。</p>
+    <p>3D 模型包含琴鍵、琴槌、頂桿、連動桿、複振槓桿、頂桿螺絲、制音器、制音槓桿與金屬線，以及支撐這些零件的框架。為了模擬動作，必須定義各零件的支點，以及與其他零件接觸的位置。</p>
 
     <h3>從剖面圖做出3D模型</h3>
-    <p>本專題並未採用現成的CAD資料，而是以擊弦機的剖面資料為底圖描摹各零件的輪廓，逐一建立3D模型。隨後把零件組成組合件，並設定與實際機構相對應的固定關係與轉動關係。這道工序把一個供人觀看形狀的模型，轉變為一個可以施力、可以運動的分析模型。</p>
+    <p>各零件以擊弦機的剖面圖為底圖，沿輪廓描繪，再從零建立 3D 模型。接著組裝零件，設定對應實際機構的固定連接與轉動接頭。這些關係讓幾何模型成為能在外力作用下運動的分析模型。</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="在SolidWorks畫面中，把作為參考的鋼琴擊弦機剖面圖設為半透明底圖，並沿其輪廓建立3D模型。左側顯示著Windows工作列與零件樹。"></a>
@@ -163,10 +166,10 @@
       <figcaption>在SolidWorks上實際建立的擊弦機3D模型。</figcaption>
     </figure>
 
-    <h3>以自由度確認拘束條件</h3>
+    <h3>檢查組立模型的自由度</h3>
     <p>扣除固定的框架，可動零件共9個，若無拘束則合計具有54個自由度。把頂桿螺絲與金屬線固定於其他零件，可減少12個自由度；再以轉動接頭拘束其餘7個零件，又減少35個。因此，此CAD組合件的自由度為7，如下所示。</p>
     <p class="formula" role="math" aria-label="54減12減35等於7">54 − 12 − 35 = 7</p>
-    <p>SolidWorks的拘束診斷同樣顯示，估計自由度與實際自由度皆為7，冗餘拘束為0。這並非斷定實物擊弦機整體自由度的數值，而是確認本專題所設定的零件構成與拘束條件確實依預期組裝完成。</p>
+    <p>SolidWorks 的拘束診斷也顯示估計與實際自由度皆為 7，冗餘拘束為 0。這確認了本專案定義的零件與拘束依預期完成組立；它並不能用來判定所有實體鋼琴擊弦機的自由度。</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="標註了各零件名稱的擊弦機模型，以及從54個自由度中減去12個固定拘束與35個轉動拘束、得出7的計算。"></a>
@@ -175,16 +178,16 @@
   </section>
 
   <section>
-    <h2>兩項分析——琴鍵輸入如何被轉換</h2>
-    <p>模型的行為分為兩項分析來考察。分析1是「琴鍵移動的快慢如何轉換為琴槌的快慢」，分析2是「施加於琴鍵的力如何以琴弦一側的反作用力呈現」。每次只擷取一組輸入與輸出，便能把複雜連桿機構的行為，化為可用幾何速度比與槓桿力平衡來說明的形式。</p>
-    <p>比較的基準，是把機構置換為簡單轉動構件之後的理論計算。理論值與模擬值若相接近，至少可以判斷模型內部的運動，符合由所設定的尺寸與拘束條件所應期待的關係。</p>
+    <h2>琴鍵輸入的兩項分析</h2>
+    <p>模型分成兩項獨立分析。分析一比較琴鍵速度與琴槌速度，分析二比較施加於琴鍵的力與琴弦反作用力。分開處理這兩組輸入與輸出關係，便能更容易以幾何速度比與槓桿平衡，分析複雜的連桿機構。</p>
+    <p>為了比較，機構被簡化為轉動構件並進行理論分析。理論值與模擬值若一致，可顯示模型的運動符合設定的尺寸與拘束條件。</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="兩幅示意圖，表示分析1對應琴鍵與琴槌的線速度，分析2對應施加於琴鍵的力與琴弦的反作用力。"></a>
       <figcaption>兩項分析的輸入與輸出。分析1比較琴鍵與琴槌的線速度，分析2比較施加於琴鍵的力與琴弦的反作用力。</figcaption>
     </figure>
 
-    <h3>分析1——琴鍵的速度在琴槌處被放大了多少</h3>
+    <h3>分析一：從琴鍵速度到琴槌速度</h3>
     <p>在速度分析中，把複雜的擊弦機簡化為琴鍵、以連動桿為中心的中間機構、琴槌這三個在接觸中傳遞運動的剛體。把運動理解為依序從圖中的①傳到③，由眾多零件構成的機構便可當作三級轉動來計算。</p>
 
     <figure class="paper-figure">
@@ -192,12 +195,12 @@
       <figcaption>為便於分析，把機構簡化為①琴鍵、②中間機構、③琴槌這三個剛體。</figcaption>
     </figure>
 
-    <p>同一剛體上角速度相同，若以<em>r</em>表示至支點的距離、以<em>v</em>表示該點的線速度，則<em>v</em> = <em>ωr</em>。若假定接觸點處速度無損耗地傳向下一個剛體，把各級的輸入半徑與輸出半徑之比相乘，即可求得琴槌速度。</p>
+    <p>同一剛體上的各點具有相同角速度。若以 <var>r</var> 表示至支點的距離、<var>v</var> 表示該點線速度，則 <var>v</var> = ω<var>r</var>。假設速度在每個接觸點都無損地傳至下一個剛體，將三級的「輸出半徑／輸入半徑」依序相乘，再乘以琴鍵速度，即可算出琴槌速度。</p>
     <p class="formula formula-long" role="math" aria-label="琴槌速度等於r1撇、r2撇、r3撇之積，除以r1、r2、r3之積，再乘以琴鍵速度">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="針對三個剛體，把各支點至輸入點與輸出點的距離標為r1、r1撇、r2、r2撇、r3、r3撇的示意圖。"></a>
-      <figcaption>把各剛體自支點至輸入點、輸出點的距離視為半徑，將其比值在三級之間相乘，即得速度比。</figcaption>
+      <figcaption>各支點至輸入與輸出點的距離定義了對應半徑。將三級的「輸出半徑／輸入半徑」相乘，便得到整體速度比。</figcaption>
     </figure>
 
     <h4>輸入條件與觀測結果</h4>
@@ -211,7 +214,7 @@
     <table class="results-table">
       <caption>分析1的尖峰速度</caption>
       <thead>
-        <tr><th scope="col">觀測·計算對象</th><th scope="col">速度</th></tr>
+        <tr><th scope="col">物理量與求取方法</th><th scope="col">速度</th></tr>
       </thead>
       <tbody>
         <tr><th scope="row">琴鍵（模擬）</th><td>1,027 mm/s</td></tr>
@@ -228,45 +231,45 @@
       <figcaption>在3D模型上量得的六個半徑。由這些數值算出琴槌的理論速度4,614 mm/s。</figcaption>
     </figure>
 
-    <p>模擬值4,284 mm/s雖比理論值低約7%，但速度被放大的幅度相當接近。產生這項差異的原因，如後文所述，在於把機構理想化為三個剛體的理論計算，與連零件間損耗和材料變形一併處理的3D模擬，兩者前提不同。</p>
+    <p>模擬得到的琴槌速度為 4,284 mm/s，比理論值低約 7%，但速度放大的程度相近。理論計算使用三個理想化剛體，模擬則表示個別零件。僅憑這個數值差異，無法確定造成落差的原因。</p>
 
-    <h3>分析2——琴鍵上的力在琴弦一側如何呈現</h3>
+    <h3>分析二：從琴鍵施力到琴弦反作用力</h3>
     <p>第二項分析在琴鍵表面向下施加15 N，觀測擊弦時出現於琴弦一側的反作用力。琴鍵一側的輸入<em>F</em><sub>key</sub>自1.0秒起上升至15 N，而在擊弦的瞬間，琴弦一側的反作用力<em>V</em><sub>string</sub>出現了最大31 N的尖峰。</p>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="琴鍵輸入F key隨時間變化的說明用曲線圖。自1秒起上升，維持15牛頓後回到0牛頓。"></a>
+      <a href="assets/force-key-graph-zh-Hant.svg"><img src="assets/force-key-graph-zh-Hant.svg" width="1060" height="750" loading="lazy" decoding="async" alt="琴鍵輸入F key隨時間變化的說明用曲線圖。自1秒起上升，維持15牛頓後回到0牛頓。"></a>
       <figcaption>琴鍵一側的輸入<em>F</em><sub>key</sub>。自1.0秒起施力，輸入為15 N。</figcaption>
     </figure>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="琴弦一側反作用力V string隨時間變化的說明用曲線圖，在擊弦的瞬間出現31牛頓的尖銳峰值。"></a>
+      <a href="assets/force-string-graph-zh-Hant.svg"><img src="assets/force-string-graph-zh-Hant.svg" width="1060" height="750" loading="lazy" decoding="async" alt="琴弦一側反作用力V string隨時間變化的說明用曲線圖，在擊弦的瞬間出現31牛頓的尖銳峰值。"></a>
       <figcaption>琴弦一側的反作用力<em>V</em><sub>string</sub>。在擊弦的瞬間錄得最大31 N。</figcaption>
     </figure>
 
-    <p>這項數值可由琴鍵一側與琴槌一側的力臂長度所構成的槓桿平衡來說明。</p>
-    <p class="formula formula-long" role="math" aria-label="琴弦反作用力等於15乘195再除以94，即31.1牛頓">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
-    <p>取輸入點至支點的距離為195 mm、至琴弦一側作用點的距離為94 mm來計算，理論值為31.1 N。與模擬最大值31 N相差0.1 N；在這項分析中，結果同樣與由所設定尺寸所應期待的力的傳遞幾乎一致。</p>
+    <p>為了比較，我們以琴鍵側與琴槌側的力臂長度，進行簡化的槓桿平衡計算。</p>
+    <p class="formula formula-long" role="math" aria-label="槓桿平衡的比較值為 15 乘以 195 再除以 94，即 31.1 牛頓">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>輸入側力臂長 195 mm、琴弦側力臂長 94 mm，可得到 31.1 N 的靜態槓桿平衡比較值，比模擬峰值 31 N 高 0.1 N。這項靜態計算在什麼條件下能用來比較撞擊瞬間的反作用力峰值，仍待確認。</p>
 
     <figure class="paper-figure">
       <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="力平衡示意圖，標出自琴鍵支點至輸入點的195公釐與至琴弦一側作用點的94公釐。"></a>
-      <figcaption>對應琴鍵一側15 N的輸入，由槓桿平衡求得琴弦一側的反作用力31.1 N，與模擬最大值31 N幾乎一致。</figcaption>
+      <figcaption>以 15 N 的琴鍵施力與力臂長度進行靜態槓桿平衡比較，得到 31.1 N，接近模擬峰值 31 N。</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>模擬結果與理論值的對照</h2>
-    <h3>兩項分析都得到了相近的結果</h3>
-    <p>在比較琴鍵與琴槌速度的分析1中，相對於琴槌速度的理論值4,614 mm/s，3D模擬的結果為4,284 mm/s。在比較琴鍵輸入與琴弦反作用力的分析2中，相對於理論值31.1 N，模擬的最大值為31 N。兩項分析中，所建3D模型的模擬結果都與由公式求得的理論值相接近。</p>
+    <h3>兩項比較的結果</h3>
+    <p>分析一的琴槌理論速度為 4,614 mm/s，模擬結果為 4,284 mm/s。分析二的靜態槓桿平衡比較值為 31.1 N，模擬峰值為 31 N。兩項比較中，3D 模型結果都與理論計算相近。</p>
 
-    <h3>產生細微差異的原因</h3>
-    <p>理論計算把擊弦機簡化為由三個剛體構成的機構，並以接觸點處運動與力無損耗傳遞為前提來計算。而3D模型的模擬須處理構成擊弦機的每一個零件，因此零件之間的能量損耗與材料變形也會反映在結果之中。正是這項前提上的差別，表現為理論值與模擬值之間的細微差異。</p>
+    <h3>如何解讀差異</h3>
+    <p>理論計算將擊弦機簡化為三個剛體，假設運動與力量透過接觸點無損地傳遞；模擬則表示個別零件。解讀結果時需要考慮這些表示方式的差異，但若要將剩餘落差歸因於能量損失或材料變形，仍須確認模擬設定。</p>
 
     <h3>結論</h3>
-    <p>可以確認，3D模擬的結果與理論值幾乎相等。依剖面圖建立的3D模型，以與理論計算相符的方式再現了擊弦機的運動——把琴鍵的輸入放大為琴槌的速度，並把這份力傳向琴弦。</p>
-    <p>在這個專題中所做的，不只是複現形狀。從剖面資料中讀出結構、把零件之間的關係轉譯為CAD中的拘束、再依所要分析的問題把它簡化為力學模型，這些都作為同一個建模過程被貫通起來。</p>
+    <p>3D 模擬的琴槌速度與琴弦反作用力，均與理論比較值相近。在這些比較範圍內，依剖面圖建立的模型，再現了由設定的幾何與拘束條件所預期的運動與力量傳遞。</p>
+    <p>本專案串連了數個建模階段：解讀剖面圖、將零件之間的關係轉化為 CAD 拘束，以及依各項分析所需，將組立模型簡化為相應的力學模型。</p>
   </section>
 
-  <nav aria-label="網站">
+  <nav aria-label="作品集導覽">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀內貴文的作品集首頁</span></a></li>
     </ul>

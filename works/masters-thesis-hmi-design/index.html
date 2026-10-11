@@ -6,7 +6,7 @@
 <script src="../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Master&#x27;s Thesis on Human–Robot Interaction Design — Takafumi Horiuchi</title>
-<meta name="description" content="Converting the range that the operator is observing into conditions under which the robot is allowed to touch. A master&#x27;s research that proposed and implemented a system that incorporates human cognitive states into safety control and prevents collisions without prior object registration.">
+<meta name="description" content="Master’s research on a robot collision-prevention prototype that estimates the operator’s field of view from head orientation to help prevent unintended contact without prior object classification. Its intended behavior was checked in five demonstration trials.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -31,13 +31,13 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="en_US">
 <meta property="og:title" content="Master&#x27;s Thesis on Human–Robot Interaction Design">
-<meta property="og:description" content="Convert the range that a person is looking at into conditions that a robot is allowed to touch.">
+<meta property="og:description" content="Master’s research on a robot collision-prevention prototype that estimates the operator’s field of view from head orientation to help prevent unintended contact without prior object classification. Its intended behavior was checked in five demonstration trials.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="A virtual workspace of yellow voxels scanned by the robot. The operator&#x27;s field of view is depicted with colored cones.">
+<meta property="og:image:alt" content="A virtual workspace reconstructed from robot scans as yellow voxels, with colored viewing volumes marking the operator’s estimated field of view.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Cognitive Engineering × AI × Design",
+      "description": "Design engineer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -60,7 +61,7 @@
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
       "headline": "Master's Thesis on Human–Robot Interaction Design",
       "url": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/",
-      "description": "Converting the range that the operator is observing into conditions under which the robot is allowed to touch. A master's research that proposed and implemented a system that incorporates human cognitive states into safety control and prevents collisions without prior object registration.",
+      "description": "Master’s research on a robot collision-prevention prototype that estimates the operator’s field of view from head orientation to help prevent unintended contact without prior object classification. Its intended behavior was checked in five demonstration trials.",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "en",
@@ -88,7 +89,7 @@
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Go Back to Takafumi Horiuchi&#x27;s Portfolio">Takafumi Horiuchi</a>
+<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Back to Takafumi Horiuchi’s portfolio">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Appearance" dir="ltr" hidden>
     <label title="Light mode">
       <input type="radio" name="theme" value="light" aria-label="Light mode">
@@ -118,9 +119,9 @@
 
   <section>
     <h2>Overview</h2>
-    <p class="lead">For large human-operated robots, surrounding sensors alone cannot distinguish an intentional approach to a work target from an unintended approach to an overlooked obstacle. I designed a collision-prevention system that treats the operator’s field of view as a signal of “permitted to touch”, slowing or stopping the arm as it approaches objects outside that field.</p>
-    <p>Objects do not need to be registered in advance as “operable” or “protected”; the distinction changes with the operator’s gaze during the task. I implemented the system on a 1.9-metre-tall humanoid heavy machinery robot and confirmed the intended behaviour across five demonstration trials. The system in action can be seen in the <a class="ext" href="https://youtu.be/-DvWxzJvK3I">demo video</a>.</p>
-    <p>As a master's thesis in Design &amp; Engineering at Politecnico di Milano, it was undertaken during a research internship at Jinki Ittai Co., Ltd., and presented at <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">The 39th Annual Conference of the Robotics Society of Japan (RSJ2021)</a>.</p>
+    <p class="lead">For large human-operated robots, environmental sensors alone can struggle to distinguish an intentional approach to a work target from an unintended approach to an overlooked obstacle. I designed a collision-prevention system that uses the operator’s estimated field of view as a cue to intended contact, slowing or stopping the arm as it approaches objects outside that field.</p>
+    <p>Objects do not need to be classified in advance as “operable” or “protected”; the classification updates as the operator looks around. In the prototype, I used headset orientation as a proxy for gaze. I implemented the system on a 1.9-meter-tall humanoid heavy-duty robot and confirmed the intended behavior in five demonstration trials. The <a class="ext" href="https://youtu.be/-DvWxzJvK3I">demo video</a> shows the system in action.</p>
+    <p>I carried out this research during an internship at Jinki Ittai Co., Ltd. for my master’s thesis in Design &amp; Engineering at Politecnico di Milano. I presented it at the <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">39th Annual Conference of the Robotics Society of Japan (RSJ2021)</a>.</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -137,22 +138,22 @@
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides, scrollable">
+      <ol class="deck" tabindex="0" role="group" aria-label="Presentation slides. Scroll horizontally.">
         <li><a href="assets/slide-01.webp"><img src="assets/slide-01.webp" width="1600" height="1200" alt="Title slide. Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation, Politecnico di Milano Design &amp; Engineering Master's Program, 2020–2021."></a></li>
-        <li><a href="assets/slide-02.webp"><img src="assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Background. The thesis topic was decided during a research internship at Jinki Ittai Co., Ltd., a company that develops humanoid heavy machinery and operates it using a master-slave system."></a></li>
-        <li><a href="assets/slide-03.webp"><img src="assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparison between autonomous robots and human-operated robots. The former work efficiently in designed spaces inside fences, while the latter work with humans in uncertain spaces."></a></li>
+        <li><a href="assets/slide-02.webp"><img src="assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Background: The thesis topic emerged during a research internship at Jinki Ittai Co., Ltd., which develops humanoid heavy-duty robots operated through a master–slave control system."></a></li>
+        <li><a href="assets/slide-03.webp"><img src="assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparison of autonomous and human-operated robots: autonomous robots work efficiently in purpose-built, fenced environments; human-operated robots work alongside people in less predictable environments."></a></li>
         <li><a href="assets/slide-04.webp"><img src="assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Statistics from Europe, the United States, and Japan indicate that contact with moving objects accounts for a significant proportion of construction site accidents."></a></li>
-        <li><a href="assets/slide-05.webp"><img src="assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Previous research on collision avoidance. Tactile skin covering the manipulator and a depth sensor that virtually reproduces the surroundings."></a></li>
-        <li><a href="assets/slide-06.webp"><img src="assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Current issue. The existing system requires predefining the target as 'protected' or 'operable' using attached tags, image analysis, and a trained classifier."></a></li>
-        <li><a href="assets/slide-07.webp"><img src="assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Proposal. Conventional systems only use passive sensor information, but in human-operated robots, there is inherently a person within the control loop, and their gaze can be used as an active parameter."></a></li>
-        <li><a href="assets/slide-08.webp"><img src="assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Classification rules. Objects within the operator's central field of vision are operable, while objects outside are protected."></a></li>
-        <li><a href="assets/slide-09.webp"><img src="assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="An overall view of the prototype. It combines a real robot with a virtual computational space, followed by three technological elements."></a></li>
-        <li><a href="assets/slide-10.webp"><img src="assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Element ①. Represent the central visual field as a pyramid with a 60°×55° cone and approximate its orientation with the front direction of the VR headset."></a></li>
-        <li><a href="assets/slide-11.webp"><img src="assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Element ②. The LIDAR mounted on the robot's head scans the surroundings as a point cloud, with each point represented as a voxel that has a collider."></a></li>
-        <li><a href="assets/slide-12.webp"><img src="assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Element 3. The robot's digital twin moves in the same way as the actual machine, and when its arm touches a voxel outside the field of view, a proximity warning is issued."></a></li>
-        <li><a href="assets/slide-13.webp"><img src="assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Proof-of-concept demo. A still image of a robot reaching for a ball on a pole, and a voxel display in virtual space."></a></li>
-        <li><a href="assets/slide-14.webp"><img src="assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Future challenges. Detecting people within the workspace, verifying other methods for measuring gaze direction, and conducting quantitative evaluations in the field."></a></li>
-        <li><a href="assets/slide-15.webp"><img src="assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Summary of the conclusion. The research theme, the value of the methodology, novelty, and how the system was verified."></a></li>
+        <li><a href="assets/slide-05.webp"><img src="assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Previous collision-avoidance research: tactile sensing skin around a manipulator and a depth sensor used to reconstruct the surroundings virtually."></a></li>
+        <li><a href="assets/slide-06.webp"><img src="assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Problem: Existing systems classify objects in advance as “protected” or “operable,” using attached tags, image analysis, or trained classifiers."></a></li>
+        <li><a href="assets/slide-07.webp"><img src="assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Proposal: The previous systems rely only on passive sensor data. A human-operated robot already has a person in its control loop, whose gaze can be used as an active parameter."></a></li>
+        <li><a href="assets/slide-08.webp"><img src="assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Classification rules: Objects within the operator’s central field of view are operable; objects outside it are protected."></a></li>
+        <li><a href="assets/slide-09.webp"><img src="assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Prototype overview: A physical robot is linked to a virtual environment. The following slides explain its three technical components."></a></li>
+        <li><a href="assets/slide-10.webp"><img src="assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Component 1: Represent the central field of view as a 60° × 55° viewing volume and approximate its orientation using the forward direction of the VR headset."></a></li>
+        <li><a href="assets/slide-11.webp"><img src="assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Component 2: A head-mounted lidar sensor captures a point cloud of the surroundings, represented as voxels with collision detection."></a></li>
+        <li><a href="assets/slide-12.webp"><img src="assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Component 3: The digital twin follows the physical robot’s motion, with warnings triggered by approaches to voxels outside the viewing area."></a></li>
+        <li><a href="assets/slide-13.webp"><img src="assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Proof-of-concept demonstration: A still frame shows the robot reaching for a ball on a pole, alongside the voxel representation of its surroundings."></a></li>
+        <li><a href="assets/slide-14.webp"><img src="assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Next steps: Detect people in the workspace, investigate other ways to estimate gaze direction, and conduct quantitative field evaluations."></a></li>
+        <li><a href="assets/slide-15.webp"><img src="assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Conclusion: The research topic, the method’s contribution and novelty, and the prototype evaluation."></a></li>
       </ol>
     </figure>
   </section>
@@ -160,90 +161,90 @@
   <hr class="section-break">
 
   <section>
-    <h2>Problem — Safety configuration can constrain field work</h2>
-    <p>Human-operated robots are needed in places that are not equipped for autonomous robots. In locations like construction sites or disaster areas, the arrangement of people and equipment changes, and what can be touched also varies with each task. To use the great power of machines, it is necessary to be able to touch the required objects while preventing unintended contact.</p>
-    <p>Existing collision avoidance methods include covering the robot with proximity sensors or reproducing the surroundings in a virtual space using depth sensors. However, in both cases, it is necessary to pre-classify objects as either 'operable' or 'protected.' If nothing is registered, the robot cannot touch anything for safety, and registering everything requires setup and calibration for each site. This preparation burden has reduced the practicality of robots used in multiple locations.</p>
+    <h2>Problem: Safety setup can limit fieldwork</h2>
+    <p>Human-operated robots are needed in environments that have not been prepared for autonomous operation. On construction sites and in disaster areas, the positions of people and equipment change, as do the objects the robot needs to touch. To make use of a machine’s strength, operators must be able to work with those objects while avoiding unintended contact.</p>
+    <p>Existing collision-avoidance approaches include covering the robot with proximity sensors and reconstructing its surroundings in a virtual space using depth sensors. In the approaches examined here, objects had to be classified in advance as either “operable” or “protected.” Without that classification, the robot would avoid all contact; classifying every object required site-specific setup and calibration. This preparation made the robots less practical to use across different locations.</p>
   </section>
 
   <section>
-    <h2>Idea — Turn gaze into a condition for touch</h2>
-    <p>In the control loop of a human-operated robot, there is already a person who judges the situation. I thought that if we could pass to the machine where the person is focusing their attention, it might be possible to estimate the intention of contact during the task instead of pre-registering the targets.</p>
-    <p>Therefore, the operator's central field of vision is used as the boundary. Objects within the field of vision are considered 'operable objects' that the operator is aware of. Objects outside of it are considered 'protected objects' that might be overlooked. Regardless of the position of their gaze, people are always considered protected objects.</p>
-    <p>Gaze is not used to issue commands. Instead, the system translates the operator’s cognitive state into conditions that determine where the robot is allowed to move.</p>
+    <h2>Idea: Use gaze to define when contact is allowed</h2>
+    <p>A human-operated robot already has someone assessing the situation within its control loop. I wondered whether giving the machine a cue to that person’s attention could help it infer intended contact during a task, without requiring objects to be registered in advance.</p>
+    <p>I used the operator’s central field of view as the boundary. Objects inside it are classified as “operable,” on the assumption that the operator is aware of them. Objects outside it are classified as “protected,” because they may have been overlooked. The design specifies that people must always be protected, regardless of gaze direction.</p>
+    <p>The system does not use gaze to issue commands directly. Instead, it translates the area in which the operator is assumed to be aware of objects into conditions on the robot’s movement.</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="assets/figure-1.webp"><img src="assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="View from above. In front of the robot, the operator's central vision is depicted as a cone. Target A, which is inside the cone, is shown as a white circle, while targets B, C, and D, which are outside, are represented by dark squares. Two people are standing inside and outside the cone."></a>
-      <figcaption>Target A, which is within the operator's central field of vision, can be operated, while targets B, C, and D, which are outside, are to be protected. People are protected regardless of where they are standing.</figcaption>
+      <a href="assets/figure-1.webp"><img src="assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="Top-down diagram of the robot and the operator’s central field of view. Target A, inside the estimated viewing area, is a white circle. Targets B, C, and D, outside it, are dark squares. One person stands inside the area and another outside it."></a>
+      <figcaption>Under the proposed rules, target A is operable because it lies within the operator’s central field of view. Targets B, C, and D lie outside it and are protected. People are always classified as protected, regardless of their position or the operator’s gaze. However, human detection was not implemented in this prototype.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Interaction design</h2>
-    <p>The system does not treat the gaze position as a simple on-and-off switch. When approaching an object that is not being looked at, the arm gradually slows down according to the distance and stops before making contact. After stopping, if the operator directs their gaze toward the object, the restrictions are gradually lifted. This avoids sudden stops and sudden movements, allowing the operator to anticipate changes.</p>
-    <p>On the other hand, even if you temporarily look away from the object you are already touching, ongoing work is not stopped. This is because if grasping or operation is interrupted just by averting your gaze, it actually becomes unstable. Only approaching people is treated separately, and it is restricted regardless of whether the operator is watching or not.</p>
-    <p>The aim was not to uniformly slow down operations for safety. It is to maintain the robot's capabilities within the operator's grasp and to protect only the areas that are beyond their attention, thereby achieving both safety and operability.</p>
+    <p>The system treats gaze as more than an on/off switch. As the arm approaches an object outside the operator’s field of view, it slows gradually with distance and stops before contact. Looking toward the object then gradually releases the restriction. I designed these transitions to avoid abrupt stops and starts and make changes easier to anticipate.</p>
+    <p>Briefly looking away from an object already in contact with the robot does not interrupt the task. Stopping a grasp or manipulation solely because the operator looks away could make the operation less stable. The design treats approaches to people separately: these should remain restricted regardless of the operator’s gaze. Human detection was not implemented in this prototype.</p>
+    <p>The goal was to preserve the robot’s capabilities where the operator was aware of the surroundings and restrict movement where their attention might not reach. This was intended to balance safety and ease of operation without slowing every action.</p>
 
     <figure class="paper-figure line-art figure-2">
-      <a href="assets/figure-2.webp"><img src="assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="A flowchart that starts from a state of free movement. It branches based on whether an object is nearby, whether it is a person, whether the manipulator is in the direction of approaching the person, or whether the object is in the gaze area, leading to precise operations, gradual stopping, or locking."></a>
-      <figcaption>In the decision-making process, the node that reads the operator's active parameters is only the one for 'whether the target is in the gaze area.' All other branches operate on passive sensor information.</figcaption>
+      <a href="assets/figure-2.webp"><img src="assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="Control flowchart beginning with unrestricted movement. Decisions check whether an object is nearby, whether it is a person, whether the manipulator is moving toward the person, and whether the object is within the viewing area. These lead to precision movement, gradual stopping, or locking."></a>
+      <figcaption>Only one decision in the flowchart uses an active input from the operator: whether the target is within the viewing area. All other branches rely on passive sensor data.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Intended use contexts</h2>
-    <p>The focus was on situations where large forces are handled close to people, such as construction sites or disaster sites. In such places, it is difficult to completely separate the surroundings with fences or to pre-register all objects. A system that requires redoing safety settings every time the arrangement changes would lose both urgency and versatility.</p>
-    <p>Distinctions based on gaze use a person's situational awareness at the moment instead of a fixed environmental model. This may reduce the burden of site preparation while limiting approaches to overlooked targets. However, what was confirmed in this study was only that the system operates as defined, and the effect on accident reduction has not been evaluated in practice.</p>
+    <h2>Intended applications</h2>
+    <p>The intended settings were construction sites and disaster areas, where machines exert large forces close to people. These environments are difficult to fence off completely, and registering every object in advance is impractical. Reconfiguring safety settings after every change in layout would make the system less adaptable and slower to deploy in urgent situations.</p>
+    <p>Gaze-based classification uses the operator’s moment-to-moment awareness rather than a fixed classification of the environment. It could reduce site preparation while restricting approaches to overlooked objects. This study, however, confirmed only that the system behaved as specified; it did not evaluate whether the approach reduced accidents in real-world use.</p>
   </section>
 
   <section>
     <h2>Prototype and preliminary evaluation</h2>
 
     <h3>Implementation</h3>
-    <p>The system was implemented in a robot with the shape of a human upper body, 1.9 meters tall, weighing 600 kg, and having 30 degrees of freedom. The operator wears a VR headset and controls it by synchronizing their movements with the robot's field of view and head orientation.</p>
-    <p>The workspace was captured as a point cloud using a LIDAR on the robot and represented in the virtual space as voxels with collision detection. A digital twin that synchronizes this space with the real machine operates. The operator's central field of view was represented as a 60°×55° cone, and the orientation was approximated using the front direction of the headset. When the arm approaches a voxel outside the field of view, a warning is sent to the real machine, causing it to slow down or stop.</p>
+    <p>I implemented the system on a robot shaped like a human upper body, standing 1.9 meters tall, weighing 600 kg, and having 30 degrees of freedom. The operator wears a VR headset that synchronizes the robot’s view and head orientation with their own movements.</p>
+    <p>A lidar sensor on the robot captured the workspace as a point cloud, which was represented in the virtual environment as voxels with collision detection. A digital twin synchronized the virtual robot with the physical machine. I represented the operator’s central field of view as a 60° × 55° viewing volume, using the forward direction of the headset to approximate its orientation. When the arm approached a voxel outside this area, the system sent a warning to the physical robot to slow or stop its movement.</p>
 
     <figure class="paper-figure">
-      <img src="assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="A scene in a virtual space. Yellow voxels reconstruct the surroundings, and a translucent red area labeled 'operator's central field of view' pierces through it, while a white digital twin robot reaches out to an obstacle outside that area.">
-      <figcaption>A virtual space containing a robot and the scanned point cloud. Here, the robot is touching obstacles that are outside the operator's central field of vision.</figcaption>
+      <img src="assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="Virtual workspace reconstructed with yellow voxels. A translucent red region marks the operator’s central field of view, and the white digital twin reaches toward an obstacle outside that region.">
+      <figcaption>The virtual environment contains the robot’s digital twin and the scanned point cloud. The scene shows obstacles outside the operator’s estimated central field of view.</figcaption>
     </figure>
 
     <h3>Preliminary evaluation</h3>
-    <p>The trials followed a sequence in which the operator approached a target while looking away, looked back at it to release the restriction after the arm stopped, and then grasped the ball. Four of the five trials used an experienced operator; the fifth used someone in the cockpit for only the second time. In every trial, the arm stopped when the operator looked away and resumed when they looked at the target. This was not a user study of effectiveness, but a preliminary evaluation of whether the designed behaviour worked on the physical robot.</p>
+    <p>Each trial followed the same sequence: approach a target outside the operator’s estimated field of view, turn the headset toward it after the arm stops to release the restriction, and then grasp the ball. An experienced operator performed four of the five trials; the remaining trial was performed by an operator using the cockpit for only the second time. In every trial, the arm stopped while the target was outside the estimated field of view and could resume when it entered that area. These trials checked whether the intended behavior worked on the physical robot. They did not evaluate its effectiveness in a user study.</p>
 
     <figure class="paper-figure">
-      <img src="assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="A photo of a robot. The operator is riding in the upper frame and is facing sideways. The robot hand stops in front of a blue and yellow ball on a yellow pole, and the remaining distance is indicated.">
-      <figcaption>The operator's gaze is diverted, and the arm stops at a distance from the target.</figcaption>
+      <img src="assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="The operator sits in the robot’s upper frame and looks to the side. The robot’s hand has stopped short of a blue-and-yellow ball on a yellow pole; the remaining distance is marked.">
+      <figcaption>The target is outside the operator’s estimated field of view, and the arm stops before reaching it.</figcaption>
     </figure>
 
     <figure class="paper-figure">
-      <img src="assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="A photo from a low angle. The operator is looking at the ball, and the robot hand is grabbing the blue and yellow ball on top of the yellow pole.">
-      <figcaption>If your gaze is directed at the target, the same movement can proceed without restriction.</figcaption>
+      <img src="assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="Low-angle view of the operator looking toward the blue-and-yellow ball while the robot’s hand grasps it on top of the yellow pole.">
+      <figcaption>When the target enters the operator’s estimated field of view, the same movement can continue without restriction.</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>Limitations and next steps</h2>
-    <p>The prototype does not implement human detection. A rule was set to always protect people regardless of gaze, but in a real environment, a mechanism to reliably identify people is necessary. Also, because the front direction of the headset was used as a proxy value rather than the gaze itself, movements of just the eyes cannot be detected.</p>
-    <p>If you use a stationary camera or smart glasses with gaze tracking, the conditions for the wearable device and estimation accuracy will change. When deploying to a mobile robot, point cloud processing that can follow the robot's own position changes will also be necessary.</p>
-    <p>The evaluation is limited to qualitative verification through five demonstration trials. To assess safety, work speed, and operator burden, a quantitative comparison with conventional methods under actual working conditions is necessary.</p>
+    <p>The prototype did not include human detection. Although the design specifies that people must always be protected, a real-world system would need a reliable way to identify them. The prototype also used the headset’s forward direction as a proxy for gaze, so it could not detect eye movements independent of head movements.</p>
+    <p>A stationary camera or eye-tracking smart glasses would change the wearable requirements and gaze-estimation accuracy. Extending the system to a mobile robot would also require point-cloud processing that accounts for changes in the robot’s own position.</p>
+    <p>The evaluation was limited to qualitative checks in five demonstration trials. Assessing safety, task speed, and operator workload would require quantitative comparisons with conventional methods under real working conditions.</p>
   </section>
 
   <section>
-    <h2>What this research changed in my design practice</h2>
-    <p>In this study, we treated a person's gaze not as an input device, but as a condition for allowing machine actions. Depending on what a person is currently aware of, the robot's behavior toward the same object changes. What we designed was not individual actions, but the relationship between a person's cognitive state and the machine's authority.</p>
-    <p>This way of thinking continues in <a href="../../">my design philosophy</a>: understand a person’s state, translate it into constraints the system must uphold, and let machines or AI exercise their capabilities within those boundaries. This master’s research became the starting point for that approach.</p>
+    <h2>What I learned</h2>
+    <p>This research used the operator’s estimated field of view to define which machine actions to permit. The robot’s behavior toward the same object changed with the operator’s apparent awareness of it. My focus was the relationship between the operator’s apparent awareness and the scope of the machine’s actions, rather than individual movements.</p>
+    <p>This perspective still shapes the work in <a href="../../">my portfolio</a>: understand a person’s state, translate it into constraints the system must respect, and let machines or AI work within those boundaries. My master’s research was the starting point for this approach.</p>
   </section>
 
   <section>
     <h2>Acknowledgments</h2>
-    <p>This research was conducted during an internship at Jinki Ittai Co., Ltd. as part of the Master's program in Design &amp; Engineering at Politecnico di Milano. I am deeply grateful to both organizations for making this opportunity possible.</p>
+    <p>I conducted this research during an internship at Jinki Ittai Co., Ltd. as part of the master’s program in Design &amp; Engineering at Politecnico di Milano. I am grateful to both organizations for making it possible.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi, Katsuya Kanaoka, “Gaze-based Unintended Contact Prevention for Human-Operated Robots,” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference programme</a></p>
+  <p class="citation publication-citation">Takafumi Horiuchi and Katsuya Kanaoka. “Gaze-based Unintended Contact Prevention for Human-Operated Robots.” The 39th Annual Conference of the Robotics Society of Japan, 2021, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">Conference program</a></p>
 
-  <nav aria-label="Site">
+  <nav aria-label="Portfolio navigation">
     <ul>
-      <li><a class="home-button" href="../../"><span class="home-button__box">Go Back to Takafumi Horiuchi&#x27;s Portfolio</span></a></li>
+      <li><a class="home-button" href="../../"><span class="home-button__box">Back to Takafumi Horiuchi’s portfolio</span></a></li>
     </ul>
   </nav>
 
@@ -273,8 +274,8 @@
      document rather than being built by works/figures.js so that the two
      strings it needs are written in this page's language, like the rest of
      the page. -->
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged figure" hidden>
-  <button class="lightbox__close" type="button" aria-label="Close the enlargement"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Enlarged image" hidden>
+  <button class="lightbox__close" type="button" aria-label="Close enlarged image"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

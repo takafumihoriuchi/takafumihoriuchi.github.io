@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>关于约束型编程的毕业论文 — Takafumi Horiuchi</title>
-<meta name="description" content="在仿真中，判断出永远不会成立的条件并将其从搜索中排除。在不改变结果的情况下减少计算量，使评估模型的执行时间约减半的约束型编程研究。">
+<title>约束编程本科毕业论文 — 堀内贵文</title>
+<meta name="description" content="一项约束编程研究：在仿真过程中，移除已被证明不可能再次成立的条件，在保持结果不变的前提下，将评估模型的运行时间缩短约一半。">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -30,14 +30,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="zh_CN">
-<meta property="og:title" content="关于约束型编程的毕业论文">
-<meta property="og:description" content="安全地移除永远不会成立的条件，加快模拟速度。">
+<meta property="og:title" content="约束编程本科毕业论文">
+<meta property="og:description" content="安全地移除不可能再次成立的条件，加快仿真速度。">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="模拟球沿着台阶跳下的过程。显示了已经经过的约束从哪里变得无关。">
+<meta property="og:image:alt" content="一个球沿台阶向下弹跳，说明球越过某一级台阶后，与该台阶相关的约束如何变得不再相关。">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -49,7 +49,7 @@
       "name": "Takafumi Horiuchi",
       "alternateName": "堀内贵文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "认知工程 × AI × 设计",
+      "description": "设计工程师",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -59,10 +59,10 @@
       "@type": "ScholarlyArticle",
       "@id": "https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02",
       "name": "Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa",
-      "headline": "关于约束型编程的毕业论文",
+      "headline": "约束编程本科毕业论文",
       "url": "https://takafumihoriuchi.github.io/zh-Hans/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "在仿真中，判断出永远不会成立的条件并将其从搜索中排除。在不改变结果的情况下减少计算量，使评估模型的执行时间约减半的约束型编程研究。",
+      "description": "一项约束编程研究：在仿真过程中，移除已被证明不可能再次成立的条件，在保持结果不变的前提下，将评估模型的运行时间缩短约一半。",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "zh-Hans",
@@ -105,7 +105,7 @@
 <main>
 
   <header>
-    <h1>关于约束型编程的毕业论文</h1>
+    <h1>约束编程本科毕业论文</h1>
     <p class="dateline">2019年6月</p>
   </header>
 
@@ -122,91 +122,91 @@ o-|\
 
   <section>
     <h2>概要</h2>
-    <p class="lead">模拟器会随着可能事件的增加，重复检查更多的条件。那么，如果可以从进展中判断“这个条件再也不会成立”，是否可以安全地停止该检查呢？本研究以数值变化的方向作为线索，设计并实现了一种在运行中的搜索中剔除不再需要的条件的方法，针对混合系统建模语言HydLa。</p>
-    <p>在评价模型中，在不改变仿真结果的情况下，将执行时间缩短到传统方法的大约一半。重要的是，并不是把所有计算都统一加速，而是利用问题的结构，减少了需要考虑的可能性本身。</p>
-    <p>在这项研究中学到的约束型编程的思路，正成为当前<a href="../../">我的设计哲学</a>的基础。不是逐一直接指定结果，而是定义规则、优先级、边界，并从其中导出成立的解的态度。</p>
+    <p class="lead">仿真中的潜在事件越多，就越需要反复检查更多条件。但如果根据仿真的进展，可以确定某个条件不可能再次成立，是否就能安全地跳过它？针对混合系统建模语言 HydLa，我设计并实现了一种方法，利用变量的变化方向，移除不再需要检查的条件。</p>
+    <p>在评估模型中，这一方法在保持仿真结果不变的前提下，将运行时间缩短到了原算法的约一半。改进来自对问题结构的利用：减少仿真需要考虑的可能性。</p>
+    <p>这项研究形成的约束编程思路，如今也支撑着我在<a href="../../">作品集</a>中各项目的设计方法：先定义规则、优先级与边界，再推导出满足这些要求的解，而非直接指定每一个结果。</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>问题——可能性越多，计算就越慢</h2>
-    <p>HydLa 是一种用于将连续变化和离散事件相结合的“混合系统”以数学和逻辑约束形式进行描述的语言。即使不写出所有步骤的顺序，也可以通过声明应当成立的条件来模拟满足条件的行为。</p>
-    <p>另一方面，在根据条件生效的规则较多的模型中，模拟器会反复检查大量候选项。由于已经过去且将来也不成立的条件仍然留在候选项中，因此随着模型变大，不必要的计算不断累积。</p>
+    <h2>问题：可能性越多，运行时间越长</h2>
+    <p>HydLa 通过数学和逻辑约束描述混合系统，即同时包含连续变化与离散事件的系统。模型无需逐一指定操作步骤，只需声明必须满足的条件，再由仿真器求出符合这些条件的行为。</p>
+    <p>在条件规则较多的模型中，仿真器需要反复检查大量候选项。即使某些条件已不可能再次成立，它们仍会留在候选集合中。随着模型扩大，这些不必要的检查会增加计算量。</p>
   </section>
 
   <section>
-    <h2>题材——连续与离散混合的系统</h2>
+    <h2>模型：连续变化与离散事件的结合</h2>
     <p>弹跳的球是混合系统的一个易于理解的例子。在空中时，位置和速度连续变化，而在接触地面的一瞬间，会发生弹回这样的离散事件。温控器、汽车、机器人也是如此，虽然规模不同，但内部也存在相同的两种变化。</p>
-    <p>为了评估，使用了一个模型，即水平移动的球在被分成多个区块的面上反弹。每个区块都有一个条件规则：“球如果进入这个范围就会反弹”。增加区块的数量可以扩展可表达的对象，同时也增加了模拟器需要检查的条件。</p>
+    <p>评估使用了一个球在水平方向移动、并在分段表面上弹跳的模型。每个区段都有一条条件规则：球到达该区域时便会反弹。增加区段可以让模型表达更多对象，同时也会增加仿真器需要检查的条件。</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="定义了在水平移动的球以及在相邻的N个面区块中的任意一个反弹行为的HydLa源码。"></a>
-      <figcaption>简短的HydLa模型描述了一个球体和被划分为<em>N</em>个带护栏的区域的面。</figcaption>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="HydLa 源码：定义一个水平移动的球，以及它在由 N 个相邻区段构成的表面上的反弹行为。"></a>
+      <figcaption>一段简短的 HydLa 模型描述了一个球和由 N 个区段构成的表面，每个区段都带有守卫约束。</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>瓶颈——条件的数量推高了计算量</h2>
-    <p>只有在满足条件时才会生效的规则称为“带守卫的约束”。在评估模型中，只有当球到达地面且其水平位置在特定区域内时，该区域的反弹规则才会生效。</p>
-    <p>将区画数从10增加到200时，以往的模拟器大约按照区画数的平方比例变慢。在规模较大的模型中，由于物体、接触区域和可能发生的事件增多，同样的问题会变得更大。</p>
+    <h2>瓶颈：条件越多，运行时间越长</h2>
+    <p>只有在条件满足时才生效的规则，称为<strong>守卫约束（guarded constraint）</strong>。在评估模型中，只有当球到达地面、且水平位置位于某一区段内时，该区段的反弹规则才会生效。</p>
+    <p>当区段数量从 10 增加到 200 时，原仿真器的运行时间大致按区段数量的平方增长。更大的模型包含更多物体、接触区域与潜在事件，可能会进一步放大这一问题。</p>
   </section>
 
   <section>
     <h2>调查——处理时间的96%集中在哪儿</h2>
-    <p>测量处理时间时，在区块数为100的模型中，整体的96%用于<code>FindMinTime</code>。这是在候选事件中寻找“最早发生的事件”的处理。因此，所有的守卫条件都被反复评估。</p>
-    <p>需要改进的地方已经明确。不需要重做整个计算方法，只需安全地减少传递给<code>FindMinTime</code>的候选对象即可。目标是改变模拟结果之前，只排除不需要检查的可能性。</p>
+    <p>对包含 100 个区段的模型进行性能分析后发现，<code>FindMinTime</code> 占总运行时间的 96%。这个例程通过反复计算所有候选守卫条件，寻找下一次可能最早发生的事件。</p>
+    <p>这明确了一个改进方向：安全地减少传递给 <code>FindMinTime</code> 的候选项。目标是在保持仿真结果不变的前提下，只跳过不再需要评估的可能性。</p>
   </section>
 
   <section>
-    <h2>方法——安全地去除永远无法成立的条件</h2>
+    <h2>方法：移除不可能再次成立的条件</h2>
     <p>请想象一个沿着台阶跳下的球。如果球越过某一台阶并继续向前，那么这个台阶将不再影响球。看到图的人会立即忽略球身后的台阶。原来的算法则会继续检查每一个台阶。</p>
 
     <figure class="paper-figure line-art keeps-colour">
       <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="红色的轨迹显示了球沿着黑色楼梯台阶跳下的路径。网格区域表示那些已经过去、与之无关的台阶。"></a>
-      <figcaption>随着球向右移动，可以省略其后面带网格的台阶的防护。</figcaption>
+      <figcaption>当球向右移动时，可以跳过球后方阴影台阶所对应的守卫条件。</figcaption>
     </figure>
 
-    <p>困难的是，要证明被移除的守卫之后不会再需要。如果仅仅因为现在为假就移除，当它再次为真时，可能会默默地返回错误的结果。因此，所提出的方法使用单调性——即能否保证某个变量在某一时间区间内持续增加或持续减少。</p>
+    <p>难点在于证明：移除的守卫条件以后也不会再被需要。如果仅因条件当前为假就将其移除，一旦它再次变为真，仿真便可能在不报错的情况下产生错误结果。因此，所提出的方法利用了<strong>单调性</strong>：是否能保证某个变量在给定区间内持续增加或持续减少。</p>
 
     <h3>变化的方向不改变的情况</h3>
-    <p>第一个对应适用于变量在整个模拟过程中朝一个方向变化的情况。在将面分割的模型中，球的水平位置总是增加。一旦超过某个区间，该区间的条件将不再被满足。这一特性可以通过模型检查技术在模拟前确认，因此在执行过程中可以安全地移除不再需要的守卫。</p>
+    <p>第一种方法适用于变量在整个仿真过程中都沿同一方向变化的情况。在分段表面模型中，球的水平位置一直增加。一旦球越过某一区段，该区段的守卫条件就不可能再次成立。模型检验技术可以在仿真开始前验证这一性质，从而在运行过程中安全地移除不再相关的守卫条件。</p>
 
     <figure class="paper-figure line-art keeps-colour figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="从时刻0的α向最大时刻的β上升的红线，表示在整个模拟过程中持续增加的变量。">
-      <figcaption>一致的单调性是指变化的方向在整个被模拟的区间内保持不变。</figcaption>
+      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="从时刻0的α向最大时刻的β上升的红线，表示在整个仿真过程中持续增加的变量。">
+      <figcaption>全程单调是指在整个仿真区间内，变量的变化方向保持不变。</figcaption>
     </figure>
 
-    <h3>变化的方向在途中发生变化的情况</h3>
-    <p>现实中的许多系统，并不是永远朝一个方向运行。变量会增加，改变方向，然后可能减少。因此论文展示了第二种对应方法。首先假设方向，通过断言进行监控，并且从方向改变的时间点重新执行减少的处理。为一个单调区间移除的保护措施，会在下一个区间开始时恢复。</p>
+    <h3>当变化方向发生反转时</h3>
+    <p>许多系统不会无限期地沿同一方向变化：变量可能先增加，再反向减少。因此，论文提出了第二种方法：先假设变化方向，再用断言监测这一假设。一旦方向改变，就重新启动约束削减过程，恢复上一单调区间中移除的守卫条件。本项目完成了这一方法的设计，但尚未实现或评估。</p>
 
     <figure class="paper-figure line-art keeps-colour figure-5">
       <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="五个图展示了假定增加的区间、断言失败、新的减少区间、第二次失败，以及单调区间依次被确定的情况。">
-      <figcaption>断言失败将可将变化的行为分割为可以作为单调处理的各个区间。</figcaption>
+      <figcaption>断言失败将变化过程划分为多个区间，每个区间内的变化都可以按单调过程处理。</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>结果——将评估模型的运行时间大约减半</h2>
-    <p>实现了对统一单调性的处理，并在分割面的模型上进行了评估。无论是原算法还是提案方法，区块数增加时所需时间都会增长。但提案方法的工作量始终较少。对比拟合的曲线后发现，最高次的系数从1.1463下降到0.6083，在这一基准测试中，整个模拟所需的时间大约减半。</p>
-    <p>这并不是说所有的 HydLa 模型都会加倍变快。这里所展示的是，这种方法有效的场景——即拥有许多守卫的对象，可以证明变化的方向，并且在执行过程中守卫会永久地变得无关的模型。</p>
+    <p>我实现了适用于全程单调变量的方法，并在分段表面模型中进行评估。两种算法的运行时间都随区段数量增加而上升，但所提出的方法始终耗时更少。拟合曲线的最高次项系数从 1.1463 降至 0.6083。在这一基准测试中，仿真的总运行时间缩短了约一半。</p>
+    <p>这一结果仅适用于本次基准测试。这种方法适合以下模型：包含大量带守卫条件的对象，变量的变化方向可以被证明，而且某些守卫条件会在运行过程中永久失去相关性。这并不意味着所有 HydLa 模型都能快一倍。</p>
 
     <figure class="paper-figure line-art result-figure">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="针对N的仿真时间的图表。在面分区数从10到200的整个范围内，提议的方法都低于原方法，N=200时约为470秒，而提议的方法约为250秒。"></a>
+      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="仿真时间与表面区段数量 N 的关系。从 10 到 200 个区段，所提出的方法始终更快。在 N = 200 时，原算法约需 470 秒，所提出的方法约需 250 秒。"></a>
       <figcaption>在评估的模型中，提出的方法（方形）大约只花原始算法（圆形）一半的时间。</figcaption>
     </figure>
   </section>
 
   <section>
     <h2>从这项研究中获得的视角</h2>
-    <p>在这项研究中进行的不是逐步加快各个计算的速度。而是利用对系统行为已有的了解，缩小需要考虑的可能性集合。缩小搜索空间而不改变结果的这种思路，是约束型编程的优势所在。</p>
-    <p>实现和评估的是变量持续向一个方向变化的情况。如果变化方向在中途改变，则只停留在设计阶段，评估成为今后的课题。还有利用单调性以外的性质，进一步发现不必要约束的余地。</p>
-    <p>现在的我，不是直接设计AI的输出，而是试图设计AI可以探索的条件和边界，这也与这种经历有关。在处理复杂结果时，定义哪些可以不用考虑，与计算什么同样重要。</p>
+    <p>这项研究利用系统行为的已知性质，减少仿真器需要考虑的可能性。在保持结果不变的同时缩小搜索空间，正是约束编程的优势之一。</p>
+    <p>实现与评估覆盖了持续沿同一方向变化的变量。处理方向反转的方法仍处于设计阶段，有待评估。除了单调性，还可能利用其他性质识别不必要的约束。</p>
+    <p>这段经历影响了我当前的研究兴趣：设计 AI 搜索解时应遵循的条件与边界。面对复杂结果，明确哪些可能性可以安全地忽略，与决定需要计算什么同样重要。</p>
   </section>
 
   <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
-  <nav aria-label="站点">
+  <nav aria-label="作品集导航">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">返回堀内贵文的作品集首页</span></a></li>
     </ul>

@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>인간-로봇 인터랙션 디자인에 관한 석사 논문 — 호리우치 다카후미</title>
-<meta name="description" content="조작자의 시선을 읽어, 다루어야 할 대상과 지켜야 할 대상을 미리가 아니라 작업하는 그 순간에 구분하는 충돌 회피 시스템에 관한 석사 연구.">
+<title>인간–로봇 인터랙션 디자인에 관한 석사 논문 — 호리우치 다카후미</title>
+<meta name="description" content="머리 방향으로 조작자의 시야를 추정해, 사전 물체 분류 없이 의도치 않은 접촉을 방지하고자 한 로봇 충돌 방지 프로토타입의 석사 연구. 다섯 차례의 시연에서 의도한 동작을 확인했다.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/">
@@ -30,14 +30,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ko_KR">
-<meta property="og:title" content="인간-로봇 인터랙션 디자인에 관한 석사 논문">
-<meta property="og:description" content="조작자가 어디를 보고 있는지로 로봇이 무엇을 만져도 되는지를 정한다.">
+<meta property="og:title" content="인간–로봇 인터랙션 디자인에 관한 석사 논문">
+<meta property="og:description" content="머리 방향으로 조작자의 시야를 추정해, 사전 물체 분류 없이 의도치 않은 접촉을 방지하고자 한 로봇 충돌 방지 프로토타입의 석사 연구. 다섯 차례의 시연에서 의도한 동작을 확인했다.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/masters-thesis-hmi-design/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="로봇이 스캔한 노란 복셀의 가상 작업 공간. 조작자의 시야가 색이 입혀진 원뿔로 그려져 있다.">
+<meta property="og:image:alt" content="로봇이 스캔한 데이터를 노란 복셀로 재구성한 가상 작업 공간. 색으로 표시된 영역이 조작자의 추정 시야를 나타낸다.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,9 +47,12 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
-      "alternateName": "호리우치 다카후미",
+      "alternateName": [
+        "호리우치 다카후미",
+        "堀内 貴文"
+      ],
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "인지공학 × AI × 디자인",
+      "description": "디자인 엔지니어",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -59,15 +62,20 @@
       "@type": "ScholarlyArticle",
       "@id": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/#paper",
       "name": "Gaze-based Unintended Contact Prevention for Human-Operated Robots",
-      "headline": "인간-로봇 인터랙션 디자인에 관한 석사 논문",
+      "headline": "인간–로봇 인터랙션 디자인에 관한 석사 논문",
       "url": "https://takafumihoriuchi.github.io/ko/works/masters-thesis-hmi-design/",
-      "description": "조작자의 시선을 읽어, 다루어야 할 대상과 지켜야 할 대상을 미리가 아니라 작업하는 그 순간에 구분하는 충돌 회피 시스템에 관한 석사 연구.",
+      "description": "머리 방향으로 조작자의 시야를 추정해, 사전 물체 분류 없이 의도치 않은 접촉을 방지하고자 한 로봇 충돌 방지 프로토타입의 석사 연구. 다섯 차례의 시연에서 의도한 동작을 확인했다.",
       "image": "https://takafumihoriuchi.github.io/works/masters-thesis-hmi-design/assets/og.jpg",
       "datePublished": "2021-07-01",
       "inLanguage": "ko",
       "author": [
-        { "@id": "https://takafumihoriuchi.github.io/#person" },
-        { "@type": "Person", "name": "Katsuya Kanaoka" }
+        {
+          "@id": "https://takafumihoriuchi.github.io/#person"
+        },
+        {
+          "@type": "Person",
+          "name": "Katsuya Kanaoka"
+        }
       ],
       "publisher": {
         "@type": "Organization",
@@ -99,7 +107,7 @@
 <main>
 
   <header>
-    <h1>인간-로봇 인터랙션 디자인에 관한 석사 논문</h1>
+    <h1 style="word-break: keep-all;">인간-로봇 인터랙션 디자인에 관한 석사 논문</h1>
     <p class="dateline">2021년 7월</p>
   </header>
 
@@ -114,9 +122,9 @@
 
   <section>
     <h2>개요</h2>
-    <p class="lead">큰 로봇을 조작하는 사람은 한 번에 작업 공간의 일부에만 주의를 둘 수 있다. 이 연구는 그 주의가 지금 어디에 있는지를 기계에 알려 주면 무엇이 달라지는지를 물었다. 나는 조작자의 시선이 로봇의 허용 행동을 결정하는 충돌 회피 시스템을 설계했다. 조작자의 중심시야 안에 들어온 것은 자유롭게 다룰 수 있고, 그 바깥에 있는 것은 보호된다. 팔은 속도를 줄이고 닿기 전에 멈춘다. 무엇도 미리 라벨을 붙여 둘 필요가 없다. 그 구분은 작업하는 바로 그 순간에, 조작자가 마침 어디를 보고 있는지로부터 그어진다. 시연 영상은 <a class="ext" href="https://youtu.be/-DvWxzJvK3I">여기(YouTube)</a>에서 볼 수 있다.</p>
-    <p>이 작업은 밀라노 공과대학교 Design &amp; Engineering 석사 논문으로, 일본의 Man-Machine Synergy Effectors에서 연구 인턴십을 하는 동안 수행했으며, <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">제39회 일본로봇학회 학술강연회(RSJ2021)</a>에서 발표했다.</p>
-    <p>또한 이 작업은 <a href="../../">나의 디자인 철학</a>이 지금의 형태를 갖추기 시작한 자리이기도 하다. 이 시스템이 읽는 것은 명령이 아니라 인지 상태다. 어떤 것이 애초에 인식되었는지 여부이며, 시스템은 그 상태를 기계가 행동해도 되는 조건으로 바꾼다. 여기서 디자인의 대상은 로봇의 동작이 아니라 관계다. 기계가 무엇을 해도 되는지는 사람이 지금 무엇을 이해하고 있는지로부터 따라 나온다. 개별 행동 하나하나가 아니라 그 관계를 디자인하는 것은, 행동하는 주체가 로봇 팔이 아니라 생성형 AI가 된 지금 내가 하고 있는 것과 같은 움직임이다.</p>
+    <p class="lead">사람이 조작하는 대형 로봇에서는 환경 센서만으로 작업 대상에 의도적으로 접근하는 상황과, 미처 보지 못한 장애물에 실수로 접근하는 상황을 구분하기 어렵다. 조작자의 추정 시야를 의도된 접촉의 단서로 활용하고, 그 시야 밖의 물체에 팔이 접근하면 속도를 줄이거나 멈추는 충돌 방지 시스템을 설계했다.</p>
+    <p>물체를 미리 ‘조작 가능’ 또는 ‘보호 대상’으로 분류할 필요 없이, 조작자가 주위를 둘러보면 분류도 바뀐다. 프로토타입에서는 헤드셋 방향으로 시선 방향을 근사했다. 높이 1.9 m의 인간형 중장비 로봇에 시스템을 구현하고 다섯 차례의 시연에서 의도한 동작을 확인했다. 실제 작동 모습은 <a class="ext" href="https://youtu.be/-DvWxzJvK3I">시연 영상</a>에서 볼 수 있다.</p>
+    <p>밀라노 공과대학교 Design &amp; Engineering 석사 논문을 위해 Jinki Ittai Co., Ltd.에서 인턴으로 근무하며 수행한 연구다. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">제39회 일본로봇학회 학술강연회(RSJ2021)</a>에서 발표했다.</p>
 
     <!-- The defence deck, rendered to still images rather than embedded as the
          41 MB PDF it was exported from or as the Keynote HTML export, which
@@ -133,19 +141,19 @@
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="발표 슬라이드, 가로로 스크롤할 수 있음">
+      <ol class="deck" tabindex="0" role="group" aria-label="당시 발표 슬라이드(영어). 가로로 스크롤하세요.">
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-01.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-01.webp" width="1600" height="1200" alt="제목 슬라이드: Awareness-Based Collision Prevention for Human-Controlled Robotic Manipulation, 밀라노 공과대학교, Design &amp; Engineering 석사과정, 2020–2021학년도."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="배경: 논문 주제는 마스터-슬레이브 방식으로 조작하는 인간형 중장비를 개발하는 회사 Man-Machine Synergy Effectors에서 연구 인턴십을 하는 동안 정해졌다."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-02.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="배경: 마스터–슬레이브 제어 방식의 인간형 중장비 로봇을 개발하는 Jinki Ittai Co., Ltd.에서 연구 인턴십을 하며 논문 주제를 정했다."></a></li>
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-03.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="자율 로봇과 사람이 조작하는 로봇의 비교: 전자는 울타리 뒤 설계된 공간에서 효율적으로 일하고, 후자는 사람 곁의 불확실한 공간에서 일한다."></a></li>
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-04.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="유럽, 미국, 일본의 통계. 움직이는 물체에 부딪히는 사고가 건설 현장 사고에서 상당한 비중을 차지함을 보여 준다."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="충돌 회피에 관한 관련 연구: 매니퓰레이터를 덮는 감응 피부와, 주변을 가상으로 재현하는 깊이 센서."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="현재의 과제: 기존 시스템은 착용형 태그, 영상 분석, 학습된 분류기를 통해 물체를 보호 대상 또는 조작 대상으로 미리 정의해 두어야 한다."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="제안: 기존 시스템은 수동적인 센서 데이터만 쓰지만, 사람이 조작하는 로봇은 이미 제어 루프 안에 사람을 두고 있으며 그 시선을 능동적인 파라미터로 쓸 수 있다."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-05.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="충돌 회피에 관한 관련 연구: 매니퓰레이터를 덮는 촉각 감지 피부와, 주변을 가상으로 재현하는 깊이 센서."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-06.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="문제: 기존 시스템은 부착한 태그, 영상 분석, 학습된 분류기를 이용해 물체를 보호 대상 또는 조작 가능한 대상으로 미리 분류한다."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-07.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="제안: 기존 시스템은 센서가 수동적으로 수집한 데이터에만 의존하지만, 사람이 조작하는 로봇은 이미 제어 루프 안에 사람을 두고 있으며 그 시선을 능동적인 파라미터로 쓸 수 있다."></a></li>
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-08.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="분류 규칙: 조작자의 중심시야 안에 있는 물체는 조작 가능, 그 바깥에 있는 물체는 보호 대상."></a></li>
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-09.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="프로토타입 개요: 물리적인 로봇과 가상의 계산 공간이 짝을 이루며, 이어서 세 가지 기술 요소가 나온다."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="요소 하나: 중심시야를 60도 × 55도의 원뿔로 표현하고, 그 방향은 VR 헤드셋의 정면 방향으로 근사한다."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="요소 둘: 로봇 머리에 달린 LIDAR가 주변을 점군으로 스캔하고, 그 점군은 저마다 콜라이더를 가진 복셀로 표현된다."></a></li>
-        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="요소 셋: 로봇의 디지털 트윈이 실물과 함께 움직이며, 그 팔이 시야 바깥의 복셀과 만나면 근접 경고가 발생한다."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-10.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="요소 1: 중심 시야를 60° × 55°의 시야 영역으로 표현하고, VR 헤드셋의 정면 방향으로 그 방향을 근사한다."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-11.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="요소 2: 로봇 머리에 장착한 라이다 센서가 주변을 점군으로 수집하고, 이를 충돌 검출이 가능한 복셀로 표현한다."></a></li>
+        <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-12.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="요소 3: 디지털 트윈이 실물 로봇의 움직임을 따르며, 팔이 시야 영역 밖의 복셀에 접근하면 경고가 발생한다."></a></li>
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-13.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="개념 검증 시연: 로봇이 기둥 위의 공으로 손을 뻗는 영상 정지 화면과, 한쪽에 삽입된 가상 복셀 화면."></a></li>
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-14.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="향후 과제: 작업 공간의 사람 검출, 시선 방향을 재는 다른 방법의 검토, 현장에서의 정량적 평가."></a></li>
         <li><a href="../../../works/masters-thesis-hmi-design/assets/slide-15.webp"><img src="../../../works/masters-thesis-hmi-design/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="연구 주제, 이 방법의 가치, 그 새로움, 시스템을 어떻게 검증했는지를 정리한 결론."></a></li>
@@ -156,89 +164,97 @@
   <hr class="section-break">
 
   <section>
-    <h2>초록</h2>
-    <p>사람이 조작하는 로봇은 바로 자율 로봇이 쓸모없는 곳에서 가치가 있다. 지금의 작업을 위해 설계된 적이 없는 공간, 부딪혀서는 안 되는 사람과 장비 곁이다. 기존의 충돌 회피 시스템은 모든 물체를 조작의 대상이거나 지켜야 할 것으로 미리 선언하게 해서 그런 공간에 대응한다. 그러나 현장에서 현장으로 옮겨 다니도록 만든 기계에게 이 설정 비용은 감당할 수 없을 만큼 커진다.</p>
-    <p>이 연구는 그 구분을 대신 실행 시점에, 조작자의 시선으로부터 짓자고 제안했다. 조작자의 중심시야 안에 있는 물체는 조작 가능한 것으로, 그 바깥의 물체는 보호 대상으로 다루며, 사람은 어떤 상황에서도 보호 대상이다. 이 방법은 그때까지 오로지 수동적인 센서 데이터로만 이루어져 있던 제어 루프에 능동적인 파라미터를, 그것도 인간에게서 나온 파라미터를 들여온다. 프로토타입은 키 1.9 m의 인간형 중장비 로봇 JINKI type Zero에 구현했고, 다섯 번의 시연 시행에서 정의한 대로 동작했다.</p>
+    <h2>문제: 안전 설정에 필요한 준비가 현장 활용을 제약한다</h2>
+    <p>사람이 조작하는 로봇은 자율 운전을 위해 정비되지 않은 환경에서 필요하다. 건설 현장이나 재난 현장에서는 사람과 장비의 위치뿐 아니라 로봇이 접촉해야 할 대상도 바뀐다. 기계의 힘을 활용하려면 의도치 않은 접촉을 피하면서 작업 대상을 다룰 수 있어야 한다.</p>
+    <p>기존 충돌 회피 접근에는 로봇을 근접 센서로 덮는 방법과 깊이 센서로 주변 환경을 가상 공간에 재구성하는 방법 등이 있다. 이 연구에서 살펴본 방법들은 물체를 미리 ‘조작 가능’ 또는 ‘보호 대상’으로 분류해야 했다. 분류하지 않으면 로봇은 모든 접촉을 피하게 되고, 모든 물체를 분류하려면 현장마다 설정과 보정이 필요했다. 이러한 준비는 여러 장소를 옮겨 다니며 로봇을 활용하는 데 걸림돌이 되었다.</p>
   </section>
 
   <section>
-    <h2>1. 서론</h2>
-    <p>사람이 조작하는 로봇은 함께 얻기 어려운 두 가지를 결합한다. 기계의 힘과 정밀함, 그리고 사람의 상황 판단이다. 완전 자율 로봇은 아직 두 번째를 제공하지 못한다. 그리고 산업용 로봇이 울타리 뒤 설계된 셀 안에서 일하는 것과 달리, 사람이 조작하는 로봇은 다른 용도로 마련된 장소에서 일하기를 요구받는다. 현장 작업자 곁에서, 섬세한 장비 사이에서, 원자력 시설과 건설 현장에서. 따라서 로봇이 주변을 망가뜨리지 않는다는 보장은 그 로봇을 쓸 수 있게 만드는 조건의 일부다.</p>
-    <p>의도치 않은 접촉을 막는 확립된 방어책은 두 가지다. 매니퓰레이터의 중요한 부위를 근접 센서로 덮는 감응 피부, 그리고 주변을 점군으로 재구성해 그 가상 공간에서 거리를 계산하는 깊이 감지다. 둘 다 작동한다. 그러나 둘 다 로봇 주변의 물체가 이미 만져도 되는 것과 만지면 안 되는 것으로 분류되어 있다고 전제한다. 그 분류가 없으면, 무엇과도 충돌해서는 안 되는 기계는 무엇도 조작할 수 없다. 현장 사이를 옮겨 다니며 무엇이 있든 그 한가운데에 내려놓는 범용 도구에게, 이런 설정과 보정이 요구하는 비용은 그것이 사는 안전보다 비싸다.</p>
-    <p>이 연구가 파고드는 틈은, 사람이 조작하는 로봇에는 이미 제어 루프 안에 사람이 있다는 점이다. 조작 실수에 관한 연구들은 상황 인식, 즉 주변에서 무슨 일이 일어나고 있는지에 대한 정확한 파악을 결정적인 요인으로 지목하며, 상황 인식은 시선 방향과 강하게 상관되어 있다고 알려져 있다. 충돌 회피는 종래에 수동적인 정보, 즉 센서에서 읽어 낸 데이터만으로 구성되어 왔다. 조작자가 어디를 보고 있는지라는 능동적인 파라미터를 하나 더하면, 어떤 물체와의 접촉이 의도된 것인지 아닌지에 대한 단서를 시스템이 얻게 된다.</p>
+    <h2>아이디어: 시선을 이용해 접촉을 허용할 조건을 정한다</h2>
+    <p>사람이 조작하는 로봇의 제어 과정에는 이미 상황을 판단하는 사람이 참여한다. 그 사람의 주의가 향하는 곳을 기계에 알려 주면, 물체를 미리 등록하지 않고도 작업 중 의도된 접촉을 추정할 수 있지 않을까 생각했다.</p>
+    <p>조작자의 중심 시야를 경계로 삼았다. 그 안의 물체는 조작자가 인지하고 있다고 가정해 ‘조작 가능’으로, 바깥의 물체는 미처 보지 못했을 가능성이 있어 ‘보호 대상’으로 분류한다. 설계상 사람은 시선 방향과 관계없이 항상 보호하도록 했다.</p>
+    <p>이 시스템은 시선을 직접적인 명령으로 사용하지 않는다. 대신 조작자가 물체를 인지하고 있다고 추정되는 영역을 로봇의 움직임을 허용하는 조건으로 바꾼다.</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="위에서 본 도해. 로봇 앞쪽에 조작자의 중심시야가 원뿔로 표시되어 있다. 원뿔 안의 물체 A는 흰 원으로, 바깥의 물체 B, C, D는 어두운 사각형으로 그려져 있고, 사람 둘이 원뿔 안과 밖에 서 있다."></a>
-      <figcaption>조작자의 중심시야 안에 있는 물체 A는 조작 가능하고, 바깥의 물체 B, C, D는 보호 대상이다. 사람은 어디에 서 있든 보호된다.</figcaption>
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-1.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-1.webp" width="1136" height="1060" loading="lazy" decoding="async" alt="로봇과 조작자의 중심 시야를 위에서 본 그림. 추정 시야 안의 대상 A는 흰색 표식이며, 바깥의 B, C, D는 어두운 사각형이다. 사람 한 명은 영역 안에, 다른 한 명은 밖에 서 있다."></a>
+      <figcaption>제안한 규칙에서 대상 A는 조작자의 중심 시야 안에 있으므로 조작 가능하다. B, C, D는 바깥에 있으므로 보호 대상이다. 사람은 위치나 조작자의 시선과 관계없이 항상 보호 대상으로 분류한다. 다만 이 프로토타입에는 사람 검출을 구현하지 않았다. 원본 그림은 영어로 작성되었다. 그림의 ‘operator’s central field of view’는 조작자의 중심 시야, ‘Robot’은 로봇, ‘Manipulable object’는 조작 가능한 물체, ‘Protected object’는 보호 대상 물체를 뜻한다.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>2. 시스템의 거동</h2>
-    <p>조작자가 만지려고 하는 물체를 <em>조작 가능 물체</em>라 부르며, 제한 없이 다룰 수 있다. 조작자가 그런 의도를 갖고 있지 않은 물체는 <em>보호 대상 물체</em>이며, 만져서는 안 된다. 어느 순간에 물체가 둘 중 무엇인지는 조작자의 중심시야에 대한 그 위치로부터 따라 나온다. 시야 안에 있으면 의도된 것으로 볼 만큼 조작자의 인식 아래에 있고, 바깥에 있으면 그렇지 않다.</p>
-    <p>그로부터 따라 나오는 거동을 다섯 가지 규칙이 다스린다. 매니퓰레이터는 중심시야 안의 물체와는 자유롭게 간섭할 수 있다. 시야 바깥의 물체와는 간섭할 수 없으며, 그런 물체에 다가가면 점차 멈춘다. 일단 멈춘 뒤에는 조작자의 시야가 그 물체 쪽으로 옮겨 오면 점차 해제된다. 매니퓰레이터가 이미 접촉하고 있는 물체에서 시야가 벗어나는 경우에는 아무 제한도 걸리지 않아, 진행 중인 작업이 잠깐 다른 곳을 본다고 해서 끊기지 않는다. 그리고 매니퓰레이터는 사람이 어디에 서 있든 그 사람과 간섭할 수 없다. 매니퓰레이터가 여러 개인 로봇에서는 규칙이 각각에 따로 적용된다.</p>
-    <p>조작자가 여기서 얻는 것은, 자신이 보고 있는 것에는 전속력으로 작업하면서 보고 있지 않은 장비는 기계가 치지 않으리라 믿을 수 있다는 점이다. 현장에 있는 사람의 안전은 무조건적이며, 조작자의 의도에 전혀 좌우되지 않는다.</p>
+    <h2>인터랙션 설계</h2>
+    <p>시선은 단순한 켜기·끄기 스위치로 작동하지 않는다. 팔이 조작자의 시야 밖에 있는 물체에 접근하면 거리에 따라 점차 속도를 줄이고 접촉 전에 멈춘다. 이후 조작자가 그 물체를 바라보면 제한이 점차 풀린다. 갑작스러운 정지와 재시작을 피하고 변화하는 동작을 예측하기 쉽도록 이 전환을 설계했다.</p>
+    <p>로봇이 이미 접촉한 물체에서 잠시 시선을 돌려도 작업을 중단하지 않는다. 시선을 돌렸다는 이유만으로 잡기나 조작을 멈추면 오히려 작업이 불안정해질 수 있기 때문이다. 설계상 사람에게 접근하는 경우는 별도로 다루며, 조작자의 시선과 관계없이 제한하도록 했다. 이 프로토타입에는 사람 검출을 구현하지 않았다.</p>
+    <p>조작자가 주변을 인지하고 있는 영역에서는 로봇의 능력을 유지하고, 주의가 미치지 못할 수 있는 영역에서는 움직임을 제한하는 것이 목표였다. 모든 동작의 속도를 낮추지 않으면서 안전성과 조작 편의성의 균형을 이루고자 했다.</p>
 
     <figure class="paper-figure line-art figure-2">
-      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="자유 동작에서의 조작으로 시작해, 가까이에 물체가 있는지, 그것이 사람인지, 매니퓰레이터가 그 사람에게 다가가고 있는지, 물체가 주시 시야 안에 있는지로 갈라져 정밀 조작, 점진적 정지, 잠금으로 이어지는 흐름도."></a>
-      <figcaption>판단 과정에서 조작자의 능동적 파라미터를 읽는 노드는 &ldquo;물체가 주시 시야 안에 있는가&rdquo; 하나뿐이다. 나머지 모든 분기는 수동적인 센서 데이터로 돌아간다.</figcaption>
+      <a href="../../../works/masters-thesis-hmi-design/assets/figure-2.webp"><img src="../../../works/masters-thesis-hmi-design/assets/figure-2.webp" width="956" height="1326" loading="lazy" decoding="async" alt="제한 없는 움직임으로 시작하는 제어 흐름도. 가까운 물체가 있는지, 그 물체가 사람인지, 로봇 팔이 사람을 향해 움직이는지, 물체가 시야 영역 안에 있는지 판단한다. 그 결과에 따라 정밀 조작, 점진적 정지, 움직임 잠금으로 이어진다."></a>
+      <figcaption>흐름도에서 조작자의 능동적인 입력을 사용하는 판단은 ‘대상이 시야 영역 안에 있는가’ 하나뿐이다. 다른 분기는 모두 센서가 수동적으로 수집한 데이터에 의존한다. 원본 흐름도는 영어로 작성되었다.</figcaption>
+      <div class="figure-explanation" aria-label="흐름도의 한국어 설명">
+        <p>흐름도의 분기와 동작은 다음과 같다. ‘yes’는 예, ‘no’는 아니요를 뜻한다.</p>
+        <ul>
+          <li>제한 없는 움직임으로 시작한다. 가까운 물체가 없으면 이 상태를 유지한다.</li>
+          <li>가까운 물체가 사람이면 로봇 팔이 그 사람을 향해 움직이는지 확인한다. 접근 중이면 점차 정지한 뒤 움직임을 잠그고, 접근 중이 아니면 정밀 조작으로 전환한다.</li>
+          <li>물체가 사람이 아니면 시야 영역 안에 있는지 확인한다. 안에 있으면 정밀 조작으로 전환하고, 밖에 있으면 점차 정지한 뒤 움직임을 잠근다.</li>
+          <li>정밀 조작 뒤에는 제한 없는 움직임으로 돌아간다. 움직임이 잠긴 뒤에는 시야 영역 안에 있는지 다시 확인하는 분기로 돌아간다.</li>
+        </ul>
+      </div>
     </figure>
   </section>
 
   <section>
-    <h2>3. 기대되는 효과</h2>
-    <p>중장비는 이런 종류의 작업에 가장 가까운 현존하는 모습을 보여 준다. 사람 곁의 정돈되지 않은 장소에서 큰 힘을 쓰는 일이다. 충돌 사고는 전 세계 건설 현장의 주요 위험 가운데 하나이며, 부주의가 그 원인으로 거듭 지목된다. 2018년 유럽 건설 현장에서 기록된 362,600건의 사고 가운데 19.6%가 움직이는 물체에 부딪힌 경우였고, 크레인 관련 사고를 조사한 연구는 그중 19%를 조작자의 부주의로 돌렸다.</p>
-    <p>주의와 시선 방향은 강하게 상관되어 있으므로, 이 두 비율을 곱하면 시선 기반 시스템이 다룰 수 있는 범위를 대략 어림할 수 있다. 유럽에서 연간 1만 3천 건 규모다. 이 수치는 측정된 결과가 아니라 공표된 통계로부터의 추론이며, 규모의 감을 주기 위한 것이다.</p>
+    <h2>예상 활용 환경</h2>
+    <p>사람 가까이에서 기계가 큰 힘을 쓰는 건설 현장과 재난 현장을 상정했다. 이런 환경은 완전히 울타리로 둘러싸기 어렵고, 모든 물체를 미리 등록하는 것도 현실적이지 않다. 배치가 바뀔 때마다 안전 설정을 다시 해야 한다면 변화에 대응하기 어렵고 긴급한 상황에서 투입도 늦어진다.</p>
+    <p>시선 기반 분류는 환경을 고정적으로 분류하는 대신 시시각각 달라지는 조작자의 인지 상태를 활용한다. 미처 보지 못한 물체로의 접근을 제한하면서 현장 준비를 줄일 가능성이 있다. 다만 이 연구에서는 시스템이 지정한 대로 동작하는지만 확인했으며, 실제 사용에서 사고를 줄이는지는 평가하지 않았다.</p>
   </section>
 
   <section>
-    <h2>4. 시스템 검증</h2>
-    <p>개념 검증으로서 시연 시스템을 만들어 실행했다.</p>
+    <h2>프로토타입과 예비 평가</h2>
 
-    <h3>4.1 구현</h3>
-    <p>시스템은 Man-Machine Synergy Effectors에서 개발된 로봇 JINKI type Zero에 구현했다. 사람의 상반신 형태를 가지고 있으며, 키 1.9 m, 무게 600 kg, 자유도는 서른이다. 조작자와 로봇은 같은 자리에 있으면서 마스터-슬레이브 방식으로 결합된다. VR 헤드셋이 조작자의 시야와 머리 회전을 로봇의 것과 동기화하며, 이는 기계를 운전한다기보다 기계와 하나가 된 감각을 준다.</p>
-    <p>로봇에 장착된 LIDAR가 주변 작업장을 점군으로 스캔하고, 그 점군은 가상 공간에서 저마다 콜라이더를 가진 복셀로 표현된다. 로봇의 디지털 트윈이 같은 공간에서 움직이며, 그 팔이 복셀과 겹치면 시스템은 근접 경고를 낸다. 경고의 효과는 조작자의 시야 방향에 따라 달라진다. 그 시야는 60° × 55°(수평×수직)의 원뿔로 모델링되는데, 이는 사람이 기호와 색, 깊이를 지각하는 영역에 가깝다. 방향은 헤드셋의 정면 방향으로 근사한다. 경고는 실물 로봇으로 전달되어 위의 규칙에 따라 그 동작을 빚는다.</p>
+    <h3>구현</h3>
+    <p>사람의 상반신 형태를 한 높이 1.9 m, 무게 600 kg, 자유도 30의 로봇에 시스템을 구현했다. 조작자는 VR 헤드셋을 착용하며, 로봇의 시야와 머리 방향이 자신의 움직임에 맞추어 동기화된다.</p>
+    <p>로봇에 장착된 라이다 센서가 작업 공간을 점군으로 수집하고, 이를 가상 환경에서 충돌 검출이 가능한 복셀로 표현했다. 디지털 트윈으로 가상 로봇과 실물 로봇의 움직임을 동기화했다. 조작자의 중심 시야는 60° × 55°의 시야 영역으로 표현하고, 헤드셋의 정면 방향으로 그 방향을 근사했다. 팔이 이 영역 밖의 복셀에 접근하면 실물 로봇에 경고를 보내 속도를 줄이거나 멈추게 했다.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="가상 장면: 노란 복셀이 주변을 재구성하고, “조작자의 중심시야”라고 표시된 반투명한 붉은 입체가 그 사이를 가르며, 흰색의 로봇 디지털 트윈이 그 입체 바깥에 놓인 장애물에 손을 뻗고 있다.">
-      <figcaption>로봇과 스캔한 점군을 담고 있는 가상 공간. 여기서 로봇은 조작자의 중심시야 바깥에 있는 장애물과 만나고 있다.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-5.webp" width="1400" height="1179" loading="lazy" decoding="async" alt="노란 복셀로 재구성한 가상 작업 공간. 반투명한 붉은 영역이 조작자의 중심 시야를 나타내고, 흰색 디지털 트윈은 그 영역 밖의 장애물로 손을 뻗고 있다.">
+      <figcaption>가상 환경에는 로봇의 디지털 트윈과 스캔한 점군이 함께 있다. 조작자의 추정 중심 시야 밖에 장애물이 보인다.</figcaption>
     </figure>
 
-    <h3>4.2 시연 실험</h3>
-    <p>예비 평가에서는 구현이 정의한 대로 동작하는지를 확인했다. 조작자에게 다른 곳을 보면서 팔을 기둥 쪽으로 움직이게 하고, 시스템이 경고를 내며 팔을 멈추었는지 확인한 뒤, 멈춘 팔을 바라보아 제한을 풀고, 마지막으로 기둥을 계속 바라보면서 그 위의 공을 집게 했다. 다섯 번의 시행을 수행했다. 1·2·3·5회차는 숙련된 조작자가, 4회차는 로봇을 두 번째로 조종해 보는 사람이 맡았다. 각 시행은 기록으로 남겼다. 다섯 번 모두에서 시스템은 2장이 정의한 대로 동작했다. 시연은 <a class="ext" href="https://youtu.be/-DvWxzJvK3I">시스템이 동작하는 영상</a>에서 볼 수 있다.</p>
+    <h3>예비 평가</h3>
+    <p>각 시행은 같은 순서로 진행했다. 추정 시야 밖에 있는 대상으로 팔을 움직이고, 팔이 멈추면 헤드셋을 대상 쪽으로 돌려 제한을 푼 뒤 공을 잡았다. 다섯 차례 중 네 차례는 숙련된 조작자가, 나머지 한 차례는 조종석을 두 번째로 사용해 보는 조작자가 수행했다. 모든 시행에서 대상이 추정 시야 밖에 있을 때 팔이 멈추었고, 시야 안으로 들어오면 다시 움직일 수 있었다. 이는 의도한 동작이 실물 로봇에서 작동하는지를 확인한 시연이며, 효과를 평가하는 사용자 연구는 아니었다.</p>
 
     <figure class="paper-figure">
-      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="로봇 위쪽 프레임에 매달린 조작자가 한쪽을 바라보고 있는 사진. 로봇의 손은 노란 기둥 위의 파랗고 노란 공에 못 미쳐 멈춰 있고, 남은 간격이 표시되어 있다.">
-      <figcaption>조작자의 시선이 다른 곳을 향해 있고, 팔은 물체에서 떨어진 거리에서 멈춘다.</figcaption>
+      <img src="../../../works/masters-thesis-hmi-design/assets/figure-3.webp" width="1400" height="955" loading="lazy" decoding="async" alt="로봇 상부 프레임에 앉은 조작자가 옆을 보고 있다. 로봇의 손은 노란 기둥 위의 파랑·노랑 공에 닿기 전에 멈추었으며, 남은 거리가 표시되어 있다.">
+      <figcaption>대상이 조작자의 추정 시야 밖에 있어, 팔은 대상에 닿기 전에 멈춘다.</figcaption>
     </figure>
 
     <figure class="paper-figure">
       <img src="../../../works/masters-thesis-hmi-design/assets/figure-4.webp" width="1400" height="875" loading="lazy" decoding="async" alt="아래쪽에서 찍은 사진. 조작자가 공을 바라보고 있고, 로봇의 손이 노란 기둥 위의 파랗고 노란 공을 쥐고 있다.">
-      <figcaption>시선이 물체를 향하면 같은 동작이 제한 없이 진행된다.</figcaption>
+      <figcaption>대상이 조작자의 추정 시야 안으로 들어오면 같은 동작을 제한 없이 계속할 수 있다.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>5. 한계와 향후 과제</h2>
-    <p>사람 검출은 프로토타입에 구현하지 않았다. 검증이 필요했던 것은 조작자의 시선과 물체의 조작 가능성 사이의 관계였고, 사람을 보호하는 규칙은 무조건적이어서 그 관계에 좌우되지 않기 때문이다. 사람 검출을 더하면 시스템은 더 견고해지고, 안전을 넘어서는 응용도 열린다. 이를테면 로봇 가까이에 있는 사람을 조작자의 시야 안에서 강조해 보여 주거나, 근접 한계에 이르기 전에 경고하는 일이다.</p>
-    <p>시선은 헤드셋의 정면 방향으로 근사했다. 마스터-슬레이브 방식에서 중요한 직접성 때문에 선택한 방법이지만, 고정 카메라나 스마트 글라스의 아이 트래커 같은 다른 장치는 시선을 다르게 추정할 것이고, 헤드셋 착용에 익숙하지 않은 산업에서 이런 시스템을 도입하는 문턱을 낮출 수도 있다. 이 방법을 이동 로봇에 적용하려면 또 하나의 문제가 생긴다. JINKI type Zero는 개발 단계라 자리에 고정되어 있지만, 동작 중에 위치를 바꾸는 기계에는 그 움직임을 따라갈 만큼 효율적인 점군 처리가 필요하다.</p>
-    <p>평가 자체는 아직 정성적이다. 이 시스템을 제대로 판단하는 방법은 현장에서의 정량적 연구이며, 그것은 로봇이 실용 단계에 이르기를 기다리고 있다.</p>
+    <h2>한계와 향후 과제</h2>
+    <p>프로토타입에는 사람 검출이 포함되지 않았다. 설계상 사람은 항상 보호해야 하지만, 실제 현장에서 쓰려면 사람을 신뢰성 있게 식별할 수 있어야 한다. 또한 헤드셋의 정면 방향으로 시선을 근사했으므로, 머리와 별개로 움직이는 눈의 움직임은 검출할 수 없었다.</p>
+    <p>고정 카메라나 시선 추적 스마트 글라스를 사용하면 착용 장비의 요구사항과 시선 추정의 정확도가 달라진다. 이동 로봇으로 확장하려면 로봇 자체의 위치 변화를 고려하는 점군 처리도 필요하다.</p>
+    <p>평가는 다섯 차례 시연에서의 정성적 확인에 한정되었다. 안전성, 작업 속도, 조작자의 작업 부담을 평가하려면 실제 작업 조건에서 기존 방법과 정량적으로 비교해야 한다.</p>
   </section>
 
   <section>
-    <h2>6. 결론</h2>
-    <p>이 연구는 조작자의 시선을 이용해 사람과 장비에 대한 의도치 않은 접촉을 막는, 사람이 조작하는 로봇 매니퓰레이터용 충돌 회피 시스템을 제안했다. 인식과 시선 방향이 강하게 상관된다는 전제 위에서, 조작자의 중심시야 안의 물체는 조작 가능한 것으로, 바깥의 물체는 보호 대상으로 다루었다. 제어 루프에 인간이라는 요인을 넣음으로써, 기존 방법이 요구하는 사전 준비 없이 그 선을 실행 시점에 그을 수 있었다.</p>
-    <p>시스템은 범용 중장비 로봇에서 검증되었고 정의한 대로 동작했다. 같은 원리는 기계를 조작하는 루프에 사람이 이미 들어가 있는 어떤 환경에도 옮겨 갈 수 있을 것이다.</p>
+    <h2>연구에서 배운 점</h2>
+    <p>이 연구에서는 조작자의 추정 시야를 이용해 기계의 동작을 허용하는 조건을 정했다. 같은 물체라도 조작자가 인지하고 있는 것으로 추정되는지에 따라 로봇의 거동이 달라졌다. 내가 설계한 핵심은 개별 동작보다, 추정된 인지 상태와 기계에 허용할 행동 범위의 관계였다.</p>
+    <p>이 관점은 지금도 <a href="../../">포트폴리오의 작업</a>에 이어진다. 사람의 상태를 이해하고, 시스템이 지켜야 할 제약으로 바꾸어, 그 경계 안에서 기계나 AI가 작동하게 하는 것이다. 석사 연구는 이 접근의 출발점이었다.</p>
   </section>
 
   <section>
     <h2>감사의 말</h2>
-    <p>이 작업은 밀라노 공과대학교 Design &amp; Engineering 석사 학위의 일부로서, Man-Machine Synergy Effectors에서의 인턴십 기간에 수행되었다. 그 기회를 가능하게 해 준 두 기관에 감사드린다.</p>
+    <p>이 연구는 밀라노 공과대학교 Design &amp; Engineering 석사 과정의 일부로 Jinki Ittai Co., Ltd.에서 인턴으로 근무하며 수행했다. 연구를 가능하게 해 준 두 기관에 감사드린다.</p>
   </section>
 
-  <p class="citation publication-citation">호리우치 다카후미, 가나오카 가쓰야 「Gaze-based Unintended Contact Prevention for Human-Operated Robots」 <span lang="ja">第39回日本ロボット学会学術講演会</span>(제39회 일본로봇학회 학술강연회), 2021년, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">대회 프로그램</a></p>
+  <p class="citation publication-citation">호리우치 다카후미, 가나오카 가쓰야. 「Gaze-based Unintended Contact Prevention for Human-Operated Robots」. 제39회 일본로봇학회 학술강연회, 2021년, 2J2-07. <a class="ext" href="https://ac.rsj-web.org/2021/material/Detailed_RSJ2021_pg_0831.pdf">대회 프로그램</a></p>
 
-  <nav aria-label="사이트">
+  <nav aria-label="포트폴리오 탐색">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">호리우치 다카후미의 포트폴리오로 돌아가기</span></a></li>
     </ul>

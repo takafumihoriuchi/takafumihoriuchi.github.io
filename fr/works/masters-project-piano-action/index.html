@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Analyse du mouvement de la mécanique du piano — Takafumi Horiuchi</title>
-<meta name="description" content="La mécanique d’un piano à queue reconstruite en modèle 3D sous SolidWorks. Un projet de master comparant, par le calcul théorique et par l’analyse de mouvement, la manière dont l’appui sur la touche devient vitesse du marteau et force de réaction à la corde.">
+<title>Analyse du mouvement de la mécanique de piano — Takafumi Horiuchi</title>
+<meta name="description" content="Projet de master reconstituant une mécanique de piano à queue sous forme de modèle 3D dans SolidWorks, puis confrontant calculs théoriques et analyse du mouvement pour étudier le lien entre l’action sur la touche, la vitesse du marteau et la force de réaction au niveau de la corde.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/fr/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -33,14 +33,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="fr_FR">
-<meta property="og:title" content="Analyse du mouvement de la mécanique du piano">
-<meta property="og:description" content="Comment l’appui sur la touche devient-il vitesse du marteau et force de réaction à la corde en traversant la tringlerie ?">
+<meta property="og:title" content="Analyse du mouvement de la mécanique de piano">
+<meta property="og:description" content="Comment l’action sur la touche se traduit-elle, à travers la chaîne complexe de leviers d’une mécanique de piano, en vitesse du marteau et en force de réaction au niveau de la corde ?">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/fr/works/masters-project-piano-action/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Modèle 3D SolidWorks d’une mécanique de piano en bois, en vue éclatée.">
+<meta property="og:image:alt" content="Vue éclatée d’un modèle 3D SolidWorks d’une mécanique de piano en bois.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -50,8 +50,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Ingénierie cognitive × IA × Design",
+      "description": "Ingénieur designer",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -60,13 +61,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/fr/works/masters-project-piano-action/#work",
-      "name": "Analyse du mouvement de la mécanique du piano",
+      "name": "Analyse du mouvement de la mécanique de piano",
+      "headline": "Analyse du mouvement de la mécanique de piano",
       "url": "https://takafumihoriuchi.github.io/fr/works/masters-project-piano-action/",
-      "description": "La mécanique d’un piano à queue reconstruite en modèle 3D sous SolidWorks, la transmission de l’appui sur la touche jusqu’à la vitesse du marteau et à la force de réaction à la corde étant comparée entre calcul théorique et analyse de mouvement. Un projet de master.",
+      "description": "Projet de master reconstituant une mécanique de piano à queue sous forme de modèle 3D dans SolidWorks, puis confrontant calculs théoriques et analyse du mouvement pour étudier le lien entre l’action sur la touche, la vitesse du marteau et la force de réaction au niveau de la corde.",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
       "datePublished": "2020-01",
       "inLanguage": "fr",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -90,8 +94,8 @@
 <main>
 
   <header>
-    <h1>Analyse du mouvement de la mécanique du piano</h1>
-    <p class="dateline">Janvier 2020</p>
+    <h1>Analyse du mouvement de la mécanique de piano</h1>
+    <p class="dateline">janvier 2020</p>
   </header>
 
   <ascii-hero data-scene="piano-action" dir="ltr" translate="no" aria-hidden="true">
@@ -112,160 +116,161 @@
 
   <section>
     <h2>Présentation</h2>
-    <p class="lead">À l’intérieur d’un piano à queue, le mouvement d’une touche enfoncée parcourt une chaîne de liaisons jusqu’à ce que le marteau soit projeté vers le haut et que ce mouvement devienne la vibration d’une corde. Ce système de leviers — celui qui permet à une touche enfoncée de mettre un marteau en mouvement et de frapper une corde — s’appelle la mécanique du piano. Ce projet a reconstruit cette mécanique en modèle 3D sous SolidWorks* et s’est servi de l’analyse de mouvement pour observer comment l’appui sur la touche se convertit en vitesse du marteau et en force de réaction à la corde.</p>
-    <p>Pour l’analyse, le mécanisme de la touche a été modélisé en 3D à partir de zéro sur la base d’images de référence, et deux analyses de mouvement ont été menées sur ce modèle : l’une sur la relation entre la vitesse de la touche qui descend et celle du marteau qui monte, l’autre sur la relation entre la force appliquée à la touche et la force qui parvient à la corde. Les valeurs issues de la simulation ont été confrontées aux valeurs théoriques déduites des dimensions et de la position des pivots, afin d’établir comment le mouvement et la force se transmettent à l’intérieur du modèle.</p>
-    <p class="citation">* SolidWorks : système de CAO 3D. Au stade de la conception, il permet de mener une analyse structurelle pour examiner la résistance d’une pièce et une analyse de mouvement pour vérifier comment elle se déplace.</p>
+    <p class="lead">La mécanique d’un piano à queue est le système de leviers qui transmet l’enfoncement d’une touche à un marteau, lequel se lève pour frapper une corde et la mettre en vibration. Ce projet a recréé cette mécanique sous forme de modèle 3D dans SolidWorks* et utilisé l’analyse du mouvement pour étudier comment l’action sur la touche se traduit en vitesse du marteau et en force de réaction au niveau de la corde.</p>
+    <p>La mécanique a été modélisée de toutes pièces à partir d’images de référence, puis étudiée selon deux relations : entre la vitesse descendante de la touche et la vitesse ascendante du marteau, et entre la force appliquée à la touche et la force de réaction au niveau de la corde. Les résultats de simulation ont été comparés aux valeurs théoriques calculées à partir des dimensions du modèle et de la position de ses pivots, afin de vérifier la transmission du mouvement et des forces.</p>
+    <p class="citation">* SolidWorks est un logiciel de CAO 3D proposant des outils d’analyse structurelle des pièces et d’analyse du mouvement des mécanismes.</p>
 
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="Les 17 pages de Motion Analysis of the Piano Action. Défilement horizontal possible">
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Diapositive de titre : « Motion Analysis of the Piano Action »."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Photographie de l’intérieur d’un piano à queue présentant la rangée de mécaniques placée derrière les touches."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modèle 3D montrant comment les pièces de la mécanique se déplacent ensemble lorsqu’une touche est enfoncée."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modèle en coupe de la mécanique du piano montrant qu’enfoncer une touche élève le marteau jusqu’à frapper la corde."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Le procédé consistant à décalquer les contours d’une coupe de référence et à modéliser chaque pièce à partir de zéro sous SolidWorks."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="L’assemblage 3D achevé de la mécanique du piano sous SolidWorks."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Les noms des pièces du modèle et le calcul des degrés de liberté, qui donne 7 une fois les contraintes appliquées."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Les deux sujets d’analyse : les vitesses linéaires de la touche et du marteau, et la relation entre l’appui sur la touche et la force de réaction à la corde."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Les points d’observation de l’analyse 1 : la vitesse descendante à l’extrémité de la touche et la vitesse ascendante du marteau."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Schéma simplifiant le mécanisme du piano en trois éléments en rotation."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Schéma déduisant la relation entre la vitesse de la touche et celle du marteau à partir du rapport des rayons des trois éléments en rotation."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Les conditions de l’analyse : 5 newtons appliqués vers le bas à l’extrémité de la touche, de 1 à 2 secondes."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Graphiques des vitesses linéaires de la touche et du marteau. Les vitesses de pointe sont de 1 027 et 4 284 millimètres par seconde."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparaison entre la vitesse du marteau de 4 614 millimètres par seconde obtenue à partir des rayons mesurés et la valeur analysée de 4 284 millimètres par seconde."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Les conditions de l’analyse 2 : 15 newtons appliqués vers le bas sur la touche, la force de réaction du côté de la corde étant observée."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparaison entre la force de réaction maximale à la corde de 31 newtons et la valeur théorique de 31,1 newtons issue du principe du levier."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Liste des références bibliographiques sur les modèles mécaniques de la mécanique du piano."></a></li>
+      <ol class="deck" tabindex="0" role="group" aria-label="Analyse du mouvement de la mécanique de piano : 17 diapositives originales en anglais. Faire défiler horizontalement.">
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Diapositive de titre : Motion Analysis of the Piano Action, analyse du mouvement de la mécanique de piano."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Photographie de l’intérieur d’un piano à queue, présentant la rangée de mécanismes derrière les touches."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modèle 3D montrant les mouvements conjoints des pièces de la mécanique lorsqu’une touche est enfoncée."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Coupe de la mécanique montrant comment l’enfoncement d’une touche fait monter le marteau jusqu’à la corde."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Tracé sur un dessin en coupe de référence pour modéliser chaque pièce de toutes pièces dans SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Assemblage 3D achevé de la mécanique de piano dans SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Noms des pièces et calcul des degrés de liberté du modèle : il en reste 7 après application des contraintes."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Deux sujets d’analyse : vitesses linéaires de la touche et du marteau ; relation entre la force sur la touche et la réaction au niveau de la corde."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Points d’observation de l’analyse 1 : vitesse descendante à l’extrémité de la touche et vitesse ascendante du marteau."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Schéma simplifiant la mécanique de piano en trois éléments en rotation."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Déduction de la relation entre les vitesses de la touche et du marteau à partir des rapports des rayons de sortie et d’entrée des trois éléments en rotation."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Conditions d’analyse : force descendante de 5 newtons appliquée à l’extrémité de la touche de 1 à 2 secondes."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Courbes des vitesses de la touche et du marteau, avec des maxima respectifs de 1 027 et 4 284 millimètres par seconde."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparaison entre la vitesse théorique du marteau, 4 614 millimètres par seconde, calculée à partir des rayons mesurés, et sa vitesse simulée, 4 284 millimètres par seconde."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Conditions de l’analyse 2 : force descendante de 15 newtons appliquée à la touche et observation de la force de réaction du côté de la corde."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparaison entre la force de réaction maximale au niveau de la corde, de 31 newtons, et la valeur théorique de 31,1 newtons obtenue par le principe du levier."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Liste de références sur les modèles mécaniques de la mécanique de piano."></a></li>
       </ol>
+      <figcaption>Diapositives de la présentation originale en anglais, conservées comme document du projet. Les analyses et leurs limites sont expliquées en français ci-dessous.</figcaption>
     </figure>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>De la mécanique du piano à un modèle analysable</h2>
-    <h3>Le mécanisme qui transforme une frappe en corde frappée</h3>
-    <p>La mécanique du piano est le mécanisme qui convertit le mouvement descendant d’une touche en mouvement ascendant d’un marteau. Enfoncer la touche met simultanément en mouvement le pilote, le chevalet, l’échappement et le levier de répétition, et le marteau s’élève jusqu’à frapper la corde. Ce que voit l’interprète est une seule frappe ; à l’intérieur, plusieurs pièces tournent autour de pivots différents et se transmettent le mouvement en se touchant.</p>
-    <p>Le modèle 3D comprend la touche, le marteau, l’échappement, le chevalet, le levier de répétition, le pilote, l’étouffoir, le levier d’étouffoir et le fil, ainsi que le bâti qui les porte. Comprendre le mouvement demandait plus que de contempler la forme achevée : il fallait définir quelle pièce tourne autour de quel pivot et en quel point elle touche la suivante.</p>
+    <h2>Construire un modèle de mécanique de piano pour l’analyse</h2>
+    <h3>Comment l’enfoncement d’une touche fait frapper le marteau</h3>
+    <p>La mécanique de piano convertit le mouvement descendant d’une touche en mouvement ascendant d’un marteau. L’enfoncement de la touche met en mouvement le pilote, le chevalet, le bâton d’échappement et le levier de répétition, qui font monter le marteau jusqu’à la corde. Le pianiste n’effectue qu’un geste, mais plusieurs pièces de la mécanique tournent autour de pivots distincts et transmettent le mouvement par contact.</p>
+    <p>Le modèle 3D comprend la touche, le marteau, le bâton d’échappement, le chevalet, le levier de répétition, le pilote, l’étouffoir, son levier et le fil, ainsi que leur bâti de support. Modéliser le mouvement exigeait de définir le pivot de chaque pièce et ses points de contact avec les autres.</p>
 
-    <h3>Construire un modèle 3D à partir d’un dessin en coupe</h3>
-    <p>Plutôt que de partir de données de CAO toutes faites, le contour de chaque pièce a été décalqué sur une coupe de référence de la mécanique du piano puis modélisé en 3D pièce par pièce. Les pièces ont ensuite été réunies en un assemblage, en fixant entre elles les relations de fixation et de rotation du mécanisme réel. Cette étape a transformé un modèle fait pour regarder une forme en un modèle auquel on peut appliquer une force et qui peut se mouvoir.</p>
+    <h3>Construire le modèle 3D à partir d’un dessin en coupe</h3>
+    <p>Chaque pièce a été modélisée de toutes pièces en 3D en retraçant son contour sur un dessin en coupe de la mécanique. Les pièces ont ensuite été assemblées avec des liaisons fixes et des liaisons pivot correspondant au mécanisme physique. La définition de ces relations a transformé la géométrie en un modèle d’analyse capable de bouger sous l’effet des forces appliquées.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Dans la fenêtre de SolidWorks, un dessin en coupe d’une mécanique de piano sert de calque semi-transparent et le modèle 3D est construit par-dessus ses contours. À gauche apparaissent la barre des tâches de Windows et l’arbre des pièces."></a>
-      <figcaption>La coupe de référence a été placée à l’arrière comme calque semi-transparent, et le modèle 3D a été construit sous SolidWorks en suivant ses contours.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Capture de SolidWorks : dessin en coupe semi-transparent d’une mécanique de piano, avec les pièces 3D modélisées sur ses contours. La barre des tâches Windows et l’arbre des composants sont à gauche."></a>
+      <figcaption>Le dessin en coupe de référence a servi de fond semi-transparent pour tracer et modéliser les pièces dans SolidWorks.</figcaption>
     </figure>
 
     <figure class="paper-figure model-figure">
-      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="La fenêtre de SolidWorks fonctionnant sous Windows. À gauche se trouvent la barre des tâches de Windows et l’arbre des pièces, au centre le modèle 3D de la mécanique du piano."></a>
-      <figcaption>Le modèle 3D de la mécanique du piano tel qu’il a effectivement été construit sous SolidWorks.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="SolidWorks sous Windows : barre des tâches et arbre des composants à gauche, modèle 3D de la mécanique de piano au centre."></a>
+      <figcaption>Le modèle 3D achevé de la mécanique de piano dans SolidWorks.</figcaption>
     </figure>
 
-    <h3>Vérifier les contraintes en degrés de liberté</h3>
-    <p>Hors bâti fixe, neuf pièces sont mobiles, ce qui, sans contraintes, donne 54 degrés de liberté au total. Fixer le pilote et le fil à d’autres pièces en retire 12, et contraindre les sept pièces restantes par des liaisons pivot en retire 35 de plus. L’assemblage CAO possède donc 7 degrés de liberté, comme suit.</p>
+    <h3>Vérifier les degrés de liberté de l’assemblage</h3>
+    <p>L’assemblage comporte neuf pièces mobiles, hors bâti fixe, soit 54 degrés de liberté avant application des contraintes. Fixer le pilote et le fil à d’autres pièces en supprime 12. Les liaisons pivot des sept pièces restantes en suppriment 35 autres, laissant 7 degrés de liberté à l’assemblage CAO :</p>
     <p class="formula" role="math" aria-label="54 moins 12 moins 35 égale 7">54 − 12 − 35 = 7</p>
-    <p>Le diagnostic de contraintes de SolidWorks a indiqué la même chose : degrés de liberté estimés et réels, 7 dans les deux cas ; contraintes redondantes, 0. Ce n’est pas un chiffre qui tranche la question des degrés de liberté des mécaniques de piano en général — il confirme que l’ensemble de pièces et les contraintes définis pour ce projet sont assemblés comme prévu.</p>
+    <p>Le diagnostic des contraintes de SolidWorks indiquait lui aussi 7 degrés de liberté estimés, 7 degrés de liberté réels et 0 contrainte redondante. Cela confirmait que les pièces et les contraintes définies pour ce projet avaient été assemblées comme prévu ; ce résultat n’établit pas le nombre de degrés de liberté de toute mécanique de piano physique.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Le modèle de la mécanique du piano dont chaque pièce est nommée, et le calcul qui soustrait 12 contraintes de fixation et 35 contraintes de rotation à 54 degrés de liberté pour donner 7."></a>
-      <figcaption>Noms des pièces et contraintes. Le diagnostic de SolidWorks lui-même a également attribué au modèle 7 degrés de liberté et 0 contrainte redondante.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Modèle annoté de la mécanique et calcul de ses degrés de liberté : 54 moins 12 supprimés par les liaisons fixes, moins 35 supprimés par les liaisons pivot, soit 7."></a>
+      <figcaption>Noms des pièces et contraintes d’assemblage. Le diagnostic de SolidWorks indiquait 7 degrés de liberté et 0 contrainte redondante.<details class="figure-translation"><summary>Lire les indications de la figure en français</summary><p>Repères : <em>key</em> = touche ; <em>hammer</em> = marteau ; <em>jack</em> = bâton d’échappement ; <em>wippen</em> = chevalet ; <em>repetition lever</em> = levier de répétition ; <em>capstan</em> = pilote ; <em>damper</em> = étouffoir ; <em>damper lever</em> = levier d’étouffoir ; <em>wire</em> = fil ; <em>frame</em> = bâti. « DOF » signifie degrés de liberté.</p><p>Le diagnostic affiche : 9 pièces mobiles, soit 54 degrés de liberté ; 7 liaisons pivot en suppriment 35 et 2 liaisons fixes en suppriment 12. Total estimé : 7 ; total réel : 7 ; contraintes redondantes : 0.</p></details></figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Deux analyses — comment l’appui sur la touche est converti</h2>
-    <p>Le comportement du modèle a été étudié en deux analyses distinctes. L’analyse 1 demande comment la vitesse à laquelle la touche se déplace est convertie en vitesse du marteau ; l’analyse 2, comment la force appliquée à la touche se manifeste en force de réaction du côté de la corde. En isolant une paire entrée-sortie à la fois, le comportement d’une tringlerie complexe devient explicable par un rapport géométrique de vitesses et par l’équilibre des forces d’un levier.</p>
-    <p>La base de comparaison est un calcul théorique où le mécanisme est remplacé par de simples éléments en rotation. Si la valeur théorique et la valeur simulée sont proches, on peut au moins conclure que le mouvement à l’intérieur du modèle suit la relation qu’on attend des dimensions et des contraintes fixées.</p>
+    <h2>Deux analyses de l’action sur la touche</h2>
+    <p>Le modèle a fait l’objet de deux analyses distinctes. L’analyse 1 comparait la vitesse de la touche à celle du marteau. L’analyse 2 comparait la force appliquée à la touche à la force de réaction au niveau de la corde. Séparer ces relations entrée-sortie facilitait l’étude de cette chaîne complexe de liaisons à l’aide de rapports géométriques de vitesses et de l’équilibre des leviers.</p>
+    <p>Pour établir une comparaison, la mécanique a été simplifiée en éléments en rotation et analysée théoriquement. Une concordance entre les valeurs théoriques et simulées indiquerait que le mouvement du modèle était cohérent avec les dimensions et les contraintes spécifiées.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Deux schémas montrant que l’analyse 1 met en regard les vitesses linéaires de la touche et du marteau, et que l’analyse 2 met en regard la force appliquée à la touche et la force de réaction à la corde."></a>
-      <figcaption>Entrées et sorties des deux analyses. L’analyse 1 compare les vitesses linéaires de la touche et du marteau ; l’analyse 2 compare la force appliquée à la touche et la force de réaction à la corde.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Deux schémas associant les vitesses de la touche et du marteau dans l’analyse 1, puis la force appliquée à la touche et la réaction au niveau de la corde dans l’analyse 2."></a>
+      <figcaption>Les deux comparaisons entrée-sortie : vitesse de la touche et vitesse du marteau dans l’analyse 1 ; force appliquée à la touche et force de réaction au niveau de la corde dans l’analyse 2.<details class="figure-translation"><summary>Lire les indications de la figure en français</summary><p>Analyse 1 : relation entre les vitesses linéaires de la touche (<em>v</em><sub>key</sub>, vers le bas) et du marteau (<em>v</em><sub>hammer</sub>, vers le haut). Analyse 2 : relation entre la force sur la touche (<em>F</em><sub>key</sub>) et la force de réaction au niveau de la corde (<em>V</em><sub>string</sub>).</p></details></figcaption>
     </figure>
 
-    <h3>Analyse 1 — de combien la vitesse de la touche est amplifiée au marteau</h3>
-    <p>Pour l’analyse des vitesses, la mécanique complexe du piano a été simplifiée en trois corps rigides qui se transmettent le mouvement en se touchant : la touche, le mécanisme intermédiaire centré sur le chevalet, et le marteau. En lisant le mouvement comme passant successivement de ① à ③ sur la figure, un mécanisme composé de nombreuses pièces peut être calculé comme trois étages de rotation.</p>
+    <h3>Analyse 1 : de la vitesse de la touche à celle du marteau</h3>
+    <p>Pour calculer les vitesses, la mécanique a été simplifiée en trois solides indéformables : la touche, un mécanisme intermédiaire centré sur le chevalet et le marteau. Considérer le mouvement comme une succession de contacts de ① à ③ permettait d’analyser la transmission en trois étapes de rotation.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Schéma distinguant par des couleurs la mécanique du piano en trois corps rigides : ① la touche, ② le mécanisme intermédiaire centré sur le chevalet et ③ le marteau."></a>
-      <figcaption>Pour l’analyse, le mécanisme a été simplifié en trois corps rigides : ① la touche, ② le mécanisme intermédiaire et ③ le marteau.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="La mécanique est divisée par couleurs en trois solides indéformables : ① la touche, ② le mécanisme intermédiaire centré sur le chevalet et ③ le marteau."></a>
+      <figcaption>Le modèle simplifié comprend trois solides indéformables : ① la touche, ② le mécanisme intermédiaire et ③ le marteau.</figcaption>
     </figure>
 
-    <p>Sur un même corps rigide la vitesse angulaire est commune, de sorte qu’en notant <em>r</em> la distance au pivot et <em>v</em> la vitesse linéaire en ce point, <em>v</em> = <em>ωr</em>. En supposant qu’au point de contact la vitesse passe au corps suivant sans perte, la vitesse du marteau s’obtient en multipliant entre eux les rapports du rayon d’entrée au rayon de sortie de chaque étage.</p>
-    <p class="formula formula-long" role="math" aria-label="La vitesse du marteau égale r un prime fois r deux prime fois r trois prime, divisé par r un fois r deux fois r trois, multiplié par la vitesse de la touche">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
+    <p>Tous les points d’un solide indéformable ont la même vitesse angulaire. Si <em>r</em> est la distance au pivot et <em>v</em> la vitesse linéaire au point considéré, alors <em>v</em> = <em>ωr</em>. En supposant que la vitesse se transmet sans perte entre les solides à chaque point de contact, on obtient la vitesse du marteau en multipliant les rapports des rayons de sortie et d’entrée des trois étapes, puis en multipliant ce produit par la vitesse de la touche.</p>
+    <p class="formula formula-long" role="math" aria-label="La vitesse du marteau est égale au produit de r un prime, r deux prime et r trois prime, divisé par le produit de r un, r deux et r trois, puis multiplié par la vitesse de la touche">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Schéma indiquant, pour les trois corps rigides, les distances de chaque pivot aux points d’entrée et de sortie sous les noms r1, r1 prime, r2, r2 prime, r3 et r3 prime."></a>
-      <figcaption>Les distances du pivot de chaque corps rigide à ses points d’entrée et de sortie sont traitées comme des rayons, et leurs rapports sont multipliés sur les trois étages pour donner le rapport des vitesses.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Schéma des distances entre les trois pivots et leurs points d’entrée et de sortie, notées r1, r1 prime, r2, r2 prime, r3 et r3 prime."></a>
+      <figcaption>Les rayons sont les distances entre chaque pivot et ses points d’entrée et de sortie. Le produit des trois rapports rayon de sortie/rayon d’entrée donne le rapport global des vitesses. Dans la formule, <em>hammer</em> désigne le marteau et <em>key</em> la touche.</figcaption>
     </figure>
 
-    <h4>Conditions d’entrée et résultats observés</h4>
-    <p>Dans SolidWorks Motion Analysis, 5 N ont été appliqués vers le bas à l’extrémité de la touche et les vitesses linéaires de l’extrémité de la touche et du marteau ont été relevées. Juste après le début de l’application de la force, les vitesses de pointe étaient de 1 027 mm/s pour la touche et de 4 284 mm/s pour le marteau. Dans la simulation, le marteau s’est donc déplacé environ 4,17 fois plus vite que la touche.</p>
+    <h4>Conditions d’entrée et résultats</h4>
+    <p>Dans SolidWorks Motion Analysis, une force descendante de 5 N a été appliquée à l’extrémité de la touche. Les vitesses linéaires de cette extrémité et du marteau ont été enregistrées. Juste après le début de l’application de la force, leurs vitesses maximales étaient respectivement de 1 027 mm/s et de 4 284 mm/s, soit un rapport simulé de la vitesse du marteau à celle de la touche d’environ 4,17.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Deux graphiques de la vitesse de la touche et du marteau en fonction du temps, les pics survenant juste après le début de l’entrée étant marqués à 1 027 et 4 284 millimètres par seconde."></a>
-      <figcaption>Vitesses linéaires de la touche et du marteau. Toutes deux atteignent leur maximum juste après le début de l’entrée, et la vitesse est amplifiée du côté du marteau.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Vitesses de la touche et du marteau en fonction du temps, avec des maxima de 1 027 et 4 284 millimètres par seconde juste après l’application de la force."></a>
+      <figcaption>Les vitesses de la touche et du marteau atteignent toutes deux leur maximum juste après l’application de la force. Le marteau atteint la vitesse la plus élevée.<details class="figure-translation"><summary>Lire les indications de la figure en français</summary><p>Les deux graphiques représentent la vitesse en millimètres par seconde en fonction du temps en secondes. <em>v</em><sub>key</sub> désigne la vitesse de la touche, dont le maximum est de 1 027 mm/s ; <em>v</em><sub>hammer</sub> désigne celle du marteau, dont le maximum est de 4 284 mm/s. Cette figure provient de la présentation originale en anglais.</p></details></figcaption>
     </figure>
 
     <table class="results-table">
-      <caption>Vitesses de pointe de l’analyse 1</caption>
+      <caption>Vitesses maximales dans l’analyse 1</caption>
       <thead>
-        <tr><th scope="col">Mesure ou calcul</th><th scope="col">Vitesse</th></tr>
+        <tr><th scope="col">Grandeur et méthode</th><th scope="col">Vitesse</th></tr>
       </thead>
       <tbody>
         <tr><th scope="row">Touche (simulation)</th><td>1 027 mm/s</td></tr>
-        <tr><th scope="row">Marteau (calcul théorique)</th><td>4 614 mm/s</td></tr>
+        <tr><th scope="row">Marteau (théorie)</th><td>4 614 mm/s</td></tr>
         <tr><th scope="row">Marteau (simulation)</th><td>4 284 mm/s</td></tr>
       </tbody>
     </table>
 
-    <h4>Comparaison avec la valeur théorique</h4>
-    <p>Les rayons mesurés sur le modèle sont <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm et <em>r</em><sub>3</sub>′ = 111 mm. En les reportant dans l’équation, le rapport des vitesses idéalisé vaut environ 4,49, ce qui prévoit une vitesse du marteau de 4 614 mm/s pour une vitesse de touche de 1 027 mm/s.</p>
+    <h4>Comparaison avec la théorie</h4>
+    <p>Les rayons mesurés étaient <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm et <em>r</em><sub>3</sub>′ = 111 mm. Ces valeurs donnent un rapport idéalisé des vitesses d’environ 4,49. Pour une vitesse de touche de 1 027 mm/s, la vitesse prévue du marteau est de 4 614 mm/s.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Schéma indiquant, sur le modèle 3D SolidWorks, les six rayons mesurés utilisés dans le calcul du rapport des vitesses."></a>
-      <figcaption>Les six rayons mesurés sur le modèle 3D. C’est à partir de ces valeurs qu’a été calculée la vitesse théorique du marteau de 4 614 mm/s.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Les six rayons utilisés pour calculer le rapport des vitesses, indiqués sur le modèle 3D SolidWorks."></a>
+      <figcaption>Les six rayons mesurés sur le modèle 3D, utilisés pour calculer la vitesse théorique du marteau de 4 614 mm/s.</figcaption>
     </figure>
 
-    <p>La valeur simulée de 4 284 mm/s est inférieure d’environ 7 % à la valeur théorique, mais l’ampleur de l’amplification reste proche. Cet écart tient, comme on le verra plus loin, à ce que le calcul théorique idéalise la mécanique en trois corps rigides, tandis que la simulation 3D prend aussi en compte les pertes entre pièces et la déformation du matériau.</p>
+    <p>La vitesse simulée du marteau, 4 284 mm/s, était inférieure d’environ 7 % à la valeur théorique, tout en présentant un degré d’amplification comparable. Le calcul théorique utilise trois solides indéformables idéalisés, tandis que la simulation représente les pièces individuellement. L’écart numérique ne suffit pas à en établir la cause.</p>
 
-    <h3>Analyse 2 — comment la force appliquée à la touche se manifeste à la corde</h3>
-    <p>La seconde analyse a appliqué 15 N vers le bas sur la surface de la touche et relevé la force de réaction apparaissant du côté de la corde au moment de la frappe. L’entrée du côté de la touche, <em>F</em><sub>key</sub>, croît à partir de 1,0 seconde jusqu’à atteindre 15 N, et à l’instant de la frappe la force de réaction <em>V</em><sub>string</sub> présente un pic maximal de 31 N.</p>
+    <h3>Analyse 2 : de la force sur la touche à la réaction au niveau de la corde</h3>
+    <p>Dans la seconde analyse, une force descendante de 15 N a été appliquée à la surface de la touche, et la force de réaction au niveau de la corde a été enregistrée lors de l’impact. La force sur la touche, <em>F</em><sub>key</sub>, commençait à augmenter à 1,0 seconde et atteignait 15 N. La force de réaction, <em>V</em><sub>string</sub>, atteignait un pic de 31 N au moment de la frappe.</p>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Graphique explicatif de l’entrée à la touche F key en fonction du temps. Elle croît à partir de 1 seconde, se maintient à 15 newtons, puis revient à 0 newton."></a>
-      <figcaption>Entrée du côté de la touche, <em>F</em><sub>key</sub>. La force a été appliquée à partir de 1,0 seconde, pour une entrée de 15 N.</figcaption>
+      <a href="assets/force-key-graph-fr.svg"><img src="assets/force-key-graph-fr.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Graphique illustratif de la force F key appliquée à la touche au cours du temps. Elle commence à augmenter à 1 seconde, reste à 15 newtons, puis revient à zéro."></a>
+      <figcaption>La force appliquée à la touche, <em>F</em><sub>key</sub>, commence à 1,0 seconde et atteint 15 N.</figcaption>
     </figure>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Graphique explicatif de la force de réaction du côté de la corde V string en fonction du temps, avec un pic aigu de 31 newtons à l’instant de la frappe."></a>
-      <figcaption>Force de réaction du côté de la corde, <em>V</em><sub>string</sub>. Elle a atteint un maximum de 31 N à l’instant de la frappe.</figcaption>
+      <a href="assets/force-string-graph-fr.svg"><img src="assets/force-string-graph-fr.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Graphique illustratif de la force de réaction V string au niveau de la corde au cours du temps, avec un pic de 31 newtons à l’impact."></a>
+      <figcaption>La force de réaction au niveau de la corde, <em>V</em><sub>string</sub>, atteint un pic de 31 N lors de l’impact.</figcaption>
     </figure>
 
-    <p>Cette valeur s’explique par l’équilibre d’un levier, à partir des longueurs de bras du côté de la touche et du côté du marteau.</p>
-    <p class="formula formula-long" role="math" aria-label="La force de réaction à la corde égale 15 fois 195 divisé par 94, soit 31,1 newtons">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
-    <p>En prenant 195 mm du point d’entrée au pivot et 94 mm jusqu’au point d’application du côté de la corde, la valeur théorique vaut 31,1 N. L’écart avec le maximum simulé de 31 N est de 0,1 N : dans cette analyse aussi, le résultat coïncide presque entièrement avec la transmission de force qu’on attend des dimensions fixées.</p>
+    <p>Un calcul simplifié d’équilibre des leviers a été effectué pour comparaison, à partir des longueurs des bras de levier du côté de la touche et du marteau.</p>
+    <p class="formula formula-long" role="math" aria-label="La valeur de comparaison par équilibre des leviers est égale à 15 fois 195 divisé par 94, soit 31,1 newtons">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>Avec des bras de levier de 195 mm du côté de l’entrée et de 94 mm du côté de la corde, le calcul d’équilibre statique donne une valeur de comparaison de 31,1 N. Celle-ci dépasse de 0,1 N le pic simulé de 31 N. Les conditions permettant d’appliquer ce calcul statique au pic instantané de force de réaction lors de l’impact restent à confirmer. Dans la formule, <em>string</em> désigne la corde.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Schéma d’équilibre des forces montrant la distance de 195 millimètres du pivot de la touche au point d’entrée et de 94 millimètres au point d’application du côté de la corde."></a>
-      <figcaption>À partir de l’entrée de 15 N à la touche, l’équilibre du levier donne une force de réaction de 31,1 N à la corde, presque identique au maximum simulé de 31 N.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Schéma d’équilibre des forces : bras de levier de 195 millimètres du côté de la touche et de 94 millimètres du côté de la corde."></a>
+      <figcaption>La comparaison par équilibre statique des leviers, avec une force d’entrée de 15 N sur la touche et les longueurs des bras de levier, donne 31,1 N, une valeur proche du pic simulé de 31 N.<details class="figure-translation"><summary>Lire les indications de la figure en français</summary><p><em>F</em><sub>key</sub> est la force appliquée à la touche ; <em>V</em><sub>string</sub> est la force de réaction au niveau de la corde. Les bras de levier indiqués sont <em>d</em><sub>k</sub> = 195 mm du côté de la touche et <em>d</em><sub>h</sub> = 94 mm du côté du marteau.</p></details></figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Confrontation de la simulation et des valeurs théoriques</h2>
-    <h3>Deux analyses aux résultats proches</h3>
-    <p>Dans l’analyse 1, qui compare les vitesses de la touche et du marteau, face à la vitesse théorique du marteau de 4 614 mm/s la simulation 3D a donné 4 284 mm/s. Dans l’analyse 2, qui compare l’appui sur la touche et la force de réaction à la corde, face à la valeur théorique de 31,1 N le maximum simulé a été de 31 N. Dans les deux analyses, les résultats simulés avec le modèle 3D construit se sont révélés proches des valeurs théoriques tirées des équations.</p>
+    <h2>Comparer simulation et théorie</h2>
+    <h3>Résultats des deux comparaisons</h3>
+    <p>Dans l’analyse 1, la vitesse théorique du marteau était de 4 614 mm/s, contre 4 284 mm/s dans la simulation. Dans l’analyse 2, la valeur de comparaison issue de l’équilibre statique des leviers était de 31,1 N, contre un pic simulé de 31 N. Les deux comparaisons ont montré une concordance étroite entre le modèle 3D et les calculs théoriques.</p>
 
-    <h3>Pourquoi un léger écart subsiste</h3>
-    <p>Le calcul théorique simplifie la mécanique du piano en un mécanisme de trois corps rigides et suppose que le mouvement et la force se transmettent sans perte aux points de contact. La simulation sur modèle 3D, elle, traite chacune des pièces qui composent la mécanique, de sorte que l’énergie perdue entre pièces et la déformation du matériau se reflètent aussi dans le résultat. C’est cette différence de prémisses qui apparaît sous la forme du léger écart entre valeur théorique et valeur simulée.</p>
+    <h3>Interpréter les écarts</h3>
+    <p>Le calcul théorique réduit la mécanique à trois solides indéformables et suppose une transmission du mouvement et des forces sans perte à leurs points de contact. La simulation représente au contraire les pièces individuellement. Ces différences de représentation comptent pour interpréter les résultats, mais attribuer l’écart résiduel à des pertes d’énergie ou à la déformation des matériaux exige de confirmer les paramètres de la simulation.</p>
 
     <h3>Conclusion</h3>
-    <p>Il a été vérifié que les résultats de la simulation 3D sont pratiquement égaux aux valeurs théoriques. Le modèle 3D construit à partir d’un dessin en coupe a reproduit le mouvement de la mécanique du piano — qui amplifie l’appui sur la touche en vitesse du marteau et transmet cette force à la corde — d’une manière cohérente avec le calcul théorique.</p>
-    <p>Ce projet n’a pas consisté seulement à reproduire une forme. Lire la structure à partir d’une coupe de référence, traduire les relations entre pièces en contraintes dans la CAO, et simplifier le résultat en un modèle mécanique adapté à la question posée relevaient d’un seul et même processus de modélisation.</p>
+    <p>La simulation 3D concordait étroitement avec les comparaisons théoriques pour la vitesse du marteau et la force de réaction au niveau de la corde. Dans le cadre de ces comparaisons, le modèle construit à partir d’un dessin en coupe reproduisait la transmission du mouvement et des forces attendue pour la géométrie et les contraintes spécifiées.</p>
+    <p>Le projet reliait plusieurs étapes de modélisation : interpréter un dessin en coupe, traduire les relations entre pièces en contraintes de CAO et simplifier l’assemblage en un modèle mécanique adapté à chaque analyse.</p>
   </section>
 
-  <nav aria-label="Site">
+  <nav aria-label="Navigation du portfolio">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Retour au portfolio de Takafumi Horiuchi</span></a></li>
     </ul>
@@ -293,8 +298,8 @@
 
 </main>
 
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Figure agrandie" hidden>
-  <button class="lightbox__close" type="button" aria-label="Fermer l’agrandissement"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Image agrandie" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fermer l’image agrandie"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>

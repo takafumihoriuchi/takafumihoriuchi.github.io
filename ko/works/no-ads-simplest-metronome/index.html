@@ -6,7 +6,7 @@
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>고동치는 메트로놈 — 호리우치 다카후미</title>
-<meta name="description" content="화면의 원이 클릭음과 같은 순간에 같은 세기로 고동치는 iPhone용 메트로놈. 광고도 설정 화면도 없는 한 화면의 도구로, 기획부터 디자인과 구현까지 혼자 완성했다.">
+<meta name="description" content="원이 클릭음의 박자와 세기에 맞춰 고동치는 iPhone용 메트로놈. 광고와 설정 화면 없이 한 화면으로 쓰는 도구로 직접 기획·디자인·구현했다.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/ko/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/">
@@ -31,7 +31,7 @@
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="ko_KR">
 <meta property="og:title" content="고동치는 메트로놈">
-<meta property="og:description" content="원이 클릭음과 같은 순간에 같은 세기로 고동친다. 광고도 설정 화면도 없는 iPhone용 메트로놈.">
+<meta property="og:description" content="원이 클릭음의 박자와 세기에 맞춰 고동친다. 광고와 설정 화면이 없는 iPhone용 메트로놈.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/ko/works/no-ads-simplest-metronome/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
@@ -48,10 +48,14 @@
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "인지공학 × AI × 디자인",
+      "description": "디자인 엔지니어",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
+      ],
+      "alternateName": [
+        "호리우치 다카후미",
+        "堀内 貴文"
       ]
     },
     {
@@ -60,7 +64,7 @@
       "name": "고동치는 메트로놈",
       "alternateName": "No Ads Simplest Metronome",
       "url": "https://takafumihoriuchi.github.io/ko/works/no-ads-simplest-metronome/",
-      "description": "화면의 원이 클릭음과 같은 순간에 같은 세기로 고동치는 iPhone용 메트로놈. 광고도 설정 화면도 없는 한 화면의 도구로, 기획부터 디자인과 구현까지 혼자 완성했다.",
+      "description": "원이 클릭음의 박자와 세기에 맞춰 고동치는 iPhone용 메트로놈. 광고와 설정 화면 없이 한 화면으로 쓰는 도구로 직접 기획·디자인·구현했다.",
       "image": "https://takafumihoriuchi.github.io/works/no-ads-simplest-metronome/assets/og.jpg",
       "datePublished": "2026-09",
       "inLanguage": "ko",
@@ -94,7 +98,7 @@
 <main>
 
   <header>
-    <h1>고동치는<wbr> 메트로놈</h1>
+    <h1 style="word-break: keep-all;">고동치는<wbr> 메트로놈</h1>
     <p class="dateline">2026년 9월</p>
   </header>
 
@@ -112,7 +116,7 @@
 
   <section>
     <h2>개요</h2>
-    <p class="lead">화면 한가운데의 원이 클릭음과 같은 순간에 같은 세기로 고동친다. 광고도 계정도 설정 화면도 없는 iPhone용 메트로놈을 만들었다.</p>
+    <p class="lead">화면 한가운데의 원이 클릭음의 박자와 세기에 맞춰 고동친다. 광고도 계정도 설정 화면도 없는 iPhone용 메트로놈을 만들었다.</p>
 
     <!-- A running copy of the screen, not a picture of it: see page.css. The
          checkbox is the circle's start/stop, as in the app, and works without
@@ -126,7 +130,7 @@
         <span class="device__stopped" aria-hidden="true"></span>
         <label class="device__button" for="device-stop"></label>
       </div>
-      <figcaption>앱과 같은 수식으로 이 화면을 페이지 안에서 움직인다(120&nbsp;BPM, 한 마디에 4박). 원을 탭하면 멈춘다.</figcaption>
+      <figcaption>앱과 같은 수식으로 움직이는 인터랙티브 화면이다. 템포는 120&nbsp;BPM, 한 마디는 4박이다. 원을 탭하면 멈춘다.</figcaption>
       <p class="device__sound" hidden><button class="sound-toggle" type="button"><span class="sound-toggle__box"><span class="sound-toggle__on">소리 켜기</span><span class="sound-toggle__off">소리 끄기</span></span></button></p>
     </figure>
 
@@ -145,16 +149,16 @@
           <dd>지원 페이지를 연다.</dd>
         </div>
         <div class="touch-map__note touch-map__note--dots">
-          <dt>점</dt>
-          <dd>탭하면 한 박 늘어난다(1–7박). 손가락으로 쓸어서 늘리거나 줄일 수도 있다.</dd>
+          <dt>박자 표시 점</dt>
+          <dd>탭하면 한 마디의 박자 수가 한 박씩 늘어난다(1–7박). 손가락으로 쓸어서 늘리거나 줄일 수도 있다.</dd>
         </div>
         <div class="touch-map__note touch-map__note--circle">
           <dt>원</dt>
           <dd>탭하면 시작하거나 멈춘다. 길게 누른 뒤 곡에 맞춰 두드리면 템포를 정할 수 있다.</dd>
         </div>
         <div class="touch-map__note touch-map__note--tempo">
-          <dt>숫자</dt>
-          <dd>드래그해서 빠르게 또는 느리게 한다. 천천히 움직이면 세밀하게 바뀐다. −/+는 1씩 바꾼다.</dd>
+          <dt>템포</dt>
+          <dd>드래그해서 템포를 높이거나 낮춘다. 천천히 움직이면 더 세밀하게 조절된다. − 또는 +를 탭하면 1 BPM씩 바뀐다.</dd>
         </div>
       </dl>
       <figcaption>멈춘 화면. 화면의 글자는 숫자와 ‘BPM’만 남겼다.</figcaption>
@@ -162,18 +166,19 @@
   </section>
 
   <section>
-    <h2>고동 — 같은 순간에, 같은 세기로</h2>
-    <p>원은 소리가 출력되는 순간이 아니라 귀에 도착하는 순간에 부푼다. Bluetooth 이어폰에서 생기는 약 0.1–0.3초의 지연도 iOS가 보고하는 출력 지연으로 보정한다. 부푸는 크기는 클릭음의 음량에 비례한다. 첫 박에서는 더 높고 큰 소리와 함께 원도 유난히 크게 부푼다.</p>
+    <h2>고동: 클릭음의 박자와 세기에 맞추기</h2>
+    <p>iOS가 보고하는 출력 지연을 이용해 원의 고동이 클릭음에 맞춰지도록 시점을 조정한다. Bluetooth 이어폰에서는 약 0.1–0.3초의 지연이 생길 수 있다. 원이 커지는 정도는 클릭음의 음량에 비례한다. 첫 박에서는 음높이와 음량이 모두 높은 클릭음과 함께 원도 눈에 띄게 크게 부푼다.</p>
 
     <figure class="diagram">
       <picture>
         <source media="(max-width: 36rem)" srcset="../../../works/no-ads-simplest-metronome/assets/pulse-narrow.svg" width="420" height="188">
         <img src="../../../works/no-ads-simplest-metronome/assets/pulse.svg" width="720" height="231" loading="lazy" decoding="async" alt="한 마디 4박의 클릭음과 원의 크기를 나타낸 그래프. 클릭할 때마다 크기 곡선이 바로 올라가 첫 박에서는 1.25배, 2–4박에서는 1.15배에 도달하고, 1배 아래로 조금 내려갔다가 돌아온다.">
       </picture>
-      <figcaption>한 마디의 클릭음(채운 영역)과 원의 크기(선). 120&nbsp;BPM, 한 마디에 4박. 원은 소리가 난 뒤 0.02초 만에 가장 크게 부풀고, 젤리처럼 조금 지나치게 줄어들었다가 멈춘다.</figcaption>
+      <figcaption>한 마디의 클릭음(채운 영역)과 원의 크기(선). 템포는 120&nbsp;BPM, 한 마디는 4박이다. 원은 클릭음이 시작된 뒤 0.02초에 가장 커지고, 원래 크기보다 조금 작아졌다가 젤리처럼 제자리로 돌아온다.</figcaption>
     </figure>
 
-    <p>박자의 시각은 오디오 스레드가 샘플 단위로 정한다. 오차가 누적되지 않도록 계산해, 한 시간 연속 재생해도 어긋남은 0.5샘플 이내에 머문다.</p>
+    <p>오디오 스레드가 각 박의 시점을 샘플 단위의 정밀도로 정한다. 시간 계산에서 오차가 누적되지 않도록 하여, 한 시간 연속 재생한 뒤에도 오차가 0.5샘플 이내에 머물도록 한다.</p>
+    <p class="note">0.5샘플이라는 수치의 적용 범위와 계산 조건은 추가 확인이 필요하다. 소리가 청취자에게 도달하는 시점이나 화면과의 동기화 정확도를 뜻하는 수치로 해석해서는 안 된다.</p>
   </section>
 
   <section>
@@ -243,9 +248,9 @@
     </dl>
   </section>
 
-  <p class="colophon">SwiftUI로 구현했으며 외부 라이브러리는 사용하지 않았다. iOS&nbsp;17 이상의 iPhone에서 작동한다. 영어 이름은 No Ads Simplest Metronome이다. App Store 출시를 준비 중이다(2026년 9월). 전체 사용법과 개인정보 처리방침은 <a class="ext" href="https://simplest-metronome.pages.dev/en/" hreflang="en">지원 페이지(영어)</a>에 실었다.</p>
+  <p class="colophon">외부 라이브러리 없이 SwiftUI로 구현했으며, iOS&nbsp;17 이상의 iPhone에서 작동한다. 영어 이름은 No Ads Simplest Metronome이다. 2026년 9월 기준으로 App Store 출시를 준비하고 있었다. 전체 사용법과 개인정보 처리방침은 <a class="ext" href="https://simplest-metronome.pages.dev/en/" hreflang="en">지원 페이지(영어)</a>에 실었다.</p>
 
-  <nav aria-label="사이트">
+  <nav aria-label="포트폴리오 탐색">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Takafumi Horiuchi의 포트폴리오 홈으로</span></a></li>
     </ul>

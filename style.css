@@ -1224,37 +1224,26 @@ nav ul {
 .home-identity { display: block; }
 .home-identity nav { margin-top: 0.35rem; }
 
-/* The role stays on the name's line rather than moving under it, so the two
-   are met in one movement and read as one phrase. What separates them is
-   colour alone: the name at full text strength — 17.1:1 on the light ground,
-   15.0:1 on the dark — and the role in the accent, at 5.37:1 and 6.74:1. Both
-   are read without effort, and only one of them is read first. Comfortably
-   inside AA at this size in both themes.
-
-   The brown is not decoration. It is the colour this site already gives to
-   the lines that name a thing rather than say something — the section
-   headings — so the role arrives in the one colour the page has already
-   defined as a label.
-
-   The weight comes off with it, but the size does not. Colour alone left the
-   role standing at the name's own weight, which is a lot of presence for a
-   qualifier; at 400 against the name's 600 the second half of the line steps
-   back without being made small. Keeping the size is what holds the two
-   halves in one sentence about one person, rather than a name with a caption
-   bolted underneath it. */
+/* The name is primary. The role uses the next smaller type size, a lighter
+   weight, and the existing accent colour. Keep the separator at the name's
+   size and preserve its two spaces on either side in every language. */
+.home-identity h1 .role-group {
+  display: inline-block;
+  white-space: nowrap;
+}
+.home-identity h1 .identity-separator { white-space: pre; }
 .home-identity h1 .role {
   color: var(--accent);
+  font-size: 1.25rem;
   font-weight: 400;
   white-space: nowrap;
 }
+:is(:lang(ja), :lang(zh), :lang(ko)) .home-identity h1 .role {
+  font-size: 1.5rem;
+}
 
-/* Why the role is one unbreakable piece: the line has exactly one place it
-   should turn, and that is between the name and the role. Left to itself a
-   phone breaks wherever the words run out — “…as Design” with “Engineer”
-   alone underneath — which reads as a sentence that ran over rather than as a
-   name with its role beneath it. Held together, the role either follows the
-   name or takes the next line whole. It is 190px at this size, so it fits the
-   column on a 320px screen with room to spare. */
+/* Keep the separator and role together when a narrow screen moves them to
+   the next line, without splitting the title into separate words. */
 
 /* The Japanese name is the same problem one level down. 堀内 貴文 is two words
    with a space between them, and under `word-break: keep-all` that space is

@@ -3,10 +3,10 @@
 <head>
 <meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<script src="../../../theme.js"></script>
+<script src="/theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
 <title>Tesi di laurea sulla programmazione a vincoli — Takafumi Horiuchi</title>
-<meta name="description" content="Durante la simulazione, identificare le condizioni che non possono più verificarsi e escluderle dalla ricerca. Uno studio sulla programmazione a vincoli che riduce il carico computazionale senza cambiare i risultati, dimezzando circa il tempo di esecuzione del modello di valutazione.">
+<meta name="description" content="Una ricerca sulla programmazione a vincoli che ha eliminato durante la simulazione condizioni dimostrate definitivamente irrilevanti, riducendo di circa la metà il tempo di esecuzione nel modello di valutazione senza modificarne i risultati.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/">
@@ -23,21 +23,21 @@
 <link rel="alternate" hreflang="it" href="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="id" href="https://takafumihoriuchi.github.io/id/works/bachelors-thesis-constraint-programming/">
 <link rel="alternate" hreflang="eo" href="https://takafumihoriuchi.github.io/eo/works/bachelors-thesis-constraint-programming/">
-<link rel="icon" href="../../../favicon.ico" sizes="any">
-<link rel="icon" href="../../../favicon-32x32.png" type="image/png" sizes="32x32">
-<link rel="apple-touch-icon" href="../../../apple-touch-icon.png">
-<link rel="stylesheet" href="../../../style.css">
+<link rel="icon" href="/favicon.ico" sizes="any">
+<link rel="icon" href="/favicon-32x32.png" type="image/png" sizes="32x32">
+<link rel="apple-touch-icon" href="/apple-touch-icon.png">
+<link rel="stylesheet" href="/style.css">
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="it_IT">
 <meta property="og:title" content="Tesi di laurea sulla programmazione a vincoli">
-<meta property="og:description" content="Rimuovere in sicurezza le condizioni che non si verificheranno mai più e velocizzare la simulazione.">
+<meta property="og:description" content="Accelerare una simulazione eliminando in sicurezza le condizioni che non possono più diventare vere.">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Simulazione di una palla che scende saltando le scale. Mostra da dove le restrizioni superate diventano irrilevanti.">
+<meta property="og:image:alt" content="Una palla che rimbalza scendendo una scala mostra come i vincoli associati ai gradini già superati diventino irrilevanti.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -47,8 +47,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Ingegneria Cognitiva × IA × Design",
+      "description": "Ingegnere del design",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -61,7 +62,7 @@
       "headline": "Tesi di laurea sulla programmazione a vincoli",
       "url": "https://takafumihoriuchi.github.io/it/works/bachelors-thesis-constraint-programming/",
       "sameAs": "https://www.jstage.jst.go.jp/article/pjsai/JSAI2019/0/JSAI2019_1E3OS3b02/_article/-char/ja/",
-      "description": "Durante la simulazione, identificare le condizioni che non possono più verificarsi e escluderle dalla ricerca. Uno studio sulla programmazione a vincoli che riduce il carico computazionale senza cambiare i risultati, dimezzando circa il tempo di esecuzione del modello di valutazione.",
+      "description": "Una ricerca sulla programmazione a vincoli che elimina durante la simulazione le condizioni di cui è dimostrata l’irrilevanza permanente, riducendo di circa la metà il tempo di esecuzione del modello di valutazione senza modificarne i risultati.",
       "image": "https://takafumihoriuchi.github.io/works/bachelors-thesis-constraint-programming/assets/og.jpg",
       "datePublished": "2019-06-01",
       "inLanguage": "it",
@@ -82,14 +83,14 @@
   ]
 }
 </script>
-<link rel="stylesheet" href="../../../works/figures.css">
-<link rel="stylesheet" href="../../../works/bachelors-thesis-constraint-programming/page.css">
-<script src="../../../works/home-mark.js" defer></script>
-<script defer src="../../../works/figures.js"></script>
+<link rel="stylesheet" href="/works/figures.css">
+<link rel="stylesheet" href="/works/bachelors-thesis-constraint-programming/page.css">
+<script src="/works/home-mark.js" defer></script>
+<script defer src="/works/figures.js"></script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>
 </head>
 <body>
-<div class="home-mark"><a class="home-mark__link" href="../../" aria-label="Torna al portfolio di Takafumi Horiuchi">Takafumi Horiuchi</a>
+<div class="home-mark"><a class="home-mark__link" href="/it/" aria-label="Torna al portfolio di Takafumi Horiuchi">Takafumi Horiuchi</a>
   <div class="theme-toggle" role="radiogroup" aria-label="Aspetto" dir="ltr" hidden>
     <label title="Modalità chiara">
       <input type="radio" name="theme" value="light" aria-label="Modalità chiara">
@@ -121,93 +122,93 @@ o-|\
 
   <section>
     <h2>Panoramica</h2>
-    <p class="lead">Il simulatore esamina ripetutamente molte condizioni man mano che aumentano gli eventi possibili. Allora, se dal progresso si può giudicare che "questa condizione non si verificherà mai più", non si potrebbe smettere di verificarla in modo sicuro? Abbiamo progettato e implementato un metodo per il linguaggio di modellazione dei sistemi ibridi HydLa, che esclude le condizioni non necessarie dalla ricerca in corso utilizzando come indizio la direzione della variazione dei valori.</p>
-    <p>Nel modello di valutazione, il tempo di esecuzione è stato ridotto a circa la metà rispetto al metodo tradizionale, senza modificare i risultati della simulazione. L'importante non è stato velocizzare uniformemente tutti i calcoli, ma piuttosto ridurre le possibilità da considerare sfruttando la struttura del problema.</p>
-    <p>Il concetto di programmazione a vincoli appreso in questo studio costituisce la base dell'attuale <a href="../../">La mia filosofia di design</a>. Non si tratta di specificare direttamente i risultati uno per uno, ma di definire regole, priorità e confini, e di derivare le soluzioni che si realizzano all'interno di essi.</p>
+    <p class="lead">Più eventi possibili include una simulazione, più condizioni deve valutare ripetutamente. Ma se il suo avanzamento permette di stabilire che una condizione non potrà più diventare vera, è possibile smettere di verificarla senza alterare i risultati? Ho progettato e implementato un metodo per HydLa, un linguaggio di modellazione dei sistemi ibridi, che usa la direzione di variazione delle variabili per eliminare le condizioni che non richiedono più verifiche.</p>
+    <p>Nel modello di valutazione, il metodo ha ridotto il tempo di esecuzione a circa la metà di quello dell’algoritmo originale, senza modificare i risultati della simulazione. Il miglioramento deriva dall’uso della struttura del problema per ridurre le possibilità da considerare.</p>
+    <p>La prospettiva della programmazione a vincoli sviluppata in questa ricerca è oggi alla base del mio approccio ai progetti del <a href="/it/">mio portfolio</a>: invece di specificare direttamente ogni risultato, definire regole, priorità e confini, per poi ricavare soluzioni che li rispettino.</p>
   </section>
 
   <hr class="section-break">
 
   <section>
-    <h2>Problema — più aumentano le possibilità, più i calcoli diventano lenti</h2>
-    <p>HydLa è un linguaggio per descrivere i "sistemi ibridi", in cui si combinano cambiamenti continui ed eventi discreti, come vincoli matematici e logici. Anche senza scrivere tutte le sequenze delle procedure, dichiarando ciò che deve essere soddisfatto è possibile simulare un comportamento che rispetta le condizioni.</p>
-    <p>D'altra parte, nei modelli in cui le regole diventano valide a seconda delle condizioni, il simulatore verifica ripetutamente un gran numero di candidati. Poiché rimangono candidati anche le condizioni già superate e quelle che non si verificheranno in futuro, man mano che il modello cresce, i calcoli inutili si accumulano.</p>
+    <h2>Il problema: più possibilità significano tempi di esecuzione più lunghi</h2>
+    <p>HydLa descrive i sistemi ibridi, che combinano variazioni continue ed eventi discreti, attraverso vincoli matematici e logici. Anziché specificare ogni passaggio della procedura, il modello dichiara le condizioni che devono valere e il simulatore trova un comportamento che le soddisfa.</p>
+    <p>Nei modelli con molte regole condizionali, il simulatore verifica ripetutamente un ampio insieme di candidati. Anche le condizioni che non possono più diventare vere rimangono in quell’insieme. Al crescere del modello, queste verifiche inutili aumentano il lavoro computazionale.</p>
   </section>
 
   <section>
-    <h2>Tema — un sistema in cui si mescolano continuo e discreto</h2>
+    <h2>Il modello: combinare variazioni continue e discrete</h2>
     <p>Una palla che rimbalza è un esempio chiaro di un sistema ibrido. In aria, posizione e velocità cambiano continuamente, mentre nel momento in cui tocca il pavimento avviene un evento discreto, il rimbalzo. Anche termostati, automobili e robot, pur su scale diverse, possiedono internamente gli stessi due tipi di cambiamento.</p>
-    <p>Per la valutazione è stato utilizzato un modello in cui una palla che si muove orizzontalmente rimbalza su una superficie suddivisa in più settori. Ogni settore della superficie ha una regola condizionale del tipo "se la palla arriva in questo intervallo, rimbalza". Aumentando il numero di settori, aumenta la gamma degli oggetti che si possono rappresentare, ma aumentano anche le condizioni da esaminare per il simulatore.</p>
+    <p>La valutazione ha usato un modello di una palla che si muove orizzontalmente e rimbalza su una superficie suddivisa in segmenti. A ogni segmento è associata una regola condizionale che fa rimbalzare la palla quando raggiunge quell’area. Aggiungere segmenti permette di rappresentare più oggetti, ma aumenta anche il numero di condizioni che il simulatore deve verificare.</p>
 
     <figure class="paper-figure line-art figure-1">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Codice sorgente HydLa che definisce il comportamento di una palla che si muove orizzontalmente e rimbalza su uno qualsiasi dei N settori di superfici adiacenti."></a>
-      <figcaption>Un breve modello HydLa descrive una superficie suddivisa in una palla e <em>N</em> sezioni con guardia.</figcaption>
+      <a href="/works/bachelors-thesis-constraint-programming/assets/figure-1.webp"><img src="/works/bachelors-thesis-constraint-programming/assets/figure-1.webp" width="950" height="600" alt="Codice sorgente HydLa che definisce una palla in movimento orizzontale, che rimbalza su una superficie divisa in N segmenti adiacenti."></a>
+      <figcaption>Un breve modello HydLa descrive una palla e una superficie suddivisa in N segmenti, ciascuno con un vincolo con guardia.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Collo di bottiglia — il numero di condizioni aumenta la complessità computazionale</h2>
-    <p>Una regola che diventa valida solo quando le condizioni sono soddisfatte è chiamata 'vincolo con guardia'. Nel modello di valutazione, la regola di rimbalzo di un'area diventa valida solo quando la palla raggiunge il pavimento e la sua posizione orizzontale è all'interno di quella specifica area.</p>
-    <p>Aumentando il numero di lotti da 10 a 200, i simulatori tradizionali diventavano circa proporzionalmente più lenti al quadrato del numero di lotti. Nei modelli di grande scala, poiché aumentano gli oggetti, le aree di contatto e gli eventi possibili, lo stesso problema diventa più grande.</p>
+    <h2>Il collo di bottiglia: più condizioni aumentano il tempo di esecuzione</h2>
+    <p>Una regola che si attiva soltanto quando una condizione è soddisfatta si chiama vincolo con guardia. Nel modello di valutazione, la regola di rimbalzo di un segmento si attiva solo quando la palla raggiunge il suolo e la sua posizione orizzontale ricade in quel segmento.</p>
+    <p>Aumentando il numero di segmenti da 10 a 200, il tempo di esecuzione del simulatore originale cresceva approssimativamente con il quadrato di quel numero. Nei modelli più grandi, il maggior numero di oggetti, zone di contatto ed eventi possibili può amplificare il problema.</p>
   </section>
 
   <section>
-    <h2>Indagine — Dove si trovava il 96% del tempo di elaborazione</h2>
-    <p>Misurando il tempo di elaborazione, nel modello con 100 sezioni, il 96% del tempo totale veniva utilizzato per <code>FindMinTime</code>. Si tratta del processo di ricerca del "prossimo evento più imminente" tra i candidati. Pertanto, tutte le condizioni di guardia venivano valutate ripetutamente.</p>
-    <p>I punti da migliorare sono diventati chiari. Non è necessario rifare l'intero metodo di calcolo, basta ridurre in sicurezza i candidati da passare a <code>FindMinTime</code>. L'obiettivo era evitare solo le possibilità che non è necessario verificare, senza modificare i risultati della simulazione.</p>
+    <h2>L’indagine: a che cosa serviva il 96% del tempo di esecuzione?</h2>
+    <p>L’analisi dei tempi del modello con 100 segmenti ha mostrato che <code>FindMinTime</code> assorbiva il 96% del tempo totale. Questa procedura individua il primo evento futuro possibile valutando ripetutamente tutte le condizioni di guardia candidate.</p>
+    <p>È emersa così una possibilità di miglioramento ben circoscritta: ridurre in sicurezza i candidati passati a <code>FindMinTime</code>. L’obiettivo era evitare soltanto le possibilità che non richiedevano più una valutazione, preservando i risultati della simulazione.</p>
   </section>
 
   <section>
-    <h2>Approccio — Rimuovere in sicurezza le condizioni che non si realizzeranno mai più</h2>
-    <p>Immagina una palla che scende saltando le scale. Quando la palla supera un gradino e continua a muoversi in avanti, quel gradino non può più influenzare la palla. Chi guarda il diagramma ignora immediatamente i gradini dietro la palla. L'algoritmo originale continuava invece a esaminarli uno a uno.</p>
+    <h2>L’approccio: eliminare le condizioni che non possono più diventare vere</h2>
+    <p>Immagina una palla che rimbalza scendendo una scala. Quando la palla supera un gradino e continua a muoversi in avanti, quel gradino non può più influenzare la palla. Chi guarda il diagramma ignora immediatamente i gradini dietro la palla. L'algoritmo originale continuava invece a esaminarli uno a uno.</p>
 
     <figure class="paper-figure line-art keeps-colour">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La traiettoria rossa indica la palla che scende saltando i gradini neri della scala. L'area tratteggiata rappresenta i gradini già superati e ormai irrilevanti."></a>
-      <figcaption>Man mano che la palla si muove verso destra, si può saltare la guardia del gradino con la rete dietro di essa.</figcaption>
+      <a href="/works/bachelors-thesis-constraint-programming/assets/figure-2.webp"><img src="/works/bachelors-thesis-constraint-programming/assets/figure-2.webp" width="1070" height="438" loading="lazy" decoding="async" alt="La traiettoria rossa indica la palla che scende saltando i gradini neri della scala. L&#x27;area tratteggiata rappresenta i gradini già superati e ormai irrilevanti."></a>
+      <figcaption>Mentre la palla si muove verso destra, la guardia associata a un gradino tratteggiato ormai alle sue spalle può essere ignorata.</figcaption>
     </figure>
 
-    <p>La difficoltà sta nella parte che deve dimostrare che le guardie rimosse non saranno necessarie in seguito. Se le rimuovi solo perché al momento sono false, quando diventeranno di nuovo vere, potrebbero restituire dei risultati incorretti senza alcun avviso. La metodologia proposta utilizza quindi la monotonicità: si tratta di capire se è possibile garantire che una certa variabile continui ad aumentare o a diminuire durante un certo intervallo di tempo.</p>
+    <p>La difficoltà consiste nel dimostrare che una guardia eliminata non servirà più. Rimuoverla solo perché al momento è falsa potrebbe produrre un risultato errato senza segnalarlo, qualora tornasse vera. Il metodo proposto usa quindi la monotonicità: la possibilità di garantire che una variabile continui ad aumentare o a diminuire in un dato intervallo.</p>
 
-    <h3>Quando la direzione del cambiamento non cambia</h3>
-    <p>La prima misura si applica quando una variabile si muove in una sola direzione per tutta la simulazione. In un modello con la superficie suddivisa, la posizione orizzontale della palla aumenta sempre. Una volta superata una sezione, le condizioni di quella sezione non saranno più soddisfatte. Questa proprietà può essere verificata prima della simulazione tramite tecniche di model checking, quindi le guardie non più necessarie possono essere rimosse in sicurezza man mano che l'esecuzione procede.</p>
+    <h3>Quando la direzione della variazione rimane invariata</h3>
+    <p>Il primo approccio si applica quando una variabile varia in una sola direzione per tutta la simulazione. Nel modello della superficie segmentata, la posizione orizzontale della palla aumenta sempre. Una volta superato un segmento, la sua guardia non potrà più diventare vera. Tecniche di model checking possono verificare questa proprietà prima della simulazione, consentendo di rimuovere le guardie in sicurezza man mano che diventano irrilevanti durante l’esecuzione.</p>
 
     <figure class="paper-figure line-art keeps-colour figure-3">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="La linea rossa che sale da α al tempo 0 fino a β al tempo massimo rappresenta una variabile che continua ad aumentare durante tutta la simulazione.">
-      <figcaption>La monotonia uniforme significa che la direzione del cambiamento viene mantenuta su tutto l'intervallo simulato.</figcaption>
+      <img src="/works/bachelors-thesis-constraint-programming/assets/figure-3.webp" width="1010" height="345" loading="lazy" decoding="async" alt="Una linea rossa sale da α al tempo 0 a β alla fine della simulazione, rappresentando una variabile che aumenta per tutto l’intervallo simulato.">
+      <figcaption>La monotonicità uniforme indica che la direzione della variazione si mantiene per tutto l’intervallo simulato. Nell’asse orizzontale, <em>t</em> è il tempo e <em>MaxT</em> è la fine dell’intervallo simulato; α e β indicano i valori iniziale e finale.</figcaption>
     </figure>
 
-    <h3>Quando la direzione del cambiamento cambia a metà</h3>
-    <p>Molti sistemi reali non si muovono in una sola direzione per sempre. Le variabili possono aumentare, cambiare direzione e poi diminuire. In questo contesto, il documento ha presentato una seconda corrispondenza. Prima, si assume una direzione, si monitora tale ipotesi con un'asserzione e si rifà il processo di riduzione dal momento in cui la direzione cambia. La guardia rimossa per un intervallo monotono viene ripristinata quando inizia l'intervallo successivo.</p>
+    <h3>Quando la direzione della variazione si inverte</h3>
+    <p>Molti sistemi non variano indefinitamente in una sola direzione: una variabile può aumentare, invertire la direzione e poi diminuire. La tesi ha quindi proposto un secondo approccio, che ipotizza una direzione di variazione e la controlla mediante asserzioni. Quando la direzione cambia, il processo di riduzione riparte, ripristinando le guardie eliminate nel precedente intervallo monotono. In questo progetto l’approccio è stato progettato, ma non implementato né valutato.</p>
 
     <figure class="paper-figure line-art keeps-colour figure-5">
-      <img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="I cinque diagrammi mostrano come si stabiliscono successivamente l'intervallo in cui si suppone un aumento, il fallimento dell'asserzione, un nuovo intervallo di diminuzione, il secondo fallimento e l'intervallo monotono.">
-      <figcaption>Il fallimento delle asserzioni suddivide il comportamento variabile in intervalli che possono essere trattati ciascuno come monotoni.</figcaption>
+      <img src="/works/bachelors-thesis-constraint-programming/assets/figure-5.webp" width="1010" height="1490" loading="lazy" decoding="async" alt="Cinque diagrammi mostrano un intervallo inizialmente ipotizzato come crescente, il fallimento di un’asserzione, un nuovo intervallo decrescente, un secondo fallimento e l’individuazione successiva degli intervalli monotoni.">
+      <figcaption>Il fallimento delle asserzioni divide il comportamento in intervalli, ciascuno dei quali può essere trattato come monotono. Le croci rosse segnano i fallimenti delle asserzioni; la linea continua mostra il comportamento già simulato e quella tratteggiata il tratto ipotizzato. α₀, α₁, α₂ e β₀, β₁, β₂ delimitano gli intervalli successivi. <em>t</em> indica il tempo e <em>MaxT</em> la fine della simulazione.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Risultato — Tempo di esecuzione del modello di valutazione ridotto di circa metà</h2>
-    <p>Abbiamo implementato la gestione della monotonicità uniforme e valutato il modello suddividendo la superficie. Sia l'algoritmo originale sia il metodo proposto hanno tempi di esecuzione maggiori con l'aumentare del numero di suddivisioni. Tuttavia, il metodo proposto richiedeva costantemente meno lavoro. Confrontando le curve adattate, il coefficiente di ordine più alto è passato da 1,1463 a 0,6083, e in questo benchmark il tempo totale di simulazione si è ridotto circa della metà.</p>
-    <p>Questo non è un'affermazione che ogni modello HydLa diventerà il doppio più veloce. Ciò che viene indicato è dove questo metodo funziona: modelli che hanno molti oggetti con guardie, nei quali la direzione delle variazioni può essere dimostrata e le guardie divengono permanentemente irrilevanti durante l'esecuzione.</p>
+    <h2>Il risultato: circa metà del tempo di esecuzione nel modello di valutazione</h2>
+    <p>Ho implementato l’approccio basato sulla monotonicità uniforme e l’ho valutato con il modello della superficie segmentata. Per entrambi gli algoritmi il tempo di esecuzione cresceva con il numero di segmenti, ma il metodo proposto richiedeva sistematicamente meno tempo. Nelle curve adattate ai dati, il coefficiente del termine di grado più alto è sceso da 1,1463 a 0,6083. In questo benchmark, il tempo complessivo di simulazione si è ridotto di circa la metà.</p>
+    <p>Il risultato è specifico di questo benchmark. Il metodo è utile quando il modello contiene molti oggetti con guardia, la direzione della variazione è dimostrabile e alcune guardie diventano definitivamente irrilevanti durante l’esecuzione. Questo non significa che ogni modello HydLa venga eseguito in metà del tempo.</p>
 
     <figure class="paper-figure line-art result-figure">
-      <a href="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="../../../works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Grafico del tempo di simulazione rispetto a N. In tutto il intervallo da 10 a 200 suddivisioni della superficie, il metodo proposto rimane al di sotto del metodo originale, e per N=200 si attesta a circa 250 secondi rispetto a circa 470 secondi."></a>
-      <figcaption>Nel modello valutato, il metodo proposto (quadrato) impiega circa la metà del tempo rispetto all'algoritmo originale (cerchio).</figcaption>
+      <a href="/works/bachelors-thesis-constraint-programming/assets/figure-4.webp"><img src="/works/bachelors-thesis-constraint-programming/assets/figure-4.webp" width="1060" height="750" loading="lazy" decoding="async" alt="Tempo di simulazione in funzione di N, il numero di segmenti della superficie. Da 10 a 200 segmenti, il metodo proposto è sempre più veloce. Per N = 200 impiega circa 250 secondi, contro i circa 470 dell’algoritmo originale."></a>
+      <figcaption>Nei modelli valutati, il metodo proposto (quadrati) impiega circa la metà del tempo dell’algoritmo originale (cerchi). Nel grafico, «original» indica l’algoritmo originale e «proposed» il metodo proposto. L’asse verticale, «Simulation Time (s)», mostra il tempo di simulazione in secondi; <em>N</em>, sull’asse orizzontale, è il numero di segmenti della superficie.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>La prospettiva acquisita da questa ricerca</h2>
-    <p>In questa ricerca, non si trattava di rendere ogni singolo calcolo un po' più veloce. Si trattava di usare ciò che si sa sul comportamento del sistema per ridurre l'insieme delle possibilità da considerare. L'idea di restringere lo spazio di ricerca senza cambiare i risultati è il punto di forza della programmazione a vincoli.</p>
-    <p>Abbiamo implementato e valutato il caso in cui le variabili continuano a muoversi in una sola direzione. Nel caso in cui la direzione del cambiamento cambi a metà, ci si è limitati alla progettazione, lasciando la valutazione come compito futuro. Utilizzando proprietà diverse dalla monotonicità, c'è anche spazio per identificare ulteriori vincoli non necessari.</p>
-    <p>Il motivo per cui attualmente cerco di progettare le condizioni e i confini che l'IA può esplorare, piuttosto che progettare direttamente l'output dell'IA, è collegato a questa esperienza. Quando si trattano risultati complessi, è importante definire cosa non è necessario considerare tanto quanto cosa calcolare.</p>
+    <h2>Che cosa ho imparato</h2>
+    <p>Questa ricerca ha usato proprietà note del comportamento di un sistema per ridurre l’insieme di possibilità che il simulatore doveva considerare. Restringere lo spazio di ricerca preservando i risultati è un punto di forza della programmazione a vincoli.</p>
+    <p>L’implementazione e la valutazione riguardavano variabili che continuavano a variare in una sola direzione. La gestione delle inversioni è rimasta allo stadio di progettazione e richiedeva ancora una valutazione. Anche proprietà diverse dalla monotonicità potrebbero aiutare a individuare vincoli inutili.</p>
+    <p>Questa esperienza alimenta il mio attuale interesse per la progettazione delle condizioni e dei confini entro cui l’IA può cercare soluzioni. Quando si lavora con risultati complessi, definire che cosa si possa ignorare in sicurezza conta tanto quanto definire che cosa calcolare.</p>
   </section>
 
-  <p class="citation publication-citation">Takafumi Horiuchi, Kazunori Ueda, “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa,” 2019 Annual Conference of the Japanese Society for Artificial Intelligence (33rd), 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
+  <p class="citation publication-citation">Takafumi Horiuchi e Kazunori Ueda. “Dynamic Reduction of Guarded Constraints for the Hybrid Systems Modeling Language HydLa.” Proceedings of the 33rd Annual Conference of the Japanese Society for Artificial Intelligence, 2019. DOI: <a class="ext" href="https://doi.org/10.11517/pjsai.JSAI2019.0_1E3OS3b02">10.11517/pjsai.JSAI2019.0_1E3OS3b02</a></p>
 
-  <nav aria-label="Sito">
+  <nav aria-label="Navigazione del portfolio">
     <ul>
-      <li><a class="home-button" href="../../"><span class="home-button__box">Torna al portfolio di Takafumi Horiuchi</span></a></li>
+      <li><a class="home-button" href="/it/"><span class="home-button__box">Torna al portfolio di Takafumi Horiuchi</span></a></li>
     </ul>
   </nav>
 

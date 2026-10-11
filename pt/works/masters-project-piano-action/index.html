@@ -5,8 +5,8 @@
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <script src="../../../theme.js"></script>
 <script>document.documentElement.classList.add("ascii-load-pending");setTimeout(()=>{if(!document.documentElement.dataset.asciiLoad)document.documentElement.classList.remove("ascii-load-pending")},2500);</script>
-<title>Análise do movimento da mecânica do piano — Takafumi Horiuchi</title>
-<meta name="description" content="A mecânica de ação de um piano de cauda reconstruída como modelo 3D no SolidWorks. Um projeto do mestrado que compara, por cálculo teórico e por análise de movimento, como a entrada na tecla se converte em velocidade do martelo e em força de reação na corda.">
+<title>Análise do movimento do mecanismo de um piano — Takafumi Horiuchi</title>
+<meta name="description" content="Projeto de mestrado que reconstruiu o mecanismo de um piano de cauda como um modelo 3D no SolidWorks e comparou, por meio de cálculos teóricos e análise de movimento, como a ação sobre a tecla se traduz na velocidade do martelo e na força de reação da corda.">
 <link rel="canonical" href="https://takafumihoriuchi.github.io/pt/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="x-default" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
 <link rel="alternate" hreflang="en" href="https://takafumihoriuchi.github.io/works/masters-project-piano-action/">
@@ -33,14 +33,14 @@
 <meta property="og:type" content="article">
 <meta property="og:site_name" content="Takafumi Horiuchi">
 <meta property="og:locale" content="pt_BR">
-<meta property="og:title" content="Análise do movimento da mecânica do piano">
-<meta property="og:description" content="Como a entrada na tecla se converte em velocidade do martelo e em força de reação na corda ao atravessar o mecanismo?">
+<meta property="og:title" content="Análise do movimento do mecanismo de um piano">
+<meta property="og:description" content="Como o conjunto de alavancas do mecanismo de um piano transforma a ação sobre a tecla em velocidade do martelo e força de reação na corda?">
 <meta property="og:url" content="https://takafumihoriuchi.github.io/pt/works/masters-project-piano-action/">
 <meta property="og:image" content="https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg">
 <meta property="og:image:type" content="image/jpeg">
 <meta property="og:image:width" content="1200">
 <meta property="og:image:height" content="630">
-<meta property="og:image:alt" content="Modelo 3D em SolidWorks de uma mecânica de piano de madeira, em vista explodida.">
+<meta property="og:image:alt" content="Modelo 3D no SolidWorks, em vista explodida, do mecanismo de madeira de um piano.">
 <meta name="twitter:card" content="summary_large_image">
 <script type="application/ld+json">
 {
@@ -50,8 +50,9 @@
       "@type": "Person",
       "@id": "https://takafumihoriuchi.github.io/#person",
       "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
       "url": "https://takafumihoriuchi.github.io/",
-      "description": "Engenharia Cognitiva × IA × Design",
+      "description": "Engenheiro de design",
       "sameAs": [
         "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
         "https://github.com/takafumihoriuchi"
@@ -60,13 +61,16 @@
     {
       "@type": "CreativeWork",
       "@id": "https://takafumihoriuchi.github.io/pt/works/masters-project-piano-action/#work",
-      "name": "Análise do movimento da mecânica do piano",
+      "name": "Análise do movimento do mecanismo de um piano",
+      "headline": "Análise do movimento do mecanismo de um piano",
       "url": "https://takafumihoriuchi.github.io/pt/works/masters-project-piano-action/",
-      "description": "A mecânica de ação de um piano de cauda reconstruída como modelo 3D no SolidWorks, comparando por cálculo teórico e por análise de movimento a transmissão da entrada na tecla até a velocidade do martelo e a força de reação na corda. Um projeto do mestrado.",
+      "description": "Projeto de mestrado que reconstruiu o mecanismo de um piano de cauda como um modelo 3D no SolidWorks e comparou, por meio de cálculos teóricos e análise de movimento, como a ação sobre a tecla se traduz na velocidade do martelo e na força de reação da corda.",
       "image": "https://takafumihoriuchi.github.io/works/masters-project-piano-action/assets/og.jpg",
       "datePublished": "2020-01",
       "inLanguage": "pt",
-      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+      "author": {
+        "@id": "https://takafumihoriuchi.github.io/#person"
+      }
     }
   ]
 }
@@ -90,7 +94,7 @@
 <main>
 
   <header>
-    <h1>Análise do movimento da mecânica do piano</h1>
+    <h1>Análise do movimento do mecanismo de um piano</h1>
     <p class="dateline">Janeiro de 2020</p>
   </header>
 
@@ -112,28 +116,28 @@
 
   <section>
     <h2>Visão geral</h2>
-    <p class="lead">Dentro de um piano de cauda, o movimento de pressionar uma tecla percorre uma cadeia de articulações até que o martelo é lançado para cima e esse movimento se converte na vibração de uma corda. Esse sistema de alavancas — o que permite que uma tecla pressionada mova um martelo e golpeie uma corda — chama-se mecânica do piano. Este projeto reconstruiu essa mecânica como modelo 3D no SolidWorks* e usou a análise de movimento para ver como a entrada na tecla é convertida na velocidade do martelo e na força de reação da corda.</p>
-    <p>Para a análise, o mecanismo da tecla foi modelado em 3D do zero a partir de imagens de referência, e sobre esse modelo foram realizadas duas análises de movimento: uma sobre a relação entre a velocidade da tecla que desce e a do martelo que sobe, outra sobre a relação entre a força aplicada à tecla e a força que chega à corda. Os valores da simulação foram confrontados com os valores teóricos deduzidos das dimensões e da posição dos pivôs, para verificar como o movimento e a força se transmitem dentro do modelo.</p>
-    <p class="citation">* SolidWorks: sistema de CAD 3D. Na fase de projeto permite executar análise estrutural para examinar a resistência de uma peça e análise de movimento para verificar como ela se move.</p>
+    <p class="lead">O mecanismo de um piano de cauda é o sistema de alavancas que transmite o movimento de uma tecla ao martelo, que sobe para golpear a corda e fazê-la vibrar. Este projeto recriou o mecanismo como um modelo 3D no SolidWorks* e usou a análise de movimento para examinar como a ação sobre a tecla se traduz na velocidade do martelo e na força de reação da corda.</p>
+    <p>O mecanismo foi modelado do zero a partir de imagens de referência e, depois, examinado em duas análises: a relação entre a velocidade descendente da tecla e a velocidade ascendente do martelo e a relação entre a força aplicada à tecla e a força de reação da corda. Os resultados da simulação foram comparados a valores teóricos calculados com as dimensões e posições dos pivôs do modelo para verificar como ele transmitia movimento e força.</p>
+    <p class="citation">* SolidWorks é um sistema CAD 3D com ferramentas de análise estrutural de peças e de análise de movimento de mecanismos.</p>
 
     <hr class="section-break">
 
     <figure class="deck-figure bleed">
-      <ol class="deck" tabindex="0" role="group" aria-label="As 17 páginas de Motion Analysis of the Piano Action. É possível rolar horizontalmente">
+      <ol class="deck" tabindex="0" role="group" aria-label="Motion Analysis of the Piano Action: 17 slides originais, em inglês. Role horizontalmente.">
         <li><a href="../../../works/masters-project-piano-action/assets/slide-01.webp"><img src="../../../works/masters-project-piano-action/assets/slide-01.webp" width="1600" height="1200" alt="Slide de título: “Motion Analysis of the Piano Action”."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-02.webp"><img src="../../../works/masters-project-piano-action/assets/slide-02.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Fotografia do interior de um piano de cauda apresentando a fileira de mecânicas situada atrás das teclas."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-03.webp"><img src="../../../works/masters-project-piano-action/assets/slide-03.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modelo 3D mostrando como as peças da mecânica se movem em conjunto quando uma tecla é pressionada."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-04.webp"><img src="../../../works/masters-project-piano-action/assets/slide-04.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Modelo em corte da mecânica do piano mostrando que pressionar uma tecla ergue o martelo até golpear a corda."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="O processo de decalcar os contornos de um corte de referência e modelar cada peça do zero no SolidWorks."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-05.webp"><img src="../../../works/masters-project-piano-action/assets/slide-05.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Traçado de um desenho de referência em corte para modelar cada peça do zero no SolidWorks."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-06.webp"><img src="../../../works/masters-project-piano-action/assets/slide-06.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="A montagem 3D concluída da mecânica do piano no SolidWorks."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Os nomes das peças do modelo e o cálculo dos graus de liberdade, que resulta em 7 depois de aplicadas as restrições."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-07.webp"><img src="../../../works/masters-project-piano-action/assets/slide-07.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Nomes das peças e cálculo dos graus de liberdade do modelo, com 7 graus de liberdade após a aplicação das restrições."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-08.webp"><img src="../../../works/masters-project-piano-action/assets/slide-08.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Os dois temas de análise: as velocidades lineares de tecla e martelo, e a relação entre a entrada na tecla e a força de reação na corda."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-09.webp"><img src="../../../works/masters-project-piano-action/assets/slide-09.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Os pontos de observação da análise 1: a velocidade descendente na extremidade da tecla e a velocidade ascendente do martelo."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-10.webp"><img src="../../../works/masters-project-piano-action/assets/slide-10.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagrama que simplifica o mecanismo do piano em três elementos rotativos."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Diagrama que deduz a relação entre a velocidade da tecla e a do martelo a partir da razão dos raios dos três elementos rotativos."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-11.webp"><img src="../../../works/masters-project-piano-action/assets/slide-11.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Dedução da relação entre as velocidades da tecla e do martelo a partir das razões entre os raios de saída e de entrada de três elementos rotativos."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-12.webp"><img src="../../../works/masters-project-piano-action/assets/slide-12.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="As condições da análise: 5 newtons aplicados para baixo na extremidade da tecla, de 1 a 2 segundos."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Gráficos das velocidades lineares de tecla e martelo. As velocidades de pico são de 1.027 e 4.284 milímetros por segundo."></a></li>
-        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparação entre a velocidade do martelo de 4.614 milímetros por segundo obtida dos raios medidos e o valor analisado de 4.284 milímetros por segundo."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Gráficos das velocidades da tecla e do martelo, com picos de 1.027 e 4.284 milímetros por segundo, respectivamente."></a></li>
+        <li><a href="../../../works/masters-project-piano-action/assets/slide-14.webp"><img src="../../../works/masters-project-piano-action/assets/slide-14.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparação entre a velocidade teórica do martelo de 4.614 milímetros por segundo, calculada com os raios medidos, e a velocidade simulada de 4.284 milímetros por segundo."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-15.webp"><img src="../../../works/masters-project-piano-action/assets/slide-15.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="As condições da análise 2: 15 newtons aplicados para baixo sobre a tecla, observando-se a força de reação do lado da corda."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-16.webp"><img src="../../../works/masters-project-piano-action/assets/slide-16.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Comparação entre a força de reação máxima na corda de 31 newtons e o valor teórico de 31,1 newtons obtido pelo princípio da alavanca."></a></li>
         <li><a href="../../../works/masters-project-piano-action/assets/slide-17.webp"><img src="../../../works/masters-project-piano-action/assets/slide-17.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Lista de referências bibliográficas sobre modelos mecânicos da mecânica do piano."></a></li>
@@ -144,73 +148,73 @@
   <hr class="section-break">
 
   <section>
-    <h2>Da mecânica do piano a um modelo que se pode analisar</h2>
-    <h3>O mecanismo que transforma um toque numa corda golpeada</h3>
-    <p>A mecânica do piano é o mecanismo que converte o movimento descendente de uma tecla no movimento ascendente de um martelo. Ao pressionar a tecla, o pilotim, o balancim, o escape e a alavanca de repetição entram em movimento em conjunto e erguem o martelo até que ele golpeie a corda. O que o pianista vê é um único toque; dentro dele, várias peças giram em torno de pivôs diferentes e passam o movimento umas às outras ao se tocarem.</p>
-    <p>O modelo 3D inclui a tecla, o martelo, o escape, o balancim, a alavanca de repetição, o pilotim, o abafador, a alavanca do abafador e o arame, junto com a estrutura que os sustenta. Compreender o movimento exigia mais do que observar a forma acabada: era preciso definir qual peça gira em torno de qual pivô e em que ponto toca a seguinte.</p>
+    <h2>Construindo um modelo do mecanismo de piano para análise</h2>
+    <h3>Como pressionar uma tecla faz o martelo golpear a corda</h3>
+    <p>O mecanismo do piano converte o movimento descendente de uma tecla no movimento ascendente de um martelo. Pressionar uma tecla move conjuntamente o pilotim, o balancim, a alavanca de escape e a alavanca de repetição, erguendo o martelo para golpear a corda. O pianista faz um único movimento na tecla, mas, dentro do mecanismo, várias peças giram em torno de pivôs diferentes e transmitem movimento por contato.</p>
+    <p>O modelo 3D inclui tecla, martelo, alavanca de escape, balancim, alavanca de repetição, pilotim, abafador, alavanca do abafador e arame, além da estrutura de suporte. Para modelar o movimento, foi necessário definir o pivô de cada peça e seus pontos de contato com outras peças.</p>
 
-    <h3>Construir um modelo 3D a partir de um desenho em corte</h3>
-    <p>Em vez de partir de dados CAD prontos, o contorno de cada peça foi decalcado sobre um corte de referência da mecânica do piano e modelado em 3D uma a uma. Depois as peças foram reunidas em uma montagem, fixando entre elas as relações de fixação e de rotação do mecanismo real. Esse passo transformou um modelo para olhar uma forma em um modelo ao qual se pode aplicar força e fazer mover.</p>
+    <h3>Construindo o modelo 3D a partir de um desenho em corte</h3>
+    <p>Cada peça foi modelada do zero em 3D, traçando seu contorno sobre um desenho em corte do mecanismo do piano. Em seguida, as peças foram montadas, com conexões fixas e juntas de rotação correspondentes ao mecanismo físico. A definição dessas relações transformou a geometria em um modelo de análise capaz de se mover sob forças aplicadas.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Na janela do SolidWorks, um desenho em corte de uma mecânica de piano serve de base semitransparente e sobre os seus contornos constrói-se o modelo 3D. À esquerda veem-se a barra de tarefas do Windows e a árvore de peças."></a>
-      <figcaption>O corte de referência foi colocado atrás como base semitransparente, e o modelo 3D foi construído no SolidWorks seguindo os seus contornos.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/modeling-process.webp"><img src="../../../works/masters-project-piano-action/assets/modeling-process.webp" width="1424" height="932" loading="lazy" decoding="async" alt="Captura de tela do SolidWorks mostrando um desenho em corte semitransparente do mecanismo de um piano, com as peças 3D modeladas sobre seus contornos. A barra de tarefas do Windows e a árvore de componentes aparecem à esquerda."></a>
+      <figcaption>Um desenho de referência em corte foi usado como base semitransparente para traçar e modelar as peças no SolidWorks.</figcaption>
     </figure>
 
     <figure class="paper-figure model-figure">
-      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="A janela do SolidWorks em execução no Windows. À esquerda estão a barra de tarefas do Windows e a árvore de peças, e ao centro o modelo 3D da mecânica do piano."></a>
-      <figcaption>O modelo 3D da mecânica do piano tal como foi efetivamente construído no SolidWorks.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/solidworks-model.webp"><img src="../../../works/masters-project-piano-action/assets/solidworks-model.webp" width="1452" height="916" loading="lazy" decoding="async" alt="SolidWorks no Windows, com a barra de tarefas e a árvore de componentes à esquerda e o modelo 3D do mecanismo do piano ao centro."></a>
+      <figcaption>Modelo 3D concluído do mecanismo do piano no SolidWorks.</figcaption>
     </figure>
 
-    <h3>Verificar as restrições como graus de liberdade</h3>
-    <p>Sem contar a estrutura fixa, há nove peças móveis, o que sem restrições dá 54 graus de liberdade no total. Fixar o pilotim e o arame a outras peças elimina 12, e restringir as sete peças restantes com juntas de rotação elimina outros 35. A montagem CAD tem, portanto, 7 graus de liberdade, como se segue.</p>
+    <h3>Verificando os graus de liberdade da montagem</h3>
+    <p>A montagem contém nove peças móveis, excluindo a estrutura fixa, somando 54 graus de liberdade sem restrições. Fixar o pilotim e o arame a outras peças remove 12 graus de liberdade. As juntas de rotação das sete peças restantes removem outros 35, deixando a montagem CAD com 7 graus de liberdade:</p>
     <p class="formula" role="math" aria-label="54 menos 12 menos 35 é igual a 7">54 − 12 − 35 = 7</p>
-    <p>O diagnóstico de restrições do SolidWorks indicou o mesmo: graus de liberdade estimados e reais, 7 em ambos os casos; restrições redundantes, 0. Não é um número que resolva os graus de liberdade das mecânicas de piano em geral — confirma que o conjunto de peças e as restrições definidos neste projeto estão montados como se pretendia.</p>
+    <p>O diagnóstico de restrições do SolidWorks também indicou 7 graus de liberdade estimados e 7 reais, com 0 restrições redundantes. Isso confirmou que as peças e restrições definidas para este projeto haviam sido montadas conforme previsto; não estabelece os graus de liberdade de todo mecanismo físico de piano.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="O modelo da mecânica do piano com cada peça identificada, e o cálculo que subtrai 12 restrições de fixação e 35 restrições de rotação de 54 graus de liberdade, resultando em 7."></a>
-      <figcaption>Nomes das peças e restrições. O próprio diagnóstico do SolidWorks também atribuiu ao modelo 7 graus de liberdade e 0 restrições redundantes.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/constraints-overview.webp"><img src="../../../works/masters-project-piano-action/assets/constraints-overview.webp" width="1492" height="808" loading="lazy" decoding="async" alt="Modelo do mecanismo do piano com peças identificadas e seu cálculo de graus de liberdade: 54 menos 12 removidos pelas conexões fixas e 35 pelas juntas de rotação, restando 7."></a>
+      <figcaption>Nomes das peças e restrições da montagem. O diagnóstico do SolidWorks indicou 7 graus de liberdade e 0 restrições redundantes.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Duas análises — como a entrada na tecla é convertida</h2>
-    <p>O comportamento do modelo foi estudado em duas análises separadas. A análise 1 pergunta como a velocidade com que a tecla se move é convertida na velocidade do martelo; a análise 2, como a força aplicada à tecla aparece na forma de força de reação do lado da corda. Tomar um par de entrada e saída de cada vez permite explicar o comportamento de um mecanismo complexo por meio de uma razão geométrica de velocidades e do equilíbrio de forças de uma alavanca.</p>
-    <p>Como base de comparação usou-se um cálculo teórico em que o mecanismo é substituído por elementos rotativos simples. Se o valor teórico e o simulado ficarem próximos, pode-se concluir que ao menos o movimento dentro do modelo segue a relação que se espera das dimensões e das restrições definidas.</p>
+    <h2>Duas análises da ação sobre a tecla</h2>
+    <p>O modelo foi examinado em duas análises separadas. A análise 1 comparou a velocidade da tecla com a do martelo. A análise 2 comparou a força aplicada à tecla com a força de reação da corda. Separar essas relações entre entrada e saída facilitou a análise do conjunto de alavancas usando razões geométricas de velocidade e equilíbrio de alavancas.</p>
+    <p>Para comparação, o mecanismo foi simplificado em elementos rotativos e analisado teoricamente. A concordância entre os valores teóricos e simulados indicaria que o movimento do modelo era compatível com as dimensões e restrições especificadas.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Dois diagramas mostrando que a análise 1 relaciona as velocidades lineares de tecla e martelo, e a análise 2 relaciona a força aplicada à tecla com a força de reação na corda."></a>
-      <figcaption>Entradas e saídas das duas análises. A análise 1 compara as velocidades lineares de tecla e martelo; a análise 2 compara a força aplicada à tecla com a força de reação na corda.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-overview.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-overview.webp" width="1518" height="968" loading="lazy" decoding="async" alt="Dois diagramas relacionam as velocidades da tecla e do martelo na análise 1 e a força aplicada à tecla e a força de reação da corda na análise 2."></a>
+      <figcaption>As duas comparações entre entrada e saída: velocidade da tecla e do martelo na análise 1 e força aplicada à tecla e força de reação da corda na análise 2.</figcaption>
     </figure>
 
-    <h3>Análise 1 — quanto a velocidade da tecla é amplificada no martelo</h3>
-    <p>Para a análise de velocidades, a complexa mecânica do piano foi simplificada em três corpos rígidos que transmitem o movimento ao se tocarem: a tecla, o mecanismo intermediário centrado no balancim e o martelo. Ao ler o movimento como algo que passa sucessivamente de ① a ③ na figura, um mecanismo de muitas peças pode ser calculado como três estágios de rotação.</p>
+    <h3>Análise 1: da velocidade da tecla à velocidade do martelo</h3>
+    <p>Para o cálculo de velocidade, o mecanismo foi simplificado em três corpos rígidos: a tecla, um mecanismo intermediário centrado no balancim e o martelo. Tratar o movimento como uma sequência de contatos de ① a ③ permitiu analisar o conjunto como três estágios de rotação.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="Diagrama que distingue por cores a mecânica do piano como três corpos rígidos: ① a tecla, ② o mecanismo intermediário centrado no balancim e ③ o martelo."></a>
-      <figcaption>Para a análise, o mecanismo foi simplificado em três corpos rígidos: ① a tecla, ② o mecanismo intermediário e ③ o martelo.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-components.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-components.webp" width="1206" height="532" loading="lazy" decoding="async" alt="O mecanismo do piano é identificado por cores como três corpos rígidos: ① tecla, ② mecanismo intermediário centrado no balancim e ③ martelo."></a>
+      <figcaption>O modelo simplificado tem três corpos rígidos: ① tecla, ② mecanismo intermediário e ③ martelo.</figcaption>
     </figure>
 
-    <p>Num mesmo corpo rígido a velocidade angular é comum, de modo que, sendo <em>r</em> a distância ao pivô e <em>v</em> a velocidade linear nesse ponto, <em>v</em> = <em>ωr</em>. Supondo que no ponto de contato a velocidade passa ao corpo seguinte sem perdas, a velocidade do martelo obtém-se multiplicando entre si a razão entre raio de entrada e raio de saída de cada estágio.</p>
+    <p>Todos os pontos de um corpo rígido compartilham a mesma velocidade angular. Se <em>r</em> é a distância ao pivô e <em>v</em> é a velocidade linear naquele ponto, então <em>v</em> = <em>ωr</em>. Supondo que a velocidade seja transmitida entre os corpos sem perdas em cada ponto de contato, a velocidade do martelo pode ser calculada multiplicando as razões entre os raios de saída e de entrada dos três estágios e, depois, multiplicando esse produto pela velocidade da tecla.</p>
     <p class="formula formula-long" role="math" aria-label="A velocidade do martelo é igual a r um linha vezes r dois linha vezes r três linha, dividido por r um vezes r dois vezes r três, multiplicado pela velocidade da tecla">v<sub>hammer</sub> = (r<sub>1</sub>′ r<sub>2</sub>′ r<sub>3</sub>′ / r<sub>1</sub> r<sub>2</sub> r<sub>3</sub>) v<sub>key</sub></p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Diagrama que assinala, para os três corpos rígidos, as distâncias de cada pivô até os pontos de entrada e de saída como r1, r1 linha, r2, r2 linha, r3 e r3 linha."></a>
-      <figcaption>As distâncias do pivô de cada corpo rígido até os seus pontos de entrada e saída são tratadas como raios, e as suas razões são multiplicadas ao longo dos três estágios para obter a razão de velocidades.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-radii.webp" width="1300" height="754" loading="lazy" decoding="async" alt="Diagrama das distâncias de cada um dos três pivôs a seus pontos de entrada e saída, identificadas como r1, r1 linha, r2, r2 linha, r3 e r3 linha."></a>
+      <figcaption>A distância de cada pivô a seus pontos de entrada e saída define os raios. Multiplicar as três razões entre raio de saída e raio de entrada fornece a razão de velocidades total.</figcaption>
     </figure>
 
-    <h4>Condições de entrada e resultados observados</h4>
-    <p>No SolidWorks Motion Analysis foram aplicados 5 N para baixo na extremidade da tecla e observadas as velocidades lineares da extremidade da tecla e do martelo. Imediatamente após o início da aplicação da força, as velocidades de pico foram de 1.027 mm/s na tecla e de 4.284 mm/s no martelo. Na simulação, portanto, o martelo moveu-se cerca de 4,17 vezes mais rápido que a tecla.</p>
+    <h4>Condições de entrada e resultados</h4>
+    <p>No SolidWorks Motion Analysis, aplicou-se uma força descendente de 5 N na extremidade da tecla. As velocidades lineares dessa extremidade e do martelo foram registradas. Logo após o início da força, os picos de velocidade foram de 1.027 mm/s e 4.284 mm/s, respectivamente, resultando em uma razão simulada entre as velocidades do martelo e da tecla de aproximadamente 4,17.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Dois gráficos da velocidade da tecla e do martelo em função do tempo, com os picos imediatamente posteriores ao início da entrada marcados em 1.027 e 4.284 milímetros por segundo."></a>
-      <figcaption>Velocidades lineares de tecla e martelo. Ambas atingem o máximo logo após o início da entrada, e do lado do martelo a velocidade fica amplificada.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/slide-13.webp"><img src="../../../works/masters-project-piano-action/assets/slide-13.webp" width="1600" height="1200" loading="lazy" decoding="async" alt="Velocidades da tecla e do martelo em função do tempo. Seus picos são de 1.027 e 4.284 milímetros por segundo, respectivamente, e ocorrem logo após a aplicação da força."></a>
+      <figcaption>As velocidades da tecla e do martelo atingem o pico logo após a aplicação da força. O martelo alcança a velocidade maior.</figcaption>
     </figure>
 
     <table class="results-table">
       <caption>Velocidades de pico da análise 1</caption>
       <thead>
-        <tr><th scope="col">Medição ou cálculo</th><th scope="col">Velocidade</th></tr>
+        <tr><th scope="col">Grandeza e método</th><th scope="col">Velocidade</th></tr>
       </thead>
       <tbody>
         <tr><th scope="row">Tecla (simulação)</th><td>1.027 mm/s</td></tr>
@@ -219,53 +223,53 @@
       </tbody>
     </table>
 
-    <h4>Comparação com o valor teórico</h4>
-    <p>Os raios medidos sobre o modelo são <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm e <em>r</em><sub>3</sub>′ = 111 mm. Substituindo-os na equação, a razão de velocidades idealizada resulta em cerca de 4,49 vezes, o que prevê uma velocidade do martelo de 4.614 mm/s para uma velocidade da tecla de 1.027 mm/s.</p>
+    <h4>Comparação com a teoria</h4>
+    <p>Os raios medidos foram <em>r</em><sub>1</sub> = 200 mm, <em>r</em><sub>1</sub>′ = 88 mm, <em>r</em><sub>2</sub> = 53 mm, <em>r</em><sub>2</sub>′ = 78 mm, <em>r</em><sub>3</sub> = 16 mm e <em>r</em><sub>3</sub>′ = 111 mm. A substituição desses valores resulta em uma razão idealizada de velocidades de aproximadamente 4,49. Para uma velocidade da tecla de 1.027 mm/s, a velocidade prevista do martelo é de 4.614 mm/s.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Diagrama que assinala, sobre o modelo 3D do SolidWorks, os seis raios medidos usados no cálculo da razão de velocidades."></a>
-      <figcaption>Os seis raios medidos sobre o modelo 3D. A partir destes valores calculou-se a velocidade teórica do martelo de 4.614 mm/s.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-1-comparison.webp" width="1500" height="720" loading="lazy" decoding="async" alt="Os seis raios usados para calcular a razão de velocidades, indicados no modelo 3D do SolidWorks."></a>
+      <figcaption>Os seis raios medidos no modelo 3D, usados para calcular a velocidade teórica do martelo de 4.614 mm/s.</figcaption>
     </figure>
 
-    <p>O valor simulado de 4.284 mm/s fica cerca de 7% abaixo do teórico, mas a magnitude da amplificação é próxima. A diferença deve-se, como se explica adiante, ao facto de o cálculo teórico idealizar a mecânica como três corpos rígidos, enquanto a simulação 3D abrange também as perdas entre peças e a deformação do material.</p>
+    <p>A velocidade simulada do martelo, de 4.284 mm/s, ficou cerca de 7% abaixo do valor teórico, apresentando um grau semelhante de amplificação de velocidade. O cálculo teórico usa três corpos rígidos idealizados, enquanto a simulação representa as peças individuais. A diferença numérica, por si só, não estabelece sua causa.</p>
 
-    <h3>Análise 2 — como a força aplicada à tecla aparece na corda</h3>
-    <p>A segunda análise aplicou 15 N para baixo sobre a superfície da tecla e observou a força de reação que surge do lado da corda no momento do golpe. A entrada do lado da tecla, <em>F</em><sub>key</sub>, cresceu a partir de 1,0 segundo até atingir 15 N, e no instante do golpe a força de reação <em>V</em><sub>string</sub> apresentou um pico máximo de 31 N.</p>
+    <h3>Análise 2: da força na tecla à força de reação da corda</h3>
+    <p>Na segunda análise, aplicou-se uma força descendente de 15 N à superfície da tecla, e a força de reação da corda foi registrada no impacto. A força de entrada na tecla, <em>F</em><sub>key</sub>, começou a aumentar em 1,0 segundo e atingiu 15 N. A força de reação, <em>V</em><sub>string</sub>, atingiu um pico de 31 N quando o martelo golpeou a corda.</p>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-key-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-key-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Gráfico explicativo da entrada na tecla F key em função do tempo. Cresce a partir de 1 segundo, mantém-se em 15 newtons e volta a 0 newtons."></a>
-      <figcaption>Entrada do lado da tecla, <em>F</em><sub>key</sub>. A força foi aplicada a partir de 1,0 segundo, com uma entrada de 15 N.</figcaption>
+      <a href="assets/force-key-graph-pt.svg"><img src="assets/force-key-graph-pt.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Gráfico ilustrativo da força de entrada na tecla, F key, em função do tempo. Ela começa a subir em 1 segundo, permanece em 15 newtons e depois volta a zero."></a>
+      <figcaption>A força aplicada à tecla, <em>F</em><sub>key</sub>, começa em 1,0 segundo e chega a 15 N.</figcaption>
     </figure>
 
     <figure class="paper-figure graph-figure line-art">
-      <a href="../../../works/masters-project-piano-action/assets/force-string-graph.svg"><img src="../../../works/masters-project-piano-action/assets/force-string-graph.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Gráfico explicativo da força de reação do lado da corda V string em função do tempo, com um pico agudo de 31 newtons no instante do golpe."></a>
-      <figcaption>Força de reação do lado da corda, <em>V</em><sub>string</sub>. Atingiu um máximo de 31 N no instante do golpe.</figcaption>
+      <a href="assets/force-string-graph-pt.svg"><img src="assets/force-string-graph-pt.svg" width="1060" height="750" loading="lazy" decoding="async" alt="Gráfico ilustrativo da força de reação da corda, V string, em função do tempo, com um pico de 31 newtons no impacto."></a>
+      <figcaption>A força de reação da corda, <em>V</em><sub>string</sub>, atinge um pico de 31 N no impacto.</figcaption>
     </figure>
 
-    <p>Esse valor explica-se pelo equilíbrio de uma alavanca, usando os comprimentos de braço do lado da tecla e do lado do martelo.</p>
-    <p class="formula formula-long" role="math" aria-label="A força de reação na corda é igual a 15 vezes 195 dividido por 94, ou seja, 31,1 newtons">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
-    <p>Tomando 195 mm do ponto de entrada até o pivô e 94 mm até o ponto de aplicação do lado da corda, o valor teórico resulta em 31,1 N. A diferença para o máximo simulado de 31 N é de 0,1 N, de modo que também nesta análise o resultado coincide quase por completo com a transmissão de força que se espera das dimensões definidas.</p>
+    <p>Para comparação, foi feito um cálculo simplificado de equilíbrio de alavancas usando os comprimentos dos braços nos lados da tecla e do martelo.</p>
+    <p class="formula formula-long" role="math" aria-label="O valor de comparação pelo equilíbrio de alavancas é igual a 15 vezes 195 dividido por 94, ou seja, 31,1 newtons">V<sub>string</sub> = (15 × 195) / 94 = 31.1 N</p>
+    <p>Usando os comprimentos dos braços de 195 mm no lado da entrada e 94 mm no lado da corda, obtém-se um valor de comparação de equilíbrio estático de 31,1 N. Esse valor é 0,1 N superior ao pico simulado de 31 N. As condições em que esse cálculo estático pode ser aplicado ao pico instantâneo de força de reação no impacto ainda precisam ser confirmadas.</p>
 
     <figure class="paper-figure">
-      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Diagrama de equilíbrio de forças mostrando a distância de 195 milímetros do pivô da tecla até o ponto de entrada e de 94 milímetros até o ponto de aplicação do lado da corda."></a>
-      <figcaption>A partir da entrada de 15 N na tecla, o equilíbrio da alavanca dá uma força de reação de 31,1 N na corda, quase idêntica ao máximo simulado de 31 N.</figcaption>
+      <a href="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp"><img src="../../../works/masters-project-piano-action/assets/analysis-2-lever.webp" width="1240" height="522" loading="lazy" decoding="async" alt="Diagrama de equilíbrio de forças mostrando o braço de 195 milímetros no lado da entrada pela tecla e o braço de 94 milímetros no lado da corda."></a>
+      <figcaption>Uma comparação por equilíbrio estático de alavancas, usando a força de entrada de 15 N na tecla e os comprimentos dos braços, resulta em 31,1 N, próximo do pico simulado de 31 N.</figcaption>
     </figure>
   </section>
 
   <section>
-    <h2>Confronto entre simulação e valores teóricos</h2>
-    <h3>Duas análises com resultados próximos</h3>
-    <p>Na análise 1, que compara as velocidades de tecla e martelo, contra a velocidade teórica do martelo de 4.614 mm/s a simulação 3D deu 4.284 mm/s. Na análise 2, que compara a entrada na tecla com a força de reação na corda, contra o valor teórico de 31,1 N o máximo simulado foi de 31 N. Em ambas as análises, os resultados simulados com o modelo 3D construído ficaram próximos dos valores teóricos obtidos das equações.</p>
+    <h2>Comparando simulação e teoria</h2>
+    <h3>Resultados das duas comparações</h3>
+    <p>Na análise 1, a velocidade teórica do martelo foi de 4.614 mm/s, comparada a 4.284 mm/s na simulação. Na análise 2, o valor de comparação por equilíbrio estático de alavancas foi de 31,1 N, comparado a um pico simulado de 31 N. As duas comparações mostraram concordância próxima entre o modelo 3D e os cálculos teóricos.</p>
 
-    <h3>Por que surge uma pequena diferença</h3>
-    <p>O cálculo teórico simplifica a mecânica do piano como um mecanismo de três corpos rígidos e supõe que o movimento e a força se transmitem sem perdas nos pontos de contato. A simulação com o modelo 3D, por sua vez, trata cada uma das peças que compõem a mecânica, de modo que a energia perdida entre peças e a deformação do material também se refletem no resultado. Essa diferença de premissas é o que aparece como a pequena discrepância entre o valor teórico e o simulado.</p>
+    <h3>Interpretando as diferenças</h3>
+    <p>O cálculo teórico reduz o mecanismo a três corpos rígidos e supõe que movimento e força sejam transmitidos por seus pontos de contato sem perdas. A simulação, por sua vez, representa os componentes individuais. Essas representações diferentes são importantes para interpretar os resultados, mas atribuir a diferença restante a perdas de energia ou à deformação dos materiais exige confirmar as configurações da simulação.</p>
 
     <h3>Conclusão</h3>
-    <p>Verificou-se que os resultados da simulação 3D são praticamente iguais aos valores teóricos. O modelo 3D construído a partir de um desenho em corte reproduziu o movimento da mecânica do piano — que amplifica a entrada na tecla até convertê-la em velocidade do martelo e transmite essa força à corda — de forma coerente com o cálculo teórico.</p>
-    <p>Este projeto não consistiu apenas em reproduzir uma forma. Ler a estrutura a partir de um corte de referência, traduzir as relações entre peças em restrições dentro do CAD e simplificar o resultado num modelo mecânico adequado à pergunta colocada fizeram parte de um mesmo processo de modelagem.</p>
+    <p>A simulação 3D apresentou resultados próximos das comparações teóricas para a velocidade do martelo e a força de reação da corda. Dentro dessas comparações, o modelo construído a partir de um desenho em corte reproduziu a transmissão de movimento e força esperada para a geometria e as restrições especificadas.</p>
+    <p>O projeto conectou várias etapas de modelagem: interpretar um desenho em corte, traduzir as relações entre peças em restrições no CAD e simplificar a montagem em um modelo mecânico adequado a cada análise.</p>
   </section>
 
-  <nav aria-label="Site">
+  <nav aria-label="Navegação do portfólio">
     <ul>
       <li><a class="home-button" href="../../"><span class="home-button__box">Voltar ao portfólio de Takafumi Horiuchi</span></a></li>
     </ul>
@@ -293,8 +297,8 @@
 
 </main>
 
-<div class="lightbox" role="dialog" aria-modal="true" aria-label="Figura ampliada" hidden>
-  <button class="lightbox__close" type="button" aria-label="Fechar a ampliação"></button>
+<div class="lightbox" role="dialog" aria-modal="true" aria-label="Imagem ampliada" hidden>
+  <button class="lightbox__close" type="button" aria-label="Fechar imagem ampliada"></button>
   <img class="lightbox__image" alt="">
 </div>
 </body>
