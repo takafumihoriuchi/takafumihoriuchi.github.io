@@ -138,7 +138,12 @@ body {
 
 /* The index uses the tighter presentation scale. Keep it on the index rather
    than changing :root, which would also shrink every long-form work page. */
-body.home { --text: 1rem; }
+body.home {
+  --text: 1rem;
+  --intro-leading: 1.7;
+  --intro-gap: 2rem;
+  --intro-work-gap: 4rem;
+}
 
 main {
   max-width: var(--measure);
@@ -256,6 +261,23 @@ ascii-hero + section { margin-top: 2.25rem; }
 ascii-hero[data-scene="philosophy"] { margin-top: 5rem; }
 ascii-hero[data-scene="philosophy"] + section { margin-top: 5.5rem; }
 
+/* The introduction shares the text column's width. Leave a larger pause
+   before the work list so it reads as a separate section. */
+.home-intro {
+  max-inline-size: var(--measure);
+  margin-top: var(--intro-gap);
+  font-size: var(--text);
+  line-height: var(--intro-leading);
+}
+.home-intro + section { margin-top: var(--intro-work-gap); }
+
+/* Fill Japanese lines to the column edge; the final line stays natural. */
+.home-intro:lang(ja) p {
+  text-align: justify;
+  text-justify: inter-character;
+  text-wrap: wrap;
+}
+
 /* The closing thought is the one section on the index that is read rather than
    scanned, so it is given twice the usual interval above it and a little over
    twice below. The distances were chosen by eye at a 900px window rather than
@@ -372,6 +394,10 @@ ascii-hero:not(:defined) .ascii-hero__canvas {
 }
 
 @media (max-width: 32rem) {
+  body.home {
+    --intro-gap: 1.5rem;
+    --intro-work-gap: 3rem;
+  }
   ascii-hero { margin-top: 1.5rem; }
   ascii-hero + section { margin-top: 2rem; }
   ascii-hero[data-scene="philosophy"] { margin-top: 3rem; }
@@ -1233,9 +1259,13 @@ nav ul {
 }
 .home-identity h1 .identity-separator { white-space: pre; }
 .home-identity h1 .role {
+  display: inline-block;
   color: var(--accent);
   font-size: 1.25rem;
   font-weight: 400;
+  line-height: 1;
+  /* Align the smaller text to the bottom of the name-sized text box. */
+  vertical-align: text-bottom;
   white-space: nowrap;
 }
 :is(:lang(ja), :lang(zh), :lang(ko)) .home-identity h1 .role {
