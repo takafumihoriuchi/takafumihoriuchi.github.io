@@ -68,6 +68,35 @@ section p {
 }
 .touch-map__note { word-break: auto-phrase; }
 
+/* Match Practice Log n Share's download block. Keep Apple's artwork intact
+   with a 44px height and 12px clear space (40px and 10px on narrow screens).
+   The QR image has its own opaque white four-module quiet zone. */
+.mn-download { margin-block: var(--space-para); }
+.mn-download__message {
+  margin-block-end: .75rem;
+  color: var(--fg-muted);
+  font-size: .875rem;
+  line-height: 1.75;
+}
+.mn-download__actions {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: center;
+  gap: 1.5rem;
+}
+.mn-download__badge,
+.mn-download__qr { flex: none; cursor: pointer; }
+.mn-download__badge { padding: 12px; }
+.mn-download__badge img { width: auto; height: 44px; }
+.mn-download__qr img { width: 123px; height: 123px; }
+html[lang] footer .mn-apple-credit { margin-block-start: 1rem; }
+@media (max-width: 36rem) {
+  .mn-download__actions { gap: .75rem; }
+  .mn-download__badge { padding: 10px; }
+  .mn-download__badge img { height: 40px; }
+}
+
 
 /* ---- This work: shown rather than told ----------------------------------
 
