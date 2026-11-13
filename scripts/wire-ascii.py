@@ -184,8 +184,6 @@ def main() -> int:
     changed: list[str] = []
 
     for page in PAGES:
-        if page in plain_pages:
-            continue
         for _, directory, _, _ in LANGS:
             scene_id = page_scenes.get(page)
             path = root / directory / page / "index.html"
@@ -193,7 +191,10 @@ def main() -> int:
                 continue
             before = path.read_text(encoding="utf-8")
             try:
-                after = wire_load(before) if (page in illustrated_pages or 'data-ascii-art="none"' in before) else wire(
+                # A plain page has no picture of its own, but its text still
+                # forms on load like every other page's: it takes the guard and
+                # the module and nothing else, as an illustrated page does.
+                after = wire_load(before) if (page in plain_pages or page in illustrated_pages or 'data-ascii-art="none"' in before) else wire(
                     before,
                     page,
                     scene_id,

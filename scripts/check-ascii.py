@@ -135,6 +135,19 @@ def main() -> int:
 
     for page in PAGES:
         if page in plain_pages:
+            # No picture, so nothing to check about a hero — but the load
+            # formation is the same as everywhere, and without the guard and the
+            # module it silently does not run (it did not, on Arpeggicho).
+            for _, directory, _, _ in LANGS:
+                path = root / directory / page / "index.html"
+                if not path.exists():
+                    continue
+                source = path.read_text(encoding="utf-8")
+                where = str(path.relative_to(root))
+                if source.count(MODULE) != 1:
+                    bad(where, "must load the ASCII module exactly once")
+                if source.count(PREPAINT) != 1:
+                    bad(where, "must install the ASCII pre-paint guard exactly once")
             continue
         for _, directory, _, _ in LANGS:
             if page in illustrated_pages or ((root / directory / page / "index.html").exists() and 'data-ascii-art="none"' in (root / directory / page / "index.html").read_text(encoding="utf-8")):
