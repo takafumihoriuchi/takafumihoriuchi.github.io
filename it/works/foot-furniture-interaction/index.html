@@ -46,17 +46,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Foot-Furniture Interaction",
-  "url": "https://takafumihoriuchi.github.io/it/works/foot-furniture-interaction/",
-  "inLanguage": "it",
-  "description": "Un progetto in fase concettuale che esplora come l’ingegneria cognitiva possa orientare la progettazione e la realizzazione dei mobili, nato dall’esperienza di urtare un mobile con il mignolo del piede. Esamina come le persone prevedono la struttura vicina al pavimento e passano accanto al mobile.",
-  "creativeWorkStatus": "Studio concettuale",
-  "author": {
-    "@type": "Person",
-    "name": "Takafumi Horiuchi",
-    "alternateName": "堀内貴文"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/it/works/foot-furniture-interaction/#work",
+      "name": "Foot-Furniture Interaction",
+      "url": "https://takafumihoriuchi.github.io/it/works/foot-furniture-interaction/",
+      "inLanguage": "it",
+      "description": "Un progetto in fase concettuale che esplora come l’ingegneria cognitiva possa orientare la progettazione e la realizzazione dei mobili, nato dall’esperienza di urtare un mobile con il mignolo del piede. Esamina come le persone prevedono la struttura vicina al pavimento e passano accanto al mobile.",
+      "creativeWorkStatus": "Studio concettuale",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>

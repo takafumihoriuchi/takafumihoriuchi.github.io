@@ -43,23 +43,36 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "@id": "https://takafumihoriuchi.github.io/ru/works/arpeggicho/#work",
-  "name": "Arpeggicho",
-  "url": "https://takafumihoriuchi.github.io/ru/works/arpeggicho/",
-  "description": "Arpeggicho — система в разработке, которая записывает каждую сыгранную ноту и накладывает записи друг на друга, позволяя в реальном времени услышать арпеджио как аккорд.",
-  "dateCreated": "2026-10",
-  "inLanguage": "ru",
-  "image": "https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp",
-  "author": {
-    "@type": "Person",
-    "@id": "https://takafumihoriuchi.github.io/#person",
-    "name": "Takafumi Horiuchi",
-    "url": "https://takafumihoriuchi.github.io/",
-    "alternateName": [
-      "Такафуми Хориучи"
-    ]
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": [
+        "堀内 貴文",
+        "Такафуми Хориучи"
+      ],
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/ru/works/arpeggicho/#work",
+      "name": "Arpeggicho",
+      "url": "https://takafumihoriuchi.github.io/ru/works/arpeggicho/",
+      "description": "Arpeggicho — система в разработке, которая записывает каждую сыгранную ноту и накладывает записи друг на друга, позволяя в реальном времени услышать арпеджио как аккорд.",
+      "dateCreated": "2026-10",
+      "inLanguage": "ru",
+      "image": "https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 </head>

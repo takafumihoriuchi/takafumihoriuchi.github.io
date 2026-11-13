@@ -43,20 +43,33 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/#work",
-  "name": "Arpeggicho",
-  "url": "https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/",
-  "description": "Arpeggicho 目前仍在开发中。它逐个录下演奏的音符，再将录音叠加，让演奏者实时听到琶音合成的和弦。",
-  "dateCreated": "2026-10",
-  "inLanguage": "zh-Hans",
-  "image": "https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp",
-  "author": {
-    "@type": "Person",
-    "@id": "https://takafumihoriuchi.github.io/#person",
-    "name": "Takafumi Horiuchi",
-    "url": "https://takafumihoriuchi.github.io/"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内贵文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/#work",
+      "name": "Arpeggicho",
+      "url": "https://takafumihoriuchi.github.io/zh-Hans/works/arpeggicho/",
+      "description": "Arpeggicho 目前仍在开发中。它逐个录下演奏的音符，再将录音叠加，让演奏者实时听到琶音合成的和弦。",
+      "dateCreated": "2026-10",
+      "inLanguage": "zh-Hans",
+      "image": "https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 </head>

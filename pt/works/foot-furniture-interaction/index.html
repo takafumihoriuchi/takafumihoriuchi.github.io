@@ -46,17 +46,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Foot-Furniture Interaction",
-  "url": "https://takafumihoriuchi.github.io/pt/works/foot-furniture-interaction/",
-  "inLanguage": "pt",
-  "description": "Projeto em fase de concepção que explora como a engenharia cognitiva pode contribuir para o design e a fabricação de móveis, inspirado na experiência de bater o dedinho do pé em um móvel. Investiga como as pessoas antecipam a estrutura inferior e passam ao lado dela.",
-  "creativeWorkStatus": "Em fase de concepção",
-  "author": {
-    "@type": "Person",
-    "name": "Takafumi Horiuchi",
-    "alternateName": "堀内貴文"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/pt/works/foot-furniture-interaction/#work",
+      "name": "Foot-Furniture Interaction",
+      "url": "https://takafumihoriuchi.github.io/pt/works/foot-furniture-interaction/",
+      "inLanguage": "pt",
+      "description": "Projeto em fase de concepção que explora como a engenharia cognitiva pode contribuir para o design e a fabricação de móveis, inspirado na experiência de bater o dedinho do pé em um móvel. Investiga como as pessoas antecipam a estrutura inferior e passam ao lado dela.",
+      "creativeWorkStatus": "Em fase de concepção",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>

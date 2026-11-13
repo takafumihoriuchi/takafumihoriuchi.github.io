@@ -45,20 +45,35 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Foot-Furniture Interaction",
-  "url": "https://takafumihoriuchi.github.io/ru/works/foot-furniture-interaction/",
-  "inLanguage": "ru",
-  "description": "Проект на стадии концепции, исследующий применение когнитивной инженерии в проектировании и изготовлении мебели. Отправной точкой стал удар мизинцем ноги о мебель; в центре внимания — то, как люди представляют себе её конструкцию у пола и проходят рядом с ней.",
-  "creativeWorkStatus": "Стадия концепции",
-  "author": {
-    "@type": "Person",
-    "name": "Takafumi Horiuchi",
-    "alternateName": [
-      "堀内貴文",
-      "Такафуми Хориучи"
-    ]
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": [
+        "堀内 貴文",
+        "Такафуми Хориучи"
+      ],
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/ru/works/foot-furniture-interaction/#work",
+      "name": "Foot-Furniture Interaction",
+      "url": "https://takafumihoriuchi.github.io/ru/works/foot-furniture-interaction/",
+      "inLanguage": "ru",
+      "description": "Проект на стадии концепции, исследующий применение когнитивной инженерии в проектировании и изготовлении мебели. Отправной точкой стал удар мизинцем ноги о мебель; в центре внимания — то, как люди представляют себе её конструкцию у пола и проходят рядом с ней.",
+      "creativeWorkStatus": "Стадия концепции",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>

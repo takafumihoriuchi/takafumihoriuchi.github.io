@@ -46,17 +46,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Foot-Furniture Interaction",
-  "url": "https://takafumihoriuchi.github.io/es/works/foot-furniture-interaction/",
-  "inLanguage": "es",
-  "description": "Un proyecto en fase conceptual que explora cómo la ingeniería cognitiva puede orientar el diseño y la fabricación de mobiliario, inspirado en los golpes del dedo meñique del pie contra los muebles. Examina cómo las personas anticipan la estructura inferior y pasan junto a ella.",
-  "creativeWorkStatus": "Fase conceptual",
-  "author": {
-    "@type": "Person",
-    "name": "Takafumi Horiuchi",
-    "alternateName": "堀内貴文"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/es/works/foot-furniture-interaction/#work",
+      "name": "Foot-Furniture Interaction",
+      "url": "https://takafumihoriuchi.github.io/es/works/foot-furniture-interaction/",
+      "inLanguage": "es",
+      "description": "Un proyecto en fase conceptual que explora cómo la ingeniería cognitiva puede orientar el diseño y la fabricación de mobiliario, inspirado en los golpes del dedo meñique del pie contra los muebles. Examina cómo las personas anticipan la estructura inferior y pasan junto a ella.",
+      "creativeWorkStatus": "Fase conceptual",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>

@@ -45,17 +45,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Foot-Furniture Interaction",
-  "url": "https://takafumihoriuchi.github.io/zh-Hans/works/foot-furniture-interaction/",
-  "inLanguage": "zh-Hans",
-  "description": "一个处于概念阶段的项目：从小脚趾撞到家具的经历出发，探索认知工程如何为家具设计与制作提供思路，考察人们如何预判家具的下部结构并从旁走过。",
-  "creativeWorkStatus": "概念阶段",
-  "author": {
-    "@type": "Person",
-    "name": "Takafumi Horiuchi",
-    "alternateName": "堀内贵文"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内贵文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/zh-Hans/works/foot-furniture-interaction/#work",
+      "name": "Foot-Furniture Interaction",
+      "url": "https://takafumihoriuchi.github.io/zh-Hans/works/foot-furniture-interaction/",
+      "inLanguage": "zh-Hans",
+      "description": "一个处于概念阶段的项目：从小脚趾撞到家具的经历出发，探索认知工程如何为家具设计与制作提供思路，考察人们如何预判家具的下部结构并从旁走过。",
+      "creativeWorkStatus": "概念阶段",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>

@@ -15,6 +15,7 @@ Exit status is 0 when everything lines up, 1 otherwise.
 """
 
 import html
+import json
 import re
 import sys
 from pathlib import Path
@@ -22,11 +23,29 @@ from pathlib import Path
 sys.path.insert(0, str(Path(__file__).resolve().parent))
 from langs import LANGS, PAGES, page_url  # noqa: E402
 from langs import PARTIAL_PAGES, page_languages  # noqa: E402
+from langs import PERSON_ID, PERSON_LANGS, PROFILES, person_node  # noqa: E402
 
 
 def attr(tag: str, name: str):
     m = re.search(rf'{name}\s*=\s*"([^"]*)"', tag)
     return html.unescape(m.group(1)) if m else None
+
+
+def author_nodes(src: str) -> list:
+    """The author's own Person nodes in a page's JSON-LD, as parsed data.
+
+    Found by @id, at the top level or in a @graph. An author nested inside a
+    work, and the co-authors some academic works list, are deliberately not
+    matched: the first is the shape wire-person.py exists to remove, and the
+    second is somebody else.
+    """
+    found = []
+    for block in re.findall(r'<script type="application/ld\+json">(.*?)</script>', src, re.S):
+        doc = json.loads(block)
+        for node in doc["@graph"] if "@graph" in doc else [doc]:
+            if node.get("@type") == "Person" and node.get("@id") == PERSON_ID:
+                found.append({k: v for k, v in node.items() if k != "@context"})
+    return found
 
 
 def check(langs=None) -> list:
@@ -118,6 +137,24 @@ def check(langs=None) -> list:
                     bad(where, f"language switcher has no entry for {c2}")
             if f'lang="{code}" translate="no" aria-current' not in src:
                 bad(where, "language switcher does not mark the current language")
+
+            # The author, for the languages wire-person.py has taken over: the
+            # one Person node must be the one langs.py describes, and the home
+            # page's profile links must be the same list, in the same order.
+            if code in PERSON_LANGS:
+                nodes = author_nodes(src)
+                if len(nodes) != 1:
+                    bad(where, f"{len(nodes)} author Person nodes, expected 1 "
+                               "— run scripts/wire-person.py")
+                elif nodes[0] != person_node(code):
+                    bad(where, "author Person node differs from langs.py "
+                               "— run scripts/wire-person.py")
+                if page == "":
+                    shown = [attr(t, "href") for t in re.findall(r"<a\b[^>]*>", src)
+                             if attr(t, "rel") == "me"]
+                    if shown != [url for _, url in PROFILES]:
+                        bad(where, "profile links differ from PROFILES in langs.py "
+                                   "— run scripts/wire-person.py")
 
             # Scaffolds declare creativeWorkStatus; compare completed versions
             # only. Fall back to the first completed language if Japanese is

@@ -46,17 +46,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Foot-Furniture Interaction",
-  "url": "https://takafumihoriuchi.github.io/de/works/foot-furniture-interaction/",
-  "inLanguage": "de",
-  "description": "Ein Projekt in der Konzeptphase, das untersucht, wie Cognitive Engineering die Gestaltung und Fertigung von Möbeln unterstützen kann. Ausgangspunkt ist das Anstoßen des kleinen Zehs an Möbeln. Im Fokus stehen die Einschätzung der bodennahen Konstruktion und die Bewegung daran vorbei.",
-  "creativeWorkStatus": "Konzeptphase",
-  "author": {
-    "@type": "Person",
-    "name": "Takafumi Horiuchi",
-    "alternateName": "堀内貴文"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/de/works/foot-furniture-interaction/#work",
+      "name": "Foot-Furniture Interaction",
+      "url": "https://takafumihoriuchi.github.io/de/works/foot-furniture-interaction/",
+      "inLanguage": "de",
+      "description": "Ein Projekt in der Konzeptphase, das untersucht, wie Cognitive Engineering die Gestaltung und Fertigung von Möbeln unterstützen kann. Ausgangspunkt ist das Anstoßen des kleinen Zehs an Möbeln. Im Fokus stehen die Einschätzung der bodennahen Konstruktion und die Bewegung daran vorbei.",
+      "creativeWorkStatus": "Konzeptphase",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>

@@ -45,17 +45,32 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "name": "Foot-Furniture Interaction",
-  "url": "https://takafumihoriuchi.github.io/zh-Hant/works/foot-furniture-interaction/",
-  "inLanguage": "zh-Hant",
-  "description": "從小腳趾撞到家具的經驗出發，探索如何將認知工程運用於家具設計與製作的概念專案。關注人們如何預判家具下部的結構，以及從家具旁走過時的動作。",
-  "creativeWorkStatus": "概念構想",
-  "author": {
-    "@type": "Person",
-    "name": "Takafumi Horiuchi",
-    "alternateName": "堀内貴文"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/zh-Hant/works/foot-furniture-interaction/#work",
+      "name": "Foot-Furniture Interaction",
+      "url": "https://takafumihoriuchi.github.io/zh-Hant/works/foot-furniture-interaction/",
+      "inLanguage": "zh-Hant",
+      "description": "從小腳趾撞到家具的經驗出發，探索如何將認知工程運用於家具設計與製作的概念專案。關注人們如何預判家具下部的結構，以及從家具旁走過時的動作。",
+      "creativeWorkStatus": "概念構想",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 <script type="module" src="/ascii/ascii-hero.js?v=20260930-2"></script>

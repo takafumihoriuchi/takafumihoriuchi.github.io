@@ -43,20 +43,33 @@
 <script type="application/ld+json">
 {
   "@context": "https://schema.org",
-  "@type": "CreativeWork",
-  "@id": "https://takafumihoriuchi.github.io/it/works/arpeggicho/#work",
-  "name": "Arpeggicho",
-  "url": "https://takafumihoriuchi.github.io/it/works/arpeggicho/",
-  "description": "Arpeggicho, attualmente in fase di sviluppo, registra ogni nota mentre si suona e sovrappone le registrazioni, per ascoltare un arpeggio come un accordo in tempo reale.",
-  "dateCreated": "2026-10",
-  "inLanguage": "it",
-  "image": "https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp",
-  "author": {
-    "@type": "Person",
-    "@id": "https://takafumihoriuchi.github.io/#person",
-    "name": "Takafumi Horiuchi",
-    "url": "https://takafumihoriuchi.github.io/"
-  }
+  "@graph": [
+    {
+      "@type": "Person",
+      "@id": "https://takafumihoriuchi.github.io/#person",
+      "name": "Takafumi Horiuchi",
+      "alternateName": "堀内 貴文",
+      "url": "https://takafumihoriuchi.github.io/",
+      "description": "Industrial Design x AI",
+      "sameAs": [
+        "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/",
+        "https://github.com/takafumihoriuchi",
+        "https://x.com/takafumihoriuch",
+        "https://note.com/lovely_donkey395"
+      ]
+    },
+    {
+      "@type": "CreativeWork",
+      "@id": "https://takafumihoriuchi.github.io/it/works/arpeggicho/#work",
+      "name": "Arpeggicho",
+      "url": "https://takafumihoriuchi.github.io/it/works/arpeggicho/",
+      "description": "Arpeggicho, attualmente in fase di sviluppo, registra ogni nota mentre si suona e sovrappone le registrazioni, per ascoltare un arpeggio come un accordo in tempo reale.",
+      "dateCreated": "2026-10",
+      "inLanguage": "it",
+      "image": "https://takafumihoriuchi.github.io/works/arpeggicho/assets/staff.webp",
+      "author": { "@id": "https://takafumihoriuchi.github.io/#person" }
+    }
+  ]
 }
 </script>
 </head>

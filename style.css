@@ -271,6 +271,12 @@ ascii-hero[data-scene="philosophy"] + section { margin-top: 5.5rem; }
 }
 .home-intro + section { margin-top: var(--intro-work-gap); }
 
+/* The date at the end of the introduction is one unit. Japanese may break
+   between any two characters, and it did: "2026" ended one line and "年10月"
+   began the next. This keeps the year and its month together, and moves the
+   whole date down when it does not fit. */
+.home-intro .no-break { white-space: nowrap; }
+
 /* Fill Japanese lines to the column edge; the final line stays natural. */
 .home-intro:lang(ja) p {
   text-align: justify;
@@ -1250,30 +1256,71 @@ nav ul {
 .home-identity { display: block; }
 .home-identity nav { margin-top: 0.35rem; }
 
-/* The name is primary. The role uses the next smaller type size, a lighter
-   weight, and the existing accent colour. Keep the separator at the name's
-   size and preserve its two spaces on either side in every language. */
+/* The name, the separator and the role are one size. The name is still the
+   primary: it is bold and in the text colour, while the separator and the
+   role are regular weight and in the accent colour — the same one for both,
+   so the bar reads as part of the role's line rather than a mark on the name.
+
+   The separator belongs between the two only while they share a line. Once
+   the role drops to a line of its own there is nothing for the bar to divide,
+   and a bar at the head of the second line reads as a stray. CSS cannot ask
+   whether a box wrapped, so the bar is arranged to fall outside the heading
+   exactly when it does:
+
+   - The heading is a wrapping flex row. `column-gap` opens a gap of the
+     bar's width between the name and the role, and only between two items on
+     the same line — an item that starts a line has no gap before it.
+   - The role group is the bar's box followed by the role, and is pulled left
+     by that same width. On a shared line the gap and the pull cancel, so the
+     bar sits in the gap and the role begins where it always did. On a line of
+     its own there is no gap to cancel, so the group starts one bar-width to
+     the left of the heading and the role is at its edge, with the bar outside.
+   - The heading clips its start edge and nothing else, so the bar that is
+     outside is never drawn. The other three sides stay open: a role wider
+     than a very narrow column should overflow, not be cut.
+
+   Line fitting counts the negative margin, so the role wraps at exactly the
+   width it would have without any of this. The bar's box is a fixed width with
+   the bar centred in it; the spaces in the markup collapse inside it, and are
+   still there for anything that reads the text. `--identity-sep` is in `em`,
+   resolved against the same font size everywhere it is used, which is what
+   makes the gap and the pull equal. The row runs in the direction its markup
+   gives it — from the right in Arabic — so the pull is a logical margin, and
+   the one physical property, the clip, is mirrored for that row below. */
+.home-identity h1 {
+  --identity-sep: 1.1em;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  column-gap: var(--identity-sep);
+  white-space: nowrap;
+  clip-path: inset(-0.5em -100vw -0.5em 0);
+}
+.home-identity[dir="rtl"] h1 { clip-path: inset(-0.5em 0 -0.5em -100vw); }
 .home-identity h1 .role-group {
-  display: inline-block;
-  white-space: nowrap;
-}
-.home-identity h1 .identity-separator { white-space: pre; }
-.home-identity h1 .role {
-  display: inline-block;
+  display: flex;
+  align-items: baseline;
+  margin-inline-start: calc(-1 * var(--identity-sep));
   color: var(--accent);
-  font-size: 1.25rem;
   font-weight: 400;
-  line-height: 1;
-  /* Align the smaller text to the bottom of the name-sized text box. */
-  vertical-align: text-bottom;
-  white-space: nowrap;
 }
-:is(:lang(ja), :lang(zh), :lang(ko)) .home-identity h1 .role {
-  font-size: 1.5rem;
+.home-identity h1 .identity-separator {
+  flex: none;
+  inline-size: var(--identity-sep);
+  text-align: center;
+  white-space: normal;
 }
 
-/* Keep the separator and role together when a narrow screen moves them to
-   the next line, without splitting the title into separate words. */
+/* A role that cannot fit even a line of its own may break at its spaces. The
+   name's `nowrap` is inherited down to here and is turned off for the role
+   alone: most roles are short enough that this never happens, but a long one in
+   a long-worded language — the Russian and the Arabic at 320px — is wider than
+   the column, and the choice is between a second line and a page that scrolls
+   sideways. The group is a row of the bar's box and the role so that, when the
+   role does break, every one of its lines starts at the same edge: the bar's
+   box holds the first line's place, and the lines after it are not left
+   under the bar, outside the clipped edge. */
+.home-identity h1 .role { white-space: normal; }
 
 /* The Japanese name is the same problem one level down. 堀内 貴文 is two words
    with a space between them, and under `word-break: keep-all` that space is
