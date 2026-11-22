@@ -95,7 +95,6 @@ def rel_path(from_dir: str, from_page: str, to_dir: str) -> str:
 PROFILES = [
     ("LinkedIn", "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/"),
     ("GitHub",   "https://github.com/takafumihoriuchi"),
-    ("X",        "https://x.com/takafumihoriuch"),
     ("note",     "https://note.com/lovely_donkey395"),
 ]
 
