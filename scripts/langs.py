@@ -95,7 +95,7 @@ def rel_path(from_dir: str, from_page: str, to_dir: str) -> str:
 PROFILES = [
     ("LinkedIn", "https://www.linkedin.com/in/takafumi-horiuchi-3b66a21a0/"),
     ("GitHub",   "https://github.com/takafumihoriuchi"),
-    ("note",     "https://note.com/lovely_donkey395"),
+    # ("note",     "https://note.com/lovely_donkey395"),  # Re-enable and run wire-person.py to restore.
 ]
 
 # What every version says about the person. A language's entry in PERSON_LANGS
